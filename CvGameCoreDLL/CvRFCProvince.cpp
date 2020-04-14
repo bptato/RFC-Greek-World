@@ -112,7 +112,7 @@ void CvRFCProvince::checkMercenaries() {
 
 	for(std::vector<CvRFCMercenary>::iterator it = mercenaries.begin(); it != mercenaries.end();) {
 		if(GC.getGame().getSorenRandNum(100, "Mercenary disband roll") < 5) {
-			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < 50) {
+			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < 60) {
 				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
 					if(isBorderProvince(GC.getRiseFall().getRFCProvinceByID(i))) {
 						GC.getRiseFall().getRFCProvinceByID(i)->addMercenary(*it);
