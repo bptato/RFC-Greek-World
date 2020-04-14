@@ -1,0 +1,9 @@
+*.obj
+*.exp
+*.pdb
+*.layout
+*.depend
+CvGameCoreDLL.lib
+*.res
+*.pch
+*.geany

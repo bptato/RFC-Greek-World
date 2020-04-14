@@ -1,0 +1,66 @@
+Lead Mod Designers (in chronological order):
+Rhye
+Arkaeyn
+spaceman98
+EdmundIronside
+bluepotato
+
+Mods included:
+platyping's worldbuilder
+Unofficial Patch
+Sanguo Mod Performance
+
+Libraries included:
+simplejson
+OrderedDict backport
+
+Mods from which graphics and/or code was borrowed:
+LOTR mod: https://forums.civfanatics.com/threads/middle-earth-mod.519782/
+Dawn of Civilization: https://forums.civfanatics.com/forums/rhyes-and-fall-dawn-of-civilization.452/
+Sword of Islam: https://forums.civfanatics.com/threads/the-sword-of-islam-rfc-medieval-middle-east.373155/
+Caveman 2 Cosmos: https://forums.civfanatics.com/threads/caveman-2-cosmos.288570/
+Quot Capita: Majesty: https://forums.civfanatics.com/threads/quot-capita-majesty.498840/
+History Rewritten: https://forums.civfanatics.com/forums/mac-win-civ4-history-rewritten.448/
+Rhye's & Fall Classical World: https://forums.civfanatics.com/forums/rfc-mod-mod-classical-world.484/
+PIE's Ancient Europe: https://forums.civfanatics.com/threads/pies-ancient-europe.352646/
+Just Another Religion Mod: https://forums.civfanatics.com/resources/just-another-religion-mod-bts-modular-v-1-2.10354/
+Realism Invictus: https://forums.civfanatics.com/threads/realism-invictus.411799/
+
+Civilizations
+The Minoan civilization was borrowed from Civ Gold mod, credit goes to the civs original creator.
+The Mycenae civilization was created by cybrxkhan
+The Assyrian civilization was borrowed from Civ Gold mod, credit goes to the civs original creator.
+The Scythian civilization was borrowed from Civ Gold mod, credit goes to the civs original creator.
+The Sassanid civilization was created by cybrxkhan
+The Numidian civilization was borrowed from History Rewritten mod, credit goes to Xyth.
+
+Leaderheads
+http://forums.civfanatics.com/resources/lh-urukagina.13711/ (IgorS)
+http://forums.civfanatics.com/showthread.php?p=5965710 (esnaz)
+http://forums.civfanatics.com/showthread.php?t=277514 (ekmek)
+http://forums.civfanatics.com/downloads.php?do=file&id=7636 (C.Roland)
+http://forums.civfanatics.com/resources/lh-dido-v1.13841/ (The Capo)
+http://forums.civfanatics.com/showthread.php?p=6179859 (esnaz)
+http://forums.civfanatics.com/showthread.php?t=152663 (CivArmy s. 1994)
+http://forums.civfanatics.com/showthread.php?t=356411 (kochman)
+http://forums.civfanatics.com/downloads.php?do=file&id=13838 (The Capo)
+http://forums.civfanatics.com/showthread.php?t=209262 (Aranor)
+http://forums.civfanatics.com/threads/lh-king-hiram-of-tyre-phoenicia.265234/ (Amra)
+http://forums.civfanatics.com/resources/lh-king-david.10317/ (ekmek)
+
+Sound
+Background music mostly from Rhye's & Fall Classical World (SRPT).
+Walking in depreston promo shorter by Ali Yamamoto (official free to download & use for non commercial use, with credit given to author)
+Building Sounds from Sword of Islam (Emrbyodead)
+Hunnic, Spartan diplomusic from cybrxkhan: https://forums.civfanatics.com/threads/cybrxkhans-diplomacy-music-thread.335199/
+Assyrian, Nubian diplomusic from History Rewritten (more specifically by IanMusic): https://forums.civfanatics.com/forums/mac-win-civ4-history-rewritten.448/
+
+Units
+Most units used were created by ambrox62
+
+https://forums.civfanatics.com/threads/elamite-horned-warrior.486939/ for Elamite Horned Warrior
+
+Buildings
+https://forums.civfanatics.com/resources/knossos-labyrinth.18253/ (platyping)
+
+If there is anyone whose work was included but not credited, please message me or post on the forums

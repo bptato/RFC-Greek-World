@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SATUR</Tag>
+		<English>Satur</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MINOA_DESC</Tag>
+		<English>The Minoans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN00</Tag>
+		<English>Minoan Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN01</Tag>
+		<English>Kingdom of Minos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN02</Tag>
+		<English>Kingdom of Minos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN03</Tag>
+		<English>Kingdom of Minos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN04</Tag>
+		<English>Minoan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN05</Tag>
+		<English>Minoan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN06</Tag>
+		<English>Minoan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN07</Tag>
+		<English>Minoan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN08</Tag>
+		<English>Satrapy of Crete</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN09</Tag>
+		<English>Province of Creta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MIN10</Tag>
+		<English>Minoan Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

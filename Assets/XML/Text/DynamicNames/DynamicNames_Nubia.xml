@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB00</Tag>
+		<English>Nubian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB01</Tag>
+		<English>Kingdom of Kush</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB02</Tag>
+		<English>Kingdom of Kush</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB03</Tag>
+		<English>Kingdom of Kush</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB04</Tag>
+		<English>Kingdom of Kush</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB05</Tag>
+		<English>Kushan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB06</Tag>
+		<English>Twenty-fifth Dynasty of Egypt</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB07</Tag>
+		<English>Kingdom of Meroe</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB08</Tag>
+		<English>Sixth Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB09</Tag>
+		<English>Province of Dode</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_NUB10</Tag>
+		<English>Nubian Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

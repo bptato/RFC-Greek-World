@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE</Tag>
+		<English>Pesedjet Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_AMUN</Tag>
+		<English>Temple of Amun</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPHINX</Tag>
+		<English>Sphinx</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANUNNAKI_TEMPLE</Tag>
+		<English>Anunnaki Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANUNNAKI_MONASTERY</Tag>
+		<English>Anunnaki Altar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE</Tag>
+		<English>Ishtar Gate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE</Tag>
+		<English>Hellenic Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE</Tag>
+		<English>Hellenic Oracle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LABYRINTH</Tag>
+		<English>Labyrinth</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALITE_TEMPLE</Tag>
+		<English>Baalite Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALITE_SANCTUARY</Tag>
+		<English>Baalite Sanctuary</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAABED</Tag>
+		<English>Ma'abed</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAKERY</Tag>
+		<English>Bakery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAKERY_PEDIA</Tag>
+		<English>A baker is someone who primarily bakes and sells bread. Cakes and similar foods may also be produced, as the traditional boundaries between what is produced by a baker as opposed to a pastry chef have blurred in recent decades. The place where a baker works is called a bakehouse, bakeshop, or bakery. [PARAGRAPH:2]The first group of people to bake bread were ancient Egyptians, in 2600-2100 BC. It was believed that they learnt their skills from the Babylonians. In the royal bakery of Ramesses, bread and cakes were often made in shapes of animals and used for sacrifices. [PARAGRAPH:2]The Greek culture influenced the Romans a lot after the Egyptians. From there, Bakery was transformed and flourished. The Romans were lusty and festive, soon the art of Bakering were a highly respected profession during the fourth century (A.D). The "job" was so profitable that in the time of Christ there were about three hundred Bakers around Rome. [PARAGRAPH:2]From the Roman Empire, the art of Bakery spread throughout Europe and the rest of the world. During the Middle ages, it was common for each landlord to have a bakery, which was actually more of a public oven. Housewives would bring dough that they had prepared to the baker, who would use the oven to bake it into bread. As time went on, bakers began to bake their own goods, creating numerous tricks. For example, some bakers had trap doors that would allow a small boy to pinch off a bit of the dough to later sell off as his own. This practice eventually led in England to a regulation known as the Assize of Bread and Ale, which provided harsh punishments for bakers who were caught cheating. In response, bakers commonly threw in an extra loaf of bread; this tradition lives on in the modern "baker's dozen".</English>
+		<Polish>Piekarnia to zaklad rzemieslniczy lub przemyslowy, który produkuje pieczywo. Glówne dzialy: ciastownia, obrabialnia, piecownia.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAKERY_STRATEGY</Tag>
+		<English>Gives + 1 happiness, + 1 health, and health bonuses from wheat and corn.</English>
+	</TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_BUILDING_ARCHERY_RANGE</Tag>
+		<English>Archery Range</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARCHERY_RANGE_PEDIA</Tag>
+		<English>Field archery involves shooting at targets of varying and often unmarked distance, typically in woodland and rough terrain. As well as being a sport in its own right, it can be used to improve the techniques and abilities required for bowhunting in a realistic outdoor setting. </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARCHERY_RANGE_STRATEGY</Tag>
+		<English>Gives 2 experience to archery units.</English>
+	</TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_BUILDING_BREWERY</Tag>
+		<English>Brewery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BREWERY_PEDIA</Tag>
+		<English>A brewery or brewing company is a business that makes and sells beer. The place at which beer is commercially made is either called a brewery or a beerhouse, where distinct sets of brewing equipment are called plant.[1] The commercial brewing of beer has taken place since at least 2500 BC </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BREWERY_STRATEGY</Tag>
+		<English>Gives + 1 happiness, + 1 health, 10% extra commerce, and health bonuses from wheat.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HEALERS_HUT</Tag>
+		<English>Apothecary</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HEALERS_HUT_PEDIA</Tag>
+		<English>A place where a medical professional who formulates and dispenses medicines to physicians, surgeons, and patients.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HEALERS_HUT_STRATEGY</Tag>
+		<English>Gives + 1 health, and an extra scientist.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WORK_SHOP</Tag>
+		<English>Workshop</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WORK_SHOP_PEDIA</Tag>
+		<English>A room or building in which goods are manufactured or repaired.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WORK_SHOP_STRATEGY</Tag>
+		<English>Increases city production by 10%, also provides an extra scientist.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASSYRIA_EKAL</Tag>
+		<English>Ekal Masharti</English>
+		<French>Ekal Masharti</French>
+		<German>Ekal Masharti</German>
+		<Italian>Ekal Masharti</Italian>
+		<Spanish>Ekal Masharti</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASSYRIA_EKAL_PEDIA</Tag>
+		<English>The armies of Assyria had permanent bases called ekal masharti, which literally means "palace of the place for marshalling forces", in effect, "barracks". These were buildings with large courtyards for army purposes. They stored weapons, food and stationed men in these barracks.[PARAGRAPH:2]</English>
+		<French>The armies of Assyria had permanent bases called ekal masharti, which literally means "palace of the place for marshalling forces", in effect, "barracks". These were buildings with large courtyards for army purposes. They stored weapons, food and stationed men in these barracks.[PARAGRAPH:2]</French>
+		<German>The armies of Assyria had permanent bases called ekal masharti, which literally means "palace of the place for marshalling forces", in effect, "barracks". These were buildings with large courtyards for army purposes. They stored weapons, food and stationed men in these barracks.[PARAGRAPH:2]</German>
+		<Italian>The armies of Assyria had permanent bases called ekal masharti, which literally means "palace of the place for marshalling forces", in effect, "barracks". These were buildings with large courtyards for army purposes. They stored weapons, food and stationed men in these barracks.[PARAGRAPH:2]</Italian>
+		<Spanish>The armies of Assyria had permanent bases called ekal masharti, which literally means "palace of the place for marshalling forces", in effect, "barracks". These were buildings with large courtyards for army purposes. They stored weapons, food and stationed men in these barracks.[PARAGRAPH:2]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASSYRIA_EKAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT] is replaced by the [COLOR_BUILDING_TEXT]Ekal Masharti[COLOR_REVERT] in the Assyrian civilization. It produces units 15% faster.</English>
+		<French>The [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT] is replaced by the [COLOR_BUILDING_TEXT]Ekal Masharti[COLOR_REVERT] in the Assyrian civilization. It produces units 15% faster.</French>
+		<German>The [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT] is replaced by the [COLOR_BUILDING_TEXT]Ekal Masharti[COLOR_REVERT] in the Assyrian civilization. It produces units 15% faster.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT] is replaced by the [COLOR_BUILDING_TEXT]Ekal Masharti[COLOR_REVERT] in the Assyrian civilization. It produces units 15% faster.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT] is replaced by the [COLOR_BUILDING_TEXT]Ekal Masharti[COLOR_REVERT] in the Assyrian civilization. It produces units 15% faster.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCYTHIA_SCYTHIANSTABLES</Tag>
+		<English>Scythian Stables</English>
+		<French>Scythian Stables</French>
+		<German>Scythian Stables</German>
+		<Italian>Scythian Stables</Italian>
+		<Spanish>Scythian Stables</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCYTHIA_SCYTHIANSTABLES_PEDIA</Tag>
+		<English>[TAB]If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:1]Though the Scythian had elaborate bitted bridles, the stirrup was not known to them and they rode on saddleclothes, relying on grip and balance. Even so, they were formidable horsemen in battle.</English>
+		<French>[TAB]If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:1]Though the Scythian had elaborate bitted bridles, the stirrup was not known to them and they rode on saddleclothes, relying on grip and balance. Even so, they were formidable horsemen in battle.</French> 
+		<German>[TAB]If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:1]Though the Scythian had elaborate bitted bridles, the stirrup was not known to them and they rode on saddleclothes, relying on grip and balance. Even so, they were formidable horsemen in battle.</German>
+		<Italian>[TAB]If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:1]Though the Scythian had elaborate bitted bridles, the stirrup was not known to them and they rode on saddleclothes, relying on grip and balance. Even so, they were formidable horsemen in battle.</Italian>
+		<Spanish>[TAB]If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:1]Though the Scythian had elaborate bitted bridles, the stirrup was not known to them and they rode on saddleclothes, relying on grip and balance. Even so, they were formidable horsemen in battle.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCYTHIA_SCYTHIANSTABLES_STRATEGY</Tag>
+		<English>Scythia replaces the [COLOR_BUILDING_TEXT]Stables[COLOR_REVERT] with [COLOR_BUILDING_TEXT]Scythian Stables[COLOR_REVERT], which give units built in the city a free March promotion.</English>
+		<French>Scythia replaces the [COLOR_BUILDING_TEXT]Stables[COLOR_REVERT] with [COLOR_BUILDING_TEXT]Scythian Stables[COLOR_REVERT], which give units built in the city a free March promotion.</French>
+		<German>Scythia replaces the [COLOR_BUILDING_TEXT]Stables[COLOR_REVERT] with [COLOR_BUILDING_TEXT]Scythian Stables[COLOR_REVERT], which give units built in the city a free March promotion.</German>
+		<Italian>Scythia replaces the [COLOR_BUILDING_TEXT]Stables[COLOR_REVERT] with [COLOR_BUILDING_TEXT]Scythian Stables[COLOR_REVERT], which give units built in the city a free March promotion.</Italian>
+		<Spanish>Scythia replaces the [COLOR_BUILDING_TEXT]Stables[COLOR_REVERT] with [COLOR_BUILDING_TEXT]Scythian Stables[COLOR_REVERT], which give units built in the city a free March promotion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LUXOR</Tag>
+		<English>Luxor</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_WALL</Tag>
+		<English>Hadrian's Wall</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SOUQ</Tag>
+		<English>Fur Traders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SOUQ_STRATEGY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Fur Traders is the Gothic replacement for the Market.[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUWASI</Tag>
+		<English>Huwasi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUWASI_STRATEGY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]The Huwasi is the Hittite replacement for the Monument. They provide health to the cities in which they're located.[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUWASI_PEDIA</Tag>
+		<English>In Hittite religion, a Huwasi is a carved stone sacred to particular deity. They were commonly kept in temples but larger ones also existed that were located in open air sanctuaries, sometimes with a protective wall, sometimes with a surrounding grove. The most sacred of all Huwasi were those that were by springs. Sacrifices were made to Huwasi, they were given given food and water, anointed and washed. In the spring and autumn they were the location for festivals where mock battles and sporting contests were held.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPARTAN_CAMP</Tag>
+		<English>Spartan Camp</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPARTAN_CAMP_STRATEGY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]The Spartan Camp is the Spartan replacement for the Barracks. They provide extra experience for land units.[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPARTAN_CAMP_PEDIA</Tag>
+		<English>When male Spartans began military training at age seven, they would enter the agoge system. The agoge was designed to encourage discipline and physical toughness and to emphasize the importance of the Spartan state. Boys lived in communal messes and, according to Xenophon, whose sons attended the agoge, the boys were fed "just the right amount for them never to become sluggish through being too full, while also giving them a taste of what it is not to have enough."</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANTIGONID_AGORA</Tag>
+		<English>Agora</English>
+		<French>Agora</French>
+		<German>Agora</German>
+		<Italian>Agora</Italian>
+		<Spanish>Agora</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLOOMERY</Tag>
+		<English>Bloomery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLOOMERY_STRATEGY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]The Bloomery is the Etruscan replacement for the Forge. It provides additional production bonuses with access to Iron.[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLOOMERY_PEDIA</Tag>
+		<English>A bloomery is a type of traditional furnace used for smelting iron from iron ore. The bloomery consists of a pit with refractory walls, with one or more pipes at the bottom to allow air to enter. Once charcoal and iron ore are made available and prepared for use, the bloomery is preheated, and the ore and charcoal are put in throught he top. The charcoal typically burns incompletely, producing hot carbon monoxide that strips oxygen atoms out of the iron ore. This process proceeds without melting the ore, which is important if the resulting iron is to be forged. When the process is performed correctly, the bloomery creates a porous mass of iron and slag, known as 'sponge iron,' which can then be consolidated by heating it until the slag melts, and then beating on it with a hammer until the molten slag flows out of the bloom. After repeating this process enough times, the bloom can be forged into strong, durable wrought iron.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PERSIAN_APOTHECARY</Tag>
+		<English>Asu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GOLDSMITH</Tag>
+		<English>Goldsmith</English>
+		<French>Goldsmith</French>
+		<German>Goldsmith</German>
+		<Italian>Goldsmith</Italian>
+		<Spanish>Goldsmith</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VIKING_TRADING_POST</Tag>
+		<English>Phoenecian Trading Port</English>
+	</TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_POST</Tag>
+		<English>Trading Post</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SOUQ_PEDIA</Tag>
+		<English>A common meeting place where the pelts gathered from trapping animals is exchanged for money or other goods.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_POST_PEDIA</Tag>
+		<English>An outpost built by a civilization with the purpose of boosting their ability to exchange resources and trade goods.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANAKTORA_STRATEGY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]The Anaktora is the Minoan replacement for walls. It increases the city's research output by 10%.[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANAKTORA</Tag>
+		<English>Anaktora</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANAKTORA_PEDIA</Tag>
+		<English>Anaktora (palaces) are the best-known Minoan building types excavated on Crete. They are monumental buildings with administrative purposes, as evidenced by large archives unearthed by archaeologists. Each palace excavated to date has unique features, but they also share aspects which set them apart from other structures. An anaktora is often multi-story, with interior and exterior staircases, lightwells, massive columns, storage areas and courtyards. </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SASSANID_CARAVANSERAI</Tag>
+		<English>Caravanserai</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_BUILDING_SASSANID_CARAVANSERAI_PEDIA</Tag>
+		<English>[TAB]A caravanserai was a (usually Persian-inspired or built) roadside inn where travelers could rest and recover from the day's journey. Caravanserais supported the flow of commerce, information, and people across the network of trade routes covering Asia, North Africa, and South-Eastern Europe. Most typically a caravanserai was a building with a square or rectangular walled exterior, with a single portal wide enough to permit large or heavily laden beasts such as camels to enter. The courtyard was almost always open to the sky, and the inside walls of the enclosure were outfitted with a number of identical stalls, bays, niches, or chambers to accommodate merchants and their servants, animals, and merchandise. Caravanserais provided water for human and animal consumption, washing, and ritual ablutions. Sometimes they even had elaborate baths. They also kept fodder for animals and had shops for travellers where they could acquire new supplies. In addition, there could be shops where merchants could dispose of some of their goods. </English>
+		<French>[TAB]L'utilisation des &#233;l&#233;phants pour la guerre a commenc&#233; en Inde et &#233;tait connue des Perses au IVe si&#232;cle av. J.-C. C'est gr&#226;ce &#224; ses &#233;l&#233;phants de guerre que Chandragupta parvint &#224; vaincre Seleucos, le successeur d'Alexandre le Grand, et &#224; fonder l'Empire maurya. M&#234;me si les &#233;l&#233;phants africains de Carthage ont peu d'exploits &#224; leur actif, leur pr&#233;sence dans l'arm&#233;e d'Hannibal lors de la travers&#233;e des Alpes en 218 av. J.-C. leur a valu une r&#233;putation d'arme redoutable. L'importance tactique des &#233;l&#233;phants repose beaucoup sur leur capacit&#233; &#224; attaquer l'infanterie comme la cavalerie, et &#224; inspirer la terreur. Bien que les arm&#233;es indiennes aient utilis&#233; l'&#233;l&#233;phant jusqu'au XXe si&#232;cle, son utilit&#233; dans la pratique de la guerre a pris fin avec l'invention de la poudre &#224; canon.</French>
+		<German>[TAB]Der Kriegselefant wurde zuerst in Indien eingesetzt und war den Persern im 4. Jahrhundert vor Christus schon gel&#228;ufig. Mit Hilfe von Kriegselefanten gelang es dem indischen K&#246;nig Chandragupta, die Truppen von Seleukos, dem Nachfolger Alexanders des Gro&#223;en, zu besiegen und das Maurya-Reich zu begr&#252;nden. Auch wenn die afrikanischen Kriegselefanten der Karthager nur wenig ausrichten konnten, so machten sie ihrem Ruf als gef&#252;rchtetes Kriegsger&#228;t alle Ehre, als Hannibal seine Truppen mitsamt den Dickh&#228;utern &#252;ber die Alpen f&#252;hrte, um im Jahre 218 vor Christus in Rom einzufallen. Die taktische Bedeutung der Kriegselefanten resultiert zum gro&#223;en Teil aus ihrer Eigenschaft, sowohl Fu&#223;soldaten als auch die Kavallerie anzugreifen und in Panik zu versetzen. Das indische Milit&#228;r setzte sie zwar noch bis zum 20. Jahrhundert aktiv ein, letztlich erging es ihnen am Ende aber wie vielen anderen traditionellen "Waffen": Ihr milit&#228;rischer Nutzen endete mit dem verbreiteten Einsatz von Schie&#223;pulver.</German>
+		<Italian>[TAB]L'elefante da guerra fu usato per la prima volta in India e fu conosciuto dai Persiani intorno al quarto secolo a. C. Grazie a queste unit&#224;, Candra Gupta sconfisse il successore di Alessandro, Seleuco, e fond&#242; l'Impero Maurya. Anche se gli elefanti da guerra africani di Cartagine non furono determinanti, la loro presenza nell'esercito di Annibale durante la sua traversata delle Alpi verso il cuore di Roma, nel 218 a. C., afferm&#242; la loro reputazione di arma temibile. Apparentemente, l'importanza tattica dell'elefante si basa in gran parte sulla sua predisposizione a caricare sia i fanti che la cavalleria, nonch&#233; sul panico che &#232; in grado di suscitare. Malgrado sia stato usato nelle truppe indiane fino al XX secolo, alla pari di molte armi tradizionali, la sua utilit&#224; in guerra &#232; cessata con la diffusione della polvere da sparo.</Italian>
+		<Spanish>[TAB]Los elefantes de guerra fueron utilizados por primera vez en la India, y los persas ya lo conoc&#237;an hacia el siglo IV a. C. Utilizando elefantes de guerra, Chandragupta derrot&#243; a Seleuco, sucesor de Alejandro, y fund&#243; el imperio mauryan. Aunque estos animales no sirvieron de mucho a Cartago, su presencia en el ej&#233;rcito de An&#237;bal durante el cruce de los Alpes y la invasi&#243;n de Roma en el a&#241;o 218 a. C. bast&#243; para cimentar su reputaci&#243;n como armas terribles. La importancia t&#225;ctica de los elefantes derivaba aparentemente de su disposici&#243;n a cargar tanto contra la infanter&#237;a como contra la caballer&#237;a, y del p&#225;nico que esto inspiraba. Aunque sirvieron en el ej&#233;rcito indio hasta el siglo XX, su utilidad real, al igual que ocurri&#243; con muchas otras armas tradicionales, termin&#243; con la difusi&#243;n generalizada de la p&#243;lvora.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SASSANID_CARAVANSERAI_STRATEGY</Tag>
+		<English>[TAB]The Sassanid replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT] gives a +2 spy point bonus.</English>
+		<French>[TAB]L'utilisation des &#233;l&#233;phants pour la guerre a commenc&#233; en Inde et &#233;tait connue des Perses au IVe si&#232;cle av. J.-C. C'est gr&#226;ce &#224; ses &#233;l&#233;phants de guerre que Chandragupta parvint &#224; vaincre Seleucos, le successeur d'Alexandre le Grand, et &#224; fonder l'Empire maurya. M&#234;me si les &#233;l&#233;phants africains de Carthage ont peu d'exploits &#224; leur actif, leur pr&#233;sence dans l'arm&#233;e d'Hannibal lors de la travers&#233;e des Alpes en 218 av. J.-C. leur a valu une r&#233;putation d'arme redoutable. L'importance tactique des &#233;l&#233;phants repose beaucoup sur leur capacit&#233; &#224; attaquer l'infanterie comme la cavalerie, et &#224; inspirer la terreur. Bien que les arm&#233;es indiennes aient utilis&#233; l'&#233;l&#233;phant jusqu'au XXe si&#232;cle, son utilit&#233; dans la pratique de la guerre a pris fin avec l'invention de la poudre &#224; canon.</French>
+		<German>[TAB]Der Kriegselefant wurde zuerst in Indien eingesetzt und war den Persern im 4. Jahrhundert vor Christus schon gel&#228;ufig. Mit Hilfe von Kriegselefanten gelang es dem indischen K&#246;nig Chandragupta, die Truppen von Seleukos, dem Nachfolger Alexanders des Gro&#223;en, zu besiegen und das Maurya-Reich zu begr&#252;nden. Auch wenn die afrikanischen Kriegselefanten der Karthager nur wenig ausrichten konnten, so machten sie ihrem Ruf als gef&#252;rchtetes Kriegsger&#228;t alle Ehre, als Hannibal seine Truppen mitsamt den Dickh&#228;utern &#252;ber die Alpen f&#252;hrte, um im Jahre 218 vor Christus in Rom einzufallen. Die taktische Bedeutung der Kriegselefanten resultiert zum gro&#223;en Teil aus ihrer Eigenschaft, sowohl Fu&#223;soldaten als auch die Kavallerie anzugreifen und in Panik zu versetzen. Das indische Milit&#228;r setzte sie zwar noch bis zum 20. Jahrhundert aktiv ein, letztlich erging es ihnen am Ende aber wie vielen anderen traditionellen "Waffen": Ihr milit&#228;rischer Nutzen endete mit dem verbreiteten Einsatz von Schie&#223;pulver.</German>
+		<Italian>[TAB]L'elefante da guerra fu usato per la prima volta in India e fu conosciuto dai Persiani intorno al quarto secolo a. C. Grazie a queste unit&#224;, Candra Gupta sconfisse il successore di Alessandro, Seleuco, e fond&#242; l'Impero Maurya. Anche se gli elefanti da guerra africani di Cartagine non furono determinanti, la loro presenza nell'esercito di Annibale durante la sua traversata delle Alpi verso il cuore di Roma, nel 218 a. C., afferm&#242; la loro reputazione di arma temibile. Apparentemente, l'importanza tattica dell'elefante si basa in gran parte sulla sua predisposizione a caricare sia i fanti che la cavalleria, nonch&#233; sul panico che &#232; in grado di suscitare. Malgrado sia stato usato nelle truppe indiane fino al XX secolo, alla pari di molte armi tradizionali, la sua utilit&#224; in guerra &#232; cessata con la diffusione della polvere da sparo.</Italian>
+		<Spanish>[TAB]Los elefantes de guerra fueron utilizados por primera vez en la India, y los persas ya lo conoc&#237;an hacia el siglo IV a. C. Utilizando elefantes de guerra, Chandragupta derrot&#243; a Seleuco, sucesor de Alejandro, y fund&#243; el imperio mauryan. Aunque estos animales no sirvieron de mucho a Cartago, su presencia en el ej&#233;rcito de An&#237;bal durante el cruce de los Alpes y la invasi&#243;n de Roma en el a&#241;o 218 a. C. bast&#243; para cimentar su reputaci&#243;n como armas terribles. La importancia t&#225;ctica de los elefantes derivaba aparentemente de su disposici&#243;n a cargar tanto contra la infanter&#237;a como contra la caballer&#237;a, y del p&#225;nico que esto inspiraba. Aunque sirvieron en el ej&#233;rcito indio hasta el siglo XX, su utilidad real, al igual que ocurri&#243; con muchas otras armas tradicionales, termin&#243; con la difusi&#243;n generalizada de la p&#243;lvora.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANTIGONID_AGORA_PEDIA</Tag>
+		<English>The agora was a central public space in ancient Greek city-states. The literal meaning of the word is "gathering place" or "assembly". The agora was the center of the athletic, artistic, spiritual and political life in the city.[1] The Ancient Agora of Athens is the best-known example. </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KOTEL_PEDIA</Tag>
+		<English>The Western Wall, Wailing Wall, or Kotel, known in Islam as the Buraq Wall, is an ancient limestone wall in the Old City of Jerusalem. It is a relatively small segment of a far longer ancient retaining wall, known also in its entirety as the "Western Wall".</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHOENECIAN_TRADING_POST_PEDIA</Tag>
+		<English>In the centuries after 1200 BC, the Phoenicians were the major naval and trading power of the region. Phoenician trade was founded on the Tyrian purple dye, a violet-purple dye derived from the hypobranchial gland of the Murex sea-snail, once profusely available in coastal waters of the eastern Mediterranean Sea but exploited to local extinction. James B. Pritchard's excavations at Sarepta in present-day Lebanon revealed crushed Murex shells and pottery containers stained with the dye that was being produced at the site. The Phoenicians established a second production center for the dye in Mogador, in present-day Morocco. Brilliant textiles were a part of Phoenician wealth, and Phoenician glass was another export ware.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PLAGUE_PEDIA</Tag>
+		<English>Plague is a disease that affects humans and other mammals. It is caused by the bacterium, Yersinia pestis. Humans usually get plague after being bitten by a rodent flea that is carrying the plague bacterium or by handling an animal infected with plague.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SEWER_PEDIA</Tag>
+		<English>The urban areas of the Indus Valley civilization included public and private baths. Sewage was disposed through underground drains built with precisely laid bricks, and a sophisticated water management system with numerous reservoirs was established. In the drainage systems, drains from houses were connected to wider public drains. Many of the buildings at Mohenjo-daro had two or more stories. Water from the roof and upper storey bathrooms was carried through enclosed terracotta pipes or open chutes that emptied out onto the street drains.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VAULTED_GRANARY_PEDIA</Tag>
+		<English>The ksar or Vaulted Granary is spread out over two courtyards, each of which has a perimeter of multi-story vaulted granary cellars, or ghorfas. </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_PEDIA</Tag>
+		<English>The Colosseum could hold, it is estimated, between 50,000 and 80,000 spectators,[5][6] having an average audience of some 65,000; it was used for gladiatorial contests and public spectacles such as mock sea battles (for only a short time as the hypogeum was soon filled in with mechanisms to support the other activities), animal hunts, executions, re-enactments of famous battles, and dramas based on Classical mythology.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HADRIANS_WALL_PEDIA</Tag>
+		<English>A defensive fortification in the Roman province of Britannia, begun in AD 122 in the reign of the emperor Hadrian. It ran from the banks of the River Tyne near the North Sea to the Solway Firth on the Irish Sea, and was the northern limit of the Roman Empire, immediately north of which were the lands of the northern Ancient Britons, including the Picts. </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE_PEDIA</Tag>
+		<English>The eighth gate to the inner city of Babylon. It was constructed in about 575 BCE by order of King Nebuchadnezzar II on the north side of the city. It was part of a grand walled processional way leading into the city. The walls were finished in glazed bricks mostly in blue, with animals and deities in low relief at intervals, these also made up of bricks that are molded and colored differently.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TOWER</Tag>
+		<English>The Stone Tower of Jericho</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TOWER_PEDIA</Tag>
+		<English>Towers have been used by mankind since prehistoric times. The oldest known may be the circular stone tower in walls of Neolithic Jericho (8000 BC).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPHINX_PEDIA</Tag>
+		<English>A limestone statue of a reclining sphinx, a mythical creature with the body of a lion and the head of a human.[1] Facing directly from West to East, it stands on the Giza Plateau on the west bank of the Nile in Giza, Egypt. The face of the Sphinx is generally believed to represent the Pharaoh Khafre.  Cut from the bedrock, the original shape of the Sphinx has been restored with layers of blocks.[3] It measures 73 metres (240 ft) long from paw to tail, 20.21 m (66.31 ft) high from the base to the top of the head and 19 metres (62 ft) wide at its rear haunches.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POSEIDON_PEDIA</Tag>
+		<English>Like the Venus of Milos, it is believed that this statue was created during the Hellenistic Period. During this period, the Macedonians ruled this island until they fell apart after Alexander the Great died.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_BAAL_PEDIA</Tag>
+		<English>The temple was built on a tell with stratification indicating human occupation that goes back to the third millennium BC. The area was occupied in pre-Roman periods with a former temple that is usually referred to as "the first temple of Bel" and "the Hellenistic temple".</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KNOSSOS_PEDIA</Tag>
+		<English>The great palace was built gradually between 1,700 and 1,400 BC, with periodic rebuildings after destructions.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GARAMANTES_FOGGARAS</Tag>
+		<English>Foggaras</English>
+		<French>Foggaras</French>
+		<German>Foggaras</German>
+		<Italian>Foggaras</Italian>
+		<Spanish>Foggaras</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GARAMANTES_FOGGARAS_STRATEGY</Tag>
+		<English>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Numidian replacement for a [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</English>
+		<French>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Garamantian replacement for a [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</French>
+		<German>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Garamantian replacement for a [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</German>
+		<Italian>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Garamantian replacement for a [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</Italian>
+		<Spanish>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Garamantian replacement for a [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GARAMANTES_FOGGARAS_PEDIA</Tag>
+		<English>[TAB]The Numidians constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</English>
+		<French>[TAB]The Garamantes constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</French>
+		<German>[TAB]The Garamantes constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</German>
+		<Italian>[TAB]The Garamantes constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</Italian>
+		<Spanish>[TAB]The Garamantes constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</Spanish>
+	</TEXT>
+</Civ4GameText>

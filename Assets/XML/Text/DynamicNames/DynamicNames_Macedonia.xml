@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC00</Tag>
+		<English>Macedonian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC01</Tag>
+		<English>Kingdom of Macedonia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC02</Tag>
+		<English>Kingdom of Macedonia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC03</Tag>
+		<English>Macedonian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC04</Tag>
+		<English>Macedonian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC05</Tag>
+		<English>Macedonian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC06</Tag>
+		<English>Cassander's Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC07</Tag>
+		<English>Seleucid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC08</Tag>
+		<English>Satrapy of Pella</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC09</Tag>
+		<English>Province of Macedonia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MAC10</Tag>
+		<English>Macedonian Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

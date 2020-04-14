@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT00</Tag>
+		<English>Nesili Peoples</English>
+	</TEXT><TEXT>
+		<Tag>TXT_KEY_DN_HIT01</Tag>
+		<English>Kingdom of Hattusa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT02</Tag>
+		<English>Hittite Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT03</Tag>
+		<English>Hittite Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT04</Tag>
+		<English>Neo-Hittite City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT05</Tag>
+		<English>Lydian Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT06</Tag>
+		<English>Lydian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT07</Tag>
+		<English>Kingdom of Pontus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT08</Tag>
+		<English>Second Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT09</Tag>
+		<English>Province of Galatia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_HIT10</Tag>
+		<English>Hittite Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

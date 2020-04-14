@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_MENU_SELECT_SEALEVEL_TITLE</Tag>
+		<English>EARTH LIKENESS</English>
+		<French>RENDU DE LA TERRE</French>
+		<German>EARTH LIKENESS</German>
+		<Italian>VEROSIMIGLIANZA</Italian>
+		<Spanish>EARTH LIKENESS</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MENU_SEALEVEL</Tag>
+		<English>Earth likeness:</English>
+		<French>Rendu de la Terre:</French>
+		<German>Earth likeness:</German>
+		<Italian>Verosimiglianza:</Italian>
+		<Spanish>Earth likeness:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SEALEVEL_VERYHIGH</Tag>
+		<English>Very high</English>
+		<French>Très haut</French>
+		<German>Very high</German>
+		<Italian>Molto alto</Italian>
+		<Spanish>Very high</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SEALEVEL_VERYLOW</Tag>
+		<English>Very low</English>
+		<French>Très bas</French>
+		<German>Very low</German>
+		<Italian>Molto basso</Italian>
+		<Spanish>Very low</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_GOVERNOR</Tag>
+		<English>Governor</English>
+		<French>
+			<Text>Gouverneur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Governor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Governatore</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Governor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_DEMIGOD</Tag>
+		<English>Demigod</English>
+		<French>
+			<Text>Demi-dieu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Demigod</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Semidio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Demigod</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA00</Tag>
+		<English>Haltamti Peoples</English>
+		<French>
+			<Text>Haltamti Peoples</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Haltamti Peoples</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Haltamti Peoples</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Haltamti Peoples</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA01</Tag>
+		<English>Awan Dynasty</English>
+		<French>
+			<Text>Аwan Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Аwan Dynastie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Аwan Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Аwan Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA02</Tag>
+		<English>Shimaski Dynasty</English>
+		<French>
+			<Text>Shimaski Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Shimaski Dynastie:Shimaski Dynastie:Shimaski Dynastie</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Shimaski Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Shimaski Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA03</Tag>
+		<English>Sukkalmah Dynasty</English>
+		<French>
+			<Text>Sukkalmah Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sukkalmah Dynastie:Sukkalmah Dynastie:Sukkalmah Dynastie</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sukkalmah Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sukkalmah Dynasty</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA04</Tag>
+		<English>Elamite Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA05</Tag>
+		<English>Elamite Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA06</Tag>
+		<English>Neo-Elamite Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA07</Tag>
+		<English>Elymais</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA08</Tag>
+		<English>Eighth Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA09</Tag>
+		<English>Province of Elam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ELA10</Tag>
+		<English>Elamite Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

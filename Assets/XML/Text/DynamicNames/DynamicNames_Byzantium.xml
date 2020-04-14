@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ00</Tag>
+		<English>Byzantine Peoples</English>
+		<French>
+			<Text>Peuplades Ib&#232;res</Text>
+			<Gender>FeTURe</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Iberische V&#246;lker:Iberischen V&#246;lker:Iberischen V&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Iberici</Text>
+			<Gender>TURe</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<RUSnish>
+			<Text>Pueblos Ib&#233;ricos</Text>
+			<Gender>TURe</Gender>
+			<Plural>1</Plural>
+		</RUSnish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ01</Tag>
+		<English>Eastern Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ02</Tag>
+		<English>Eastern Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ03</Tag>
+		<English>Eastern Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ04</Tag>
+		<English>Eastern Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ05</Tag>
+		<English>Eastern Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ06</Tag>
+		<English>Byzantine Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ07</Tag>
+		<English>Byzantine Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ08</Tag>
+		<English>Satrapy of Thrake</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ09</Tag>
+		<English>Province of Thracia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ10</Tag>
+		<English>Byzantine Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

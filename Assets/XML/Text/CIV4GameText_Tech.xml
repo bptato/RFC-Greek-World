@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+ <TEXT>
+		<Tag>TXT_KEY_TECH_REPUBLICANISM</Tag>
+		<English>Republicanism</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARISTOCRACY</Tag>
+		<English>Aristocracy</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STANDING_ARMY</Tag>
+		<English>Standing Army</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CITIZENSHIP</Tag>
+		<English>Citizenship</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVAL_WARFARE</Tag>
+		<English>Naval Warfare</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARTOGRAPHY</Tag>
+		<English>Cartography</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TYRANNY</Tag>
+		<English>Tyranny</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AMPHORA</Tag>
+		<English>Amphora</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STORYTELLING</Tag>
+		<English>Storytelling</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LOGGING</Tag>
+		<English>Logging</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MYTHOLOGY</Tag>
+		<English>Mythology</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TRADE</Tag>
+		<English>Trade</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HERBALISM</Tag>
+		<English>Herbalism</English>
+		<French>
+			<Text>Vol avanc&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fortgeschrittene Luftfahrt</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Volo avanzato</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vuelo avanzado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SLASH_AND_BURN</Tag>
+		<English>Slash and Burn Cultivation</English>
+		<French>Technique du Brûlis</French>
+		<German>Brandrodung</German>
+		<Italian>Taglio ed ustione</Italian>
+		<Spanish>
+			<Text>Tala y quema</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Tnij i Pal</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SLASH_AND_BURN_PEDIA</Tag>
+		<English>Slash and burn consists of cutting and burning of forests or woodlands to create fields for agriculture or pasture for livestock, or for a variety of other purposes. It is sometimes part of shifting cultivation agriculture, and of transhumance livestock herding.[PARAGRAPH:1]Historically, the practice of slash and burn has been widely practiced throughout most of the world, in grasslands as well as woodlands, and known by many names. In temperate regions, such as Europe and North America, the practice has been mostly abandoned over the past few centuries. Today the term is mainly associated with tropical rain forests.</English>
+		<French>La technique du brûlis permet de défricher les forêts en utilisant le feu. cela permet de libérer une zone pour les champs pour l'agriculture ou le pâturage pour le bétail, ou pour une série d'autres buts. C'est parfois une partie d'agriculture de culture de décalage, et de rassemblement de bétail de transhumance. [PARAGRAPH:1] Historiquement, la pratique de la barre oblique et la brûlure a été largement pratiquée dans toute la majeure partie du monde, dans les prairies aussi bien que des régfions boisées, et connue par beaucoup de noms. Dans des régions tempérées, telles que l'Europe et l'Amérique du Nord, la pratique a été la plupart du temps abandonnée au cours des derniers siècles. Aujourd'hui la limite est principalement associée aux forêts tropicales tropicales.</French>
+		<German>Brandrodung besteht, von den Wäldern oder vom Waldland zu schneiden und zu brennen, um Felder für die Landwirtschaft oder Weide für Viehbestand oder für eine Vielzahl anderer Zwecke herzustellen. Es ist manchmal Teil Verschiebungsbearbeitunglandwirtschaft und des Transhumanceviehbestandin herden lebens. [PARAGRAPH:1] Historisch ist die Praxis des Schrägstriches und der Brand weit während die meisten der Welt, in den Wiesen sowie Waldland geübt worden und bekannt durch viele Namen. In den mäßigen Regionen wie Europa und Nordamerika, ist die Praxis meistens in den letzten Jahrhunderten verlassen worden. Heute ist der Ausdruck hauptsächlich mit Wäldern des tropischen Regens verbunden.</German>
+		<Italian>Il taglio e l'ustione consiste di tagliare e bruciare delle foreste o dei terreni boscosi per generare i campi per l'agricoltura o il pascolo per bestiame, o per vari altri scopi. Fa parte a volte dell'agricoltura di coltura di spostamento e di branco del bestiame di trasumanza. [PARAGRAPH:1] Storicamente, la pratica del taglio e l'ustione ampiamente si è esercitata in durante la maggior parte del mondo, in pascoli così come i terreni boscosi ed è stata conosciuta da molti nomi. Nelle regioni temperate, quali Europa e l'America del Nord, la pratica principalmente è stata abbandonata durante i secoli ultimi. Oggi il termine pricipalmente è associato con le foreste pluviali tropicali.</Italian>
+		<Spanish>La raya vertical y la quemadura consiste en el cortar y el quemar de bosques o de arbolados para crear los campos para la agricultura o el pasto para el ganado, o para una variedad de otros propósitos. Es a veces parte de agricultura de la cultivación de desplazamiento, y de reunión del ganado de la trashumancia. [PARAGRAPH:1] Históricamente, la práctica de la raya vertical y la quemadura se ha practicado extensamente a través la mayor parte de del mundo, en prados así como arbolados, y ha sido sabida por muchos nombres. En regiones templadas, tales como Europa y Norteamérica, la práctica se ha abandonado sobre todo sobre el último pocos siglos. El término se asocia hoy principalmente a las selvas tropicales tropicales.</Spanish>
+		<Polish>Tnij i Pal polegalo na karczowaniu i wypalaniu lasów pod tereny rolnicze czy pasterskie. Pola powstale w wyniku karczowania i wypalania lasów opuszczano po krótkim uzytkowaniu, gdy wyeksploatowana gleba dawala zbyt male plony. W ten sposób dokonywano nastepnych zniszczen terenów lesnych. Zmiany te mialy jednak maly zasieg i dotyczyly czesci obszaru Azji i Europy</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SLASH_AND_BURN_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Slash and Burn[COLOR_REVERT] increases [ICON_PRODUCTION] 2%, [ICON_GOLD] 3%, [ICON_CULTURE] 2%, [ICON_FOOD] 9%.</English>
+		<French>[COLOR_TECH_TEXT]La technique du brûlis[COLOR_REVERT] augmente : [ICON_PRODUCTION] 2%, [ICON_GOLD] 3%, [ICON_CULTURE] 2%, [ICON_FOOD] 9%.</French>
+		<German>[COLOR_TECH_TEXT]Brandrodung[COLOR_REVERT] Zunahmen [ICON_PRODUCTION] 2%, [ICON_GOLD] 3%, [ICON_CULTURE] 2%, [ICON_FOOD] 9%.</German>
+		<Italian>[COLOR_TECH_TEXT]Taglio ed ustione[COLOR_REVERT] aumenti [ICON_PRODUCTION] 2%, [ICON_GOLD] 3%, [ICON_CULTURE] 2%, [ICON_FOOD] 9%.</Italian>
+		<Spanish>La [COLOR_TECH_TEXT]Tala y quema[COLOR_REVERT] aumenta la [ICON_PRODUCTION] un 2%, el [ICON_GOLD] un 3%, la [ICON_CULTURE] un 2%, y los [ICON_FOOD] un 9%.</Spanish>
+		<Polish>[COLOR_TECH_TEXT]Tnij i Pal[COLOR_REVERT] zwieksza przychody o [ICON_PRODUCTION] 2%, [ICON_GOLD] 3%, [ICON_CULTURE] 2%, [ICON_FOOD] 9%.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BREAD_MAKING</Tag>
+		<English>Bread Making</English>
+		<French>Cuisson du pain</French>
+		<Spanish>
+			<Text>Horneado del pan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Pieczenie Chleba</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BREAD_MAKING_PEDIA</Tag>
+		<English>Bread is a staple food prepared by baking a dough of flour and water. It is popular around the world and is one of the world's oldest foods. The virtually infinite combinations of different flours, and differing proportions of ingredients, has resulted in the wide variety of types, shapes, sizes, and textures available around the world. It may be leavened (aerated) by a number of different processes ranging from the use of naturally occurring microbes to high-pressure artificial aeration during preparation and/or baking, or may be left unleavened. A wide variety of additives may be used, from fruits and nuts to various fats, to chemical additives designed to improve flavour, texture, colour, and/or shelf life. Bread may be served in different forms at any meal of the day, eaten as a snack, and is even used as an ingredient in other culinary preparations. As a basic food worldwide, bread has come to take on significance beyond mere nutrition, evolving into a fixture in religious rituals, secular cultural life, and language.</English>
+		<Polish>Chleb - pieczywo otrzymywane z wypieku ciasta, bedacego jednorodnym polaczeniem maki zbozowej róznego gatunku i wody, poddanego najczesciej, ale nie zawsze, fermentacji alkoholowej (z wykorzystaniemdrozdzy), wyrobionego w bochny róznego ksztaltu i wielkosci. Oprócz chleba pulchnego, wyrabianego z ciasta drozdzowego lub ciasta z dodatkiem proszku do pieczenia (kwasny weglan sodu), znane sa tez odmiany chleba opartego na niespulchnianym ciescie kruchym.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BREAD_MAKING_QUOTE</Tag>
+		<English>"The hunger for love is much more difficult to remove than the hunger for bread." - Mother Teresa</English>
+		<French>"La faim d'amour est beaucoup plus difficile à éliminer que la faim de pain." - Mère Thérésa</French>
+		<Polish>"Glód milosci trudniej zaspokoic niz glód do chleba." - Matka Teresa</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BREAD_MAKING_STRATEGY</Tag>
+		<English>.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FERMENTATION</Tag>
+		<English>Beer Making</English>
+		<Italian>Fermentazione</Italian>
+		<Spanish>
+			<Text>Fermentación</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Fermentacja</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FERMENTATION_PEDIA</Tag>
+		<English>Fermentation in food processing typically refers to the conversion of sugar to alcohol using yeast, bacteria, or a combination thereof, under anaerobic conditions. A more general definition of fermentation is the chemical conversion of carbohydrates into alcohols or acids.[PARAGRAPH:2]Human beings are known to have made fermented foods since Neolithic times. The earliest types were beer, wine, and leavened bread (made primarily by yeasts) and cheeses (made by bacteria and molds). These were soon followed by East Asian fermented foods, yogurt and other fermented milk products, pickles, sauerkraut, vinegar (soured wine), butter, and a host of traditional alcoholic beverages. More recently molds have been used in industrial fermentation to make vitamins B-2 (riboflavin) and B-12, textured protein products (from Fusarium and Rhizopus in Europe) antibiotics (such as penicillin), citric acid, and gluconic acid. Bacteria are now used to make the amino acids lysine and glutamic acid. Single-celled protein foods such as nutritional yeast and microalgae (spirulina, chlorella) are also made in modern industrial fermentations.[PARAGRAPH:2]For early societies, the transformation of basic food materials into fermented foods was a mystery and a miracle, for they had no idea what caused the usually sudden, dramatic, and welcomed transformation. Some societies attributed this to divine intervention; the Egyptians praised Osiris for the brewing of beer and the Greeks established Bacchus as the god of wine. Likewise, at many early Japanese miso and shoyu breweries, a small shrine occupied a central place and was bowed to daily.</English>
+		<Polish>Fermentacja - to proces beztlenowych przemian enzymatycznych zwiazków chemicznych (przede wszystkim zawierajacych grupe hydroksylowa) której efektem jest uzyskanie energii, najczesciej pod postacia ATP. Proces umozliwia uzyskanie energii uzytecznej metabolicznie - ATP - w warunkach beztlenowych organizmom stale lub okresowo zyjacym w warunkach beztlenowych. Fermentacje przeprowadzane sa przez liczne drobnoustroje lub wytworzone przez nie enzymy.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FERMENTATION_QUOTE</Tag>
+		<English>"Beer... Now there's a temporary solution." - Homer Simpson</English>
+		<French>"Bière... Maintenant, il y a une solution temporaire." - Homer Simpson</French>
+		<Polish>"Zapominacie, ze owoce naleza do wszystkich, a ziemia - nie nalezy do nikogo." - Jan Jakub Rousseau</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FERMENTATION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Fermentation[COLOR_REVERT] allows you to construct [COLOR_BUILDING_TEXT]Apple Orchard[COLOR_REVERT], [COLOR_BUILDING_TEXT]Apple Orchard[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Winery[COLOR_REVERT] improvements.</English>
+		<French>[COLOR_TECH_TEXT]Fermentation[COLOR_REVERT] vous permet de construire les aménagements  [COLOR_BUILDING_TEXT]Vergers de pommes[COLOR_REVERT], [COLOR_BUILDING_TEXT]Vergers[COLOR_REVERT] et  [COLOR_BUILDING_TEXT]Exploitation vinicole[COLOR_REVERT].</French>
+		<Spanish>La [COLOR_TECH_TEXT]Fermentación[COLOR_REVERT] te permite construir las mejoras del [COLOR_BUILDING_TEXT]Manzanar[COLOR_REVERT], el [COLOR_BUILDING_TEXT]Olivar[COLOR_REVERT] y el [COLOR_BUILDING_TEXT]Viñedo[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WARRIOR_CODE</Tag>
+		<English>Warrior Code</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WARRIOR_CODE_QUOTE</Tag>
+		<English>"Do not try to fight a lion if you are not one yourself."[PARAGRAPH:2]- African Proverb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WARRIOR_CODE_PEDIA</Tag>
+		<English>Chivalry comes from the Old French words for "knighthood" and "horsemanship." Chivalry was a European code of rules governing the behavior of an aristocratic class of warriors known as knights. First appearing in or around the 12th century, the rules of chivalry governed not only the knights' behavior in battle, but in their personal lives as well. The chief chivalric virtues of piety, honor, valor, courtesy, chastity, and loyalty represented a fusion of Christian and military morality.[NEWLINE][NEWLINE]Other, comparable codes existed in many other societies. Out of many examples, a similar code of behavior known as "Bushido" or "the way of the warrior" governed the behavior of the samurai warriors of feudal Japan. Other societies which formed a warrior class subject to religious and moral codes of honor included ancient Persia and India.[NEWLINE][NEWLINE]Although the strict practice of the code of chivalry had all but disappeared in Europe by the 16th century, the ideals of chivalric behavior became the basis for what is now considered to be gentlemanly conduct. Chivalry also forms part of the basis for what we now call "the laws of war," because it was in the customs of chivalry that one finds precedent for the idea that war is to be an honorable confrontation between warriors, rather than a predatory confrontation between one side's warriors and the other side's noncombatants.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COPPER_WORKING</Tag>
+		<English>Copper Working</English>
+		<French>Travail du Cuivre</French>
+		<Italian>Lavorazione del rame</Italian>
+		<Spanish>
+			<Text>Trabajo del cobre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Obróbka Miedzi</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COPPER_WORKING_PEDIA</Tag>
+		<English>[BOLD]Copper Working[\BOLD], The Metal Age starts when human beings began to use metal to make tools. For archaeologists, the transition from the stone to the metal age occurs when these metal tools appear alongside stone tools. The type of metal used initially was probably influenced by the surface availability of the metal in natural form, and appears to have been either gold or copper, both being softer, lower melting point metals. A lower melting point was probably critical since the development of metallurgy closely paralleled the ability to produce hotter fires as well as the development of containers to hold and cast the melted metal. The use of gold may even have started with the mechanical shaping of the metal, first in cold form, then heated and softened, and finally melted and cast.</English>
+		<Polish>[BOLD]Obróbka Miedzi[\BOLD], Epoka miedzi rozpoczela sie kiedy ludzie zaczeli uzywac metali do wyrobu narzedzi. Epoka miedzi to okres przejsciowy miedzy archeologicznymi epokami kamienia i brazu, w trakcie którego wsród ludów neolitycznych weszly do uzycia pierwsze wyroby z metalu, przede wszystkim z miedzi (narzedzia, bron, ozdoby), chociaz nadal w powszechnym uzyciu byly narzedzia wyrabiane z kamienia i krzemienia.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COPPER_WORKING_QUOTE</Tag>
+		<English>"The brightest crowns that are worn in heaven have been tried, and smelted, and polished, and glorified through the furnace of tribulation." - Edwin Chapin</English>
+		<French>"Les plus brillantes couronnes qui sont portés au paradis ont été essayées, fondues, polies, glorifiées à travers la fournaise de la tribulation." - Edwin Chapin</French>
+		<Polish>"Gdyby nie bylo szóstego dnia, nie byloby i czlowieka, miedz pozostalaby na zawsze tylko miedzia, a olów olowiem." - Paulo Coelho</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COPPER_WORKING_STRATEGY</Tag>
+		<English>The use of copper required the development of metallurgy - the science of extracting metal from metal ores - and casting the molten metal in castings.</English>
+		<French>L'utilisation du cuivre a nécessité le développement de la métallurgie - la science de l'extraction du métal à partir de minerais métalliques - et la coulée du métal en fusion dans les pièces moulées.</French>
+		<Spanish>El uso del cobre necesitó del desarrollo de la metalurgia: la ciencia de la extracción del metal a partir de minerales, para luego fundir el metal líquido en fundiciones.</Spanish>
+		<Polish>Odslania na mapie Miedz. Odblokowuje [COLOR_BUILDING_TEXT]Ambasade Asyryjska[COLOR_REVERT], [COLOR_BUILDING_TEXT]Kopalnie Miedzi[COLOR_REVERT] i [COLOR_BUILDING_TEXT]Kopalnie Cynku[COLOR_REVERT]. Pozwala wyszkolic wiele jednostek oszczepniczych i wlóczniczych.</Polish>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_TECH_MILITARY_TRAINING</Tag>
+		<English>Professional Soldiers</English>
+		<French>Entraînement Militaire</French>
+		<German>Militärische Ausbildung</German>
+		<Italian>Addestramento militare</Italian>
+		<Spanish>
+			<Text>Instrucción militar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Szkolenie Wojskowe</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILITARY_TRAINING_PEDIA</Tag>
+		<English>As armies became more complex, the need to train the soldier in more skills increased. The first evidence of military training in any army is found in ancient Egypt. A surviving scrap of papyrus warns the soldier against military life because of its rigors and the propensity of commanders to use beatings and other physical punishments to induce discipline. The first good description of military training in ancient armies was produced by the Greek historian Strabo, who noted that Cyrus introduced universal military training among the Persians. The conscript underwent 10 years of military training, probably as a reservist, before being enlisted in the regular army. Training was vigorous and included physical conditioning, instruction in the bow and javelin, and horsemanship. Recruits were also trained to forage for food, prepare meals in the field, and make and repair weapons. The recruit was indoctrinated in the military code of the Persian army and taught to "ride well, shoot straight, and tell the truth."</English>
+		<Polish>By armie byly bardziej kompleksowe, patrzebne byly szkolenia zolnierzy. Pierwsze dowody na szkolenie wojskowe doszukujemy sie juz w starozytnym egipcie. Odnaleziony kawalek papirusu ostrzegal zolnierzy przed wojskowym zyciem z powodu jego rygorów i sklonnosci dowódców do bicia i innych fizycznych kar dla dyscypliny. Pierwszy dobry opis wojskowego treningu w starozytnej armii zostal stworzony przez greckiego historyka Strabo, który zauwazyl, ze Cyrus wprowadzil uniwersalny wojskowy trening do Persów. Rekrut przechodzil 10 lat wojskowego treningu, prawdopodobnie jako rezerwista, zanim zostanie zwerbowany do regularnej armii. Trening byl energicznym i fizycznym treningiem - instrukcja w luku i oszczepie i jezdziectwie. Rekruci równiez byli szkoleni, by pladrowania dla jedzenia, przygotowywali posilki w polu, robili i naprawiali bronie. Rekrut byc zaznajomiony w wojskowym kodzie perskiej armii i zostal nauczony, by "jechac dobrze, strzelac prosto i mówic prawde".</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILITARY_TRAINING_QUOTE</Tag>
+		<English>"For to win one hundred victories in one hundred battles is not the acme of skill. To subdue the enemy without fighting is the acme of skill." - Sun Tzu</English>
+		<French>"Le Comble du Talent n'est pas de remporter cent Victoires en cent Batailles. C'est de vaincre son Ennemi sans combat." - Sun Tzu</French>
+		<Polish>"Odniesienie stu zwyciestw w stu bitwach nie jest szczytem umiejetnosci. Szczytem umiejetnosci jest pokonanie wroga bez walki." - Sun Tzu</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILITARY_TRAINING_STRATEGY</Tag>
+		<English>This tech allows training your military with barracks and the Wonder Sun Tzu's Art of War. It also allows wardogs (with Animal Husbandry) and Crusaders (with Fundamentalism) and the upgrade Drill I.</English>
+		<Spanish>Esta tecnología te permite entrenar a tu ejército con ayuda de los Barracones y de la maravilla del Arte de la guerra de Sun Tzu. También permite entrenar Perros de guerra (con la Ganadería) y Cruzados (con el Fundamentalismo), y el ascenso Instrucción I.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FORTIFICATION</Tag>
+		<English>Fortification</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FORTIFICATION_QUOTE</Tag>
+		<English>"Fixed fortifications are monuments to man's stupidity." General George S. Patton, Jr.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FORTIFICATION_PEDIA</Tag>
+<English>Fortifications are structures built to aid in the defense of a point or area against attackers. Various types of fortification have existed since prehistoric times: the proto-city of Jericho was protected by a wall over three meters high as early as 9000 BCE, although this may have been as much a flood control measure as a military defense. The growth of civilization and advances in the killing power of weapons made fixed defenses ever more important.
+
+The basic concept of walling a city is to deter casual raiders and force even a determined army into a protracted, costly siege. Incorporating defensible features into buildings, such as narrow windows and entryways, provides cover to defenders and make it hard for attackers to push into the building safely.
+
+Advances in engineering during medieval times, and larger labor forces made available by advances in agriculture, allowed a great increase in the scale of defensive works. Entire provinces could be protected by walls like the famous Great Wall of China, or Hadrian's Wall in Britain. Individual points could be held with great castles and fortresses, strong enough that it would take years of siege to starve them out, as a mass assault by soldiers using normal means was guaranteed to fail.
+
+This goal of demanding multi-year sieges became impractical with the invention of gunpowder-based artillery, but the art of fortification remained prominent. Architects devised new ways to build defenses that would absorb and deflect cannon fire, sheltering troops from enemy guns and channeling attackers into zones where the defenders' guns could be brought to bear.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CAMEL_DOMESTICATION_QUOTE</Tag>
+		<English>"Do not free a camel of the burden of his hump; you may be freeing him from being a camel." - Gilbert K. Chesterton</English>
+		<French>"Ne pas libérer un chameau de la charge de sa bosse; vous le libéreriez de sa condition de chameau." - Gilbert K. Chesterton</French>
+		<Polish>"Nie zdejmuj z wielblada jego jarzma, przez to moze przestac byc wielbladem." - Gilbert K. Chesterton</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CAMEL_DOMESTICATION</Tag>
+		<English>Camel Domestication</English>
+		<French>Domestication des Chameaux</French>
+		<Spanish>
+			<Text>Domesticación de camellos</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Udomowienie Wielbladów</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CAMEL_DOMESTICATION_PEDIA</Tag>
+		<English>For centuries the Nabataeans moved goods in the desert by camel caravan. The camel was the backbone of their merchant enterprise, and it is only through understanding the camel, that we can better understand the Nabataeans. While the Nabataeans are mostly remembered in the west for the ancient city of Petra, the Nabataeans themselves etched graffiti on many of the rocks and wadi walls of the Middle East. Many of these inscriptions bear reference to or pictures of camels and are the items that the common people left behind in their own memory.The Bedouin of Arabia have a strange legend about the origins of the camel. According to them, it was the Jews, not the Bedouins who had camels first in antiquity. The legend says that the Jews lived in the mountains of the Hijaz, while the Bedouins lived in the deserts. They Bedouins kept horses and rode them in their raids, but they avoided the mountains for fear of losing their way in the mountainous ravines. For some reason, the Bedouins once mounted a raid on the Jews in the mountains, because they had a guide who claimed to know every mountain and pass. But the Bedouin had no sooner entered the mountains that their guide lost his way and they began to wander aimlessly. After several days, they became so starved that they killed some of their horses and ate them. After some time, they came across a traveller who led them by night along winding canyons until they came to a plain where the Jews lived.</English>
+		<Polish>Wielblady, stworzone do zycia na pustyni, wyksztalcily wiele niezwyklych cech, które pozwalaja im przetrwac w tak trudnych warunkach. Jedna z tych cech sa dlugie, zakonczone dwoma palcami nogi; ciezar ciala nie spoczywa u nich na kopytach, tylko na bardzo szerokich miesistych poduszeczkach podscielajacych czlony palców, co zapobiega zapadaniu sie wielbladów w miekki piasek pustyni. Dla ochrony oczu wielblady maja podwójne, dlugie i krecone rzesy oraz trzecia powieke, która usuwa piasek. Specjalne miesnie moga zamykac nozdrza w czasie burzy piaskowej. Wielblady z latwoscia znosza zarówno temperatury powyzej 50 *C jak i -25 *C, przed zarem slonecznym oraz przed zimnem chroni je warstwa grubej szorstkiej siersci pokrywajacej grzbiet i dluga szyje, spód ciala natomiast jest prawie nagi, co pozwala na odparowanie nadmiaru ciepla. Najbardziej znana ich cecha jest zdolnosc przemierzania wielkich pustyn bez picia przed dlugi okres czasu. Moga one utracic do 30 % wody ze swojego organizmu bez zaburzen fizjologicznych a u czlowieka ok.12 % jest smiertelne. Jesli wielblady nie pracuja, moga przezyc bez wody nawet do 10 miesiecy, ale musza w tym czasie pobierac wode zawarta w roslinach pustynnych, którymi sie zywia. Kiedy wielblad otrzyma dostep do wody, potrafi w ciagu 10 minut wypic wode o wadze 1/3 masy ciala. Jednak najbardziej charakterystyczna cecha wielbladów sa ich garby, w których przechowuja rezerwy pokarmowe w postaci tluszczu. U innych ssaków zapasy tluszczu sa rozmieszczone równomiernie na calym ciele, w przypadku wielbladów jest to nie korzystne gdyz utrudnialoby im to chlodzenie organizmu. Dzieki zapasom tluszczu wielblady moga przezyc wiele dni bez jedzenia. Pod koniec okresu glodu garby przypominaja zwiotczale worki skórne. Inna cecha wielbladów jest ich sposób poruszania - poruszaja sie inochodem, oznacza to, iz jednoczesnie podnosza konczyne przednia i tylna z tej samej strony.Dla koczowników chów wielbladów jest podstawa ich bytu. Dostarczaja im one znacznej czesci pozywienia: mleka i miesa, a takze odziezy, okryc, materialu na namioty, nawozu na opal. Jednak wielblady wykorzystywane sa glównie do transportu, moga przenosic ladunki powyzej 200 kg, poruszajac sie z predkoscia 3,5 do 5 km/h przez okres okolo 8 godzin dziennie. Umozliwiaja transport takich produktów jak: zboza, cukru, daktyli, narzedzi, broni oraz oczywiscie ludzi. Hoduje sie je w celu pozyskania gestej welny, która wykorzystuje sie do produkcji ubran, skór, mleka i tluszczu przydatnego w produkcji mydla i kosmetyków. Mieso wielblada jest równie miekkie jak wolowina, a zawiera mniej tluszczu i zawsze cieszylo sie duza popularnoscia wsród Arabów.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CAMEL_DOMESTICATION_STRATEGY</Tag>
+		<English>.</English>
+		<Polish>Pozwala wyszkolic [COLOR_UNIT_TEXT]Lame Transportowa[COLOR_REVERT], [COLOR_UNIT_TEXT]Jezdzca na Wielbladzie[COLOR_REVERT] i [COLOR_UNIT_TEXT]Taureskiego Jezdzca[COLOR_REVERT]. Odblokowuje [COLOR_BUILDING_TEXT]Ambasady: Turkmenska i Taureska[COLOR_REVERT], [COLOR_BUILDING_TEXT]Hodowle: Wielbladów, Lam i Alpak[COLOR_REVERT], [COLOR_BUILDING_TEXT]Hodowle Wielbladów Bojowych[COLOR_REVERT] i [COLOR_BUILDING_TEXT]Narodowego Hodoce Wielbladów[COLOR_REVERT].</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PACHYDERM_DOMESTICATION</Tag>
+		<English>Elephant Domestication</English>
+		<French>Domestication des Eléphants</French>
+		<Spanish>
+			<Text>Domesticación de elefantes</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Udomowienie Sloni</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PACHYDERM_DOMESTICATION_PEDIA</Tag>
+		<English>Elephants are regarded as among the most intelligent of mammals and can be trained to work and to perform. Indian elephants are extensively used as beasts of burden, especially in teak forests, where they carry logs with their trunks. They are not considered truly domesticated, as they do not breed well in captivity; young animals are captured from the wild. Training and handling take skill, as elephants have complex emotions and vary individually in temperament. African elephants are often said to be less tractable, but they too were formerly used for work, as well as for warfare. Hannibal's army crossed the Alps using 37 African elephants, which were at that time probably found in the Atlas Mts. Elephants seen in zoos and circuses are usually of the Indian species, although the famous Jumbo, who toured the United States in the late 19th century giving rides to children, was an African elephant. In Thailand and Myanmar (Burma), albino elephants have long been held sacred. Elephants have been extensively hunted for food and for ivory, and their numbers are now greatly reduced; however, they are now afforded protection in certain areas which is helping to prevent the destruction of their numbers.</English>
+		<Polish>Slon afrykanski (Loxodonta africana) to gatunek ssaka z rodziny sloniowatych, najwiekszy ze wspólczesnie zyjacych gatunków ssaków ladowych. Wczesniej uznawany jako jeden gatunek wraz z afrykanskim sloniem lesnym (Loxodonta cyclotis). Zwierze stadne, zamieszkuje afrykanska sawanne, lasy i stepy od poludniowych kranców Sahary po Namibie, pólnocna Botswane i pólnocna czesc Afryki. W starozytnosci wykorzystywane jako zwierzeta bojowe.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PACHYDERM_DOMESTICATION_QUOTE</Tag>
+		<English>"The Indian Elephant is said sometimes to weep." - Charles Darwin</English>
+		<French>"On dit que l'éléphant indien parfois verse des larmes." - Charles Darwin</French>
+		<Polish>"Mówi sie, ze czasami Slon indyjski placze." - Karol Darwin</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PACHYDERM_DOMESTICATION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Elephant Riding[COLOR_REVERT] allows you to build the [COLOR_UNIT_TEXT]Elephant Rider[COLOR_REVERT] unit, and later on [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT] unit (with [COLOR_TECH_TEXT]Construction[COLOR_REVERT])</English>
+		<French>[COLOR_TECH_TEXT]Domestication des Eléphants[COLOR_REVERT] vous permet d'entraîner des [COLOR_UNIT_TEXT]Eléphants [COLOR_REVERT], et plus tard des [COLOR_UNIT_TEXT]Eléphants de Guerre[COLOR_REVERT] (avec [COLOR_TECH_TEXT]Construction[COLOR_REVERT])</French>
+		<Spanish>La [COLOR_TECH_TEXT]Doma de elefantes[COLOR_REVERT] permite el entrenamiento del [COLOR_UNIT_TEXT]Jinete de elefante[COLOR_REVERT], y del [COLOR_UNIT_TEXT]Elefante de guerra[COLOR_REVERT] más adelante (con la [COLOR_TECH_TEXT]Construcción[COLOR_REVERT]).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EQUINE_DOMESTICATION</Tag>
+		<English>Horse Domestication</English>
+		<French>Domestication des Chevaux</French>
+		<Italian>Addomesticazione degli equini</Italian>
+		<Spanish>
+			<Text>Domesticación de equinos</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Udomowienie Koni</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EQUINE_DOMESTICATION_PEDIA</Tag>
+		<English>Humans began to domesticate horses around 4000 BC, and their domestication is believed to have been widespread by 3000 BC. Although most horses today are domesticated, there are still endangered populations of the Przewalski's Horse, the only remaining true wild horse, as well as more common populations of feral horses which live in the wild but are descended from domesticated ancestors. There is an extensive, specialized vocabulary used to describe equine-related concepts, covering everything from anatomy to life stages, size, colors, markings, breeds, locomotion, and behaviour.</English>
+		<Polish>Kon zostal udomowiony prawdopodobnie na terenie pólnocnego Kazachstanu w okresie kultury Botai tj. okolo 3,5 tys. lat p.n.e. Przodkiem konia domowego byly prawdopodobnie kon Przewalskiego i tarpan oraz wymarle azjatyckie konie tundrowe i lesne. Kon byl wykorzystywany glównie jako zwierze pociagowe i transportowe. Szerokie zastosowanie mial równiez jako wierzchowiec czy w rolnictwie.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EQUINE_DOMESTICATION_QUOTE</Tag>
+		<English>"If an ass goes travelling he will not come home a horse." - Thomas Fuller</English>
+		<French>"Si un âne part en voyage, il ne deviendra pas un cheval à son retour." - Thomas Fuller</French>
+		<Polish>"Jesli tylek rusza w droge to nie wróci do domu na koniu." - Thomas Fuller</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EQUINE_DOMESTICATION_STRATEGY</Tag>
+		<English>.</English>
+		<Polish>Pozwala wyszkolic [COLOR_UNIT_TEXT]Jezdziec na Koniu[COLOR_REVERT], [COLOR_UNIT_TEXT]Jezdziec Bandytów[COLOR_REVERT] i [COLOR_UNIT_TEXT]Niesmiertelny[COLOR_REVERT].</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MAIL</Tag>
+		<English>Mail Armour</English>
+		<French>Poste</French>
+		<Spanish>
+			<Text>Correo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Poczta</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MAIL_PEDIA</Tag>
+		<English>  Statue of a Gallic warrior in mail.  Fresco of an ancient Macedonian soldier (thorakitai) wearing chainmail armor and bearing a thureos shield.  The earliest example of surviving mail was found in a chieftain's burial located in Ciume?ti, Romania. Its invention is commonly credited to the Celts, but there are examples of Etruscan pattern mail dating from at least the 4th century BC.  Mail may have been inspired by the much earlier scale armour.</English>
+		<Polish>Poczta - ogólnie dostepna instytucja, przewaznie panstwowa, zajmujaca sie obrotem przesylek, a takze wykonywaniem niektórych uslug na rzecz telekomunikacji oraz uslug pieniezno-bankowych. Od polowy XIX wieku uslugi w zakresie lacznosci dzielono na pocztowe i telekomunikacyjne, a od polowy XX wieku zaczeto poczte nazywac lacznoscia pocztowa. Uslugi telekomunikacyjne pod koniec XX wieku staly sie na tyle szeroka dziedzina gospodarki, ze w wielu krajach oddzielily sie od tradycyjnej poczty. W Polsce na przyklad przedsiebiorstwo panstwowe "Polska Poczta, Telegraf i Telefon", zalozone w roku 1928 podzielone zostalo w 1991 na Telekomunikacje Polska i panstwowe przedsiebiorstwo uzytecznosci publicznej Poczte Polska.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MAIL_QUOTE</Tag>
+		<English>"And all the arrows of all the hunters in the world would be in vain, 'said Gimli, gazing at the mail in wonder. 'It is a mithril-coat. Mithril! I have never seen or heard tell of one so fair." Fellowship of the Rings</English>
+		<French>"Il faut toujours écrire des courriers de colère à vos ennemis. Par contre, ne les postez jamais." - James Fallows</French>
+		<Polish>"Zawsze pisz zajadle listy do swoich wrogów. Nigdy ich nie wysylaj." - James Fallows</Polish>
+	</TEXT>  
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVIGATION</Tag>
+		<English>Celestial navigation</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVIGATION_QUOTE</Tag>
+		<English>"Set your course by the stars, not by the lights of every passing ship." -Omar Bradley.  "And all I ask is a tall ship and a star to steer her by."  -John Masefield</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVIGATION_PEDIA</Tag>
+		<English>Celestial navigation (or astronavigation, which sounds more scientific than artistic) is the practice of taking angular measurements between a celestial body (sun, moon, planet or star) and a point on the horizon to determine one's position on the globe. A very useful skill for early sailors venturing out of sight of land. The altitude of the sun above the horizon at noon when compared with the altitude of other bodies gave, for instance, the latitude of the ship. Similarly, an angular measurement to the star Polaris and a similar measurement to a star near the western or eastern horizon could give a fairly accurate longitudinal position.  Polynesian navigation is probably the best known - not to mention earliest - form of celestial navigation; their "wayfarers" memorized the positions of the heavens at all seasons and could cross thousands of miles of open ocean with little error. In Medieval Europe, celestial navigation was considered one of the seven mechanical arts, and the first mariner's astrolabe was used in the Mediterranean by Muslim merchants. (Perhaps by design, the astrolabe also allowed Muslim travelers to locate the Qibla and calculate the times for the Salat.) Meanwhile, the use of the magnetic compass spread from China across civilization.  Since navigation by "dead reckoning" could have unfortunate results (like running aground and drowning or getting lost and starving), crossing the open seas using the astrolabe and the compass together reached its peak during the "Age of Discovery." The first circumnavigation of the Earth utilized these tools, along with Magellan's innate sense of direction (every great admiral of the period had one).  Eventually, of course, the invention of radio, radar and satellite mapping made the entire process much easier and far safer. But even today, sailors rely on the heavens to keep them on course and off the rocks.</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BOATS</Tag>
+		<English>Boat Building</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BOATS_QUOTE</Tag>
+		<English>"I cannot imagine any condition which would cause a ship to founder ... Modern shipbuilding has gone beyond that." -Capt. EJ. Smith, RMS Titanic.  "There is nothing but a plank between a sailor and eternity." -Thomas Gibbons</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BOATS_PEDIA</Tag>
+		<English>Shipbuilding is, of course, the building of ships. Shipwrights follow a profession that traces its roots back to an age before recorded history. Archaeological evidence indicates that humans sailed to Borneo from Asia 120 thousand years ago aboard constructed ships; and later to New Guinea and Australia some 50 thousand years ago. In the fourth millennium BC, the Egyptians were constructing boat hulls from planks of wood, using treenails to hold them together and pitch to make them watertight. Across the ocean in India, the first shipbuilding docks were being utilized by the Harappans around 2500 BC.  While the Phoenicians, Greeks and Carthaginians were pretty good at shipbuilding, most of their knowledge was lost during the "Dark" Ages. Save for the Vikings, the Europeans weren't particularly skilled or innovative. However, in China during the Song and Ming dynasties, shipbuilding reached its peak, building junks and warships that filled the greatest ports of the time. In the Islamic world shipbuilding thrived in Basra and Alexandria, producing the dhows and feluccas that plied trade routes from East Asia to the tip of Africa.  The Age of Exploration, as the Europeans set out to conquer the world, demanded new approaches to shipbuilding. Shipyards became large industrial complexes (like the Arsenal in Venice), able to turn out ships of a standard design (like the carrack) in a matter of weeks or even days. By the Napoleonic Wars, ships were still being built to basic, standardized plans in expansive shipyards; the British in fact established Royal Dockyards across the globe to support their naval aspirations.  Advances in ship design and materials during the Industrial Revolution for shipbuilding for the first time in centuries made new methods mandatory. Massive iron- and steel-hulled ships such as the Great Eastern and the Titanic and modern dreadnaughts meant that most ships now are constructed in expansive drydocks.</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CUNEIFORM</Tag>
+		<English>Cuneiform</English>
+	</TEXT>  
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CUNEIFORM_PEDIA</Tag>
+		<English>Cuneiform or Sumero-Akkadian cuneiform, one of the earliest systems of writing, was invented by the Sumerians. It is distinguished by its wedge-shaped marks on clay tablets, made by means of a blunt reed for a stylus. The name cuneiform itself simply means "wedge shaped"</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARROWS</Tag>
+		<English>Arrowheads</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARROWS_QUOTE</Tag>
+		<English>"For an instant the wizard looked out.  Arrows whined and whistled down the corridor as he sprang back." Fellowship of the Rings</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARROWS_PEDIA</Tag>
+		<English>  Arrowheads made of bone and antler found in Nydam Mose (3rd - 5th century).  Ancient Greek bronze leaf-shaped, trefoil and triangular arrowheads.  Some arrowheads made of quartz  In the Stone Age, people used sharpened bone, flintknapped stones, flakes, and chips of rock as weapons and tools. Such items remained in use throughout human civilization, with new materials used as time passed. As archaeological artifacts such objects are classed as projectile points, without specifying whether they were projected by a bow or by some other means such as throwing since the specific means of projection (the bow, the arrow shaft, the spear shaft, etc.) is found too seldom in direct association with any given point and the word "arrow" would imply a certainty about these points which simply does not exist.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AMPHORA_QUOTE</Tag>
+		<English>"I cook with wine, sometimes I even add it to the food." W.C. Fields</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AMPHORA_PEDIA</Tag>
+		<English>An amphora is a type of container of a characteristic shape and size, descending from at least as early as the Neolithic Period. Amphorae were used in vast numbers for the transport and storage of various products, both liquid and dry, but mostly for wine.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARISTOCRACY_QUOTE</Tag>
+		<English>"Democracy means government by the uneducated, while aristocracy means government by the badly educated." Gilbert K. Cheserton</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARISTOCRACY_PEDIA</Tag>
+		<English>Aristocracy is a form of government that places strength in the hands of a small, privileged ruling class. The term derives from the Greek aristokratia, meaning "rule of the best-born".</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARTOGRAPHY_QUOTE</Tag>
+		<English>"Maps encourage boldness. They're like cryptic love letters. They make anything seem possible." Mark Jenkins</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARTOGRAPHY_PEDIA</Tag>
+		<English>Cartography is the study and practice of making maps. Combining science, aesthetics, and technique, cartography builds on the premise that reality can be modeled in ways that communicate spatial information effectively. What is the earliest known map is a matter of some debate, both because the term "map" is not well-defined and because some artifacts that might be maps might actually be something else. A wall painting that might depict the ancient Anatolian city of Çatalhöyük has been dated to the late 7th millennium BC.</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_TECH_CROSSBOW</Tag>
+		<English>Crossbow</English>
+		<French>Poste</French>
+		<Spanish>
+			<Text>Correo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Polish>Poczta</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CROSSBOW_PEDIA</Tag>
+		<English>  References to the crossbow are basically nonexistent in Europe from the 5th century until the 10th century. There is however a depiction of a crossbow as a hunting weapon on four Pictish stones from early medieval Scotland (6th to 9th centuries): St. Vigeans no. 1, Glenferness, Shandwick, and Meigle.</English>
+		<Polish>Poczta - ogólnie dostepna instytucja, przewaznie panstwowa, zajmujaca sie obrotem przesylek, a takze wykonywaniem niektórych uslug na rzecz telekomunikacji oraz uslug pieniezno-bankowych. Od polowy XIX wieku uslugi w zakresie lacznosci dzielono na pocztowe i telekomunikacyjne, a od polowy XX wieku zaczeto poczte nazywac lacznoscia pocztowa. Uslugi telekomunikacyjne pod koniec XX wieku staly sie na tyle szeroka dziedzina gospodarki, ze w wielu krajach oddzielily sie od tradycyjnej poczty. W Polsce na przyklad przedsiebiorstwo panstwowe "Polska Poczta, Telegraf i Telefon", zalozone w roku 1928 podzielone zostalo w 1991 na Telekomunikacje Polska i panstwowe przedsiebiorstwo uzytecznosci publicznej Poczte Polska.</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CROSSBOW_QUOTE</Tag>
+		<English>For an instant the wizard looked out.  Arrows whined and whistled down the corridor as he sprang back.</English>
+		<French>"Il faut toujours écrire des courriers de colère à vos ennemis. Par contre, ne les postez jamais." - James Fallows</French>
+		<Polish>"Zawsze pisz zajadle listy do swoich wrogów. Nigdy ich nie wysylaj." - James Fallows</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CROSSBOW_QUOTE</Tag>
+		<English>"When Mister Safety Catch Is Not On, Mister Crossbow Is Not Your Friend."  Terry Pratchett</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CROSSBOW_PEDIA</Tag>
+		<English>The late 4th century author Vegetius provides the only contemporary account of ancient Roman crossbows. In his De Re Militaris, he describes arcubalistarii (crossbowmen) working together with archers and artillerymen. However it is disputed if arcuballistas were even crossbows or just more torsion powered weapons.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CUNEIFORM_QUOTE</Tag>
+		<English>"Reading in the third millennium B.C. may therefore have been a matter of hearing the cuneiform, that is, hallucinating the speech from looking at its picture symbols, rather than visual reading of syllables in our sense." Julian Jayness  </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LOGGING_QUOTE</Tag>
+		<English>"The burly woodsman who attaks the diminutive pine of the east must experience remorse, as would a strong man who made war upon a boy, but [the Redwood] is something to compel his respect; he must feel that in grappling with these monsters he is doing the work of a Hercules." ? Jared Farmer, Trees in Paradise: A California History</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LOGGING_PEDIA</Tag>
+		<English>Tree felling dates back hundreds of years, and was first used to clear areas for farm land, collect firewood and build houses. In ancient times, trees were burned to the ground, which meant it was likely trees could fall in any direction, making it dangerous.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVAL_WARFARE_QUOTE</Tag>
+		<English>"It follows then as certain as that night succeeds the day, that without a decisive naval force we can do nothing definitive, and with it, everything honorable and glorious." President George Washington</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVAL_WARFARE_PEDIA</Tag>
+		<English>Naval warfare is combat in and on the sea, the ocean, or any other battlespace involving a major body of water such as a large lake or wide river. Mankind has fought battles on the sea for more than 3,000 years. Even in the interior of large landmasses, transportation before the advent of extensive railroads was largely dependent upon rivers, canals, and other navigable waterways. The first dateable recorded sea battle occurred about 1210 BC: Suppiluliuma II, king of the Hittites, defeated a fleet from Cyprus, and burned their ships at sea.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RECORD_KEEPING</Tag>
+		<English>Record Keeping</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RECORD_KEEPING_QUOTE</Tag>
+		<English>"Historical gap is created due to missing written records." ? Lailah Gifty Akita</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RECORD_KEEPING_PEDIA</Tag>
+		<English>One of the main parts of accounting is recordkeeping or bookkeeping. Recordkeeping is the process of recording transactions and events in an account book</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SLASH_AND_BURN_QUOTE</Tag>
+		<English>"The fields are black and ploughed, and they lie like a great fan before us, with their furrows gathered in some hand beyond the sky, spreading forth from that hand, opening wide apart as they come toward us, like black pleats that sparkle with thin, green spangles." ? Ayn Rand, Anthem</English>
+	</TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_TECH_SPOKES</Tag>
+		<English>Spokes</English>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPOKES_PEDIA</Tag>
+		<English>The spoked wheel was invented to allow the construction of lighter and swifter vehicles. The earliest known examples are in the context of the Sintashta culture, dating to ca. 2000 BC. Soon after this, horse cultures of the Caucasus region used horse-drawn spoked-wheel war chariots for the greater part of three centuries.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STORYTELLING_QUOTE</Tag>
+		<English>"The purpose of a storyteller is not to tell you how to think, but to give you questions to think upon." ? Brandon Sanderson, The Way of Kings</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBAN_CULTURE</Tag>
+		<English>Urban Settlements</English>
+		<French>Culture Urbaine</French>
+		<Polish>Kultura Miejska</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBAN_CULTURE_QUOTE</Tag>
+		<English>"Urbanization is not about simply increasing the number of urban residents or expanding the area of cities. More importantly, it's about a complete change from rural to urban style in terms of industry structure, employment, living environment and social security." -Li Keqiang</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBAN_CULTURE_STRATEGY</Tag>
+		<English>Enables the building of settlers.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBAN_CULTURE_PEDIA</Tag>
+		<English>Near the modern city of Jericho lie the remains of one of the oldest towns in the world.  Archaeologists have found some other very old sites in the Middle Eas, but these are only villages.</English>
+		<Polish>Kultura miejska (ang. urban culture) - w krajach Zachodu termin uzywany na okreslenie kultury ludnosci miast, przy czym czesto (szczególnie w Stanach Zjednoczonych) jest to eufemizm w odniesieniu do kultury afroamerykanów lub innych emigrantów, którzy zdominowali niektóre dzielnice miejskie dawniej zasiedlone przez ludnosc biala (zob. tez. wielka migracja Afroamerykanów w Stanach Zjednoczonych). W ujeciu globalnym miasta sa czesto osrodkami wladzy gdzie zlokalizowane sa siedziby rzadów czy glówne biura korporacji. Jednak w niektórych krajach elity tworza enklawy poza centrami miejskimi (zob. tez ucieczka bialych, ang. white flight) podczas gdy centralne, zaniedbane dzielnice miast (ang. inner city) zamieszkiwane sa przez uboga ludnosc (czesto zdominowana przez imigrantów).</Polish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPOKES_QUOTE</Tag>
+		<English>"We join spokes together in a wheel, but it is the center hole that makes the wagon move." Laozi </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STORYTELLING_PEDIA</Tag>
+		<English>The oldest surviving tale in the storytelling history is the epic, Gilgamesh, relating to the deeds of a famous Sumerian king. The earliest known record in the origin of storytelling can be found in the Egypt, when the sons of Cheops entertained their father with stories.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MANORIALISM</Tag>
+		<English>Manorialism</English>
+		<French>
+			<Text>Manorialisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Grundherrschaft</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Manorialismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Señorío</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Portuguese>
+			<Text>Senhorialismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Portuguese>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EU_MANORIALISM_QUOTE</Tag>
+		<English>"They have shelter and ease in their fine manors. While we have hardship and toil and the rain in the fields. And from us must come from our labour, the things that keep them in luxury." - Jean Froissart</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EU_MANORIALISM_PEDIA</Tag>
+		<English>[TAB]As the organizing principle of rural economy and society in early medieval Europe, "manorialism" was characterized by the vesting of legal and economic power in a lord (French, "seigneur") supported economically from his direct landholding ( or "manor"), and from the obligatory contributions of a legally-bound peasant population under his control. The lord held this position as part of his obligations of loyalty and military service to a higher lord or king and exercised local justice through his manor court governed by public law and local custom. Although usually secular, seigneurs could also be bishops or abbots who controlled manors and lands by religious authority but enjoyed similar local rights and obligations.</English>
+		<French>.</French>
+		<German>[TAB]Bei der herrschaftlichen Organisationsform der Grundherrschaft (in Österreich-Ungarn auch als Patrimonialherrschaft bezeichnet) handelte es sich um die vom Mittelalter bis zur Frühneuzeit vorherrschende rechtliche, wirtschaftliche und soziale Besitzstruktur des ländlichen Raums.[PARAGRAPH:2]Der Grundherr (in der Regel Adlige, die Kirche, Klöster oder der König) war dabei nicht nur Grundeigentümer oder Inhaber eines Lehens mit Verfügungsgewalt über das Land, sondern er übte zumeist auch weitreichende weitere Verwaltungs- und Gerichtsfunktionen aus. Dem Grundherrn oblag sowohl die rechtliche Verwaltung und Nutzungsvergabe von land- oder forstwirtschaftlich genutzten Flächen als auch die Ausübung öffentlich-rechtlicher Befugnisse, wie der Polizeigewalt und der niederen Gerichtsbarkeit (Hofgericht), mit dem Recht, geistlich oder weltlich über seine Untertanen zu richten. Gleichzeitig hatte der Grundherr aber seinen Grundholden (Untertanen) "Schutz und Schirm" zu gewähren. Die Grundherrschaft umfasste somit nicht nur eine eng mit dem Feudalismus zusammenhängende agrarische Wirtschaftsform, sondern eine Herrschafts- und Besitzstruktur, die alle Bereiche des mittelalterlichen Lebens umfasste und Formen wie Leibherrschaft, Schutzherrschaft, Gerichtsherrschaft, Zehntherrschaft, Vogteigewalt und Dorfobrigkeit betreffen konnte. Kriegschaft setzte aber nicht zwingend die Leibherrschaft voraus.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ADVANCED_AGRICULTURE</Tag>
+		<English>Advanced Agriculture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ADVANCED_AGRICULTURE_QUOTE</Tag>
+		<English>"Poverty diminishes confidence. So if someone offers you a grain store, even if you really need a plough, you take what is offered to you." Ann Cotton</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ADVANCED_AGRICULTURE_PEDIA</Tag>
+		<English>Ploughs have been used since ancient times, however, during the early medieval period ploughs were rapidly improved. Ploughs were improved to be pulled by a team of oxen. This improvement allowed for faster clearing of the forest lands for agriculture. The medieval plough was made of wooden beams that could be hooked up to either oxen or humans and could be pulled though any type of terrain which helped to increase the population of Northern Europe that had rockier soil with dense tree roots. With the increase of the amount of food being produced, there was an ability for more people living in areas where the population was lower.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_KEEL</Tag>
+		<English>The Keel</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_KEEL_QUOTE</Tag>
+		<English>"It is a ship with a great deal of sail but a very shallow keel." Robert Bork</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_KEEL_PEDIA</Tag>
+		<English>A structural beam that runs from a ship's bow to its stern and sits lower than the rest of the hull, the keel was first invented by those intrepid Norse sailing men known as Vikings. Because their sailing ships were square-rigged, they were prone to making a lot of leeway when tacking close to the wind. The addition of a keel prevented this lateral movement, increased speed and made Viking ships more stable.</English>
+	</TEXT>
+</Civ4GameText>

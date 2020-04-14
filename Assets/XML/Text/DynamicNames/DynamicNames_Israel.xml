@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR00</Tag>
+		<English>Hebrew Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR01</Tag>
+		<English>Kingdom of Israel</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR02</Tag>
+		<English>Kingdom of Israel</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR03</Tag>
+		<English>Kingdom of Israel</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR04</Tag>
+		<English>Kingdom of Judea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR05</Tag>
+		<English>Kingdom of Judea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR06</Tag>
+		<English>Kingdom of Judea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR07</Tag>
+		<English>Nabataea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR08</Tag>
+		<English>Satrapy of Syria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR09</Tag>
+		<English>Province of Iudaea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ISR10</Tag>
+		<English>Israeli Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

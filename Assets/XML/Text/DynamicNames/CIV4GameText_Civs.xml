@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_DESC</Tag>
+		<English>The Egyptians</English>
+		<French>
+			<Text>Les Égyptiens</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>&#196;gypter:Die &#196;gypter:den &#196;gyptern</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Gli Egizi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Egipcios</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT><TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_SHORT_DESC</Tag>
+		<English>Egypt</English>
+		<French>
+			<Text>Égypte</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+	</TEXT><TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_ADJECTIVE</Tag>
+		<English>Egyptian</English>
+		<French>
+			<Text>égyptien:égyptienne:égyptiens:égyptiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>&#196;gyptisch:&#228;gyptischen:&#228;gyptische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>egiziano:egiziana:egiziani:egiziane</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>egipcio:egipcia:egipcios:egipcias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_DESC</Tag>
+		<English>The Carthagians</English>
+		<French>
+			<Text>Les Carthaginois</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinische Reich:Byzantinischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_SHORT_DESC</Tag>
+		<English>Carthage</English>
+		<French>
+			<Text>Carthage</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzanz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bisanzio</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bizancio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Tag>
+		<English>
+			<Text>Carthaginian:Carthaginians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>carthaginois:carthaginoise:carthaginois:carthaginoises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Karthagisch:karthagischen:karthagische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>cartaginese:cartaginese:cartaginesi:cartaginesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>cartagin&#233;s:cartaginesa:cartagineses:cartaginesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_DESC</Tag>
+		<English>The Romans</English>
+		<French>
+			<Text>Les Romains</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinische Reich:Byzantinischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_SHORT_DESC</Tag>
+		<English>Roman</English>
+		<French>
+			<Text>Rome</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzanz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bisanzio</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bizancio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_ADJECTIVE</Tag>
+		<English>Roman</English>
+		<French>
+			<Text>romain:romaine:romains:romaines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>R&#246;misch:r&#246;mischen:r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>romano:romana:romani:romane</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>romano:romana:romanos:romanas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIA_DESC</Tag>
+		<English>The Persians</English>
+		<French>
+			<Text>Les Perses</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinische Reich:Byzantinischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIA_SHORT_DESC</Tag>
+		<English>Persia</English>
+		<French>
+			<Text>Perse</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzanz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bisanzio</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bizancio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIA_ADJECTIVE</Tag>
+		<English>Persian</English>
+		<French>
+			<Text>perse:perse:perses:perses</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Persisch:persischen:persische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>persiano:persiana:persiani:persiane</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>persa:persa:persas:persas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_DESC</Tag>
+		<English>The Celts</English>
+		<French>
+			<Text>Les Celtes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinische Reich:Byzantinischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_SHORT_DESC</Tag>
+		<English>Gaul</English>
+		<French>
+			<Text>Gaulle</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzanz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bisanzio</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bizancio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_ADJECTIVE</Tag>
+		<English>
+			<Text>Celtic:Celts</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>celte:celtique:celtes:celtiques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Keltisch:keltischen:keltische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>celtico:celtica:celtici:celtiche</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>celta:celta:celtas:celtas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANIA_DESC</Tag>
+		<English>The Goths</English>
+		<French>
+			<Text>Les Germains</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinische Reich:Byzantinischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANIA_SHORT_DESC</Tag>
+		<English>Goth</English>
+		<French>
+			<Text>Germanie</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzanz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bisanzio</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bizancio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANIA_ADJECTIVE</Tag>
+		<English>Gothic</English>
+		<French>
+			<Text>germain:germaine:germains:germaines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Deutsch:deutschen:deutsche</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>tedesco:tedesca:tedeschi:tedesche</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>alem&#225;n:alemana:alemanes:alemanas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_DESC</Tag>
+		<English>The Byzantine</English>
+		<French>
+			<Text>Les Byzantins</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinische Reich:Byzantinischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Bizantino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_SHORT_DESC</Tag>
+		<English>Byzantium</English>
+		<French>
+			<Text>Byzance</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzanz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bisanzio</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bizancio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_ADJECTIVE</Tag>
+		<English>
+			<Text>Byzantine:Byzantines</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>byzantin:byzantine;byzantins:bizantines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisch:byzantinischen:byzantinische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Bizantini:dei Bizantini</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>bizantino:bizantina:bizantinos:bizantinas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLON_DESC</Tag>
+		<English>The Babylonians</English>
+		<French>
+			<Text>Les Babyloniens</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Babylonisches Reich:Babylonische Reich:Babylonischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero babilonese</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Babilonio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLON_SHORT_DESC</Tag>
+		<English>Babylon</English>
+		<French>
+			<Text>Babylone</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Babylon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Babilonia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Babilonia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLON_ADJECTIVE</Tag>
+		<English>
+			<Text>Babylonian:Babylonians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>babylonien:babylonienne:babyloniens:babyloniennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Babylonisch:babylonischen:babylonische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>babilonese:babilonesi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>babilonio:babilonia:babilonios:babilonias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_DESC</Tag>
+		<English>The Phoenicians</English>
+		<French>
+			<Text>Les Phéniciens</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_SHORT_DESC</Tag>
+		<English>Phoenicia</English>
+		<French>
+			<Text>Phénicie</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Tag>
+		<English>
+			<Text>Phoenician:Phoenicians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>phénicien:phénicienne:phéniciens:phéniciennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_DESC</Tag>
+		<English>The Israelis</English>
+		<French>
+			<Text>Les Israélites</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_SHORT_DESC</Tag>
+		<English>Israel</English>
+		<French>
+			<Text>Israël</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_ADJECTIVE</Tag>
+		<English>
+			<Text>Israeli:Israelis</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>israélien:israélienne:israéliens:israéliennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITE_DESC</Tag>
+		<English>The Hittites</English>
+		<French>
+			<Text>Les Hittites</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITE_SHORT_DESC</Tag>
+		<English>Hittites</English>
+		<French>
+			<Text>Hittites</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITE_ADJECTIVE</Tag>
+		<English>
+			<Text>Hittite:Hittites</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>hittite:hittite:hittites:hittites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATHENS_DESC</Tag>
+		<English>The Athenians</English>
+		<French>
+			<Text>Les Athéniens</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATHENS_SHORT_DESC</Tag>
+		<English>Athens</English>
+		<French>
+			<Text>Athènes</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATHENS_ADJECTIVE</Tag>
+		<English>
+			<Text>Athenian:Athenians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>athénien:athénienne:athéniens:athéniennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETRURIA_DESC</Tag>
+		<English>The Etruscans</English>
+		<French>
+			<Text>Les Étrusques</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETRURIA_SHORT_DESC</Tag>
+		<English>Etruscan</English>
+		<French>
+			<Text>Étrurie</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETRURIA_ADJECTIVE</Tag>
+		<English>
+			<Text>Etruscan:Etruscans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>étrusque:étrusque:étrusques:étrusques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SPARTA_DESC</Tag>
+		<English>The Spartans</English>
+		<French>
+			<Text>Les Spartiates</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SPARTA_SHORT_DESC</Tag>
+		<English>Spartan</English>
+		<French>
+			<Text>Sparte</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SPARTA_ADJECTIVE</Tag>
+		<English>
+			<Text>Spartan:Spartans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>spartiate:spartiate:spartiates:spartiates</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MACEDONIA_DESC</Tag>
+		<English>The Macedonians</English>
+		<French>
+			<Text>Les Macédoniens</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MACEDONIA_SHORT_DESC</Tag>
+		<English>Macedonian</English>
+		<French>
+			<Text>Macédoine</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MACEDONIA_ADJECTIVE</Tag>
+		<English>
+			<Text>Macedonian:Macedonians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>macédonien:macédonienne:macédoniens:macédoniennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HUNS_DESC</Tag>
+		<English>The Huns</English>
+		<French>
+			<Text>Les Huns</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heiliges R&#246;misches Reich:Heilige R&#246;mische Reich:Heiligen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sacro Romano Impero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sacro Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HUNS_SHORT_DESC</Tag>
+		<English>Huns</English>
+		<French>
+			<Text>Huns</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HUNS_ADJECTIVE</Tag>
+		<English>
+			<Text>Hun:Huns</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>huns:huns:huns:huns</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_DESC</Tag>
+		<English>Assyrian Empire</English>
+		<French>Assyrian Empire</French>
+		<German>Assyrian Empire</German>
+		<Italian>Assyrian Empire</Italian>
+		<Spanish>Assyrian Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_SHORT_DESC</Tag>
+		<English>Assyria</English>
+		<French>Assyria</French>
+		<German>Assyria</German>
+		<Italian>Assyria</Italian>
+		<Spanish>Assyria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_ADJECTIVE</Tag>
+		<English>Assyrian</English>
+		<French>Assyrian</French>
+		<German>Assyrian</German>
+		<Italian>Assyrian</Italian>
+		<Spanish>Assyrian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ASSYRIA_PEDIA</Tag>
+		<English>[TAB]Assyria was an ancient empire of W Asia. It developed around the city of Ashur, or Assur, on the upper Tigris River and south of the later capital, Nineveh.[PARAGRAPH:2]The nucleus of a Semitic state was forming by the beginning of the 3d millennium BC, but it was overshadowed by the greatness of Sumer and Akkad. Ashur was Assyria's chief god, but the gods of the Babylonians and Hittites were also honored. In the 17th cent. BC, Assyria expanded briefly, but it soon relapsed into weakness. The 13th cent. BC saw Assyria threatening the surrounding states, and under Tiglathpileser I Assyrian soldiers entered the kingdom centered about Urartu, took Babylonia, and crossed N Syria to reach the Mediterranean. This empire was, however, only ephemeral.[PARAGRAPH:2]Assyrian greatness was to wait until the 9th cent., when Ashurnasirpal II came into power. He was not only a vigorous and barbarously cruel conqueror who pushed his conquests N to Urartu and W to Lebanon and the Mediterranean, but he was also a shrewd administrator. Instead of merely making conquered kings pay tribute, he installed Assyrian governors so that he could have more control over the empire.[PARAGRAPH:2]Shalmaneser III attempted to continue this policy, but, although he exacted heavy tribute from Jehu of Israel and claimed many victories, he failed to establish hegemony over the Hebrews and their Aramaic-speaking allies. The basalt obelisk, called the Black Obelisk (British Mus.), describes the expeditions and conquests of Shalmaneser III. Raids from Urartu were resumed and grew more destructive after the death of Shalmaneser. Calah, the capital of Assyria during the reigns of Ashurnasirpal II and Shalmaneser III, has been excavated.[PARAGRAPH:2]In the 8th cent. BC conquest was pursued by Tiglathpileser III. He subdued Babylonia, defeated the king of Urartu, attacked the Medes, and established control over Syria. As an ally of Ahaz of Judah (who became his vassal), he defeated his Aramaic-speaking enemies centering at Damascus. His successor, Shalmaneser V, besieged Samaria, the capital of Israel, in 722-721 BC, but it was Sargon, his son, who completed the task of capturing Israel. Sargon's victory at Raphia (720 BC) and his invasions of Armenia, Arabia, and other lands made Assyria indisputably one of the greatest of ancient empires.[PARAGRAPH:2]Sargon's son Sennacherib devoted himself to retaining the gains his father had made. He is particularly remembered for his warfare against his rebellious vassal, Hezekiah of Judah. Sennacherib's successor, Esar-Haddon, defeated the Chaldaeans, who threatened Assyria and carried his conquests (673-670) to Egypt, where he deposed Taharka and established Necho in power. Under Assurbanipal, Assyria reached its zenith and approached its fall. When Assurbanipal was fighting against the Chaldaeans and Elamites, an Egyptian revolt under Psamtik I was successful.[PARAGRAPH:2]Assurbanipal's reign saw the Assyrian capital of Nineveh reach the height of its splendor. The library of cuneiform tablets he collected ultimately proved to be one of the most important historical sources of antiquity. The magnificent Assyrian bas-reliefs reached their peak. The royal court was luxurious. Assyrian culture owed much to earlier Babylonian civilization, and in religion Assyria seems to have taken much from its southern neighbor and subject.[PARAGRAPH:2]Despite the magnificence of Assurbanipal's court, Assyria began a rapid decline during his reign. The military aspect of the empire was its most prominent feature, for Assyria was prepared for conflict from beginning to end. Because of the ever-present need for men to fight the incessant battles, agriculture suffered, and ultimately the Assyrians had to import food. The division of society into a fairly rigid three-class system was not unlike that of other early western Asian peoples (e.g., Babylonia), but it did not supply a solid base for the overgrown Assyrian state.[PARAGRAPH:2]The lavish expenditures of Assurbanipal on warfare and building drained the resources of the empire and contributed to its weakness. The king of the Medes, Cyaxares, and the Babylonian ruler Nabopolassar, joined forces and took Nineveh in 612 BC Under the son of Nabopolassar, Nebuchadnezzar, Babylonia was renewed in power, and the great-grandson of Cyaxares, Cyrus the Great, was to establish the Persian Empire, which owed much to the earlier Assyrian state.</English>
+		<French>[TAB]Assyria was an ancient empire of W Asia. It developed around the city of Ashur, or Assur, on the upper Tigris River and south of the later capital, Nineveh.[PARAGRAPH:2]The nucleus of a Semitic state was forming by the beginning of the 3d millennium BC, but it was overshadowed by the greatness of Sumer and Akkad. Ashur was Assyria's chief god, but the gods of the Babylonians and Hittites were also honored. In the 17th cent. BC, Assyria expanded briefly, but it soon relapsed into weakness. The 13th cent. BC saw Assyria threatening the surrounding states, and under Tiglathpileser I Assyrian soldiers entered the kingdom centered about Urartu, took Babylonia, and crossed N Syria to reach the Mediterranean. This empire was, however, only ephemeral.[PARAGRAPH:2]Assyrian greatness was to wait until the 9th cent., when Ashurnasirpal II came into power. He was not only a vigorous and barbarously cruel conqueror who pushed his conquests N to Urartu and W to Lebanon and the Mediterranean, but he was also a shrewd administrator. Instead of merely making conquered kings pay tribute, he installed Assyrian governors so that he could have more control over the empire.[PARAGRAPH:2]Shalmaneser III attempted to continue this policy, but, although he exacted heavy tribute from Jehu of Israel and claimed many victories, he failed to establish hegemony over the Hebrews and their Aramaic-speaking allies. The basalt obelisk, called the Black Obelisk (British Mus.), describes the expeditions and conquests of Shalmaneser III. Raids from Urartu were resumed and grew more destructive after the death of Shalmaneser. Calah, the capital of Assyria during the reigns of Ashurnasirpal II and Shalmaneser III, has been excavated.[PARAGRAPH:2]In the 8th cent. BC conquest was pursued by Tiglathpileser III. He subdued Babylonia, defeated the king of Urartu, attacked the Medes, and established control over Syria. As an ally of Ahaz of Judah (who became his vassal), he defeated his Aramaic-speaking enemies centering at Damascus. His successor, Shalmaneser V, besieged Samaria, the capital of Israel, in 722-721 BC, but it was Sargon, his son, who completed the task of capturing Israel. Sargon's victory at Raphia (720 BC) and his invasions of Armenia, Arabia, and other lands made Assyria indisputably one of the greatest of ancient empires.[PARAGRAPH:2]Sargon's son Sennacherib devoted himself to retaining the gains his father had made. He is particularly remembered for his warfare against his rebellious vassal, Hezekiah of Judah. Sennacherib's successor, Esar-Haddon, defeated the Chaldaeans, who threatened Assyria and carried his conquests (673-670) to Egypt, where he deposed Taharka and established Necho in power. Under Assurbanipal, Assyria reached its zenith and approached its fall. When Assurbanipal was fighting against the Chaldaeans and Elamites, an Egyptian revolt under Psamtik I was successful.[PARAGRAPH:2]Assurbanipal's reign saw the Assyrian capital of Nineveh reach the height of its splendor. The library of cuneiform tablets he collected ultimately proved to be one of the most important historical sources of antiquity. The magnificent Assyrian bas-reliefs reached their peak. The royal court was luxurious. Assyrian culture owed much to earlier Babylonian civilization, and in religion Assyria seems to have taken much from its southern neighbor and subject.[PARAGRAPH:2]Despite the magnificence of Assurbanipal's court, Assyria began a rapid decline during his reign. The military aspect of the empire was its most prominent feature, for Assyria was prepared for conflict from beginning to end. Because of the ever-present need for men to fight the incessant battles, agriculture suffered, and ultimately the Assyrians had to import food. The division of society into a fairly rigid three-class system was not unlike that of other early western Asian peoples (e.g., Babylonia), but it did not supply a solid base for the overgrown Assyrian state.[PARAGRAPH:2]The lavish expenditures of Assurbanipal on warfare and building drained the resources of the empire and contributed to its weakness. The king of the Medes, Cyaxares, and the Babylonian ruler Nabopolassar, joined forces and took Nineveh in 612 BC Under the son of Nabopolassar, Nebuchadnezzar, Babylonia was renewed in power, and the great-grandson of Cyaxares, Cyrus the Great, was to establish the Persian Empire, which owed much to the earlier Assyrian state.</French>
+		<German>[TAB]Assyria was an ancient empire of W Asia. It developed around the city of Ashur, or Assur, on the upper Tigris River and south of the later capital, Nineveh.[PARAGRAPH:2]The nucleus of a Semitic state was forming by the beginning of the 3d millennium BC, but it was overshadowed by the greatness of Sumer and Akkad. Ashur was Assyria's chief god, but the gods of the Babylonians and Hittites were also honored. In the 17th cent. BC, Assyria expanded briefly, but it soon relapsed into weakness. The 13th cent. BC saw Assyria threatening the surrounding states, and under Tiglathpileser I Assyrian soldiers entered the kingdom centered about Urartu, took Babylonia, and crossed N Syria to reach the Mediterranean. This empire was, however, only ephemeral.[PARAGRAPH:2]Assyrian greatness was to wait until the 9th cent., when Ashurnasirpal II came into power. He was not only a vigorous and barbarously cruel conqueror who pushed his conquests N to Urartu and W to Lebanon and the Mediterranean, but he was also a shrewd administrator. Instead of merely making conquered kings pay tribute, he installed Assyrian governors so that he could have more control over the empire.[PARAGRAPH:2]Shalmaneser III attempted to continue this policy, but, although he exacted heavy tribute from Jehu of Israel and claimed many victories, he failed to establish hegemony over the Hebrews and their Aramaic-speaking allies. The basalt obelisk, called the Black Obelisk (British Mus.), describes the expeditions and conquests of Shalmaneser III. Raids from Urartu were resumed and grew more destructive after the death of Shalmaneser. Calah, the capital of Assyria during the reigns of Ashurnasirpal II and Shalmaneser III, has been excavated.[PARAGRAPH:2]In the 8th cent. BC conquest was pursued by Tiglathpileser III. He subdued Babylonia, defeated the king of Urartu, attacked the Medes, and established control over Syria. As an ally of Ahaz of Judah (who became his vassal), he defeated his Aramaic-speaking enemies centering at Damascus. His successor, Shalmaneser V, besieged Samaria, the capital of Israel, in 722-721 BC, but it was Sargon, his son, who completed the task of capturing Israel. Sargon's victory at Raphia (720 BC) and his invasions of Armenia, Arabia, and other lands made Assyria indisputably one of the greatest of ancient empires.[PARAGRAPH:2]Sargon's son Sennacherib devoted himself to retaining the gains his father had made. He is particularly remembered for his warfare against his rebellious vassal, Hezekiah of Judah. Sennacherib's successor, Esar-Haddon, defeated the Chaldaeans, who threatened Assyria and carried his conquests (673-670) to Egypt, where he deposed Taharka and established Necho in power. Under Assurbanipal, Assyria reached its zenith and approached its fall. When Assurbanipal was fighting against the Chaldaeans and Elamites, an Egyptian revolt under Psamtik I was successful.[PARAGRAPH:2]Assurbanipal's reign saw the Assyrian capital of Nineveh reach the height of its splendor. The library of cuneiform tablets he collected ultimately proved to be one of the most important historical sources of antiquity. The magnificent Assyrian bas-reliefs reached their peak. The royal court was luxurious. Assyrian culture owed much to earlier Babylonian civilization, and in religion Assyria seems to have taken much from its southern neighbor and subject.[PARAGRAPH:2]Despite the magnificence of Assurbanipal's court, Assyria began a rapid decline during his reign. The military aspect of the empire was its most prominent feature, for Assyria was prepared for conflict from beginning to end. Because of the ever-present need for men to fight the incessant battles, agriculture suffered, and ultimately the Assyrians had to import food. The division of society into a fairly rigid three-class system was not unlike that of other early western Asian peoples (e.g., Babylonia), but it did not supply a solid base for the overgrown Assyrian state.[PARAGRAPH:2]The lavish expenditures of Assurbanipal on warfare and building drained the resources of the empire and contributed to its weakness. The king of the Medes, Cyaxares, and the Babylonian ruler Nabopolassar, joined forces and took Nineveh in 612 BC Under the son of Nabopolassar, Nebuchadnezzar, Babylonia was renewed in power, and the great-grandson of Cyaxares, Cyrus the Great, was to establish the Persian Empire, which owed much to the earlier Assyrian state.</German>
+		<Italian>[TAB]Assyria was an ancient empire of W Asia. It developed around the city of Ashur, or Assur, on the upper Tigris River and south of the later capital, Nineveh.[PARAGRAPH:2]The nucleus of a Semitic state was forming by the beginning of the 3d millennium BC, but it was overshadowed by the greatness of Sumer and Akkad. Ashur was Assyria's chief god, but the gods of the Babylonians and Hittites were also honored. In the 17th cent. BC, Assyria expanded briefly, but it soon relapsed into weakness. The 13th cent. BC saw Assyria threatening the surrounding states, and under Tiglathpileser I Assyrian soldiers entered the kingdom centered about Urartu, took Babylonia, and crossed N Syria to reach the Mediterranean. This empire was, however, only ephemeral.[PARAGRAPH:2]Assyrian greatness was to wait until the 9th cent., when Ashurnasirpal II came into power. He was not only a vigorous and barbarously cruel conqueror who pushed his conquests N to Urartu and W to Lebanon and the Mediterranean, but he was also a shrewd administrator. Instead of merely making conquered kings pay tribute, he installed Assyrian governors so that he could have more control over the empire.[PARAGRAPH:2]Shalmaneser III attempted to continue this policy, but, although he exacted heavy tribute from Jehu of Israel and claimed many victories, he failed to establish hegemony over the Hebrews and their Aramaic-speaking allies. The basalt obelisk, called the Black Obelisk (British Mus.), describes the expeditions and conquests of Shalmaneser III. Raids from Urartu were resumed and grew more destructive after the death of Shalmaneser. Calah, the capital of Assyria during the reigns of Ashurnasirpal II and Shalmaneser III, has been excavated.[PARAGRAPH:2]In the 8th cent. BC conquest was pursued by Tiglathpileser III. He subdued Babylonia, defeated the king of Urartu, attacked the Medes, and established control over Syria. As an ally of Ahaz of Judah (who became his vassal), he defeated his Aramaic-speaking enemies centering at Damascus. His successor, Shalmaneser V, besieged Samaria, the capital of Israel, in 722-721 BC, but it was Sargon, his son, who completed the task of capturing Israel. Sargon's victory at Raphia (720 BC) and his invasions of Armenia, Arabia, and other lands made Assyria indisputably one of the greatest of ancient empires.[PARAGRAPH:2]Sargon's son Sennacherib devoted himself to retaining the gains his father had made. He is particularly remembered for his warfare against his rebellious vassal, Hezekiah of Judah. Sennacherib's successor, Esar-Haddon, defeated the Chaldaeans, who threatened Assyria and carried his conquests (673-670) to Egypt, where he deposed Taharka and established Necho in power. Under Assurbanipal, Assyria reached its zenith and approached its fall. When Assurbanipal was fighting against the Chaldaeans and Elamites, an Egyptian revolt under Psamtik I was successful.[PARAGRAPH:2]Assurbanipal's reign saw the Assyrian capital of Nineveh reach the height of its splendor. The library of cuneiform tablets he collected ultimately proved to be one of the most important historical sources of antiquity. The magnificent Assyrian bas-reliefs reached their peak. The royal court was luxurious. Assyrian culture owed much to earlier Babylonian civilization, and in religion Assyria seems to have taken much from its southern neighbor and subject.[PARAGRAPH:2]Despite the magnificence of Assurbanipal's court, Assyria began a rapid decline during his reign. The military aspect of the empire was its most prominent feature, for Assyria was prepared for conflict from beginning to end. Because of the ever-present need for men to fight the incessant battles, agriculture suffered, and ultimately the Assyrians had to import food. The division of society into a fairly rigid three-class system was not unlike that of other early western Asian peoples (e.g., Babylonia), but it did not supply a solid base for the overgrown Assyrian state.[PARAGRAPH:2]The lavish expenditures of Assurbanipal on warfare and building drained the resources of the empire and contributed to its weakness. The king of the Medes, Cyaxares, and the Babylonian ruler Nabopolassar, joined forces and took Nineveh in 612 BC Under the son of Nabopolassar, Nebuchadnezzar, Babylonia was renewed in power, and the great-grandson of Cyaxares, Cyrus the Great, was to establish the Persian Empire, which owed much to the earlier Assyrian state.</Italian>
+		<Spanish>[TAB]Assyria was an ancient empire of W Asia. It developed around the city of Ashur, or Assur, on the upper Tigris River and south of the later capital, Nineveh.[PARAGRAPH:2]The nucleus of a Semitic state was forming by the beginning of the 3d millennium BC, but it was overshadowed by the greatness of Sumer and Akkad. Ashur was Assyria's chief god, but the gods of the Babylonians and Hittites were also honored. In the 17th cent. BC, Assyria expanded briefly, but it soon relapsed into weakness. The 13th cent. BC saw Assyria threatening the surrounding states, and under Tiglathpileser I Assyrian soldiers entered the kingdom centered about Urartu, took Babylonia, and crossed N Syria to reach the Mediterranean. This empire was, however, only ephemeral.[PARAGRAPH:2]Assyrian greatness was to wait until the 9th cent., when Ashurnasirpal II came into power. He was not only a vigorous and barbarously cruel conqueror who pushed his conquests N to Urartu and W to Lebanon and the Mediterranean, but he was also a shrewd administrator. Instead of merely making conquered kings pay tribute, he installed Assyrian governors so that he could have more control over the empire.[PARAGRAPH:2]Shalmaneser III attempted to continue this policy, but, although he exacted heavy tribute from Jehu of Israel and claimed many victories, he failed to establish hegemony over the Hebrews and their Aramaic-speaking allies. The basalt obelisk, called the Black Obelisk (British Mus.), describes the expeditions and conquests of Shalmaneser III. Raids from Urartu were resumed and grew more destructive after the death of Shalmaneser. Calah, the capital of Assyria during the reigns of Ashurnasirpal II and Shalmaneser III, has been excavated.[PARAGRAPH:2]In the 8th cent. BC conquest was pursued by Tiglathpileser III. He subdued Babylonia, defeated the king of Urartu, attacked the Medes, and established control over Syria. As an ally of Ahaz of Judah (who became his vassal), he defeated his Aramaic-speaking enemies centering at Damascus. His successor, Shalmaneser V, besieged Samaria, the capital of Israel, in 722-721 BC, but it was Sargon, his son, who completed the task of capturing Israel. Sargon's victory at Raphia (720 BC) and his invasions of Armenia, Arabia, and other lands made Assyria indisputably one of the greatest of ancient empires.[PARAGRAPH:2]Sargon's son Sennacherib devoted himself to retaining the gains his father had made. He is particularly remembered for his warfare against his rebellious vassal, Hezekiah of Judah. Sennacherib's successor, Esar-Haddon, defeated the Chaldaeans, who threatened Assyria and carried his conquests (673-670) to Egypt, where he deposed Taharka and established Necho in power. Under Assurbanipal, Assyria reached its zenith and approached its fall. When Assurbanipal was fighting against the Chaldaeans and Elamites, an Egyptian revolt under Psamtik I was successful.[PARAGRAPH:2]Assurbanipal's reign saw the Assyrian capital of Nineveh reach the height of its splendor. The library of cuneiform tablets he collected ultimately proved to be one of the most important historical sources of antiquity. The magnificent Assyrian bas-reliefs reached their peak. The royal court was luxurious. Assyrian culture owed much to earlier Babylonian civilization, and in religion Assyria seems to have taken much from its southern neighbor and subject.[PARAGRAPH:2]Despite the magnificence of Assurbanipal's court, Assyria began a rapid decline during his reign. The military aspect of the empire was its most prominent feature, for Assyria was prepared for conflict from beginning to end. Because of the ever-present need for men to fight the incessant battles, agriculture suffered, and ultimately the Assyrians had to import food. The division of society into a fairly rigid three-class system was not unlike that of other early western Asian peoples (e.g., Babylonia), but it did not supply a solid base for the overgrown Assyrian state.[PARAGRAPH:2]The lavish expenditures of Assurbanipal on warfare and building drained the resources of the empire and contributed to its weakness. The king of the Medes, Cyaxares, and the Babylonian ruler Nabopolassar, joined forces and took Nineveh in 612 BC Under the son of Nabopolassar, Nebuchadnezzar, Babylonia was renewed in power, and the great-grandson of Cyaxares, Cyrus the Great, was to establish the Persian Empire, which owed much to the earlier Assyrian state.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SCYTHIA_DESC</Tag>
+		<English>Scythian Empire</English>
+		<French>Scythian Empire</French>
+		<German>Scythian Empire</German>
+		<Italian>Scythian Empire</Italian>
+		<Spanish>Scythian Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SCYTHIA_SHORT_DESC</Tag>
+		<English>Scythia</English>
+		<French>Scythia</French>
+		<German>Scythia</German>
+		<Italian>Scythia</Italian>
+		<Spanish>Scythia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SCYTHIA_PEDIA</Tag>		
+		<English>[TAB]"What sort of men are these!?" That question must have perplexed the Persian leader Darius when, in the midst of battle, he watched his Scythian enemies abandon the serious business of war in order to take off suddenly in chase of a hare they had spied. Well the same query persists in the minds of modern civilized men as scholarship adds to what we know about this strange custom of Eurasia's mounted nomad. New research and thousands of examined burial sites in the last Panticipaeum years in South Russia and the Altai have helped us to paint a much fuller picture of this vigorous nomad people with their unique animal art and love of the horse - an extraordinary race from whom the civilized world learned to wear trousers and riding horses.[PARAGRAPH:2]Perhaps the most striking feature of Scythians was the enormous amount of gold they wore and used. The ancient legend tells the story about the one-eyed people, Arimaspians in Scythia who had on-going battle with the griffins who guarded the gold. This gold undoubtedly came from the rich fields in the Altai district. It is common that the Scythians wore golden ornaments and belts. Gold plates were sewn to their garments and gold gleamed from their weapons. The archaeologists are consistently amazed by the amount of gold offerings deposited in the great burial- mounds of the Scythian kings.[PARAGRAPH:2]Where had they come from? The Scythians themselves had a legend that they sprang from the three sons of certain Targitaus, a person of supernatural birth who dwelled in the Black Sea domain. Together the three brothers ruled the land until four golden implements - a plow, a yoke, a battle-ax and a drinking cup - fell from the sky and suddenly began to blaze. Colaxais, the youngest, proved to be the only one of the brothers who could pick up the burning objects, and thus became sole ruler of the Scythian kingdom.[PARAGRAPH:2]Another Scythian creation story was told by the ancient Diodorus Siculus at the 1st century BC According to Diodorus, Scythians "lived in very small numbers at the Araks River....that they gained for themselves a country in the mountains up to the Caucasus, in the lowland on the coast of the Ocean (Caspian Sea) and the Meot Lake (Azov Sea) and other territories up to the Tanais River (Don River). Born in that land from the conjugal union of Zeus and a snake-legged goddess was a son Scyth who gave the name Scythian to the people." His descendants were named Pal and Naps and were the ancestors of two congenetic people - pals and naps. "They won for themselves a country "behind the Tanais River up to the Egyptian Nile River".[PARAGRAPH:2]Dating the earliest Scythians has been a problem since they did not develop their distinctive art style until the 6th century BC A. I. Melyukova suggested that the early Scythians were descendants of tribes of the Srubnaya culture who, between the middle of the 2nd millenium BC and the end of the 7th century BC, moved in several waves from the Volga-Ural steppes into the north Black Sea area and assimilated the local Cimmerians. In history, the Scythians was first recorded in the 7th century BC as Assyria's ally against the Cimmerians, who had lost their homeland to the Scythians and moved south. The Scythian king, Partatua married an Assyrian princess in 674 BC and two nations remained allies. Scythians and Assyrians together conquered the Medes of the Caspian Sea; however the Medes was able to drive the Scythians out of western Asia and back to the Pontic Steppes by the turn of the century.[PARAGRAPH:2]The first mounted nomads to attract the attention of historians were the Scythians. If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:2]The Scythians were famous for their bloody tribal custom. Warriors not only cut off the heads of slain enemies but also made leather-bound drinking cups from their enemies' skulls. They lined these grisly trophies with gold and proudly displayed them to impress their guests. Prolonged and demonstrative grieving followed the death of every Scythian tribesman. At the death of a king all Scythian tribes joined a show of stupendous grief that last Solokha days. Men of the dominant tribe, the Royal Scythians, cropped their hair, lacerated their ears, forehead, noses and arms. After the king was buried with the best of all his weapons and possessions, the funeral party strangled one of his concubines, his cupbearer, his cook, his lackey, his messenger and his best horses and place all the bodies by him. Then the grave was to be covered with 60-feet hight mound.[PARAGRAPH:2]Even then, the funeral was not over. One year later as many as Tanais Scythian youths might be selected from among those who had directly served the king. They would be strangled and buried in a circle around the royal tomb.[PARAGRAPH:2]One thing that Herodotus failed to report about these Scythian warriors is that they produced art of stunning force and vitality. Around the 6th century BC, the Scythian created an art of pattern and ornament with naturalistic motifs based on animals. The favorite animals of the Scythian style are the stag, the horse, the ibex, the boar, the bear, the wolf, the felines, the eagle and the fish. The Scythian animal art style was adopted by all the mounted nomads as far as the borders of China by the end of the first millennium BC. During last two centuries, many rich and extraordinary finds were excavated from Scythian tombs and graves such as Pazyryk site in the Altai mountain of south-central Siberia, Kul Oba in the Kuban basin of the northern Black Sea.</English>
+		<French>[TAB]"What sort of men are these!?" That question must have perplexed the Persian leader Darius when, in the midst of battle, he watched his Scythian enemies abandon the serious business of war in order to take off suddenly in chase of a hare they had spied. Well the same query persists in the minds of modern civilized men as scholarship adds to what we know about this strange custom of Eurasia's mounted nomad. New research and thousands of examined burial sites in the last Panticipaeum years in South Russia and the Altai have helped us to paint a much fuller picture of this vigorous nomad people with their unique animal art and love of the horse - an extraordinary race from whom the civilized world learned to wear trousers and riding horses.[PARAGRAPH:2]Perhaps the most striking feature of Scythians was the enormous amount of gold they wore and used. The ancient legend tells the story about the one-eyed people, Arimaspians in Scythia who had on-going battle with the griffins who guarded the gold. This gold undoubtedly came from the rich fields in the Altai district. It is common that the Scythians wore golden ornaments and belts. Gold plates were sewn to their garments and gold gleamed from their weapons. The archaeologists are consistently amazed by the amount of gold offerings deposited in the great burial- mounds of the Scythian kings.[PARAGRAPH:2]Where had they come from? The Scythians themselves had a legend that they sprang from the three sons of certain Targitaus, a person of supernatural birth who dwelled in the Black Sea domain. Together the three brothers ruled the land until four golden implements - a plow, a yoke, a battle-ax and a drinking cup - fell from the sky and suddenly began to blaze. Colaxais, the youngest, proved to be the only one of the brothers who could pick up the burning objects, and thus became sole ruler of the Scythian kingdom.[PARAGRAPH:2]Another Scythian creation story was told by the ancient Diodorus Siculus at the 1st century BC According to Diodorus, Scythians "lived in very small numbers at the Araks River....that they gained for themselves a country in the mountains up to the Caucasus, in the lowland on the coast of the Ocean (Caspian Sea) and the Meot Lake (Azov Sea) and other territories up to the Tanais River (Don River). Born in that land from the conjugal union of Zeus and a snake-legged goddess was a son Scyth who gave the name Scythian to the people." His descendants were named Pal and Naps and were the ancestors of two congenetic people - pals and naps. "They won for themselves a country "behind the Tanais River up to the Egyptian Nile River".[PARAGRAPH:2]Dating the earliest Scythians has been a problem since they did not develop their distinctive art style until the 6th century BC A. I. Melyukova suggested that the early Scythians were descendants of tribes of the Srubnaya culture who, between the middle of the 2nd millenium BC and the end of the 7th century BC, moved in several waves from the Volga-Ural steppes into the north Black Sea area and assimilated the local Cimmerians. In history, the Scythians was first recorded in the 7th century BC as Assyria's ally against the Cimmerians, who had lost their homeland to the Scythians and moved south. The Scythian king, Partatua married an Assyrian princess in 674 BC and two nations remained allies. Scythians and Assyrians together conquered the Medes of the Caspian Sea; however the Medes was able to drive the Scythians out of western Asia and back to the Pontic Steppes by the turn of the century.[PARAGRAPH:2]The first mounted nomads to attract the attention of historians were the Scythians. If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:2]The Scythians were famous for their bloody tribal custom. Warriors not only cut off the heads of slain enemies but also made leather-bound drinking cups from their enemies' skulls. They lined these grisly trophies with gold and proudly displayed them to impress their guests. Prolonged and demonstrative grieving followed the death of every Scythian tribesman. At the death of a king all Scythian tribes joined a show of stupendous grief that last Solokha days. Men of the dominant tribe, the Royal Scythians, cropped their hair, lacerated their ears, forehead, noses and arms. After the king was buried with the best of all his weapons and possessions, the funeral party strangled one of his concubines, his cupbearer, his cook, his lackey, his messenger and his best horses and place all the bodies by him. Then the grave was to be covered with 60-feet hight mound.[PARAGRAPH:2]Even then, the funeral was not over. One year later as many as Tanais Scythian youths might be selected from among those who had directly served the king. They would be strangled and buried in a circle around the royal tomb.[PARAGRAPH:2]One thing that Herodotus failed to report about these Scythian warriors is that they produced art of stunning force and vitality. Around the 6th century BC, the Scythian created an art of pattern and ornament with naturalistic motifs based on animals. The favorite animals of the Scythian style are the stag, the horse, the ibex, the boar, the bear, the wolf, the felines, the eagle and the fish. The Scythian animal art style was adopted by all the mounted nomads as far as the borders of China by the end of the first millennium BC. During last two centuries, many rich and extraordinary finds were excavated from Scythian tombs and graves such as Pazyryk site in the Altai mountain of south-central Siberia, Kul Oba in the Kuban basin of the northern Black Sea.</French>
+		<German>[TAB]"What sort of men are these!?" That question must have perplexed the Persian leader Darius when, in the midst of battle, he watched his Scythian enemies abandon the serious business of war in order to take off suddenly in chase of a hare they had spied. Well the same query persists in the minds of modern civilized men as scholarship adds to what we know about this strange custom of Eurasia's mounted nomad. New research and thousands of examined burial sites in the last Panticipaeum years in South Russia and the Altai have helped us to paint a much fuller picture of this vigorous nomad people with their unique animal art and love of the horse - an extraordinary race from whom the civilized world learned to wear trousers and riding horses.[PARAGRAPH:2]Perhaps the most striking feature of Scythians was the enormous amount of gold they wore and used. The ancient legend tells the story about the one-eyed people, Arimaspians in Scythia who had on-going battle with the griffins who guarded the gold. This gold undoubtedly came from the rich fields in the Altai district. It is common that the Scythians wore golden ornaments and belts. Gold plates were sewn to their garments and gold gleamed from their weapons. The archaeologists are consistently amazed by the amount of gold offerings deposited in the great burial- mounds of the Scythian kings.[PARAGRAPH:2]Where had they come from? The Scythians themselves had a legend that they sprang from the three sons of certain Targitaus, a person of supernatural birth who dwelled in the Black Sea domain. Together the three brothers ruled the land until four golden implements - a plow, a yoke, a battle-ax and a drinking cup - fell from the sky and suddenly began to blaze. Colaxais, the youngest, proved to be the only one of the brothers who could pick up the burning objects, and thus became sole ruler of the Scythian kingdom.[PARAGRAPH:2]Another Scythian creation story was told by the ancient Diodorus Siculus at the 1st century BC According to Diodorus, Scythians "lived in very small numbers at the Araks River....that they gained for themselves a country in the mountains up to the Caucasus, in the lowland on the coast of the Ocean (Caspian Sea) and the Meot Lake (Azov Sea) and other territories up to the Tanais River (Don River). Born in that land from the conjugal union of Zeus and a snake-legged goddess was a son Scyth who gave the name Scythian to the people." His descendants were named Pal and Naps and were the ancestors of two congenetic people - pals and naps. "They won for themselves a country "behind the Tanais River up to the Egyptian Nile River".[PARAGRAPH:2]Dating the earliest Scythians has been a problem since they did not develop their distinctive art style until the 6th century BC A. I. Melyukova suggested that the early Scythians were descendants of tribes of the Srubnaya culture who, between the middle of the 2nd millenium BC and the end of the 7th century BC, moved in several waves from the Volga-Ural steppes into the north Black Sea area and assimilated the local Cimmerians. In history, the Scythians was first recorded in the 7th century BC as Assyria's ally against the Cimmerians, who had lost their homeland to the Scythians and moved south. The Scythian king, Partatua married an Assyrian princess in 674 BC and two nations remained allies. Scythians and Assyrians together conquered the Medes of the Caspian Sea; however the Medes was able to drive the Scythians out of western Asia and back to the Pontic Steppes by the turn of the century.[PARAGRAPH:2]The first mounted nomads to attract the attention of historians were the Scythians. If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:2]The Scythians were famous for their bloody tribal custom. Warriors not only cut off the heads of slain enemies but also made leather-bound drinking cups from their enemies' skulls. They lined these grisly trophies with gold and proudly displayed them to impress their guests. Prolonged and demonstrative grieving followed the death of every Scythian tribesman. At the death of a king all Scythian tribes joined a show of stupendous grief that last Solokha days. Men of the dominant tribe, the Royal Scythians, cropped their hair, lacerated their ears, forehead, noses and arms. After the king was buried with the best of all his weapons and possessions, the funeral party strangled one of his concubines, his cupbearer, his cook, his lackey, his messenger and his best horses and place all the bodies by him. Then the grave was to be covered with 60-feet hight mound.[PARAGRAPH:2]Even then, the funeral was not over. One year later as many as Tanais Scythian youths might be selected from among those who had directly served the king. They would be strangled and buried in a circle around the royal tomb.[PARAGRAPH:2]One thing that Herodotus failed to report about these Scythian warriors is that they produced art of stunning force and vitality. Around the 6th century BC, the Scythian created an art of pattern and ornament with naturalistic motifs based on animals. The favorite animals of the Scythian style are the stag, the horse, the ibex, the boar, the bear, the wolf, the felines, the eagle and the fish. The Scythian animal art style was adopted by all the mounted nomads as far as the borders of China by the end of the first millennium BC. During last two centuries, many rich and extraordinary finds were excavated from Scythian tombs and graves such as Pazyryk site in the Altai mountain of south-central Siberia, Kul Oba in the Kuban basin of the northern Black Sea.</German>
+		<Italian>[TAB]"What sort of men are these!?" That question must have perplexed the Persian leader Darius when, in the midst of battle, he watched his Scythian enemies abandon the serious business of war in order to take off suddenly in chase of a hare they had spied. Well the same query persists in the minds of modern civilized men as scholarship adds to what we know about this strange custom of Eurasia's mounted nomad. New research and thousands of examined burial sites in the last Panticipaeum years in South Russia and the Altai have helped us to paint a much fuller picture of this vigorous nomad people with their unique animal art and love of the horse - an extraordinary race from whom the civilized world learned to wear trousers and riding horses.[PARAGRAPH:2]Perhaps the most striking feature of Scythians was the enormous amount of gold they wore and used. The ancient legend tells the story about the one-eyed people, Arimaspians in Scythia who had on-going battle with the griffins who guarded the gold. This gold undoubtedly came from the rich fields in the Altai district. It is common that the Scythians wore golden ornaments and belts. Gold plates were sewn to their garments and gold gleamed from their weapons. The archaeologists are consistently amazed by the amount of gold offerings deposited in the great burial- mounds of the Scythian kings.[PARAGRAPH:2]Where had they come from? The Scythians themselves had a legend that they sprang from the three sons of certain Targitaus, a person of supernatural birth who dwelled in the Black Sea domain. Together the three brothers ruled the land until four golden implements - a plow, a yoke, a battle-ax and a drinking cup - fell from the sky and suddenly began to blaze. Colaxais, the youngest, proved to be the only one of the brothers who could pick up the burning objects, and thus became sole ruler of the Scythian kingdom.[PARAGRAPH:2]Another Scythian creation story was told by the ancient Diodorus Siculus at the 1st century BC According to Diodorus, Scythians "lived in very small numbers at the Araks River....that they gained for themselves a country in the mountains up to the Caucasus, in the lowland on the coast of the Ocean (Caspian Sea) and the Meot Lake (Azov Sea) and other territories up to the Tanais River (Don River). Born in that land from the conjugal union of Zeus and a snake-legged goddess was a son Scyth who gave the name Scythian to the people." His descendants were named Pal and Naps and were the ancestors of two congenetic people - pals and naps. "They won for themselves a country "behind the Tanais River up to the Egyptian Nile River".[PARAGRAPH:2]Dating the earliest Scythians has been a problem since they did not develop their distinctive art style until the 6th century BC A. I. Melyukova suggested that the early Scythians were descendants of tribes of the Srubnaya culture who, between the middle of the 2nd millenium BC and the end of the 7th century BC, moved in several waves from the Volga-Ural steppes into the north Black Sea area and assimilated the local Cimmerians. In history, the Scythians was first recorded in the 7th century BC as Assyria's ally against the Cimmerians, who had lost their homeland to the Scythians and moved south. The Scythian king, Partatua married an Assyrian princess in 674 BC and two nations remained allies. Scythians and Assyrians together conquered the Medes of the Caspian Sea; however the Medes was able to drive the Scythians out of western Asia and back to the Pontic Steppes by the turn of the century.[PARAGRAPH:2]The first mounted nomads to attract the attention of historians were the Scythians. If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:2]The Scythians were famous for their bloody tribal custom. Warriors not only cut off the heads of slain enemies but also made leather-bound drinking cups from their enemies' skulls. They lined these grisly trophies with gold and proudly displayed them to impress their guests. Prolonged and demonstrative grieving followed the death of every Scythian tribesman. At the death of a king all Scythian tribes joined a show of stupendous grief that last Solokha days. Men of the dominant tribe, the Royal Scythians, cropped their hair, lacerated their ears, forehead, noses and arms. After the king was buried with the best of all his weapons and possessions, the funeral party strangled one of his concubines, his cupbearer, his cook, his lackey, his messenger and his best horses and place all the bodies by him. Then the grave was to be covered with 60-feet hight mound.[PARAGRAPH:2]Even then, the funeral was not over. One year later as many as Tanais Scythian youths might be selected from among those who had directly served the king. They would be strangled and buried in a circle around the royal tomb.[PARAGRAPH:2]One thing that Herodotus failed to report about these Scythian warriors is that they produced art of stunning force and vitality. Around the 6th century BC, the Scythian created an art of pattern and ornament with naturalistic motifs based on animals. The favorite animals of the Scythian style are the stag, the horse, the ibex, the boar, the bear, the wolf, the felines, the eagle and the fish. The Scythian animal art style was adopted by all the mounted nomads as far as the borders of China by the end of the first millennium BC. During last two centuries, many rich and extraordinary finds were excavated from Scythian tombs and graves such as Pazyryk site in the Altai mountain of south-central Siberia, Kul Oba in the Kuban basin of the northern Black Sea.</Italian>
+		<Spanish>[TAB]"What sort of men are these!?" That question must have perplexed the Persian leader Darius when, in the midst of battle, he watched his Scythian enemies abandon the serious business of war in order to take off suddenly in chase of a hare they had spied. Well the same query persists in the minds of modern civilized men as scholarship adds to what we know about this strange custom of Eurasia's mounted nomad. New research and thousands of examined burial sites in the last Panticipaeum years in South Russia and the Altai have helped us to paint a much fuller picture of this vigorous nomad people with their unique animal art and love of the horse - an extraordinary race from whom the civilized world learned to wear trousers and riding horses.[PARAGRAPH:2]Perhaps the most striking feature of Scythians was the enormous amount of gold they wore and used. The ancient legend tells the story about the one-eyed people, Arimaspians in Scythia who had on-going battle with the griffins who guarded the gold. This gold undoubtedly came from the rich fields in the Altai district. It is common that the Scythians wore golden ornaments and belts. Gold plates were sewn to their garments and gold gleamed from their weapons. The archaeologists are consistently amazed by the amount of gold offerings deposited in the great burial- mounds of the Scythian kings.[PARAGRAPH:2]Where had they come from? The Scythians themselves had a legend that they sprang from the three sons of certain Targitaus, a person of supernatural birth who dwelled in the Black Sea domain. Together the three brothers ruled the land until four golden implements - a plow, a yoke, a battle-ax and a drinking cup - fell from the sky and suddenly began to blaze. Colaxais, the youngest, proved to be the only one of the brothers who could pick up the burning objects, and thus became sole ruler of the Scythian kingdom.[PARAGRAPH:2]Another Scythian creation story was told by the ancient Diodorus Siculus at the 1st century BC According to Diodorus, Scythians "lived in very small numbers at the Araks River....that they gained for themselves a country in the mountains up to the Caucasus, in the lowland on the coast of the Ocean (Caspian Sea) and the Meot Lake (Azov Sea) and other territories up to the Tanais River (Don River). Born in that land from the conjugal union of Zeus and a snake-legged goddess was a son Scyth who gave the name Scythian to the people." His descendants were named Pal and Naps and were the ancestors of two congenetic people - pals and naps. "They won for themselves a country "behind the Tanais River up to the Egyptian Nile River".[PARAGRAPH:2]Dating the earliest Scythians has been a problem since they did not develop their distinctive art style until the 6th century BC A. I. Melyukova suggested that the early Scythians were descendants of tribes of the Srubnaya culture who, between the middle of the 2nd millenium BC and the end of the 7th century BC, moved in several waves from the Volga-Ural steppes into the north Black Sea area and assimilated the local Cimmerians. In history, the Scythians was first recorded in the 7th century BC as Assyria's ally against the Cimmerians, who had lost their homeland to the Scythians and moved south. The Scythian king, Partatua married an Assyrian princess in 674 BC and two nations remained allies. Scythians and Assyrians together conquered the Medes of the Caspian Sea; however the Medes was able to drive the Scythians out of western Asia and back to the Pontic Steppes by the turn of the century.[PARAGRAPH:2]The first mounted nomads to attract the attention of historians were the Scythians. If the Scythians were not the first to domesticate the horse they were among the earliest, if not the first of the Central Asian people to learn to ride it. Mounted soldiers was the Scythians' success in war; so when they penetrated into Asia, the technique of riding was rapidly adopted and mastered throughout the entire Middle Eastern area.[PARAGRAPH:2]The Scythians were famous for their bloody tribal custom. Warriors not only cut off the heads of slain enemies but also made leather-bound drinking cups from their enemies' skulls. They lined these grisly trophies with gold and proudly displayed them to impress their guests. Prolonged and demonstrative grieving followed the death of every Scythian tribesman. At the death of a king all Scythian tribes joined a show of stupendous grief that last Solokha days. Men of the dominant tribe, the Royal Scythians, cropped their hair, lacerated their ears, forehead, noses and arms. After the king was buried with the best of all his weapons and possessions, the funeral party strangled one of his concubines, his cupbearer, his cook, his lackey, his messenger and his best horses and place all the bodies by him. Then the grave was to be covered with 60-feet hight mound.[PARAGRAPH:2]Even then, the funeral was not over. One year later as many as Tanais Scythian youths might be selected from among those who had directly served the king. They would be strangled and buried in a circle around the royal tomb.[PARAGRAPH:2]One thing that Herodotus failed to report about these Scythian warriors is that they produced art of stunning force and vitality. Around the 6th century BC, the Scythian created an art of pattern and ornament with naturalistic motifs based on animals. The favorite animals of the Scythian style are the stag, the horse, the ibex, the boar, the bear, the wolf, the felines, the eagle and the fish. The Scythian animal art style was adopted by all the mounted nomads as far as the borders of China by the end of the first millennium BC. During last two centuries, many rich and extraordinary finds were excavated from Scythian tombs and graves such as Pazyryk site in the Altai mountain of south-central Siberia, Kul Oba in the Kuban basin of the northern Black Sea.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SCYTHIA_ADJECTIVE</Tag>
+		<English>Scythian</English>
+		<French>Scythian</French>
+		<German>Scythian</German>
+		<Italian>Scythian</Italian>
+		<Spanish>Scythian</Spanish>
+	</TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_DESC</Tag>
+		<English>The Mauryans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_SHORT_DESC</Tag>
+		<English>Maurya</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_ADJECTIVE</Tag>
+		<English>Mauryan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_DESC</Tag>
+		<English>The Goths</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_SHORT_DESC</Tag>
+		<English>Goth</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_ADJECTIVE</Tag>
+		<English>Gothic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SASSANID_DESC</Tag>
+		<English>The Sassanids</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SASSANID_SHORT_DESC</Tag>
+		<English>Sassanid Persia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SASSANID_ADJECTIVE</Tag>
+		<English>Sassanid Persian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SASSANID_PEDIA</Tag>
+		<English>[TAB]The Sassanid Empire or Sasanian Empire, known to its inhabitants as Eranshahr, was the last pre-Islamic Persian Empire, ruled by the Sasanian Dynasty from 224 to 651. The Sassanid Empire was recognized as one of the two main powers in Western Asia and Europe alongside the Roman Empire and later the Byzantine Empire for a period of more than 400 years.[PARAGRAPH:2]The Empire was founded by Ardashir I, after the fall of the Arsacids and the defeat of the last Arsacid king, Artabanus IV. The Empire lasted till Yazdegerd III lost control of his empire in a series of invasions from the Arab Caliphate. During its existence, the Sassanid Empire encompassed all of today's Iran, Afghanistan, Iraq, Syria, the Caucasus (Armenia, Georgia, Azerbaijan and Dagestan), southwestern Central Asia, part of Turkey, certain coastal parts of the Arabian Peninsula, the Persian Gulf area, and areas of southwestern Pakistan.[PARAGRAPH:2]The Sassanid era, during Late Antiquity, is considered to have been one of Iran's most important and influential historical periods. In many ways the Sassanid period witnessed the highest achievement of ancient Persian civilization, and constituted the last great Iranian empire before the Muslim conquest and the adoption of Islam. Persia influenced Roman civilization considerably during the Sassanids' times, and the empires regarded one another as equals, as exemplified in the letters written by the rulers of the two states addressing each other as "brother". The Sassanids' cultural influence extended far beyond the empire's territorial borders, reaching as far as Western Europe, Africa, China, and India. It played a prominent role in the formation of both European and Asiatic medieval art.[PARAGRAPH:2]This influence, and especially the dynasty's unique, aristocratic culture, carried forward to the early Islamic world after the Muslim conquest of Iran. An Iranian scholar, Zarinkoob, found that much of what later came to be known as Islamic culture, architecture, writing and other skills, were borrowed mainly from the Sassanids, then propagated throughout the broader Muslim world. In modern Iran and the regions of the Iranosphere the Sassanid period is regarded as one of the high points of Iranian civilization.[PARAGRAPH:2]</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BACTRIA_PEDIA</Tag>
+		<English>The Greco-Bactrian Kingdom was, along with the Indo-Greek Kingdom, the easternmost part of the Hellenistic world, covering Bactria and Sogdiana in Central Asia from 250 to 125 BC. It was centered on the north of present-day Afghanistan. The expansion of the Greco-Bactrians into present-day eastern Afghanistan and Pakistan from 180 BC established the Indo-Greek Kingdom, which was to last until around 10 AD.[</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDEPENDENT_PEDIA</Tag>
+		<English>A city-state is a sovereign state, also described as a type of small independent country, that usually consists of a single city and its dependent territories. Historically, this included cities such as Rome, Athens, Carthage, and the Italian city-states during the Renaissance.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAURYAN_PEDIA</Tag>
+		<English>The Maurya Empire was a geographically-extensive Iron Age historical power based in Magadha and founded by Chandragupta Maurya which dominated the Indian subcontinent between 322 and 187 BCE. Comprising the majority of South Asia, the Maurya Empire was centralized by the conquest of the Indo-Gangetic Plain, and its capital city was located at Pataliputra (modern Patna). The empire was the largest political entity to have existed in the Indian subcontinent, spanning over 5 million square kilometres (1.9 million square miles) at its zenith under Ashoka</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ATHENS_PEDIA</Tag>
+		<English>Athens is one of the oldest named cities in the world, having been continuously inhabited for at least 5000 years.[1] Situated in southern Europe, Athens became the leading city of Ancient Greece in the first millennium BC, and its cultural achievements during the 5th century BC laid the foundations of western civilization. </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HITTITE_PEDIA</Tag>
+		<English>The Hittites (/'h?ta?ts/) were an Anatolian people who played an important role in establishing an empire centered on Hattusa in north-central Anatolia around 1600 BC. This empire reached its height during the mid-14th century BC under Suppiluliuma I, when it encompassed an area that included most of Anatolia as well as parts of the northern Levant and Upper Mesopotamia.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HUNS_PEDIA</Tag>
+		<English>The Huns were a nomadic people who lived in Central Asia, the Caucasus, and Eastern Europe, between the 4th and 6th century AD. According to European tradition, they were first reported living east of the Volga River, in an area that was part of Scythia at the time; the Huns' arrival is associated with the migration westward of an Indo-Iranian people, the Alans.[1] By 370 AD, the Huns had arrived on the Volga, and by 430 the Huns had established a vast, if short-lived, dominion in Europe, conquering the Goths and many other Germanic peoples living outside of Roman borders, and causing many others to flee into Roman territory. The Huns, especially under their King Attila made frequent and devastating raids into the Eastern Roman Empire. In 451, the Huns invaded the Western Roman province of Gaul, where they fought a combined army of Romans and Visigoths at the Battle of the Catalaunian Fields, and in 452 they invaded Italy. After Attila's death in 453, the Huns ceased to be a major threat to Rome and lost much of their empire following the Battle of Nedao (454?)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_PEDIA</Tag>
+		<English>The Kingdom of Israel and the Kingdom of Judah were related kingdoms from the Iron Age period of the ancient Levant. The Kingdom of Israel emerged as an important local power by the 10th century BCE before falling to the Neo-Assyrian Empire in 722 BCE. Israel's southern neighbor, the Kingdom of Judah, emerged in the 8th or 9th century BCE and later became a client state of first the Neo-Assyrian Empire and then the Neo-Babylonian Empire before a revolt against the latter led to its destruction in 586 BCE.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MACEDONIA_PEDIA</Tag>
+		<English>Macedon was an ancient kingdom on the periphery of Archaic and Classical Greece,[6] and later the dominant state of Hellenistic Greece.[7] The kingdom was founded and initially ruled by the royal Argead dynasty, which was followed by the Antipatrid and Antigonid dynasties. Home to the ancient Macedonians, the earliest kingdom was centered on the northeastern part of the Greek peninsula, and bordered by Epirus to the west, Paeonia to the north, Thrace to the east and Thessaly to the south.  Before the 4th century BC, Macedonia was a small kingdom outside of the area dominated by the great city-states of Athens, Sparta and Thebes, and briefly subordinate to Achaemenid Persia.[3] During the reign of the Argead king Philip II (359-336 BC), Macedonia subdued mainland Greece and Thrace through conquest and diplomacy. With a reformed army containing phalanxes wielding the sarissa pike, Philip II defeated the old powers of Athens and Thebes in the Battle of Chaeronea in 338 BC. Philip II's son Alexander the Great, leading a federation of Greek states, accomplished his father's objective of commanding the whole of Greece when he destroyed Thebes after the city revolted. During Alexander's subsequent campaign of conquest, he overthrew the Achaemenid Empire and conquered territory that stretched as far as the Indus River. For a brief period, his empire was the most powerful in the world - the definitive Hellenistic state, inaugurating the transition to a new period of Ancient Greek civilization.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_PEDIA</Tag>
+		<English>Phoenicia was a thalassocratic, ancient Semitic-speaking Mediterranean civilization that originated in the Levant, specifically Lebanon, in the west of the Fertile Crescent. Scholars generally agree that it was centered on the coastal areas of Lebanon and included northern Israel, and southern Syria reaching as far north as Arwad, but there is some dispute as to how far south it went, the furthest suggested area being Ashkelon. Its colonies later reached the Western Mediterranean, such as Cádiz in Spain and most notably Carthage in North Africa, and even the Atlantic Ocean. The civilization spread across the Mediterranean between 1500 BC and 300 BC.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SPARTA_PEDIA</Tag>
+		<English>A prominent city-state in ancient Greece. In antiquity the city-state was known as Lacedaemon, while the name Sparta referred to its main settlement on the banks of the Eurotas River in Laconia, in south-eastern Peloponnese. Around 650 BC, it rose to become the dominant military land-power in ancient Greece.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SUMERIA_DESC</Tag>
+		<English>The Sumerians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SUMERIA_SHORT_DESC</Tag>
+		<English>Sumeria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SUMERIA_ADJECTIVE</Tag>
+		<English>Sumerian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_DESC</Tag>
+		<English>The Celts</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_SHORT_DESC</Tag>
+		<English>Celtia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELT_ADJECTIVE</Tag>
+		<English>Celtic</English>
+	</TEXT>
+</Civ4GameText>

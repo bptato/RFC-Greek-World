@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO00</Tag>
+		<English>Caananite Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO01</Tag>
+		<English>Canaan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO02</Tag>
+		<English>Phoenician City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO03</Tag>
+		<English>Phoenician City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO04</Tag>
+		<English>Phoenician Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO05</Tag>
+		<English>Phoenician Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO06</Tag>
+		<English>Phoenician Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO07</Tag>
+		<English>Phoenician Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO08</Tag>
+		<English>Fifth Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO09</Tag>
+		<English>Province of Palaestina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_PHO10</Tag>
+		<English>Phoenician Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

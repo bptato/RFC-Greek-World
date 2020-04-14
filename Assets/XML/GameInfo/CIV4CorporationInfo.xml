@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Religion -->
+<Civ4CorporationInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
+	<CorporationInfos>
+		<CorporationInfo>
+			<Type>CORPORATION_PLACEHOLDER</Type>
+			<Description>Placeholder corporation</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_1_PEDIA</Civilopedia>
+			<TechPrereq>NONE</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>0</iSpreadFactor>
+			<iSpreadCost>0</iSpreadCost>
+			<iMaintenance>0</iMaintenance>
+			<PrereqBonuses/>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>0</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>0</iYieldProduced>
+			</YieldsProduced>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,6</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_BANK</Sound>
+		</CorporationInfo>
+	</CorporationInfos>
+</Civ4CorporationInfo>

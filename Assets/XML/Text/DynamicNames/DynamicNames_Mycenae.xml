@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_AGAMEMNON</Tag>
+		<English>Agamemnon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_Mycenae_DESC</Tag>
+		<English>The Mycenaens</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC00</Tag>
+		<English>Achaean Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC01</Tag>
+		<English>Mycenaen City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC02</Tag>
+		<English>Mycenaen City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC03</Tag>
+		<English>Mycenaen Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC04</Tag>
+		<English>Mycenaen Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC05</Tag>
+		<English>City-State of Korinthos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC06</Tag>
+		<English>Achaean League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC07</Tag>
+		<English>Achaean League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC08</Tag>
+		<English>Satrapy of Korinthos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC09</Tag>
+		<English>Province of Mare Aegeum</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MYC10</Tag>
+		<English>Mycenaen Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

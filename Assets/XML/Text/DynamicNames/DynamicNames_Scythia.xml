@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY00</Tag>
+		<English>Scythian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY01</Tag>
+		<English>Scythian Tribes</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY02</Tag>
+		<English>Scythian Tribes</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY03</Tag>
+		<English>Scythian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY04</Tag>
+		<English>Scythian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY05</Tag>
+		<English>Bosporan Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY06</Tag>
+		<English>Bosporan Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY07</Tag>
+		<English>Bosporan Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY08</Tag>
+		<English>Satrapy of Daoi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY09</Tag>
+		<English>Satrapy of Sarmatia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SCY10</Tag>
+		<English>Scythian Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

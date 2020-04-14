@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY00</Tag>
+		<English>Peoples of the Nile</English>
+		<French>
+			<Text>Peuplades Nilotiques</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Nilv&#246;lker:Nilv&#246;lker:Nilv&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli del Nilo</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos del Nilo</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY01</Tag>
+		<English>Egyptian Upper Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY02</Tag>
+		<English>Egyptian Old Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY03</Tag>
+		<English>Egyptian Middle Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY04</Tag>
+		<English>Egyptian New Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY05</Tag>
+		<English>Kingdom of Ptolemy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY06</Tag>
+		<English>Ptolemaic Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY07</Tag>
+		<English>Egyptian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY08</Tag>
+		<English>Sixth Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY09</Tag>
+		<English>Province of Aegyptus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_EGY10</Tag>
+		<English>Egyptian Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

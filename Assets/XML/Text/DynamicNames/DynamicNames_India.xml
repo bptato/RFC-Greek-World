@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND00</Tag>
+		<English>Indian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND01</Tag>
+		<English>Maurya Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND02</Tag>
+		<English>Maurya Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND03</Tag>
+		<English>Maurya Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND04</Tag>
+		<English>Maurya Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND05</Tag>
+		<English>Maurya Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND06</Tag>
+		<English>Gupta Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND07</Tag>
+		<English>Gupta Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND08</Tag>
+		<English>Satrapy of India</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND09</Tag>
+		<English>Province of India</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IND10</Tag>
+		<English>Indian Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

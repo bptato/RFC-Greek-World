@@ -1,0 +1,384 @@
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Tag>
+		<English>
+			<Text>Jewish</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</English>
+		<French>
+			<Text>juif:juive:juifs:juives</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>J&#252;disch:j&#252;dischen:j&#252;dische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei giudei</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>jud&#237;o:jud&#237;a:jud&#237;os:jud&#237;as</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_CHRISTIANITY_ADJECTIVE</Tag>
+		<English>
+			<Text>Christian</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</English>
+		<French>
+			<Text>chr&#233;tien:chr&#233;tienne:chr&#233;tiens:chr&#233;tiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Christlich:christlichen:christliche</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei cristiani</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>cristiano:cristiana:cristianos:cristianas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_PESEDJET</Tag>
+		<English>Pesedjet</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_PESEDJET_ADJECTIVE</Tag>
+		<English>Pesedjet</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ANUNNAKI</Tag>
+		<English>Anunnaki</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ANUNNAKI_ADJECTIVE</Tag>
+		<English>Anunnaki</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_BAALISM</Tag>
+		<English>Baalism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_BAALISM_ADJECTIVE</Tag>
+		<English>Baalite</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM</Tag>
+		<English>Zoroastrianism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Tag>
+		<English>Zoroastrian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_HELLENISM</Tag>
+		<English>Hellenism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_HELLENISM_ADJECTIVE</Tag>
+		<English>Hellenistic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM</Tag>
+		<English>Zoroastrianism</English>
+		<French>Zoroastrisme</French>
+		<German>Zarathustrismus</German>
+		<Italian>Zoroastrismo</Italian>
+		<Spanish>Zoroastrismo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Tag>
+		<English>Zoroastrian</English>
+		<French>
+			<Text>zoroastrien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrischer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>zoroastriano:zoroastriani</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>zoroastrano:zoroastranos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_PEDIA</Tag>
+		<English>[TAB]Although little known today, Zoroastrianism has been one of the most influential religions in world history. It was the religion of the ancient Persian Empire, and was the faith spread by the prophet Zarathushtra, who is known in the West as Zoroaster. Zoroastrianism has elements of monotheism, but is also a dualistic faith; the universe was created by a supreme being of light called Ahura Mazda, but he is opposed by a creature of ultimate darkness known as Angra Mainyu. The most important symbol for the Zoroastrian faith is fire, which symbolizes the light and heat of Ahura Mazda and serves as a sign of purity. [PARAGRAPH:2:1]Scholars debate exactly when Zoroaster lived, with dates ranging from 1000BC to as late as 600BC. The exact dates of his birth and death are unknown, but Zoroastrianism was already in existence when Cyrus I established the Persian Empire during the 6th century BC. According to Zoroastrian tradition, Zoroaster was recognized as a special individual from birth, and many attempts were made to kill him as a child by evil spirits. When he reached the age of twenty, Zoroaster retreated to a cave and spent the next seven years in meditation. After he felt that he had achieved complete devotion to Ahura Mazda, Zoroaster left to spread the word to the people, but without any initial success. He did not win his first converts until after miraculously healing the horse of King Vishtaspa, after which the king supported Zoroaster and the religion spread rapidly. By the time that the Greeks first encountered the Persians and began writing about them, Zoroastrianism had dispersed across the Persian Empire and occupied much of the Near East. [PARAGRAPH:2:1]Zoroastrians believe that the world is fundamentally a good place created for humans by Ahura Mazda, but it is also a battleground between the forces of good and evil. Zoroastrians do not believe in predestination, and there is a strong emphasis on the choice that each individual must make in order to avoid being tempted and corrupted by Angra Mainyu. Good and evil actions will both be rewarded after death, with the evil judged and sent to hell, although at the end of time even the wicked will be purified and rejoin Ahura Mazda. Zoroastrians do not recognize any god other than Ahura Mazda, but he manifests in different emanations which are often depicted as angelic in form and have names such as Vohu Manah (Good Thought) and Asha (Truth). The Zoroastrian holy book is called the Avesta, which is a compilation of oral tradition that was first written down in the time of Sassanid Persia. A small section of the Avesta, a series of hymns known as the Gathas, is believed to have been composed by Zoroaster himself. Zoroastrian temples are based around preserving the sacred fire, which is a symbol of the light and radiance of Ahura Mazda. Cleanliness is also extremely important for Zoroastrians, and there are several different purification rites that Zoroastrians must go through when they have sinned. [PARAGRAPH:2:1]Zoroastrianism was historically the religion of the Persian Empire, although it was not officially promoted by the Persian emperors until the Sassanid period in the 3rd century AD. The religion came into contact with Judaism during the Babylonian Captivity of the 6th century BC and there is good evidence to suggest that the two religions influenced one another (similar concepts of monotheism, heaven and hell, eschatology, etc.) There is also little doubt that the Three Wise Men present in the story of Christ's birth were Zoroastrian magi (priests). When the Arabs overran and destroyed the Persian Empire in the 7th century AD, Zoroastrianism became a persecuted religion and slowly declined. A small number of Zoroastrians fled to India, where they formed a new community and became known as Parsis. Today there are approximately 2-3 million practitioners of Zoroastrianism, mostly concentrated in India, Pakistan, and Iran but also scattered across the major urban centers of the English-speaking world. </English>
+		<French>[TAB]Bien que le zoroastrisme soit peu connu de nos jours, c'est l'une des religions qui a le plus influenc&#233; l'histoire du monde. Zarathushtra, ou Zoroastre en Occident, est le proph&#232;te de cette ancienne religion de l'empire perse. Le zoroastrisme pr&#233;sente certains &#233;l&#233;ments du monoth&#233;isme, mais est &#233;galement une religion dualiste. L'univers aurait &#233;t&#233; cr&#233;&#233; par un &#234;tre de lumi&#232;re supr&#234;me du nom d'Ahura Mazda, oppos&#233; &#224; une cr&#233;ature des t&#233;n&#232;bres du nom d'Angra Mainyu. Le symbole le plus important de la foi zoroastrienne est le feu, car il repr&#233;sente la lumi&#232;re et la chaleur d'Ahura Mazda, mais &#233;galement la puret&#233;. [PARAGRAPH:2:1]Les &#233;rudits ne s'accordent pas pr&#233;cis&#233;ment sur l'&#233;poque &#224; laquelle v&#233;cut Zoroastre, mais la situent entre l'an 1000 av. J.-C. et l'an 600 av. J.-C.. Les dates exactes de sa naissance et de sa mort restent un myst&#232;re, mais le zoroastrisme existe d&#233;j&#224; lorsque Cyrus II &#233;rige l'empire perse au cours du VIe si&#232;cle av. J.-C.. Selon la l&#233;gende zoroastrienne, Zoroastre se d&#233;marque comme un &#234;tre particulier d&#232;s sa naissance, et des esprits mal&#233;fiques tentent &#224; plusieurs reprises de le tuer au cours de son enfance. A l'&#226;ge de 20 ans, Zoroastre se retire dans une grotte et y passe les sept ann&#233;es qui suivent &#224; m&#233;diter. Une fois qu'il ressent que sa d&#233;votion envers Ahura Mazda a atteint son apog&#233;e, Zoroastre d&#233;cide de partir r&#233;pandre la bonne parole, sans grand succ&#232;s au d&#233;part. Son tout premier fid&#232;le est converti lorsqu'il parvient par miracle &#224; gu&#233;rir le cheval du roi Vishtaspa, qui apporte alors le soutien dont Zoroastre a tant besoin pour pr&#234;cher sa religion qui s'&#233;tend ensuite rapidement. Avant que les Grecs ne rencontrent les Perses et commencent &#224; &#233;crire sur ce peuple, le zoroastrisme s'est r&#233;pandu dans tout l'empire perse et dans une grande partie du Proche-Orient. [PARAGRAPH:2:1]Les zoroastriens pensent que le monde est fondamentalement un endroit bienfaisant cr&#233;&#233; par Ahura Mazda pour les hommes, mais qu'il s'agit &#233;galement d'un champ de bataille qui voit s'affronter les forces du bien et du mal. Les zoroastriens ne croient pas en la pr&#233;destination et accordent beaucoup d'importance aux choix que chaque individu doit faire afin de repousser les tentations et les corruptions d'Angra Mainyu. Les bonnes actions comme les mauvaises seront r&#233;compens&#233;es apr&#232;s la mort, et les &#234;tres malfaisants seront jug&#233;s et envoy&#233;s en enfer, m&#234;me si &#224; la fin des temps, ils seront purifi&#233;s pour rejoindre Ahura Mazda. Les zoroastriens ne reconnaissent aucun autre dieu qu'Ahura Mazda, mais ce dernier est repr&#233;sent&#233; de diff&#233;rentes fa&#231;ons, souvent d&#233;peint sous une forme ang&#233;lique, et porte des noms tels que Vohu Manah (la Bonne pens&#233;e) et Asha (la V&#233;rit&#233;). Le livre saint du zoroastrisme est l'Avesta. Il r&#233;unit toutes les traditions orales transcrites pour la premi&#232;re fois sous la dynastie perse des Sassanides. On pense qu'une petite partie de l'Avesta, un ensemble de po&#232;mes connus comme les Gathas, a &#233;t&#233; r&#233;dig&#233;e par Zoroastre en personne. Les temples zoroastriens sont con&#231;us de mani&#232;re &#224; pr&#233;server le feu sacr&#233;, symbole de la lumi&#232;re et de l'&#233;clat d'Ahura Mazda. Les zoroastriens accordent &#233;galement une grande importance &#224; la propret&#233;. C'est pourquoi ils doivent suivre plusieurs rites de purification &#224; chaque p&#233;ch&#233; commis. [PARAGRAPH:2:1]Le zoroastrisme est historiquement la religion de l'empire perse, bien qu'elle ne soit pas officiellement encourag&#233;e par les empereurs perses avant la dynastie des Sassanides au IIIe si&#232;cle de notre &#232;re. Cette religion croise le juda&#239;sme au cours de la captivit&#233;[NEWLINE]babylonienne au VIe si&#232;cle av. J.-C.. Plusieurs &#233;l&#233;ments laissent &#224; penser que les deux religions se sont influenc&#233;es mutuellement (concepts du monoth&#233;isme, du paradis et de l'enfer, de l'eschatologie...). On pense &#233;galement, mais sans certitude, que les trois hommes sages de la naissance du Christ &#233;taient des mages zoroastriens (pr&#234;tres). Au VIIe si&#232;cle, lorsque les Arabes envahissent et d&#233;truisent l'empire perse, le zoroastrisme devient une religion pers&#233;cut&#233;e et dispara&#238;t progressivement. Un petit nombre de zoroastriens fuient en Inde, o&#249; ils cr&#233;ent une nouvelle communaut&#233; connue sous le nom de Parsis. La population des zoroastriens est aujourd'hui estim&#233;e entre 2 et 3 millions de personnes, principalement en Inde, au Pakistan et en Iran, mais est &#233;galement pr&#233;sente dans les principaux centres urbains anglophones de la plan&#232;te.</French>
+		<German>[TAB]Auch wenn bis heute nur wenig &#252;ber den Zarathustrismus bekannt ist, z&#228;hlt er doch zu den einflussreichsten Religionen der Weltgeschichte. Von dem Propheten Zarathustra (im griechischen Sprachraum Zoroaster genannt) begr&#252;ndet, wurde diese Glaubensrichtung in der Antike im Persischen Reich praktiziert. Der Zarathustrismus beinhaltet zwar einige monotheistische Elemente, ist aber im Wesentlichen eine dualistische Religion, denn sie besagt, dass das Universum von Ahura Masda, dem Gott des Lichts, erschaffen wurde, dem ein Gott der Finsternis namens Angra Mainyu gegen&#252;bersteht. Das wichtigste Symbol des zarathustrischen Glaubens ist das Feuer, welches das Licht und den gl&#228;nzenden Schein des Ahura Masda repr&#228;sentiert und f&#252;r Reinheit steht. [PARAGRAPH:2:1]Wann genau Zarathustra gelebt hat, ist unter Historikern umstritten, man schr&#228;nkt den Zeitraum allerdings von etwa 1000 bis 600 vor Christus ein. Unabh&#228;ngig von seinen exakten Geburts- und Todesdaten ist jedoch belegt, dass der Zarathustrismus bereits bei der Gr&#252;ndung des Persischen Reiches durch Kyros II. im 6. Jahrhundert vor Christus existierte. &#220;berlieferungen zufolge soll Zarathustra schon von Geburt an ein besonderer Mensch gewesen sein, der in seiner Kindheit zahlreiche Anschl&#228;ge auf sein Leben &#252;berstanden haben soll, die b&#246;se Geister auf in ver&#252;bten. Im Alter von etwa 20 Jahren zog sich Zarathustra in die Einsamkeit zur&#252;ck und verbrachte die darauf folgenden sieben Jahre in Meditation. Als er schlie&#223;lich vollkommene Hingebung zu Ahura Masda versp&#252;rte, machte er sich auf den Weg, um seine &#220;berzeugungen unter das Volk zu bringen, zun&#228;chst jedoch erfolglos. Erst nachdem er auf wundersame Weise das Pferd des K&#246;nigs Vistaspa geheilt hatte, der sich daraufhin h&#246;chstpers&#246;nlich zu Zarathustras Lehren bekannte, wuchs seine Anh&#228;ngerschaft und seine Religion wurde zunehmend popul&#228;rer. Zu der Zeit, als die Griechen erstmals auf die Perser stie&#223;en und schriftliche Aufzeichnungen &#252;ber sie verfassten, war der Zarathustrismus bereits im ganzen Persischen Reich und auch in gro&#223;en Teilen des Nahen Ostens etabliert. [PARAGRAPH:2:1]Die Anh&#228;nger des Zarathustrismus vertreten die Auffassung, dass die Welt im Grunde ein guter Ort ist, den Ahura Masda f&#252;r die Menschen erschaffen hat, aber auch eine Art Schlachtfeld f&#252;r die Kr&#228;fte des Guten und des B&#246;sen. Sie glauben nicht an die Vorbestimmung, sondern sind &#252;berzeugt, dass jeder Einzelne eine Wahl treffen muss, um der Versuchung und Manipulation durch Angra Mainyu zu entgehen. Gute und b&#246;se Taten werden nach dem Tod gleicherma&#223;en bewertet, wobei alles &#220;bel verurteilt und zur H&#246;lle geschickt wird, doch am Ende der Zeit wird auch das B&#246;se gel&#228;utert werden und sich wieder Ahura Masda zuwenden. Der Zarathustrismus erkennt keinen anderen Gott an als Ahura Masda, der verschiedene Erscheinungsformen annehmen kann, h&#228;ufig die von engels&#228;hnlichen Wesen mit Namen wie Vohu Manah (guter Gedanke) und Asha (Wahrheit). Das Awesta, das Heilige Buch des zarathustrischen Glaubens, enth&#228;lt die urspr&#252;nglich m&#252;ndlichen &#220;berlieferungen, die w&#228;hrend der Sassaniden-Periode in Persien schriftlich niedergelegt wurden. Ein kleiner Teil des Awestas, eine Reihe von Hymnen bzw. Liedern, die so genannten Gathas, sollen von Zarathustra selbst verfasst worden sein. Der Hauptzweck der zarathustrischen Tempel ist die Bewahrung des heiligen Feuers, welches das Licht und den Glanz des Ahura Masda symbolisiert. Auch die Reinheit spielt im zarathustrischen Glauben eine sehr wichtige Rolle. So m&#252;ssen die Gl&#228;ubigen verschiedene Reinigungsrituale durchlaufen, wenn sie ges&#252;ndigt haben. [PARAGRAPH:2:1]Aus historischer Sicht war der Zarathustrismus die Hauptreligion im Persischen Reich, offiziell wurde sie jedoch erst w&#228;hrend der Sassaniden-Periode im 3. Jahrhundert nach Christus von den persischen Kaisern gef&#246;rdert. Ein erstes Aufeinandertreffen des Zarathustrismus und des j&#252;dischen Glaubens fand w&#228;hrend der babylonischen Besatzungszeit im 6. Jahrhundert vor Christus statt und vieles weist darauf hin, dass sich die beiden Religionen in der Folge gegenseitig beeinflussten (&#228;hnliche monotheistische Pr&#228;gung, Himmel und H&#246;lle, Eschatologie etc.). Es gibt kaum einen Zweifel daran, dass auch die drei Weisen, die bei der Geburt Jesu Christi anwesend waren, zarathustrische Magi (Priester) gewesen sind. Nach der Verw&#252;stung und Zerst&#246;rung des Persischen Reiches durch die Araber im 7. Jahrhundert nach Christus wurden die Glaubensanh&#228;nger des Zarathustrismus verfolgt und so nahm die Popularit&#228;t dieser Religion immer mehr ab. Einige Gl&#228;ubige fl&#252;chteten nach Indien, wo sie eine neue Gemeinde gr&#252;ndeten und sich fortan Parsen nannten. Auch heute gibt es noch etwa 2-3 Millionen Menschen, die den Zarathustrismus praktizieren, vorwiegend in Indien, Pakistan, im Iran sowie vereinzelt auch in den Gro&#223;st&#228;dten der englischsprachigen Welt. </German>
+		<Italian>[TAB]Anche se oggi &#232; poco noto, lo zoroastrismo &#232; stato una delle religioni pi&#249; influenti della storia. Esso fu la religione dell'antico Impero persiano e fu predicato dal profeta Zaratustra, noto in occidente come Zoroastro. Lo zoroastrismo contiene elementi di monoteismo ma &#232; in realt&#224; un culto dualistico: l'universo fu creato da un supremo essere di luce, Ahura Mazda, a cui si oppone l'essere supremo dell'oscurit&#224;, Angra Mainyu. Il simbolo pi&#249; importante della fede zoroastriana &#232; il fuoco, che simboleggia la luce e il calore di Ahura Mazda nonch&#233; la purezza. [PARAGRAPH:2:1]Gli studiosi non sono d'accordo sull'esatta collocazione temporale di Zoroastro. Le date variano dal 1000 a.C. al 600 a.C. Anche se il periodo di vita del suo profeta &#232; incerto, lo zoroastrismo certamente esisteva gi&#224; quando Ciro fond&#242; l'Impero persiano nel VI secolo a.C. Secondo la tradizione zoroastriana, Zoroastro sarebbe stato riconosciuto come persona speciale sin dalla nascita e gli spiriti maligni avrebbero tentato pi&#249; volte di ucciderlo. All'et&#224; di venti anni, Zoroastro si ritir&#242; in una caverna e trascorse i sette anni successivi in meditazione. Dopo aver raggiunto la devozione pi&#249; completa per Ahura Mazda, Zoroastro vag&#242; per diffondere la fede, ma con scarsi successi iniziali: ottenne le prime conversioni alla sua fede solo quando riusc&#236; a guarire il cavallo del re Vishtaspa: da allora, il re support&#242; la religione e questa si diffuse rapidamente. Quando gli intellettuali Greci conobbero i Persiani e cominciarono a scrivere opere su di loro, lo zoroastrismo era ormai diffuso in tutta la Persia e il Vicino Oriente. [PARAGRAPH:2:1]Lo zoroastrismo ritiene che il mondo sia sostanzialmente un bel posto creato per gli uomini da Ahura Mazda, ma anche che sia diventato il campo di battaglia tra le forze del bene e quelle del male. Gli zoroastriani non credono nella predestinazione e molta enfasi &#232; posta sulle scelte di ciascuno, che dovrebbero tendere a evitare la corruzione da parte di Angra Mainyu. Alle azioni in terra corrisponder&#224; un premio o una punizione nell'aldil&#224;: i malvagi saranno spediti all'inferno, anche se poi, alla fine dei tempi, tutti verranno purificati e si riuniranno ad Ahura Mazda. Gli zoroastriani non riconoscono altro dio al di fuori di Ahura Mazda, che per&#242; si manifesta in forme diverse, spesso angeliche, che assumono nomi quali Vohu Manah (Buon pensiero) e Asha (Verit&#224;). Il libro sacro del zoroastrismo &#232; l'Avesta, una raccolta delle tradizioni orali poi scritte al tempo della dinastia dei Sassanidi. Una piccola parte dell'Avesta, una serie di inni noti come Gatha, pare sia stata composta da Zoroastro in persona. I templi zoroastriani hanno la funzione di preservare il fuoco sacro, simbolo della luce e dello splendore di Ahura Mazda. Anche la pulizia &#232; importante e vi erano infatti diversi riti di purificazione da compiere dopo che si aveva peccato. [PARAGRAPH:2:1]Lo zoroastrismo &#232; storicamente la religione della Persia, anche se gli imperatori persiani non lo promossero ufficialmente fino al III secolo d.C., durante la dinastia dei Sassanidi. Esso venne a contatto con il giudaismo durante la cattivit&#224; babilonese del VI secolo a.C. e sembrano esserci le prove che le due religioni si siano influenzate reciprocamente (condivisione dei concetti di monoteismo, di paradiso e inferno, dell'escatologia, ecc.). Pare quasi certo anzi che i tre saggi presenti alla nascita di Cristo, fossero magi (sacerdoti) zoroastriani. Con la conquista da parte degli Arabi dell'Impero persiano nel VII secolo d.C., gli zoroastriani vennero perseguitati e la religione scomparve. Alcuni fedeli fuggirono in India, dove fondarono una nuova comunit&#224; nota come Parsis. Oggi vi sono al mondo circa 2-3 milioni di praticanti del zoroastrismo, concentrati per lo pi&#249; in India, Pakistan e Iran, ma sparsi anche nelle principali citt&#224; del mondo di lingua inglese. </Italian>
+		<Spanish>[TAB]Aunque no es muy conocido en nuestros d&#237;as, el zoroastrismo ha sido una de las religiones m&#225;s influyentes de la historia del mundo. Era la religi&#243;n del imperio persa, formulada por Zaratustra, conocido en el oeste como Zoroastro. El zoroastrismo tiene elementos monote&#237;stas, pero tambi&#233;n es una fe dualista: el universo es obra de un ser supremo de luz llamado Ahura Mazda, que est&#225; enfrentado a una criatura de oscuridad primigenia conocida como Angra Mainyu. El s&#237;mbolo m&#225;s importante de la fe zoroastrista es el fuego, que simboliza la luz y el calor de Ahura Mazda y sirve como s&#237;mbolo de pureza. [PARAGRAPH:2:1]Los estudiosos debaten cu&#225;ndo vivi&#243; Zoroastro, con fechas que oscilan entre el a&#241;o 1000 a. C. y el 600 a. C. Las fechas exactas de su nacimiento y su muerte se desconocen, pero en cualquier caso, el zoroastrismo exist&#237;a ya cuando Ciro II fund&#243; el imperio persa, en el siglo VI a. C. Seg&#250;n la tradici&#243;n zoroastrista, Zoroastro fue reconocido desde su nacimiento como un individuo especial, por lo que los esp&#237;ritus malignos intentaron asesinarlo varias veces siendo a&#250;n un ni&#241;o. Al cumplir los veinte a&#241;os, Zoroastro se retir&#243; a una cueva, donde pas&#243; los siete a&#241;os siguientes meditando. Cuando sinti&#243; que hab&#237;a alcanzado una devoci&#243;n completa hacia Ahura Mazda, Zoroastro parti&#243; a difundir su palabra por el mundo, tarea en la que inicialmente no le acompa&#241;&#243; el &#233;xito. No consigui&#243; sus primeros conversos hasta despu&#233;s de curar de manera milagrosa al caballo del rey Vishtaspa, pero despu&#233;s de este suceso su religi&#243;n conoci&#243; una r&#225;pida difusi&#243;n.  Cuando los griegos se encontraron con los persas por vez primera y empezaron a escribir sobre ellos, el zoroastrismo se hab&#237;a difundido por el imperio persa y ocupaba la mayor parte de Oriente Pr&#243;ximo. [PARAGRAPH:2:1]Los zoroastristas creen que el mundo es fundamentalmente un lugar bueno creado para los humanos por Ahura Mazda, pero que al mismo tiempo es el campo de batalla de una lucha entre el bien y el mal. No creen en la predestinaci&#243;n y ponen mucho &#233;nfasis en la elecci&#243;n que deben hacer los individuos para no verse tentados y corrompidos por Angra Mainyu. Las acciones, buenas y malas, recibir&#225;n su recompensa tras la muerte y los malvados ser&#225;n juzgados y enviados al Infierno, aunque al final de los tiempos hasta los perversos ser&#225;n purificados y se reunir&#225;n con Ahura Mazda. Los zoroastristas no reconocen a ning&#250;n otro dios que Ahura Mazda, pero &#233;ste se manifiesta a trav&#233;s de diferentes emanaciones, que a menudo adoptan forma de &#225;ngel y tienen nombres diferentes, como Vohu Manah (Buen Pensamiento) y Asha (Verdad). El libro sagrado de los zoroastristas, llamado Avesta, es una compilaci&#243;n de tradiciones orales que se puso por escrito en tiempos de la Persia sas&#225;nida. Se cree que una peque&#241;a secci&#243;n del Avesta, una serie de himnos conocida como "gathas", es obra del propio Zoroastro. La funci&#243;n fundamental de los templos zoroastristas es la preservaci&#243;n del fuego sagrado, s&#237;mbolo de la luz y la radiaci&#243;n de Ahura Mazda. La limpieza es tambi&#233;n muy importante, y existen varios rituales de purificaci&#243;n que se deben seguir cuando se ha pecado. [PARAGRAPH:2:1]Hist&#243;ricamente, el zoroastrismo fue la religi&#243;n del imperio persa, aunque no fue reconocido como tal por los emperadores hasta el per&#237;odo sas&#225;nida (siglo III d. C.). Entr&#243; en contacto con el juda&#237;smo durante el cautiverio en Babilonia (siglo VI a. C.) y existen numerosas evidencias que sugieren que ambas religiones se influenciaron mutuamente (conceptos similares del monote&#237;smo, el Cielo y el Infierno, la escatolog&#237;a, etc.). Adem&#225;s, hoy en d&#237;a se acepta que los tres reyes magos de la historia de Cristo eran magos (sacerdotes) zoroastristas. Cuando, en el siglo VII d. C., los &#225;rabes conquistaron y destruyeron el imperio persa, el zoroastrismo se convirti&#243; en una religi&#243;n perseguida y experiment&#243; un lento declive. Un peque&#241;o n&#250;mero de sus seguidores huy&#243; a la India y form&#243; una comunidad nueva, cuyos miembros ser&#237;an conocidos como "parsis". En la actualidad existen entre dos y tres millones de practicantes del zoroastrismo, concentrados principalmente en la India, Paquist&#225;n e Ir&#225;n, pero tambi&#233;n con cierta presencia en los principales centros urbanos del mundo anglosaj&#243;n. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Tag>
+		<English>Zoroastrian Missionary</English>
+		<French>
+			<Text>Missionnaire zoroastrien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrischer Missionar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Missionario zoroastriano:Missionari zoroastriani</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Misionero zoroastrano:Misioneros zoroastranos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>
+		<English>Zoroastrian Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
+		<English>Zoroastrian Fire Temple</English>
+		<French>
+			<Text>Temple Du Feu zoroastrien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zarathustrischer Feuertempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Tempio del Fuoco zoroastriano:Templi del Fuoco zoroastriani</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Templo del Fuego zoroastrano:Templos del Fuego zoroastranos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_PEDIA</Tag>
+		<English>[TAB]A fire temple in Zoroastrianism is the place of worship for Zoroastrians. Although Zoroastrians revere fire in any form, the temple fire is not literally for the reverence of fire: In the Zoroastrian religion, fire (Atar), together with clean water (Aban), is an agent of ritual purity. Clean, white "ash for the purification ceremonies [is] regarded as the basis of ritual life," which, "are essentially the rites proper to the tending of a domestic fire, for the temple [fire] is that of the hearth fire raised to a new solemnity" (Boyce, 1975:455).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE</Tag>
+		<English>Adur Farnbag</English>
+		<French>
+			<Text>Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Adur Farnbag</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Adur Farnbag:Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_PEDIA</Tag>
+		<English>[TAB]Apart from (relatively) minor fire temples, three were said to derive directly from Ahura Mazda, thus making them the most important in Zoroastrian tradition. These were the "Great Fires" or "Royal Fires" of Adur Burzen-Mihr, Adur Farnbag, and Adur Gushnasp. The legends of the great fires are probably of antiquity, for by the 3rd century CE, miracles were said to happen at the sites and the fires were popularly associated with other legends such as those of the folktale heroes Fereydun, Jamshid and Rustam.[PARAGRAPH:2:1]The Bundahishn, a Zoroastrian view of creation finished in the 11th or 12th century CE, states that the Great Fires had existed since creation and had been brought forth on the back of the ox Srishok to propagate the faith, dispel doubt, and to protect all humankind. Other texts observe that the Great Fires were also vehicles of propaganda and symbols of imperial sovereignty.[PARAGRAPH:2:1]The priests of these respective "Royal Fires" are said to have competed with each other to draw pilgrims by promoting the legends and miracles that were purported to have occurred at their respective sites. Each of the three is also said to have mirrored social and feudal divisions: "The fire which is Farnbag has made its place among the priests; ... the fire which is Gushnasp has made its place among the warriors; ... the fire which is Burzin-Mitro has made its place among agriculturists" (Denkard, 6.293). These divisions, from an archaeological point of view, are most revealing, since from at least the 1st century BCE onwards, society was divided into four, not three, feudal estates.[PARAGRAPH:2:1]The Farnbag fire (translated as 'the fire Glory-Given' by Darmesteter) was considered the most venerated of the three because it was seen as the earthly representative of the Atar Spenishta, 'Holiest Fire' of Yasna 17.11 and described in a Zend commentary on that verse as the "the one burning in Paradise in the presence of Ohrmazd."</English>
+		<French>[TAB]Apart from (relatively) minor fire temples, three were said to derive directly from Ahura Mazda, thus making them the most important in Zoroastrian tradition. These were the "Great Fires" or "Royal Fires" of Adur Burzen-Mihr, Adur Farnbag, and Adur Gushnasp. The legends of the great fires are probably of antiquity, for by the 3rd century CE, miracles were said to happen at the sites and the fires were popularly associated with other legends such as those of the folktale heroes Fereydun, Jamshid and Rustam.[PARAGRAPH:2:1]The Bundahishn, a Zoroastrian view of creation finished in the 11th or 12th century CE, states that the Great Fires had existed since creation and had been brought forth on the back of the ox Srishok to propagate the faith, dispel doubt, and to protect all humankind. Other texts observe that the Great Fires were also vehicles of propaganda and symbols of imperial sovereignty.[PARAGRAPH:2:1]The priests of these respective "Royal Fires" are said to have competed with each other to draw pilgrims by promoting the legends and miracles that were purported to have occurred at their respective sites. Each of the three is also said to have mirrored social and feudal divisions: "The fire which is Farnbag has made its place among the priests; ... the fire which is Gushnasp has made its place among the warriors; ... the fire which is Burzin-Mitro has made its place among agriculturists" (Denkard, 6.293). These divisions, from an archaeological point of view, are most revealing, since from at least the 1st century BCE onwards, society was divided into four, not three, feudal estates.[PARAGRAPH:2:1]The Farnbag fire (translated as 'the fire Glory-Given' by Darmesteter) was considered the most venerated of the three because it was seen as the earthly representative of the Atar Spenishta, 'Holiest Fire' of Yasna 17.11 and described in a Zend commentary on that verse as the "the one burning in Paradise in the presence of Ohrmazd."</French>
+		<German>[TAB]Apart from (relatively) minor fire temples, three were said to derive directly from Ahura Mazda, thus making them the most important in Zoroastrian tradition. These were the "Great Fires" or "Royal Fires" of Adur Burzen-Mihr, Adur Farnbag, and Adur Gushnasp. The legends of the great fires are probably of antiquity, for by the 3rd century CE, miracles were said to happen at the sites and the fires were popularly associated with other legends such as those of the folktale heroes Fereydun, Jamshid and Rustam.[PARAGRAPH:2:1]The Bundahishn, a Zoroastrian view of creation finished in the 11th or 12th century CE, states that the Great Fires had existed since creation and had been brought forth on the back of the ox Srishok to propagate the faith, dispel doubt, and to protect all humankind. Other texts observe that the Great Fires were also vehicles of propaganda and symbols of imperial sovereignty.[PARAGRAPH:2:1]The priests of these respective "Royal Fires" are said to have competed with each other to draw pilgrims by promoting the legends and miracles that were purported to have occurred at their respective sites. Each of the three is also said to have mirrored social and feudal divisions: "The fire which is Farnbag has made its place among the priests; ... the fire which is Gushnasp has made its place among the warriors; ... the fire which is Burzin-Mitro has made its place among agriculturists" (Denkard, 6.293). These divisions, from an archaeological point of view, are most revealing, since from at least the 1st century BCE onwards, society was divided into four, not three, feudal estates.[PARAGRAPH:2:1]The Farnbag fire (translated as 'the fire Glory-Given' by Darmesteter) was considered the most venerated of the three because it was seen as the earthly representative of the Atar Spenishta, 'Holiest Fire' of Yasna 17.11 and described in a Zend commentary on that verse as the "the one burning in Paradise in the presence of Ohrmazd."</German>
+		<Italian>[TAB]Apart from (relatively) minor fire temples, three were said to derive directly from Ahura Mazda, thus making them the most important in Zoroastrian tradition. These were the "Great Fires" or "Royal Fires" of Adur Burzen-Mihr, Adur Farnbag, and Adur Gushnasp. The legends of the great fires are probably of antiquity, for by the 3rd century CE, miracles were said to happen at the sites and the fires were popularly associated with other legends such as those of the folktale heroes Fereydun, Jamshid and Rustam.[PARAGRAPH:2:1]The Bundahishn, a Zoroastrian view of creation finished in the 11th or 12th century CE, states that the Great Fires had existed since creation and had been brought forth on the back of the ox Srishok to propagate the faith, dispel doubt, and to protect all humankind. Other texts observe that the Great Fires were also vehicles of propaganda and symbols of imperial sovereignty.[PARAGRAPH:2:1]The priests of these respective "Royal Fires" are said to have competed with each other to draw pilgrims by promoting the legends and miracles that were purported to have occurred at their respective sites. Each of the three is also said to have mirrored social and feudal divisions: "The fire which is Farnbag has made its place among the priests; ... the fire which is Gushnasp has made its place among the warriors; ... the fire which is Burzin-Mitro has made its place among agriculturists" (Denkard, 6.293). These divisions, from an archaeological point of view, are most revealing, since from at least the 1st century BCE onwards, society was divided into four, not three, feudal estates.[PARAGRAPH:2:1]The Farnbag fire (translated as 'the fire Glory-Given' by Darmesteter) was considered the most venerated of the three because it was seen as the earthly representative of the Atar Spenishta, 'Holiest Fire' of Yasna 17.11 and described in a Zend commentary on that verse as the "the one burning in Paradise in the presence of Ohrmazd."</Italian>
+		<Spanish>[TAB]Apart from (relatively) minor fire temples, three were said to derive directly from Ahura Mazda, thus making them the most important in Zoroastrian tradition. These were the "Great Fires" or "Royal Fires" of Adur Burzen-Mihr, Adur Farnbag, and Adur Gushnasp. The legends of the great fires are probably of antiquity, for by the 3rd century CE, miracles were said to happen at the sites and the fires were popularly associated with other legends such as those of the folktale heroes Fereydun, Jamshid and Rustam.[PARAGRAPH:2:1]The Bundahishn, a Zoroastrian view of creation finished in the 11th or 12th century CE, states that the Great Fires had existed since creation and had been brought forth on the back of the ox Srishok to propagate the faith, dispel doubt, and to protect all humankind. Other texts observe that the Great Fires were also vehicles of propaganda and symbols of imperial sovereignty.[PARAGRAPH:2:1]The priests of these respective "Royal Fires" are said to have competed with each other to draw pilgrims by promoting the legends and miracles that were purported to have occurred at their respective sites. Each of the three is also said to have mirrored social and feudal divisions: "The fire which is Farnbag has made its place among the priests; ... the fire which is Gushnasp has made its place among the warriors; ... the fire which is Burzin-Mitro has made its place among agriculturists" (Denkard, 6.293). These divisions, from an archaeological point of view, are most revealing, since from at least the 1st century BCE onwards, society was divided into four, not three, feudal estates.[PARAGRAPH:2:1]The Farnbag fire (translated as 'the fire Glory-Given' by Darmesteter) was considered the most venerated of the three because it was seen as the earthly representative of the Atar Spenishta, 'Holiest Fire' of Yasna 17.11 and described in a Zend commentary on that verse as the "the one burning in Paradise in the presence of Ohrmazd."</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_RABBI</Tag>
+		<English>A magi from %s2_city has written a valuable collection of religious works.</English>
+		<French>Un mage de la ville de %s2_city a termine la redaction de son oeuvre religieuse.</French>
+		<German>Ein Magi aus der Stadt %s2_city hat eine wertvolle Sammlung religi&#246;ser Schriften verfasst.</German>
+		<Italian>Un magi di %s2_city ha scritto una preziosa raccolta di opere religiose</Italian>
+		<Spanish>Un mago de %s2_city ha escrito una valiosa colecci&#243;n de obras religiosas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_RABBI</Tag>
+		<English>A magi from %s2_city has written a collection of religious works that is of great importance to Zoroastrianism worldwide.</English>
+		<French>Un mage de %s2_city a termine la redaction de son oeuvre, d'importance majeure pour le zoroastrisme.</French>
+		<German>Ein Magi aus der Stadt %s2_city hat eine wertvolle Sammlung religi&#246;ser Schriften verfasst, die von weltweiter Bedeutung f&#252;r das Zarathustrismus ist.</German>
+		<Italian>Un magi di %s2_city ha scritto una preziosa raccolta di opere religiose di grande importanza per il Zoroastrismo nel mondo.</Italian>
+		<Spanish>Un mago de %s2_city ha escrito una colecci&#243;n de obras religiosas de gran valor para el zoroastrismo mundial.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_RABBI_2</Tag>
+		<English>The magi certainly deserves state funding for his endeavours.</English>
+		<French>Le mage merite certainement une pension d'Etat pour ce qu'il a entrepris.</French>
+		<German>Sorgt daf&#252;r, dass der Magi mit staatlicher F&#246;rderung an weiteren Werken arbeiten kann.</German>
+		<Italian>Il magi merita sicuramente un finanziamento statale per i suoi sforzi</Italian>
+		<Spanish>El mago merece financiaci&#243;n estatal por sus esfuerzos.</Spanish>
+	</TEXT>
+    
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_HELLENISM</Tag>
+		<English>Hellenism</English>
+		<French>hell&#233;nisme</French>
+		<German>Hellenismus</German>
+		<Italian>Ellenismo</Italian>
+		<Spanish>Helenismo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_HELLENISM_ADJECTIVE</Tag>
+		<English>Hellenic</English>
+		<French>
+			<Text>hell&#233;nique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>hellenistische</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>ellenica</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>hel&#233;nica</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_HELLENISM_PEDIA</Tag>
+		<English>[TAB]The Hellenic religion, also referred to as Greek mythology, comprises an enormous body of stories about gods, goddesses, and heroes, originally created and preserved as part of an oral tradition. The Hellenic religion was polytheistic in nature, with innumerable local nature deities in addition to the major Olympian gods and goddesses. The Greek gods were human in form but possessed supernatural powers; they were born from other gods but never aged, they were immortal, could travel enormous distances instantly, speak through humans with or without their knowledge, etc. Some gods were the personified aspects of natural forces (for example, Helios was literally the god of the sun) while others had complex personalities and multiple functions associated with them (Apollo is probably the best example). The gods and goddesses were all related to one another as part of one large family, but there were clear generations of gods, and their interactions with each other were sometimes violent. For example, the Olympian gods had reached their place of dominance by casting out an earlier generation of gods and goddesses known as the Titans. This may be a mythical reflection of cultural overlap between the Greeks and the earlier culture that they displaced when arriving in the Peloponnesus around roughly 1000BC. [PARAGRAPH:2:1]In addition to stories about gods, the Hellenic religion was also full of great sagas about the deeds of heroes, many of whom possessed a divine parent. Stories abound about figures such as Heracles, Perseus, Jason, and the characters of the Iliad, which were often used as subject material for later Greek artists. These humans frequently interacted with gods and even bested them at times. Many of the heroes were held in great esteem by the Greeks, especially characters such as Achilles. Although some of the well-educated Greeks had their doubts about the reality behind the Hellenic religion, the vast majority of Greeks did not question the validity of the stories. The Greeks used their religion to explain the doings of the natural world and their own origins; it was considered a source of pride to trace one's lineage or the founding of one's city to the actions of a god. [PARAGRAPH:2:1]Archaeology and linguistic analysis suggests that the Hellenic religion was heavily influenced by other religions. For example, the Greek Zeus, Roman Jupiter, Germanic Tyr, and Sanskrit Dyaus are all sky gods that share a common Indo-European origin sometime in the distant past. Other gods were borrowed or influenced from Near Eastern religions; Aphrodite possessed a very similar function to the Semitic goddesses Ishtar and Astarte. During the Hellenic period and afterwards, the Greek religion spread across much of the Mediterranean and Near East, influencing many of the previously existing religions and giving rise to new syncretistic mystery cults. Although the Hellenic religion is a dead one today, it has provided an inspiration to artwork of all kind for several thousand years.</English>
+		<French>[TAB]La religion hell&#233;nique, &#224; laquelle on fait le plus souvent r&#233;f&#233;rence sous l'appellation de mythologie grecque, comprend un grand nombre de l&#233;gendes sur les dieux, d&#233;esses et h&#233;ros. Certaines de ces l&#233;gendes remontent &#224; plusieurs si&#232;cles, ayant &#233;t&#233; transmises par la tradition orale. La religion hell&#233;nique est polyth&#233;iste, avec d'innombrables divinit&#233;s locales de la nature en plus des principaux dieux du panth&#233;on olympien. Les dieux grecs ont forme humaine mais poss&#232;dent des pouvoirs surnaturels, ont &#233;t&#233; engendr&#233;s par d'autres dieux mais ne vieillissent pas, ils sont immortels, peuvent voyager sur de tr&#232;s grandes distances instantan&#233;ment, parler &#224; travers les humains (parfois sans m&#234;me que ceux-ci s'en aper&#231;oivent), etc. Certains dieux sont les personnifications des forces de la nature (H&#233;lios &#233;tant litt&#233;ralement le dieu du soleil) alors que d'autres ont des personnalit&#233;s complexes et sont associ&#233;s &#224; de multiples fonctions (Apollon en &#233;tant le meilleur exemple). Dieux et d&#233;esses sont tous parents d'une m&#234;me grande famille, mais il existe des g&#233;n&#233;rations distinctes de dieux, et leurs interactions sont parfois tr&#232;s violentes. Le fait est que les dieux olympiens n'occupent leur position dominante qu'apr&#232;s avoir chass&#233; une premi&#232;re g&#233;n&#233;ration de dieux appel&#233;s les Titans. Cela refl&#232;te sans doute le chevauchement culturel mythologique existant entre les Grecs et la civilisation pr&#233;c&#233;dente, chass&#233;e &#224; leur arriv&#233;e dans le P&#233;loponn&#232;se aux alentours de 1000 av. J.-C.. [PARAGRAPH:2:1]Outre de nombreuses l&#233;gendes sur les dieux, la tradition orale hell&#233;nique est riche de grandes sagas relatant les hauts faits de h&#233;ros humains, dont un certain nombre ont une ascendance divine. On pense notamment aux l&#233;gendes d'H&#233;racl&#232;s, de Pers&#233;e, de Jason et des personnages de l'Iliade. Ces mortels entrent souvent en conflit avec des dieux et en triomphent parfois. Nombre d'entre eux, surtout s'ils sont nobles et puissants comme Achille, sont tenus en haute estime par les Grecs. M&#234;me si certains des Grecs &#233;duqu&#233;s entretiennent quelques doutes &#224; propos de la r&#233;alit&#233; dessin&#233;e par la religion hell&#233;nique, la grande majorit&#233; de la population accepte sans r&#233;serve la mythologie comme seule v&#233;rit&#233;. Les Grecs s'appuient sur leur religion pour expliquer les ph&#233;nom&#232;nes naturels et leurs propres origines, et c'est une source de grande fiert&#233; que de pouvoir associer une lign&#233;e ou la fondation d'une cit&#233; aux actions d'un dieu. [PARAGRAPH:2:1]Les r&#233;sultats des recherches arch&#233;ologiques et linguistiques laissent penser que la religion hell&#233;nique a &#233;t&#233; tr&#232;s influenc&#233;e par d'autres religions. C'est ainsi que le dieu grec Zeus, le dieu romain Jupiter, le dieu germain Tyr et le dieu sanskrit Dyaus sont tous des dieux du ciel, et il est probable qu'ils partagent tous une m&#234;me lointaine origine indo-europ&#233;enne. Les Grecs empruntent librement des dieux &#224; d'autres cultes du Proche-Orient, c'est ainsi qu'Aphrodite a des fonctions tr&#232;s proches de celles des d&#233;esses s&#233;mites Ishtar et Astart&#233;. Au cours de l'&#233;poque hell&#233;nique et par la suite, la religion grecque se r&#233;pand &#224; travers la plus grande partie de la M&#233;diterran&#233;e et du Proche-Orient, influen&#231;ant nombre des cultes d&#233;j&#224; existants et donnant naissance &#224; de nouveaux cultes syncr&#233;tistes. Bien que la religion grecque ne soit plus pratiqu&#233;e de nos jours, ses mythologies ont enflamm&#233; les imaginations et inspir&#233; de nombreuses oeuvres artistiques pendant plusieurs milliers d'ann&#233;es.</French>
+		<German>[TAB]Die hellenistische Religion der Antike, auch als griechische Mythologie bezeichnet, umfasste einen enormen Fundus an G&#246;tter- und Heldensagen, die urspr&#252;nglich durch m&#252;ndliche &#220;berlieferung erschaffen und in der hellenistischen Kultur verbreitet wurden. Sie war angesichts der vielen G&#246;tter und G&#246;ttinnen des Olymps sowie zahlloser regionaler Naturgottheiten extrem polytheistisch gepr&#228;gt. Die griechischen G&#246;tter wurden in der Regel in menschlicher Form dargestellt, besa&#223;en allerdings &#252;bernat&#252;rliche Kr&#228;fte. Sie wurden von anderen Gottheiten geboren, alterten nicht, waren unsterblich, konnten im Nu enorme Entfernungen &#252;berwinden, sprachen durch die Menschen (mit oder ohne deren Wissen) etc. Einige G&#246;tter verk&#246;rperten Naturgewalten (zum Beispiel war Helios im w&#246;rtlichen Sinne der Gott der Sonne), w&#228;hrend andere komplexe Pers&#246;nlichkeitsstrukturen aufwiesen und zahlreiche Funktionen wahrnahmen (zum Beispiel Apollon). Als Teil einer gro&#223;en Familie waren die G&#246;tter und G&#246;ttinnen alle irgendwie miteinander verwandt, aber es gab eine klare Generationeneinteilung und manchmal bek&#228;mpften sie sich auch gegenseitig. Zum Beispiel sollen die G&#246;tter des Olymps ihre Vorherrschaft durch den Sturz der vorherigen G&#246;ttergeneration, der so genannten Titanen, gesichert haben. Hierbei k&#246;nnte es sich um eine mythische Darstellung der kulturellen &#220;berschneidung zwischen den Griechen und der fr&#252;heren Population in dieser Region handeln, die sie bei ihrer Ankunft auf dem Peleponnes um 1000 vor Christus vertrieben hatten. [PARAGRAPH:2:1]Neben den vielen G&#246;ttergeschichten wurde die griechische Religion auch von zahlreichen grandiosen Sagen &#252;ber die Abenteuer verschiedener Helden beeinflusst, von denen viele zumindest ein g&#246;ttliches Elternteil besa&#223;en. Die Erz&#228;hlungen handelten von heldenhaften Pers&#246;nlichkeiten wie Herakles, Perseus, Jason sowie den Charakteren der Ilias und inspirierten viele griechische K&#252;nstler sp&#228;terer Generationen. Diese Helden in Menschengestalt kamen h&#228;ufig mit den G&#246;ttern in Kontakt, &#252;bertrumpften sie bisweilen sogar und wurden von den Griechen meist hoch gesch&#228;tzt, insbesondere so ehrenhafte Pers&#246;nlichkeiten wie zum Beispiel Achilles. Einige der griechischen Gelehrten hatten durchaus Zweifel an dem Wahrheitsgehalt der griechischen Mythologie, dennoch stellte der &#252;berwiegende Teil der Bev&#246;lkerung die Stichhaltigkeit der &#252;berlieferten Legenden nicht in Frage. Die Griechen nutzten ihre Religion, um nat&#252;rliche Vorg&#228;nge und auch ihren eigenen Ursprung zu erkl&#228;ren. Man war stolz darauf, wenn man seine eigene Herkunft oder die Gr&#252;ndung seiner Heimatstadt auf das Einwirken eines Gottes zur&#252;ckf&#252;hren konnte. [PARAGRAPH:2:1]Arch&#228;ologische und sprachliche Untersuchungen haben ergeben, dass die griechische Religion stark von anderen Religionen beeinflusst war. Zum Beispiel stellen der griechische Gott Zeus, der r&#246;mische Gott Jupiter, der germanische Gott Tyr und der Sanskrit-Gott Dyaus allesamt Himmelsg&#246;tter dar, die irgendwann in der fernen Vergangenheit einen gemeinsamen indo-europ&#228;ischen Ursprung hatten. Andere G&#246;tter wurden von den Religionen im Nahen Osten "ausgeborgt" oder zumindest beeinflusst: Aphrodite besa&#223; frappierend &#228;hnliche Eigenschaften und Funktionen wie die semitischen G&#246;ttinnen Ishtar und Astarte. Die griechische Mythologie fand w&#228;hrend der hellenistischen Periode und auch danach gro&#223;e Verbreitung in weiten Teilen des Mittelmeerraums und des Nahen Ostens. Sie beeinflusste viele der bereits existierenden Religionen und ebnete den Weg f&#252;r die Entstehung neuer synkretistischer Mysterienkulte. Obwohl der griechische Glaube des hellenistischen Zeitalters heute nicht mehr in dieser Form existiert, diente er Jahrtausende lang als Inspiration f&#252;r Kunstwerke aller Art.</German>
+		<Italian>[TAB]La religione ellenica, nota anche come "mitologia greca", &#232; composta da un'enorme serie di storie di dei, dee ed eroi, tramandate a lungo tempo oralmente. La religione ellenica era politeistica e oltre agli dei e alle dee dell'Olimpo comprendeva innumerevoli divinit&#224; naturali locali. Le divinit&#224; greche avevano aspetto umano ma erano dotati di poteri soprannaturali; pur nascendo (da altre divinit&#224;) non invecchiavano ed erano immortali, potevano coprire enormi distanze istantaneamente, parlare attraverso gli uomini con o senza la loro consapevolezza, ecc. Alcune divinit&#224; erano la personificazione di forze naturali (per esempio, Elio era letteralmente il dio del sole), mentre altre avevano personalit&#224; complesse e numerose funzioni (Apollo ne &#232; forse il miglior esempio). Le divinit&#224; avevano fra loro vincoli di parentela e formavano una grande famiglia, ma potevano distinguersi diverse generazioni, le cui interazioni con le altre avevano spesso esiti violenti. Per fare un esempio, gli dei olimpici avevano raggiunto la loro posizione di dominio estromettendo la precedente generazione dei Titani. Questo fenomeno potrebbe essere un riflesso culturale di ci&#242; che avvenne quando i Greci si sostituirono alla popolazione locale quando giunsero nel Peloponneso intorno al 1000 a.C. [PARAGRAPH:2:1]Oltre alle storie sugli dei, la mitologia greca &#232; piena di grandi saghe che narrano le gesta di eroi, molti dei quali avevano genitori divini. I miti di Ercole, Perseo, Giasone e le storie dei protagonisti dell'Iliade furono spesso oggetto di rielaborazione da parte degli artisti greci successivi. Si trattava di uomini che interagivano spesso con gli dei, a volte superandoli. Molti di loro erano enormemente stimati dai Greci, come per esempio Achille. Anche se i Greci meglio istruiti avevano i loro dubbi sul fondamento della religione ellenica, il popolo non metteva in dubbio la veridicit&#224; delle storie. I Greci usarono la loro religione per spiegare i fenomeni naturali e le proprie origini; era fonte di orgoglio il fatto che la propria ascendenza o la fondazione della propria citt&#224; potessero essere fatte risalire a un atto divino. [PARAGRAPH:2:1]Le analisi archeologiche e linguistiche suggeriscono che la religione ellenica abbia subito una pesante influenza da parte di altre religioni. Per esempio, il dio greco Zeus, il dio romano Giove, il dio germanico Tyr e il dio sanscrito Dyaus sono tutte divinit&#224; del cielo che condividono un'origine indo-europea risalente a chiss&#224; quando nel passato. Altre divinit&#224; furono prese in prestito o influenzate dalle religioni del Vicinio Oriente: Afrodite avevano una funzione simile a quella delle semitiche Ishtar e Astarte. Nel corso del periodo ellenico e anche dopo, la religione greca si diffuse nel Mediterraneo e nel Vicino Oriente, influenzando a sua volta molte religioni pre-esistenti e facendo nascere nuovi culti misterici sincretici. Anche se oggi si tratta di una religione morta, la mitologia greca ha ispirato gli artisti per migliaia di anni.</Italian>
+		<Spanish>[TAB]La religi&#243;n hel&#233;nica, conocida tambi&#233;n como mitolog&#237;a griega, est&#225; compuesta por una enorme cantidad de historias sobre dioses, diosas y h&#233;roes, creada originalmente y preservada como tradici&#243;n oral. De naturaleza polite&#237;sta, contaba con un sinf&#237;n de deidades naturales locales, adem&#225;s de los principales dioses y diosas del Olimpo. Los dioses griegos ten&#237;an forma humana, pero pose&#237;an poderes sobrenaturales; eran engendrados por otros dioses, pero nunca envejec&#237;an, no pod&#237;an morir, pod&#237;an cruzar enormes distancias al instante, hablaban a trav&#233;s de los humanos con o sin su consentimiento, etc. Algunos de ellos eran los aspectos personificados de las fuerzas de la naturaleza (Helios, por ejemplo, era literalmente el dios del sol) mientras que otros pose&#237;an personalidades complejas y funciones m&#250;ltiples (seguramente Apolo sea el mejor ejemplo). Todos los dioses pertenec&#237;an a una gran familia, pero hab&#237;a varias generaciones diferenciadas y su interacci&#243;n era en muchas ocasiones violenta. Los dioses del Olimpo, por ejemplo, hab&#237;an alcanzado su posici&#243;n de predominio tras expulsar a una generaci&#243;n anterior de dioses y diosas (los titanes). Puede que &#233;ste sea el reflejo m&#237;tico de un solapamiento cultural entre los griegos y la cultura anterior a la que &#233;stos desplazaron al llegar a la regi&#243;n del Peloponeso (en torno al 1000 a. C.). [PARAGRAPH:2:1]Adem&#225;s de las historias de los dioses, la religi&#243;n hel&#233;nica estaba repleta de grandes historias sobre las haza&#241;as de los h&#233;roes, muchos de los cuales estaban emparentados con los dioses. Existen numerosas historias sobre figuras como H&#233;rcules, Perseo, Jas&#243;n y los personajes de la Il&#237;ada, que a menudo ser&#237;an empleados como modelo por los artistas griegos de &#233;pocas posteriores. Estos humanos ten&#237;an frecuentes relaciones con los dioses y, en algunas ocasiones, hasta lograban vencerlos. Los griegos sent&#237;an gran estima por estos h&#233;roes, especialmente por algunos, como por ejemplo Aquiles. Aunque los m&#225;s instruidos albergaban serias dudas sobre la realidad de la religi&#243;n hel&#233;nica, la gran mayor&#237;a del pueblo no se cuestionaba la validez de las historias. Los griegos utilizaban su religi&#243;n para explicar el mundo natural y sus propios or&#237;genes. Desde trazar los or&#237;genes del propio linaje o la fundaci&#243;n de una ciudad hasta los actos de un dios era motivo de gran orgullo. [PARAGRAPH:2:1]Los an&#225;lisis arqueol&#243;gicos y ling&#252;&#237;sticos sugieren que la religi&#243;n hel&#233;nica est&#225; muy influenciada por otras. Por poner un ejemplo, el Zeus griego, el J&#250;piter romano, el Tyr germano y el Dyaus s&#225;nscrito son todos dioses del cielo que comparten un origen indoeuropeo com&#250;n en un pasado lejano. Otros dioses proced&#237;an de religiones de Oriente Pr&#243;ximo (o hab&#237;an recibido importantes influencias de ellas): Afrodita pose&#237;a una funci&#243;n muy similar a la de las diosas sem&#237;ticas Ishtar y Astart&#233;. Durante el per&#237;odo helen&#237;stico y las &#233;pocas posteriores, la religi&#243;n griega se difundi&#243; por gran parte del Mediterr&#225;neo y Oriente Pr&#243;ximo, lo que le permiti&#243; influenciar a muchas de las ya existentes y dar luz a nuevos y sincr&#233;ticos cultos mist&#233;ricos.  Aunque esta religi&#243;n no existe ya en nuestros d&#237;as, ha sido la fuente de inspiraci&#243;n para toda clase de obras de arte durante miles de a&#241;os.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HELLENIC_MISSIONARY</Tag>
+		<English>Hellenic Missionary</English>
+		<French>
+			<Text>Missionnaire hell&#233;nique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Hellenistische Missionar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Missionario ellenico:Missionari ellenici</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Misionero hel&#233;nico:Misioneros hel&#233;nicos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE</Tag>
+		<English>Hellenic Temple</English>
+		<French>
+			<Text>Temple hell&#233;nique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Hellenistische Tempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Tempio ellenico:Templi ellenici</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Templo hel&#233;nico:Templos hel&#233;nicos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE_PEDIA</Tag>
+		<English>[TAB]In Civilization IV, a temple is defined as a building where the faithful come to worship. Christians call their temples "churches," while Muslims call theirs "mosques," and Jews call theirs, simply, "temples." Temples are far more common than cathedrals, but much less large and ornate. Even the smallest village can possess a temple. [PARAGRAPH:2:1]The Hellenic religion of the ancient Greeks possessed a priesthood, but priests and priestesses were associated with worship at a single location, be it a temple or religious shrine. It was possible for anyone who knew the proper rites to lead a sacrifice and prayer to the gods, and the Greek gods and goddesses could similarly appear to anyone without the need for intercession by the clergy. There was no hierarchy of priests for the ancient Greeks, and in fact the priests of one temple or region usually had no association with another. There was no such thing as a Greek _church_; religion was simply another aspect of the Greek polis and was largely controlled by the state.</English>
+		<French>[TAB]Dans Civilization IV, un petit lieu de culte est d&#233;fini comme un &#233;difice dans lequel les fid&#232;les viennent pratiquer leur religion : "&#233;glises" pour les chr&#233;tiens, "petites mosqu&#233;es" pour les musulmans et "petites synagogues" pour les juifs. Ces petits lieux de culte sont bien plus courants que les grands lieux de culte mais sont de taille plus r&#233;duite et sont bien moins richement orn&#233;s. M&#234;me le village le plus petit peut poss&#233;der un petit lieu de culte. [PARAGRAPH:2:1]La religion hell&#233;nique des Grecs de l'Antiquit&#233; dispose d'un clerg&#233;, mais les pr&#234;tres et les pr&#234;tresses se voient affecter &#224; un seul lieu de culte, &#224; savoir un temple ou un sanctuaire religieux. Quiconque conna&#238;t les rites appropri&#233;s peut accomplir un sacrifice et formuler une pri&#232;re aux dieux. De leur c&#244;t&#233;, les dieux grecs peuvent appara&#238;tre &#224; tout fid&#232;le en n'importe quel lieu, sans l'intercession d'un pr&#234;tre. Il n'existe aucune hi&#233;rarchie entre les pr&#234;tres et l'autorit&#233; religieuse est plac&#233;e sous le contr&#244;le de l'&#233;tat.</French>
+		<German>[TAB]In Civilization IV sind Tempel Geb&#228;ude, in denen Gl&#228;ubige beten. Christen nennen ihre Tempel "Kirchen", Moslems "Moscheen". Es gibt deutlich mehr Tempel als Kathedralen. Allerdings sind sie wesentlich kleiner und schlichter. Selbst das kleinste Dorf kann einen Tempel besitzen. [PARAGRAPH:2:1]Die Religion der Griechen im hellenistischen Zeitalter wurde zwar durch eine Priesterschaft repr&#228;sentiert, das T&#228;tigkeitsfeld der Priester und Priesterinnen war jedoch ausschlie&#223;lich auf einen einzigen Standort beschr&#228;nkt: den eigenen Tempel oder religi&#246;sen Schrein. Jeder, der die dazugeh&#246;rigen Riten beherrschte, durfte Opferungen durchf&#252;hren und Gebete an die G&#246;tter richten. Dementsprechend erschienen die G&#246;tter und G&#246;ttinnen auch jedem beliebigen Menschen, ohne dass er daf&#252;r ein Mitglied des Klerus sein musste. Es gab keine hierarchische Struktur in der griechischen Priesterschaft. Jeder arbeitete f&#252;r sich, die Priester eines Tempels oder einer Region standen in der Regel nicht einmal mit anderen Geistlichen in Kontakt. So etwas wie eine gemeinschaftliche "griechische Kirche" gab es nicht. Die Religion war in den griechischen Stadtstaaten allgegenw&#228;rtig und unterlag in weiten Teilen der Kontrolle des Staates.</German>
+		<Italian>[TAB]In Civilization IV, il tempio &#232; un edificio all'interno del quale i fedeli si recano a pregare. I Cristiani chiamano i loro templi "chiese", i Musulmani "moschee", gli Ebrei semplicemente "templi". I templi sono pi&#249; comuni delle cattedrali, ma sono pi&#249; piccoli e poco fastosi. Anche il villaggio pi&#249; piccolo ospita un tempio. [PARAGRAPH:2:1]La religione ellenica prevedeva la presenza di sacerdoti, ma sacerdoti e sacerdotesse erano legati al culto in un determinato luogo, fosse un tempio o un santuario. Purch&#233; conoscesse i giusti rituali, chiunque poteva presiedere alla preghiera e ai sacrifici e ugualmente le divinit&#224; greche potevano apparire a chiunque senza che fosse necessaria l'intermediazione dei sacerdoti. All'interno del sacerdozio non c'era alcuna gerarchia e anzi spesso non c'era alcun rapporto tra i sacerdoti di uno stesso tempio o di una stessa regione. Non esisteva una "chiesa" greca: la religione era semplicemente una delle sfaccettature della polis greca ed era controllata dallo stato.</Italian>
+		<Spanish>[TAB]En Civilization IV, un templo se define como un lugar al que los fieles acuden a venerar. Los cristianos llaman a sus templos "iglesias", mientras que para los musulmanes son "mezquitas" y para los jud&#237;os, sencillamente, "templos". Son mucho m&#225;s comunes que las catedrales, pero tambi&#233;n mucho m&#225;s peque&#241;os y humildes. Hasta la m&#225;s peque&#241;a aldea puede poseer uno. [PARAGRAPH:2:1]La religi&#243;n de los antiguos griegos contaba con un sistema de sacerdocio, pero los sacerdotes y sacerdotisas se asociaban a un lugar concreto, por ejemplo un templo o un santuario. Cualquiera que conociese los ritos apropiados pod&#237;a realizar los sacrificios y elevar plegarias a los dioses y, del mismo modo, era posible apelar a los dioses y diosas sin la intercesi&#243;n de los cl&#233;rigos. No exist&#237;a una jerarqu&#237;a de sacerdotes y, de hecho, normalmente los sacerdotes de los diferentes templos o regiones no estaban asociados. No exist&#237;a nada parecido a una "iglesia" griega; la religi&#243;n era simplemente otro aspecto de la polis griega y, como tal, estaba en manos del estado.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE</Tag>
+		<English>Hellenic Oracle</English>
+		<French>
+			<Text>Monast&#232;re hell&#233;nique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Hellenistische Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Monastero ellenico:Monasteri ellenici</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Monasterio hel&#233;nico:Monasterios hel&#233;nicos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE_PEDIA</Tag>
+		<English>[TAB]The word oracle comes from the Latin verb orare, "to speak" and properly refers to the priest or priestess uttering the prediction. In extended use, oracle may also refer to the site of the oracle, and to the oracular utterances themselves, called khresme in Greek. [PARAGRAPH:2:1]Oracles were thought to be portals through which the gods spoke directly to people. In this sense they were different from seers (manteis) who interpreted signs sent by the gods through bird signs, animal entrails, and other various methods.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CITY_BELIEVERS</Tag>
+		<English>Religions in the city:</English>
+	</TEXT>
+</Civ4GameText>

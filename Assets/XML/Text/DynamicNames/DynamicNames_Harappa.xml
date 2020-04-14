@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC00</Tag>
+		<English>Harappan Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC01</Tag>
+		<English>Indus Valley City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC02</Tag>
+		<English>Indus Valley City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC03</Tag>
+		<English>Indus Valley City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC04</Tag>
+		<English>Indus Valley City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC05</Tag>
+		<English>Kushan Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC06</Tag>
+		<English>Kushan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC07</Tag>
+		<English>Kushan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC08</Tag>
+		<English>Seventeenth Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC09</Tag>
+		<English>Province of Indus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_IVC10</Tag>
+		<English>Harappan Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR00</Tag>
+		<English>Punic Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR01</Tag>
+		<English>City-State of Carthage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR02</Tag>
+		<English>City-State of Carthage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR03</Tag>
+		<English>Carthaginian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR04</Tag>
+		<English>Carthaginian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR05</Tag>
+		<English>Carthaginian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR06</Tag>
+		<English>Carthaginian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR07</Tag>
+		<English>Carthaginian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR08</Tag>
+		<English>Satrapy of Libyie</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR09</Tag>
+		<English>Province of Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CAR10</Tag>
+		<English>Colony of Carthage</English>
+	</TEXT>
+</Civ4GameText>

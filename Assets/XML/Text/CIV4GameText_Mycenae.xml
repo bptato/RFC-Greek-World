@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Soren Johnson (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!--
+-->	
+<!-- Game Text Objects -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYCENAE_DESC</Tag>
+		<English>Mycenaean Empire</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYCENAE_SHORT_DESC</Tag>
+		<English>Mycenae</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYCENAE_ADJECTIVE</Tag>
+		<English>Mycenaean</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_AGAMEMNON</Tag>
+		<English>Agamemnon</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MYCENAE_EQETA</Tag>
+		<English>Eqeta</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MYCENAE_THOLOI</Tag>
+		<English>Tholoi</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+
+<!--
+	
+-->
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYCENAE_PEDIA</Tag>
+		<English>[TAB]The Mycenaean civilization flourished between 1600 BC and ca. 1100 BC, when it perished with the collapse of Bronze-Age civilization in the eastern Mediterranean. The collapse is commonly attributed to the Dorian invasion, although other theories describing natural disasters and climate change have been advanced as well. The major Mycenaean cites were Mycenae and Tiryns in Argolis, Pylos in Messenia, Athens in Attica, Thebes and Orchomenus in Boeotia, and Iolkos in Thessaly. In Crete, the Mycenaeans occupied Knossos. In addition there were some sites of importance for cults, such as Lerna, typically in the form of house sanctuaries. Mycenaean settlement sites also appeared in Epirus, Macedon, on islands in the Aegean, on the coast of Asia Minor, and then in Cyprus. Mycenaean artifacts with Linear B inscriptions have been also found as far away as Germany and Mycenaean swords as far away as Georgia.[PARAGRAPH:2]Mycenaean civilization was dominated by a warrior aristocracy. Around 1400 BC, the Mycenaeans extended their control to Crete, center of the Minoan civilization, and adopted a form of the Minoan script (called Linear A) to write their early form of Greek in Linear B. Not only did the Mycenaeans defeat the Minoans, but according to later Hellenic legend they twice defeated Troy, a powerful city-state that rivaled Mycenae in power. Because the only evidence for the conquests is Homer's Iliad and other texts steeped in mythology, the existence of Troy and the Trojan War is uncertain. In 1876, the German archaeologist Heinrich Schliemann uncovered ruins at Hissarlik in western Asia Minor (modern-day Turkey) that he claimed were those of Troy. Some sources claim these ruins do not match well with Homer's account of Troy, but others disagree.[PARAGRAPH:2]The Mycenaeans buried their nobles in beehive tombs (tholoi), large circular burial chambers with a high vaulted roof and a straight entry passage lined with stone. They often buried daggers or some other form of military equipment with the deceased. The nobility were frequently buried with gold masks, tiaras, armor, and jeweled weapons. Mycenaeans were buried in a sitting position, and some of the nobility underwent mummification, whereas Homer's Achilles and Patroclus were not buried but cremated, in Iron-Age fashion, and honoured with gold urns instead of gold masks.[PARAGRAPH:2]No priestly class has yet been identified. Worshiper and worshiped are identified in seals, rings and votive figures through their gestures: worshipers fold their arms, or raise the right arm in greeting, or place a hand on the forehead. Deities lift both arms in the "epiphany gesture" or reach forward to give or receive. The pantheon of Mycenaean deities has been reassembled from inscriptions in Linear B found at Pylos and at post-palatial Mycenaean Knossos in Crete. Some of the deities' names are recognizably present in the Olympic pantheon of written myth. Others are not: Ares, for example, is represented only as "Enyalios" which was retained as an epithet. Apollo may be recognized at Knossos as PA-JA-WO ("Paian"). Far more prominent are A-TA-NA PO-TI-NI-JA (Athena Potnia, "Athena the Mistress"), E-RE-U-TI-JA (Eileithyia, later merely invoked during childbirth), Dionysus, and Poseidon, already the "Earth-Shaker", either with his consort Poseida, who was not retained in the transition to Classical Greece, or, at Pylos, with the "Two Goddesses", apparently Demeter and Persephone. The Erinyes or Furies are already present, as are the Winds.[PARAGRAPH:2]Mycenaean frescoes have been discovered in palace contexts, notably at Pylos, Mycenae, Orchomenos, Thebes, and Tiryns, and in a few non-palatial, perhaps privately-owned contexts. The earliest fresco decorations are of the LH IIA period (ca. 1500 BC). The subjects hold tenaciously to Minoan traditions, whether directly derived or through Cycladic intervention, and have in some cases been reduced to decorative formulas, embodying themes appropriate to their locations: lions and wingless griffins in audience chambers, processional figures in corridors, etc. In a change from the Minoan delight in the life of animals, the Mycenaean relation to nature is reflected in their depictions of animals which are shown only in relation to man or as victims of the hunt. Bull-jumping fresco panels appear at Mycenae and at Tiryns.[PARAGRAPH:2]Around 1100 BC, the Mycenaean civilization collapsed. Numerous cities were sacked, and the region entered what historians describe as a dark age with some Mycenaeans fleeing to Cyprus as well as other Greek islands and parts of Anatolia. During this period Greece experienced decreasing population and the limited literacy, connected with palace culture, disappeared. Historians have traditionally blamed this decline on an invasion or uprising by another wave of Greek people, the Dorians, who may have been a subjugated local people. Alternate theories for the decline also include natural disasters such as a series of earthquakes or large-scale drought, although these recent theories are more controversial.[PARAGRAPH:2]</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_AGAMEMNON_PEDIA</Tag>
+		<English>[H1]Agamemnon[\H1][NEWLINE][BOLD]King of Mycenae, Commander of the Achaeans in the Trojan War[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]c. 1250 BC[NEWLINE][PARAGRAPH:2]Most of what is known of the ancient Greek hero Agamemnon is narrated in the Homeric legend of the ‘Iliad' and in the dramas of Aeschylus. The son of Atreus, who was the king of Mycenae in Greece, Agamemnon was probably a historical personage, a king who ruled either at Mycenae or at nearby Argos during the Trojan War. From the mythic tales of the ancient Greeks, however, it is impossible to separate fact from legend.[PARAGRAPH:2]The stories relate that Agamemnon was the brother of Menelaus, king of Sparta, whose wife, Helen, was carried off to Troy by Paris, a prince of that city in Asia Minor. This event led Agamemnon to muster the military might of the Greek city-states in a war of revenge. After the long war and the eventual destruction of Troy, he sailed home to his wife, Clytemnestra, and his family. Upon arriving, he was murdered either by his wife or by her lover, Aegisthus.[PARAGRAPH:2]Aegisthus then ruled Agamemnon's kingdom for a time, but the murder of Agamemnon was eventually avenged by his son Orestes with the help of his daughter Electra. The name Electra is now used in the psychological term 'Electra Complex', that a female child is generally attached to her father at a young age, feeling discontent towards her mother.[PARAGRAPH:2]</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+<!--
+	
+-->		
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_AGAMEMNON</Tag>
+		<English>I greet you warmly, [CT_NAME] of [CT_CIV_SHORT]. I myself am [OUR_NAME] of [OUR_CIV_SHORT]. The gods only protect the strong, [CT_NAME]. So, how strong is [CT_CIV_SHORT] exactly?</English>
+		<French>Salutations ! Je suis [OUR_NAME], je r&#232;gne sur l'[OUR_EMPIRE]. Je souhaite que nos deux grands peuples puissent vivre en paix.</French>
+		<German>Seid gegr&#252;&#223;t! Ich bin [OUR_NAME], Staatsoberhaupt des [OUR_EMPIRE:3]es. Ich hoffe, unsere gro&#223;artigen V&#246;lker werden in Frieden zusammenleben.</German>
+		<Italian>Saluti! Io sono [OUR_NAME] dell'[OUR_EMPIRE]. Spero che i nostri due grandi popoli possano vivere in pace.</Italian>
+		<Spanish>Saludos. &#161;Soy [OUR_NAME], del [OUR_EMPIRE]! Espero que nuestros dos grandes pueblos puedan vivir en paz.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_AGAMEMNON</Tag>
+		<English>Leave.</English>
+		<French>Vos bavardages incessants ne nous amusent pas, [CT_NAME] !</French>
+		<German>Euer bedeutungsloses Geschwafel am&#252;siert uns ganz und gar nicht, [CT_NAME]!</German>
+		<Italian>I tuoi balbettii senza senso non sono affatto divertenti, [CT_NAME]!</Italian>
+		<Spanish>&#161;No nos hace gracia vuestra ch&#225;chara absurda, [CT_NAME]!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_AGAMEMNON</Tag>
+		<English>A great victory will be won, [CT_NAME]... but that victory will not be yours!</English>
+		<French>La guerre est tr&#232;s d&#233;plaisante, mais parfois n&#233;cessaire. Il appara&#238;t que nous sommes dans cette situation, aussi devons-nous rejeter votre requ&#234;te. Cette entrevue est termin&#233;e.</French>
+		<German>Kriege sind eine h&#246;chst unangenehme Sache, manchmal aber auch unumg&#228;nglich. Und wie ich h&#246;re, ist das in diesem Fall so, deshalb muss ich Euer Anliegen zur&#252;ckweisen. Diese Unterhaltung ist beendet!</German>
+		<Italian>La guerra non &#232; per niente piacevole, ma a volte &#232; necessaria. Questa &#232; una di quelle volte, perci&#242; dobbiamo respingere le tue suppliche. L'udienza termina qui.</Italian>
+		<Spanish>La guerra es harto desagradable, pero a veces resulta necesaria. Nos informan de que &#233;sta es una de esas veces, as&#237; que debemos rechazar vuestras s&#250;plicas. La audiencia ha terminado.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AGAMEMNON</Tag>
+		<English>[CT_NAME], friend of the [OUR_CIV_ADJ] peoples! I see you have sailed across many seas to see me. What is it that you need?</English>
+		<French>Je vous souhaite la bienvenue ! Venez, allons d&#233;truire nos ennemis du haut de nos chars et laissons cinquante mille cadavres sur le champ de bataille pour le festin des corbeaux !</French>
+		<German>Willkommen! Lasst uns unsere Streitwagen anspannen und unsere Feinde vernichten! M&#246;gen die Gefallenen auf dem Schlachtfeld ein Festmahl f&#252;r die Geier sein!</German>
+		<Italian>Salve, ti do il benvenuto! Montiamo sulle bighe e distruggiamo i nemici, lasceremo sul campo di battaglia solamente i cadaveri perch&#233; se ne sfamino i corvi!</Italian>
+		<Spanish>&#161;Os saludamos, camarada! Venga, montemos en los carros, destruyamos a nuestros enemigos y dejemos cincuenta mil cad&#225;veres pudri&#233;ndose en el campo de batalla como pasto para los cuervos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_AGAMEMNON</Tag>
+		<English>Personally, I believe you have serious problems, [CT_NAME]. And that is coming from a man who had an entire family with serious problems.</English>
+		<French>Bonjour, [CT_NAME]. A quoi devons-nous cette interruption inattendue ?</French>
+		<German>Guten Tag, [CT_NAME]. Was beschert mir diese unerwartete St&#246;rung?</German>
+		<Italian>Buongiorno a te, [CT_NAME]. A cosa dobbiamo questa interruzione inaspettata?</Italian>
+		<Spanish>Buenos d&#237;as teng&#225;is, [CT_NAME]. &#191;A qu&#233; debemos esta interrupci&#243;n tan inesperada?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AGAMEMNON</Tag>
+		<English>Please?</English>
+		<French>Les [CT_CIV_ADJ] sont dans le besoin, [CT_NAME]. J'esp&#232;re que vous ne les d&#233;cevrez pas.</French>
+		<German>Das [CT_CIV_ADJ:3] Volk befindet sich in einer &#252;blen Notlage, [CT_NAME]! Entt&#228;uscht uns nicht!</German>
+		<Italian>Il popolo [CT_CIV_ADJ:1] vive nell'indigenza, [CT_NAME]. Non deluderci.</Italian>
+		<Spanish>El pueblo [CT_CIV_ADJ:1] tiene una gran necesidad, [CT_NAME]. No nos decepcion&#233;is.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AGAMEMNON</Tag>
+		<English>A good friend should do as all good friends do - share. And more specifically, cave in to the demands of their friends.</English>
+		<French>Nous avons des besoins, [CT_NAME]. Veuillez les satisfaire.</French>
+		<German>Auch wir haben Bed&#252;rfnisse, [CT_NAME]! Und es ist an Euch, sie zu befriedigen!</German>
+		<Italian>Abbiamo delle necessit&#224;, [CT_NAME]. Ti preghiamo di accettarle.</Italian>
+		<Spanish>Tenemos necesidades, [CT_NAME]. Satisfacedlas, por favor.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_AGAMEMNON</Tag>
+		<English>The gods favor the strong, [CT_NAME]. But I will favor you, [CT_NAME], regardless of the gods, [CT_NAME], if the weak [CT_CIV_SHORT] gives a small amount of tribute.</English>
+		<French>Donnez aux [CT_CIV_SHORT] ce qui leur revient, [CT_NAME] ! Nous ne vous le demanderons pas deux fois.</French>
+		<German>Gebt [CT_CIV_SHORT], was ihm zusteht, [CT_NAME]! Wir werden Euch kein zweites Mal darum bitten!</German>
+		<Italian>Dona ci&#242; che ti richiede [CT_CIV_SHORT:2], [CT_NAME]! Non te lo chiederemo una seconda volta!</Italian>
+		<Spanish>&#161;Dadle a [CT_CIV_SHORT] lo que le corresponde, [CT_NAME]! No os lo pediremos otra vez.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MYCENAE_EQETA_STRATEGY</Tag>
+		<English>This Mycenaean replacement for the [COLOR_UNIT_TEXT]Warrior[COLOR_REVERT] unit is stronger and also slightly cheaper.</English>
+		<French>Cette puissante unit&#233; mont&#233;e est lente mais s'av&#232;re un adversaire redoutable pour les unit&#233;s telles que l'archer mont&#233;.</French>
+		<German>Diese m&#228;chtige fr&#252;he berittene Kampfeinheit ist eine langsame aber effektive Waffe gegen Berittene Bogensch&#252;tzen und &#228;hnliche Einheiten.</German>
+		<Italian>Questa potente unit&#224; montata iniziale &#232; lenta ma potente, ottima per contrastare le unit&#224; come gli arcieri a cavallo.</Italian>
+		<Spanish>Esta poderosa unidad montada temprana es m&#225;s lenta que otras unidades como los Arqueros a caballo, pero los contrarresta mucho mejor.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MYCENAE_EQETA_PEDIA</Tag>
+		<English>[TAB]The e-qe-ta, or eqeta (equetai), literally, the companions (the knights), formed the entourage of the king. These were the warriors. For the Mycenaean warriors, offensive arms were made of bronze. Spears and javelins have been found, and also an assortment of swords of different sizes, designed for striking with the point and with the edge. Daggers and arrows, attesting to the existence of archery, compose the remainder of the armament found from the Mycenaean period.</English>
+		<French>[TAB]L'utilisation des &#233;l&#233;phants pour la guerre a commenc&#233; en Inde et &#233;tait connue des Perses au IVe si&#232;cle av. J.-C. C'est gr&#226;ce &#224; ses &#233;l&#233;phants de guerre que Chandragupta parvint &#224; vaincre Seleucos, le successeur d'Alexandre le Grand, et &#224; fonder l'Empire maurya. M&#234;me si les &#233;l&#233;phants africains de Carthage ont peu d'exploits &#224; leur actif, leur pr&#233;sence dans l'arm&#233;e d'Hannibal lors de la travers&#233;e des Alpes en 218 av. J.-C. leur a valu une r&#233;putation d'arme redoutable. L'importance tactique des &#233;l&#233;phants repose beaucoup sur leur capacit&#233; &#224; attaquer l'infanterie comme la cavalerie, et &#224; inspirer la terreur. Bien que les arm&#233;es indiennes aient utilis&#233; l'&#233;l&#233;phant jusqu'au XXe si&#232;cle, son utilit&#233; dans la pratique de la guerre a pris fin avec l'invention de la poudre &#224; canon.</French>
+		<German>[TAB]Der Kriegselefant wurde zuerst in Indien eingesetzt und war den Persern im 4. Jahrhundert vor Christus schon gel&#228;ufig. Mit Hilfe von Kriegselefanten gelang es dem indischen K&#246;nig Chandragupta, die Truppen von Seleukos, dem Nachfolger Alexanders des Gro&#223;en, zu besiegen und das Maurya-Reich zu begr&#252;nden. Auch wenn die afrikanischen Kriegselefanten der Karthager nur wenig ausrichten konnten, so machten sie ihrem Ruf als gef&#252;rchtetes Kriegsger&#228;t alle Ehre, als Hannibal seine Truppen mitsamt den Dickh&#228;utern &#252;ber die Alpen f&#252;hrte, um im Jahre 218 vor Christus in Rom einzufallen. Die taktische Bedeutung der Kriegselefanten resultiert zum gro&#223;en Teil aus ihrer Eigenschaft, sowohl Fu&#223;soldaten als auch die Kavallerie anzugreifen und in Panik zu versetzen. Das indische Milit&#228;r setzte sie zwar noch bis zum 20. Jahrhundert aktiv ein, letztlich erging es ihnen am Ende aber wie vielen anderen traditionellen "Waffen": Ihr milit&#228;rischer Nutzen endete mit dem verbreiteten Einsatz von Schie&#223;pulver.</German>
+		<Italian>[TAB]L'elefante da guerra fu usato per la prima volta in India e fu conosciuto dai Persiani intorno al quarto secolo a. C. Grazie a queste unit&#224;, Candra Gupta sconfisse il successore di Alessandro, Seleuco, e fond&#242; l'Impero Maurya. Anche se gli elefanti da guerra africani di Cartagine non furono determinanti, la loro presenza nell'esercito di Annibale durante la sua traversata delle Alpi verso il cuore di Roma, nel 218 a. C., afferm&#242; la loro reputazione di arma temibile. Apparentemente, l'importanza tattica dell'elefante si basa in gran parte sulla sua predisposizione a caricare sia i fanti che la cavalleria, nonch&#233; sul panico che &#232; in grado di suscitare. Malgrado sia stato usato nelle truppe indiane fino al XX secolo, alla pari di molte armi tradizionali, la sua utilit&#224; in guerra &#232; cessata con la diffusione della polvere da sparo.</Italian>
+		<Spanish>[TAB]Los elefantes de guerra fueron utilizados por primera vez en la India, y los persas ya lo conoc&#237;an hacia el siglo IV a. C. Utilizando elefantes de guerra, Chandragupta derrot&#243; a Seleuco, sucesor de Alejandro, y fund&#243; el imperio mauryan. Aunque estos animales no sirvieron de mucho a Cartago, su presencia en el ej&#233;rcito de An&#237;bal durante el cruce de los Alpes y la invasi&#243;n de Roma en el a&#241;o 218 a. C. bast&#243; para cimentar su reputaci&#243;n como armas terribles. La importancia t&#225;ctica de los elefantes derivaba aparentemente de su disposici&#243;n a cargar tanto contra la infanter&#237;a como contra la caballer&#237;a, y del p&#225;nico que esto inspiraba. Aunque sirvieron en el ej&#233;rcito indio hasta el siglo XX, su utilidad real, al igual que ocurri&#243; con muchas otras armas tradicionales, termin&#243; con la difusi&#243;n generalizada de la p&#243;lvora.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MYCENAE_THOLOI_PEDIA</Tag>
+		<English>[TAB]In Greece, the tholoi are a monumental Late Bronze Age development of either the Mycenaean chamber tombs or tumulus burials dating to the Middle Bronze Age. After about 1500 BCE, beehive tombs became more widespread. They were built as corbelled arches, with layers of stone placed closer together as the arch tapers toward the top of the tomb. The tombs usually contain more than one burial, in various places in the tomb either on the floor, in pits and cists or on stone-built or rock-cut benches, and with various grave goods. After a burial, the entrance to the tomb was filled in with soil, leaving a small mound with most of the tomb underground.</English>
+		<French>[TAB]L'utilisation des &#233;l&#233;phants pour la guerre a commenc&#233; en Inde et &#233;tait connue des Perses au IVe si&#232;cle av. J.-C. C'est gr&#226;ce &#224; ses &#233;l&#233;phants de guerre que Chandragupta parvint &#224; vaincre Seleucos, le successeur d'Alexandre le Grand, et &#224; fonder l'Empire maurya. M&#234;me si les &#233;l&#233;phants africains de Carthage ont peu d'exploits &#224; leur actif, leur pr&#233;sence dans l'arm&#233;e d'Hannibal lors de la travers&#233;e des Alpes en 218 av. J.-C. leur a valu une r&#233;putation d'arme redoutable. L'importance tactique des &#233;l&#233;phants repose beaucoup sur leur capacit&#233; &#224; attaquer l'infanterie comme la cavalerie, et &#224; inspirer la terreur. Bien que les arm&#233;es indiennes aient utilis&#233; l'&#233;l&#233;phant jusqu'au XXe si&#232;cle, son utilit&#233; dans la pratique de la guerre a pris fin avec l'invention de la poudre &#224; canon.</French>
+		<German>[TAB]Der Kriegselefant wurde zuerst in Indien eingesetzt und war den Persern im 4. Jahrhundert vor Christus schon gel&#228;ufig. Mit Hilfe von Kriegselefanten gelang es dem indischen K&#246;nig Chandragupta, die Truppen von Seleukos, dem Nachfolger Alexanders des Gro&#223;en, zu besiegen und das Maurya-Reich zu begr&#252;nden. Auch wenn die afrikanischen Kriegselefanten der Karthager nur wenig ausrichten konnten, so machten sie ihrem Ruf als gef&#252;rchtetes Kriegsger&#228;t alle Ehre, als Hannibal seine Truppen mitsamt den Dickh&#228;utern &#252;ber die Alpen f&#252;hrte, um im Jahre 218 vor Christus in Rom einzufallen. Die taktische Bedeutung der Kriegselefanten resultiert zum gro&#223;en Teil aus ihrer Eigenschaft, sowohl Fu&#223;soldaten als auch die Kavallerie anzugreifen und in Panik zu versetzen. Das indische Milit&#228;r setzte sie zwar noch bis zum 20. Jahrhundert aktiv ein, letztlich erging es ihnen am Ende aber wie vielen anderen traditionellen "Waffen": Ihr milit&#228;rischer Nutzen endete mit dem verbreiteten Einsatz von Schie&#223;pulver.</German>
+		<Italian>[TAB]L'elefante da guerra fu usato per la prima volta in India e fu conosciuto dai Persiani intorno al quarto secolo a. C. Grazie a queste unit&#224;, Candra Gupta sconfisse il successore di Alessandro, Seleuco, e fond&#242; l'Impero Maurya. Anche se gli elefanti da guerra africani di Cartagine non furono determinanti, la loro presenza nell'esercito di Annibale durante la sua traversata delle Alpi verso il cuore di Roma, nel 218 a. C., afferm&#242; la loro reputazione di arma temibile. Apparentemente, l'importanza tattica dell'elefante si basa in gran parte sulla sua predisposizione a caricare sia i fanti che la cavalleria, nonch&#233; sul panico che &#232; in grado di suscitare. Malgrado sia stato usato nelle truppe indiane fino al XX secolo, alla pari di molte armi tradizionali, la sua utilit&#224; in guerra &#232; cessata con la diffusione della polvere da sparo.</Italian>
+		<Spanish>[TAB]Los elefantes de guerra fueron utilizados por primera vez en la India, y los persas ya lo conoc&#237;an hacia el siglo IV a. C. Utilizando elefantes de guerra, Chandragupta derrot&#243; a Seleuco, sucesor de Alejandro, y fund&#243; el imperio mauryan. Aunque estos animales no sirvieron de mucho a Cartago, su presencia en el ej&#233;rcito de An&#237;bal durante el cruce de los Alpes y la invasi&#243;n de Roma en el a&#241;o 218 a. C. bast&#243; para cimentar su reputaci&#243;n como armas terribles. La importancia t&#225;ctica de los elefantes derivaba aparentemente de su disposici&#243;n a cargar tanto contra la infanter&#237;a como contra la caballer&#237;a, y del p&#225;nico que esto inspiraba. Aunque sirvieron en el ej&#233;rcito indio hasta el siglo XX, su utilidad real, al igual que ocurri&#243; con muchas otras armas tradicionales, termin&#243; con la difusi&#243;n generalizada de la p&#243;lvora.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MYCENAE_THOLOI_STRATEGY</Tag>
+		<English>[TAB]This Mycenaean replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT] decreases maintainence costs by 20%. Consider building the wonder [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]; with a [COLOR_BUILDING_TEXT]Tholoi[COLOR_REVERT] in every one of your cities, a significant increase in income can happen early on in the game.</English>
+		<French>[TAB]L'utilisation des &#233;l&#233;phants pour la guerre a commenc&#233; en Inde et &#233;tait connue des Perses au IVe si&#232;cle av. J.-C. C'est gr&#226;ce &#224; ses &#233;l&#233;phants de guerre que Chandragupta parvint &#224; vaincre Seleucos, le successeur d'Alexandre le Grand, et &#224; fonder l'Empire maurya. M&#234;me si les &#233;l&#233;phants africains de Carthage ont peu d'exploits &#224; leur actif, leur pr&#233;sence dans l'arm&#233;e d'Hannibal lors de la travers&#233;e des Alpes en 218 av. J.-C. leur a valu une r&#233;putation d'arme redoutable. L'importance tactique des &#233;l&#233;phants repose beaucoup sur leur capacit&#233; &#224; attaquer l'infanterie comme la cavalerie, et &#224; inspirer la terreur. Bien que les arm&#233;es indiennes aient utilis&#233; l'&#233;l&#233;phant jusqu'au XXe si&#232;cle, son utilit&#233; dans la pratique de la guerre a pris fin avec l'invention de la poudre &#224; canon.</French>
+		<German>[TAB]Der Kriegselefant wurde zuerst in Indien eingesetzt und war den Persern im 4. Jahrhundert vor Christus schon gel&#228;ufig. Mit Hilfe von Kriegselefanten gelang es dem indischen K&#246;nig Chandragupta, die Truppen von Seleukos, dem Nachfolger Alexanders des Gro&#223;en, zu besiegen und das Maurya-Reich zu begr&#252;nden. Auch wenn die afrikanischen Kriegselefanten der Karthager nur wenig ausrichten konnten, so machten sie ihrem Ruf als gef&#252;rchtetes Kriegsger&#228;t alle Ehre, als Hannibal seine Truppen mitsamt den Dickh&#228;utern &#252;ber die Alpen f&#252;hrte, um im Jahre 218 vor Christus in Rom einzufallen. Die taktische Bedeutung der Kriegselefanten resultiert zum gro&#223;en Teil aus ihrer Eigenschaft, sowohl Fu&#223;soldaten als auch die Kavallerie anzugreifen und in Panik zu versetzen. Das indische Milit&#228;r setzte sie zwar noch bis zum 20. Jahrhundert aktiv ein, letztlich erging es ihnen am Ende aber wie vielen anderen traditionellen "Waffen": Ihr milit&#228;rischer Nutzen endete mit dem verbreiteten Einsatz von Schie&#223;pulver.</German>
+		<Italian>[TAB]L'elefante da guerra fu usato per la prima volta in India e fu conosciuto dai Persiani intorno al quarto secolo a. C. Grazie a queste unit&#224;, Candra Gupta sconfisse il successore di Alessandro, Seleuco, e fond&#242; l'Impero Maurya. Anche se gli elefanti da guerra africani di Cartagine non furono determinanti, la loro presenza nell'esercito di Annibale durante la sua traversata delle Alpi verso il cuore di Roma, nel 218 a. C., afferm&#242; la loro reputazione di arma temibile. Apparentemente, l'importanza tattica dell'elefante si basa in gran parte sulla sua predisposizione a caricare sia i fanti che la cavalleria, nonch&#233; sul panico che &#232; in grado di suscitare. Malgrado sia stato usato nelle truppe indiane fino al XX secolo, alla pari di molte armi tradizionali, la sua utilit&#224; in guerra &#232; cessata con la diffusione della polvere da sparo.</Italian>
+		<Spanish>[TAB]Los elefantes de guerra fueron utilizados por primera vez en la India, y los persas ya lo conoc&#237;an hacia el siglo IV a. C. Utilizando elefantes de guerra, Chandragupta derrot&#243; a Seleuco, sucesor de Alejandro, y fund&#243; el imperio mauryan. Aunque estos animales no sirvieron de mucho a Cartago, su presencia en el ej&#233;rcito de An&#237;bal durante el cruce de los Alpes y la invasi&#243;n de Roma en el a&#241;o 218 a. C. bast&#243; para cimentar su reputaci&#243;n como armas terribles. La importancia t&#225;ctica de los elefantes derivaba aparentemente de su disposici&#243;n a cargar tanto contra la infanter&#237;a como contra la caballer&#237;a, y del p&#225;nico que esto inspiraba. Aunque sirvieron en el ej&#233;rcito indio hasta el siglo XX, su utilidad real, al igual que ocurri&#243; con muchas otras armas tradicionales, termin&#243; con la difusi&#243;n generalizada de la p&#243;lvora.</Spanish>
+	</TEXT>													
+</Civ4GameText>

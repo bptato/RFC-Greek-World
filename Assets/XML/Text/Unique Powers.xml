@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Unique Powers -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_UNIQUE_POWER</Tag>
+		<English>Unique Power</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_EGY_TITLE</Tag>
+		<English>Power of the Pharaoh</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_EGY</Tag>
+		<English>Monarchy, Slavery and Deification are enabled at start</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SUM_TITLE</Tag>
+		<English>City State Alliances</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SUM</Tag>
+		<English>Mercenaries hire and maintenance costs halved</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IVC_TITLE</Tag>
+		<English>City building in the shadows of the Himalayas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IVC</Tag>
+		<English>Mountains produce 2 food and 1 hammer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ELA_TITLE</Tag>
+		<English>Elamite Statues</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ELA</Tag>
+		<English>+1 happiness from cultural buildings</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MIN_TITLE</Tag>
+		<English>The Legacy of Minoa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MIN</Tag>
+		<English>Receives 50% of building cost as culture when building is completed</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PHO_TITLE</Tag>
+		<English>Phoenician Traders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PHO</Tag>
+		<English>Ships can movely freely into foreign territories</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAB_TITLE</Tag>
+		<English>Hammurabi's Code of Laws</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAB</Tag>
+		<English>No resistance in conquered cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HIT_TITLE</Tag>
+		<English>The Eternal Treaty</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HIT</Tag>
+		<English>Other civilizations have a friendlier attitude</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MYC_TITLE</Tag>
+		<English>Mycenaean Sea Trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MYC</Tag>
+		<English>Naval units receive +2 movement points</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ASY_TITLE</Tag>
+		<English>Assyrian Tribute</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ASY</Tag>
+		<English>Can capture defeated enemy units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ISR_TITLE</Tag>
+		<English>The Holy Lands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ISR</Tag>
+		<English>All military land units have a bonus in city defense</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ATH_TITLE</Tag>
+		<English>Greek Philosphy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ATH</Tag>
+		<English>+200% Great Person birth rate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SPA_TITLE</Tag>
+		<English>Spartan Lifestyle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SPA</Tag>
+		<English>Free upgrades for units once Mathematics is discovered</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SCY_TITLE</Tag>
+		<English>Nomadic Lifestyle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SCY</Tag>
+		<English>Units can heal on the move</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CAR_TITLE</Tag>
+		<English>Carthaginian Naval Supremacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CAR</Tag>
+		<English>Naval units have 2 extra first strike chances</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CEL_TITLE</Tag>
+		<English>At One With The Lands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CEL</Tag>
+		<English>Increased visibility range for all land units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ETR_TITLE</Tag>
+		<English>Etruscan Tyranny</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ETR</Tag>
+		<English>+1 commerce in every land plot</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NUB_TITLE</Tag>
+		<English>The Power of Medjays</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NUB</Tag>
+		<English>Can use enemy roads</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PER_TITLE</Tag>
+		<English>Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PER</Tag>
+		<English>+2 additional stability points for each city conquered</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>
+		<English>Roman Roads</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ROM</Tag>
+		<English>Roads within Roman borders allow 4X unit movement instead of 2X</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAC_TITLE</Tag>
+		<English>Legacy of Alexander the Great</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAC</Tag>
+		<English>Most foreign culture in conquered cities is converted to Macedonian culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IND_TITLE</Tag>
+		<English>Spirituality</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IND</Tag>
+		<English>No anarchy in revolutions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAC_TITLE</Tag>
+		<English>Greek Culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAC</Tag>
+		<English>1 Free artist for every city conquered</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NUM_TITLE</Tag>
+		<English>Berber Piracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NUM</Tag>
+		<English>Extra commerce from coast and ocean tiles you control</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_GER_TITLE</Tag>
+		<English>The Sack of Rome</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_GER</Tag>
+		<English>All land units get +20% City Attack</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SAS_TITLE</Tag>
+		<English>Persian Cultural Revival</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SAS</Tag>
+		<English>25% less needed for cultural expansion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BYZ_TITLE</Tag>
+		<English>Constantine's Conversion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BYZ</Tag>
+		<English>Christianity spreads with temples and cathedrals to conquered cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HUN_TITLE</Tag>
+		<English>The scourge of all lands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HUN</Tag>
+		<English>5x Gold obtained from pillaging improvements</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ENSLAVE_WIN</Tag>
+		<English>You have enslaved an unit</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ENSLAVE_LOSE</Tag>
+		<English>The Assyrian Empire has enslaved some of your people</English>
+	</TEXT>
+</Civ4GameText>

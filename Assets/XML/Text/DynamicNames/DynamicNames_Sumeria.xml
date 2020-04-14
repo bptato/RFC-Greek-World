@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM00</Tag>
+		<English>Sumerian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM01</Tag>
+		<English>Ubaid Dynasty</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM02</Tag>
+		<English>Uruk Dynasty</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM03</Tag>
+		<English>Sumerian City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM04</Tag>
+		<English>Akkadian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM05</Tag>
+		<English>Akkadian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM06</Tag>
+		<English>Akkadian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM07</Tag>
+		<English>Akkadian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM08</Tag>
+		<English>Satrapy of Sousiane</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM09</Tag>
+		<English>Province of Palmyrene</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SUM10</Tag>
+		<English>Sumerian Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

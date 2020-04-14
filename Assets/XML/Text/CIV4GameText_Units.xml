@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NOBLE_CAVALRY</Tag>
+		<English>Noble Cavalry</English>
+		<French>
+			<Text>Corsaire:Corsaires</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Freibeuter</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Nave corsara:Navi corsare</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Corsario:Corsarios</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAVELINEER</Tag>
+		<English>Javelineer</English>
+		<French>
+			<Text>Corsaire:Corsaires</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Freibeuter</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Nave corsara:Navi corsare</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Corsario:Corsarios</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_QUINQUIREME</Tag>
+		<English>Quinquireme</English>
+		<French>
+			<Text>Corsaire:Corsaires</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Freibeuter</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Nave corsara:Navi corsare</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Corsario:Corsarios</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HOPLITE</Tag>
+		<English>Hoplite</English>
+		<French>
+			<Text>Corsaire:Corsaires</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Freibeuter</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Nave corsara:Navi corsare</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Corsario:Corsarios</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LEGION</Tag>
+		<English>Legion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MINOA_TRIREME</Tag>
+		<English>Minoan Trireme</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARYAN</Tag>
+		<English>Aryan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN</Tag>
+		<English>Horseman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HYSKOS</Tag>
+		<English>Hyskos</English>
+	</TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_UNIT_SEAPEOPLE</Tag>
+		<English>Sea People</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ASSYRIA_RAM</Tag>
+		<English>Battering Ram</English>
+		<French>Battering Ram</French>
+		<German>Battering Ram</German>
+		<Italian>Battering Ram</Italian>
+		<Spanish>Battering Ram</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ASSYRIA_RAM_PEDIA</Tag>
+		<English>[TAB]Fortified towns arrive with civilization, and sieges are as old as organized warfare. But siege implements are simple until the Assyrians. They pay special attention to the battering ram. Soldiers in early sieges swing a heavy timber ram against a town gate. They are vulnerable to missiles or heated oil from above. Under the Assyrians the ram becomes an engine. It is suspended from the roof of a timber structure, which in turn is mounted on wheels so that it can be pushed into position. Protected within this contraption, soldiers can swing the ram relentlessly against the gate. Archers, in protected turrets on top of the engine, exchange shots on almost equal terms with the defenders on the walls.</English>
+		<French>[TAB]Fortified towns arrive with civilization, and sieges are as old as organized warfare. But siege implements are simple until the Assyrians. They pay special attention to the battering ram. Soldiers in early sieges swing a heavy timber ram against a town gate. They are vulnerable to missiles or heated oil from above. Under the Assyrians the ram becomes an engine. It is suspended from the roof of a timber structure, which in turn is mounted on wheels so that it can be pushed into position. Protected within this contraption, soldiers can swing the ram relentlessly against the gate. Archers, in protected turrets on top of the engine, exchange shots on almost equal terms with the defenders on the walls.</French>
+		<German>[TAB]Fortified towns arrive with civilization, and sieges are as old as organized warfare. But siege implements are simple until the Assyrians. They pay special attention to the battering ram. Soldiers in early sieges swing a heavy timber ram against a town gate. They are vulnerable to missiles or heated oil from above. Under the Assyrians the ram becomes an engine. It is suspended from the roof of a timber structure, which in turn is mounted on wheels so that it can be pushed into position. Protected within this contraption, soldiers can swing the ram relentlessly against the gate. Archers, in protected turrets on top of the engine, exchange shots on almost equal terms with the defenders on the walls.</German>
+		<Italian>[TAB]Fortified towns arrive with civilization, and sieges are as old as organized warfare. But siege implements are simple until the Assyrians. They pay special attention to the battering ram. Soldiers in early sieges swing a heavy timber ram against a town gate. They are vulnerable to missiles or heated oil from above. Under the Assyrians the ram becomes an engine. It is suspended from the roof of a timber structure, which in turn is mounted on wheels so that it can be pushed into position. Protected within this contraption, soldiers can swing the ram relentlessly against the gate. Archers, in protected turrets on top of the engine, exchange shots on almost equal terms with the defenders on the walls.</Italian>
+		<Spanish>[TAB]Fortified towns arrive with civilization, and sieges are as old as organized warfare. But siege implements are simple until the Assyrians. They pay special attention to the battering ram. Soldiers in early sieges swing a heavy timber ram against a town gate. They are vulnerable to missiles or heated oil from above. Under the Assyrians the ram becomes an engine. It is suspended from the roof of a timber structure, which in turn is mounted on wheels so that it can be pushed into position. Protected within this contraption, soldiers can swing the ram relentlessly against the gate. Archers, in protected turrets on top of the engine, exchange shots on almost equal terms with the defenders on the walls.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ASSYRIA_RAM_STRATEGY</Tag>
+		<English>The Assyrian Battering Ram replaces the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT]. It is cheaper, stronger and has a city attack bonus.</English>
+		<French>The Assyrian Battering Ram replaces the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT]. It is cheaper, stronger and has a city attack bonus.</French>
+		<German>The Assyrian Battering Ram replaces the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT]. It is cheaper, stronger and has a city attack bonus.</German>
+		<Italian>The Assyrian Battering Ram replaces the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT]. It is cheaper, stronger and has a city attack bonus.</Italian>
+		<Spanish>The Assyrian Battering Ram replaces the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT]. It is cheaper, stronger and has a city attack bonus.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SCYTHIA_SCYTHIAN_RIDER</Tag>
+		<English>Scythian Rider</English>
+		<French>Scythian Rider</French>
+		<German>Scythian Rider</German>
+		<Italian>Scythian Rider</Italian>
+		<Spanish>Scythian Rider</Spanish>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_UNIT_SCYTHIA_SCYTHIAN_RIDER_PEDIA</Tag>
+		<English>[TAB]These nomadic tribes live for war. War, and horses. A Scythian rider will drink the blood of their first kill as a right of passage. They scalp their victims and wear their skin like handkerchiefs as a sign of status in their tribe. They're even known to flay an entire enemy and use their hide as a cloak, or as a cover for their quivers. In fact, if a Scythian tribesman doesn't make a kill during a given year, they're left out of their main annual ceremony, where warriors drink wine from the gilded skulls of their enemies.</English>
+		<French>[TAB]These nomadic tribes live for war. War, and horses. A Scythian rider will drink the blood of their first kill as a right of passage. They scalp their victims and wear their skin like handkerchiefs as a sign of status in their tribe. They're even known to flay an entire enemy and use their hide as a cloak, or as a cover for their quivers. In fact, if a Scythian tribesman doesn't make a kill during a given year, they're left out of their main annual ceremony, where warriors drink wine from the gilded skulls of their enemies.</French>
+		<German>[TAB]These nomadic tribes live for war. War, and horses. A Scythian rider will drink the blood of their first kill as a right of passage. They scalp their victims and wear their skin like handkerchiefs as a sign of status in their tribe. They're even known to flay an entire enemy and use their hide as a cloak, or as a cover for their quivers. In fact, if a Scythian tribesman doesn't make a kill during a given year, they're left out of their main annual ceremony, where warriors drink wine from the gilded skulls of their enemies.</German>
+		<Italian>[TAB]These nomadic tribes live for war. War, and horses. A Scythian rider will drink the blood of their first kill as a right of passage. They scalp their victims and wear their skin like handkerchiefs as a sign of status in their tribe. They're even known to flay an entire enemy and use their hide as a cloak, or as a cover for their quivers. In fact, if a Scythian tribesman doesn't make a kill during a given year, they're left out of their main annual ceremony, where warriors drink wine from the gilded skulls of their enemies.</Italian>
+		<Spanish>[TAB]These nomadic tribes live for war. War, and horses. A Scythian rider will drink the blood of their first kill as a right of passage. They scalp their victims and wear their skin like handkerchiefs as a sign of status in their tribe. They're even known to flay an entire enemy and use their hide as a cloak, or as a cover for their quivers. In fact, if a Scythian tribesman doesn't make a kill during a given year, they're left out of their main annual ceremony, where warriors drink wine from the gilded skulls of their enemies.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SCYTHIA_SCYTHIAN_RIDER_STRATEGY</Tag>
+		<English>The Scythian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT] has a chance to withdraw during combat.</English>
+		<French>The Scythian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT] has a chance to withdraw during combat.</French>
+		<German>The Scythian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT] has a chance to withdraw during combat.</German>
+		<Italian>The Scythian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT] has a chance to withdraw during combat.</Italian>
+		<Spanish>The Scythian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT] has a chance to withdraw during combat.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOWN_GUARD</Tag>
+		<English>Town Guard</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUXILLIA</Tag>
+		<English>Auxillia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEAVY_AXEMAN</Tag>
+		<English>Heavy Axeman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIGHT_CAVALRY</Tag>
+		<English>Light Cavalry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BANDIT</Tag>
+		<English>Bandit</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_UNIT_NOBLE_CAVALRY</Tag>
+		<English>Noble Cavalry</English>
+		<French>
+			<Text>Corsaire:Corsaires</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Freibeuter</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Nave corsara:Navi corsare</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Corsario:Corsarios</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CORACLE</Tag>
+		<English>Coracle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAPPED_RAM</Tag>
+		<English>Capped Ram</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
+		<English>Huluganni</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER</Tag>
+		<English>City Builder</English>
+		<French>
+			<Text>B&#226;tisseur de ville</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>City Builder</German>
+		<Italian>City Builder</Italian>
+		<Spanish>City Builder</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MACCABEE</Tag>
+		<English>Maccabee</English>
+		<French>Maccabee</French>
+		<German>Maccabee</German>
+		<Italian>Maccabee</Italian>
+		<Spanish>Maccabee</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MACCABEE_PEDIA</Tag>
+		<English>[TAB]The Maccabees were a Jewish national liberation movement that fought for independence from Antiochus IV Epiphanes. The Maccabees founded the Hasmonean Dynasty of Israel. In 167 BC, after Antiochus forbade Jewish practice, a priest from Modiin, Mattathias the Hasmonean, sparked a revolt by refusing to worship Greek gods. After Mattathias?s death, his son Judah Maccabee led an army of Jews against the Seleucid Dynasty. The term Maccabees is used to describe the army of Judah Maccabee.[PARAGRAPH:1]The revolt included many individual battles. In many, the Maccabeean forces won victory for their use of guerrilla tactics. After the revolt, the Maccabees cleansed the temple, and declared Judah Maccabee a priest. A Syrian army was sent to destroy the revolt, but returned after the death of Antiochus.[PARAGRAPH:1]After the revolt, the Maccabees were unsure whether to continue fighting, seeing their military success in the revolt. Those who continued to fight were led by Judah Maccabee. Judah Maccabee died in 160 BC in battle. Judah was succeeded by his younger brother Jonathan, who was already a high priest. Jonathan made treaties with foreign nations, causing more disputes between those who wanted religious freedom over political power. In 142 BC, Jonathan died. He was succeeded by the last son of Mattathias, Simon. That same year, Demetrius, king of Syria, granted the Jews independence from Syria and Simon went on to found the Hasmonean dynasty.[PARAGRAPH:1]Every year, Jews celebrate Hannukah to celebrate and recognize Judah Maccabee?s victory over the Seleucids and related miracles.</English>
+		<French>Maccabee</French>
+		<German>Maccabee</German>
+		<Italian>Maccabee</Italian>
+		<Spanish>Maccabee</Spanish>
+	</TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_UNIT_SPARTIATES_HOPLITE</Tag>
+		<English>Spartiates Hoplite</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COMPANION_CAVALRY</Tag>
+		<English>Companion Cavalry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ETRUSCAN</Tag>
+		<English>Etruscan Spearman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMEL_CATAPHRACT</Tag>
+		<English>Camel Cataphract</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SASSANID_AZADAN</Tag>
+		<English>Azadan Noble</English>
+		<French>in French</French>
+		<German>in German</German>
+		<Italian>in Italian</Italian>
+		<Spanish>in Spanish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SASSANID_AZADAN_STRATEGY</Tag>
+		<English>Despite being slightly more expensive, the Sassanid replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT] is significantly stronger, but it has no withdrawal chance whatsoever.</English>
+		<French>Cette puissante unit&#233; mont&#233;e est lente mais s'av&#232;re un adversaire redoutable pour les unit&#233;s telles que l'archer mont&#233;.</French>
+		<German>Diese m&#228;chtige fr&#252;he berittene Kampfeinheit ist eine langsame aber effektive Waffe gegen Berittene Bogensch&#252;tzen und &#228;hnliche Einheiten.</German>
+		<Italian>Questa potente unit&#224; montata iniziale &#232; lenta ma potente, ottima per contrastare le unit&#224; come gli arcieri a cavallo.</Italian>
+		<Spanish>Esta poderosa unidad montada temprana es m&#225;s lenta que otras unidades como los Arqueros a caballo, pero los contrarresta mucho mejor.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SASSANID_AZADAN_PEDIA</Tag>
+		<English>[TAB]The Azadan class of nobility was first formed in Parthian times, and was carried over into the Sassanid state, where they were a force to be reckoned with. They accompanied the king in the wars and displayed great courage and discipline. They are clearly the forerunners and founders of the "Knights" of later Arab history. They jealously guarded their status as descendants of the ancient Aryan conquerors and rulers of the mass of originally non-Aryan peasantry. These azadan formed a numerous minor aristocracy of lower-ranking administrators, mostly living on their small estates and providing the cavalry backbone of Sassanid army. Most prestigious among them were the armoured "Aswaran" who normally decided the outcome of a battle. Despite their downfall in the 7th century AD, their legacy endured in Europe, the Caucasus, India and the Muslim world. It was the elite cavalry of Sassanid Persia, who were the forerunners of the later Arabian Faris, the English knights, the Caucasian horsemen, the Indian Suwar (derived from Persian Savar), and the Turkish Tarkhans.</English>
+		<French>[TAB]L'utilisation des &#233;l&#233;phants pour la guerre a commenc&#233; en Inde et &#233;tait connue des Perses au IVe si&#232;cle av. J.-C. C'est gr&#226;ce &#224; ses &#233;l&#233;phants de guerre que Chandragupta parvint &#224; vaincre Seleucos, le successeur d'Alexandre le Grand, et &#224; fonder l'Empire maurya. M&#234;me si les &#233;l&#233;phants africains de Carthage ont peu d'exploits &#224; leur actif, leur pr&#233;sence dans l'arm&#233;e d'Hannibal lors de la travers&#233;e des Alpes en 218 av. J.-C. leur a valu une r&#233;putation d'arme redoutable. L'importance tactique des &#233;l&#233;phants repose beaucoup sur leur capacit&#233; &#224; attaquer l'infanterie comme la cavalerie, et &#224; inspirer la terreur. Bien que les arm&#233;es indiennes aient utilis&#233; l'&#233;l&#233;phant jusqu'au XXe si&#232;cle, son utilit&#233; dans la pratique de la guerre a pris fin avec l'invention de la poudre &#224; canon.</French>
+		<German>[TAB]Der Kriegselefant wurde zuerst in Indien eingesetzt und war den Persern im 4. Jahrhundert vor Christus schon gel&#228;ufig. Mit Hilfe von Kriegselefanten gelang es dem indischen K&#246;nig Chandragupta, die Truppen von Seleukos, dem Nachfolger Alexanders des Gro&#223;en, zu besiegen und das Maurya-Reich zu begr&#252;nden. Auch wenn die afrikanischen Kriegselefanten der Karthager nur wenig ausrichten konnten, so machten sie ihrem Ruf als gef&#252;rchtetes Kriegsger&#228;t alle Ehre, als Hannibal seine Truppen mitsamt den Dickh&#228;utern &#252;ber die Alpen f&#252;hrte, um im Jahre 218 vor Christus in Rom einzufallen. Die taktische Bedeutung der Kriegselefanten resultiert zum gro&#223;en Teil aus ihrer Eigenschaft, sowohl Fu&#223;soldaten als auch die Kavallerie anzugreifen und in Panik zu versetzen. Das indische Milit&#228;r setzte sie zwar noch bis zum 20. Jahrhundert aktiv ein, letztlich erging es ihnen am Ende aber wie vielen anderen traditionellen "Waffen": Ihr milit&#228;rischer Nutzen endete mit dem verbreiteten Einsatz von Schie&#223;pulver.</German>
+		<Italian>[TAB]L'elefante da guerra fu usato per la prima volta in India e fu conosciuto dai Persiani intorno al quarto secolo a. C. Grazie a queste unit&#224;, Candra Gupta sconfisse il successore di Alessandro, Seleuco, e fond&#242; l'Impero Maurya. Anche se gli elefanti da guerra africani di Cartagine non furono determinanti, la loro presenza nell'esercito di Annibale durante la sua traversata delle Alpi verso il cuore di Roma, nel 218 a. C., afferm&#242; la loro reputazione di arma temibile. Apparentemente, l'importanza tattica dell'elefante si basa in gran parte sulla sua predisposizione a caricare sia i fanti che la cavalleria, nonch&#233; sul panico che &#232; in grado di suscitare. Malgrado sia stato usato nelle truppe indiane fino al XX secolo, alla pari di molte armi tradizionali, la sua utilit&#224; in guerra &#232; cessata con la diffusione della polvere da sparo.</Italian>
+		<Spanish>[TAB]Los elefantes de guerra fueron utilizados por primera vez en la India, y los persas ya lo conoc&#237;an hacia el siglo IV a. C. Utilizando elefantes de guerra, Chandragupta derrot&#243; a Seleuco, sucesor de Alejandro, y fund&#243; el imperio mauryan. Aunque estos animales no sirvieron de mucho a Cartago, su presencia en el ej&#233;rcito de An&#237;bal durante el cruce de los Alpes y la invasi&#243;n de Roma en el a&#241;o 218 a. C. bast&#243; para cimentar su reputaci&#243;n como armas terribles. La importancia t&#225;ctica de los elefantes derivaba aparentemente de su disposici&#243;n a cargar tanto contra la infanter&#237;a como contra la caballer&#237;a, y del p&#225;nico que esto inspiraba. Aunque sirvieron en el ej&#233;rcito indio hasta el siglo XX, su utilidad real, al igual que ocurri&#243; con muchas otras armas tradicionales, termin&#243; con la difusi&#243;n generalizada de la p&#243;lvora.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARYAN_PEDIA</Tag>
+		<English>The excavation of the Harappa, Mohenjo-daro and Lothal sites of the Indus Valley Civilisation (IVC) in the 1920, showed that northern India already had an advanced culture when the Indo-Aryans migrated into the area. The theory changed from a migration of advanced Aryans towards a primitive aboriginal population, to a migration of nomadic people into an advanced urban civilization, comparable to the Germanic migrations during the Fall of the Western Roman Empire, or the Kassite invasion of Babylonia.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BANDIT_PEDIA</Tag>
+		<English>"One who is proscribed or outlawed; hence, a lawless desperate marauder, a brigand: usually applied to members of the organized gangs which infest the mountainous districts of Italy, Sicily, Spain, Greece, Iran, and Turkey" NED. </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHOENICIANS_Bireme_PEDIA</Tag>
+		<English>The bireme is a type of ancient ship which was supposedly invented by the Phoenicians and extensively used by the Romans. A bireme is also basically a Greek ship which has two sets of oars on each of its sides.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIA_CAMELARCHER</Tag>
+		<English>Berber Camel Rider</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMELARCHER</Tag>
+		<English>Camel Archer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMELARCHER_PEDIA</Tag>
+		<English>Darius III of Persia who ruled from 336 BC to 330 BC was known to counter Alexander the Great's attacks with camel mounted warriors. Although camel archers can be looked into deeply enough, many regions of the world who did have access to camels preferred to use the generally swifter and stronger horse archer.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAPPED_RAM_PEDIA</Tag>
+		<English>A capped ram is a battering ram that has an accessory at the head (usually made of iron or steel and sometimes punningly shaped into the head and horns of an ovine ram) to do more damage to a building. It was much more effective at destroying enemy walls and buildings than an uncapped ram but was heavier to carry.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COMPANION_CAVALRY_PEDIA</Tag>
+		<English>The elite cavalry of the Macedonian army from the time of king Philip II of Macedon, achieved their greatest prestige under Alexander the Great, and have been regarded as the first or among the first shock cavalry used in Europe. Chosen Companions, or Hetairoi, formed the elite guard of the king.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CORACLE_PEDIA</Tag>
+		<English>The coracle is a small, rounded, lightweight boat.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUXILLIA_PEDIA</Tag>
+		<English>An auxiliary force is an organized group supplementing but not directly incorporated in a regular military or police entity. It may comprise either civilian volunteers undertaking support functions or additional personnel directly performing military roles, such as garrison troops or police duties, usually on a part-time basis.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEAVY_AXEMAN_PEDIA</Tag>
+		<English>Procopius makes it clear that the Franks threw their axes immediately before hand to hand combat with the purpose of breaking shields and disrupting the enemy line while possibly wounding or killing an enemy warrior. The weight of the head and length of the haft would allow the axe to be thrown with considerable momentum to an effective range of about 12 m (40 ft). Even if the edge of the blade were not to strike the target, the weight of the iron head could cause injury.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_PEDIA</Tag>
+		<English>Horseman groups originated about 2,500 years ago and continue in various forms today. Throughout their long run they have maintained many of the customs, characteristics, martial arts and methods of organization that evolved millennia ago such spending living in yurt-style tents, drinking fermented mare's milk, fighting from horseback and creating art forms that celebrate horses and animals of the steppe.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAVELINEER_PEDIA</Tag>
+		<English>Javelins were carried by Egyptian light infantry, as a main weapon, and as an alternative to a spear or a bow and arrow, generally along with a shield.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIGHT_CAVALRY_PEDIA</Tag>
+		<English>Light cavalry comprises lightly armed and lightly armoured troops mounted on horses, as opposed to heavy cavalry, where the riders (and sometimes the horses) are heavily armored.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MEDJAY_PEDIA</Tag>
+		<English>During the Middle Kingdom of Egypt, ancient Egyptians were appreciative of their skill in combat, and therefore employed them as gauchos, infantry soldiers and explorers to spy on foreigners at the borders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MERCHANT_PEDIA</Tag>
+		<English>Merchants have existed as long as business, trade and commerce have been conducted. A merchant class characterized many pre-modern societies. Open air, public markets, where merchants and traders congregated, were known in ancient Babylonia and Assyria, China, Egypt, Greece, India, Persia, Phoenicia and Rome.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MINOA_TRIREME_PEDIA</Tag>
+		<English>Paintings that was found in Acrotiri in Thera (Santorini) show that the Minoans used various types of ships. The Minoans were the first navy power in Greece.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NOBLE_CAVALRY_PEDIA</Tag>
+		<English>Their shock value is matched only by the quality of their equipment.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_QUINQUIREME_PEDIA</Tag>
+		<English>An ancient Carthaginian or Greek galley having three banks of oars, rowed by five oarsmen: two to an oar in each of the upper rows, and one to the lower oar.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOWN_GUARD_PEDIA</Tag>
+		<English>A law enforcement and security formation found in many countries and historical periods, usually subordinate to the local municipal government. Historically many cities had their own guard formations, which doubled as police and military forces in times of need.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIBYAN_CAMELARCHER</Tag>
+		<English>Libyan Camel Rider</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DACIAN</Tag>
+		<English>Dacian Swordsman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_YUEZHI</Tag>
+		<English>Yuezhi Horse Archers</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ANGLE</Tag>
+		<English>Anglo Saxon Huscarl</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SUEVES</Tag>
+		<English>Suebi Raiders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_IMAJAGHAN</Tag>
+		<English>Imajaghan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ELAM_KASSU_RISA</Tag>
+		<English>Kassu Risa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ELAM_KASSU_RISA_PEDIA</Tag>
+		<English>[TAB]Elamite culture was suffused with the image of the horned diety, and these attributes were considered sacred. Texts attest to the fielding of "horned warriors" and images of the troops, wearing horned helmets and bearing axes, exist; Elam certainly had it's military traditions and fought long and hard against first the Sumer - Akkad city states and later babylon and Assyria. "Kassu Risa" is Elamite and means "great horn".</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PESEDJET_PRIEST</Tag>
+		<English>Hemet-Netjer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PESEDJET_PRIEST_PEDIA</Tag>
+		<English>[TAB]In the ancient Egyptian religion, female priests were known as hemet-netjer, which meant "servants of the god". There was a hierarchy in the priesthood from the high priest (hem-netjer-tepi, "first servant of god") at the top to the wab priests at the bottom. The wab priests carried out the essential but fairly mundane tasks of taking care of the temple complex and performing whatever function they were called upon for, such as helping to prepare for festivals.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PESEDJET_PRIEST_STRATEGY</Tag>
+		<English>[TAB]A Hemet-Netjer can spread the Pesedjet religion to other cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ANUNNAKI_PRIEST</Tag>
+		<English>Ensi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ANUNNAKI_PRIEST_PEDIA</Tag>
+		<English>[TAB]In Mesopotamian society, priests and priestesses were equals to the king in power and honor, and were mediators between the gods and the people. The word En or Ensi referred to chief priests, who also controlled a city state.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ANUNNAKI_PRIEST_STRATEGY</Tag>
+		<English>[TAB]An Ensi can spread the Anunnaki religion to other cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_PRIEST</Tag>
+		<English>Magus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_PRIEST_PEDIA</Tag>
+		<English>[TAB]Magus were priests in Zoroastrianism and the earlier religions of the western Iranians. The earliest known use of the word magi is in the trilingual inscription written by Darius the Great, known as the Behistun Inscription. Old Persian texts, predating the Hellenistic period, refer to a magus as a Zurvanic, and presumably Zoroastrian, priest.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_PRIEST_STRATEGY</Tag>
+		<English>[TAB]A Magus can spread the Zoroastrian religion to other cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST</Tag>
+		<English>Hiereia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST_PEDIA</Tag>
+		<English>[TAB]The only public roles that Greek women could perform were priestesses: either hiereiai, meaning "sacred women" or amphipolis, a term for lesser attendants. As a priestess, they gained social recognition and access to more luxuries than other Greek women that worked or typically stayed in the home. Women who voluntarily chose to become priestesses received an increase in social and legal status to the public, and after death, they received a public burial site. Greek priestesses had to be healthy and of a sound mind, the reasoning being that the ones serving the gods had to be as high-quality as their offerings.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST_STRATEGY</Tag>
+		<English>[TAB]A Hiereia can spread the Hellenic religion to other cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST</Tag>
+		<English>Kohen</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST_PEDIA</Tag>
+		<English>[TAB]To-do</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST_STRATEGY</Tag>
+		<English>[TAB]A Kohen can spread the Baalic religion to other cities.</English>
+	</TEXT>
+</Civ4GameText>

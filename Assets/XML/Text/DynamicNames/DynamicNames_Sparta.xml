@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA00</Tag>
+		<English>Dorian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA01</Tag>
+		<English>Kingdom of Sparta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA02</Tag>
+		<English>Kingdom of Sparta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA03</Tag>
+		<English>Kingdom of Sparta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA04</Tag>
+		<English>Peloponnesian League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA05</Tag>
+		<English>Peloponnesian League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA06</Tag>
+		<English>Peloponnesian League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA07</Tag>
+		<English>Spartan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA08</Tag>
+		<English>Satrapy of Sparta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA09</Tag>
+		<English>Province of Achaia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SPA10</Tag>
+		<English>Spartan Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

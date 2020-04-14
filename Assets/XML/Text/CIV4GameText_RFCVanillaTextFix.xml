@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROME_PRAETORIAN</Tag>
+		<English>Legion</English>
+		<French>
+			<Text>L&#233;gion</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Legion</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Legion:Legioni</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Legi&#243;n:Legiones</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROME_PRAETORIAN_PEDIA</Tag>
+		<English>[TAB]The Roman Legions, created during the early wars of the Republic and tested during the three Punic Wars against Carthage, were the fighting force that conquered and held the Roman Empire together for five centuries. Each legion was composed of 6000 men, divided into 60 smaller groups known as centuries. Nearly unstoppable on the attack, the legion was relatively weak on defense. The legion's demise as a military unit was accelerated by the destruction of Emperor Valens' army by gothic knights in the fourth century.</English>
+		<French>[TAB]Les l&#233;gions romaines, cr&#233;&#233;es lors des guerres de la R&#233;publique et mises &#224; l'&#233;preuve au cours des trois guerres puniques contre Carthage, sont la force militaire qui a permis &#224; Rome de conqu&#233;rir, puis de pr&#233;server son Empire pendant cinq si&#232;cles. Chaque l&#233;gion se composait de 6 000 hommes, r&#233;partis en 60 unit&#233;s appel&#233;es centuries. Quasiment invincible en attaque, la l&#233;gion &#233;tait relativement faible en d&#233;fense. La disparition de la l&#233;gion a &#233;t&#233; acc&#233;l&#233;r&#233;e au IVe si&#232;cle par la d&#233;faite de l'arm&#233;e de l'Empereur Valens contre la cavalerie des Goths.</French>
+		<German>[TAB]Die r&#246;mischen Legionen wurden w&#228;hrend der fr&#252;hen Kriege der Republik Rom ins Leben gerufen und stellten ihr K&#246;nnen zuerst in den drei Punischen Kriegen gegen Karthago unter Beweis. Im Gro&#223;en und Ganzen ist es letztlich ihnen zu verdanken, dass das R&#246;mische Reich ein derartig gro&#223;es Territorium erobern und mehr als f&#252;nfhundert Jahre lang auch zusammenhalten konnte. Jede Legion bestand aus insgesamt 6.000 Mann, die sich in 60 kleinere Truppenverb&#228;nde, die so genannten Zenturien, gliederten. Die Offensivkraft einer Legion war nahezu un&#252;bertroffen, allerdings wies ihre Verteidigung relativ gro&#223;e Schw&#228;chen auf. Ausschlaggebend f&#252;r die endg&#252;ltige Abschaffung der Legionen als Milit&#228;reinheiten war die Vernichtung der Armee des r&#246;mischen Kaisers Valens durch die gotischen Ritter im 4. Jahrhundert.</German>
+		<Italian>[TAB]Le Legioni Romane, create durante i primi anni della Repubblica e messe alla prova durante le tre Guerre Puniche contro Cartagine, rappresentavano la forza militare dell'Impero Romano, che dur&#242; la bellezza di cinque secoli. Ciascuna legione era composta da 6.000 uomini, divisi in 60 gruppi pi&#249; piccoli, denominati centurie. La Legione era inarrestabile in attacco, ma debole quando si trattava di difendere. La fine di questa unit&#224; militare venne dichiarata con la distruzione dell'esercito dell'Imperatore Valente per mano dei cavalieri barbari, durante il quarto secolo.</Italian>
+		<Spanish>[TAB]Las legiones romanas, creadas durante las primeras guerras de la Rep&#250;blica y puestas a prueba durante las tres Guerras P&#250;nicas contra Cartago, eran las fuerzas b&#233;licas que conquistaron y mantuvieron unido el Imperio Romano durante cinco siglos. Cada legi&#243;n se compon&#237;a de seis mil hombres, divididos en sesenta grupos m&#225;s peque&#241;os llamados centurias. Casi imparable cuando atacaba, la legi&#243;n era relativamente d&#233;bil en cuanto a defensa. El fin de la legi&#243;n como unidad militar se aceler&#243; por la destrucci&#243;n del ej&#233;rcito del emperador Valentiniano por los caballeros godos en el siglo IV.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
+		<English>Jewish Missionary</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ERA_MEDIEVAL</Tag>
+		<English>Early Medieval</English>
+		<French>
+			<Text>Moyen-Age</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Frühmittelalter</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Medioevale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Edad media</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

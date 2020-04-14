@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL00</Tag>
+		<English>Celtic Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL01</Tag>
+		<English>Celtic Tribes</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL02</Tag>
+		<English>Celtic Kingdoms</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL03</Tag>
+		<English>Gallic Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL04</Tag>
+		<English>Gallic Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL05</Tag>
+		<English>Gallic Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL06</Tag>
+		<English>Salian Franks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL07</Tag>
+		<English>Frankish Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL08</Tag>
+		<English>Satrapy of Gaul</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL09</Tag>
+		<English>Province of Gallia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_CEL10</Tag>
+		<English>Celtic Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

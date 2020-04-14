@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR00</Tag>
+		<English>Etruscan Tribes</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR01</Tag>
+		<English>Etruscan City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR02</Tag>
+		<English>Etruscan City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR03</Tag>
+		<English>Etruscan City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR04</Tag>
+		<English>Etruscan League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR05</Tag>
+		<English>Etruscan League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR06</Tag>
+		<English>Etruscan led Italian Alliance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR07</Tag>
+		<English>Kingdom of the Ostrogoths</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR08</Tag>
+		<English>Satrapy of Tuscony</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR09</Tag>
+		<English>Province of Italia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ETR10</Tag>
+		<English>Etruscan Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

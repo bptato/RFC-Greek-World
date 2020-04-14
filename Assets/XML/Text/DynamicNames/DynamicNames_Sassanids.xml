@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS00</Tag>
+		<English>Persian Peoples</English>
+		<French>
+			<Text>Peuplades Parsi</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<AZTman>
+			<Text>Parsiv&#246;lker:Parsiv&#246;lker:Parsiv&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</AZTman>
+		<Italian>
+			<Text>Popoli Parsi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Parsi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS01</Tag>
+		<English>Sassanids</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS02</Tag>
+		<English>Sassanid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS03</Tag>
+		<English>Sassanid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS04</Tag>
+		<English>Sassanid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS05</Tag>
+		<English>Sassanid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS06</Tag>
+		<English>Sassanid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS07</Tag>
+		<English>Sassanid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS08</Tag>
+		<English>Sixteenth Satrapy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS09</Tag>
+		<English>Province of Persia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_SAS10</Tag>
+		<English>Sassanid Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

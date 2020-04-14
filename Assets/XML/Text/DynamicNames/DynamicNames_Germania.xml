@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER00</Tag>
+		<English>Gothic Tribes</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER01</Tag>
+		<English>Gothic Tribes</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER02</Tag>
+		<English>Gothic Settlements</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER03</Tag>
+		<English>Gothic Settlements</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER04</Tag>
+		<English>Gothic Confederation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER05</Tag>
+		<English>Gothic Confederation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER06</Tag>
+		<English>Kingdom of the Visigoths</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER07</Tag>
+		<English>Kingdom of the Visigoths</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER08</Tag>
+		<English>Satrapy of Germania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER09</Tag>
+		<English>Province of Germania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_GER10</Tag>
+		<English>Gothic Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

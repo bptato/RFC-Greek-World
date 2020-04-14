@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH00</Tag>
+		<English>Ionians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH01</Tag>
+		<English>Republic of Athens</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH02</Tag>
+		<English>Republic of Athens</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH03</Tag>
+		<English>Republic of Athens</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH04</Tag>
+		<English>Delian League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH05</Tag>
+		<English>Delian League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH06</Tag>
+		<English>Delian League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH07</Tag>
+		<English>Athenian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH08</Tag>
+		<English>Satrapy of Athens</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH09</Tag>
+		<English>Province of Epirus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_ATH10</Tag>
+		<English>Athenian Client Kingdom</English>
+	</TEXT>
+</Civ4GameText>

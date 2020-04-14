@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BARBARISM</Tag>
+		<English>Tribal Law</English>
+		<French>Tribal Law</French>
+		<German>Tribal Law</German>
+		<Italian>Tribal Law</Italian>
+		<Spanish>Tribal Law</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OLIGARCHY</Tag>
+		<English>Oligarchy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRIBAL_FEDERATION</Tag>
+		<English>Tribal Federation</English>
+		<French>Tribal Federation</French>
+		<German>Tribal Federation</German>
+		<Italian>Tribal Federation</Italian>
+		<Spanish>Tribal Federation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRIBAL_FEDERATION_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EMPIRE</Tag>
+		<English>Empire</English>
+		<French>Empire</French>
+		<German>Empire</German>
+		<Italian>Empire</Italian>
+		<Spanish>Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EMPIRE_PEDIA</Tag>
+		<English>[TAB]Scholars debate what exactly constitutes an Empire (from the Latin "imperium", denoting military command within the ancient Roman government). Generally, they may define an empire as a state that extends dominion over areas and populations distinct culturally and ethnically from the culture/ethnicity at the center of power. There are, however, many types of definitions, including definitions based on economic factors and those based on political factors. The term is most commonly understood to mean that of the military hegemonic power.</English>
+		<French>[TAB]Scholars debate what exactly constitutes an Empire (from the Latin "imperium", denoting military command within the ancient Roman government). Generally, they may define an empire as a state that extends dominion over areas and populations distinct culturally and ethnically from the culture/ethnicity at the center of power. There are, however, many types of definitions, including definitions based on economic factors and those based on political factors. The term is most commonly understood to mean that of the military hegemonic power.</French>
+		<German>[TAB]Scholars debate what exactly constitutes an Empire (from the Latin "imperium", denoting military command within the ancient Roman government). Generally, they may define an empire as a state that extends dominion over areas and populations distinct culturally and ethnically from the culture/ethnicity at the center of power. There are, however, many types of definitions, including definitions based on economic factors and those based on political factors. The term is most commonly understood to mean that of the military hegemonic power.</German>
+		<Italian>[TAB]Scholars debate what exactly constitutes an Empire (from the Latin "imperium", denoting military command within the ancient Roman government). Generally, they may define an empire as a state that extends dominion over areas and populations distinct culturally and ethnically from the culture/ethnicity at the center of power. There are, however, many types of definitions, including definitions based on economic factors and those based on political factors. The term is most commonly understood to mean that of the military hegemonic power.</Italian>
+		<Spanish>[TAB]Scholars debate what exactly constitutes an Empire (from the Latin "imperium", denoting military command within the ancient Roman government). Generally, they may define an empire as a state that extends dominion over areas and populations distinct culturally and ethnically from the culture/ethnicity at the center of power. There are, however, many types of definitions, including definitions based on economic factors and those based on political factors. The term is most commonly understood to mean that of the military hegemonic power.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EMPIRE_STRATEGY</Tag>
+		<English>Less maintenance from number of cities; less expansion stability penalty</English>
+		<French>Less maintenance from number of cities; less expansion stability penalty</French>
+		<German>Less maintenance from number of cities; less expansion stability penalty</German>
+		<Italian>Less maintenance from number of cities; less expansion stability penalty</Italian>
+		<Spanish>Less maintenance from number of cities; less expansion stability penalty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EMPIRE_HELP</Tag>
+		<English>[ICON_BULLET]-40% Expansion Stability Penalty</English>
+		<French>[ICON_BULLET]-40% Expansion Stability Penalty</French>
+		<German>[ICON_BULLET]-40% Expansion Stability Penalty</German>
+		<Italian>[ICON_BULLET]-40% Expansion Stability Penalty</Italian>
+		<Spanish>[ICON_BULLET]-40% Expansion Stability Penalty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VASSALAGE_HELP</Tag>
+		<English>[ICON_BULLET]+3 Stability per Vassal</English>
+		<French>[ICON_BULLET]+3 Stability per Vassal</French>
+		<German>[ICON_BULLET]+3 Stability per Vassal</German>
+		<Italian>[ICON_BULLET]+3 Stability per Vassal</Italian>
+		<Spanish>[ICON_BULLET]+3 Stability per Vassal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SLAVERY_HELP</Tag>
+		<English>[ICON_BULLET]Enables [LINK=literal]Slave Market[\LINK]</English>
+		<French>[ICON_BULLET]Enables [LINK=literal]Slave Market[\LINK]</French>
+		<German>[ICON_BULLET]Enables [LINK=literal]Slave Market[\LINK]</German>
+		<Italian>[ICON_BULLET]Enables [LINK=literal]Slave Market[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]Enables [LINK=literal]Slave Market[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DECENTRALIZATION_HELP</Tag>
+		<English>[ICON_BULLET]Reduced Stability Penalty for Bad Economy</English>
+		<French>[ICON_BULLET]Reduced Stability Penalty for Bad Economy</French>
+		<German>[ICON_BULLET]Reduced Stability Penalty for Bad Economy</German>
+		<Italian>[ICON_BULLET]Reduced Stability Penalty for Bad Economy</Italian>
+		<Spanish>[ICON_BULLET]Reduced Stability Penalty for Bad Economy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ARISTOCRACY_STRATEGY</Tag>
+		<English>Extra happiness in largest cities; extra income and culture from city specialists</English>
+		<French>Extra happiness in largest cities; extra income and culture from city specialists</French>
+		<German>Extra happiness in largest cities; extra income and culture from city specialists</German>
+		<Italian>Extra happiness in largest cities; extra income and culture from city specialists</Italian>
+		<Spanish>Extra happiness in largest cities; extra income and culture from city specialists</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ARISTOCRACY_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OLIGARCHY_STRATEGY</Tag>
+		<English>Less maintenance from distance to palace; extra income from city specialists</English>
+		<French>Less maintenance from distance to palace; extra income from city specialists</French>
+		<German>Less maintenance from distance to palace; extra income from city specialists</German>
+		<Italian>Less maintenance from distance to palace; extra income from city specialists</Italian>
+		<Spanish>Less maintenance from distance to palace; extra income from city specialists</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ABSOLUTISM_STRATEGY</Tag>
+		<English>Faster military unit production; less war anger; you may assign unlimited spy specialists in your cities</English>
+		<French>Faster military unit production; less war anger; you may assign unlimited spy specialists in your cities</French>
+		<German>Faster military unit production; less war anger; you may assign unlimited spy specialists in your cities</German>
+		<Italian>Faster military unit production; less war anger; you may assign unlimited spy specialists in your cities</Italian>
+		<Spanish>Faster military unit production; less war anger; you may assign unlimited spy specialists in your cities</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
+		<English>Can draft three units per turn; extra unhappiness in all cities; extra income from quarries and plantations</English>
+		<French>Can draft three units per turn; extra unhappiness in all cities; extra income from quarries and plantations</French>
+		<German>Can draft three units per turn; extra unhappiness in all cities; extra income from quarries and plantations</German>
+		<Italian>Can draft three units per turn; extra unhappiness in all cities; extra income from quarries and plantations</Italian>
+		<Spanish>Can draft three units per turn; extra unhappiness in all cities; extra income from quarries and plantations</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Tag>
+		<English>Extra income from farms and orchards; cottages grow slower</English>
+		<French>Extra income from farms and orchards; cottages grow slower</French>
+		<German>Extra income from farms and orchards; cottages grow slower</German>
+		<Italian>Extra income from farms and orchards; cottages grow slower</Italian>
+		<Spanish>Extra income from farms and orchards; cottages grow slower</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AGRARIANISM_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MARKET_ECONOMY_STRATEGY</Tag>
+		<English>Free specialist in each city</English>
+		<French>Un sp&#233;cialiste gratuit dans chaque ville</French>
+		<German>Bonus-Spezialist in allen St&#228;dten</German>
+		<Italian>Specialisti extra in ogni citt&#224;</Italian>
+		<Spanish>Un especialista gratis en cada ciudad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCHANT_CAPITALISM_STRATEGY</Tag>
+		<English>Extra trade route in each city; more war anger</English>
+		<French>Extra trade route in each city; more war anger</French>
+		<German>Extra trade route in each city; more war anger</German>
+		<Italian>Extra trade route in each city; more war anger</Italian>
+		<Spanish>Extra trade route in each city; more war anger</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCHANT_CAPITALISM_PEDIA</Tag>
+		<English>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</English>
+		<French>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</French>
+		<German>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</German>
+		<Italian>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</Italian>
+		<Spanish>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TEMPLE_ECONOMY_STRATEGY</Tag>
+		<English>Unlimited priests, cities with state religion build buildings faster, +1 gold per specialist</English>
+		<French>Unlimited priests, cities with state religion build buildings faster, +1 gold per specialist</French>
+		<German>Unlimited priests, cities with state religion build buildings faster, +1 gold per specialist</German>
+		<Italian>Unlimited priests, cities with state religion build buildings faster, +1 gold per specialist</Italian>
+		<Spanish>Unlimited priests, cities with state religion build buildings faster, +1 gold per specialist</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
+		<English>New units receive free experience points in cities with state religion</English>
+		<French>Les nouvelles unit&#233;s re&#231;oivent des points d'exp&#233;rience dans les villes ayant une religion d'&#233;tat</French>
+		<German>Neue Einheiten erhalten in St&#228;dten mit Staatsreligion zus&#228;tzliche Erfahrungspunkte</German>
+		<Italian>Le nuove unit&#224; ricevono punti esperienza extra nelle citt&#224; dotate di religione di stato</Italian>
+		<Spanish>Las nuevas unidades reciben gratis puntos de experiencia en las ciudades con la religi&#243;n oficial</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PERSECUTION_STRATEGY</Tag>
+		<English>No spread of non-state religion; increased espionage in all cities; more religious unrest</English>
+		<French>No spread of non-state religion; increased espionage in all cities; more religious unrest</French>
+		<German>No spread of non-state religion; increased espionage in all cities; more religious unrest</German>
+		<Italian>No spread of non-state religion; increased espionage in all cities; more religious unrest</Italian>
+		<Spanish>No spread of non-state religion; increased espionage in all cities; more religious unrest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PERSECUTION_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_RELIGIOUS_LAW_STRATEGY</Tag>
+		<English>Increases great people birth rate in cities with state religion; you may assign unlimited priest specialists in your cities; more religious unrest</English>
+		<French>Increases great people birth rate in cities with state religion; you may assign unlimited priest specialists in your cities; more religious unrest</French>
+		<German>Increases great people birth rate in cities with state religion; you may assign unlimited priest specialists in your cities; more religious unrest</German>
+		<Italian>Increases great people birth rate in cities with state religion; you may assign unlimited priest specialists in your cities; more religious unrest</Italian>
+		<Spanish>Increases great people birth rate in cities with state religion; you may assign unlimited priest specialists in your cities; more religious unrest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_RELIGIOUS_LAW_PEDIA</Tag>
+		<English>[TAB]In some religions, law can be thought of as the ordering principle of reality; knowledge as revealed by a God defining and governing all human affairs. Law, in the religious sense, also includes codes of ethics and morality which are upheld and required by the God. Examples include customary Halakha (Jewish law) and Hindu law, and to an extent, Sharia (Islamic law) and Canon law (Christian law).</English>
+		<French>[TAB]In some religions, law can be thought of as the ordering principle of reality; knowledge as revealed by a God defining and governing all human affairs. Law, in the religious sense, also includes codes of ethics and morality which are upheld and required by the God. Examples include customary Halakha (Jewish law) and Hindu law, and to an extent, Sharia (Islamic law) and Canon law (Christian law).</French>
+		<German>[TAB]In some religions, law can be thought of as the ordering principle of reality; knowledge as revealed by a God defining and governing all human affairs. Law, in the religious sense, also includes codes of ethics and morality which are upheld and required by the God. Examples include customary Halakha (Jewish law) and Hindu law, and to an extent, Sharia (Islamic law) and Canon law (Christian law).</German>
+		<Italian>[TAB]In some religions, law can be thought of as the ordering principle of reality; knowledge as revealed by a God defining and governing all human affairs. Law, in the religious sense, also includes codes of ethics and morality which are upheld and required by the God. Examples include customary Halakha (Jewish law) and Hindu law, and to an extent, Sharia (Islamic law) and Canon law (Christian law).</Italian>
+		<Spanish>[TAB]In some religions, law can be thought of as the ordering principle of reality; knowledge as revealed by a God defining and governing all human affairs. Law, in the religious sense, also includes codes of ethics and morality which are upheld and required by the God. Examples include customary Halakha (Jewish law) and Hindu law, and to an extent, Sharia (Islamic law) and Canon law (Christian law).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_RELIGION_STRATEGY</Tag>
+		<English>No religious unrest; increases cultural output of all cities</English>
+		<French>No religious unrest; increases cultural output of all cities</French>
+		<German>No religious unrest; increases cultural output of all cities</German>
+		<Italian>No religious unrest; increases cultural output of all cities</Italian>
+		<Spanish>No religious unrest; increases cultural output of all cities</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AGRARIANISM</Tag>
+		<English>Agrarianism</English>
+		<French>Agrarianism</French>
+		<German>Agrarianism</German>
+		<Italian>Agrarianism</Italian>
+		<Spanish>Agrarianism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_COLONIES</Tag>
+		<English>Colonies</English>
+		<French>Colonies</French>
+		<German>Colonies</German>
+		<Italian>Colonies</Italian>
+		<Spanish>Colonies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCHANT_CAPITALISM</Tag>
+		<English>Merchant Capitalism</English>
+		<French>Merchant Capitalism</French>
+		<German>Merchant Capitalism</German>
+		<Italian>Merchant Capitalism</Italian>
+		<Spanish>Merchant Capitalism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MARKET_ECONOMY</Tag>
+		<English>Market Economy</English>
+		<French>Market Economy</French>
+		<German>Market Economy</German>
+		<Italian>Market Economy</Italian>
+		<Spanish>Market Economy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MARKET_ECONOMY_PEDIA</Tag>
+		<English>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</English>
+		<French>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</French>
+		<German>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</German>
+		<Italian>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</Italian>
+		<Spanish>[TAB]During the Islamic Golden Age, early forms of proto-capitalism and free markets were present in the Caliphate, where an early market economy and an early form of mercantilism were developed between the 8th-12th centuries, which some refer to as "Islamic capitalism". A vigorous monetary economy was created on the basis of the expanding levels of circulation of a stable, high-value currency (the dinar) and the integration of monetary areas that were previously independent.[PARAGRAPH:2]A number of economic concepts and techniques were applied in early Islamic banking, including bills of exchange, the first forms of partnership (mufawada) such as limited partnerships (mudaraba), and the earliest forms of capital (al-mal), capital accumulation (nama al-mal), cheques, promissory notes, trusts (waqf), transactional accounts, loaning, ledgers and assignments. Organizational enterprises independent from the state also existed in the medieval Islamic world, while the agency institution was also introduced during that time. Many of these early capitalist concepts were adopted and further advanced in medieval Europe from the 13th century onwards.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_RELIGION</Tag>
+		<English>Religious Freedom</English>
+		<French>Religious Freedom</French>
+		<German>Religious Freedom</German>
+		<Italian>Religious Freedom</Italian>
+		<Spanish>Religious Freedom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_RELIGIOUS_UNREST_HELP</Tag>
+		<English>[ICON_BULLET]No Religious Unrest</English>
+		<French>[ICON_BULLET]No Religious Unrest</French>
+		<German>[ICON_BULLET]No Religious Unrest</German>
+		<Italian>[ICON_BULLET]No Religious Unrest</Italian>
+		<Spanish>[ICON_BULLET]No Religious Unrest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PATRONAGE</Tag>
+		<English>Patronage</English>
+		<French>Patronage</French>
+		<German>Patronage</German>
+		<Italian>Patronage</Italian>
+		<Spanish>Patronage</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_HEREDITARY_RULE</Tag>
+		<English>Monarchy</English>
+		<French>Monarchy</French>
+		<German>Monarchy</German>
+		<Italian>Monarchy</Italian>
+		<Spanish>Monarchy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ARISTOCRACY</Tag>
+		<English>Aristocracy</English>
+		<French>Aristocracy</French>
+		<German>Aristocracy</German>
+		<Italian>Aristocracy</Italian>
+		<Spanish>Aristocracy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OLIGARCHY</Tag>
+		<English>Oligarchy</English>
+		<French>Oligarchie</French>
+		<German>Oligarchie</German>
+		<Italian>Oligarchia</Italian>
+		<Spanish>Oligarqu\EDa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OLIGARCHY_PEDIA</Tag>
+		<English>[TAB]An Oligarchy is a form of government where political power effectively rests with a small elite segment of society distinguished by royalty, wealth, family, military powers or occult spiritual hegemony. The word oligarchy is from the Greek words for "few" and "rule." Such states are often controlled by politically powerful families whose children were heavily conditioned and mentored to be heirs of the power of the oligarchy. This type of power by its very nature may not be exercised openly; the oligarchs preferring to remain "the power behind the throne", exerting control through economic means. Oligarchies have been tyrannical throughout history, being completely reliant on public servitude to exist. Although Aristotle pioneered the use of the term as a synonym for rule by the rich, for which the exact term is plutocracy, oligarchy is not always a rule by wealth, as oligarchs can simply be a privileged group.</English>
+		<French>[TAB]Une oligarchie - du grec oligos (peu nombreux) et arkh\EA (commandement) - est une forme de gouvernement par une classe dominante peu nombreuse qui s'est coopt\E9e elle-m\EAme selon des crit\E8res mal d\E9finis. Sa l\E9gitimit\E9 n'est pas fond\E9e sur celle des autres types de r\E9gime: ni d'\EAtre les meilleurs (aristocratie), ni les plus riches (ploutocratie), ni les plus populaires (d\E9mocratie), ni la plus comp\E9tente (technocratie), ni non plus le tirage au sort, la force ou l'h\E9r\E9dit\E9, mais d'exercer un pouvoir de fait, en s'appuyant parfois sur un ou plusieurs des crit\E8res de l\E9gitimit\E9 qui caract\E9risent les autres r\E9gimes. Le terme oligarque, qui n'\E9tait plus utilis\E9 que pour l'histoire des soci\E9t\E9s anciennes ou les r\E9cits de science fiction, a trouv\E9 un regain de faveur pour d\E9signer les hommes d'affaire riches ayant des liens avec le pouvoir politique qui ont \E9merg\E9 en Russie apr\E8s la d\E9sint\E9gration de la bureaucratie du r\E9gime sovi\E9tique.</French>
+		<German>[TAB]Die Oligarchie (vom griech.: oligarchia "Herrschaft Weniger", zusammengesetzt aus oligoi "Wenige" und arche "Herrschaft") ist in der klassischen (antiken) Verfassungslehre die Entartung der Aristokratie. Zur Abgrenzung von dieser Bedeutung und in Besinnung auf den eigentlichen Wortsinn wird heute auch der an sich gleichbedeutende Begriff Oligokratie (krat\EDa = Macht, Herrschaft, Kraft, St\E4rke) verwendet. Die Oligarchie bei Platon (427-347 v. Chr.) ist die gesetzlose Herrschaft der Reichen, die nur an ihrem Eigennutz interessiert sind. Sie f\E4llt wie die Aristokratie unter die Herrschaft der Wenigen, wobei die Aristokratie als gesetzm\E4\DFige, am Gemeinwohl ausgerichtete Herrschaft gilt. Diese Idee wurde zun\E4chst von seinem Sch\FCler Aristoteles (384-324 v. Chr.), und sp\E4ter vom griechischen Historiker Polybios (um 200 v. Chr. - etwa 118 v. Chr.) weiterentwickelt. Grunds\E4tzlich bestand in der antiken Staatstheorie seit Platon die Idee, dass jede am Gemeinwohl orientierte Herrschaftsform (Monarchie (auch: Basileia), Aristokratie, Demokratie) ein entartetes, nur an den Interessen der Herrschenden orientiertes Gegenst\FCck hat (Tyrannis, Oligarchie, Ochlokratie). Aus der Erkenntnis heraus, dass diese sechs Grundformen der Verfassungen notwendigerweise instabil sind, hat vor allem Polybios die Idee des Verfassungskreislaufs entwickelt, die diese Herrschaftsformen zueinander in Beziehung setzt.</German>
+		<Italian>[TAB]L'oligarchia (dal greco "oligoi" (pochi e "arch\E8" (potere, comando) \E8 il sistema di governo di una minoranza, di un gruppo ristretto di persone ed \E8 anche detto Governo di Pochi. Nell'antica Grecia il termine oligarchia indicava principalmente il governo di una classe scelta in base al censo, invece che alla nascita, requisito essenziale del governo di matrice aristocratica. Nell'Atene del V secolo a.C. vi furono il governo oligarchico dei "Quattrocento" nel 411 a.C. ed il regime dei Trenta tiranni del 404 a.C. Nella tradizione del pensiero filosofico greco, sistematizzata da Aristotele (vedi principio aristotelico) l'oligarchia \E8 una forma di governo "cattiva", non perch\E9 antidemocratica, ma perch\E9 quei pochi esercitano il potere indebitamente, o in quanto non ne hanno il diritto o in quanto lo fanno violando le leggi o, infine, in quanto lo esercitano favorendo gli interessi particolaristici a scapito di quelli della comunit\E0. Se, invece, i pochi che esercitano un potere lo fanno in maniera legittima e in vista dell'interesse generale, allora il loro governo \E8 quello dei migliori, e cio\E8 un'aristocrazia. Secondo Aristotele l'oligarchia \E8 dunque la degenerazione dell'aristocrazia. Nella tradizione del pensiero occidentale si \E8 conservata a lungo, dall'antichit\E0 al Medioevo, il concetto che un governo di pochi non \E8 cattivo in s\E9 ma solo in quanto i pochi governino male. Nell'et\E0 moderna invece si \E8 progressivamente affermata la concezione democratica e, con essa, la tesi che un governo di pochi \E8, in quanto tale, un cattivo governo: un governo buono \E8 quello in cui \E8 la maggioranza (i pi\F9) che governa.</Italian>
+		<Spanish>[TAB]La oligarqu\EDa, en ciencia pol\EDtica, es una forma de gobierno en la que el poder supremo est\E1 en manos de unas pocas personas. Los escritores pol\EDticos de la antigua Grecia emplearon el t\E9rmino para designar la forma degenerada y negativa de aristocracia (literalmente, gobierno de los mejores). Estrictamente, la oligarqu\EDa surgir\E1 cuando la sucesi\F3n de un sistema aristocr\E1tico se perpet\FAe por transferencia sangu\EDnea o m\EDtica, sin que las cualidades \E9ticas y de direcci\F3n de los mejores surjan como m\E9rito reconocido por la comunidad, siendo esta definici\F3n muy cercana a la de monarqu\EDa y m\E1s todav\EDa a la de nobleza. Los oligarcas due\F1os de propiedades, de tierras o de grandes acumulaciones de dinero, son poseedores de fuerza en la direcci\F3n pol\EDtica gracias a sus fuertes influencias econ\F3micas. Poseen est\E1ndares \E9ticos posiblemente dudosos, con diversos medios de legitimaci\F3n, que tienen como piso el poder acumulado y el s\EDmbolo hist\F3rico que haya significado la sucesi\F3n que les dio fuerza. La oligarqu\EDa es un grupo minoritario de personas, pertenecientes a una misma clase social, generalmente con gran poder e influencia (aristocr\E1tica) que dirige y controla una colectividad o instituci\F3n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ABSOLUTISM</Tag>
+		<English>Absolutism</English>
+		<French>Absolutism</French>
+		<German>Absolutism</German>
+		<Italian>Absolutism</Italian>
+		<Spanish>Absolutism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ABSOLUTISM_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERITOCRACY</Tag>
+		<English>Meritocracy</English>
+		<French>
+			<Text>M&#233;ritocratie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Meritokratie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Meritocrazia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Meritocracia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERITOCRACY_PEDIA</Tag>
+		<English>[TAB]Meritocracy is a system of a government or other organization wherein appointments are made and responsibilities assigned to individuals based upon demonstrated talent and ability (merit). In a meritocracy, society rewards (via wealth, position, and social status) those who show talent and competence as demonstrated by past actions or by competition. [PARAGRAPH:2]Meritocracy was the primary basis for selection of chiefs and generals in the Mongol Empire. Genghis Khan chose whomever was talented and fit for his military chain of command. He even trusted generals and soldiers from opponents' armies if they showed loyalty to their leaders. For example, Genghis Khan's general Jebe had been an enemy soldier who had shot Genghis in battle before he became Great Khan.</English>
+		<French>[TAB]Meritocracy is a system of a government or other organization wherein appointments are made and responsibilities assigned to individuals based upon demonstrated talent and ability (merit). In a meritocracy, society rewards (via wealth, position, and social status) those who show talent and competence as demonstrated by past actions or by competition. [PARAGRAPH:2]Meritocracy was the primary basis for selection of chiefs and generals in the Mongol Empire. Genghis Khan chose whomever was talented and fit for his military chain of command. He even trusted generals and soldiers from opponents' armies if they showed loyalty to their leaders. For example, Genghis Khan's general Jebe had been an enemy soldier who had shot Genghis in battle before he became Great Khan.</French>
+		<German>[TAB]Meritocracy is a system of a government or other organization wherein appointments are made and responsibilities assigned to individuals based upon demonstrated talent and ability (merit). In a meritocracy, society rewards (via wealth, position, and social status) those who show talent and competence as demonstrated by past actions or by competition. [PARAGRAPH:2]Meritocracy was the primary basis for selection of chiefs and generals in the Mongol Empire. Genghis Khan chose whomever was talented and fit for his military chain of command. He even trusted generals and soldiers from opponents' armies if they showed loyalty to their leaders. For example, Genghis Khan's general Jebe had been an enemy soldier who had shot Genghis in battle before he became Great Khan.</German>
+		<Italian>[TAB]Meritocracy is a system of a government or other organization wherein appointments are made and responsibilities assigned to individuals based upon demonstrated talent and ability (merit). In a meritocracy, society rewards (via wealth, position, and social status) those who show talent and competence as demonstrated by past actions or by competition. [PARAGRAPH:2]Meritocracy was the primary basis for selection of chiefs and generals in the Mongol Empire. Genghis Khan chose whomever was talented and fit for his military chain of command. He even trusted generals and soldiers from opponents' armies if they showed loyalty to their leaders. For example, Genghis Khan's general Jebe had been an enemy soldier who had shot Genghis in battle before he became Great Khan.</Italian>
+		<Spanish>[TAB]Meritocracy is a system of a government or other organization wherein appointments are made and responsibilities assigned to individuals based upon demonstrated talent and ability (merit). In a meritocracy, society rewards (via wealth, position, and social status) those who show talent and competence as demonstrated by past actions or by competition. [PARAGRAPH:2]Meritocracy was the primary basis for selection of chiefs and generals in the Mongol Empire. Genghis Khan chose whomever was talented and fit for his military chain of command. He even trusted generals and soldiers from opponents' armies if they showed loyalty to their leaders. For example, Genghis Khan's general Jebe had been an enemy soldier who had shot Genghis in battle before he became Great Khan.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERITOCRACY_STRATEGY</Tag>
+		<English>Increases great people and great general birth rates</English>
+		<French>Increases great people and great general birth rates</French>
+		<German>Increases great people and great general birth rates</German>
+		<Italian>Increases great people and great general birth rates</Italian>
+		<Spanish>Increases great people and great general birth rates</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_RELIGIOUS_LAW</Tag>
+		<English>Religious Law</English>
+		<French>Religious Law</French>
+		<German>Religious Law</German>
+		<Italian>Religious Law</Italian>
+		<Spanish>Religious Law</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MANORIALISM</Tag>
+		<English>Manorialism</English>
+		<French>Manorialism</French>
+		<German>Manorialism</German>
+		<Italian>Manorialism</Italian>
+		<Spanish>Manorialism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PERSECUTION</Tag>
+		<English>Persecution</English>
+		<French>Persecution</French>
+		<German>Persecution</German>
+		<Italian>Persecuzione</Italian>
+		<Spanish>Persecuci\F3n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_APPRENTICESHIP</Tag>
+		<English>Apprenticeship</English>
+		<French>Apprentissage</French>
+		<German>Ausbildung</German>
+		<Italian>Apprendistato</Italian>
+		<Spanish>Aprendizaje</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_APPRENTICESHIP_PEDIA</Tag>
+		<English>[TAB]Great institutions of learning passed knowledge to eager scholars in ages past. Sages and pupils are too much of an economic drain to sustain in these harsh times, but that doesn't mean education is neglected. The blacksmith and the butcher both need an intellectual heir, and a system of apprenticeship is the surest way to insure one.</English>
+		<French>[TAB]Dans le pass&#233;, de grandes institutions &#233;ducatives ont transmis leur savoir &#224; de fervents &#233;rudits. Sages et &#233;l&#232;ves sont bien trop co&#251;teux pour que la soci&#233;t&#233; puisse subvenir &#224; leurs besoins en ces temps difficiles, mais cela ne veut pas dire que l'&#233;ducation est n&#233;glig&#233;e. Le forgeron et le boucher ont tous deux besoin de perp&#233;tuer leurs connaissances et l'apprentissage est le meilleur moyen de les transmettre.</French>
+		<German>[TAB]Gro&#223;e Institutionen des Lernens gaben in der Vergangenheit das Wissen an eifrige Sch&#252;ler weiter. Weise und ihre Sch&#252;ler sind eine zu gro&#223;e wirtschaftliche Belastung in schweren Zeiten wie diesen, doch das hei&#223;t nicht, dass die Ausbildung vernachl&#228;ssigt wird. Der Schmied und der Metzger brauchen beide intelligente Nachfolger, und ein Ausbildungssystem ist der beste Weg, f&#252;r solche zu sorgen.</German>
+		<Italian>[TAB]Le grandi istituzioni scolastiche tramandavano la conoscenza ad avidi studenti, nelle ere passate. Saggi e scolari rappresentano un costo troppo alto in questi tempi duri, ma non vuol dire che l'educazione sia trascurata. Fabbro e macellaio hanno bisogno di eredi e l'apprendistato &#232; il miglior sistema per assicurarne uno a ciascuno.</Italian>
+		<Spanish>[TAB]En las eras pasadas, el conocimiento se transmit&#237;a por medio de grandes instituciones educativas.  En estos tiempos, la existencia de sabios y pupilos representa un lujo que las empobrecidas sociedades no pueden permitirse, pero eso no quiere decir que se descuide la educaci&#243;n. Tanto el herrero como el carnicero necesitan herederos intelectuales, y el mejor modo de garantizarlos es instituir un sistema de aprendizaje.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_LABOR</Tag>
+		<English>Free Labor</English>
+		<French>Free Labor</French>
+		<German>Free Labor</German>
+		<Italian>Free Labor</Italian>
+		<Spanish>Free Labor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_LABOR_STRATEGY</Tag>
+		<English>Extra commerce from towns; cottages develop faster</English>
+		<French>Extra commerce from towns; cottages develop faster</French>
+		<German>Extra commerce from towns; cottages develop faster</German>
+		<Italian>Extra commerce from towns; cottages develop faster</Italian>
+		<Spanish>Extra commerce from towns; cottages develop faster</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_LABOR_PEDIA</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CITY_STATE</Tag>
+		<English>Merchant Republic</English>
+		<French>Merchant Republic</French>
+		<German>Merchant Republic</German>
+		<Italian>Merchant Republic</Italian>
+		<Spanish>Merchant Republic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PERSECUTION_HELP</Tag>
+		<English>[ICON_BULLET]Allows the creation of Persecutors.</English>
+		<French>[ICON_BULLET]Allows the creation of Persecutors.</French>
+		<German>[ICON_BULLET]Allows the creation of Persecutors.</German>
+		<Italian>[ICON_BULLET]Allows the creation of Persecutors.</Italian>
+		<Spanish>[ICON_BULLET]Allows the creation of Persecutors.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SLAVERY_PEDIA</Tag>
+		<English>[TAB]Historically, the major juristic schools of Islam traditionally accepted the institution of slavery. Muhammad and many of his companions bought, sold, freed, and captured slaves. In Islamic law the topic of slavery is covered at great length. The Qur'an and the hadith see slavery as an exceptional condition that can be entered into under certain limited circumstances. Only children of slaves or non-Muslim prisoners of war could become slaves, never a freeborn Muslim. They also consider manumission of a slave to be one of many meritorious deeds available for the expiation of sins. According to Sharia, slaves are considered human beings and possessed of some rights on the basis of their humanity.[PARAGRAPH:2]In practice, slaves played various social and economic roles from Emir to worker. Slaves were widely employed in irrigation, mining, pastoralism and the army. Even some rulers relied on military and administrative slaves to such a degree that they seized power. However, people do not always treat with slaves in accordance with Islamic law. In some cases, the situation has been so harsh as to have led to uprisings such as Zanj Rebellion. However, this was usually the exception rather than the norm, as the vast majority of labour in the medieval Islamic world consisted of free, paid labour. For a variety of reasons, internal growth of the slave population was not enough to fulfill the demand in Muslim society. This resulted in massive importation, which involved enormous suffering and loss of life from the capture and transportation of slaves from non-Muslim lands. In theory, slavery in Islamic law does not have a racial or color component, although this has not always been the case in practice.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRIBAL_CUSTOM</Tag>
+		<English>Tribal Custom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WAGE_LABOR</Tag>
+		<English>Wage Labor</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_CIVIC_REDISTRIBUTION</Tag>
+		<English>Redistribution</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_REDISTRIBUTION_STRATEGY</Tag>
+		<English>Increased food in capital; reduced commerce from trade routes; increased production speed for Granaries</English>
+		<French>Nourriture additionnelle dans la capitale ; les routes commerciales rapportent moins de commerce ; vitesse de production doubl&#233;e pour les greniers</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ISOLATIONISM</Tag>
+		<English>Isolationism</English>
+		<French>Isolationism</French>
+		<German>Isolation</German>
+		<Italian>Isolationism</Italian>
+		<Spanish>Isolationism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRADE_ECONOMY</Tag>
+		<English>Trade Economy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TEMPLE_ECONOMY</Tag>
+		<English>Temple Economy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PATRONAGE</Tag>
+		<English>Patronage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DEIFICATION</Tag>
+		<English>Deification</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DEIFICATION_STRATEGY</Tag>
+		<English>Increased wonder production speed; extra unhappiness from state religion; extra happiness from Pagan Temples</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
+		<English>Animism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRIBAL_WARFARE</Tag>
+		<English>Tribal Warfare</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CLIENT_KINGDOMS</Tag>
+		<English>Client Kingdoms</English>
+	</TEXT>
+</Civ4GameText>
