@@ -649,8 +649,6 @@ bool CyPlot::isPeak()
 
 void CyPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
 {
-	GC.logMsg("setPlotType eNewValue: %i, bRecalculate: %i, bRebuildGraphics: %i", (int)eNewValue, (int)bRecalculate, (int)bRebuildGraphics);
-
 	if (m_pPlot)
 		m_pPlot->setPlotType(eNewValue, bRecalculate, bRebuildGraphics);
 }

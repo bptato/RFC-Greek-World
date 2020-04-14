@@ -881,7 +881,7 @@ void CvTeam::doTurn()
 
 	AI_doTurnPre();
 
-	if (isBarbarian())
+	if (isBarbarian() || isMinorCiv()) //bluepotato
 	{
 		for (iI = 0; iI < GC.getNumTechInfos(); iI++)
 		{
