@@ -110,7 +110,6 @@ Fixed civilopedia
 Fixed 900BC autoplay (I forgot to test it before the previous release)
 Other small bugfixes
 
-PREVIOUS VERSIONS
 Version 1.7
 Additions:
 Babylonian UHV
