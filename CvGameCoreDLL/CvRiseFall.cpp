@@ -250,7 +250,7 @@ void CvRiseFall::checkTurn() {
 	}
 
 	for(int i = 0; i<getNumProvinces(); i++) {
-		CvRFCProvince* rfcProvince = getRFCProvinceByID(i);
+		CvRFCProvince* rfcProvince = getRFCProvince(i);
 		//Historical barbs
 		int numScheduledUnits = rfcProvince->getNumScheduledUnits();
 		if(numScheduledUnits>0) {
@@ -660,7 +660,7 @@ CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
 	return NULL;
 }
 
-CvRFCProvince* CvRiseFall::getRFCProvinceByID(int provinceID) {
+CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) {
 	return &rfcProvinces[provinceID];
 }
 

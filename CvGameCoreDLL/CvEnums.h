@@ -963,7 +963,7 @@ enum CivilizationTypes		// Exposed to Python
 {
 	NO_CIVILIZATION = -1,
 
-	//bluepotato start: for UPs. TODO: eventually get rid of this
+	//bluepotato start
 	CIVILIZATION_EGYPT,
 	CIVILIZATION_SUMERIA,
 	CIVILIZATION_INDUS_VALLEY,

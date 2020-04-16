@@ -44,7 +44,7 @@ class CvRiseFall {
 		PlayerTypes getPlayerTypeForCiv(CivilizationTypes civType);
 		CvRFCPlayer& getRFCPlayer(CivilizationTypes civType);
 		CvRFCProvince* getRFCProvince(const wchar* provinceName);
-		CvRFCProvince* getRFCProvinceByID(int provinceID);
+		CvRFCProvince* getRFCProvince(int provinceID);
 		int getNumProvinces();
 		const wchar* getProvinceForPlot(int x, int y);
 

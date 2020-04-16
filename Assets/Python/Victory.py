@@ -32,37 +32,37 @@ tAnatoliaTL = (35, 25)
 tAnatoliaBR = (40, 32)
 
 #following ids refer to civ types, not slots!
-iEgypt = 0
-iSumeria = 1
-iIndusValley = 2
-iElam = 3
-iMinoa = 4
-iPhoenicia = 5
-iBabylonia = 6
-iHittites = 7
-iMycenae = 8
-iAssyria = 9
-iIsrael = 10
-iAthens = 11
-iSparta = 12
-iScythia = 13
-iCarthage = 14
-iCeltia = 15
-iEtruria = 16
-iNubia = 17
-iPersia = 18
-iRome = 19
-iMacedonia = 20
-iIndia = 21
-iBactria = 22
-iNumidia = 23
-iGermania = 24
-iSassanid = 25
-iByzantium = 26
-iHuns = 27
-iIndependent = 28
-iIndependent2 = 29
-iBarbarian = 30
+iEgypt = int(CivilizationTypes.CIVILIZATION_EGYPT)
+iSumeria = int(CivilizationTypes.CIVILIZATION_SUMERIA)
+iIndusValley = int(CivilizationTypes.CIVILIZATION_INDUS_VALLEY)
+iElam = int(CivilizationTypes.CIVILIZATION_ELAM)
+iMinoa = int(CivilizationTypes.CIVILIZATION_MINOA)
+iPhoenicia = int(CivilizationTypes.CIVILIZATION_PHOENICIA)
+iBabylonia = int(CivilizationTypes.CIVILIZATION_BABYLON)
+iHittites = int(CivilizationTypes.CIVILIZATION_HITTITE)
+iMycenae = int(CivilizationTypes.CIVILIZATION_MYCENAE)
+iAssyria = int(CivilizationTypes.CIVILIZATION_ASSYRIA)
+iIsrael = int(CivilizationTypes.CIVILIZATION_ISRAEL)
+iAthens = int(CivilizationTypes.CIVILIZATION_ATHENS)
+iSparta = int(CivilizationTypes.CIVILIZATION_SPARTA)
+iScythia = int(CivilizationTypes.CIVILIZATION_SCYTHIA)
+iCarthage = int(CivilizationTypes.CIVILIZATION_CARTHAGE)
+iCeltia = int(CivilizationTypes.CIVILIZATION_CELT)
+iEtruria = int(CivilizationTypes.CIVILIZATION_ETRURIA)
+iNubia = int(CivilizationTypes.CIVILIZATION_NUBIA)
+iPersia = int(CivilizationTypes.CIVILIZATION_PERSIA)
+iRome = int(CivilizationTypes.CIVILIZATION_ROME)
+iMacedonia = int(CivilizationTypes.CIVILIZATION_MACEDONIA)
+iIndia = int(CivilizationTypes.CIVILIZATION_INDIA)
+iBactria = int(CivilizationTypes.CIVILIZATION_BACTRIA)
+iNumidia = int(CivilizationTypes.CIVILIZATION_NUMIDIA)
+iGermania = int(CivilizationTypes.CIVILIZATION_GERMANIA)
+iSassanid = int(CivilizationTypes.CIVILIZATION_SASSANID)
+iByzantium = int(CivilizationTypes.CIVILIZATION_BYZANTIUM)
+iHuns = int(CivilizationTypes.CIVILIZATION_HUNS)
+iIndependent = int(CivilizationTypes.CIVILIZATION_INDEPENDENT)
+iIndependent2 = int(CivilizationTypes.CIVILIZATION_INDEPENDENT2)
+iBarbarian = int(CivilizationTypes.CIVILIZATION_BARBARIAN)
 
 iNumPlayers = gc.getMAX_CIV_PLAYERS() - 2 #-2: independent slots
 
@@ -86,6 +86,9 @@ def player2civ(playerType):
 
 class Victory:
 	def initGlobals(self):
+		global iNumCivs
+		iNumCivs = gc.getNumCivilizationInfos()
+
 		global i4000BC
 		global i3000BC
 		global i2200BC
@@ -225,13 +228,13 @@ class Victory:
 
 		#init script data
 		scriptDict = {
-					'lGoals': [[-1 for i in range(iNumPlayers)] for j in range(iNumPlayers)], #bluepotato: [[-1,-1,-1]]*con.iNumPlayers would copy the same array over and over. see https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python
+					'lGoals': [[-1 for i in range(iNumCivs)] for j in range(iNumCivs)], #bluepotato: [[-1,-1,-1]]*con.iNumCivs would copy the same array over and over. see https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python
 					'iEnslavedUnits': 0,
 					'lSumerianTechs': [-1, -1, -1],
 					'babyloniaKilledCivs': 0,
 					'hittiteKilledUnits': 0,
 					'mycenaeTombsBuilt': 0,
-					'l2OutOf3': [False] * iNumPlayers,
+					'l2OutOf3': [False] * iNumCivs,
 		}
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
@@ -514,17 +517,19 @@ class Victory:
 			if (iGameTurn == i600BC):
 				lRevealedMap = [0] * iNumPlayers
 				for iCiv in range(iNumPlayers):
-					for x in range(63):
-						for y in range(60):
+					mapWidth = CyMap().getGridWidth()
+					mapHeight = CyMap().getGridHeight()
+					for x in range(mapWidth):
+						for y in range(mapHeight):
 							if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
 							      lRevealedMap[iCiv] += 1
 				bBestMap = True
 				for iCiv in range(iNumPlayers):
-					if (lRevealedMap[iPhoenicia] < lRevealedMap[iCiv]):
+					if (lRevealedMap[iPlayer] < lRevealedMap[iCiv]):
 						bBestMap = False
 						break
 
-				if (bBestMap == True):
+				if bBestMap:
 					self.setGoal(iPhoenicia, 1, 1)
 				else:
 					self.setGoal(iPhoenicia, 1, 0)
@@ -536,7 +541,7 @@ class Victory:
 					if (pPlayer.getNumAvailableBonuses(iBonus) > 0):
 						iPhoeniciaResource += 1
 				for iCiv in range(iNumPlayers):
-					if (iCiv != iPhoenicia):
+					if (iCiv != iPlayer):
 						pCiv = gc.getPlayer(iCiv)
 						iElseResource = 0
 						if (pCiv.isAlive()):
@@ -657,19 +662,19 @@ class Victory:
 				if (iTech == tech('the_wheel')):
 					self.setSumerianTechs(0, 1)
 					for iCiv in range(iNumPlayers):
-						if (iCiv != iSumeria):
+						if (iCiv != iPlayer):
 							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
 								self.setSumerianTechs(0, 0)
 				elif (iTech == tech('masonry')):
 					self.setSumerianTechs(1, 1)
 					for iCiv in range(iNumPlayers):
-						if (iCiv != iSumeria):
+						if (iCiv != iPlayer):
 							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
 								self.setSumerianTechs(1, 0)
 				elif (iTech == tech('cuneiform')):
 					self.setSumerianTechs(2, 1)
 					for iCiv in range(iNumPlayers):
-						if (iCiv != iSumeria):
+						if (iCiv != iPlayer):
 							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
 								self.setSumerianTechs(2, 0)
 				if (self.getSumerianTechs(0) == 1 and self.getSumerianTechs(1) == 1 and self.getSumerianTechs(2) == 1):
@@ -681,7 +686,7 @@ class Victory:
 				if iTech == tech('code_of_laws'):
 					self.setGoal(iBabylonia, 1, 1)
 					for iCiv in range(iNumPlayers):
-						if iCiv != iBabylonia:
+						if iCiv != iPlayer:
 							if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech):
 								self.setGoal(iBabylonia, 1, 0)
 								break

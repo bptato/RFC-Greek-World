@@ -438,7 +438,6 @@ class CvWorldBuilderScreen:
 			if bPython:
 				CvEventManager.CvEventManager().onCityBuilt([pCity])
 		elif self.iPlayerAddMode == "CityName": #bluepotato
-			print "heyyyyyy"
 			popupInfo = CyPopupInfo()
 			popupInfo.setData1(self.cityNameCiv)
 			popupInfo.setData2(self.m_pCurrentPlot.getX())
@@ -2028,7 +2027,6 @@ class CvWorldBuilderScreen:
 		for i in range(numPlots):
 			plot = CyMap().plotByIndex(i)
 			cityName = StringUtils.unescape(plot.getCityName(self.cityNameCiv, True)).encode("utf-8")
-			print "City name for civ " + gc.getCivilizationInfo(self.cityNameCiv).getType() + " is " + cityName
 			if cityName != "":
 				CyEngine().addSign(plot, CyGame().getActivePlayer(), cityName)
 

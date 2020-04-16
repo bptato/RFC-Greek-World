@@ -17660,7 +17660,7 @@ bool CvPlayerAI::AI_hireMercenary() {
 	CvRFCProvince* bestMercProvince = NULL;
 	int bestMercHireCost = 0;
 	for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-		CvRFCProvince* province = GC.getRiseFall().getRFCProvinceByID(i);
+		CvRFCProvince* province = GC.getRiseFall().getRFCProvince(i);
 		if(province->getNumCities(getID()) > 0) {
 			for(int j = 0; j<province->getNumMercenaries(); ++j) {
 				CvRFCMercenary& mercenary = province->getMercenary(j);

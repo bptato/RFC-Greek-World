@@ -115,16 +115,16 @@ void CvRFCProvince::checkMercenaries() {
 			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < 60) {
 				int borderProvinces = 0;
 				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-					if(isBorderProvince(GC.getRiseFall().getRFCProvinceByID(i))) {
+					if(isBorderProvince(GC.getRiseFall().getRFCProvince(i))) {
 						++borderProvinces;
 					}
 				}
 				int rand = 0;
 				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-					if(isBorderProvince(GC.getRiseFall().getRFCProvinceByID(i))) {
+					if(isBorderProvince(GC.getRiseFall().getRFCProvince(i))) {
 						rand += 100/borderProvinces;
 						if(100/borderProvinces<GC.getGame().getSorenRandNum(rand, "Border province selection roll")) {
-							GC.getRiseFall().getRFCProvinceByID(i)->addMercenary(*it);
+							GC.getRiseFall().getRFCProvince(i)->addMercenary(*it);
 							break;
 						}
 					}

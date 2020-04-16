@@ -729,7 +729,7 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			int y = info.getData3();
 			CvPlot* plot = GC.getMap().plot(x, y);
 			CvWString result;
-			CvWString editBoxData = CvWString(pPopupReturn->getEditBoxString(0));
+			CvWString editBoxData = pPopupReturn->getEditBoxString(0);
 			CyArgsList argsList;
 			argsList.add(editBoxData.c_str());
 			gDLL->getPythonIFace()->callFunction(PYScreensModule, "unicodeToXML", argsList.makeFunctionArgs(), &result);
