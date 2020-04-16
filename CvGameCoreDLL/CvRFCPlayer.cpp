@@ -164,13 +164,15 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 
 	int citiesStability = getTempStability(0);
 	int civicsStability = getTempStability(1);
-	int economicStability = getPermStability(2);
+	int economicStability = getTempStability(2);
 	int expansionStability = getTempStability(3);
 	int foreignStability = getTempStability(4);
 
+	int permEconomicStability = getPermStability(2);
+
 	int newCitiesStability = 0;
 	int newCivicsStability = 0;
-	int newEconomicStability = economicStability;
+	int newEconomicStability = 0;
 	int newExpansionStability = 0;
 	int newForeignStability = 0;
 
@@ -355,17 +357,17 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 		} else if(newGNP<getGNP()) {
 			gnpStability = -3; //recession
 		}
-		newEconomicStability += gnpStability;
+		permEconomicStability += gnpStability;
 
 		int imports = player.calculateTotalImports(YIELD_COMMERCE);
 		int exports = player.calculateTotalExports(YIELD_COMMERCE);
 		int importExportStability = std::min(10, (imports + exports) / (2 * eraModifier + 1) - eraModifier);
 		newEconomicStability += importExportStability;
 
-		int agricultureStability = std::min(8, std::max(-8, (agriculture * 100000 / realPopulation - 8 + (eraModifier - 3) * 2)/2));
+		int agricultureStability = std::min(8, std::max(-8, agriculture * 100000 / realPopulation - 8 + (eraModifier - 3) * 2));
 		newEconomicStability += agricultureStability;
 
-		int commerceStability = std::min(3, std::max(-3, (commerce * 100000 / realPopulation - 5 + (eraModifier - 3) * 2)/2));
+		int commerceStability = std::min(3, std::max(-3, commerce * 100000 / realPopulation - 5 + (eraModifier - 3) * 2));
 		newEconomicStability += commerceStability;
 
 		//GC.logMsg("Civilization %i new economic stability: GNP %i, Imports&Exports %i, Agriculture %i, Commerce %i", getCivilizationType(), gnpStability, importExportStability, agricultureStability, commerceStability);
@@ -441,9 +443,11 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 	//Set new stability
 	setTempStability(0, newCitiesStability);
 	setTempStability(1, newCivicsStability);
-	setPermStability(2, newEconomicStability);
+	setTempStability(2, newEconomicStability);
 	setTempStability(3, newExpansionStability);
 	setTempStability(4, newForeignStability);
+
+	setPermStability(2, permEconomicStability);
 }
 
 void CvRFCPlayer::applyStability(PlayerTypes playerType, int* num, CivicTypes civicType1, CivicTypes civicType2, int stability) {
