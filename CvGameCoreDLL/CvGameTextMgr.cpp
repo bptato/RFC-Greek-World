@@ -4809,6 +4809,28 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_NON_STATE_SPREAD"));
 	}
 
+
+	//bluepotato start (from Rhye)
+	if (GC.getCivicInfo(eCivic).isStabilityVassalBonus()) {
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_VASSAL_BONUS"));
+	}
+	if (GC.getCivicInfo(eCivic).isStabilityFoundBonus()) {
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FOUND_BONUS"));
+	}
+	if (GC.getCivicInfo(eCivic).isStabilityConquestBonus()) {
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CONQUEST_BONUS"));
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_OCCUPATION_BONUS"));
+	}
+	if (GC.getCivicInfo(eCivic).isStabilityCommerceBonus()) {
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_ECONOMY_BONUS"));
+	}
+	//bluepotato end
+
 	//	Yield Modifiers
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_IN_ALL_CITIES").GetCString(), GC.getCivicInfo(eCivic).getYieldModifierArray(), true);
 
