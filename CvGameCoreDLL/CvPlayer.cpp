@@ -1586,9 +1586,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	//bluepotato start: stability
 	CvRFCPlayer& oldOwnerRFCPlayer = GC.getRiseFall().getRFCPlayer(GET_PLAYER(eOldOwner).getCivilizationType());
-	oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 4);
+	oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 8);
 	if(pOldCity->isCapital()) {
-		oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 10);
+		oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 20);
 	}
 	//bluepotato end
 

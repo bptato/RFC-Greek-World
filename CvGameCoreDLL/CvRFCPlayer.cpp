@@ -355,7 +355,9 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 		if(newGNP>getGNP()) {
 			gnpStability = 3; //growth
 		} else if(newGNP<getGNP()) {
-			gnpStability = -3; //recession
+			gnpStability = -4; //recession
+		} else {
+			gnpStability = -2; //stagnation
 		}
 		permEconomicStability += gnpStability;
 
