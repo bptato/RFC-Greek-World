@@ -4897,9 +4897,7 @@ Debug\CvRiseFall.obj: CvRiseFall.cpp \
 	.\CvArtFileMgr.h \
 	.\CvDLLEngineIFaceBase.h \
 	.\CvDLLInterfaceIFaceBase.h \
-	.\CvInitCore.h \
-	.\CyRiseFall.h \
-	.\CyArgsList.h
+	.\CvInitCore.h
 Debug\CyInfoInterface3.obj: CyInfoInterface3.cpp \
 	.\CvGameCoreDLL.h \
 	.\FAssert.h \
@@ -11046,9 +11044,7 @@ Release\CvRiseFall.obj: CvRiseFall.cpp \
 	.\CvArtFileMgr.h \
 	.\CvDLLEngineIFaceBase.h \
 	.\CvDLLInterfaceIFaceBase.h \
-	.\CvInitCore.h \
-	.\CyRiseFall.h \
-	.\CyArgsList.h
+	.\CvInitCore.h
 Release\CyInfoInterface3.obj: CyInfoInterface3.cpp \
 	.\CvGameCoreDLL.h \
 	.\FAssert.h \

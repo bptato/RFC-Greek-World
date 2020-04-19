@@ -7,15 +7,12 @@ Author: bluepotato
 #include "CvPlot.h"
 #include "CvCity.h"
 #include "CvGlobals.h"
-#include "CvDefines.h"
 #include "CvEnums.h"
 #include "CvDLLEngineIFaceBase.h"
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvInitCore.h"
 #include "CvRFCPlayer.h"
 #include "CvRFCProvince.h"
-#include "CyRiseFall.h"
-#include "CyArgsList.h"
 
 CvRiseFall::CvRiseFall() {
 	rfcPlayers = new CvRFCPlayer[GC.getNumCivilizationInfos()];
