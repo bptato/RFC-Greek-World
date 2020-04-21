@@ -170,5 +170,9 @@
 			<Type>ART_DEF_MOVIE_MAABED</Type>
 			<Path>Art/Movies/Wonders/Maabed.dds</Path>
 		</MovieArtInfo>
+		 <MovieArtInfo>
+			<Type>ART_DEF_MOVIE_RUSTAM</Type>
+			<Path>Art/Movies/Wonders/Rustam.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

@@ -17637,7 +17637,7 @@
 			<Strategy>TXT_KEY_BUILDING_RUSTAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RUSTAM</ArtDefineTag>
-			<MovieDefineTag>NONE</MovieDefineTag> <!--TODO-->
+			<MovieDefineTag>ART_DEF_MOVIE_RUSTAM</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
