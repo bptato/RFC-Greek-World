@@ -248,7 +248,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANAKTORA_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]The Anaktora is the Minoan replacement for walls. It increases the city's research output by 10%.[COLOR_REVERT]</English>
+		<English>[COLOR_HIGHLIGHT_TEXT]The Anaktora is the Minoan replacement for walls. It increases the city's research output by 25%.[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANAKTORA</Tag>
@@ -293,10 +293,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHOENECIAN_TRADING_POST_PEDIA</Tag>
 		<English>In the centuries after 1200 BC, the Phoenicians were the major naval and trading power of the region. Phoenician trade was founded on the Tyrian purple dye, a violet-purple dye derived from the hypobranchial gland of the Murex sea-snail, once profusely available in coastal waters of the eastern Mediterranean Sea but exploited to local extinction. James B. Pritchard's excavations at Sarepta in present-day Lebanon revealed crushed Murex shells and pottery containers stained with the dye that was being produced at the site. The Phoenicians established a second production center for the dye in Mogador, in present-day Morocco. Brilliant textiles were a part of Phoenician wealth, and Phoenician glass was another export ware.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PLAGUE_PEDIA</Tag>
-		<English>Plague is a disease that affects humans and other mammals. It is caused by the bacterium, Yersinia pestis. Humans usually get plague after being bitten by a rodent flea that is carrying the plague bacterium or by handling an animal infected with plague.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SEWER_PEDIA</Tag>
@@ -365,5 +361,17 @@
 		<German>[TAB]The Garamantes constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</German>
 		<Italian>[TAB]The Garamantes constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</Italian>
 		<Spanish>[TAB]The Garamantes constructed a network of underground tunnels and shafts to mine the fossil water from under the limestone layer under the desert sand. It was built around 200 BC to 200 AD. The network of tunnels is known to Berbers as Foggaras. The network allowed agriculture to flourish, but it required the use of slaves to maintain.[PARAGRAPH:1]The channels were generally very narrow - less than 2 feet wide and 5 high - but some were several miles long, and in total some 600 foggara extended for hundreds of miles underground. The channels were dug out and maintained using a series of regularly-spaced vertical shafts, one every 30 feet or so, 100,000 in total, averaging 30 feet in depth, but sometimes reaching 130.[PARAGRAPH:1]The length of the foggaras in this region is estimated to be thousands of kilometers.[PARAGRAPH:1]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUSTAM</Tag>
+		<English>Naqsh-e-Rustam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUSTAM_PEDIA</Tag>
+		<English>[TAB]Naqsh-e Rustam also referred to as Necropolis is an archaeological site located about 12 km northwest of Persepolis, in Fars province, Iran. Naqsh-e Rustam lies a few hundred meters from Naqsh-e Rajab. The oldest relief at Naqsh-i Rustam is severely damaged and dates to c. 1000 BC. It depicts a faint image of a man with unusual head-gear and is thought to be Elamite in origin. The depiction is part of a larger mural, most of which was removed at the command of Bahram II. The man with the unusual cap gives the site its name, Naqsh-e Rostam, &quot;Picture of Rostam&quot;, because the relief was locally believed to be a depiction of the mythical hero Rostam. The triumph of Shapur I (c. 241-272):  is the most famous of the Sassanid rock reliefs, and depicts Shapur's victory over two Roman emperors, Valerian and Philip the Arab. A more elaborate version of this rock relief is at Bishapur.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUSTAM_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Naqsh-e-Rustam[COLOR_REVERT] increases likelihood a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] will be produced, increases cultural output, and increases the likelihood a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT] will be generated.</English>
 	</TEXT>
 </Civ4GameText>
