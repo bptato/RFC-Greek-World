@@ -498,16 +498,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/BroadcastTower.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_AMERICAN_MALL</Type>
-			<LSystem>LSYSTEM_2x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>2.09</fScale>
-			<fInterfaceScale>0.48</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Shopping Mall/Mall.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Supermarket.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,8,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MARKET</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -576,16 +566,6 @@
 			<NIF>Art/Structures/Buildings/English Stock Exchange/English_Stock.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Bank.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,2</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SUPERMARKET</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>2.31</fScale>
-			<fInterfaceScale>0.67</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Supermarket/Supermarket.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Supermarket.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,4</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_COURTHOUSE</Type>
@@ -1268,286 +1248,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/Olympics.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,15</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_EGY_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Egypt.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,6,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_IND_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/India.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,2,6</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHI_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/China.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_BAB_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Babylonia.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,8,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SUM_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Babylonia.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,8,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_GRE_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Greece.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,2,7</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_PER_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Persia.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,6,6</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CAR_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Carthage.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,5,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ROM_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Rome.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,7,6</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_JAP_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Japan.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,6</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ETH_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Ethiopia.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,3,4</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MAY_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Maya.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,6,4</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_VIK_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Viking.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,1,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ARA_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Arabia.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,2,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_KHM_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Khmer.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,5,4</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SPA_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Spain.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,6</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_FRA_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/France.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ENG_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/England.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,7,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_GER_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Germany.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,7</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_RUS_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Russia.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,7</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_HOL_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Netherlands.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,8,4</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MAL_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Mali.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,6</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_POR_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Portugal.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_INC_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Inca.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,7</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MON_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Mongolia.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,6</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_AZT_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Aztec.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_TUR_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Turkey.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,2,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_AME_EMBASSY</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/America.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,5</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ISHTAR_GATE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1736,6 +1436,16 @@
 			<NIF>Art/Structures/Buildings/Rustam/Rustam.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Rustam/Rustam_button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SLAVE_MARKET</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/SlaveMarket/slavemarket.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/SlaveMarket/slavemarket_button.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

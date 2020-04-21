@@ -8448,8 +8448,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_BUILD_SUPERMARKET</ScriptID>
-		<SoundID>SND_BUILD_SUPERMARKET</SoundID>
+		<ScriptID>AS2D_BUILD_SLAVEMARKET</ScriptID>
+		<SoundID>SND_BUILD_SLAVEMARKET</SoundID>
 		<SoundType>GAME_INTERFACE</SoundType>
 		<iMinVolume>90</iMinVolume>
 		<iMaxVolume>90</iMaxVolume>

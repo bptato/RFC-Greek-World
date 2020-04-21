@@ -525,10 +525,8 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -1757,9 +1755,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<OrPreReqs>
-				<PrereqTech>TECH_FEUDALISM</PrereqTech>
-			</OrPreReqs>
+			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
 			<bRecurring>0</bRecurring>
@@ -2538,7 +2534,6 @@
 				<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
 				<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
 				<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-				<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 				<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
 				<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
 				<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
@@ -3328,7 +3323,6 @@
 				<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
 				<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
 				<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-				<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 				<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
 				<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
 				<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
@@ -3535,9 +3529,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<OrPreReqs>
-				<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
-			</OrPreReqs>
+			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
 			<bRecurring>0</bRecurring>
@@ -4390,9 +4382,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<OrPreReqs>
-				<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
-			</OrPreReqs>
+			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
 			<bRecurring>0</bRecurring>
@@ -4742,9 +4732,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_FEUDALISM</PrereqTech>
-			</AndPreReqs>
+			<AndPreReqs/>
 			<ObsoleteTechs/>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -5940,10 +5928,8 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -6193,10 +6179,8 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -9893,10 +9877,8 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
-				<PrereqTech>TECH_FEUDALISM</PrereqTech>
 				<PrereqTech>TECH_MUSIC</PrereqTech>
 				<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
-				<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 				<PrereqTech>TECH_THEOLOGY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
@@ -10572,10 +10554,8 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -10662,10 +10642,8 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -10909,7 +10887,6 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs/>
 			<AndPreReqs>
-				<PrereqTech>TECH_GUILDS</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs/>
@@ -11237,7 +11214,6 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
 			</ObsoleteTechs>

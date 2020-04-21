@@ -374,4 +374,16 @@
 		<Tag>TXT_KEY_BUILDING_RUSTAM_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Naqsh-e-Rustam[COLOR_REVERT] increases likelihood a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] will be produced, increases cultural output, and increases the likelihood a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT] will be generated.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SLAVE_MARKET</Tag>
+		<English>Slave Market</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SLAVE_MARKET_PEDIA</Tag>
+		<English>[TAB]A slave market is a place where slaves are bought and sold. Slave trade was an important part of slavery in the ancient and classical eras, with depictions and records of slave markets in Greece, Rome, Egypt, etc.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SLAVE_MARKET_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Slave Market[COLOR_REVERT] increases production and commerce of a city.</English>
+	</TEXT>
 </Civ4GameText>

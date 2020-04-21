@@ -3766,8 +3766,8 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_BUILD_SUPERMARKET</SoundID>
-			<Filename>Sounds/Buildings/Supermarket</Filename>
+			<SoundID>SND_BUILD_SLAVEMARKET</SoundID>
+			<Filename>Sounds/Buildings/SlaveMarket</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
