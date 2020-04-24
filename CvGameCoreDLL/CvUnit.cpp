@@ -1576,7 +1576,7 @@ void CvUnit::updateCombat(bool bQuick)
 			if(getCivilizationType()==CIVILIZATION_ASSYRIA) {
 				if(!defUnitAnimal) {
 					if(GC.getGame().getSorenRandNum(100, "Unit enslavement roll") < 10) {
-						CvUnit* enslavedUnit = GET_PLAYER(getOwnerINLINE()).initUnit(defUnitType, pPlot->getX_INLINE(), pPlot->getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
+						CvUnit* enslavedUnit = GET_PLAYER(getOwnerINLINE()).initUnit(defUnitType, getX_INLINE(), getY_INLINE(), NO_UNITAI, DIRECTION_SOUTH);
 
 						int unitDamage = enslavedUnit->maxHitPoints() - enslavedUnit->maxHitPoints()/(GC.getGame().getSorenRandNum(5, "unit damage roll")+5);
 						enslavedUnit->setDamage(unitDamage);
