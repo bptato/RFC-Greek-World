@@ -1161,8 +1161,8 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_ARABIA_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_BABYLON_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_BABYLON_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_ISRAEL</Type>
