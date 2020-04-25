@@ -1,4 +1,5 @@
 *.obj
+*.obj.@
 *.exp
 *.pdb
 *.layout
