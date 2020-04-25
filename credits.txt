@@ -9,6 +9,7 @@ Mods included:
 platyping's worldbuilder
 Unofficial Patch
 Sanguo Mod Performance
+Sevopedia
 
 Libraries included:
 simplejson

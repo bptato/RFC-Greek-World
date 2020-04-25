@@ -218,78 +218,81 @@ def showVictoryScreen():
 	if CyGame().getActivePlayer() > -1:
 		victoryScreen.interfaceScreen()
 
+
 #################################################
-## Civilopedia
+## Sevopedia 2.3 BEGIN
 #################################################
+
 pediaMainScreen = CvPediaMain.CvPediaMain()
+
 def linkToPedia(argsList):
 	pediaMainScreen.link(argsList[0])
 
 def pediaShow():
-	return pediaMainScreen.pediaShow()
+	pediaMainScreen.pediaShow()
 
 def pediaBack():
-	return pediaMainScreen.back()
+	pediaMainScreen.back()
 
 def pediaForward():
 	pediaMainScreen.forward()
 
 def pediaMain(argsList):
-	pediaMainScreen.pediaJump(PEDIA_MAIN, argsList[0], True)
+	pediaMainScreen.pediaJump(PEDIA_MAIN, argsList[0], True, False)
 
 def pediaJumpToTech(argsList):
-	pediaMainScreen.pediaJump(PEDIA_TECH, argsList[0], True)
+	pediaMainScreen.pediaJump(PEDIA_TECHS, argsList[0], True, False)
 
 def pediaJumpToUnit(argsList):
-	pediaMainScreen.pediaJump(PEDIA_UNIT, argsList[0], True)
-
-def pediaJumpToBuilding(argsList):
-	pediaMainScreen.pediaJump(PEDIA_BUILDING, argsList[0], True)
-
-def pediaJumpToProject(argsList):
-	pediaMainScreen.pediaJump(PEDIA_PROJECT, argsList[0], True)
-
-def pediaJumpToReligion(argsList):
-	pediaMainScreen.pediaJump(PEDIA_RELIGION, argsList[0], True)
-
-def pediaJumpToCorporation(argsList):
-	pediaMainScreen.pediaJump(PEDIA_CORPORATION, argsList[0], True)
-
-def pediaJumpToPromotion(argsList):
-	pediaMainScreen.pediaJump(PEDIA_PROMOTION, argsList[0], True)
+	pediaMainScreen.pediaJump(PEDIA_UNITS, argsList[0], True, False)
 
 def pediaJumpToUnitChart(argsList):
-	pediaMainScreen.pediaJump(PEDIA_UNIT_CHART, argsList[0], True)
+	pediaMainScreen.pediaJump(PEDIA_UNIT_CATEGORIES, argsList[0], True, False)
 
-def pediaJumpToBonus(argsList):
-	pediaMainScreen.pediaJump(PEDIA_BONUS, argsList[0], True)
+def pediaJumpToPromotion(argsList):
+	pediaMainScreen.pediaJump(PEDIA_PROMOTIONS, argsList[0], True, False)
 
-def pediaJumpToTerrain(argsList):
-	pediaMainScreen.pediaJump(PEDIA_TERRAIN, argsList[0], True)
+def pediaJumpToBuilding(argsList):
+	pediaMainScreen.pediaJump(PEDIA_BUILDINGS, argsList[0], True, False)
 
-def pediaJumpToFeature(argsList):
-	pediaMainScreen.pediaJump(PEDIA_FEATURE, argsList[0], True)
-
-def pediaJumpToImprovement(argsList):
-	pediaMainScreen.pediaJump(PEDIA_IMPROVEMENT, argsList[0], True)
-
-def pediaJumpToCivic(argsList):
-	pediaMainScreen.pediaJump(PEDIA_CIVIC, argsList[0], True)
-
-def pediaJumpToCiv(argsList):
-	pediaMainScreen.pediaJump(PEDIA_CIVILIZATION, argsList[0], True)
-
-def pediaJumpToLeader(argsList):
-	pediaMainScreen.pediaJump(PEDIA_LEADER, argsList[0], True)
+def pediaJumpToProject(argsList):
+	pediaMainScreen.pediaJump(PEDIA_PROJECTS, argsList[0], True, False)
 
 def pediaJumpToSpecialist(argsList):
-	pediaMainScreen.pediaJump(PEDIA_SPECIALIST, argsList[0], True)
+	pediaMainScreen.pediaJump(PEDIA_SPECIALISTS, argsList[0], True, False)
+
+def pediaJumpToTerrain(argsList):
+	pediaMainScreen.pediaJump(PEDIA_TERRAINS, argsList[0], True, False)
+
+def pediaJumpToFeature(argsList):
+	pediaMainScreen.pediaJump(PEDIA_FEATURES, argsList[0], True, False)
+
+def pediaJumpToBonus(argsList):
+	pediaMainScreen.pediaJump(PEDIA_BONUSES, argsList[0], True, False)
+
+def pediaJumpToImprovement(argsList):
+	pediaMainScreen.pediaJump(PEDIA_IMPROVEMENTS, argsList[0], True, False)
+
+def pediaJumpToCiv(argsList):
+	pediaMainScreen.pediaJump(PEDIA_CIVS, argsList[0], True, False)
+
+def pediaJumpToLeader(argsList):
+	pediaMainScreen.pediaJump(PEDIA_LEADERS, argsList[0], True, False)
+
+def pediaJumpToCivic(argsList):
+	pediaMainScreen.pediaJump(PEDIA_CIVICS, argsList[0], True, False)
+
+def pediaJumpToReligion(argsList):
+	pediaMainScreen.pediaJump(PEDIA_RELIGIONS, argsList[0], True, False)
+
+def pediaJumpToCorporation(argsList):
+	pediaMainScreen.pediaJump(PEDIA_CORPORATIONS, argsList[0], True, False)
 
 def pediaShowHistorical(argsList):
-	iEntryId = pediaMainScreen.pediaHistorical.getIdFromEntryInfo(argsList[0], argsList[1])
-	pediaMainScreen.pediaJump(PEDIA_HISTORY, iEntryId, True)
-	return
+	pediaMainScreen.pediaJump(pediaMainScreen.iCategory, argsList[1], True, False)
 
+#################################################
+## Sevopedia 2.3 END
 #################################################
 ## Worldbuilder
 #################################################
@@ -667,23 +670,6 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					ESPIONAGE_ADVISOR : espionageAdvisor,
 					DAN_QUAYLE_SCREEN : danQuayleScreen,
 
-					PEDIA_MAIN : pediaMainScreen,
-					PEDIA_TECH : pediaMainScreen,
-					PEDIA_UNIT : pediaMainScreen,
-					PEDIA_BUILDING : pediaMainScreen,
-					PEDIA_PROMOTION : pediaMainScreen,
-					PEDIA_PROJECT : pediaMainScreen,
-					PEDIA_UNIT_CHART : pediaMainScreen,
-					PEDIA_BONUS : pediaMainScreen,
-					PEDIA_IMPROVEMENT : pediaMainScreen,
-					PEDIA_TERRAIN : pediaMainScreen,
-					PEDIA_FEATURE : pediaMainScreen,
-					PEDIA_CIVIC : pediaMainScreen,
-					PEDIA_CIVILIZATION : pediaMainScreen,
-					PEDIA_LEADER : pediaMainScreen,
-					PEDIA_RELIGION : pediaMainScreen,
-					PEDIA_CORPORATION : pediaMainScreen,
-					PEDIA_HISTORY : pediaMainScreen,
 					WORLDBUILDER_SCREEN : worldBuilderScreen,
 
 					DEBUG_INFO_SCREEN : debugInfoScreen,
@@ -709,30 +695,64 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					#bluepotato start: Mercenaries
 					MERCENARIES_SCREEN : CvMainInterface.mercenaryScreen,
 					#bluepotato end
+
+				#################################################
+				## Sevopedia 2.3 BEGIN
+				#################################################
+
+					PEDIA_MAIN		: pediaMainScreen,
+					PEDIA_TECHS		: pediaMainScreen,
+					PEDIA_UNITS		: pediaMainScreen,
+					PEDIA_UNIT_UPGRADES	: pediaMainScreen,
+					PEDIA_UNIT_CATEGORIES	: pediaMainScreen,
+					PEDIA_PROMOTIONS	: pediaMainScreen,
+					PEDIA_PROMOTION_TREE	: pediaMainScreen,
+					PEDIA_BUILDINGS		: pediaMainScreen,
+					PEDIA_NATIONAL_WONDERS	: pediaMainScreen,
+					PEDIA_GREAT_WONDERS	: pediaMainScreen,
+					PEDIA_PROJECTS		: pediaMainScreen,
+					PEDIA_SPECIALISTS	: pediaMainScreen,
+					PEDIA_TERRAINS		: pediaMainScreen,
+					PEDIA_FEATURES		: pediaMainScreen,
+					PEDIA_BONUSES		: pediaMainScreen,
+					PEDIA_IMPROVEMENTS	: pediaMainScreen,
+					PEDIA_CIVS		: pediaMainScreen,
+					PEDIA_LEADERS		: pediaMainScreen,
+					PEDIA_CIVICS		: pediaMainScreen,
+					PEDIA_RELIGIONS		: pediaMainScreen,
+					PEDIA_CORPORATIONS	: pediaMainScreen,
+					PEDIA_CONCEPTS		: pediaMainScreen,
+					PEDIA_BTS_CONCEPTS	: pediaMainScreen,
+					PEDIA_HINTS		: pediaMainScreen,
 				}
 
-#######################################################################################
-## Handle Navigation Map
-#######################################################################################
 HandleNavigationMap = {
-					MAIN_INTERFACE : mainInterface,
-					PEDIA_MAIN : pediaMainScreen,
-					PEDIA_TECH : pediaMainScreen,
-					PEDIA_UNIT : pediaMainScreen,
-					PEDIA_BUILDING : pediaMainScreen,
-					PEDIA_PROMOTION : pediaMainScreen,
-					PEDIA_PROJECT : pediaMainScreen,
-					PEDIA_UNIT_CHART : pediaMainScreen,
-					PEDIA_BONUS : pediaMainScreen,
-					PEDIA_IMPROVEMENT : pediaMainScreen,
-					PEDIA_TERRAIN : pediaMainScreen,
-					PEDIA_FEATURE : pediaMainScreen,
-					PEDIA_CIVIC : pediaMainScreen,
-					PEDIA_CIVILIZATION : pediaMainScreen,
-					PEDIA_LEADER : pediaMainScreen,
-					PEDIA_HISTORY : pediaMainScreen,
-					PEDIA_RELIGION : pediaMainScreen,
-					PEDIA_CORPORATION : pediaMainScreen
+	PEDIA_MAIN		: pediaMainScreen,
+	PEDIA_TECHS		: pediaMainScreen,
+	PEDIA_UNITS		: pediaMainScreen,
+	PEDIA_UNIT_UPGRADES	: pediaMainScreen,
+	PEDIA_UNIT_CATEGORIES	: pediaMainScreen,
+	PEDIA_PROMOTIONS	: pediaMainScreen,
+	PEDIA_PROMOTION_TREE	: pediaMainScreen,
+	PEDIA_BUILDINGS		: pediaMainScreen,
+	PEDIA_NATIONAL_WONDERS	: pediaMainScreen,
+	PEDIA_GREAT_WONDERS	: pediaMainScreen,
+	PEDIA_PROJECTS		: pediaMainScreen,
+	PEDIA_SPECIALISTS	: pediaMainScreen,
+	PEDIA_TERRAINS		: pediaMainScreen,
+	PEDIA_FEATURES		: pediaMainScreen,
+	PEDIA_BONUSES		: pediaMainScreen,
+	PEDIA_IMPROVEMENTS	: pediaMainScreen,
+	PEDIA_CIVS		: pediaMainScreen,
+	PEDIA_LEADERS		: pediaMainScreen,
+	PEDIA_CIVICS		: pediaMainScreen,
+	PEDIA_RELIGIONS		: pediaMainScreen,
+	PEDIA_CORPORATIONS	: pediaMainScreen,
+	PEDIA_CONCEPTS		: pediaMainScreen,
+	PEDIA_BTS_CONCEPTS	: pediaMainScreen,
+	PEDIA_HINTS		: pediaMainScreen,
+}
 
-				# add new screens here
-				}
+#################################################
+## Sevopedia 2.3 END
+#################################################
