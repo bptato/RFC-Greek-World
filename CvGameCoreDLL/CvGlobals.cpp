@@ -3594,12 +3594,38 @@ CvRiseFall& CvGlobals::getRiseFall() {
 
 static bool riseFallConstructed = false;
 void CvGlobals::resetRiseFall() {
-	if(!riseFallConstructed && GC.getNumCivilizationInfos()>0) {
+	if(!riseFallConstructed && getNumCivilizationInfos()>0) {
 		riseFall = new CvRiseFall;
 		riseFallConstructed = true;
 	} else if(riseFallConstructed) {
 		riseFall->reset();
 	}
+}
+
+static bool menuShownOnce = false;
+void CvGlobals::onCivSelectionScreenLoaded() {
+	if(menuShownOnce) {
+		resetRiseFall();
+	} else {
+		menuShownOnce = true;
+	}
+}
+
+void CvGlobals::setupEnabled() {
+	for(int i = 0; i<getNumCivilizationInfos(); ++i) {
+		CvRFCPlayer& rfcPlayer = getRiseFall().getRFCPlayer((CivilizationTypes)i);
+		if(rfcPlayer.isEnabled()) {
+			if(!rfcPlayer.isMinor()) {
+				getCivilizationInfo((CivilizationTypes)i).setPlayable(true);
+			} else {
+				getCivilizationInfo((CivilizationTypes)i).setPlayable(false);
+			}
+		} else {
+			getCivilizationInfo((CivilizationTypes)i).setPlayable(false);
+			getCivilizationInfo((CivilizationTypes)i).setAIPlayable(false);
+		}
+	}
+	CvInfoBase::resetAsked();
 }
 
 void CvGlobals::logMsg(char* format, ... )
@@ -3611,7 +3637,7 @@ void CvGlobals::logMsg(char* format, ... )
 
 //for debugging purposes...
 void CvGlobals::crash() {
-	GC.logMsg("a crash was ordered, now for its delivery");
+	logMsg("crashing...");
 	int a = 0;
 	int b = 1 / a;
 }

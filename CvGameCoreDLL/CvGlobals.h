@@ -886,6 +886,8 @@ public:
 	void setMinorNationCiv(PlayerTypes eID, CivilizationTypes civType, bool bMinorNationCiv);
 	CvRiseFall& getRiseFall();
 	void resetRiseFall();
+	void onCivSelectionScreenLoaded();
+	void setupEnabled();
 	void logMsg(char* format, ... ); //(jdog)
 	void crash();
 	//bluepotato end

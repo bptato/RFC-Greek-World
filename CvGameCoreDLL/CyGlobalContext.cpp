@@ -640,31 +640,12 @@ void CyGlobalContext::setMinorNationCiv(int eID, int civType, bool bMinorNationC
 	GC.setMinorNationCiv((PlayerTypes)eID, (CivilizationTypes)civType, bMinorNationCiv);
 }
 
-
-static bool menuShownOnce = false;
 void CyGlobalContext::onCivSelectionScreenLoaded() {
-	if(menuShownOnce) {
-		GC.resetRiseFall();
-	} else {
-		menuShownOnce = true;
-	}
+	GC.onCivSelectionScreenLoaded();
 }
 
 void CyGlobalContext::setupEnabled() {
-	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
-		CvRFCPlayer& rfcPlayer = GC.getRiseFall().getRFCPlayer((CivilizationTypes)i);
-		if(rfcPlayer.isEnabled()) {
-			if(!rfcPlayer.isMinor()) {
-				GC.getCivilizationInfo((CivilizationTypes)i).setPlayable(true);
-			} else {
-				GC.getCivilizationInfo((CivilizationTypes)i).setPlayable(false);
-			}
-		} else {
-			GC.getCivilizationInfo((CivilizationTypes)i).setPlayable(false);
-			GC.getCivilizationInfo((CivilizationTypes)i).setAIPlayable(false);
-		}
-	}
-	CvInfoBase::resetAsked();
+	GC.setupEnabled();
 }
 
 CyRiseFall* CyGlobalContext::getCyRiseFall() {
