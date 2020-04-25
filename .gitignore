@@ -7,4 +7,5 @@
 CvGameCoreDLL.lib
 *.res
 *.pch
+*.pch.@
 *.geany
