@@ -1603,6 +1603,20 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>DIPLO_HIRAM_EARLY</SoundID>
+			<Filename>Sounds/Diplomacy/Hiram_Early</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_HIRAM_MIDDLE</SoundID>
+			<Filename>Sounds/Diplomacy/Hiram_Middle</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>DIPLO_HATSHEPSUT_EARLY_INTRO</SoundID>
 			<Filename>Sounds/Diplomacy/Hatshepsut_Early_Intro</Filename>
 			<LoadType>STREAMED</LoadType>

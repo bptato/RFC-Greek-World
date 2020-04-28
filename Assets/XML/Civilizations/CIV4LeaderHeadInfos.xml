@@ -6098,15 +6098,15 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_HANNIBAL_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HIRAM_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HANNIBAL_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HIRAM_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HANNIBAL_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_HIRAM_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
