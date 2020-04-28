@@ -5584,7 +5584,7 @@ bool CvUnit::spread(ReligionTypes eReligion)
 			pCity->setHasReligion(eReligion, true, true, false);
 			bSuccess = true;
 			//bluepotato start: holy city relocation
-			if(GC.getGameINLINE().getHolyCity(eReligion) == NULL || GC.getGameINLINE().getSorenRandNum(100, "Holy city relocation") > 90) {
+			if(GC.getGameINLINE().getHolyCity(eReligion) == NULL || (GC.getGameINLINE().getSorenRandNum(100, "Holy city relocation") > 90 && !GC.getGameINLINE().getHolyCity(eReligion)->isCapital())) {
 				GC.getGameINLINE().relocateHolyCity(eReligion, pCity);
 			}
 			//bluepotato end
