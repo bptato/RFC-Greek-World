@@ -10,27 +10,6 @@ import cPickle as pickle
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
-### Constants ###
-
-tLevantTL = (39, 18)
-tLevantBR = (43, 26)
-tIranTL = (48, 19)
-tIranBR = (54, 28)
-tNubiaTL = (24, 0)
-tNubiaBR = (35, 4)
-tMesopotamiaTL = (44, 18)
-tMesopotamiaBR = (49, 27)
-tEgyptTL = (26, 5)
-tEgyptBR = (35, 17)
-tNAfricaTL = (0, 17)
-tNAfricaBR = (27, 24)
-tCyprusTL = (37, 21)
-tCyprusBR = (39, 23)
-tIberiaTL = (2, 26)
-tIberiaBR = (12, 38)
-tAnatoliaTL = (35, 25)
-tAnatoliaBR = (40, 32)
-
 #following ids refer to civ types, not slots!
 iEgypt = int(CivilizationTypes.CIVILIZATION_EGYPT)
 iSumeria = int(CivilizationTypes.CIVILIZATION_SUMERIA)
@@ -160,6 +139,7 @@ class Victory:
 		provAfrica = riseFall.getRFCProvince("Africa")
 		provCyprus = riseFall.getRFCProvince("Cyprus")
 		provSouthernIberia = riseFall.getRFCProvince("Southern Iberia")
+		provPersia = riseFall.getRFCProvince("Persia")
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -479,10 +459,10 @@ class Victory:
 			elif iGameTurn == i1900BC and self.getGoal(iElam, 1) == -1:
 				self.setGoal(iElam, 1, 0)
 			elif iGameTurn < i1500BC and self.getGoal(iElam, 2) == -1:
-				if self.checkOwnedArea(iElam, tIranTL, tIranBR, 5):
+				if provPersia.getNumCities(iPlayer) >= 5:
 					self.setGoal(iElam, 2, 1)
 			elif iGameTurn == i1500BC and self.getGoal(iElam, 2) == -1:
-				if self.checkOwnedArea(iElam, tIranTL, tIranBR, 5):
+				if provPersia.getNumCities(iPlayer) >= 5:
 					self.setGoal(iElam, 2, 1)
 				else:
 					self.setGoal(iElam, 2, 0)
@@ -588,11 +568,13 @@ class Victory:
 				result = True
 				for i in range(iNumPlayers):
 					if i == iPlayer:
-						if not self.checkOwnedArea(i, tLevantTL, tLevantBR, 1):
+						if provPhoenicia.getNumCities(iPlayer) < 1:
 							result = False
+							break
 					else:
-						if self.checkOwnedArea(i, tLevantTL, tLevantBR, 1):
+						if provPhoenicia.getNumCities(iPlayer) >= 1:
 							result = False
+							break
 				self.setGoal(iHittites, 1, result)
 			elif iGameTurn < i1200BC:
 				if self.getHittiteKilledUnits() >= 15:
@@ -605,8 +587,12 @@ class Victory:
 			if self.getGoal(iMycenae, 1) == -1 and iGameTurn > i1100BC:
 				self.setGoal(iMycenae, 1, 0)
 			if iGameTurn == i1000BC:
-				result = self.checkOwnedArea(iBarbarian, tAnatoliaTL, tAnatoliaBR, 1) or self.checkOwnedArea(iIndependent, tAnatoliaTL, tAnatoliaBR, 1) or self.checkOwnedArea(iIndependent2, tAnatoliaTL, tAnatoliaBR, 1)
-				self.setGoal(iMycenae, 2, not result)
+				barbCities = provLydia.getNumCities(civ2player(iBarbarian)) + provLydia.getNumCities(civ2player(iIndependent)) + provLydia.getNumCities(civ2player(iIndependent2)) + provAnatolia.getNumCities(civ2player(iBarbarian)) + provAnatolia.getNumCities(civ2player(iIndependent)) + provAnatolia.getNumCities(civ2player(iIndependent2))
+
+				if barbCities > 0:
+					self.setGoal(iMycenae, 2, 0)
+				else:
+					self.setGoal(iMycenae, 2, 1)
 
 	def onCityBuilt(self, city):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
@@ -708,7 +694,7 @@ class Victory:
 			if iBuilding == building('mycenae_tholoi'):
 				if self.getGoal(iMycenae, 0) == -1:
 					self.setMycenaeTombsBuilt(self.getMycenaeTombsBuilt() + 1)
-					if self.getMycenaeTombsBuilt() >= 3:
+					if self.getMycenaeTombsBuilt() >= 4:
 						self.setGoal(iMycenae, 0, 1)
 			elif iBuilding == building('lion_gate'):
 				if self.getGoal(iMycenae, 1) == -1:

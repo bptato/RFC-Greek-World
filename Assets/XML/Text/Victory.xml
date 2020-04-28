@@ -295,7 +295,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT2</Tag>
-		<English>Control the Levant in 1300BC</English>
+		<English>Control Phoenicia in 1300BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT3_TITLE</Tag>
@@ -311,7 +311,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC1</Tag>
-		<English>Build three Tholoi by 1300BC</English>
+		<English>Build four Tholoi by 1300BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC2_TITLE</Tag>
@@ -327,6 +327,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC3</Tag>
-		<English>Destroy all Barbarian cities in Anatolia by 1000BC</English>
+		<English>Ensure there are no Independent or Barbarian cities in Lydia or Anatolia in 1000BC</English>
 	</TEXT>
 </Civ4GameText>
