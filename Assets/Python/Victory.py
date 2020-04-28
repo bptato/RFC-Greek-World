@@ -143,6 +143,9 @@ class Victory:
 		global provAkkad
 		global provSubartu
 		global provKhuzestan
+		global provAfrica
+		global provCyprus
+		global provSouthernIberia
 		
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getRFCProvince("Palestine")
@@ -154,6 +157,9 @@ class Victory:
 		provAkkad = riseFall.getRFCProvince("Akkad")
 		provSubartu = riseFall.getRFCProvince("Subartu")
 		provKhuzestan = riseFall.getRFCProvince("Khuzestan")
+		provAfrica = riseFall.getRFCProvince("Africa")
+		provCyprus = riseFall.getRFCProvince("Cyprus")
+		provSouthernIberia = riseFall.getRFCProvince("Southern Iberia")
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -505,11 +511,11 @@ class Victory:
 
 		elif (civType == iPhoenicia):
 			if (iGameTurn == i900BC):
-				bLevant = self.checkOwnedArea(iPhoenicia, tLevantTL, tLevantBR, 1)
-				bNAfrica = self.checkOwnedArea(iPhoenicia, tNAfricaTL, tNAfricaBR, 1)
-				bCyprus = self.checkOwnedArea(iPhoenicia, tCyprusTL, tCyprusBR, 1)
-				bIberia = self.checkOwnedArea(iPhoenicia, tIberiaTL, tIberiaBR, 1)
-				if (bLevant and bNAfrica and bCyprus and bIberia):
+				bPhoenicia = provPhoenicia.getNumCities(iPlayer) >= 1
+				bAfrica = provAfrica.getNumCities(iPlayer) >= 1
+				bCyprus = provCyprus.getNumCities(iPlayer) >= 1
+				bSouthernIberia = provSouthernIberia.getNumCities(iPlayer) >= 1
+				if bPhoenicia and bAfrica and bCyprus and bSouthernIberia:
 					self.setGoal(iPhoenicia, 0, 1)
 				else:
 					self.setGoal(iPhoenicia, 0, 0)
