@@ -1666,4 +1666,24 @@
 		<DefineName>FORCE_UNOWNED_CITY_TIMER</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>MERCENARY_DISBAND_RATE</DefineName>
+		<iDefineIntVal>5</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>MERCENARY_WANDERING_RATE</DefineName>
+		<iDefineIntVal>60</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>MERCENARY_CREATION_RATE</DefineName>
+		<iDefineIntVal>80</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>MERCENARY_BASE_HIRE_COST</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>MERCENARY_HIRE_COST_MODIFIER</DefineName>
+		<iDefineIntVal>15</iDefineIntVal>
+	</Define>
 </Civ4Defines>

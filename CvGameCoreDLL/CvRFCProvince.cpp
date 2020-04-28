@@ -58,7 +58,8 @@ void CvRFCProvince::checkMercenaries() {
 		CvPlayer& unitOwner = GET_PLAYER(unit->getOwner());
 		if(!unit->isAnimal() && (unitOwner.isBarbarian() || unitOwner.isMinorCiv())) {
 			if(unit->getLastAction() != 0 && GC.getGame().getGameTurn() - unit->getLastAction() > 12) {
-				int mercOdds = 70;
+				static int mercRate = GC.getDefineINT("MERCENARY_CREATION_RATE");
+				int mercOdds = mercRate;
 				if(createdMercs > 0) {
 					mercOdds /= createdMercs;
 				}
@@ -79,9 +80,13 @@ void CvRFCProvince::checkMercenaries() {
 				if(GC.getGame().getSorenRandNum(100, "Mercenary creation roll") < mercOdds) {
 					UnitTypes unitType = unit->getUnitType();
 					int hireCost = GC.getUnitInfo(unitType).getProductionCost() * (unit->getLevel()+1) + (unit->getLevel()+1) * std::abs(unit->getExperience() - unit->experienceNeeded());
-					hireCost *= 15; //Hire cost modifier
-					hireCost /= 100; //Hire cost modifier
-					hireCost += 15; //Base hire cost
+
+					static int hireCostModifier = GC.getDefineINT("MERCENARY_HIRE_COST_MODIFIER");
+					static int baseHireCost = GC.getDefineINT("MERCENARY_BASE_HIRE_COST");
+					hireCost *= hireCostModifier;
+					hireCost /= 100;
+
+					hireCost += baseHireCost;
 
 					int maintenanceCostModifier = unitOwner.getCurrentEra();
 					maintenanceCostModifier *= 30;
@@ -111,8 +116,10 @@ void CvRFCProvince::checkMercenaries() {
 	}
 
 	for(std::vector<CvRFCMercenary>::iterator it = mercenaries.begin(); it != mercenaries.end();) {
-		if(GC.getGame().getSorenRandNum(100, "Mercenary disband roll") < 5) {
-			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < 60) {
+		static int disbandRate = GC.getDefineINT("MERCENARY_DISBAND_RATE");
+		static int wanderingRate = GC.getDefineINT("MERCENARY_WANDERING_RATE");
+		if(GC.getGame().getSorenRandNum(100, "Mercenary disband roll") < disbandRate) {
+			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < wanderingRate) {
 				int borderProvinces = 0;
 				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
 					if(isBorderProvince(GC.getRiseFall().getRFCProvince(i))) {
