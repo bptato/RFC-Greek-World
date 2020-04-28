@@ -127,16 +127,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/Bunker.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,11</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_BOMB_SHELTER</Type>
-			<LSystem>LSYSTEM_2x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.25</fScale>
-			<fInterfaceScale>0.56</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/BombShelters/BombShelters.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/BombShelters.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GRANARY</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>

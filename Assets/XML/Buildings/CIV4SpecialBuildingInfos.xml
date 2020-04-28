@@ -7,16 +7,6 @@
 <Civ4SpecialBuildingInfos xmlns="x-schema:CIV4BuildingsSchema.xml">
 	<SpecialBuildingInfos>
 		<SpecialBuildingInfo>
-			<Type>SPECIALBUILDING_BOMB_SHELTER</Type>
-			<Description>TXT_KEY_SPECIALBUILDING_BOMB_SHELTER</Description>
-			<ObsoleteTech>NONE</ObsoleteTech>
-			<TechPrereq>NONE</TechPrereq>
-			<TechPrereqAnyone>NONE</TechPrereqAnyone>
-			<bValid>0</bValid>
-			<ProductionTraits/>
-			<Button>Art/Interface/Buttons/Buildings/BombShelters.dds</Button>
-		</SpecialBuildingInfo>
-		<SpecialBuildingInfo>
 			<Type>SPECIALBUILDING_TEMPLE</Type>
 			<Description>TXT_KEY_SPECIALBUILDING_TEMPLE</Description>
 			<ObsoleteTech>NONE</ObsoleteTech>
