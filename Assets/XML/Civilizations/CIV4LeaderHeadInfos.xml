@@ -7557,7 +7557,7 @@
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ALEXANDER_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALEXANDER_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
@@ -13357,29 +13357,26 @@
 			<DiplomacyIntroMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_ALEXANDER_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ALEXANDER_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ALEXANDER_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_ALEXANDER_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_SATUR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ALEXANDER_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_SATUR_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ALEXANDER_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_SATUR_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>

@@ -1414,6 +1414,20 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>DIPLO_SATUR_EARLY</SoundID>
+			<Filename>Sounds/Diplomacy/Satur_Early</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_SATUR_MIDDLE</SoundID>
+			<Filename>Sounds/Diplomacy/Satur_Middle</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>DIPLO_WANGKON_EARLY</SoundID>
 			<Filename>Sounds/Diplomacy/Wangkon_Early</Filename>
 			<LoadType>STREAMED</LoadType>
