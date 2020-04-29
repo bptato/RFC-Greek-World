@@ -4157,7 +4157,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 	case TRADE_WAR:
 		if (!(GET_TEAM(getTeam()).isHuman()))
 		{
-			if (!(GET_TEAM(getTeam()).isAVassal()))
+			if (!(GET_TEAM(getTeam()).isAVassal()) && !(GET_TEAM(getTeam()).isMinorCiv())) //bluepotato
 			{
 				if (!GET_TEAM((TeamTypes)item.m_iData).isAVassal())
 				{

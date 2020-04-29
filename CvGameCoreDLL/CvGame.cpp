@@ -5636,8 +5636,6 @@ void CvGame::doTurn()
 	int iLoopPlayer;
 	int iI;
 
-	GC.getRiseFall().checkTurn(); //bluepotato
-
 	// END OF TURN
 	CvEventReporter::getInstance().beginGameTurn(getGameTurn());
 
@@ -5770,6 +5768,8 @@ void CvGame::doTurn()
 	PROFILE_END();
 
 	stopProfilingDLL();
+
+	GC.getRiseFall().checkTurn(); //bluepotato
 
 	gDLL->getEngineIFace()->AutoSave();
 }
