@@ -11341,14 +11341,16 @@ void CvPlayerAI::AI_doDiplo()
 	FAssert(!isBarbarian());
 
 	// allow python to handle it
-	CyArgsList argsList;
+	//bluepotato start
+	/*CyArgsList argsList;
 	argsList.add(getID());
 	long lResult=0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "AI_doDiplo", argsList.makeFunctionArgs(), &lResult);
 	if (lResult == 1)
 	{
 		return;
-	}
+	}*/
+	//bluepotato end
 
 	iGoldValuePercent = AI_goldTradeValuePercent();
 
