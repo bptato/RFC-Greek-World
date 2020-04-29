@@ -16762,15 +16762,15 @@
 			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_LEANING_TOWER</BuildingClass>
-			<Type>BUILDING_LEANING_TOWER</Type>
+			<BuildingClass>BUILDINGCLASS_TRAJANS_COLUMN</BuildingClass>
+			<Type>BUILDING_TRAJANS_COLUMN</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
-			<Description>TXT_KEY_BUILDING_TOWER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_TOWER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIONAL_EPIC_STRATEGY</Strategy>
+			<Description>TXT_KEY_BUILDING_TRAJANS_COLUMN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TRAJANS_COLUMN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TRAJANS_COLUMN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_LEANING_TOWER</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_LEANING_TOWER</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TRAJANS_COLUMN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_TRAJANS_COLUMN</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
@@ -16797,7 +16797,7 @@
 			<FreeBuilding>NONE</FreeBuilding>
 			<FreePromotion>NONE</FreePromotion>
 			<CivicOption>NONE</CivicOption>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iHurryAngerModifier>0</iHurryAngerModifier>
 			<bBorderObstacle>0</bBorderObstacle>
@@ -16915,7 +16915,7 @@
 			<BonusHappinessChanges/>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_MARBLE</BonusType>
+					<BonusType>BONUS_STONE</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
@@ -20422,7 +20422,6 @@
 			<TechTypes/>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>
-
 			<ProductionTraits/>
 			<HappinessTraits/>
 			<NoBonus>NONE</NoBonus>
@@ -20568,8 +20567,8 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
-		<BuildingInfo><!--BUILDING_ANTIGONID_AGORA-->
-			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass><!-- -->
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
 			<Type>BUILDING_ANTIGONID_AGORA</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ANTIGONID_AGORA</Description>
@@ -20956,8 +20955,8 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
-		<BuildingInfo><!--BUILDING_GOLDSMITH-->
-			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass><!-- -->
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass>
 			<Type>BUILDING_GOLDSMITH</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_GOLDSMITH</Description>

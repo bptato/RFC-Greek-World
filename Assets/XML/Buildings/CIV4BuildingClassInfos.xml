@@ -871,18 +871,6 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_LEANING_TOWER</Type>
-			<Description>TXT_KEY_BUILDING_LEANING_TOWER</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_LEANING_TOWER</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_RUSTAM</Type>
 			<Description>TXT_KEY_BUILDING_RUSTAM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1024,6 +1012,18 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_SLAVE_MARKET</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_TRAJANS_COLUMN</Type>
+			<Description>TXT_KEY_BUILDING_TRAJANS_COLUMN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_TRAJANS_COLUMN</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 	</BuildingClassInfos>

@@ -3255,7 +3255,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_LEANING_TOWER</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_TRAJANS_COLUMN</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3506,7 +3506,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_LEANING_TOWER</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_TRAJANS_COLUMN</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3773,7 +3773,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_LEANING_TOWER</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_TRAJANS_COLUMN</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>

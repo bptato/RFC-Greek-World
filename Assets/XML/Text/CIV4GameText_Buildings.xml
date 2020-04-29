@@ -80,7 +80,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BREWERY_PEDIA</Tag>
-		<English>A brewery or brewing company is a business that makes and sells beer. The place at which beer is commercially made is either called a brewery or a beerhouse, where distinct sets of brewing equipment are called plant.[1] The commercial brewing of beer has taken place since at least 2500 BC </English>
+		<English>A brewery or brewing company is a business that makes and sells beer. The place at which beer is commercially made is either called a brewery or a beerhouse, where distinct sets of brewing equipment are called plant. The commercial brewing of beer has taken place since at least 2500 BC </English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BREWERY_STRATEGY</Tag>
@@ -284,7 +284,7 @@
 	</TEXT>	
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANTIGONID_AGORA_PEDIA</Tag>
-		<English>The agora was a central public space in ancient Greek city-states. The literal meaning of the word is "gathering place" or "assembly". The agora was the center of the athletic, artistic, spiritual and political life in the city.[1] The Ancient Agora of Athens is the best-known example. </English>
+		<English>The agora was a central public space in ancient Greek city-states. The literal meaning of the word is "gathering place" or "assembly". The agora was the center of the athletic, artistic, spiritual and political life in the city. The Ancient Agora of Athens is the best-known example. </English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KOTEL_PEDIA</Tag>
@@ -304,7 +304,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_PEDIA</Tag>
-		<English>The Colosseum could hold, it is estimated, between 50,000 and 80,000 spectators,[5][6] having an average audience of some 65,000; it was used for gladiatorial contests and public spectacles such as mock sea battles (for only a short time as the hypogeum was soon filled in with mechanisms to support the other activities), animal hunts, executions, re-enactments of famous battles, and dramas based on Classical mythology.</English>
+		<English>The Colosseum could hold, it is estimated, between 50,000 and 80,000 spectators, having an average audience of some 65,000; it was used for gladiatorial contests and public spectacles such as mock sea battles (for only a short time as the hypogeum was soon filled in with mechanisms to support the other activities), animal hunts, executions, re-enactments of famous battles, and dramas based on Classical mythology.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HADRIANS_WALL_PEDIA</Tag>
@@ -315,16 +315,8 @@
 		<English>The eighth gate to the inner city of Babylon. It was constructed in about 575 BCE by order of King Nebuchadnezzar II on the north side of the city. It was part of a grand walled processional way leading into the city. The walls were finished in glazed bricks mostly in blue, with animals and deities in low relief at intervals, these also made up of bricks that are molded and colored differently.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TOWER</Tag>
-		<English>The Stone Tower of Jericho</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TOWER_PEDIA</Tag>
-		<English>Towers have been used by mankind since prehistoric times. The oldest known may be the circular stone tower in walls of Neolithic Jericho (8000 BC).</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPHINX_PEDIA</Tag>
-		<English>A limestone statue of a reclining sphinx, a mythical creature with the body of a lion and the head of a human.[1] Facing directly from West to East, it stands on the Giza Plateau on the west bank of the Nile in Giza, Egypt. The face of the Sphinx is generally believed to represent the Pharaoh Khafre.  Cut from the bedrock, the original shape of the Sphinx has been restored with layers of blocks.[3] It measures 73 metres (240 ft) long from paw to tail, 20.21 m (66.31 ft) high from the base to the top of the head and 19 metres (62 ft) wide at its rear haunches.</English>
+		<English>A limestone statue of a reclining sphinx, a mythical creature with the body of a lion and the head of a human. Facing directly from West to East, it stands on the Giza Plateau on the west bank of the Nile in Giza, Egypt. The face of the Sphinx is generally believed to represent the Pharaoh Khafre.  Cut from the bedrock, the original shape of the Sphinx has been restored with layers of blocks. It measures 73 metres (240 ft) long from paw to tail, 20.21 m (66.31 ft) high from the base to the top of the head and 19 metres (62 ft) wide at its rear haunches.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POSEIDON_PEDIA</Tag>
@@ -385,5 +377,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SLAVE_MARKET_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Slave Market[COLOR_REVERT] increases production and commerce of a city.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAJANS_COLUMN</Tag>
+		<English>Trajan's Column</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAJANS_COLUMN_PEDIA</Tag>
+		<English>[TAB]Trajan's Column (Italian: Colonna Traiana) is a Roman triumphal column in Rome, Italy, that commemorates Roman emperor Trajan's victory in the Dacian Wars. It was probably constructed under the supervision of the architect Apollodorus of Damascus at the order of the Roman Senate. It is located in Trajan's Forum, built near the Quirinal Hill, north of the Roman Forum. Completed in AD 113, the freestanding column is most famous for its spiral bas relief, which artistically describes the epic wars between the Romans and Dacians (101-102 and 105-106). Its design has inspired numerous victory columns, both ancient and modern.The structure is about 30 metres (98 ft) in height, 35 metres (125 ft) including its large pedestal. The shaft is made from a series of 20 colossal Carrara marble drums, each weighing about 32 tons, with a diameter of 3.7 metres (11 ft). The 190-metre (625 ft) frieze winds around the shaft 23 times. Inside the shaft, a spiral staircase of 185 stairs provides access to a viewing platform at the top. The capital block of Trajan's Column weighs 53.3 tons, which had to be lifted to a height of c. 34 m.</English>
 	</TEXT>
 </Civ4GameText>

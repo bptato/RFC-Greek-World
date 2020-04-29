@@ -81,6 +81,7 @@ void CvEventReporter::unInit()
 
 void CvEventReporter::gameStart()
 {
+	GC.getRiseFall().onGameStarted(); //bluepotato
 	m_kPythonEventMgr.reportGameStart();
 }
 

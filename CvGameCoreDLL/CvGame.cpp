@@ -2081,8 +2081,6 @@ void CvGame::update()
 
 		if (getTurnSlice() == 0)
 		{
-			GC.getRiseFall().onGameStarted(); //bluepotato
-			GC.getRiseFall().checkTurn(); //bluepotato
 			gDLL->getEngineIFace()->AutoSave(true);
 		}
 
@@ -2091,7 +2089,6 @@ void CvGame::update()
 			if (!isPbem() || !getPbemTurnSent())
 			{
 				doTurn();
-				GC.getRiseFall().checkTurn(); //bluepotato
 			}
 		}
 
@@ -5638,6 +5635,8 @@ void CvGame::doTurn()
 	int aiShuffle[MAX_PLAYERS];
 	int iLoopPlayer;
 	int iI;
+
+	GC.getRiseFall().checkTurn(); //bluepotato
 
 	// END OF TURN
 	CvEventReporter::getInstance().beginGameTurn(getGameTurn());

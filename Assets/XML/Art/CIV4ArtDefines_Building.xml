@@ -1218,16 +1218,6 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,14</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_LEANING_TOWER</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.1</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/LeaningTower/Pisa.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Pisa.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,15</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_OLYMPIC_PARK</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1436,6 +1426,16 @@
 			<NIF>Art/Structures/Buildings/SlaveMarket/slavemarket.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/SlaveMarket/slavemarket_button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TRAJANS_COLUMN</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Trajan/trajan.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/trajans_column.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

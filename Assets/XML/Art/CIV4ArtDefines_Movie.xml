@@ -148,7 +148,7 @@
 		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_ISHTAR_GATE</Type>
-			<Path>Art/Movies/Wonders/IshtarGate.bik</Path>
+			<Path>Art/Movies/Shrines/IshtarGate.bik</Path>
 		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_LUXOR</Type>
@@ -156,23 +156,27 @@
 		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SPHINX</Type>
-			<Path>Art/Movies/Wonders/Sphinx.bik</Path>
+			<Path>Art/Movies/Shrines/Sphinx.bik</Path>
 		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_LABYRINTH</Type>
-			<Path>Art/Movies/Wonders/Labyrinth.bik</Path>
+			<Path>Art/Movies/Shrines/Labyrinth.bik</Path>
 		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_ADUR_FARNBAG</Type>
-			<Path>Art/Movies/Wonders/AdurFarnbag.bik</Path>
+			<Path>Art/Movies/Shrines/AdurFarnbag.bik</Path>
 		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MAABED</Type>
-			<Path>Art/Movies/Wonders/Maabed.dds</Path>
+			<Path>Art/Movies/Shrines/Maabed.dds</Path>
 		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_RUSTAM</Type>
 			<Path>Art/Movies/Wonders/Rustam.bik</Path>
+		</MovieArtInfo>
+		 <MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TRAJANS_COLUMN</Type>
+			<Path>Art/Movies/Wonders/Trajan.bik</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>
