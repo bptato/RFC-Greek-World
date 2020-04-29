@@ -1304,8 +1304,6 @@
 			<Type>INTERFACE_AUTOMATE</Type>
 			<Path>Art/Interface/Buttons/Actions/Automate.dds</Path>
 		</InterfaceArtInfo>
-<!-- Progor - UnitUpgradesChart - BEGIN -->
-
 		<InterfaceArtInfo>
 			<Type>LINE_TLBR</Type>
 			<Path>Art/Interface/UnitUpgradesGraph/line-tlbr.dds</Path>
@@ -1322,7 +1320,5 @@
 			<Type>LINE_ARROW</Type>
 			<Path>Art/Interface/UnitUpgradesGraph/line-arrow.dds</Path>
 		</InterfaceArtInfo>
-
-<!-- Progor - UnitUpgradesChart - END -->
 	</InterfaceArtInfos>
 </Civ4ArtDefines>

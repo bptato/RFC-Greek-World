@@ -3231,10 +3231,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_VERSAILLES</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_ACADEMY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -3300,10 +3296,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPIRAL_MINARET</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3490,10 +3482,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_VERSAILLES</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_ACADEMY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -3559,10 +3547,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPIRAL_MINARET</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3765,10 +3749,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_VERSAILLES</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_ACADEMY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -3834,10 +3814,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPIRAL_MINARET</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>

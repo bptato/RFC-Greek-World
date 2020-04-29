@@ -1295,6 +1295,7 @@ void CvXMLLoadUtility::SetGlobalClassInfo(std::vector<T*>& aInfos, const char* s
 				FAssert(bSuccess);
 				if (!bSuccess)
 				{
+					GC.logMsg(szLog);
 					delete pClassInfo;
 					break;
 				}
