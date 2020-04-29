@@ -1506,6 +1506,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	iDamage = pOldCity->getDefenseDamage();
 	int iOldCityId = pOldCity->getID();
 
+	//bluepotato
+	bool capitalCaptured = pOldCity->isCapital();
+
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
 	{
 		aeFreeSpecialists.push_back(pOldCity->getAddedFreeSpecialistCount((SpecialistTypes)iI));
@@ -1582,15 +1585,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	}
 
 	bRecapture = ((eHighestCulturePlayer != NO_PLAYER) ? (GET_PLAYER(eHighestCulturePlayer).getTeam() == getTeam()) : false);
-
-
-	//bluepotato start: stability
-	CvRFCPlayer& oldOwnerRFCPlayer = GC.getRiseFall().getRFCPlayer(GET_PLAYER(eOldOwner).getCivilizationType());
-	oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 8);
-	if(pOldCity->isCapital()) {
-		oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 20);
-	}
-	//bluepotato end
 
 	pOldCity->kill(false);
 
@@ -1743,6 +1737,16 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	if (bConquest)
 	{
+		//bluepotato start: stability
+		if(GET_PLAYER(eOldOwner).isAlive()) {
+			CvRFCPlayer& oldOwnerRFCPlayer = GC.getRiseFall().getRFCPlayer(GET_PLAYER(eOldOwner).getCivilizationType());
+			oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 8);
+			if(capitalCaptured) {
+				oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 20);
+			}
+		}
+		//bluepotato end
+
 		iTeamCulturePercent = pNewCity->calculateTeamCulturePercent(getTeam());
 
 		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))

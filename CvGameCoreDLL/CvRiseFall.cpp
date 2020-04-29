@@ -176,6 +176,7 @@ void CvRiseFall::checkTurn() {
 								}
 								for(int j = 0; j<STABILITY_CATEGORIES; ++j) {
 									rfcPlayer.setPermStability(j, 0);
+									rfcPlayer.setTempStability(j, 0);
 								}
 							}
 						}

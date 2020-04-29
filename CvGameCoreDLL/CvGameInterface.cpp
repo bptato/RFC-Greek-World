@@ -845,7 +845,7 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 	argsList.add(bCtrl);
 	long lResult=0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotSelectionListMove", argsList.makeFunctionArgs(), &lResult);
-	delete pyPlot;	// python fxn must not hold on to this pointer 
+	delete pyPlot;	// python fxn must not hold on to this pointer
 	if (lResult == 1)
 	{
 		return;
@@ -1051,7 +1051,7 @@ bool CvGame::canHandleAction(int iAction, CvPlot* pPlot, bool bTestVisible, bool
 		argsList.add(bTestVisible);
 		long lResult=0;
 		gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotHandleAction", argsList.makeFunctionArgs(), &lResult);
-		delete pyPlot;	// python fxn must not hold on to this pointer 
+		delete pyPlot;	// python fxn must not hold on to this pointer
 		if (lResult == 1)
 		{
 			return false;
@@ -1374,6 +1374,7 @@ bool CvGame::canDoControl(ControlTypes eControl) const
 			return true;
 		}
 		break;
+	case CONTROL_MERCENARIES_MANAGER: //bluepotato
 
 	default:
 		FAssertMsg(false, "eControl did not match any valid options");
@@ -2254,7 +2255,7 @@ ColorTypes CvGame::getPlotHighlightColor(CvPlot* pPlot) const
 					argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in plot class
 					long lResult = 0;
 					gDLL->getPythonIFace()->callFunction(PYGameModule, "canPickPlot", argsList.makeFunctionArgs(), &lResult);
-					delete pyPlot;	// python fxn must not hold on to this pointer 
+					delete pyPlot;	// python fxn must not hold on to this pointer
 					if (lResult == 0)
 					{
 						eColor = NO_COLOR;
@@ -2502,7 +2503,7 @@ int CvGame::getNextSoundtrack(EraTypes eLastEra, int iLastSoundtrack) const
 	{
 		return kCurrentEra.getSoundtracks(0);
 	}
-	else 
+	else
 	{
 		return kCurrentEra.getSoundtracks(GC.getASyncRand().get(kCurrentEra.getNumSoundtracks(), "Pick Song ASYNC"));
 	}
@@ -2714,8 +2715,8 @@ EndTurnButtonStates CvGame::getEndTurnState() const
 {
 	EndTurnButtonStates eNewState = END_TURN_GO;
 
-	if ((isNetworkMultiPlayer() && 
-		(isMPOption(MPOPTION_SIMULTANEOUS_TURNS) && 1 == countNumHumanGameTurnActive() || 
+	if ((isNetworkMultiPlayer() &&
+		(isMPOption(MPOPTION_SIMULTANEOUS_TURNS) && 1 == countNumHumanGameTurnActive() ||
 		(!isSimultaneousTeamTurns() && 1 == GET_TEAM(getActiveTeam()).countNumHumanGameTurnActive() && GET_TEAM(getActiveTeam()).getAliveCount() > 1))))
 	{
 		eNewState = END_TURN_OVER_HIGHLIGHT;
@@ -2807,7 +2808,7 @@ void CvGame::handleMiddleMouse(bool bCtrl, bool bAlt, bool bShift)
 		}
 		else
 		{
-			doControl(CONTROL_CENTERONSELECTION); 
+			doControl(CONTROL_CENTERONSELECTION);
 		}
 	}
 }
@@ -2816,7 +2817,7 @@ void CvGame::handleDiplomacySetAIComment(DiploCommentTypes eComment) const
 {
 	PlayerTypes eOtherPlayer = (PlayerTypes) gDLL->getDiplomacyPlayer();
 	FAssert(eOtherPlayer != NO_PLAYER);
-	if (GC.getInfoTypeForString("AI_DIPLOCOMMENT_ACCEPT_ASK") == eComment || 
+	if (GC.getInfoTypeForString("AI_DIPLOCOMMENT_ACCEPT_ASK") == eComment ||
 		GC.getInfoTypeForString("AI_DIPLOCOMMENT_ACCEPT_DEMAND") == eComment)
 	{
 		if (!GET_TEAM(getActiveTeam()).isAVassal() && !GET_TEAM(GET_PLAYER(eOtherPlayer).getTeam()).isAVassal())

@@ -241,7 +241,7 @@ class CvMainInterface:
 		
 		#bluepotato start: mercenaries
 		iBtnX += iBtnAdvance
-		screen.setImageButton("MercenaryButton", ArtFileMgr.getInterfaceArtInfo("INTERFACE_MERCENARIES_MANAGER").getPath(), iBtnX, iBtnY - 1, iBtnWidth, iBtnWidth, WidgetTypes.WIDGET_ACTION, -1, -1)
+		screen.setImageButton("MercenaryButton", ArtFileMgr.getInterfaceArtInfo("INTERFACE_MERCENARIES_MANAGER").getPath(), iBtnX, iBtnY - 1, iBtnWidth, iBtnWidth, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_MERCENARIES_MANAGER).getActionInfoIndex(), -1)
 		screen.hide("MercenaryButton")
 		#bluepotato end
 		

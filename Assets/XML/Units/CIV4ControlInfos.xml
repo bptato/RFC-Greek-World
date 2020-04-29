@@ -954,7 +954,7 @@
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_MERCENARIES_MANAGER</Type>
-			<Description>TXT_KEY_MERCENARIES_TITLE</Description>
+			<Description>TXT_KEY_MERCENARY_SCREEN_TITLE</Description>
 			<Help/>
 			<HotKey>KB_M</HotKey>
 			<bAltDown>0</bAltDown>

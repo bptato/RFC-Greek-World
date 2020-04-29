@@ -325,10 +325,12 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 			cityStability += 2;
 		}
 
-		if(loopCity->isHasReligion(stateReligion)) {
-			cityStability += 2;
-		} else {
-			cityStability -= 1;
+		if(stateReligion != NO_RELIGION) {
+			if(loopCity->isHasReligion(stateReligion)) {
+				cityStability += 2;
+			} else {
+				cityStability -= 1;
+			}
 		}
 
 		cityStability = std::min(5, cityStability);
@@ -439,7 +441,11 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 		}
 	}
 
-	newExpansionStability += std::min(5, corePopulation * 5 - borderPopulation * 2 - peripheryPopulation * 4);
+	int populationStability = corePopulation * 5 - borderPopulation * 2 - peripheryPopulation * 4;
+
+	populationStability = populationStability*100 / (100 + abs(populationStability));
+
+	newExpansionStability += std::min(5, populationStability);
 	newExpansionStability += std::min(5, corePopulation * 5 - getNumPlots());
 
 	//Set new stability
