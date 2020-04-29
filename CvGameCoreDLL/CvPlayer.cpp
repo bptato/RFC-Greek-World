@@ -6539,6 +6539,12 @@ int CvPlayer::calculateUnitCost() const
 		return 0;
 	}
 
+	//bluepotato start
+	if(isMinorCiv()) {
+		return 0;
+	}
+	//bluepotato end
+
 	int iFreeUnits;
 	int iFreeMilitaryUnits;
 	int iPaidUnits;
@@ -6552,6 +6558,12 @@ int CvPlayer::calculateUnitCost() const
 
 int CvPlayer::calculateUnitSupply() const
 {
+	//bluepotato start
+	if(isMinorCiv()) {
+		return 0;
+	}
+	//bluepotato end
+
 	int iPaidUnits;
 	int iBaseSupplyCost;
 
@@ -12997,14 +13009,15 @@ void CvPlayer::doGold()
 	int iDisbandUnit;
 	int iI;
 
-	CyArgsList argsList;
+	//bluepotato: disabled for speed
+	/*CyArgsList argsList;
 	argsList.add(getID());
 	long lResult=0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "doGold", argsList.makeFunctionArgs(), &lResult);
 	if (lResult == 1)
 	{
 		return;
-	}
+	}*/
 
 	iGoldChange = calculateGoldRate();
 

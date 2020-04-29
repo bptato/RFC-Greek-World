@@ -547,17 +547,7 @@ void CvPlayerAI::AI_doTurnUnitsPost()
 		return;
 	}
 
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       06/16/09                                jdog5000      */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
-	// Moved here per alexman's suggestion
-	AI_doSplit();
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
-
+	//AI_doSplit(); //bluepotato
 }
 
 
@@ -13782,6 +13772,17 @@ void CvPlayerAI::AI_doCheckFinancialTrouble()
 
 bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 {
+
+	//bluepotato start (from Leoreth)
+	if (GC.getGame().getGameTurn() < GC.getRiseFall().getRFCPlayer(getCivilizationType()).getStartingTurn() + 10) {
+		return false;
+	}
+
+	if (isMinorCiv()) {
+		return false;
+	}
+	//bluepotato end
+
 	CvUnit* pLoopUnit;
 	CvUnit* pBestUnit;
 	int iValue;

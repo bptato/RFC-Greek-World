@@ -50,7 +50,6 @@ void CvRiseFall::onGameStarted() {
 		}
 	}
 
-	game.setAIAutoPlay(0);
 	game.setAIAutoPlay(1);
 	checkTurn();
 }
