@@ -5190,7 +5190,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 	}
 
-	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && getNumCities() > 0) //bluepotato: players can found their first city even if their starting plot is controlled by other civs
+	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && getNumCities() > 0 && !isMinorCiv()) //bluepotato: players can found their first city even if their starting plot is controlled by other civs; minor civs can found as many cities in foreign territory as they wish
 	{
 		return false;
 	}
