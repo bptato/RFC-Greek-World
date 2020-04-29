@@ -12733,7 +12733,8 @@ void CvPlayerAI::AI_doDiplo()
 											{
 												if (GET_TEAM((TeamTypes)iJ).isAlive())
 												{
-													if (atWar(((TeamTypes)iJ), getTeam()) && !atWar(((TeamTypes)iJ), GET_PLAYER((PlayerTypes)iI).getTeam()))
+													if (atWar(((TeamTypes)iJ), getTeam()) && !atWar(((TeamTypes)iJ), GET_PLAYER((PlayerTypes)iI).getTeam())
+													&& !GET_PLAYER((PlayerTypes)iJ).isMinorCiv()) //Rhye
 													{
 														if (GET_TEAM((TeamTypes)iJ).getAtWarCount(true) < std::max(2, (GC.getGameINLINE().countCivTeamsAlive() / 2)))
 														{

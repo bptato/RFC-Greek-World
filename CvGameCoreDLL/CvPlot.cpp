@@ -2751,7 +2751,7 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	}
 
 	//bluepotato start: Roman UP
-	if (GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIVILIZATION_ROME) {
+	if(getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIVILIZATION_ROME) {
 		iRouteCost /= 2;
 		iRouteFlatCost /= 2;
 	}
