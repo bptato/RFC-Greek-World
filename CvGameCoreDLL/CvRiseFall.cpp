@@ -399,11 +399,11 @@ void CvRiseFall::spawnHumanCivilization(CivilizationTypes civType) {
 			}
 
 			finishMajorCivSpawn(civType, (PlayerTypes)i);
-			GC.logMsg("CvRiseFall::spawnAICivilization - Spawned human civ %i", civType);
+			GC.logMsg("CvRiseFall::spawnHumanCivilization - Spawned human civ %i", civType);
 			return;
 		}
 	}
-	GC.logMsg("CvRiseFall::spawnAICivilization - Failed to spawn human civ %i", civType);
+	GC.logMsg("CvRiseFall::spawnHumanCivilization - Failed to spawn human civ %i", civType);
 }
 
 void CvRiseFall::spawnAICivilization(CivilizationTypes civType) {

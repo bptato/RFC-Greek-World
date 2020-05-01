@@ -4141,7 +4141,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 	case TRADE_PEACE:
 		if (!(GET_TEAM(getTeam()).isHuman()))
 		{
-			if (!(GET_TEAM(getTeam()).isAVassal()))
+			if (!(GET_TEAM(getTeam()).isAVassal()) && !(GET_TEAM((TeamTypes)(item.m_iData)).isMinorCiv())) //bluepotato
 			{
 				if (GET_TEAM(getTeam()).isHasMet((TeamTypes)(item.m_iData)) && GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isHasMet((TeamTypes)(item.m_iData)))
 				{
@@ -4174,7 +4174,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_EMBARGO:
-		if (!(GET_TEAM(getTeam()).isHuman()))
+		if (!(GET_TEAM(getTeam()).isHuman()) && !(GET_TEAM((TeamTypes)(item.m_iData)).isMinorCiv())) //bluepotato
 		{
 			if (GET_TEAM(getTeam()).isHasMet((TeamTypes)(item.m_iData)) && GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isHasMet((TeamTypes)(item.m_iData)))
 			{
