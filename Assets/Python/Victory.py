@@ -379,7 +379,7 @@ class Victory:
 					else:
 						self.setGoal(iEgypt, 0, 0)
 				elif (iGameTurn == i1690BC):
-					if (gc.getGame().getTeamRank(iEgypt) == 0):
+					if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
 						self.setGoal(iEgypt, 1, 1)
 					else:
 						self.setGoal(iEgypt, 1, 0)
