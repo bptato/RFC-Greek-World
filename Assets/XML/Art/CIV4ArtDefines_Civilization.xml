@@ -146,7 +146,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_HITTITE</Type>
-			<Button>,Art\Interface\Buttons\Civilizations/Hitties.dds</Button>
+			<Button>,Art\Interface\Buttons\Civilizations/Hittites.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_SunSymbol.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>

@@ -532,6 +532,14 @@ std::vector<CvRFCCity>& CvRFCPlayer::getScheduledCities() {
 	return scheduledCities;
 }
 
+int CvRFCPlayer::getNumScheduledUnits() {
+	return scheduledUnits.size();
+}
+
+int CvRFCPlayer::getNumScheduledCities() {
+	return scheduledCities.size();
+}
+
 CivicTypes CvRFCPlayer::getStartingCivic(CivicOptionTypes civicOptionType) const {
 	return (CivicTypes)startingCivics[civicOptionType];
 }

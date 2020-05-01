@@ -53,6 +53,8 @@ class CvRFCPlayer {
 		CivilizationTypes getCivilizationType();
 		std::vector<CvRFCUnit>& getScheduledUnits();
 		std::vector<CvRFCCity>& getScheduledCities();
+		int getNumScheduledUnits();
+		int getNumScheduledCities();
 		std::vector<CivilizationTypes>& getRelatedLanguages();
 		bool isEnabled() const;
 		int getStartingPlotX() const;

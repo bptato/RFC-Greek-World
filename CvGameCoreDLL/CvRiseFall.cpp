@@ -59,6 +59,7 @@ void CvRiseFall::checkTurn() {
 
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
 		CvRFCPlayer& rfcPlayer = getRFCPlayer((CivilizationTypes)i);
+
 		if(!rfcPlayer.isEnabled()) {
 			continue;
 		}
@@ -104,7 +105,7 @@ void CvRiseFall::checkTurn() {
 
 			playerType = getPlayerTypeForCiv((CivilizationTypes)i); //refresh playerType as we might've spawned now
 
-			if(playerType != NO_PLAYER) { //if yes, check scheduled units and cities.
+			if(playerType != NO_PLAYER) { //if yes, check stability, flipping, scheduled units and cities.
 				CvPlayer& player = GET_PLAYER(playerType);
 
 				//Stability effect check
@@ -634,7 +635,7 @@ PlayerTypes CvRiseFall::getPlayerTypeForCiv(CivilizationTypes civType) {
 	for(int i = 0; i<MAX_PLAYERS; i++) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
-		if(GC.getGame().getGameTurn()==GC.getGame().getStartTurn() && rfcPlayer.getStartingYear() > GC.getGame().getGameTurnYear()) {
+		if(!rfcPlayer.isMinor() && GC.getGame().getGameTurn()==GC.getGame().getStartTurn() && rfcPlayer.getStartingYear() > GC.getGame().getGameTurnYear()) {
 			continue;
 		}
 		if((rfcPlayer.getFlipCountdown() == 3 || player.isAlive() || player.isMinorCiv() || player.isBarbarian()) && player.getCivilizationType() == civType) {
