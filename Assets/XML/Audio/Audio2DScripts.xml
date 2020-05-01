@@ -9049,8 +9049,8 @@
 		<ScriptID>AS2D_BUILD_HELLENIC</ScriptID>
 		<SoundID>SND_BUILD_HELLENIC</SoundID>
 		<SoundType>GAME_SFX</SoundType>
-		<iMinVolume>90</iMinVolume>
-		<iMaxVolume>90</iMaxVolume>
+		<iMinVolume>80</iMinVolume>
+		<iMaxVolume>80</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -9072,8 +9072,8 @@
 		<ScriptID>AS2D_BUILD_HELLENIC_MOVIE</ScriptID>
 		<SoundID>SND_BUILD_HELLENIC_MOVIE</SoundID>
 		<SoundType>GAME_SFX</SoundType>
-		<iMinVolume>80</iMinVolume>
-		<iMaxVolume>80</iMaxVolume>
+		<iMinVolume>70</iMinVolume>
+		<iMaxVolume>70</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -9095,8 +9095,8 @@
 		<ScriptID>AS2D_BUILD_BAALITE</ScriptID>
 		<SoundID>SND_BUILD_BAALITE</SoundID>
 		<SoundType>GAME_SFX</SoundType>
-		<iMinVolume>90</iMinVolume>
-		<iMaxVolume>90</iMaxVolume>
+		<iMinVolume>80</iMinVolume>
+		<iMaxVolume>80</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -9118,8 +9118,8 @@
 		<ScriptID>AS2D_BUILD_BAALITE_MOVIE</ScriptID>
 		<SoundID>SND_BUILD_BAALITE_MOVIE</SoundID>
 		<SoundType>GAME_SFX</SoundType>
-		<iMinVolume>80</iMinVolume>
-		<iMaxVolume>80</iMaxVolume>
+		<iMinVolume>70</iMinVolume>
+		<iMaxVolume>70</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>

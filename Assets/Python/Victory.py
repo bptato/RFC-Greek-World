@@ -468,13 +468,13 @@ class Victory:
 					self.setGoal(iElam, 2, 0)
 		elif (civType == iMinoa):
 			if (iGameTurn == i1400BC):
-				if (teamMinoa.isHasTech(tech('calendar'))):
+				if (gc.getTeam(pPlayer.getTeam()).isHasTech(tech('calendar'))):
 					self.setGoal(iMinoa, 0, 1)
 				else:
 					self.setGoal(iMinoa, 0, 0)
 
 			if (iGameTurn == i1200BC):
-				if (gc.getGame().getTeamRank(iMinoa) == 0):
+				if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
 					self.setGoal(iMinoa, 1, 1)
 				else:
 					self.setGoal(iMinoa, 1, 0)
@@ -587,7 +587,12 @@ class Victory:
 			if self.getGoal(iMycenae, 1) == -1 and iGameTurn > i1100BC:
 				self.setGoal(iMycenae, 1, 0)
 			if iGameTurn == i1000BC:
-				barbCities = provLydia.getNumCities(civ2player(iBarbarian)) + provLydia.getNumCities(civ2player(iIndependent)) + provLydia.getNumCities(civ2player(iIndependent2)) + provAnatolia.getNumCities(civ2player(iBarbarian)) + provAnatolia.getNumCities(civ2player(iIndependent)) + provAnatolia.getNumCities(civ2player(iIndependent2))
+				barbCities = provLydia.getNumCities(civ2player(iBarbarian)) \
+				+ provLydia.getNumCities(civ2player(iIndependent)) \
+				+ provLydia.getNumCities(civ2player(iIndependent2)) \
+				+ provAnatolia.getNumCities(civ2player(iBarbarian)) \
+				+ provAnatolia.getNumCities(civ2player(iIndependent)) \
+				+ provAnatolia.getNumCities(civ2player(iIndependent2))
 
 				if barbCities > 0:
 					self.setGoal(iMycenae, 2, 0)
