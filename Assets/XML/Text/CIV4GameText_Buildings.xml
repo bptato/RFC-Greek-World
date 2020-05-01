@@ -248,7 +248,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANAKTORA_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]The Anaktora is the Minoan replacement for walls. It increases the city's research output by 25%.[COLOR_REVERT]</English>
+		<English>The [COLOR_HIGHLIGHT_TEXT]Anaktora[COLOR_REVERT] is the Minoan replacement for walls. It increases the city's research output by 25%.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANAKTORA</Tag>

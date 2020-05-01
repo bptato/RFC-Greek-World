@@ -406,7 +406,7 @@ class Victory:
 			if (iGameTurn == i2000BC):
 				bestCity = self.calculateTopCityCulture(46, 19)
 				if (bestCity != -1):
-					if (bestCity.getOwner() == iSumeria and bestCity.getX() == 46 and bestCity.getY() == 19):
+					if (bestCity.getOwner() == iPlayer and bestCity.getX() == 46 and bestCity.getY() == 19):
 						self.setGoal(iSumeria, 1, 1)
 					else:
 						self.setGoal(iSumeria, 1, 0)
@@ -482,7 +482,7 @@ class Victory:
 			if (iGameTurn == i1000BC):
 				bestCity = self.calculateTopCityCulture(33, 21)
 				if (bestCity != -1):
-					if (bestCity.getOwner() == iMinoa and bestCity.getX() == 33 and bestCity.getY() == 21):
+					if (bestCity.getOwner() == iPlayer and bestCity.getX() == 33 and bestCity.getY() == 21):
 						self.setGoal(iMinoa, 2, 1)
 					else:
 						self.setGoal(iMinoa, 2, 0)
