@@ -1613,7 +1613,16 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
 	pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
 	pNewCity->setHighestPopulation(iHighestPopulation);
-	pNewCity->setName(szName);
+	//bluepotato start: city name maps
+	//pNewCity->setName(szName);
+	CvWString plotCityName(pCityPlot->getCityName(getCivilizationType(), false, true));
+
+	if(!plotCityName.empty()) {
+		pNewCity->setName(plotCityName);
+	} else {
+		pNewCity->setName(szName);
+	}
+	//bluepotato end
 	pNewCity->setNeverLost(false);
 	pNewCity->changeDefenseDamage(iDamage);
 

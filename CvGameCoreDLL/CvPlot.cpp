@@ -10071,7 +10071,7 @@ void CvPlot::eraseAIDevelopment()
 //Rhye - end
 
 //bluepotato start
-const wchar* CvPlot::getCityName(CivilizationTypes civType, bool precise) {
+const wchar* CvPlot::getCityName(CivilizationTypes civType, bool precise, bool relatedOnly) {
 	if(!cityNames[civType].empty()) {
 		return cityNames[civType];
 	}
@@ -10082,7 +10082,9 @@ const wchar* CvPlot::getCityName(CivilizationTypes civType, bool precise) {
 			if(GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).isRelatedLanguage(civType)) {
 				return cityNames[i];
 			}
-			fallback = cityNames[i];
+			if(!relatedOnly) {
+				fallback = cityNames[i];
+			}
 		}
 	}
 	return fallback;

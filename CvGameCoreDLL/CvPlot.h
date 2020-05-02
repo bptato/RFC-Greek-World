@@ -481,7 +481,7 @@ public:
 
 	//bluepotato start
 	void eraseAIDevelopment();
-	const wchar* getCityName(CivilizationTypes civType, bool precise = false);
+	const wchar* getCityName(CivilizationTypes civType, bool precise = false, bool relatedOnly = false);
 	void setCityName(CivilizationTypes civType, const wchar* newName);
 	short getSettlerValue(CivilizationTypes civType);
 	void setSettlerValue(CivilizationTypes civType, short settlerValue);
