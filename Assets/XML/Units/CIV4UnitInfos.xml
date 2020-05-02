@@ -954,10 +954,6 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_RAILROAD</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
 					<BuildType>BUILD_FARM</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -1184,10 +1180,6 @@
 			<Builds>
 				<Build>
 					<BuildType>BUILD_ROAD</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
-				<Build>
-					<BuildType>BUILD_RAILROAD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>

@@ -334,7 +334,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -422,7 +421,6 @@
 			<BonusesRequired/>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -1217,7 +1215,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -1312,7 +1309,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -3336,7 +3332,6 @@
 			<BonusesRequired/>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -3767,7 +3762,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -4712,7 +4706,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -5300,7 +5293,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -7258,7 +7250,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -7516,7 +7507,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -7603,7 +7593,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -7862,7 +7851,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -7951,7 +7939,6 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
-				<RouteType>ROUTE_RAILROAD</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>

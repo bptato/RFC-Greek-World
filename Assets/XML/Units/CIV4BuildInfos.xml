@@ -26,25 +26,6 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildRoad.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,8</Button>
 		</BuildInfo>
 		<BuildInfo>
-			<Type>BUILD_RAILROAD</Type>
-			<Description>TXT_KEY_BUILD_RAILROAD</Description>
-			<Help/>
-			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<iTime>400</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
-			<RouteType>ROUTE_RAILROAD</RouteType>
-			<EntityEvent>ENTITY_EVENT_RAILROAD</EntityEvent>
-			<FeatureStructs/>
-			<HotKey>KB_R</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>1</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Builds/BuildRailroad.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,9</Button>
-		</BuildInfo>
-		<BuildInfo>
 			<Type>BUILD_FARM</Type>
 			<Description>TXT_KEY_BUILD_FARM</Description>
 			<Help/>

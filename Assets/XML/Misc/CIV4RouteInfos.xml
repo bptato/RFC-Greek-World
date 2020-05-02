@@ -25,26 +25,5 @@
 			</TechMovementChanges>
 			<Button>Art/Interface/Buttons/Builds/BuildRoad.dds</Button>
 		</RouteInfo>
-		<RouteInfo>
-			<Type>ROUTE_RAILROAD</Type>
-			<Description>Paved Road</Description>
-			<iValue>2</iValue>
-			<iAdvancedStartCost>18</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<iMovement>20</iMovement>
-			<iFlatMovement>6</iFlatMovement>
-			<BonusType>NONE</BonusType>
-			<PrereqOrBonuses>
-				<PrereqOrBonus>
-					<BonusType>BONUS_STONE</BonusType>
-				</PrereqOrBonus>
-				<PrereqOrBonus>
-					<BonusType>BONUS_MARBLE</BonusType>
-				</PrereqOrBonus>
-			</PrereqOrBonuses>
-			<Yields/>
-			<TechMovementChanges/>
-			<Button>Art/Interface/Buttons/Builds/BuildRailroad.dds</Button>
-		</RouteInfo>
 	</RouteInfos>
 </Civ4RouteInfos>
