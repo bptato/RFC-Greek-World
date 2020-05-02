@@ -14418,7 +14418,8 @@ void CvGameTextMgr::getInterfaceCenterText(CvWString& strText)
 		{
 			strText = gDLL->getText("TXT_KEY_MISC_WINS_VICTORY", GET_TEAM(GC.getGameINLINE().getWinner()).getName().GetCString(), GC.getVictoryInfo(GC.getGameINLINE().getVictory()).getTextKeyWide());
 		}
-		else if (!(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).isAlive()))
+		else if (!(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).isAlive())
+			&& GC.getRiseFall().getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isSpawned()) //bluepotato: do not show defeated thing before spawn
 		{
 			strText = gDLL->getText("TXT_KEY_MISC_DEFEAT");
 		}

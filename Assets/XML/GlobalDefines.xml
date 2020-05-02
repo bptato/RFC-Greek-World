@@ -1676,7 +1676,7 @@
 	</Define>
 	<Define>
 		<DefineName>MERCENARY_CREATION_RATE</DefineName>
-		<iDefineIntVal>80</iDefineIntVal>
+		<iDefineIntVal>90</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MERCENARY_BASE_HIRE_COST</DefineName>
@@ -1685,5 +1685,9 @@
 	<Define>
 		<DefineName>MERCENARY_HIRE_COST_MODIFIER</DefineName>
 		<iDefineIntVal>15</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>MERCENARY_MIN_LAST_ACTION_DIFFERENCE</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 </Civ4Defines>

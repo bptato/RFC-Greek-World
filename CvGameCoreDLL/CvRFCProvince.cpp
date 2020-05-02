@@ -57,7 +57,8 @@ void CvRFCProvince::checkMercenaries() {
 		CvUnit* unit = *it;
 		CvPlayer& unitOwner = GET_PLAYER(unit->getOwner());
 		if(!unit->isAnimal() && (unitOwner.isBarbarian() || unitOwner.isMinorCiv())) {
-			if(unit->getLastAction() != 0 && GC.getGame().getGameTurn() - unit->getLastAction() > 12) {
+			static int minLastActionDifference = GC.getDefineINT("MERCENARY_MIN_LAST_ACTION_DIFFERENCE");
+			if(unit->getLastAction() != 0 && GC.getGame().getGameTurn() - unit->getLastAction() >= minLastActionDifference) {
 				static int mercRate = GC.getDefineINT("MERCENARY_CREATION_RATE");
 				int mercOdds = mercRate;
 				if(createdMercs > 0) {
