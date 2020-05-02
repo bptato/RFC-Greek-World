@@ -7940,10 +7940,6 @@
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
-				<Build>
-					<BuildType>BUILD_WHALING_BOATS</BuildType>
-					<bBuild>1</bBuild>
-				</Build>
 			</Builds>
 			<ReligionSpreads/>
 			<CorporationSpreads/>

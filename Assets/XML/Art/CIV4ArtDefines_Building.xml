@@ -1168,16 +1168,6 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,14</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SHWEDAGON_PAYA</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.31</fScale>
-			<fInterfaceScale>0.27</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Shwedagon_Paya/Shwedagon_Paya.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,13</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1436,6 +1426,16 @@
 			<NIF>Art/Structures/Buildings/Trajan/trajan.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/trajans_column.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GREAT_COTHON</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>1.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/GreatCothon/doppelhafen.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/GreatCothon/Cothon.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

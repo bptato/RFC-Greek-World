@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- bluepotato: all religious building names (including shrines) go here -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>
+		<English>Zoroastrian Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
+		<English>Zoroastrian Fire Temple</English>
+		<French>
+			<Text>Temple Du Feu zoroastrien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zarathustrischer Feuertempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Tempio del Fuoco zoroastriano:Templi del Fuoco zoroastriani</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Templo del Fuego zoroastrano:Templos del Fuego zoroastranos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE</Tag>
+		<English>Adur Farnbag</English>
+		<French>
+			<Text>Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Adur Farnbag</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Adur Farnbag:Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE</Tag>
+		<English>Hellenic Temple</English>
+		<French>
+			<Text>Temple hell&#233;nique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Hellenistische Tempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Tempio ellenico:Templi ellenici</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Templo hel&#233;nico:Templos hel&#233;nicos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE</Tag>
+		<English>Hellenic Oracle</English>
+		<French>
+			<Text>Monast&#232;re hell&#233;nique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Hellenistische Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Monastero ellenico:Monasteri ellenici</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Monasterio hel&#233;nico:Monasterios hel&#233;nicos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LABYRINTH</Tag>
+		<English>Labyrinth</English>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE</Tag>
+		<English>Pesedjet Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_AMUN</Tag>
+		<English>Temple of Amun</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPHINX</Tag>
+		<English>Sphinx</English>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALITE_TEMPLE</Tag>
+		<English>Baalite Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALITE_SANCTUARY</Tag>
+		<English>Baalite Sanctuary</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAABED</Tag>
+		<English>Ma'abed</English>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_PEDIA</Tag>
+		<English>[TAB]A fire temple in Zoroastrianism is the place of worship for Zoroastrians. Although Zoroastrians revere fire in any form, the temple fire is not literally for the reverence of fire: In the Zoroastrian religion, fire (Atar), together with clean water (Aban), is an agent of ritual purity. Clean, white "ash for the purification ceremonies [is] regarded as the basis of ritual life," which, "are essentially the rites
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_PEDIA</Tag>
+		<English>[TAB]Apart from (relatively) minor fire temples, three were said to derive directly from Ahura Mazda, thus making them the most important in Zoroastrian tradition. These were the "Great Fires" or "Royal Fires" of Adur Burzen-Mihr, Adur Farnbag, and Adur Gushnasp. The legends of the great fires are probably of antiquity, for by the 3rd century CE, miracles were said to happen at the sites and the fires were popularly associated with other legends such as those of the folktale heroes Fereydun, Jamshid and Rustam.[PARAGRAPH:2:1]The Bundahishn, a Zoroastrian view of creation finished in the 11th or 12th century CE, states that the Great Fires had existed since creation and had been brought forth on the back of the ox Srishok to propagate the faith, dispel doubt, and to protect all humankind. Other texts observe that the Great Fires were also vehicles of propaganda and symbols of imperial sovereignty.[PARAGRAPH:2:1]The priests of these respective "Royal Fires" are said to have competed with each other to draw pilgrims by promoting the legends and miracles that were purported to have occurred at their respective sites. Each of the three is also said to have mirrored social and feudal divisions: "The fire which is Farnbag has made its place among the priests; ... the fire which is Gushnasp has made its place among the warriors; ... the fire which is Burzin-Mitro has made its place among agriculturists" (Denkard, 6.293). These divisions, from an archaeological point of view, are most revealing, since from at least the 1st century BCE onwards, society was divided into four, not three, feudal estates.[PARAGRAPH:2:1]The Farnbag fire (translated as 'the fire Glory-Given' by Darmesteter) was considered the most venerated of the three because it was seen as the earthly representative of the Atar Spenishta, 'Holiest Fire' of Yasna 17.11 and described in a Zend commentary on that verse as the "the one burning in Paradise in the presence of Ohrmazd."</English>
+	</TEXT> proper to the tending of a domestic fire, for the temple [fire] is that of the hearth fire raised to a new solemnity" (Boyce, 1975:455).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE_PEDIA</Tag>
+		<English>[TAB]In Civilization IV, a temple is defined as a building where the faithful come to worship. Christians call their temples "churches," while Muslims call theirs "mosques," and Jews call theirs, simply, "temples." Temples are far more common than cathedrals, but much less large and ornate. Even the smallest village can possess a temple. [PARAGRAPH:2:1]The Hellenic religion of the ancient Greeks possessed a priesthood, but priests and priestesses were associated with worship at a single location, be it a temple or religious shrine. It was possible for anyone who knew the proper rites to lead a sacrifice and prayer to the gods, and the Greek gods and goddesses could similarly appear to anyone without the need for intercession by the clergy. There was no hierarchy of priests for the ancient Greeks, and in fact the priests of one temple or region usually had no association with another. There was no such thing as a Greek _church_; religion was simply another aspect of the Greek polis and was largely controlled by the state.</English>
+		<French>[TAB]Dans Civilization IV, un petit lieu de culte est d&#233;fini comme un &#233;difice dans lequel les fid&#232;les viennent pratiquer leur religion : "&#233;glises" pour les chr&#233;tiens, "petites mosqu&#233;es" pour les musulmans et "petites synagogues" pour les juifs. Ces petits lieux de culte sont bien plus courants que les grands lieux de culte mais sont de taille plus r&#233;duite et sont bien moins richement orn&#233;s. M&#234;me le village le plus petit peut poss&#233;der un petit lieu de culte. [PARAGRAPH:2:1]La religion hell&#233;nique des Grecs de l'Antiquit&#233; dispose d'un clerg&#233;, mais les pr&#234;tres et les pr&#234;tresses se voient affecter &#224; un seul lieu de culte, &#224; savoir un temple ou un sanctuaire religieux. Quiconque conna&#238;t les rites appropri&#233;s peut accomplir un sacrifice et formuler une pri&#232;re aux dieux. De leur c&#244;t&#233;, les dieux grecs peuvent appara&#238;tre &#224; tout fid&#232;le en n'importe quel lieu, sans l'intercession d'un pr&#234;tre. Il n'existe aucune hi&#233;rarchie entre les pr&#234;tres et l'autorit&#233; religieuse est plac&#233;e sous le contr&#244;le de l'&#233;tat.</French>
+		<German>[TAB]In Civilization IV sind Tempel Geb&#228;ude, in denen Gl&#228;ubige beten. Christen nennen ihre Tempel "Kirchen", Moslems "Moscheen". Es gibt deutlich mehr Tempel als Kathedralen. Allerdings sind sie wesentlich kleiner und schlichter. Selbst das kleinste Dorf kann einen Tempel besitzen. [PARAGRAPH:2:1]Die Religion der Griechen im hellenistischen Zeitalter wurde zwar durch eine Priesterschaft repr&#228;sentiert, das T&#228;tigkeitsfeld der Priester und Priesterinnen war jedoch ausschlie&#223;lich auf einen einzigen Standort beschr&#228;nkt: den eigenen Tempel oder religi&#246;sen Schrein. Jeder, der die dazugeh&#246;rigen Riten beherrschte, durfte Opferungen durchf&#252;hren und Gebete an die G&#246;tter richten. Dementsprechend erschienen die G&#246;tter und G&#246;ttinnen auch jedem beliebigen Menschen, ohne dass er daf&#252;r ein Mitglied des Klerus sein musste. Es gab keine hierarchische Struktur in der griechischen Priesterschaft. Jeder arbeitete f&#252;r sich, die Priester eines Tempels oder einer Region standen in der Regel nicht einmal mit anderen Geistlichen in Kontakt. So etwas wie eine gemeinschaftliche "griechische Kirche" gab es nicht. Die Religion war in den griechischen Stadtstaaten allgegenw&#228;rtig und unterlag in weiten Teilen der Kontrolle des Staates.</German>
+		<Italian>[TAB]In Civilization IV, il tempio &#232; un edificio all'interno del quale i fedeli si recano a pregare. I Cristiani chiamano i loro templi "chiese", i Musulmani "moschee", gli Ebrei semplicemente "templi". I templi sono pi&#249; comuni delle cattedrali, ma sono pi&#249; piccoli e poco fastosi. Anche il villaggio pi&#249; piccolo ospita un tempio. [PARAGRAPH:2:1]La religione ellenica prevedeva la presenza di sacerdoti, ma sacerdoti e sacerdotesse erano legati al culto in un determinato luogo, fosse un tempio o un santuario. Purch&#233; conoscesse i giusti rituali, chiunque poteva presiedere alla preghiera e ai sacrifici e ugualmente le divinit&#224; greche potevano apparire a chiunque senza che fosse necessaria l'intermediazione dei sacerdoti. All'interno del sacerdozio non c'era alcuna gerarchia e anzi spesso non c'era alcun rapporto tra i sacerdoti di uno stesso tempio o di una stessa regione. Non esisteva una "chiesa" greca: la religione era semplicemente una delle sfaccettature della polis greca ed era controllata dallo stato.</Italian>
+		<Spanish>[TAB]En Civilization IV, un templo se define como un lugar al que los fieles acuden a venerar. Los cristianos llaman a sus templos "iglesias", mientras que para los musulmanes son "mezquitas" y para los jud&#237;os, sencillamente, "templos". Son mucho m&#225;s comunes que las catedrales, pero tambi&#233;n mucho m&#225;s peque&#241;os y humildes. Hasta la m&#225;s peque&#241;a aldea puede poseer uno. [PARAGRAPH:2:1]La religi&#243;n de los antiguos griegos contaba con un sistema de sacerdocio, pero los sacerdotes y sacerdotisas se asociaban a un lugar concreto, por ejemplo un templo o un santuario. Cualquiera que conociese los ritos apropiados pod&#237;a realizar los sacrificios y elevar plegarias a los dioses y, del mismo modo, era posible apelar a los dioses y diosas sin la intercesi&#243;n de los cl&#233;rigos. No exist&#237;a una jerarqu&#237;a de sacerdotes y, de hecho, normalmente los sacerdotes de los diferentes templos o regiones no estaban asociados. No exist&#237;a nada parecido a una "iglesia" griega; la religi&#243;n era simplemente otro aspecto de la polis griega y, como tal, estaba en manos del estado.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE_PEDIA</Tag>
+		<English>[TAB]The word oracle comes from the Latin verb orare, "to speak" and properly refers to the priest or priestess uttering the prediction. In extended use, oracle may also refer to the site of the oracle, and to the oracular utterances themselves, called khresme in Greek. [PARAGRAPH:2:1]Oracles were thought to be portals through which the gods spoke directly to people. In this sense they were different from seers (manteis) who interpreted signs sent by the gods through bird signs, animal entrails, and other various methods.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPHINX_PEDIA</Tag>
+		<English>A limestone statue of a reclining sphinx, a mythical creature with the body of a lion and the head of a human. Facing directly from West to East, it stands on the Giza Plateau on the west bank of the Nile in Giza, Egypt. The face of the Sphinx is generally believed to represent the Pharaoh Khafre.  Cut from the bedrock, the original shape of the Sphinx has been restored with layers of blocks. It measures 73 metres (240 ft) long from paw to tail, 20.21 m (66.31 ft) high from the base to the top of the head and 19 metres (62 ft) wide at its rear haunches.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_BAAL_PEDIA</Tag>
+		<English>The temple was built on a tell with stratification indicating human occupation that goes back to the third millennium BC. The area was occupied in pre-Roman periods with a former temple that is usually referred to as "the first temple of Bel" and "the Hellenistic temple".</English>
+	</TEXT>
+</Civ4GameText>

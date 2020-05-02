@@ -142,10 +142,6 @@
 			<Type>ART_DEF_MOVIE_STATUE_OF_ZEUS</Type>
 			<Path>Art/Movies/Wonders/Zeus.bik</Path>
 		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHWEDAGON_PAYA</Type>
-			<Path>Art/Movies/Wonders/Shwedagon Paya.bik</Path>
-		</MovieArtInfo>
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_ISHTAR_GATE</Type>
 			<Path>Art/Movies/Shrines/IshtarGate.bik</Path>
@@ -177,6 +173,10 @@
 		 <MovieArtInfo>
 			<Type>ART_DEF_MOVIE_TRAJANS_COLUMN</Type>
 			<Path>Art/Movies/Wonders/Trajan.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_COTHON</Type>
+			<Path>Art/Movies/Wonders/Carthage_Port.bik</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

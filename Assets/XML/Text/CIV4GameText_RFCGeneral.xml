@@ -24,14 +24,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_DEFEAT</Tag>
-		<English/>
-		<French/>
-		<German/>
-		<Italian/>
-		<Spanish/>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_MISC_DEFEAT2</Tag>
 		<English>You have been defeated!!!</English>
 		<French>Vous essuyez une défaite !!!</French>
 		<German>Wir wurden besiegt!!!</German>

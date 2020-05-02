@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- bluepotato: Wonder texts go here -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_COTHON</Tag>
+		<English>The Great Cothon</English>
+		<French>
+			<Text>Grand Cothon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Der Gro&#223;e Cothon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>The Great Cothon</Italian>
+		<Spanish>The Great Cothon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_COTHON_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile worked by its city. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_COTHON_PEDIA</Tag>
+		<English>[TAB]The cothon at Carthage was divided into a rectangular merchant harbor followed by an inner protected harbor reserved for military use only. This inner harbor was circular and surrounded by an outer ring of structures divided into a series of docking bays for ship maintenance, along with an island structure at its center that also housed navy ships. Each individual docking bay featured a raised slipway. Above the raised docking bays was a second level consisting of warehouses where oars and rigging were kept along with supplies such as wood and canvas. On the island structure there existed a raised 'cabin' where the admiral in command could observe the whole harbor along with the surrounding sea. Altogether the inner docking complex could house up to 220 ships. The entire harbor was protected by an outer wall and the main entrance could be closed off with iron chains.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAJANS_COLUMN</Tag>
+		<English>Trajan's Column</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAJANS_COLUMN_PEDIA</Tag>
+		<English>[TAB]Trajan's Column (Italian: Colonna Traiana) is a Roman triumphal column in Rome, Italy, that commemorates Roman emperor Trajan's victory in the Dacian Wars. It was probably constructed under the supervision of the architect Apollodorus of Damascus at the order of the Roman Senate. It is located in Trajan's Forum, built near the Quirinal Hill, north of the Roman Forum. Completed in AD 113, the freestanding column is most famous for its spiral bas relief, which artistically describes the epic wars between the Romans and Dacians (101-102 and 105-106). Its design has inspired numerous victory columns, both ancient and modern.The structure is about 30 metres (98 ft) in height, 35 metres (125 ft) including its large pedestal. The shaft is made from a series of 20 colossal Carrara marble drums, each weighing about 32 tons, with a diameter of 3.7 metres (11 ft). The 190-metre (625 ft) frieze winds around the shaft 23 times. Inside the shaft, a spiral staircase of 185 stairs provides access to a viewing platform at the top. The capital block of Trajan's Column weighs 53.3 tons, which had to be lifted to a height of c. 34 m.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUSTAM</Tag>
+		<English>Naqsh-e-Rustam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUSTAM_PEDIA</Tag>
+		<English>[TAB]Naqsh-e Rustam also referred to as Necropolis is an archaeological site located about 12 km northwest of Persepolis, in Fars province, Iran. Naqsh-e Rustam lies a few hundred meters from Naqsh-e Rajab. The oldest relief at Naqsh-i Rustam is severely damaged and dates to c. 1000 BC. It depicts a faint image of a man with unusual head-gear and is thought to be Elamite in origin. The depiction is part of a larger mural, most of which was removed at the command of Bahram II. The man with the unusual cap gives the site its name, Naqsh-e Rostam, &quot;Picture of Rostam&quot;, because the relief was locally believed to be a depiction of the mythical hero Rostam. The triumph of Shapur I (c. 241-272):  is the most famous of the Sassanid rock reliefs, and depicts Shapur's victory over two Roman emperors, Valerian and Philip the Arab. A more elaborate version of this rock relief is at Bishapur.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUSTAM_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Naqsh-e-Rustam[COLOR_REVERT] increases likelihood a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] will be produced, increases cultural output, and increases the likelihood a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT] will be generated.</English>
+	</TEXT>
+</Civ4GameText>

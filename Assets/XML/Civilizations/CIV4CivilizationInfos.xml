@@ -3267,7 +3267,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MOAI_STATUES</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_GREAT_COTHON</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3324,10 +3324,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARTEMIS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SHWEDAGON_PAYA</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3518,7 +3514,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MOAI_STATUES</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_GREAT_COTHON</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3575,10 +3571,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARTEMIS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SHWEDAGON_PAYA</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3785,7 +3777,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MOAI_STATUES</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_GREAT_COTHON</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3842,10 +3834,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARTEMIS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SHWEDAGON_PAYA</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
