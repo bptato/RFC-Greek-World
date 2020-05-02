@@ -123,7 +123,7 @@ def getMapDescriptionKey():
 	
 def isRandomMap():
 	"If true, this is really a mod, not a scenario"
-	return True
+	return False
 
 def getPlayerData():
 	print "CvWBInterface.getPlayerData()"
