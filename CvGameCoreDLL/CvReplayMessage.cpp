@@ -9,6 +9,10 @@ CvReplayMessage::CvReplayMessage(int iTurn, ReplayMessageTypes eType, PlayerType
 	m_iPlotY(-1),
 	m_eColor(NO_COLOR)
 {
+	//bluepotato: fix player color types
+	if(ePlayer != NO_PLAYER) {
+		playerColor = GET_PLAYER(ePlayer).getPlayerColor();
+	}
 }
 
 CvReplayMessage::~CvReplayMessage()
@@ -24,6 +28,7 @@ const CvReplayMessage& CvReplayMessage::operator=(const CvReplayMessage& other)
 	m_ePlayer = other.m_ePlayer;
 	m_szText = other.m_szText;
 	m_eColor = other.m_eColor;
+	playerColor = other.playerColor; //bluepotato
 
 	return (*this);
 }
@@ -74,6 +79,12 @@ PlayerTypes CvReplayMessage::getPlayer() const
 	return m_ePlayer;
 }
 
+//bluepotato start: fix player color types
+PlayerColorTypes CvReplayMessage::getPlayerColor() const {
+	return playerColor;
+}
+//bluepotato end
+
 void CvReplayMessage::setText(CvWString pszText)
 {
 	m_szText = pszText;
@@ -112,6 +123,10 @@ void CvReplayMessage::read(FDataStreamBase& stream)
 	stream.ReadString(m_szText);
 	stream.Read(&iType);
 	m_eColor = (ColorTypes)iType;
+
+	//bluepotato
+	stream.Read(&iType);
+	playerColor = (PlayerColorTypes)iType;
 }
 
 void CvReplayMessage::write(FDataStreamBase& stream) const
@@ -123,5 +138,7 @@ void CvReplayMessage::write(FDataStreamBase& stream) const
 	stream.Write(m_ePlayer);
 	stream.WriteString(m_szText);
 	stream.Write(m_eColor);
+	//bluepotato
+	stream.Write(playerColor);
 }
 

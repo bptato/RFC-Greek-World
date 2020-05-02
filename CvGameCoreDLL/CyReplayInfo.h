@@ -66,6 +66,8 @@ public:
 
 	const char* getModName() const;
 
+	int getReplayMessagePlayerColor(int i) const;
+
 private:
 	CvReplayInfo* m_pHoF;
 

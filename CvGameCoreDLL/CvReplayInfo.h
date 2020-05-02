@@ -42,6 +42,7 @@ public:
 	DllExport int getReplayMessagePlotX(uint i) const;
 	DllExport int getReplayMessagePlotY(uint i) const;
 	DllExport PlayerTypes getReplayMessagePlayer(uint i) const;
+	ColorTypes getReplayMessagePlayerColor(uint i) const; //bluepotato
 	DllExport const wchar* getReplayMessageText(uint i) const;
 	DllExport uint getNumReplayMessages() const;
 	DllExport ColorTypes getReplayMessageColor(uint i) const;
@@ -96,7 +97,7 @@ protected:
 	bool m_bMultiplayer;
 
 	typedef std::vector<const CvReplayMessage*> ReplayMessageList;
-	ReplayMessageList m_listReplayMessages; 
+	ReplayMessageList m_listReplayMessages;
 
 	int m_iInitialTurn;
 	int m_iFinalTurn;

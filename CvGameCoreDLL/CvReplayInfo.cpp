@@ -408,6 +408,25 @@ PlayerTypes CvReplayInfo::getReplayMessagePlayer(uint i) const
 	return pMessage->getPlayer();
 }
 
+//bluepotato start: fix replay colors
+ColorTypes CvReplayInfo::getReplayMessagePlayerColor(uint i) const
+{
+	if (i >= m_listReplayMessages.size()) {
+		return NO_COLOR;
+	}
+	const CvReplayMessage* pMessage =  m_listReplayMessages[i];
+	if (NULL == pMessage) {
+		return NO_COLOR;
+	}
+
+	if(pMessage->getPlayerColor() == NO_PLAYERCOLOR || pMessage->getPlayerColor() > GC.getNumPlayerColorInfos()) {
+		return NO_COLOR;
+	}
+
+	return (ColorTypes)GC.getPlayerColorInfo(pMessage->getPlayerColor()).getColorTypePrimary();
+}
+//bluepotato end
+
 LPCWSTR CvReplayInfo::getReplayMessageText(uint i) const
 {
 	if (i >= m_listReplayMessages.size())

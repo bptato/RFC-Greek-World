@@ -417,3 +417,8 @@ const char* CyReplayInfo::getModName() const
 	}
 	return "";
 }
+
+//bluepotato
+int CyReplayInfo::getReplayMessagePlayerColor(int i) const {
+	return m_pHoF ? m_pHoF->getReplayMessagePlayerColor((uint)i) : NO_COLOR;
+}
