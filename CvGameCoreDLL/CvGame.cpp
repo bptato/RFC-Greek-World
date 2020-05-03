@@ -7471,6 +7471,12 @@ void CvGame::addReplayMessage(ReplayMessageTypes eType, PlayerTypes ePlayer, CvW
 			eColor = (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE");
 		}
 		pMessage->setColor(eColor);
+
+		//bluepotato
+		if(eType == REPLAY_MESSAGE_PLOT_OWNER_CHANGE) {
+			pMessage->setPlayerColor(GET_PLAYER(ePlayer).getPlayerColor());
+		}
+
 		m_listReplayMessages.push_back(pMessage);
 	}
 }
@@ -7586,6 +7592,20 @@ ColorTypes CvGame::getReplayMessageColor(uint i) const
 	return pMessage->getColor();
 }
 
+
+//bluepotato start: fix replay colors
+PlayerColorTypes CvGame::getReplayMessagePlayerColor(uint i) const {
+	if (i >= m_listReplayMessages.size()) {
+		return NO_PLAYERCOLOR;
+	}
+	const CvReplayMessage* pMessage =  m_listReplayMessages[i];
+	if (NULL == pMessage) {
+		return NO_PLAYERCOLOR;
+	}
+
+	return pMessage->getPlayerColor();
+}
+//bluepotato end
 
 uint CvGame::getNumReplayMessages() const
 {

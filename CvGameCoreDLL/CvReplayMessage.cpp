@@ -7,12 +7,9 @@ CvReplayMessage::CvReplayMessage(int iTurn, ReplayMessageTypes eType, PlayerType
 	m_eType(eType),
 	m_iPlotX(-1),
 	m_iPlotY(-1),
-	m_eColor(NO_COLOR)
+	m_eColor(NO_COLOR),
+	playerColor(NO_PLAYERCOLOR) //bluepotato
 {
-	//bluepotato: fix player color types
-	if(ePlayer != NO_PLAYER) {
-		playerColor = GET_PLAYER(ePlayer).getPlayerColor();
-	}
 }
 
 CvReplayMessage::~CvReplayMessage()
@@ -80,6 +77,10 @@ PlayerTypes CvReplayMessage::getPlayer() const
 }
 
 //bluepotato start: fix player color types
+void CvReplayMessage::setPlayerColor(PlayerColorTypes newPlayerColor) {
+	playerColor = newPlayerColor;
+}
+
 PlayerColorTypes CvReplayMessage::getPlayerColor() const {
 	return playerColor;
 }

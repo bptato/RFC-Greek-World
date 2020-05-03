@@ -547,6 +547,8 @@ public:
 
 	//bluepotato start: holy city relocation
 	void relocateHolyCity(ReligionTypes religion, CvCity* fallbackCity);
+
+	PlayerColorTypes getReplayMessagePlayerColor(uint i) const;
 	//bluepotato end
 
 protected:

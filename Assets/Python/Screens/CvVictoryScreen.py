@@ -420,14 +420,14 @@ class CvVictoryScreen:
 			landPercent = (ourLand * 100.0) / totalLand
 			#Rhye - start
 			realLandPercent = (ourRealLand * 100.0) / totalLand
-                        vassalsLandPercent = (ourVassalsLand * 100.0) / totalLand
-                        #Rhye - end
+			vassalsLandPercent = (ourVassalsLand * 100.0) / totalLand
+			#Rhye - end
 		else:
 			landPercent = 0.0
 			#Rhye - start
 			realLandPercent = 0.0
-                        vassalsLandPercent = 0.0
-                        #Rhye - end
+			vassalsLandPercent = 0.0
+			#Rhye - end
 			
 		iBestLandTeam = -1
 		bestLand = 0
@@ -561,7 +561,7 @@ class CvVictoryScreen:
 					bEntriesFound = True
 					
 				if (victory.isConquest()): #Rhye
-                                #if (victory.isConquest() and iLoopVC != 7): #Rhye
+				#if (victory.isConquest() and iLoopVC != 7): #Rhye
 					iRow = screen.appendTableRow(szTable)
 					screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ELIMINATE_ALL", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 					screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_RIVALS_LEFT", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -603,7 +603,7 @@ class CvVictoryScreen:
 						screen.setTableText(szTable, 4, iRow, gc.getPlayer(iBestLandTeam).getCivilizationShortDescription(0) + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						#Rhye - end
 						screen.setTableText(szTable, 5, iRow, (u"%.2f%%" % (bestLand * 100 / totalLand)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                        #Rhye - start
+					#Rhye - start
 					Row = screen.appendTableRow(szTable)
 					iRow += 1
 					screen.setTableText(szTable, 3, iRow, percentString, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -789,22 +789,25 @@ class CvVictoryScreen:
 							iRow = screen.appendTableRow(szTable)
 					bEntriesFound = True
 					
-                                #Rhye - start
-                                if (iLoopVC == 7):
-                                        for i in range(3):
-                                                iRow = screen.appendTableRow(szTable)
-                                                #bluepotato: modified to use DLL method
-                                                civType = gc.getPlayer(self.iActivePlayer).getCivilizationType()
-                                                screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_UHV_" + str(gc.getCivilizationInfo(civType).getRFCID()) + str(i+1), ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                                screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                                if (vic.getGoal(civType, i) == 1):       
-                                                        screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_YES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                                elif (vic.getGoal(civType, i) == 0):       
-                                                        screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NO", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                                else:       
-                                                        screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NOTYET", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                        bEntriesFound = True
-                                #Rhye - end
+				#Rhye - start
+				if (iLoopVC == 7):
+					for i in range(3):
+						#bluepotato: modified to use DLL method
+						civType = gc.getPlayer(self.iActivePlayer).getCivilizationType()
+						iRow = screen.appendTableRow(szTable)
+						screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_UHV_" + str(gc.getCivilizationInfo(civType).getRFCID()) + str(i+1) + "_TITLE", ()) + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+
+						iRow = screen.appendTableRow(szTable)
+						screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_UHV_" + str(gc.getCivilizationInfo(civType).getRFCID()) + str(i+1), ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						if (vic.getGoal(civType, i) == 1):       
+							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_YES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						elif (vic.getGoal(civType, i) == 0):       
+							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NO", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						else:       
+							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NOTYET", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+					bEntriesFound = True
+				#Rhye - end
 					
 				if (bEntriesFound):
 					screen.appendTableRow(szTable)

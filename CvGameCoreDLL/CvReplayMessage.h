@@ -20,6 +20,7 @@ public:
 	int getPlotY() const;
 	void setPlayer(PlayerTypes ePlayer);
 	PlayerTypes getPlayer() const;
+	void setPlayerColor(PlayerColorTypes newPlayerColor); //bluepotato
 	PlayerColorTypes getPlayerColor() const; //bluepotato
 	void setText(CvWString pszText);
 	const CvWString& getText() const;

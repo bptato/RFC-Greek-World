@@ -154,6 +154,7 @@ void CvReplayInfo::createInfo(PlayerTypes ePlayer)
 				pMsg->setColor(game.getReplayMessageColor(i));
 				pMsg->setText(game.getReplayMessageText(i));
 				pMsg->setPlot(game.getReplayMessagePlotX(i), game.getReplayMessagePlotY(i));
+				pMsg->setPlayerColor(game.getReplayMessagePlayerColor(i)); //bluepotato
 				m_listReplayMessages.push_back(pMsg);
 			}
 		}
@@ -165,6 +166,7 @@ void CvReplayInfo::createInfo(PlayerTypes ePlayer)
 				pMsg->setColor(game.getReplayMessageColor(i));
 				pMsg->setText(game.getReplayMessageText(i));
 				pMsg->setPlot(game.getReplayMessagePlotX(i), game.getReplayMessagePlotY(i));
+				pMsg->setPlayerColor(game.getReplayMessagePlayerColor(i)); //bluepotato
 				m_listReplayMessages.push_back(pMsg);
 			}
 		}
