@@ -118,7 +118,8 @@ class CvMercenariesScreen:
 					unitID = "M_" + numberToAlpha(i) + ":" + numberToAlpha(j) #you can't put numbers in panel IDs. I had to figure this out the hard way...
 					screen.attachPanel("AvailableMercenaries", unitID, "", "", False, False, PanelStyles.PANEL_STYLE_MAIN)
 					screen.attachImageButton(unitID, unitID + "_picBtn", unitInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_32, WidgetTypes.WIDGET_GENERAL, -1, -1, True)
-					screen.attachLabel(unitID, unitID + "_nameLabel", u"<font=2b>" + text(unitInfo.getDescription().encode("utf-8")) + u"</font>\t")
+					screen.attachLabel(unitID, unitID + "_nameLabel", u"<font=2b>" + text(unitInfo.getDescription().encode("utf-8")) + u"</font>")
+					screen.attachLabel(unitID, unitID + "_provinceLabel", u"<font=2b>" + text(province.getName().encode("utf-8")) + u"</font>")
 					
 					screen.attachMultiListControlGFC(unitID, unitID + "_promotions", "", 1, 32, 32, TableStyles.TABLE_STYLE_STANDARD)
 					for k in range(mercenary.getNumPromotions()):

@@ -568,11 +568,11 @@ class Victory:
 				result = True
 				for i in range(iNumPlayers):
 					if i == iPlayer:
-						if provPhoenicia.getNumCities(iPlayer) < 1:
+						if provPhoenicia.getNumCities(i) < 1:
 							result = False
 							break
 					else:
-						if provPhoenicia.getNumCities(iPlayer) >= 1:
+						if provPhoenicia.getNumCities(i) >= 1:
 							result = False
 							break
 				self.setGoal(iHittites, 1, result)
