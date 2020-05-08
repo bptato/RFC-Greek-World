@@ -5384,6 +5384,8 @@ void CvPlayer::found(int iX, int iY)
 		}
 	}
 
+	pCity->changePopulation(GC.getRiseFall().getRFCPlayer(getCivilizationType()).getNewCityFreePopulation()); //bluepotato
+
 	if (isHuman() && getAdvancedStartPoints() < 0)
 	{
 		pCity->chooseProduction();

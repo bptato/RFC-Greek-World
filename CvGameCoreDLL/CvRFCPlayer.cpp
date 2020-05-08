@@ -48,6 +48,8 @@ void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 	conquestBonus = false;
 	commerceBonus = false;
 
+	newCityFreePopulation = 0;
+
 	for(int i = 0; i<GC.getNumCivicOptionInfos(); i++) {
 		startingCivics[i] = NO_CIVIC;
 	}
@@ -147,6 +149,10 @@ void CvRFCPlayer::addStartingWar(CivilizationTypes civType) {
 	if(civType != NO_CIVILIZATION) {
 		startingWars.push_back(civType);
 	}
+}
+
+void CvRFCPlayer::addRelatedLanguage(CivilizationTypes civType) {
+	relatedLanguages.push_back(civType);
 }
 
 void CvRFCPlayer::setNumPlots(int newNumPlots) {
@@ -519,6 +525,14 @@ void CvRFCPlayer::setGrowthModifier(int modifier) {
 	growthModifier = modifier;
 }
 
+void CvRFCPlayer::setNewCityFreePopulation(int population) {
+	newCityFreePopulation = population;
+}
+
+void CvRFCPlayer::changeNewCityFreePopulation(int population) {
+	newCityFreePopulation += population;
+}
+
 
 CivilizationTypes CvRFCPlayer::getCivilizationType() {
 	return civilizationType;
@@ -532,11 +546,11 @@ std::vector<CvRFCCity>& CvRFCPlayer::getScheduledCities() {
 	return scheduledCities;
 }
 
-int CvRFCPlayer::getNumScheduledUnits() {
+int CvRFCPlayer::getNumScheduledUnits() const {
 	return scheduledUnits.size();
 }
 
-int CvRFCPlayer::getNumScheduledCities() {
+int CvRFCPlayer::getNumScheduledCities() const {
 	return scheduledCities.size();
 }
 
@@ -757,8 +771,8 @@ bool CvRFCPlayer::isRelatedLanguage(CivilizationTypes civType) {
 	return false;
 }
 
-void CvRFCPlayer::addRelatedLanguage(CivilizationTypes civType) {
-	relatedLanguages.push_back(civType);
+int CvRFCPlayer::getNewCityFreePopulation() const {
+	return newCityFreePopulation;
 }
 
 
@@ -821,6 +835,8 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 	stream->Read(&foundBonus);
 	stream->Read(&conquestBonus);
 	stream->Read(&commerceBonus);
+
+	stream->Read(&newCityFreePopulation);
 
 	{
 		startingTechs.clear();
@@ -918,6 +934,8 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	stream->Write(foundBonus);
 	stream->Write(conquestBonus);
 	stream->Write(commerceBonus);
+
+	stream->Write(newCityFreePopulation);
 
 	{
 		uint size = startingTechs.size();

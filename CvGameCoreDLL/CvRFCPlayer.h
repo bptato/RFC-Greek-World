@@ -50,11 +50,14 @@ class CvRFCPlayer {
 		void setInflationModifier(int modifier);
 		void setGrowthModifier(int modifier);
 
+		void setNewCityFreePopulation(int population);
+		void changeNewCityFreePopulation(int population);
+
 		CivilizationTypes getCivilizationType();
 		std::vector<CvRFCUnit>& getScheduledUnits();
 		std::vector<CvRFCCity>& getScheduledCities();
-		int getNumScheduledUnits();
-		int getNumScheduledCities();
+		int getNumScheduledUnits() const;
+		int getNumScheduledCities() const;
 		std::vector<CivilizationTypes>& getRelatedLanguages();
 		bool isEnabled() const;
 		int getStartingPlotX() const;
@@ -101,6 +104,8 @@ class CvRFCPlayer {
 		bool isFoundBonus() const;
 		bool isConquestBonus() const;
 		bool isCommerceBonus() const;
+
+		int getNewCityFreePopulation() const;
 
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);
@@ -151,4 +156,7 @@ class CvRFCPlayer {
 		bool foundBonus;
 		bool conquestBonus;
 		bool commerceBonus;
+
+		//misc
+		int newCityFreePopulation;
 };

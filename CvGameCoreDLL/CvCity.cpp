@@ -11050,6 +11050,9 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			if(getCivilizationType() == CIVILIZATION_MINOA) {
 				changeCulture(getOwnerINLINE(), getProductionNeeded(eConstructBuilding)/2, true, true);
 			}
+
+			//Great Bath
+			GC.getRiseFall().getRFCPlayer(getCivilizationType()).changeNewCityFreePopulation(GC.getBuildingInfo(eConstructBuilding).getNewCityFreePopulation());
 			//bluepotato end
 
 			CvEventReporter::getInstance().buildingBuilt(this, eConstructBuilding);

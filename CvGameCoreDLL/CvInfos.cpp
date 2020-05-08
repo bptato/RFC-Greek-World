@@ -6662,6 +6662,10 @@ m_bAnyBonusYieldModifier(false)
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
+//bluepotato start: Great Bath effect
+,
+newCityFreePopulation(0)
+//bluepotato end
 {
 }
 
@@ -7678,6 +7682,12 @@ bool CvBuildingInfo::isAnyBonusYieldModifier() const
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
 
+//bluepotato start
+int CvBuildingInfo::getNewCityFreePopulation() const {
+	return newCityFreePopulation;
+}
+//bluepotato end
+
 int CvBuildingInfo::getBonusYieldModifier(int i, int j) const
 {
 	FAssertMsg(i < GC.getNumBonusInfos(), "Index out of bounds");
@@ -7859,6 +7869,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bBuildingOnlyHealthy);
 	stream->Read(&m_bNeverCapture);
 	stream->Read(&m_bNukeImmune);
+	stream->Read(&newCityFreePopulation); //bluepotato
 	stream->Read(&m_bPrereqReligion);
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
@@ -8206,6 +8217,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bBuildingOnlyHealthy);
 	stream->Write(m_bNeverCapture);
 	stream->Write(m_bNukeImmune);
+	stream->Write(newCityFreePopulation); //bluepotato
 	stream->Write(m_bPrereqReligion);
 	stream->Write(m_bCenterInCity);
 	stream->Write(m_bStateReligion);
@@ -8459,6 +8471,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");
 	pXML->GetChildXmlValByName(&m_bNeverCapture, "bNeverCapture");
 	pXML->GetChildXmlValByName(&m_bNukeImmune, "bNukeImmune");
+	pXML->GetChildXmlValByName(&newCityFreePopulation, "newCityFreePopulation", 0); //bluepotato
 	pXML->GetChildXmlValByName(&m_bPrereqReligion, "bPrereqReligion");
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");

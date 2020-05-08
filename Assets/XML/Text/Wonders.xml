@@ -45,4 +45,20 @@
 		<Tag>TXT_KEY_BUILDING_RUSTAM_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Naqsh-e-Rustam[COLOR_REVERT] increases likelihood a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] will be produced, increases cultural output, and increases the likelihood a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT] will be generated.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>
+		<English>The Great Bath of Mohenjo-daro</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_BATH_PEDIA</Tag>
+		<English>[TAB]The "great bath" is without doubt the earliest public water tank in the ancient world. The tank itself measures approximately 12 meters north-south and 7 meters wide, with a maximum depth of 2.4 meters. Two wide staircases lead down into the tank from the north and south and small sockets at the edges of the stairs are thought to have held wooden planks or treads. At the foot of the stairs is a small ledge with a brick edging that extends the entire width of the pool. People coming down the stairs could move along this ledge without actually stepping into the pool itself.[NEWLINE][NEWLINE][TAB] The floor of the tank is water tight due to finely fitted bricks laid on edge with gypsum plaster and the side walls were constructed in a similar manner. To make the tank even more water tight, a thick layer of bitumen (natural tar) was laid along the sides of the tank and presumably also beneath the floor. Brick colonnades were discovered on the eastern, northern and southern edges. The preserved columns have stepped edges that may have held wooden screens or window frames. Two large doors lead into the complex from the south and other access was from the north and east. A series of rooms are located along the eastern edge of the building and in one room is a well that may have supplied some of the water needed to fill the tank. Rainwater also may have been collected for this purposes, but no inlet drains have been found.[NEWLINE][NEWLINE][TAB] The floor of the tank is water tight due to finely fitted bricks laid on edge with gypsum plaster and the side walls were constructed in a similar manner. To make the tank even more water tight, a thick layer of bitumen (natural tar) was laid along the sides of the tank and presumably also beneath the floor. Brick colonnades were discovered on the eastern, northern and southern edges. The preserved columns have stepped edges that may have held wooden screens or window frames. Two large doors lead into the complex from the south and other access was from the north and east. A series of rooms are located along the eastern edge of the building and in one room is a well that may have supplied some of the water needed to fill the tank. Rainwater also may have been collected for this purposes, but no inlet drains have been found.[NEWLINE][NEWLINE][TAB] Most scholars agree that this tank would have been used for special religious functions where water was used to purify and renew the well being of the bathers.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_BATH_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Great Bath[COLOR_REVERT] grants +2 population to all newly built cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GREAT_BATH_HELP</Tag>
+		<English>[ICON_BULLET]New cities receive +2 population</English>
+	</TEXT>
 </Civ4GameText>

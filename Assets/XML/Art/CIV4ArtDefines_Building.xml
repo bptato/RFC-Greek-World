@@ -1437,5 +1437,25 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/GreatCothon/Cothon.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GREAT_BATH</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>1.7</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/GreatCothon/doppelhafen.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/GreatCothon/Cothon.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GREAT_BATH</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/GreatBath/bath_middle_east.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/GreatBath/GreatBathButton.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
