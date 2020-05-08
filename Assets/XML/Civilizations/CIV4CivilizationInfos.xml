@@ -3287,7 +3287,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_ANGKOR_WAT</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_GREAT_BATH</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3534,7 +3534,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_ANGKOR_WAT</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_GREAT_BATH</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3797,7 +3797,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_ANGKOR_WAT</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_GREAT_BATH</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>

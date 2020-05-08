@@ -23,10 +23,6 @@
 			<Path>Art/Movies/Placeholder.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ANGKOR_WAT</Type>
-			<Path>Art/Movies/Wonders/AngkorWat.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_CHICHEN_ITZA</Type>
 			<Path>Art/Movies/Wonders/ChichenItza.bik</Path>
 		</MovieArtInfo>

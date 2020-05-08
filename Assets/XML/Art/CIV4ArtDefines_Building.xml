@@ -1008,16 +1008,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/Parthenon.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,5</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ANGKOR_WAT</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.25</fScale>
-			<fInterfaceScale>0.48</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/AngkorWat/AngkorWat.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/AngkorWat.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,1</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HAGIA_SOPHIA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
