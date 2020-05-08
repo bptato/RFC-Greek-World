@@ -1903,8 +1903,8 @@
 			<Civilopedia>TXT_KEY_BONUS_SALT_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_SALT</ArtDefineTag>
-			<TechReveal>TECH_MINING</TechReveal>
-			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechReveal>TECH_URBAN_CULTURE</TechReveal>
+			<TechCityTrade>TECH_URBAN_CULTURE</TechCityTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
