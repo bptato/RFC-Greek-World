@@ -893,7 +893,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
 			<fInterfaceScale>0.60</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/FlavianAmphitheatre/Colosseum_new.nif</NIF>
+			<NIF>Art/Structures/Wonders/FlavianAmphitheatre/Colosseum_new.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Flavian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,3</Button>
 		</BuildingArtInfo>
@@ -1213,7 +1213,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>
 			<fInterfaceScale>0.75</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Olympic/olympic02.nif</NIF>
+			<NIF>Art/Structures/Wonders/Olympic/olympic02.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Olympics.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,15</Button>
 		</BuildingArtInfo>
@@ -1223,7 +1223,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.15</fScale>
 			<fInterfaceScale>0.43</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/IshtarGate/IshtarGate.nif</NIF>
+			<NIF>Art/Structures/Buildings/Religion/IshtarGate/IshtarGate.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/IshtarGate.dds</Button>
 		</BuildingArtInfo>
@@ -1333,7 +1333,7 @@
 			  <bAnimated>0</bAnimated>
 			  <fScale>2.6</fScale>
 			  <fInterfaceScale>0.4</fInterfaceScale>
-			  <NIF>Art/Structures/buildings/luxor/cathedral.nif</NIF>
+			  <NIF>Art/Structures/Wonders/Luxor/cathedral.nif</NIF>
 			  <KFM/>
 			  <Button>Art/Interface/Buttons/Buildings/Royal Cemetery.dds</Button>
 			</BuildingArtInfo>
@@ -1403,9 +1403,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.1</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Rustam/Rustam.nif</NIF>
+			<NIF>Art/Structures/Wonders/Rustam/Rustam.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Rustam/Rustam_button.dds</Button>
+			<Button>Art/Structures/Wonders/Rustam/Rustam_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SLAVE_MARKET</Type>
@@ -1423,7 +1423,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.0</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Trajan/trajan.nif</NIF>
+			<NIF>Art/Structures/Wonders/Trajan/trajan.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/trajans_column.dds</Button>
 		</BuildingArtInfo>
@@ -1433,9 +1433,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.9</fScale>
 			<fInterfaceScale>1.7</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/GreatCothon/doppelhafen.nif</NIF>
+			<NIF>Art/Structures/Wonders/GreatCothon/doppelhafen.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/GreatCothon/Cothon.dds</Button>
+			<Button>Art/Structures/Wonders/GreatCothon/Cothon.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
