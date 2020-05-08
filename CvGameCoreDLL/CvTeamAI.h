@@ -154,9 +154,9 @@ public:
 
 	bool AI_isWaterAreaRelevant(CvArea* pArea);
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	void AI_invalidateLandTargetCache();
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	virtual void read(FDataStreamBase* pStream);
 	virtual void write(FDataStreamBase* pStream);
@@ -177,9 +177,9 @@ protected:
 	int* m_aiWarSuccess;
 	int* m_aiEnemyPeacetimeTradeValue;
 	int* m_aiEnemyPeacetimeGrantValue;
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	unsigned short* m_aiLandTargetCache;
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	WarPlanTypes* m_aeWarPlan;
 

@@ -327,12 +327,12 @@ public:
 
 	bool hasShrine(ReligionTypes eReligion);
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	void setHasPlayerMember(PlayerTypes ePlayer, bool bNewValue);
 	bool isHasPlayerMember(PlayerTypes ePlayer) const;
 	PlayerTypes getPlayerMemberAt(int iIndex) const;
 	int getPlayerMemberListSize() const;
-	//bluepotato end
+	//Sanguo Mod Performance end
 	DllExport void getCompletedSpaceshipProjects(std::map<ProjectTypes, int>& mapProjects) const;
 	DllExport int getProjectPartNumber(ProjectTypes projectType, bool bAssert) const;
 	DllExport bool hasLaunched() const;
@@ -441,9 +441,9 @@ protected:
 	int** m_ppaaiImprovementYieldChange;
 
 	std::vector<BonusTypes> m_aeRevealedBonuses;
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	std::vector<PlayerTypes> m_aePlayerMembers;
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	void doWarWeariness();
 

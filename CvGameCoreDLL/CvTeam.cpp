@@ -330,9 +330,9 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 
 		m_aeRevealedBonuses.clear();
 
-		//bluepotato start: Sanguo Mod Performance
+		//Sanguo Mod Performance start
 		m_aePlayerMembers.clear();
-		//bluepotato end
+		//Sanguo Mod Performance end
 
 		AI_reset(false);
 	}
@@ -965,7 +965,7 @@ void CvTeam::doTurn()
 
 void CvTeam::updateYield()
 {
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	/*int iI;
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -983,13 +983,13 @@ void CvTeam::updateYield()
 	{
 		GET_PLAYER(*iter).updateYield();
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
 void CvTeam::updatePowerHealth()
 {
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	// int iI;
 	// for (iI = 0; iI < MAX_PLAYERS; iI++)
 	// {
@@ -1005,13 +1005,13 @@ void CvTeam::updatePowerHealth()
 	{
 		GET_PLAYER(*iter).updatePowerHealth();
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
 void CvTeam::updateCommerce()
 {
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	// int iI;
 	// for (iI = 0; iI < MAX_PLAYERS; iI++)
 	// {
@@ -1027,7 +1027,7 @@ void CvTeam::updateCommerce()
 			{
 		GET_PLAYER(*iter).updateCommerce();
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -1345,7 +1345,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 			}
 		}
 
-		//bluepotato start: Sanguo Mod Performance
+		//Sanguo Mod Performance start
 		// Attitude cache
 		if (GC.getGameINLINE().isFinalInitialized()) {
 			for (int iI = 0; iI < MAX_PLAYERS; iI++) {
@@ -1364,7 +1364,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 				}
 			}
 		}
-		//bluepotato end
+		//Sanguo Mod Performance end
 
 		if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
 		{
@@ -1588,7 +1588,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 			}
 		}
 		if (!GET_PLAYER((PlayerTypes)eTeam).isMinorCiv() && !GET_PLAYER((PlayerTypes)getID()).isMinorCiv()) { //bluepotato: no peace message with indies
-			//bluepotato start: Sanguo Mod Performance
+			//Sanguo Mod Performance start
 			if (GC.getGameINLINE().isFinalInitialized())
 			{
 				for (int iI = 0; iI < MAX_PLAYERS; iI++)
@@ -1613,7 +1613,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 					}
 				}
 			}
-			//bluepotato end
+			//Sanguo Mod Performance end
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
 				if (GET_PLAYER((PlayerTypes)iI).isAlive())
@@ -2764,7 +2764,7 @@ void CvTeam::changeNumMembers(int iChange)
 {
 	m_iNumMembers += iChange;
 	FAssert(getNumMembers() >= 0);
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	if (iChange != 0 && getNumMembers() > 0)
 	{
 		for (int iI = 0; iI < GC.getMAX_PLAYERS(); iI++)
@@ -2782,7 +2782,7 @@ void CvTeam::changeNumMembers(int iChange)
 			}
 		}
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -4013,7 +4013,7 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 			CvEventReporter::getInstance().vassalState(eIndex, getID(), bNewValue);
 		}
 
-		//bluepotato start: Sanguo Mod Performance
+		//Sanguo Mod Performance start
 		for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
 		{
 			for(int iI = 0; iI < GET_TEAM(eIndex).getPlayerMemberListSize(); iI++)
@@ -4022,7 +4022,7 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 				GET_PLAYER(GET_TEAM(eIndex).getPlayerMemberAt(iI)).AI_invalidateAttitudeCache(*iter1);
 			}
 		}
-		//bluepotato end
+		//Sanguo Mod Performance end
 	}
 }
 
@@ -6140,7 +6140,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 		m_aeRevealedBonuses.push_back(eBonus);
 	}
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	m_aePlayerMembers.clear();
 	pStream->Read(&iSize);
 	for (int i = 0; i < iSize; ++i)
@@ -6149,7 +6149,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 		pStream->Read((int*)&ePlayer);
 		m_aePlayerMembers.push_back(ePlayer);
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -6242,13 +6242,13 @@ void CvTeam::write(FDataStreamBase* pStream)
 	{
 		pStream->Write(*it);
 	}
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	pStream->Write(m_aePlayerMembers.size());
 	for (std::vector<PlayerTypes>::const_iterator it = m_aePlayerMembers.begin(); it != m_aePlayerMembers.end(); ++it)
 	{
 		pStream->Write(*it);
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 // CACHE: cache frequently used values
@@ -6313,7 +6313,7 @@ bool CvTeam::hasLaunched() const
 	return false;
 }
 
-//bluepotato start: Sanguo Mod Performance
+//Sanguo Mod Performance start
 void CvTeam::setHasPlayerMember(PlayerTypes ePlayer, bool bNewValue)
 {
 	FAssert (ePlayer > -1 && ePlayer < MAX_PLAYERS);
@@ -6344,4 +6344,4 @@ int CvTeam::getPlayerMemberListSize() const
 {
 	return m_aePlayerMembers.size();
 }
-//bluepotato end
+//Sanguo Mod Performance end

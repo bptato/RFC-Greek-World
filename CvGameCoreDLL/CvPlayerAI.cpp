@@ -101,9 +101,9 @@ CvPlayerAI::CvPlayerAI()
 	m_aiUnitCombatWeights = NULL;
 	m_aiCloseBordersAttitudeCache = new int[MAX_PLAYERS];
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	m_aiAttitudeCache = new int[MAX_PLAYERS];
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	AI_reset(true);
 }
@@ -140,9 +140,9 @@ CvPlayerAI::~CvPlayerAI()
 	SAFE_DELETE_ARRAY(m_aiAverageCommerceMultiplier);
 	SAFE_DELETE_ARRAY(m_aiAverageCommerceExchange);
 	SAFE_DELETE_ARRAY(m_aiCloseBordersAttitudeCache);
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	SAFE_DELETE_ARRAY(m_aiAttitudeCache);
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -288,14 +288,14 @@ void CvPlayerAI::AI_reset(bool bConstructor)
 		{
 			GET_PLAYER((PlayerTypes) iI).m_aiCloseBordersAttitudeCache[getID()] = 0;
 		}
-		//bluepotato start: Sanguo Mod Performance
+		//Sanguo Mod Performance start
 		m_aiAttitudeCache[iI] = 0;
 
 		if (!bConstructor && getID() != NO_PLAYER)
 		{
 			GET_PLAYER((PlayerTypes) iI).m_aiAttitudeCache[getID()] = 0;
 		}
-		//bluepotato end
+		//Sanguo Mod Performance end
 	}
 }
 
@@ -320,10 +320,10 @@ void CvPlayerAI::AI_doTurnPre()
 
 	AI_doCounter();
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	// Attitude cache
 	AI_invalidateAttitudeCache();
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	AI_updateBonusValue();
 
@@ -4988,7 +4988,7 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 		}
 	}
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	if (m_aiAttitudeCache[ePlayer] != MAX_INT)
 	{
 		return m_aiAttitudeCache[ePlayer];
@@ -5006,6 +5006,7 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 //			iAttitude -= 2;
 //		}
 //	}
+	//Sanguo Mod Performance end
 
 	//bluepotato start: Hittite UP
 	if (GET_PLAYER(ePlayer).getCivilizationType() == CIVILIZATION_HITTITE) {
@@ -10736,12 +10737,12 @@ void CvPlayerAI::AI_setAttitudeExtra(PlayerTypes eIndex, int iNewValue)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be within maximum bounds (invalid Index)");
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	if (m_aiAttitudeExtra[eIndex] != iNewValue)
 	{
 		GET_PLAYER(getID()).AI_invalidateAttitudeCache(eIndex);
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 	m_aiAttitudeExtra[eIndex] = iNewValue;
 }
 
@@ -12971,9 +12972,9 @@ void CvPlayerAI::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumUnitClassInfos(), m_aiUnitClassWeights);
 	pStream->Read(GC.getNumUnitCombatInfos(), m_aiUnitCombatWeights);
 	pStream->Read(MAX_PLAYERS, m_aiCloseBordersAttitudeCache);
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	pStream->Read(MAX_PLAYERS, m_aiAttitudeCache);
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -13047,9 +13048,9 @@ void CvPlayerAI::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumUnitClassInfos(), m_aiUnitClassWeights);
 	pStream->Write(GC.getNumUnitCombatInfos(), m_aiUnitCombatWeights);
 	pStream->Write(MAX_PLAYERS, m_aiCloseBordersAttitudeCache);
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	pStream->Write(MAX_PLAYERS, m_aiAttitudeCache);
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -17559,9 +17560,9 @@ void CvPlayerAI::AI_invalidateCloseBordersAttitudeCache()
 	for (int i = 0; i < MAX_PLAYERS; ++i)
 	{
 		m_aiCloseBordersAttitudeCache[i] = MAX_INT;
-		//bluepotato start: Sanguo Mod Performance
+		//Sanguo Mod Performance start
 		AI_invalidateAttitudeCache((PlayerTypes)i);
-		//bluepotato end
+		//Sanguo Mod Performance end
 	}
 }
 
@@ -17643,7 +17644,7 @@ bool CvPlayerAI::AI_isFirstTech(TechTypes eTech) const
 }
 
 
-//bluepotato start: Sanguo Mod Performance
+//Sanguo Mod Performance start
 void CvPlayerAI::AI_invalidateAttitudeCache(PlayerTypes ePlayer)
 {
 	m_aiAttitudeCache[ePlayer] = MAX_INT;
@@ -17656,7 +17657,7 @@ void CvPlayerAI::AI_invalidateAttitudeCache()
 		AI_invalidateAttitudeCache((PlayerTypes)iI);
 	}
 }
-//bluepotato end
+//Sanguo Mod Performance end
 //bluepotato start: Mercenaries
 //this is mostly code ported from the original mercenaries mod except I optimized it for our system
 bool CvPlayerAI::AI_hireMercenary() {

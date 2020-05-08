@@ -78,7 +78,8 @@ bool CvUnitAI::AI_update()
 	FAssertMsg(canMove(), "canMove is expected to be true");
 	FAssertMsg(isGroupHead(), "isGroupHead is expected to be true"); // XXX is this a good idea???
 
-	// allow python to handle it
+	//bluepotato start: speed
+	/*// allow python to handle it
 	CyUnit* pyUnit = new CyUnit(this);
 	CyArgsList argsList;
 	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyUnit));	// pass in unit class
@@ -88,7 +89,8 @@ bool CvUnitAI::AI_update()
 	if (lResult == 1)
 	{
 		return false;
-	}
+	}*/
+	//bluepotato end
 
 	if (getDomainType() == DOMAIN_LAND)
 	{
@@ -461,7 +463,7 @@ void CvUnitAI::AI_upgrade()
 		int iBestValue = 0;
 		UnitTypes eBestUnit = NO_UNIT;
 
-		//bluepotato start: Sanguo Mod Performance
+		//Sanguo Mod Performance start
 		/*for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
 		{
 			if ((iPass > 0) || GC.getUnitInfo((UnitTypes)iI).getUnitAIType(AI_getUnitAIType()))
@@ -503,7 +505,7 @@ void CvUnitAI::AI_upgrade()
 				}
 			}
 		}
-		//bluepotato end
+		//Sanguo Mod Performance end
 
 		if (eBestUnit != NO_UNIT)
 		{

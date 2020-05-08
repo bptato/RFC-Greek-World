@@ -599,7 +599,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	{
 		AI_reset();
 	}
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	UnitTypes eUnit;
 	std::vector<UnitTypes> aUpgradeUnits;
 
@@ -621,7 +621,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 			}
 		} while(aUpgradeUnits.size() >= 0);
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -4806,7 +4806,7 @@ void CvGame::setPlayerRank(PlayerTypes ePlayer, int iRank)
 {
 	FAssertMsg(ePlayer >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	if (iRank != m_aiPlayerRank[ePlayer])
 	{
 		for (int iI = 0; iI < GC.getMAX_PLAYERS(); iI++)
@@ -4818,7 +4818,7 @@ void CvGame::setPlayerRank(PlayerTypes ePlayer, int iRank)
 			}
 		}
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 	m_aiPlayerRank[ePlayer] = iRank;
 	FAssert(getPlayerRank(ePlayer) >= 0);
 }

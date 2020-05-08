@@ -338,11 +338,11 @@ public:
 
 	bool AI_isFirstTech(TechTypes eTech) const;
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	// Attitude cache
 	void AI_invalidateAttitudeCache(PlayerTypes ePlayer);
 	void AI_invalidateAttitudeCache();
-	//bluepotato end
+	//Sanguo Mod Performance end
 	//bluepotato start: mercenaries
 	bool AI_hireMercenary();
 	void AI_doMercenaries();
@@ -396,9 +396,9 @@ protected:
 
 	mutable int* m_aiCloseBordersAttitudeCache;
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	mutable int* m_aiAttitudeCache;
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	bool* m_abFirstContact;
 

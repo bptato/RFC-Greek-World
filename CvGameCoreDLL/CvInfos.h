@@ -964,11 +964,11 @@ public:
 	bool getFreePromotions(int i) const;		// Exposed to Python
 	int getLeaderPromotion() const;   // Exposed to Python
 	int getLeaderExperience() const;				// Exposed to Python
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	std::vector<int> getUpgradeUnitClassTypes() const;
 	void addUpgradeUnitClassTypes(int);
 	bool isUpgradeUnitClassTypes(int);
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	const TCHAR* getEarlyArtDefineTag(int i, UnitArtStyleTypes eStyle) const;				// Exposed to Python
 	void setEarlyArtDefineTag(int i, const TCHAR* szVal);
@@ -1150,9 +1150,9 @@ protected:
 	bool* m_pbFeatureImpassable;
 	bool* m_pbFreePromotions;
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	std::vector<int> m_aiUpgradeUnitClassTypes;
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	CvString* m_paszEarlyArtDefineTags;
 	CvString* m_paszLateArtDefineTags;

@@ -6961,7 +6961,7 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 
 bool CvUnit::upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount) const
 {
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	/*UnitTypes eLoopUnit;
 	int iI;
 	int numUnitClassInfos = GC.getNumUnitClassInfos();
@@ -7005,7 +7005,7 @@ bool CvUnit::upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, 
 	{
 		return true;
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	return false;
 }

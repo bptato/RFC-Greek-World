@@ -4076,7 +4076,7 @@ int CvUnitInfo::getLeaderExperience() const
 	return m_iLeaderExperience;
 }
 
-//bluepotato start: Sanguo Mod Performance
+//Sanguo Mod Performance start
 std::vector<int> CvUnitInfo::getUpgradeUnitClassTypes() const
 {
 	return m_aiUpgradeUnitClassTypes;
@@ -4100,7 +4100,7 @@ bool CvUnitInfo::isUpgradeUnitClassTypes(int i)
 	}
 	return true;
 }
-//bluepotato end
+//Sanguo Mod Performance end
 
 const TCHAR* CvUnitInfo::getEarlyArtDefineTag(int i, UnitArtStyleTypes eStyle) const
 {
@@ -4299,7 +4299,7 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 		m_aiSeeInvisibleTypes.push_back(iSeeInvisibleType);
 	}
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	int iNumUpgradeUnitClassTypes;
 	stream->Read(&iNumUpgradeUnitClassTypes);
 	for(int i=0; i<iNumUpgradeUnitClassTypes;i++)
@@ -4308,7 +4308,7 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 		stream->Read(&iUnitClassType);
 		m_aiUpgradeUnitClassTypes.push_back(iUnitClassType);
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	stream->Read(&m_iAdvisorType);
 	stream->Read(&m_iHolyCity);
@@ -4606,13 +4606,13 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 		stream->Write(m_aiSeeInvisibleTypes[i]);
 	}
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	stream->Write((int)m_aiUpgradeUnitClassTypes.size());
 	for(int i=0;i<(int)m_aiUpgradeUnitClassTypes.size();i++)
 	{
 		stream->Write(m_aiUpgradeUnitClassTypes[i]);
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 	stream->Write(m_iAdvisorType);
 	stream->Write(m_iHolyCity);

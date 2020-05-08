@@ -489,7 +489,7 @@ public:
 	int getPlayerDangerCache(PlayerTypes ePlayer, int iRange);
 	void setPlayerDangerCache(PlayerTypes ePlayer, int iRange, int iNewValue);
 	void invalidatePlayerDangerCache(PlayerTypes ePlayer, int iRange);
-	//bluepotato end
+	//Sanguo Mod Performance end
 
 protected:
 

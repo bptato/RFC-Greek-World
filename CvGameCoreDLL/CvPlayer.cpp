@@ -1704,7 +1704,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		if (pabHolyCity[iI])
 		{
 			GC.getGameINLINE().setHolyCity(((ReligionTypes)iI), pNewCity, false);
-			//bluepotato start: Sanguo Mod Performance
+			//Sanguo Mod Performance start
 			for (int j = 0; j < GC.getMAX_PLAYERS(); j++) {
 				if (GET_PLAYER((PlayerTypes)j).isAlive() && GET_PLAYER((PlayerTypes)iI).getStateReligion() == (ReligionTypes)iI)
 				{
@@ -1712,7 +1712,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					GET_PLAYER((PlayerTypes)j).AI_invalidateAttitudeCache(getID());
 				}
 			}
-			//bluepotato end
+			//Sanguo Mod Performance end
 		}
 	}
 
@@ -9892,9 +9892,9 @@ void CvPlayer::setAlive(bool bNewValue)
 
 		GET_TEAM(getTeam()).changeAliveCount((isAlive()) ? 1 : -1);
 
-		//bluepotato start: Sanguo Mod Performance
+		//Sanguo Mod Performance start
 		GET_TEAM(getTeam()).setHasPlayerMember(getID(), isAlive() ? true : false);
-		//bluepotato end
+		//Sanguo Mod Performance end
 
 		// Report event to Python
 		CvEventReporter::getInstance().setPlayerAlive(getID(), bNewValue);
@@ -10525,7 +10525,7 @@ void CvPlayer::setLastStateReligion(ReligionTypes eNewValue)
 
 			// Python Event
 			CvEventReporter::getInstance().playerChangeStateReligion(getID(), eNewValue, eOldReligion);
-			//bluepotato start: Sanguo Mod Performance
+			//Sanguo Mod Performance start
 			for (int iI = 0; iI < GC.getMAX_PLAYERS(); iI++) {
 				if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getStateReligion() != NO_RELIGION)
 				{
@@ -10533,7 +10533,7 @@ void CvPlayer::setLastStateReligion(ReligionTypes eNewValue)
 					GET_PLAYER((PlayerTypes)iI).AI_invalidateAttitudeCache(getID());
 				}
 			}
-			//bluepotato end
+			//Sanguo Mod Performance end
 		}
 	}
 }
@@ -10545,12 +10545,12 @@ PlayerTypes CvPlayer::getParent() const
 
 void CvPlayer::setParent(PlayerTypes eParent)
 {
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	if (m_eParent != eParent)
 	{
 		GET_PLAYER(getID()).AI_invalidateAttitudeCache(eParent);
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 	m_eParent = eParent;
 }
 
@@ -10604,7 +10604,7 @@ void CvPlayer::setTeam(TeamTypes eTeam)
 	GET_TEAM(getTeam()).changeTotalPopulation(getTotalPopulation());
 	GET_TEAM(getTeam()).changeTotalLand(getTotalLand());
 
-	//bluepotato start: Sanguo Mod Performance
+	//Sanguo Mod Performance start
 	if (GC.getGameINLINE().isFinalInitialized()) {
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
 		{
@@ -10615,7 +10615,7 @@ void CvPlayer::setTeam(TeamTypes eTeam)
 			}
 		}
 	}
-	//bluepotato end
+	//Sanguo Mod Performance end
 }
 
 
@@ -11989,7 +11989,8 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue, bool sta
 			}
 			//bluepotato start
 			processDynamicNames();
-			//Sanguo Mod Performance
+			//bluepotato end
+			//Sanguo Mod Performance start
 			for (int iI = 0; iI < MAX_PLAYERS; iI++) {
 				if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getCivics(eIndex) == eNewValue)
 				{
@@ -12004,7 +12005,7 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue, bool sta
 					}
 				}
 			}
-			//bluepotato end
+			//Sanguo Mod Performance end
 		}
 	}
 }
