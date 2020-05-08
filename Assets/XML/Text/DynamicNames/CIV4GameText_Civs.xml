@@ -24,7 +24,8 @@
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</Spanish>
-	</TEXT><TEXT>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_SHORT_DESC</Tag>
 		<English>Egypt</English>
 		<French>
@@ -1306,7 +1307,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ATHENS_PEDIA</Tag>
-		<English>Athens is one of the oldest named cities in the world, having been continuously inhabited for at least 5000 years.[1] Situated in southern Europe, Athens became the leading city of Ancient Greece in the first millennium BC, and its cultural achievements during the 5th century BC laid the foundations of western civilization. </English>
+		<English>Athens is one of the oldest named cities in the world, having been continuously inhabited for at least 5000 years. Situated in southern Europe, Athens became the leading city of Ancient Greece in the first millennium BC, and its cultural achievements during the 5th century BC laid the foundations of western civilization.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HITTITE_PEDIA</Tag>
@@ -1314,7 +1315,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HUNS_PEDIA</Tag>
-		<English>The Huns were a nomadic people who lived in Central Asia, the Caucasus, and Eastern Europe, between the 4th and 6th century AD. According to European tradition, they were first reported living east of the Volga River, in an area that was part of Scythia at the time; the Huns' arrival is associated with the migration westward of an Indo-Iranian people, the Alans.[1] By 370 AD, the Huns had arrived on the Volga, and by 430 the Huns had established a vast, if short-lived, dominion in Europe, conquering the Goths and many other Germanic peoples living outside of Roman borders, and causing many others to flee into Roman territory. The Huns, especially under their King Attila made frequent and devastating raids into the Eastern Roman Empire. In 451, the Huns invaded the Western Roman province of Gaul, where they fought a combined army of Romans and Visigoths at the Battle of the Catalaunian Fields, and in 452 they invaded Italy. After Attila's death in 453, the Huns ceased to be a major threat to Rome and lost much of their empire following the Battle of Nedao (454?)</English>
+		<English>The Huns were a nomadic people who lived in Central Asia, the Caucasus, and Eastern Europe, between the 4th and 6th century AD. According to European tradition, they were first reported living east of the Volga River, in an area that was part of Scythia at the time; the Huns' arrival is associated with the migration westward of an Indo-Iranian people, the Alans. By 370 AD, the Huns had arrived on the Volga, and by 430 the Huns had established a vast, if short-lived, dominion in Europe, conquering the Goths and many other Germanic peoples living outside of Roman borders, and causing many others to flee into Roman territory. The Huns, especially under their King Attila made frequent and devastating raids into the Eastern Roman Empire. In 451, the Huns invaded the Western Roman province of Gaul, where they fought a combined army of Romans and Visigoths at the Battle of the Catalaunian Fields, and in 452 they invaded Italy. After Attila's death in 453, the Huns ceased to be a major threat to Rome and lost much of their empire following the Battle of Nedao (454?)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_PEDIA</Tag>
@@ -1322,7 +1323,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MACEDONIA_PEDIA</Tag>
-		<English>Macedon was an ancient kingdom on the periphery of Archaic and Classical Greece,[6] and later the dominant state of Hellenistic Greece.[7] The kingdom was founded and initially ruled by the royal Argead dynasty, which was followed by the Antipatrid and Antigonid dynasties. Home to the ancient Macedonians, the earliest kingdom was centered on the northeastern part of the Greek peninsula, and bordered by Epirus to the west, Paeonia to the north, Thrace to the east and Thessaly to the south.  Before the 4th century BC, Macedonia was a small kingdom outside of the area dominated by the great city-states of Athens, Sparta and Thebes, and briefly subordinate to Achaemenid Persia.[3] During the reign of the Argead king Philip II (359-336 BC), Macedonia subdued mainland Greece and Thrace through conquest and diplomacy. With a reformed army containing phalanxes wielding the sarissa pike, Philip II defeated the old powers of Athens and Thebes in the Battle of Chaeronea in 338 BC. Philip II's son Alexander the Great, leading a federation of Greek states, accomplished his father's objective of commanding the whole of Greece when he destroyed Thebes after the city revolted. During Alexander's subsequent campaign of conquest, he overthrew the Achaemenid Empire and conquered territory that stretched as far as the Indus River. For a brief period, his empire was the most powerful in the world - the definitive Hellenistic state, inaugurating the transition to a new period of Ancient Greek civilization.</English>
+		<English>Macedon was an ancient kingdom on the periphery of Archaic and Classical Greece, and later the dominant state of Hellenistic Greece. The kingdom was founded and initially ruled by the royal Argead dynasty, which was followed by the Antipatrid and Antigonid dynasties. Home to the ancient Macedonians, the earliest kingdom was centered on the northeastern part of the Greek peninsula, and bordered by Epirus to the west, Paeonia to the north, Thrace to the east and Thessaly to the south.  Before the 4th century BC, Macedonia was a small kingdom outside of the area dominated by the great city-states of Athens, Sparta and Thebes, and briefly subordinate to Achaemenid Persia. During the reign of the Argead king Philip II (359-336 BC), Macedonia subdued mainland Greece and Thrace through conquest and diplomacy. With a reformed army containing phalanxes wielding the sarissa pike, Philip II defeated the old powers of Athens and Thebes in the Battle of Chaeronea in 338 BC. Philip II's son Alexander the Great, leading a federation of Greek states, accomplished his father's objective of commanding the whole of Greece when he destroyed Thebes after the city revolted. During Alexander's subsequent campaign of conquest, he overthrew the Achaemenid Empire and conquered territory that stretched as far as the Indus River. For a brief period, his empire was the most powerful in the world - the definitive Hellenistic state, inaugurating the transition to a new period of Ancient Greek civilization.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_PEDIA</Tag>
