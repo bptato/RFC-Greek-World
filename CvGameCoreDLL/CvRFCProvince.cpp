@@ -3,6 +3,7 @@ Author: bluepotato
 */
 #include "CvGameCoreDLL.h"
 #include "CvRFCProvince.h"
+#include "CvDLLInterfaceIFaceBase.h"
 
 CvRFCProvince::CvRFCProvince() {
 	reset();
@@ -110,6 +111,17 @@ void CvRFCProvince::checkMercenaries() {
 					}
 					addMercenary(mercenary);
 					unit->kill(false);
+					if(!createdMercs) {
+						for(int i = 0; i<MAX_CIV_PLAYERS; ++i) {
+							CvPlayer& player = GET_PLAYER((PlayerTypes)i);
+							if(player.isHuman()) {
+								if(getNumCities((PlayerTypes)i)>0) {
+									CvWString msg = gDLL->getText("TXT_KEY_NEW_MERCENARIES", getName());
+									gDLL->getInterfaceIFace()->addMessage((PlayerTypes)i, true, GC.getEVENT_MESSAGE_TIME(), msg, "", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"));
+								}
+							}
+						}
+					}
 					++createdMercs;
 				}
 			}
@@ -258,7 +270,7 @@ int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 	int countedCities = 0;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
 		if(isInBounds(city->getX(), city->getY())) {
-			countedCities++;
+			++countedCities;
 		}
 	}
 	return countedCities;

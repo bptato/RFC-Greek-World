@@ -1581,9 +1581,9 @@ void CvUnit::updateCombat(bool bQuick)
 						int unitDamage = enslavedUnit->maxHitPoints() - enslavedUnit->maxHitPoints()/(GC.getGame().getSorenRandNum(5, "unit damage roll")+5);
 						enslavedUnit->setDamage(unitDamage);
 						szBuffer = gDLL->getText("TXT_KEY_UP_ENSLAVE_WIN");
-						gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "SND_WHIP", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+						gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_WHIP", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 						szBuffer = gDLL->getText("TXT_KEY_UP_ENSLAVE_LOSE");
-						gDLL->getInterfaceIFace()->addMessage(defUnitOwner, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "SND_WHIP", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+						gDLL->getInterfaceIFace()->addMessage(defUnitOwner, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_WHIP", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 					}
 				}
 			}

@@ -9321,7 +9321,7 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
-    <Script2DSound>
+	<Script2DSound>
 		<ScriptID>AS2D_BUILD_ARCHERYRANGE</ScriptID>
 		<SoundID>SND_BUILD_ARCHERYRANGE</SoundID>
 		<SoundType>GAME_SFX</SoundType>
@@ -9344,7 +9344,7 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
-    <Script2DSound>
+	<Script2DSound>
 		<ScriptID>AS2D_BUILD_ALCHEMISTLAB</ScriptID>
 		<SoundID>SND_BUILD_ALCHEMISTLAB</SoundID>
 		<SoundType>GAME_INTERFACE</SoundType>
@@ -9896,7 +9896,7 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
-    <Script2DSound>
+	<Script2DSound>
 		<ScriptID>AS2D_ERA_0_SOUNDTRACK_0</ScriptID>
 		<SoundID>SONG_ERA_0_SOUNDTRACK_0</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
@@ -10080,7 +10080,7 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
-    <Script2DSound>
+	<Script2DSound>
 		<ScriptID>AS2D_ERA_1_SOUNDTRACK_0</ScriptID>
 		<SoundID>SONG_ERA_1_SOUNDTRACK_0</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
@@ -10264,7 +10264,7 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
-    <Script2DSound>
+	<Script2DSound>
 		<ScriptID>AS2D_ERA_2_SOUNDTRACK_0</ScriptID>
 		<SoundID>SONG_ERA_2_SOUNDTRACK_0</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
@@ -22431,7 +22431,7 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
-    <Script2DSound>
+	<Script2DSound>
 		<ScriptID>AS2D_DIPLO_KHOSRAU_EARLY</ScriptID>
 		<SoundID>DIPLO_KHOSRAU_EARLY</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
@@ -22500,10 +22500,33 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
-    <Script2DSound>
+	<Script2DSound>
 		<ScriptID>AS2D_POTATOES</ScriptID>
 		<SoundID>SONG_POTATOES</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
+		<iMinVolume>70</iMinVolume>
+		<iMaxVolume>70</iMaxVolume>
+		<iPitchChangeDown>0</iPitchChangeDown>
+		<iPitchChangeUp>0</iPitchChangeUp>
+		<iMinLeftPan>-1</iMinLeftPan>
+		<iMaxLeftPan>-1</iMaxLeftPan>
+		<iMinRightPan>-1</iMinRightPan>
+		<iMaxRightPan>-1</iMaxRightPan>
+		<bLooping>0</bLooping>
+		<iMinTimeDelay>0</iMinTimeDelay>
+		<iMaxTimeDelay>0</iMaxTimeDelay>
+		<bTaperForSoundtracks>0</bTaperForSoundtracks>
+		<iLengthOfSound>0</iLengthOfSound>
+		<fMinDryLevel>1.0</fMinDryLevel>
+		<fMaxDryLevel>1.0</fMaxDryLevel>
+		<fMinWetLevel>0.0</fMinWetLevel>
+		<fMaxWetLevel>0.0</fMaxWetLevel>
+		<iNotPlayPercent>0</iNotPlayPercent>
+	</Script2DSound>
+	<Script2DSound>
+		<ScriptID>AS2D_WHIP</ScriptID>
+		<SoundID>SND_WHIP</SoundID>
+		<SoundType>GAME_SFX</SoundType>
 		<iMinVolume>70</iMinVolume>
 		<iMaxVolume>70</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>

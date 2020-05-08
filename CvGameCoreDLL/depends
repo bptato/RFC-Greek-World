@@ -3535,7 +3535,8 @@ Debug\CvRFCProvince.obj: CvRFCProvince.cpp \
 	.\CvDllEntity.h \
 	.\CvDLLEntityIFaceBase.h \
 	.\CyGlobalContext.h \
-	.\CvArtFileMgr.h
+	.\CvArtFileMgr.h \
+	.\CvDLLInterfaceIFaceBase.h
 Debug\CvDeal.obj: CvDeal.cpp \
 	.\CvGameCoreDLL.h \
 	.\FAssert.h \
@@ -9682,7 +9683,8 @@ Release\CvRFCProvince.obj: CvRFCProvince.cpp \
 	.\CvDllEntity.h \
 	.\CvDLLEntityIFaceBase.h \
 	.\CyGlobalContext.h \
-	.\CvArtFileMgr.h
+	.\CvArtFileMgr.h \
+	.\CvDLLInterfaceIFaceBase.h
 Release\CvDeal.obj: CvDeal.cpp \
 	.\CvGameCoreDLL.h \
 	.\FAssert.h \
