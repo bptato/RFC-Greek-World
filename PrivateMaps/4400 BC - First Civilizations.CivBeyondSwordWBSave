@@ -42,7 +42,7 @@ application/json
 			"StartingGold":100,
 			"StartingTechs":[
 				"TECH_FISHING",
-				"TECH_HUNTING"
+				"TECH_BREAD_MAKING"
 			],
 			"StartingWars":[],
 			"RelatedLanguages":[],
