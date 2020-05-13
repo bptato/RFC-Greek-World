@@ -3,7 +3,7 @@
 <Civ4GameText>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON</Tag>
-		<English>The Great Cothon</English>
+		<English>Great Cothon</English>
 		<French>
 			<Text>Grand Cothon</Text>
 			<Gender>Male</Gender>
@@ -14,8 +14,6 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>The Great Cothon</Italian>
-		<Spanish>The Great Cothon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON_STRATEGY</Tag>
@@ -39,7 +37,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RUSTAM_PEDIA</Tag>
-		<English>[TAB]Naqsh-e Rustam also referred to as Necropolis is an archaeological site located about 12 km northwest of Persepolis, in Fars province, Iran. Naqsh-e Rustam lies a few hundred meters from Naqsh-e Rajab. The oldest relief at Naqsh-i Rustam is severely damaged and dates to c. 1000 BC. It depicts a faint image of a man with unusual head-gear and is thought to be Elamite in origin. The depiction is part of a larger mural, most of which was removed at the command of Bahram II. The man with the unusual cap gives the site its name, Naqsh-e Rostam, &quot;Picture of Rostam&quot;, because the relief was locally believed to be a depiction of the mythical hero Rostam. The triumph of Shapur I (c. 241-272):  is the most famous of the Sassanid rock reliefs, and depicts Shapur's victory over two Roman emperors, Valerian and Philip the Arab. A more elaborate version of this rock relief is at Bishapur.</English>
+		<English>[TAB]Naqsh-e Rustam, also referred to as Necropolis, is an archaeological site located about 12 km northwest of Persepolis, in Iran. Naqsh-e Rustam lies a few hundred meters from Naqsh-e Rajab. The oldest relief at Naqsh-i Rustam is severely damaged and dates to c. 1000 BC. It depicts a faint image of a man with unusual head-gear and is thought to be Elamite in origin. The depiction is part of a larger mural, most of which was removed at the command of Bahram II. The man with the unusual cap gives the site its name, Naqsh-e Rostam, &quot;Picture of Rostam&quot;, because the relief was locally believed to be a depiction of the mythical hero Rostam. The triumph of Shapur I (c. 241-272):  is the most famous of the Sassanid rock reliefs, and depicts Shapur's victory over two Roman emperors, Valerian and Philip the Arab. A more elaborate version of this rock relief is at Bishapur.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RUSTAM_STRATEGY</Tag>
@@ -47,7 +45,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>
-		<English>The Great Bath of Mohenjo-daro</English>
+		<English>Great Bath</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_BATH_PEDIA</Tag>
@@ -60,5 +58,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_GREAT_BATH_HELP</Tag>
 		<English>[ICON_BULLET]New cities receive +2 population</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASHURBANIPAL_LIBRARY</Tag>
+		<English>Ashurbanipal's Library</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASHURBANIPAL_LIBRARY_PEDIA</Tag>
+		<English>[TAB]The Royal Library of Ashurbanipal, named after Ashurbanipal, the last great king of the Assyrian Empire, is a collection of thousands of clay tablets and fragments containing texts of all kinds from the 7th century BCE. Among its holdings was the famous Epic of Gilgamesh.[NEWLINE][NEWLINE][TAB]Ashurbanipal was known as a tenacious martial commander; however, he was also a recognized intellectual who was literate, and a passionate collector of texts and tablets. As an apprentice scribe he mastered both the Akkadian and the Sumerian languages He sent scribes into every region of the Neo-Assyrian Empire to collect ancient texts. He hired scholars and scribes to copy texts, mainly from Babylonian sources.[NEWLINE][TAB]Ashurbanipal used war loot as a means of stocking his library. Because he was known for being cruel to his enemies, Ashurbanipal was able to use threats to gain materials from Babylonia and surrounding areas. Ashurbanipal's intense interest in collecting divination texts was one of his driving motivations in collecting works for his library. His original motive may have been to "gain possession of rituals and incantations that were vital to maintain his royal power."[NEWLINE][TAB]The royal library consists of approximately 30,000 tablets and writing boards with the majority of them being severely fragmented. It can be gleaned from the conservation of the fragments that the number of tablets that existed in the library at the time of destruction was close to two thousand and the number of writing boards within the library can be placed at a total of three hundred. The majority of the tablet corpus (about 6,000) included colloquial compositions in the form of legislation, foreign correspondences and engagements, aristocratic declarations, and financial matters. The remaining texts contained divinations, omens, incantations and hymns to various gods, while others were concerned with medicine, astronomy, and literature. For all these texts in the library only ten contain expressive rhythmic literary works such as epics and myths.[NEWLINE][TAB]Nineveh was destroyed in 612 BCE by a coalition of Babylonians, Scythians and Medes, an ancient Iranian people. It is believed that during the burning of the palace, a great fire must have ravaged the library, causing the clay cuneiform tablets to become partially baked. This potentially destructive event helped preserve the tablets. As well as texts on clay tablets, some of the texts may have been inscribed onto wax boards which, because of their organic nature, have been lost.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASHURBANIPAL_LIBRARY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Ashurbanipal's Library[COLOR_REVERT] doubles its city's research output, and increases the likelyhood a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] will be generated.</English>
 	</TEXT>
 </Civ4GameText>

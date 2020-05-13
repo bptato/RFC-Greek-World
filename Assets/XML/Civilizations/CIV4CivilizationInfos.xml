@@ -3223,6 +3223,10 @@
 			</Cities>
 			<Buildings>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_ASHURBANIPAL_LIBRARY</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -3296,10 +3300,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_NOTRE_DAME</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3470,6 +3470,10 @@
 			</Cities>
 			<Buildings>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_ASHURBANIPAL_LIBRARY</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -3543,10 +3547,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_NOTRE_DAME</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3733,6 +3733,10 @@
 			</Cities>
 			<Buildings>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_ASHURBANIPAL_LIBRARY</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -3806,10 +3810,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_NOTRE_DAME</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>

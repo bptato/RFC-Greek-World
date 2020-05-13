@@ -50,22 +50,25 @@ http://forums.civfanatics.com/threads/lh-king-hiram-of-tyre-phoenicia.265234/ (A
 http://forums.civfanatics.com/resources/lh-king-david.10317/ (ekmek)
 
 Sound
-Background music mostly from Rhye's & Fall Classical World (SRPT).
+Background music mostly from Rhye's and Fall of the Classical World (srpt).
 Walking in depreston promo shorter by Ali Yamamoto (official free to download & use for non commercial use, with credit given to author)
-Building Sounds from Sword of Islam (Emrbyodead)
-Hunnic, Spartan diplomusic from cybrxkhan: https://forums.civfanatics.com/threads/cybrxkhans-diplomacy-music-thread.335199/
+Building Sounds from Sword of Islam (emrbyodead)
+Hunnic, Spartan, Minoan and Phoenician diplomusic from cybrxkhan: https://forums.civfanatics.com/threads/cybrxkhans-diplomacy-music-thread.335199/
 Assyrian, Nubian diplomusic from History Rewritten (more specifically by IanMusic): https://forums.civfanatics.com/forums/mac-win-civ4-history-rewritten.448/
 
 Units
 Most units used were created by ambrox62
 
-https://forums.civfanatics.com/threads/elamite-horned-warrior.486939/ for Elamite Horned Warrior
+https://forums.civfanatics.com/threads/elamite-horned-warrior.486939/ (Spillsandstains)
 
 Buildings
 https://forums.civfanatics.com/resources/knossos-labyrinth.18253/ (platyping)
 https://forums.civfanatics.com/resources/naqshi-i-rustam.18314/ (stolenrays)
+https://forums.civfanatics.com/resources/library-in-mosul.22922/ (hrochland)
+https://forums.civfanatics.com/resources/the-great-bath-of-mohenjo-daro-wonder-xml-python.11091/ (tsentom1)
 
-Wonder Movies
-Naqsh-e-Rustam by Zeta Nexus (music: https://www.youtube.com/watch?v=cKDF_PAngyM)
+Wonder Movies (for those wonders that didn't come with one)
+Naqsh-e-Rustam by Zeta Nexus (music: Sight of Wonders - Arabian Nights)
+https://forums.civfanatics.com/resources/wondermovie-library-of-ashurbanipal.19288/ (Arian)
 
 If there is anyone whose work was included but not credited, please message me or post on the forums

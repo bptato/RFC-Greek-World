@@ -51,10 +51,6 @@
 			<Path>Art/Movies/Wonders/HangingGardens.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_NOTRE_DAME</Type>
-			<Path>Art/Movies/Wonders/NotreDame.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_ORACLE</Type>
 			<Path>Art/Movies/Wonders/Oracle.bik</Path>
 		</MovieArtInfo>
@@ -77,10 +73,6 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SPACE_ELEVATOR</Type>
 			<Path>Art/Movies/Wonders/SpaceElevator.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SPIRAL_MINARET</Type>
-			<Path>Art/Movies/Wonders/SpiralMinaret.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_STONEHENGE</Type>
@@ -177,6 +169,10 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_GREAT_BATH</Type>
 			<Path>Art/Movies/Wonders/BathMovie.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ASHURBANIPAL_LIBRARY</Type>
+			<Path>Art/Movies/Wonders/AshurbanipalLibrary.bik</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

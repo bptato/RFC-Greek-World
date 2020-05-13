@@ -1,4 +1,53 @@
 CURRENT VERSION:
+Version 2.0
+Additions:
+Added Naqsh-e Rustam
+Added Ashurbanipal's Library
+Added Great Bath
+Added slave markets
+Merged Sevopedia (was in previous versions as well, it just hadn't made it into the beta version of the rewrite)
+Re-added holy city relocations
+Added new diplomusic for Satur and Hiram
+
+General changes:
+Athens now starts with Deification
+Increased stability hits for losing cities
+Adjusted some technologies
+Adjusted some mercenary values
+Open borders are now available with Spokes
+The culture slider is now available with Spokes
+Building research is now available with Philosophy
+Changed Leaning Tower/Stone Tower of Jericho to Trajan's column
+Oases may now be improved or settled
+Added UHV titles to victory screen
+Improved the mercenary screen
+Added notifications for available mercenaries
+Removed Angkor Wat
+Removed Notre Dame
+Replaced Moai Statues with Great Cothon
+Salt is now revealed by Urban Settlements
+Removed railroads
+Implemented city renaming on conquest
+Changed Assyrian selection sounds (from Arabian to Babylonian, since both Babylonians and Assyrians spoke Akkadian)
+First Mycenaean UHV condition now requires four Tholoi
+
+Technical changes:
+Moved some hardcoded mercenary values to XML
+Replaced Sanguo Mod Performance labels to make a future merge easier
+Disabled some python callbacks
+Removed some obsolete XML stuff
+
+Fixes:
+Fixed some UHVs
+Holy cities no longer relocate in case they're in a civilization's capital
+Fixed replay screen showing wrong colors
+Independent city spawns are no longer blocked by culture
+Fixed some asserts
+Fixed being able to negotiate peace, war and trade embargos concerning Independents
+Fixed the defeat message
+Escape key no longer kills the player during autoplay
+
+PREVIOUS VERSIONS:
 Version 2.0 beta
 Additions:
 Added historical leaderhead swapping
@@ -77,7 +126,6 @@ AI chooses stupid civic combinations regarding civic stability
 900BC scenario is broken
 AI settling patterns are weird since the compact empire modifier has been fixed
 
-PREVIOUS VERSIONS:
 Version 1.8
 Additions:
 New art/names for religions
