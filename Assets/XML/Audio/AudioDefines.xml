@@ -57,12 +57,12 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SONG_ERA_0_SOUNDTRACK_7</SoundID>
-			<Filename>Sounds/Soundtrack/Ancient/AncientArabia2</Filename>
+			<Filename>Sounds/Soundtrack/Ancient/EpicofGilgamesh</Filename>
 			<LoadType>RESIDENT</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
-        <SoundData>
+		<SoundData>
 			<SoundID>SONG_ERA_1_SOUNDTRACK_0</SoundID>
 			<Filename>Sounds/Soundtrack/Classical/Duduk</Filename>
 			<LoadType>RESIDENT</LoadType>
@@ -118,7 +118,7 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
-        <SoundData>
+		<SoundData>
 			<SoundID>SONG_ERA_2_SOUNDTRACK_0</SoundID>
 			<Filename>Sounds/Soundtrack/Medieval/Barbarian</Filename>
 			<LoadType>RESIDENT</LoadType>
@@ -2568,7 +2568,7 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
-            <SoundData>
+		<SoundData>
 			<SoundID>DIPLO_KHOSRAU_EARLY</SoundID>
 			<Filename>Sounds/Diplomacy/KHOSRAU_Early</Filename>
 			<LoadType>STREAMED</LoadType>
@@ -4031,14 +4031,14 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
-        <SoundData>
+		<SoundData>
 			<SoundID>SND_BUILD_ALCHEMISTLAB</SoundID>
 			<Filename>Sounds/Buildings/AlchemistLab</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
-        <SoundData>
+		<SoundData>
 			<SoundID>SND_BUILD_ARCHERYRANGE</SoundID>
 			<Filename>Sounds/Buildings/ArcheryRange</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>

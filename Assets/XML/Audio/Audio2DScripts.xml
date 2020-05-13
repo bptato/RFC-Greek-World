@@ -10061,8 +10061,8 @@
 		<ScriptID>AS2D_ERA_0_SOUNDTRACK_7</ScriptID>
 		<SoundID>SONG_ERA_0_SOUNDTRACK_7</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>70</iMinVolume>
-		<iMaxVolume>70</iMaxVolume>
+		<iMinVolume>65</iMinVolume>
+		<iMaxVolume>65</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
