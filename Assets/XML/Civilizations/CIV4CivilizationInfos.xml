@@ -216,6 +216,10 @@
 					<LeaderName>LEADER_GILGAMESH</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
+				<Leader>
+					<LeaderName>LEADER_URUKAGINA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_BABYLON</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_SUMERIA_SELECT</CivilizationSelectionSound>
