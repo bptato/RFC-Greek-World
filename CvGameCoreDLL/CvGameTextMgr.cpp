@@ -3080,15 +3080,15 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 	//bluepotato start: display provinces
 	if(!pPlot->isWater() && !pPlot->isPeak()) {
-		const wchar* provinceName = GC.getRiseFall().getProvinceForPlot(pPlot->getX(), pPlot->getY());
-		if(wcslen(provinceName) > 0) {
+		CvRFCProvince* province = GC.getRiseFall().getProvinceForPlot(pPlot->getX(), pPlot->getY());
+		if(province!=NULL) {
 			if(GC.getRiseFall().getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isInCoreBounds(pPlot->getX(), pPlot->getY())) {
 				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_POSITIVE_TEXT")));
 			} else {
 				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			}
 			szString.append(NEWLINE);
-			szString.append(gDLL->getText(provinceName));
+			szString.append(gDLL->getText(province->getName()));
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}

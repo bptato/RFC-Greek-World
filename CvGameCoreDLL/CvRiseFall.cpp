@@ -430,7 +430,7 @@ void CvRiseFall::spawnMinorCivilization(CivilizationTypes civType) {
 	}
 }
 
-void CvRiseFall::setupAIPlayer(CivilizationTypes civType, PlayerTypes playerType) { //basically the same as CvGame::addPlayer, except we assign the correct leader
+void CvRiseFall::setupAIPlayer(CivilizationTypes civType, PlayerTypes playerType) { //basically the same as CvGame::addPlayer, except we assign the correct leader (and color)
 	CvPlayer& player = GET_PLAYER(playerType);
 	CvWString emptyString = L"";
 
@@ -667,14 +667,14 @@ int CvRiseFall::getNumProvinces() {
 	return rfcProvinces.size();
 }
 
-const wchar* CvRiseFall::getProvinceForPlot(int x, int y) {
+CvRFCProvince* CvRiseFall::getProvinceForPlot(int x, int y) {
 	std::vector<CvRFCProvince>::iterator it;
 	for (it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
 		if((*it).isInBounds(x, y)) {
-			return (*it).getName();
+			return &(*it);
 		}
 	}
-	return L"";
+	return NULL;
 }
 
 bool CvRiseFall::checkUnitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign) {

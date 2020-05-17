@@ -46,7 +46,7 @@ class CvRiseFall {
 		CvRFCProvince* getRFCProvince(const wchar* provinceName);
 		CvRFCProvince* getRFCProvince(int provinceID);
 		int getNumProvinces();
-		const wchar* getProvinceForPlot(int x, int y);
+		CvRFCProvince* getProvinceForPlot(int x, int y);
 
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);

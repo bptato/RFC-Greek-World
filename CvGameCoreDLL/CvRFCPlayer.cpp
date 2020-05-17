@@ -633,7 +633,7 @@ bool CvRFCPlayer::isInCoreBounds(int x, int y) {
 }
 
 bool CvRFCPlayer::isInBorderBounds(int x, int y) {
-	CvRFCProvince* borderProvince = GC.getRiseFall().getRFCProvince(GC.getRiseFall().getProvinceForPlot(x, y));
+	CvRFCProvince* borderProvince = GC.getRiseFall().getProvinceForPlot(x, y);
 	if(borderProvince == NULL) {
 		return false;
 	}
