@@ -17723,7 +17723,7 @@
 			<UnitName/>
 			<UnitCombatPromotions>
 				<UnitCombatPromotion>
-					<UnitCombat>UNITCOMBAT_GUN</UnitCombat>
+					<UnitCombat>UNITCOMBAT_ARCHER</UnitCombat>
 					<UnitPromotion>PROMOTION_MARCH</UnitPromotion>
 				</UnitCombatPromotion>
 			</UnitCombatPromotions>
