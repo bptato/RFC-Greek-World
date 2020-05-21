@@ -382,7 +382,7 @@
 			<NIF>Art/Terrain/Resources/Camel/Camel.nif</NIF>
 			<KFM>Art/Terrain/Resources/Deer/Deer.kfm</KFM>
 			<SHADERNIF>Art/Terrain/Resources/Camel/Camel.nif</SHADERNIF>
-			<Button>Art/Interface/Buttons/Camel/Camel_button.dds</Button>
+			<Button>Art/Interface/Buttons/Resources/Camel_button.dds</Button>
 			<FontButtonIndex>38</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>

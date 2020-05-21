@@ -3078,8 +3078,20 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 	}
 
-	//bluepotato start: display provinces
+	//bluepotato start
 	if(!pPlot->isWater() && !pPlot->isPeak()) {
+		CvUnit* selectedUnit = gDLL->getInterfaceIFace()->getHeadSelectedUnit();
+		PlayerTypes activePlayer = GC.getGameINLINE().getActivePlayer();
+		if(selectedUnit != NULL && activePlayer != NO_PLAYER) {
+			if(selectedUnit->isFound()) {
+				CvWString cityName(pPlot->getCityName(GET_PLAYER(activePlayer).getCivilizationType()));
+				if(!cityName.empty()) {
+					szString.append(NEWLINE);
+					szString.append(cityName);
+				}
+			}
+		}
+
 		CvRFCProvince* province = GC.getRiseFall().getProvinceForPlot(pPlot->getX(), pPlot->getY());
 		if(province!=NULL) {
 			if(GC.getRiseFall().getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isInCoreBounds(pPlot->getX(), pPlot->getY())) {
