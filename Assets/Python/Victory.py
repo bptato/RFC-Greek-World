@@ -63,6 +63,18 @@ def civ2player(civType):
 def player2civ(playerType):
 	return gc.getPlayer(playerType).getCivilizationType()
 
+
+	
+def controlsProvince(playerType, province):
+	for i in range(iNumPlayers):
+		if i == playerType:
+			if province.getNumCities(i) < 1:
+				return False
+		else:
+			if province.getNumCities(i) >= 1:
+				return False
+	return True
+
 class Victory:
 	def initGlobals(self):
 		global iNumCivs
@@ -85,6 +97,7 @@ class Victory:
 		global i1070BC
 		global i1000BC
 		global i900BC
+		global i671BC
 		global i600BC
 		global i500BC
 		global i250BC
@@ -107,6 +120,7 @@ class Victory:
 		i1070BC = getTurnForYear(-1070)
 		i1000BC = getTurnForYear(-1000)
 		i900BC = getTurnForYear(-900)
+		i671BC = getTurnForYear(-671)
 		i600BC = getTurnForYear(-600)
 		i500BC = getTurnForYear(-500)
 		i250BC = getTurnForYear(-250)
@@ -565,17 +579,7 @@ class Victory:
 			if self.getGoal(iHittites, 0) == -1 and iGameTurn > i1400BC:
 				self.setGoal(iHittites, 0, 0)
 			if iGameTurn == i1300BC:
-				result = True
-				for i in range(iNumPlayers):
-					if i == iPlayer:
-						if provPhoenicia.getNumCities(i) < 1:
-							result = False
-							break
-					else:
-						if provPhoenicia.getNumCities(i) >= 1:
-							result = False
-							break
-				self.setGoal(iHittites, 1, result)
+				self.setGoal(iHittites, 1, controlsProvince(iPlayer, provPhoenicia))
 			elif iGameTurn < i1200BC:
 				if self.getHittiteKilledUnits() >= 15:
 					self.setGoal(iHittites, 2, 1)
@@ -598,6 +602,39 @@ class Victory:
 					self.setGoal(iMycenae, 2, 0)
 				else:
 					self.setGoal(iMycenae, 2, 1)
+		elif civType == iAssyria:
+			if self.getGoal(iAssyria, 0) == -1:
+				goalCompleted = controlsProvince(iPlayer, provSubartu) and \
+						controlsProvince(iPlayer, provAkkad) and \
+						controlsProvince(iPlayer, provPhoenicia) and \
+						controlsProvince(iPlayer, provSumer)
+				if goalCompleted:
+					self.setGoal(iAssyria, 0, 1)
+				elif iGameTurn > i1250BC:
+					self.setGoal(iAssyria, 0, 0)
+			if self.getGoal(iAssyria, 1) == -1:
+				holyCityCondition = False
+				anunnaki = gc.getInfoTypeForString("RELIGION_ANUNNAKI")
+				holyCity = gc.getGame().getHolyCity(anunnaki)
+				if holyCity:
+					if holyCity.getOwner() == iPlayer and holyCity.isCapital():
+						ashurbanipalLibrary = gc.getInfoTypeForString("BUILDING_ASHURBANIPAL_LIBRARY")
+						if holyCity.isHasBuilding(ashurbanipalLibrary):
+							self.setGoal(Assyria, 1, 1)
+			if self.getGoal(iAssyria, 2) == -1:
+				goalCompleted = controlsProvince(iPlayer, provSubartu) and \
+						controlsProvince(iPlayer, provAkkad) and \
+						controlsProvince(iPlayer, provPhoenicia) and \
+						controlsProvince(iPlayer, provSumer) and \
+						controlsProvince(iPlayer, provKhuzestan) and \
+						controlsProvince(iPlayer, provLowerEgypt) and \
+						controlsProvince(iPlayer, provAnatolia) and \
+						controlsProvince(iPlayer, provPalestine)
+
+				if goalCompleted:
+					self.setGoal(iAssyria, 2, 1)
+				elif iGameTurn > i671BC:
+					self.setGoal(iAssyria, 2, 0)
 
 	def onCityBuilt(self, city):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical

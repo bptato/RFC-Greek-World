@@ -263,7 +263,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BAB1</Tag>
-		<English>Build six wonders in the city of Babylon by 1000BC</English>
+		<English>Build six wonders in the city of Babylon by 1000 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BAB2_TITLE</Tag>
@@ -279,7 +279,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BAB3</Tag>
-		<English>Eliminate three or more civilizations by 600BC</English>
+		<English>Eliminate three or more civilizations by 600 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT1_TITLE</Tag>
@@ -287,7 +287,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT1</Tag>
-		<English>Conquer Babylon by 1400BC</English>
+		<English>Conquer Babylon by 1400 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT2_TITLE</Tag>
@@ -295,7 +295,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT2</Tag>
-		<English>Control Phoenicia in 1300BC</English>
+		<English>Control Phoenicia in 1300 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT3_TITLE</Tag>
@@ -303,7 +303,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HIT3</Tag>
-		<English>Destroy 15 units using chariots by 1200BC</English>
+		<English>Destroy 15 units using chariots by 1200 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC1_TITLE</Tag>
@@ -311,7 +311,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC1</Tag>
-		<English>Build four Tholoi by 1300BC</English>
+		<English>Build four Tholoi by 1300 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC2_TITLE</Tag>
@@ -319,7 +319,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC2</Tag>
-		<English>Build the Lion Gate by 1100BC</English>
+		<English>Build the Lion Gate by 1100 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC3_TITLE</Tag>
@@ -327,6 +327,30 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MYC3</Tag>
-		<English>Ensure there are no Independent or Barbarian cities in Lydia or Anatolia in 1000BC</English>
+		<English>Ensure there are no Independent or Barbarian cities in Lydia or Anatolia in 1000 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY1_TITLE</Tag>
+		<English>The Middle-Assyrian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY1</Tag>
+		<English>Control Subartu, Akkad, Phoenicia, and Sumer by 1250 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY2_TITLE</Tag>
+		<English>Assyrian Culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY2</Tag>
+		<English>Make your capital the Anunnaki Holy City and build Ashurbanipal's Library in it</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY3_TITLE</Tag>
+		<English>Esarhaddon's Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ASY3</Tag>
+		<English>Control Subartu, Akkad, Phoenicia, Sumer, Khuzestan, Palestine and Lower Egypt by 671 BC</English>
 	</TEXT>
 </Civ4GameText>
