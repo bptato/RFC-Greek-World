@@ -24,7 +24,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKERY_STRATEGY</Tag>
-		<English>Gives + 1 happiness, + 1 health, and health bonuses from wheat and corn.</English>
+		<English>Gives + 1 happiness, + 1 health, and health bonuses from wheat and rice.</English>
 	</TEXT>
 	 <TEXT>
 		<Tag>TXT_KEY_BUILDING_ARCHERY_RANGE</Tag>
@@ -136,7 +136,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SOUQ_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Fur Traders is the Gothic replacement for the Market.[COLOR_REVERT]</English>
+		<English>[COLOR_BUILDING_TEXT]Fur Traders[COLOR_REVERT] are the Gothic replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT]. They increase espionage, provide an extra trade route, and give extra commerce from [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUWASI</Tag>
@@ -144,7 +144,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUWASI_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]The Huwasi is the Hittite replacement for the Monument. They provide health to the cities in which they're located.[COLOR_REVERT]</English>
+		<English>The [COLOR_BUILDING_TEXT]Huwasi[COLOR_REVERT] is the Hittite replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT]. They provide health to the cities in which they're located.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUWASI_PEDIA</Tag>
@@ -156,7 +156,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPARTAN_CAMP_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]The Spartan Camp is the Spartan replacement for the Barracks. They provide extra experience for land units.[COLOR_REVERT]</English>
+		<English>The [COLOR_BUILDING_TEXT]Spartan Camp[COLOR_REVERT] is the Spartan replacement for the [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT]. They provide extra experience for land units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPARTAN_CAMP_PEDIA</Tag>
@@ -176,7 +176,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLOOMERY_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]The Bloomery is the Etruscan replacement for the Forge. It provides additional production bonuses with access to Iron.[COLOR_REVERT]</English>
+		<English>The [COLOR_BUILDING_TEXT]Bloomery[COLOR_REVERT] is the Etruscan replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT]. It provides additional production bonuses with access to [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLOOMERY_PEDIA</Tag>
@@ -203,6 +203,10 @@
 		<English>Trading Post</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHOENECIAN_TRADING_POST_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Phoenician Trading Port[COLOR_REVERT], the Phoenician replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all naval units built in the city a free [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SOUQ_PEDIA</Tag>
 		<English>A common meeting place where the pelts gathered from trapping animals is exchanged for money or other goods.</English>
 	</TEXT>
@@ -212,7 +216,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANAKTORA_STRATEGY</Tag>
-		<English>The [COLOR_HIGHLIGHT_TEXT]Anaktora[COLOR_REVERT] is the Minoan replacement for walls. It increases the city's research output by 25%.</English>
+		<English>The [COLOR_BUILDING_TEXT]Anaktora[COLOR_REVERT] is the Minoan replacement for [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT]. It increases the city's research output by 25%.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANAKTORA</Tag>
@@ -288,7 +292,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARAMANTES_FOGGARAS_STRATEGY</Tag>
-		<English>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Numidian replacement for a [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</English>
+		<English>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Numidian replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT].</English>
 		<French>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Garamantian replacement for a [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</French>
 		<German>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Garamantian replacement for a [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</German>
 		<Italian>A [COLOR_BUILDING_TEXT]Foggaras[COLOR_REVERT] (the Garamantian replacement for a [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT]) increases the health in a city by two. Consider using it in cities with unhealthiness generating buildings, like the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] and the[COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT].</Italian>
@@ -313,5 +317,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SLAVE_MARKET_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Slave Market[COLOR_REVERT] increases production and commerce of a city.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LABYRINTH_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Labyrinth[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hellenistic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPHINX_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Sphinx[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Pesedjet Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALITE_MAABED_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ma'abed[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Baalist Shrine[COLOR_REVERT]) produces one culture each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Annunaki Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 </Civ4GameText>
