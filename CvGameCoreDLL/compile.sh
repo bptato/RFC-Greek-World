@@ -3,11 +3,11 @@
 #This script is released into the public domain.
 #USAGE: ./compile.sh [Release/Debug] [clean]
 #nmake doesn't work too great with wine, so this is intended to replace it
-#on Linux. This should be POSIX-compliant, the only "extra" it needs is ack.
-#As to why I made this: firstly it's less hacky, secondly it doesn't spam the
-#console like nmake.sh, and thirdly it's usually faster, or at least isn't
-#slower. It also supports multiprocessing for Release builds, which makes it
-#way faster. Here's a small benchmark (for the RFGW DLL):
+#on Linux. This should be POSIX-compliant. As to why I made this: firstly
+#it's less hacky than nmake.sh, secondly it doesn't spam the console like
+#nmake.sh does, and thirdly it's usually faster, or at least isn't slower.
+#It also supports multiprocessing for Release builds, which makes it way
+#faster. Here's a small benchmark (for the RFGW DLL):
 #				compile.sh	nmake.sh
 #Release (Changed 1 cpp file):	24s		24s
 #Debug (Changed 1 cpp file):	9s		9s
@@ -98,7 +98,7 @@ should_compile() {
 	set $(echo "$DEPENDS" | sed "${c_index}q;d")
 	shift
 	pattern=$(echo "$@" | sed "s/ /\|/g")
-	ELEMS=$(find . -maxdepth 1 | ack -io $pattern)
+	ELEMS=$(find . -maxdepth 1 | egrep -io $pattern)
 	if test "$LASTCOMPILE" -lt "$(date -r $(ls -rt $ELEMS | tail -1) +%s)"; then
 		return 0
 	fi
