@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #Author: bluepotato
 #This script is released into the public domain.
 #USAGE: ./compile.sh [Release/Debug] [clean]
