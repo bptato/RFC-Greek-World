@@ -9,3 +9,4 @@ CvGameCoreDLL.lib
 *.pch
 *.pch.@
 *.geany
+depends

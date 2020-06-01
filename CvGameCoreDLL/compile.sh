@@ -25,6 +25,7 @@ DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
 OWINEPREFIX="$HOME/compile_linux"
 PYTHON=".\Python24"
 BOOST=".\Boost-1.32.0"
+PARALLEL=1 #Spawn a bunch of child processes in release mode. 1 - on, 0 - off 
 
 #You probably won't have to change anything below
 set -e
@@ -107,7 +108,7 @@ should_compile() {
 		compiled="$TARGET/${1%.*}.obj"
 	fi
 	c_index=$2
-	if ! [ -f "$compiled" ]; then
+	if ! test -f "$compiled"; then
 		return 0
 	elif [ "$(date -r $compiled +%s)" -lt "$(date -r $1 +%s)" ]; then
 		return 0
@@ -154,17 +155,30 @@ fi
 
 #Compile the files
 if test "$TARGET" = "Release"; then
-	for COMPILEFILE in $(ls); do
-		if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
-			ci=$((ci+1))
-			(
-			if should_compile "$COMPILEFILE" $ci; then
-				cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+	if test "$PARALLEL" -eq 1; then
+		for COMPILEFILE in $(ls); do
+			if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+				ci=$((ci+1))
+				(
+				if should_compile "$COMPILEFILE" $ci; then
+					cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+				fi
+				)&
 			fi
-			)&
-		fi
-	done
-	wait
+		done
+		wait
+	elif test "$PARALLEL" -eq 0; then
+		for COMPILEFILE in $(ls); do
+			if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+				ci=$((ci+1))
+				if should_compile "$COMPILEFILE" $ci; then
+					cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+				fi
+			fi
+		done
+	else
+		error "PARALLEL not set to a valid value"
+	fi
 elif test "$TARGET" = "Debug"; then
 	for COMPILEFILE in $(ls); do
 		if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
@@ -174,7 +188,6 @@ elif test "$TARGET" = "Debug"; then
 			fi
 		fi
 	done
-	wait
 fi
 
 LINKFILES="$(find $TARGET/*.obj)"
