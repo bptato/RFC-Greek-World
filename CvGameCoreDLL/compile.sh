@@ -22,7 +22,7 @@ wine17="$HOME/.wine_versions/linux-x86/1.7.55/bin/wine" #Your wine 1.7.55 instal
 PSDK="C:\Program Files\Microsoft Platform SDK"
 VCTOOLKIT="C:\Program Files\Microsoft Visual C++ Toolkit 2003"
 DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
-OWINEPREFIX="$HOME/compile2"
+OWINEPREFIX="$HOME/compile_linux"
 PYTHON=".\Python24"
 BOOST=".\Boost-1.32.0"
 
