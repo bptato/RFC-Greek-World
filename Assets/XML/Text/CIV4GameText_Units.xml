@@ -302,8 +302,12 @@
 		<English>"One who is proscribed or outlawed; hence, a lawless desperate marauder, a brigand: usually applied to members of the organized gangs which infest the mountainous districts of Italy, Sicily, Spain, Greece, Iran, and Turkey" NED. </English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIANS_Bireme_PEDIA</Tag>
-		<English>The bireme is a type of ancient ship which was supposedly invented by the Phoenicians and extensively used by the Romans. A bireme is also basically a Greek ship which has two sets of oars on each of its sides.</English>
+		<Tag>TXT_KEY_UNIT_PHOENICIANS_BIREME_PEDIA</Tag>
+		<English>The Bireme is a type of ancient ship which was supposedly invented by the Phoenicians and extensively used by the Romans. A bireme is also basically a Greek ship which has two sets of oars on each of its sides.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHOENICIANS_BIREME_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Bireme[COLOR_REVERT] is the Phoenician replacement for the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT]. It has an extra move per turn</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARABIA_CAMELARCHER</Tag>
@@ -411,11 +415,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PESEDJET_PRIEST_PEDIA</Tag>
-		<English>[TAB]In the ancient Egyptian religion, female priests were known as hemet-netjer, which meant "servants of the god". There was a hierarchy in the priesthood from the high priest (hem-netjer-tepi, "first servant of god") at the top to the wab priests at the bottom. The wab priests carried out the essential but fairly mundane tasks of taking care of the temple complex and performing whatever function they were called upon for, such as helping to prepare for festivals.</English>
+		<English>[TAB]In the ancient Egyptian religion, female priests were known as Hemet-Netjer, which meant "servants of the god". There was a hierarchy in the priesthood from the high priest (hem-netjer-tepi, "first servant of god") at the top to the wab priests at the bottom. The wab priests carried out the essential but fairly mundane tasks of taking care of the temple complex and performing whatever function they were called upon for, such as helping to prepare for festivals.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PESEDJET_PRIEST_STRATEGY</Tag>
-		<English>[TAB]A Hemet-Netjer can spread the Pesedjet religion to other cities.</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Sphinx[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ANUNNAKI_PRIEST</Tag>
@@ -427,7 +431,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ANUNNAKI_PRIEST_STRATEGY</Tag>
-		<English>[TAB]An Ensi can spread the Anunnaki religion to other cities.</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_PRIEST</Tag>
@@ -439,7 +443,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_PRIEST_STRATEGY</Tag>
-		<English>[TAB]A Magus can spread the Zoroastrian religion to other cities.</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST</Tag>
@@ -451,7 +455,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST_STRATEGY</Tag>
-		<English>[TAB]A Hiereia can spread the Hellenic religion to other cities.</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Labyrinth[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST</Tag>
@@ -462,7 +466,7 @@
 		<English>[TAB]To-do</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST_STRATEGY</Tag>
-		<English>[TAB]A Kohen can spread the Baalic religion to other cities.</English>
+		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST_STRATEGY</Tag>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your culture if you have the [COLOR_BUILDING_TEXT]Ma'abed[COLOR_REVERT]</English>
 	</TEXT>
 </Civ4GameText>
