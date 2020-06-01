@@ -1,99 +1,195 @@
 #!/bin/bash
-#Addition to nmake, as nmake doesn't seem to work with wine.
-#Made by bluepotato. The code is released into the public domain.
-#(not that this could really be considered creative work anyways, I just found the copyright notice in the original Makefile dumb)
+#Author: bluepotato
+#This script is released into the public domain.
+#USAGE: ./compile.sh [Release/Debug] [clean]
+#nmake doesn't work too great with wine, so this is intended to replace it
+#on Linux. This should be POSIX-compliant, the only "extra" it needs is awk.
+#As to why I made this: firstly it's less hacky, secondly it doesn't spam the
+#console like nmake.sh, and thirdly it's usually faster, or at least isn't
+#slower. It also supports multiprocessing for Release builds, which makes it
+#way faster. Here's a small benchmark (for the RFGW DLL):
+#				compile.sh	nmake.sh
+#Release (Changed 1 cpp file):	24s		24s
+#Debug (Changed 1 cpp file):	9s		9s
+#Release (Changed CvGlobals.h)	1m8s		2m41
+#Debug (Changed CvGlobals.h)	1m43s		2m8s
+#Clean Release:			1m8s		2m42s
+#Clean Debug:			1m37s		2m12s
 
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-#EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-#MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-#IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-#OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-#ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-#OTHER DEALINGS IN THE SOFTWARE.
 
-#set -x
-
-#You might want to change these variables here:
-wine17="$HOME/.wine_versions/linux-amd64/1.7.55/bin/wine" #Your wine 1.7.55 installation directory.
+#You might want to change some of these variables here:
+wine17="$HOME/.wine_versions/linux-x86/1.7.55/bin/wine" #Your wine 1.7.55 installation directory.
 PSDK="C:\Program Files\Microsoft Platform SDK"
 VCTOOLKIT="C:\Program Files\Microsoft Visual C++ Toolkit 2003"
 DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
+OWINEPREFIX="$HOME/compile2"
+PYTHON=".\Python24"
+BOOST=".\Boost-1.32.0"
 
-#You probably don't have to change these:
-ARGS=$#
-#Default to Release.
-if (( $ARGS<1 )); then
-	TARGET=Release
-elif test $1 = "Release" || test $1 = "Debug"; then
-	TARGET=$1
-else
-	echo "Invalid target: $1"
-	exit 2
+#You probably won't have to change anything below
+set -e
+error() {
+	echo "ERROR: $*"
+	exit 1
+}
+
+export WINEDEBUG=-all
+CLEAN=1
+
+if [ $# -lt 1 ]; then
+	error "Unspecified target. USAGE: ./compile.sh [Release/Debug] [clean]" 
+else #iterate over arguments
+	for arg in "$@"; do
+		if test "$arg" = "Release" || test $arg = "Debug"; then
+			TARGET=$arg
+		elif test "$arg" = "clean"; then
+			CLEAN=0
+		fi
+	done
 fi
 
 echo "TARGET: $TARGET"
 
-#Your wineprefix for compilation.
-export WINEPREFIX="$HOME/compile_linux"
+owine() { #wine 1.7.55
+	WINEPREFIX="$OWINEPREFIX" $wine17 "$@"
+}
 
-#Clean mode.
-if test "$2" = "clean"; then
-	rm -rf ./"$TARGET"
-fi
+cl() {
+	owine "$VCTOOLKIT\bin\cl.exe" "$@"
+}
 
-#Use nmake to compile the files.
-$wine17 "$PSDK\Bin\nmake" $TARGET
+link() {
+	owine "$VCTOOLKIT\bin\link.exe" "$@"
+}
 
-##TODO
-#List files to compile.
-#COMPILEFILES=""
-#DLLEXISTS=$(test -f $DLLOUTPUT)
-#if $DLLEXISTS; then
-#	LASTCOMPILE=$(date -r $DLLOUTPUT +%s)
-#fi
-#for COMPILEFILE in $(ls)
-#do
-#	if ([[ $COMPILEFILE == *.cpp ]] || [[ $COMPILEFILE == *.h ]]) && (! $DLLEXISTS || [ "$LASTCOMPILE" -lt "$(date -r $COMPILEFILE +%s)" ]); then
-#		COMPILEFILES="$COMPILEFILES $COMPILEFILE"
-#	fi
-#done
+disable_ifs() {
+	PREV_IFS="$IFS"
+	IFS=""
+}
 
-#echo "Files:" $COMPILEFILES
+enable_ifs() {
+	IFS="$PREV_IFS"
+}
 
-#Compiles the files.
-#for COMPILEFILE in $COMPILEFILES
-#do
-#	rm $TARGET/${COMPILEFILE%.*}.obj
-#	$wine17 "$VCTOOLKIT\bin\cl.exe" /nologo /MD /O2 /Oy /Oi /G7 /DNDEBUG /DFINAL_RELEASE /Fp"$TARGET\CvGameCoreDLL.pch" /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /Yu"CvGameCoreDLL.h" /IBoost-1.32.0/include /IPython24/include /I"$VCTOOLKIT/include" /I"$PSDK/Include" /I"$PSDK/Include/mfc" /I".\CvGameCoreDLL\Boost-1.32.0/include" /I".\CvGameCoreDLL\Python24/include" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" /c $COMPILEFILE
-#done
-
-#Make a list of files to link.
-FILES=""
-for FILE in $(ls $TARGET)
-do
-	if [[ $FILE == *.obj ]]; then
-		FILES="$FILES $TARGET/$FILE"
-	fi
+echo "Finding dependencies..."
+owine bin/fastdep.exe --objectextension=pch -q -O "$TARGET" CvGameCoreDLL.cpp > depends
+for file in $(ls *.cpp); do
+	owine bin/fastdep.exe --objectextension=obj -q -O "$TARGET" "$file" >> depends
 done
 
-echo "FILES: $FILES"
+DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends)" #A hacky way for getting fastdep to cooperate. For some reason .\.\ nukes the entire variable.
+DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\\\r\n\t //g')
+DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\r//g')
+echo "$DEPENDS" > depends
 
-PDB=$TARGET"\CvGameCoreDLL.pdb"
-IMPLIB=$TARGET"\CvGameCoreDLL.lib"
+should_compile() {
+	if test $# -gt 2; then
+		compiled="$TARGET/$3"
+	else
+		compiled="$TARGET/${1%.*}.obj"
+	fi
+	c_index=$2
+	if ! [ -f "$compiled" ]; then
+		return 0
+	elif [ "$(date -r $compiled +%s)" -lt "$(date -r $1 +%s)" ]; then
+		return 0
+	fi
+	
+	set $(echo "$DEPENDS" | sed "${c_index}q;d")
+	shift
+	pattern=$(echo "$@" | sed "s/ /\|/g")
+	ELEMS=$(find . -maxdepth 1 | ack -io $pattern)
+	if test "$LASTCOMPILE" -lt "$(date -r $(ls -rt $ELEMS | tail -1) +%s)"; then
+		return 0
+	fi
+	return 1
+}
 
-GLOBALFLAGS="$FILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$PDB"
+PCH="$TARGET\CvGameCoreDLL.pch"
+PDB="$TARGET\CvGameCoreDLL.pdb"
+IMPLIB="$TARGET\CvGameCoreDLL.lib"
+
+#Clean mode.
+if test $CLEAN = 0; then
+	if test "$TARGET" != ""; then
+		if test -e "$TARGET"; then
+			echo "CLEAN: cleaning $TARGET"
+			rm -r ./"$TARGET"
+		else
+			echo "CLEAN: nothing to clean"
+		fi
+	else
+		echo "CLEAN: cleaning Release and Debug"
+		if test -e Release; then
+			rm -r ./Release/
+		fi
+		if test -e Debug; then
+			rm -r ./Debug/
+		fi
+	fi
+fi
+
+if test -f "$DLLOUTPUT"; then
+	LASTCOMPILE=$(date -r $DLLOUTPUT +%s)
+else
+	LASTCOMPILE=0
+fi
+
+if ! test -e "$TARGET"; then
+	mkdir "$TARGET"
+fi
+
+#Set flags for compilation
+GLOBAL_CFLAGS="/nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /Fp$PCH"
+if test "$TARGET" = "Release"; then
+	set "/MD" "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
+elif test "$TARGET" = "Debug"; then
+	set "/MD" "/Zi" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
+fi
+
+#Generate precompiled header
+ci=1
+if should_compile "_precompile.cpp" $ci "CvGameCoreDLL.pch"; then
+	echo "Generating precompiled header..."
+	cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET\_precompile.obj" "/c" "_precompile.cpp"
+fi
+
+#Compile the files
+if test "$TARGET" = "Release"; then
+	for COMPILEFILE in $(ls); do
+		if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+			ci=$((ci+1))
+			(
+			if should_compile "$COMPILEFILE" $ci; then
+				cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+			fi
+			)&
+		fi
+	done
+	wait
+elif test "$TARGET" = "Debug"; then
+	for COMPILEFILE in $(ls); do
+		if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+			ci=$((ci+1))
+			if should_compile "$COMPILEFILE" $ci; then
+				cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+			fi
+		fi
+	done
+	wait
+fi
+
+LINKFILES="$(find $TARGET/*.obj)"
+
+GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$PDB"
 DEBUGFLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$IMPLIB"
 RELEASEFLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
 
-
 #Create a DLL.
-if test $TARGET = "Release"; then #For Release:
-	$wine17 "$VCTOOLKIT\bin\link.exe" /LIBPATH:Python24/libs /LIBPATH:"boost-1.32.0/libs" /LIBPATH:"$VCTOOLKIT\lib" /LIBPATH:"$PSDK\Lib" /out:"../Assets/CvGameCoreDLL.dll" "boost-1.32.0\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "Python24\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" $RELEASEFLAGS
-elif test $TARGET = "Debug"; then #For Debug:
-	$wine17 "$VCTOOLKIT/bin/link.exe" /LIBPATH:"boost-1.32.0\libs" /LIBPATH:"$VCTOOLKIT\lib" /LIBPATH:"$PSDK\Lib" /out:"../Assets/CvGameCoreDLL.dll" "boost-1.32.0\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "Python24\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" "$PSDK\Lib\AMD64\msvcprtd.lib" $DEBUGFLAGS
-else #We should never get here.
-	echo "ERROR: Wrong target " $TARGET
-	exit 2
+if test "$TARGET" = "Release"; then #For Release:
+	link $RELEASEFLAGS "/LIBPATH:$PSDK\Lib" "$BOOST\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "$PYTHON\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" /out:"../Assets/CvGameCoreDLL.dll"
+elif test "$TARGET" = "Debug"; then #For Debug:
+	link $DEBUGFLAGS "/LIBPATH:$PSDK\Lib" "$BOOST\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "$PYTHON\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" "$PSDK\Lib\AMD64\msvcprtd.lib" /out:"../Assets/CvGameCoreDLL.dll"
 fi
 
 echo "Done!"
