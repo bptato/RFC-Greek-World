@@ -42,7 +42,7 @@ if [ $# -lt 1 ]; then
 	error "Unspecified target. USAGE: ./compile.sh [Release/Debug] [clean]" 
 else #iterate over arguments
 	for arg in "$@"; do
-		if test "$arg" = "Release" || test $arg = "Debug"; then
+		if test "$arg" = "Release" || test "$arg" = "Debug"; then
 			TARGET=$arg
 		elif test "$arg" = "clean"; then
 			CLEAN=0
@@ -110,17 +110,17 @@ should_compile() {
 	c_index=$2
 	if ! test -f "$compiled"; then
 		return 0
-	elif [ "$(date -r $compiled +%s)" -lt "$(date -r $1 +%s)" ]; then
+	elif [ "$(date -r "$compiled" +%s)" -lt "$(date -r "$1" +%s)" ]; then
 		return 0
 	fi
 	
-	set $(echo "$DEPENDS" | sed "${c_index}q;d")
+	set "$(echo "$DEPENDS" | sed "${c_index}q;d")"
 	shift
 	pattern=$(echo "$@" | sed "s/ /\|/g")
-	ELEMS=$(find . -maxdepth 1 | egrep -io $pattern)
-	latest_elem="$(ls -rt $ELEMS | tail -1)"
+	ELEMS=$(find . -maxdepth 1 | grep -Eio "$pattern")
+	latest_elem=$(ls -rt "$ELEMS" | tail -1)
 	latest_elem_compiled="$TARGET/${latest_elem%.*}.obj"
-	if test "$(date -r $latest_elem_compiled +%s)" -lt "$(date -r $latest_elem +%s)"; then
+	if test "$(date -r "$latest_elem_compiled" +%s)" -lt "$(date -r "$latest_elem" +%s)"; then
 		return 0
 	fi
 	return 1
@@ -130,7 +130,7 @@ PCH="$TARGET\CvGameCoreDLL.pch"
 
 echo "Finding dependencies..."
 owine bin/fastdep.exe --objectextension=pch -q -O "$TARGET" CvGameCoreDLL.cpp > depends
-for file in $(ls *.cpp); do
+for file in *.cpp; do
 	owine bin/fastdep.exe --objectextension=obj -q -O "$TARGET" "$file" >> depends
 done
 
@@ -150,29 +150,29 @@ fi
 ci=1
 if should_compile "_precompile.cpp" $ci "CvGameCoreDLL.pch"; then
 	echo "Generating precompiled header..."
-	cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET\_precompile.obj" "/c" "_precompile.cpp"
+	cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET\_precompile.obj" "/c" "_precompile.cpp"
 fi
 
 #Compile the files
 if test "$TARGET" = "Release"; then
 	if test "$PARALLEL" -eq 1; then
-		for COMPILEFILE in $(ls); do
-			if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+		for COMPILEFILE in *; do
+			if test "$(echo "$COMPILEFILE" | awk -F . '{print $NF}')" = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
 				ci=$((ci+1))
 				(
 				if should_compile "$COMPILEFILE" $ci; then
-					cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+					cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
 				fi
 				)&
 			fi
 		done
 		wait
 	elif test "$PARALLEL" -eq 0; then
-		for COMPILEFILE in $(ls); do
-			if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+		for COMPILEFILE in *; do
+			if test "$(echo "$COMPILEFILE" | awk -F . '{print $NF}')" = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
 				ci=$((ci+1))
 				if should_compile "$COMPILEFILE" $ci; then
-					cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+					cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
 				fi
 			fi
 		done
@@ -180,17 +180,17 @@ if test "$TARGET" = "Release"; then
 		error "PARALLEL not set to a valid value"
 	fi
 elif test "$TARGET" = "Debug"; then
-	for COMPILEFILE in $(ls); do
-		if test $(echo "$COMPILEFILE" | awk -F . '{print $NF}') = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+	for COMPILEFILE in *; do
+		if test "$(echo "$COMPILEFILE" | awk -F . '{print $NF}')" = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
 			ci=$((ci+1))
 			if should_compile "$COMPILEFILE" $ci; then
-				cl $@ "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+				cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
 			fi
 		fi
 	done
 fi
 
-LINKFILES="$(find $TARGET/*.obj)"
+LINKFILES="$(find "$TARGET"/*.obj)"
 
 PDB="$TARGET\CvGameCoreDLL.pdb"
 IMPLIB="$TARGET\CvGameCoreDLL.lib"
@@ -200,9 +200,9 @@ RELEASEFLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
 
 #Create a DLL.
 if test "$TARGET" = "Release"; then #For Release:
-	link $RELEASEFLAGS "/LIBPATH:$PSDK\Lib" "$BOOST\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "$PYTHON\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" /out:"../Assets/CvGameCoreDLL.dll"
+	link $RELEASEFLAGS "/LIBPATH:$PSDK\Lib" "$BOOST\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "$PYTHON\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" "/out:$DLLOUTPUT"
 elif test "$TARGET" = "Debug"; then #For Debug:
-	link $DEBUGFLAGS "/LIBPATH:$PSDK\Lib" "$BOOST\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "$PYTHON\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" "$PSDK\Lib\AMD64\msvcprtd.lib" /out:"../Assets/CvGameCoreDLL.dll"
+	link $DEBUGFLAGS "/LIBPATH:$PSDK\Lib" "$BOOST\libs\boost_python-vc71-mt-1_32.lib" winmm.lib user32.lib "$VCTOOLKIT\lib\msvcprt.lib" "$VCTOOLKIT\lib\msvcrt.lib" "$PYTHON\libs\python24.lib" "$VCTOOLKIT\lib\OLDNAMES.lib" "$PSDK\Lib\AMD64\msvcprtd.lib" "/out:$DLLOUTPUT"
 fi
 
 echo "Done!"
