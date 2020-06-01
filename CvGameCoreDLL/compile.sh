@@ -28,12 +28,13 @@ BOOST=".\Boost-1.32.0"
 
 #You probably won't have to change anything below
 set -e
+export WINEDEBUG=-all
+
 error() {
 	echo "ERROR: $*"
 	exit 1
 }
 
-export WINEDEBUG=-all
 CLEAN=1
 
 if [ $# -lt 1 ]; then
@@ -48,7 +49,35 @@ else #iterate over arguments
 	done
 fi
 
-echo "TARGET: $TARGET"
+if test "$TARGET" != ""; then
+	echo "TARGET: $TARGET"
+fi
+
+#Clean mode.
+if test $CLEAN = 0; then
+	if test "$TARGET" != ""; then
+		if test -e "$TARGET"; then
+			echo "CLEAN: cleaning $TARGET"
+			rm -r ./"$TARGET"
+		else
+			echo "CLEAN: nothing to clean"
+		fi
+	else
+		echo "CLEAN: cleaning Release and Debug"
+		if test -e Release; then
+			rm -r ./Release/
+		fi
+		if test -e Debug; then
+			rm -r ./Debug/
+		fi
+		exit 0
+	fi
+fi
+
+if ! test -e "$TARGET"; then
+	mkdir "$TARGET"
+fi
+
 
 owine() { #wine 1.7.55
 	WINEPREFIX="$OWINEPREFIX" $wine17 "$@"
@@ -71,17 +100,6 @@ enable_ifs() {
 	IFS="$PREV_IFS"
 }
 
-echo "Finding dependencies..."
-owine bin/fastdep.exe --objectextension=pch -q -O "$TARGET" CvGameCoreDLL.cpp > depends
-for file in $(ls *.cpp); do
-	owine bin/fastdep.exe --objectextension=obj -q -O "$TARGET" "$file" >> depends
-done
-
-DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends)" #A hacky way for getting fastdep to cooperate. For some reason .\.\ nukes the entire variable.
-DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\\\r\n\t //g')
-DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\r//g')
-echo "$DEPENDS" > depends
-
 should_compile() {
 	if test $# -gt 2; then
 		compiled="$TARGET/$3"
@@ -99,45 +117,25 @@ should_compile() {
 	shift
 	pattern=$(echo "$@" | sed "s/ /\|/g")
 	ELEMS=$(find . -maxdepth 1 | egrep -io $pattern)
-	if test "$LASTCOMPILE" -lt "$(date -r $(ls -rt $ELEMS | tail -1) +%s)"; then
+	latest_elem="$(ls -rt $ELEMS | tail -1)"
+	latest_elem_compiled="$TARGET/${latest_elem%.*}.obj"
+	if test "$(date -r $latest_elem_compiled +%s)" -lt "$(date -r $latest_elem +%s)"; then
 		return 0
 	fi
 	return 1
 }
 
 PCH="$TARGET\CvGameCoreDLL.pch"
-PDB="$TARGET\CvGameCoreDLL.pdb"
-IMPLIB="$TARGET\CvGameCoreDLL.lib"
 
-#Clean mode.
-if test $CLEAN = 0; then
-	if test "$TARGET" != ""; then
-		if test -e "$TARGET"; then
-			echo "CLEAN: cleaning $TARGET"
-			rm -r ./"$TARGET"
-		else
-			echo "CLEAN: nothing to clean"
-		fi
-	else
-		echo "CLEAN: cleaning Release and Debug"
-		if test -e Release; then
-			rm -r ./Release/
-		fi
-		if test -e Debug; then
-			rm -r ./Debug/
-		fi
-	fi
-fi
+echo "Finding dependencies..."
+owine bin/fastdep.exe --objectextension=pch -q -O "$TARGET" CvGameCoreDLL.cpp > depends
+for file in $(ls *.cpp); do
+	owine bin/fastdep.exe --objectextension=obj -q -O "$TARGET" "$file" >> depends
+done
 
-if test -f "$DLLOUTPUT"; then
-	LASTCOMPILE=$(date -r $DLLOUTPUT +%s)
-else
-	LASTCOMPILE=0
-fi
-
-if ! test -e "$TARGET"; then
-	mkdir "$TARGET"
-fi
+DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends)" #A hacky way for getting fastdep to cooperate. For some reason .\.\ nukes the entire variable.
+DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\\\r\n\t //g')
+DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\r//g')
 
 #Set flags for compilation
 GLOBAL_CFLAGS="/nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /Fp$PCH"
@@ -181,6 +179,8 @@ fi
 
 LINKFILES="$(find $TARGET/*.obj)"
 
+PDB="$TARGET\CvGameCoreDLL.pdb"
+IMPLIB="$TARGET\CvGameCoreDLL.lib"
 GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$PDB"
 DEBUGFLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$IMPLIB"
 RELEASEFLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
