@@ -84,15 +84,6 @@ link() {
 	owine "$VCTOOLKIT\bin\link.exe" "$@"
 }
 
-disable_ifs() {
-	PREV_IFS="$IFS"
-	IFS=""
-}
-
-enable_ifs() {
-	IFS="$PREV_IFS"
-}
-
 should_compile() {
 	if test $# -gt 2; then
 		compiled="$TARGET/$3"
@@ -106,11 +97,10 @@ should_compile() {
 		return 0
 	fi
 	
-	set "$(echo "$DEPENDS" | sed "${c_index}q;d")"
+	set $(echo "$DEPENDS" | sed "${c_index}q;d")
 	shift
 	pattern=$(echo "$@" | sed "s/ /\|/g")
-	ELEMS=$(find . -maxdepth 1 | grep -Eio "$pattern")
-	latest_elem=$(ls -rt "$ELEMS" | tail -1)
+	latest_elem=$(ls -rt $(find . -maxdepth 1 | grep -Eio "$pattern") | tail -1)
 	latest_elem_compiled="$TARGET/${latest_elem%.*}.obj"
 	if test "$(date -r "$latest_elem_compiled" +%s)" -lt "$(date -r "$latest_elem" +%s)"; then
 		return 0
@@ -129,6 +119,7 @@ done
 DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends)" #A hacky way for getting fastdep to cooperate. For some reason .\.\ nukes the entire variable.
 DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\\\r\n\t //g')
 DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\r//g')
+echo "$DEPENDS" > depends
 
 #Set flags for compilation
 GLOBAL_CFLAGS="/nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /Fp$PCH"
