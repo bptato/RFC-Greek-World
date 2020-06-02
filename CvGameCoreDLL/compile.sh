@@ -2,23 +2,15 @@
 #Author: bluepotato
 #This script is released into the public domain.
 #USAGE: ./compile.sh [Release/Debug] [clean]
-#nmake doesn't work too great with wine, so this is intended to replace it
-#on Linux. This should be POSIX-compliant. As to why I made this: firstly
-#it's less hacky than nmake.sh, secondly it doesn't spam the console like
-#nmake.sh does, and thirdly it's usually faster, or at least isn't slower.
-#It also supports multiprocessing for Release builds, which makes it way
-#faster. Here's a small benchmark (for the RFGW DLL):
-#				compile.sh	nmake.sh
-#Release (Changed 1 cpp file):	24s		24s
-#Debug (Changed 1 cpp file):	9s		9s
-#Release (Changed CvGlobals.h)	1m8s		2m41
-#Debug (Changed CvGlobals.h)	1m43s		2m8s
-#Clean Release:			1m8s		2m42s
-#Clean Debug:			1m37s		2m12s
-
+#nmake doesn't work too great with wine, so this is intended to replace it on
+#Linux. This should be POSIX-compliant. As to why I made this: firstly it's
+#less hacky than nmake.sh, secondly it doesn't spam the console like nmake.sh
+#does, and thirdly it's usually faster, or at least isn't slower. It also
+#supports multiprocessing for Release builds, which makes it way faster on my
+#system - you may want to disable it if yours has a low amount of cores/threads.
 
 #You might want to change some of these variables here:
-wine17="$HOME/.wine_versions/linux-x86/1.7.55/bin/wine" #Your wine 1.7.55 installation directory.
+wine17="$HOME/.wine_versions/linux-x86/1.7.55/bin/wine" #Path to your wine 1.7.55 binary.
 PSDK="C:\Program Files\Microsoft Platform SDK"
 VCTOOLKIT="C:\Program Files\Microsoft Visual C++ Toolkit 2003"
 DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
