@@ -204,7 +204,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHOENECIAN_TRADING_POST_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Phoenician Trading Port[COLOR_REVERT], the Phoenician replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all naval units built in the city a free [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion</English>
+		<English>The [COLOR_BUILDING_TEXT]Phoenician Trading Port[COLOR_REVERT], the Phoenician replacement for the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT], gives all naval units built in the city a free [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SOUQ_PEDIA</Tag>
@@ -337,5 +337,45 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Annunaki Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_BAALITE_TEMPLE_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_ANUNNAKI_TEMPLE_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_TEMPLE_OF_AMUN_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_BAALITE_SANCTUARY_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_BUILDING_ANUNNAKI_MONASTERY_STRATEGY</Tag>
+	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
 	</TEXT>
 </Civ4GameText>
