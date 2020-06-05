@@ -655,7 +655,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_DESC</Tag>
-		<English>The Israelis</English>
+		<English>The Israelites</English>
 		<French>
 			<Text>Les Israélites</Text>
 			<Gender>Male</Gender>
@@ -704,7 +704,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_ADJECTIVE</Tag>
 		<English>
-			<Text>Israeli:Israelis</Text>
+			<Text>Israelite:Israelites</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</English>
