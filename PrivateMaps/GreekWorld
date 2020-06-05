@@ -1,24 +1,5 @@
 application/json
 {
-	"Game":{
-		"Calendar":"CALENDAR_DEFAULT",
-		"GameTurn":227,
-		"StartYear":-4400,
-		"ModPath":"Mods\\RFC-Greek-World",
-		"Options":[
-			"GAMEOPTION_RAGING_BARBARIANS",
-			"GAMEOPTION_AGGRESSIVE_AI",
-			"GAMEOPTION_NO_TECH_BROKERING"
-		],
-		"Victories":[
-			"VICTORY_SCORE",
-			"VICTORY_TIME",
-			"VICTORY_CONQUEST",
-			"VICTORY_DOMINATION",
-			"VICTORY_CULTURAL",
-			"VICTORY_HISTORICAL"
-		]
-	},
 	"Map":{
 		"grid width":63,
 		"grid height":60,
@@ -31,1544 +12,13 @@ application/json
 		"wrap Y":0,
 		"world size":"WORLDSIZE_LARGE"
 	},
-	"Players":[
-		{
-			"CivType":"CIVILIZATION_EGYPT",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":100,
-			"StartingTechs":[
-				"TECH_FISHING",
-				"TECH_HUNTING"
-			],
-			"StartingWars":[],
-			"RelatedLanguages":[],
-			"StartingX":31,
-			"StartingY":10,
-			"CoreProvinces":[
-				"Upper Egypt",
-				"Lower Egypt"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":110,
-			"ResearchModifier":110,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":90,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":90,
-			"GreatPeopleModifier":90,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_PHOENICIA",
-			"CivicOptions":{},
-			"StartingGold":150,
-			"StartingTechs":[
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_HUNTING",
-				"TECH_LOGGING",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_NAVIGATION",
-				"TECH_BOATS"
-			],
-			"StartingWars":[],
-			"RelatedLanguages":[
-				"CIVILIZATION_CARTHAGE"
-			],
-			"StartingX":41,
-			"StartingY":22,
-			"CoreProvinces":[
-				"Phoenicia",
-				"Cyprus"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":5,
-			"UnitUpkeepModifier":130,
-			"ResearchModifier":90,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":120,
-			"GreatPeopleModifier":120,
-			"InflationModifier":80,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_BABYLON",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":150,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_TRADE",
-				"TECH_THE_WHEEL",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_FERMENTATION",
-				"TECH_COPPER_WORKING",
-				"TECH_SPOKES",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_ELAM",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[],
-			"StartingX":46,
-			"StartingY":22,
-			"CoreProvinces":[
-				"Akkad",
-				"Sumer"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":120,
-			"ResearchModifier":110,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":1,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":90,
-			"GreatPeopleModifier":90,
-			"InflationModifier":110,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_ASSYRIA",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_ISOLATIONISM",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_TRADE",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_BRONZE_WORKING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_MILITARY_TRAINING",
-				"TECH_FORTIFICATION",
-				"TECH_SPOKES",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_BABYLON",
-				"CIVILIZATION_HITTITE",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[],
-			"StartingX":46,
-			"StartingY":25,
-			"CoreProvinces":[
-				"Subartu",
-				"Akkad"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":20,
-			"UnitUpkeepModifier":110,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":90,
-			"NumCitiesMaintenanceModifier":90,
-			"UnitProductionModifier":90,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":1,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":110,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_ISRAEL",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_RELIGION":"CIVIC_ORGANIZED_RELIGION"
-			},
-			"StartingGold":150,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_POLYTHEISM",
-				"TECH_PRIESTHOOD",
-				"TECH_MONOTHEISM",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_WRITING",
-				"TECH_ALPHABET",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_BABYLON",
-				"CIVILIZATION_ASSYRIA"
-			],
-			"RelatedLanguages":[],
-			"StartingX":41,
-			"StartingY":18,
-			"CoreProvinces":[
-				"Palestine"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":130,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":130,
-			"UnitProductionModifier":120,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":120,
-			"GreatPeopleModifier":90,
-			"InflationModifier":80,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_ATHENS",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_OLIGARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY"
-			},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_PHILOSOPHY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_SPOKES",
-				"TECH_BOATS",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_MACEDONIA",
-				"CIVILIZATION_BACTRIA"
-			],
-			"StartingX":33,
-			"StartingY":26,
-			"CoreProvinces":[
-				"Attica",
-				"Euboea"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":5,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":130,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":90,
-			"GreatPeopleModifier":50,
-			"InflationModifier":90,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_SPARTA",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_MILITARY_TRAINING",
-				"TECH_FORTIFICATION",
-				"TECH_SPOKES",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_MACEDONIA",
-				"CIVILIZATION_BACTRIA"
-			],
-			"StartingX":29,
-			"StartingY":24,
-			"CoreProvinces":[
-				"Peloponnese"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":130,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":90,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_SCYTHIA",
-			"CivicOptions":{},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_AGRICULTURE",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_LOGGING",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_ASSYRIA"
-			],
-			"RelatedLanguages":[],
-			"StartingX":52,
-			"StartingY":44,
-			"CoreProvinces":[
-				"Scythia",
-				"Crimea",
-				"Sarmatia"
-			],
-			"StartingYear":-900,
-			"CompactEmpireModifier":20,
-			"UnitUpkeepModifier":90,
-			"ResearchModifier":130,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":120,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":120,
-			"WonderProductionModifier":120,
-			"GreatPeopleModifier":120,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_CARTHAGE",
-			"CivicOptions":{},
-			"StartingGold":250,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_POLYTHEISM",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_SAILING",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_SPOKES",
-				"TECH_NAVIGATION",
-				"TECH_BOATS",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[],
-			"RelatedLanguages":[
-				"CIVILIZATION_PHOENICIA"
-			],
-			"StartingX":15,
-			"StartingY":20,
-			"CoreProvinces":[
-				"Africa",
-				"Numidia"
-			],
-			"StartingYear":-812,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":120,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":90,
-			"InflationModifier":70,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_CELT",
-			"CivicOptions":{},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_POLYTHEISM",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_IRON_WORKING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_FORTIFICATION",
-				"TECH_SPOKES"
-			],
-			"StartingWars":[
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA"
-			],
-			"RelatedLanguages":[],
-			"StartingX":15,
-			"StartingY":43,
-			"CoreProvinces":[
-				"Celtic Gaul",
-				"Brittany"
-			],
-			"StartingYear":-806,
-			"CompactEmpireModifier":20,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":120,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":120,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":110,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_ETRURIA",
-			"CivicOptions":{},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_FORTIFICATION",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_CELT"
-			],
-			"RelatedLanguages":[],
-			"StartingX":18,
-			"StartingY":33,
-			"CoreProvinces":[
-				"Italy"
-			],
-			"StartingYear":-800,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":90,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_NUBIA",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_POLYTHEISM",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_ASSYRIA"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_EGYPT"
-			],
-			"StartingX":31,
-			"StartingY":5,
-			"CoreProvinces":[
-				"Nubia"
-			],
-			"StartingYear":-788,
-			"CompactEmpireModifier":20,
-			"UnitUpkeepModifier":110,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":110,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_PERSIA",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_ORGANIZED_RELIGION",
-				"CIVICOPTION_EXPANSION":"CIVIC_CLIENT_KINGDOMS"
-			},
-			"StartingGold":250,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_POLYTHEISM",
-				"TECH_PRIESTHOOD",
-				"TECH_TYRANNY",
-				"TECH_CODE_OF_LAWS",
-				"TECH_TRADE",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_WRITING",
-				"TECH_ALPHABET",
-				"TECH_HERBALISM",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_BRONZE_WORKING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_FORTIFICATION",
-				"TECH_SPOKES",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_INDUS_VALLEY",
-				"CIVILIZATION_ELAM",
-				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_BABYLON",
-				"CIVILIZATION_HITTITE",
-				"CIVILIZATION_ASSYRIA",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_ELAM"
-			],
-			"StartingX":53,
-			"StartingY":21,
-			"CoreProvinces":[
-				"Khuzestan",
-				"Persia",
-				"Media"
-			],
-			"StartingYear":-674,
-			"CompactEmpireModifier":10,
-			"UnitUpkeepModifier":70,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":70,
-			"NumCitiesMaintenanceModifier":80,
-			"UnitProductionModifier":80,
-			"CivicUpkeepModifier":90,
-			"HealthBonusModifier":1,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":90,
-			"InflationModifier":100,
-			"GrowthModifier":80
-		},
-		{
-			"CivType":"CIVILIZATION_ROME",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_CLIENT_KINGDOMS"
-			},
-			"StartingGold":300,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_POLYTHEISM",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_SAILING",
-				"TECH_WRITING",
-				"TECH_MATHEMATICS",
-				"TECH_ALPHABET",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_MILITARY_TRAINING",
-				"TECH_FORTIFICATION",
-				"TECH_SPOKES",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_CARTHAGE",
-				"CIVILIZATION_ETRURIA",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_BYZANTIUM"
-			],
-			"StartingX":19,
-			"StartingY":30,
-			"CoreProvinces":[
-				"Italy",
-				"Sicily",
-				"Venetia",
-				"Bruttium",
-				"Messapia",
-				"Sardinia",
-				"Corsica"
-			],
-			"StartingYear":-512,
-			"CompactEmpireModifier":10,
-			"UnitUpkeepModifier":70,
-			"ResearchModifier":95,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":80,
-			"UnitProductionModifier":80,
-			"CivicUpkeepModifier":90,
-			"HealthBonusModifier":1,
-			"BuildingProductionModifier":80,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":90,
-			"InflationModifier":100,
-			"GrowthModifier":90
-		},
-		{
-			"CivType":"CIVILIZATION_MACEDONIA",
-			"CivicOptions":{},
-			"StartingGold":250,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_FORTIFICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_BOATS",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_HITTITE",
-				"CIVILIZATION_ASSYRIA",
-				"CIVILIZATION_ISRAEL",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_PERSIA",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_BACTRIA"
-			],
-			"StartingX":27,
-			"StartingY":33,
-			"CoreProvinces":[
-				"Macedonia",
-				"Thracia",
-				"Central Greece"
-			],
-			"StartingYear":-476,
-			"CompactEmpireModifier":30,
-			"UnitUpkeepModifier":80,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":80,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":90,
-			"InflationModifier":100,
-			"GrowthModifier":70
-		},
-		{
-			"CivType":"CIVILIZATION_INDIA",
-			"CivicOptions":{},
-			"StartingGold":250,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_PRIESTHOOD",
-				"TECH_TYRANNY",
-				"TECH_CODE_OF_LAWS",
-				"TECH_CITIZENSHIP",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_WRITING",
-				"TECH_MATHEMATICS",
-				"TECH_ALPHABET",
-				"TECH_CURRENCY",
-				"TECH_EDUCATION",
-				"TECH_HERBALISM",
-				"TECH_MEDICINE",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_LOGGING",
-				"TECH_STORYTELLING",
-				"TECH_RECORD_KEEPING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_PACHYDERM_DOMESTICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_BOATS",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_INDUS_VALLEY",
-				"CIVILIZATION_PERSIA"
-			],
-			"RelatedLanguages":[],
-			"StartingX":61,
-			"StartingY":23,
-			"CoreProvinces":[
-				"India",
-				"Indus Valley"
-			],
-			"StartingYear":-320,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":1,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_BACTRIA",
-			"CivicOptions":{},
-			"StartingGold":300,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_MONOTHEISM",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_AESTHETICS",
-				"TECH_WRITING",
-				"TECH_MATHEMATICS",
-				"TECH_ALPHABET",
-				"TECH_CURRENCY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_IRON_WORKING",
-				"TECH_CONSTRUCTION",
-				"TECH_LOGGING",
-				"TECH_STORYTELLING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_FORTIFICATION",
-				"TECH_CAMEL_DOMESTICATION",
-				"TECH_PACHYDERM_DOMESTICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_INDUS_VALLEY",
-				"CIVILIZATION_PERSIA",
-				"CIVILIZATION_INDIA"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_MACEDONIA"
-			],
-			"StartingX":60,
-			"StartingY":34,
-			"CoreProvinces":[
-				"Bactria"
-			],
-			"StartingYear":-254,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_NUMIDIA",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY"
-			},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_LOGGING",
-				"TECH_STORYTELLING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_CAMEL_DOMESTICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_NAVIGATION",
-				"TECH_BOATS",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_CARTHAGE"
-			],
-			"RelatedLanguages":[],
-			"StartingX":8,
-			"StartingY":21,
-			"CoreProvinces":[
-				"Numidia",
-				"Mauretania"
-			],
-			"StartingYear":-200,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":130,
-			"ResearchModifier":130,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":120,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":110,
-			"InflationModifier":90,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_GERMANIA",
-			"CivicOptions":{},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_MONOTHEISM",
-				"TECH_TYRANNY",
-				"TECH_CODE_OF_LAWS",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_WRITING",
-				"TECH_ALPHABET",
-				"TECH_HERBALISM",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_LOGGING",
-				"TECH_STORYTELLING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_MILITARY_TRAINING",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_NAVIGATION",
-				"TECH_BOATS",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_ETRURIA",
-				"CIVILIZATION_ROME",
-				"CIVILIZATION_MACEDONIA",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[],
-			"StartingX":25,
-			"StartingY":47,
-			"CoreProvinces":[
-				"Germania"
-			],
-			"StartingYear":160,
-			"CompactEmpireModifier":10,
-			"UnitUpkeepModifier":50,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":120,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":90,
-			"InflationModifier":120,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_SASSANID",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_ABSOLUTISM",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_THEOCRACY",
-				"CIVICOPTION_EXPANSION":"CIVIC_OCCUPATION"
-			},
-			"StartingGold":350,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_POLYTHEISM",
-				"TECH_PRIESTHOOD",
-				"TECH_TYRANNY",
-				"TECH_CODE_OF_LAWS",
-				"TECH_CITIZENSHIP",
-				"TECH_ARISTOCRACY",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_WRITING",
-				"TECH_ALPHABET",
-				"TECH_EDUCATION",
-				"TECH_HERBALISM",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_LOGGING",
-				"TECH_RECORD_KEEPING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_FORTIFICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_BOATS",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_INDUS_VALLEY",
-				"CIVILIZATION_ASSYRIA",
-				"CIVILIZATION_PERSIA",
-				"CIVILIZATION_ROME",
-				"CIVILIZATION_MACEDONIA",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[],
-			"StartingX":52,
-			"StartingY":19,
-			"CoreProvinces":[
-				"Khuzestan",
-				"Persia",
-				"Media"
-			],
-			"StartingYear":226,
-			"CompactEmpireModifier":10,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":1,
-			"BuildingProductionModifier":90,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_BYZANTIUM",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_ABSOLUTISM",
-				"CIVICOPTION_LEGAL":"CIVIC_RELIGIOUS_LAW",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_THEOCRACY",
-				"CIVICOPTION_EXPANSION":"CIVIC_OCCUPATION"
-			},
-			"StartingGold":350,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_PRIESTHOOD",
-				"TECH_TYRANNY",
-				"TECH_CODE_OF_LAWS",
-				"TECH_CITIZENSHIP",
-				"TECH_THEOLOGY",
-				"TECH_TRADE",
-				"TECH_DEMOCRACY",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_SAILING",
-				"TECH_WRITING",
-				"TECH_MATHEMATICS",
-				"TECH_ALPHABET",
-				"TECH_PHILOSOPHY",
-				"TECH_CARTOGRAPHY",
-				"TECH_HERBALISM",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_NAVAL_WARFARE",
-				"TECH_LOGGING",
-				"TECH_STORYTELLING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_MILITARY_TRAINING",
-				"TECH_FORTIFICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_NAVIGATION",
-				"TECH_BOATS",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_ASSYRIA",
-				"CIVILIZATION_PERSIA",
-				"CIVILIZATION_GERMANIA",
-				"CIVILIZATION_SASSANID",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_ROME"
-			],
-			"StartingX":35,
-			"StartingY":34,
-			"CoreProvinces":[
-				"Thracia",
-				"Lydia",
-				"Anatolia",
-				"Central Greece",
-				"Euboea",
-				"Attica",
-				"Peloponnese"
-			],
-			"StartingYear":286,
-			"CompactEmpireModifier":5,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":90,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_HUNS",
-			"CivicOptions":{},
-			"StartingGold":150,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_TYRANNY",
-				"TECH_CODE_OF_LAWS",
-				"TECH_CITIZENSHIP",
-				"TECH_TRADE",
-				"TECH_STANDING_ARMY",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_WRITING",
-				"TECH_ALPHABET",
-				"TECH_PHILOSOPHY",
-				"TECH_HERBALISM",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_IRON_WORKING",
-				"TECH_METAL_CASTING",
-				"TECH_MILITARY_SCIENCE",
-				"TECH_STORYTELLING",
-				"TECH_RECORD_KEEPING",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_MILITARY_TRAINING",
-				"TECH_PACHYDERM_DOMESTICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_CUNEIFORM",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_INDUS_VALLEY",
-				"CIVILIZATION_ELAM",
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_HITTITE",
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_ASSYRIA",
-				"CIVILIZATION_ISRAEL",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_SCYTHIA",
-				"CIVILIZATION_CARTHAGE",
-				"CIVILIZATION_CELT",
-				"CIVILIZATION_ETRURIA",
-				"CIVILIZATION_NUBIA",
-				"CIVILIZATION_PERSIA",
-				"CIVILIZATION_ROME",
-				"CIVILIZATION_MACEDONIA",
-				"CIVILIZATION_INDIA",
-				"CIVILIZATION_BACTRIA",
-				"CIVILIZATION_GERMANIA",
-				"CIVILIZATION_SASSANID",
-				"CIVILIZATION_BYZANTIUM",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[],
-			"StartingX":31,
-			"StartingY":43,
-			"CoreProvinces":[],
-			"StartingYear":368,
-			"CompactEmpireModifier":10,
-			"UnitUpkeepModifier":50,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_INDEPENDENT",
-			"CivicOptions":{},
-			"StartingGold":0,
-			"StartingTechs":[],
-			"StartingWars":[],
-			"RelatedLanguages":[
-				"CIVILIZATION_BARBARIAN",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"StartingX":0,
-			"StartingY":0,
-			"CoreProvinces":[],
-			"StartingYear":0,
-			"MinorNationStatus":1,
-			"CompactEmpireModifier":50,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_INDEPENDENT2",
-			"CivicOptions":{},
-			"StartingGold":0,
-			"StartingTechs":[],
-			"StartingWars":[],
-			"RelatedLanguages":[
-				"CIVILIZATION_BARBARIAN",
-				"CIVILIZATION_INDEPENDENT"
-			],
-			"StartingX":0,
-			"StartingY":0,
-			"CoreProvinces":[],
-			"StartingYear":0,
-			"MinorNationStatus":1,
-			"CompactEmpireModifier":50,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_BARBARIAN",
-			"CivicOptions":{},
-			"StartingGold":0,
-			"StartingTechs":[],
-			"StartingWars":[],
-			"RelatedLanguages":[
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"StartingX":0,
-			"StartingY":0,
-			"CoreProvinces":[],
-			"StartingYear":0,
-			"MinorNationStatus":1,
-			"CompactEmpireModifier":50,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		}
-	],
 	"Provinces":[
 		{
 			"Name":"Lower Egypt",
 			"Left":27,
 			"Bottom":13,
 			"Right":34,
-			"Top":17,
-			"Units":[
-				{
-					"UnitType":"UNIT_HYSKOS",
-					"Year":-1800,
-					"EndYear":-1500,
-					"SpawnFrequency":15
-				},
-				{
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-1680,
-					"EndYear":-1550,
-					"SpawnFrequency":15
-				}
-			]
+			"Top":17
 		},
 		{
 			"Name":"Upper Egypt",
@@ -1582,37 +32,14 @@ application/json
 			"Left":44,
 			"Bottom":19,
 			"Right":48,
-			"Top":21,
-			"Units":[
-				{
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-3000,
-					"EndYear":-2000,
-					"SpawnFrequency":11
-				}
-			]
+			"Top":21
 		},
 		{
 			"Name":"Akkad",
 			"Left":44,
 			"Bottom":22,
 			"Right":48,
-			"Top":24,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":12
-				},
-				{
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-3000,
-					"EndYear":-2000,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":24
 		},
 		{
 			"Name":"Subartu",
@@ -1633,38 +60,14 @@ application/json
 			"Left":58,
 			"Bottom":26,
 			"Right":62,
-			"Top":31,
-			"Units":[
-				{
-					"UnitType":"UNIT_BANDIT",
-					"Year":-2800,
-					"EndYear":-2000,
-					"SpawnFrequency":9
-				},
-				{
-					"Amount":4,
-					"UnitType":"UNIT_AXEMAN_INDIAN",
-					"Year":-2000,
-					"EndYear":-1500,
-					"SpawnFrequency":8
-				}
-			]
+			"Top":31
 		},
 		{
 			"Name":"Crete",
 			"Left":31,
 			"Bottom":20,
 			"Right":35,
-			"Top":21,
-			"Units":[
-				{
-					"Amount":6,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1050,
-					"SpawnFrequency":7
-				}
-			]
+			"Top":21
 		},
 		{
 			"Name":"Cyprus",
@@ -1678,86 +81,35 @@ application/json
 			"Left":41,
 			"Bottom":20,
 			"Right":43,
-			"Top":25,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":25
 		},
 		{
 			"Name":"Anatolia",
 			"Left":39,
 			"Bottom":26,
 			"Right":42,
-			"Top":34,
-			"Units":[
-				{
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-2000,
-					"EndYear":-1610,
-					"SpawnFrequency":11
-				},
-				{
-					"Amount":4,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":7
-				}
-			]
+			"Top":34
 		},
 		{
 			"Name":"Peloponnese",
 			"Left":27,
 			"Bottom":22,
 			"Right":31,
-			"Top":26,
-			"Units":[
-				{
-					"Amount":4,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":26
 		},
 		{
 			"Name":"Central Greece",
 			"Left":26,
 			"Bottom":27,
 			"Right":30,
-			"Top":30,
-			"Units":[
-				{
-					"Amount":3,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":30
 		},
 		{
 			"Name":"Attica",
 			"Left":31,
 			"Bottom":25,
 			"Right":34,
-			"Top":28,
-			"Units":[
-				{
-					"Amount":3,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":28
 		},
 		{
 			"Name":"Euboea",
@@ -1771,16 +123,7 @@ application/json
 			"Left":39,
 			"Bottom":16,
 			"Right":43,
-			"Top":19,
-			"Units":[
-				{
-					"Amount":4,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":11
-				}
-			]
+			"Top":19
 		},
 		{
 			"Name":"Arabia Felix",
@@ -1808,59 +151,14 @@ application/json
 			"Left":35,
 			"Bottom":25,
 			"Right":38,
-			"Top":32,
-			"Units":[
-				{
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-2000,
-					"EndYear":-1610,
-					"SpawnFrequency":12
-				},
-				{
-					"Amount":5,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":9
-				}
-			]
+			"Top":32
 		},
 		{
 			"Name":"Scythia",
 			"Left":51,
 			"Bottom":38,
 			"Right":62,
-			"Top":53,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitType":"UNIT_HORSEMAN",
-					"Year":-1000,
-					"EndYear":-250,
-					"SpawnFrequency":10
-				},
-				{
-					"Amount":2,
-					"UnitType":"UNIT_HORSE_ARCHER",
-					"Year":-250,
-					"EndYear":250,
-					"SpawnFrequency":9
-				},
-				{
-					"Amount":2,
-					"UnitType":"UNIT_NOBLE_CAVALRY",
-					"Year":250,
-					"EndYear":600,
-					"SpawnFrequency":8
-				},
-				{
-					"Amount":4,
-					"UnitType":"UNIT_YUEZHI",
-					"Year":-150,
-					"EndYear":-50,
-					"SpawnFrequency":5
-				}
-			]
+			"Top":53
 		},
 		{
 			"Name":"Crimea",
@@ -1881,27 +179,7 @@ application/json
 			"Left":31,
 			"Bottom":43,
 			"Right":50,
-			"Top":53,
-			"Units":[
-				{
-					"UnitType":"UNIT_HORSEMAN",
-					"Year":-1000,
-					"EndYear":-250,
-					"SpawnFrequency":10
-				},
-				{
-					"UnitType":"UNIT_HORSE_ARCHER",
-					"Year":-250,
-					"EndYear":250,
-					"SpawnFrequency":9
-				},
-				{
-					"UnitType":"UNIT_NOBLE_CAVALRY",
-					"Year":250,
-					"EndYear":600,
-					"SpawnFrequency":8
-				}
-			]
+			"Top":53
 		},
 		{
 			"Name":"Pannonia",
@@ -1922,31 +200,14 @@ application/json
 			"Left":14,
 			"Bottom":17,
 			"Right":26,
-			"Top":21,
-			"Units":[
-				{
-					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
-					"Year":-1200,
-					"EndYear":-850,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":21
 		},
 		{
 			"Name":"Numidia",
 			"Left":10,
 			"Bottom":17,
 			"Right":13,
-			"Top":22,
-			"Units":[
-				{
-					"Amount":3,
-					"UnitType":"UNIT_CARTHAGE_NUMIDIAN_CAVALRY",
-					"Year":-300,
-					"EndYear":-200,
-					"SpawnFrequency":6
-				}
-			]
+			"Top":22
 		},
 		{
 			"Name":"Mauretania",
@@ -1960,15 +221,7 @@ application/json
 			"Left":0,
 			"Bottom":0,
 			"Right":26,
-			"Top":16,
-			"Units":[
-				{
-					"UnitType":"UNIT_ARABIA_CAMELARCHER",
-					"Year":-750,
-					"EndYear":500,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":16
 		},
 		{
 			"Name":"Messapia",
@@ -2010,16 +263,7 @@ application/json
 			"Left":10,
 			"Bottom":34,
 			"Right":16,
-			"Top":46,
-			"Units":[
-				{
-					"Amount":4,
-					"UnitType":"UNIT_BURGUNDIAN",
-					"Year":400,
-					"EndYear":500,
-					"SpawnFrequency":7
-				}
-			]
+			"Top":46
 		},
 		{
 			"Name":"Southern Iberia",
@@ -2033,16 +277,7 @@ application/json
 			"Left":2,
 			"Bottom":34,
 			"Right":9,
-			"Top":38,
-			"Units":[
-				{
-					"Amount":4,
-					"UnitType":"UNIT_SUEVES",
-					"Year":400,
-					"EndYear":500,
-					"SpawnFrequency":7
-				}
-			]
+			"Top":38
 		},
 		{
 			"Name":"Brittany",
@@ -2056,22 +291,7 @@ application/json
 			"Left":27,
 			"Bottom":0,
 			"Right":34,
-			"Top":7,
-			"Units":[
-				{
-					"UnitType":"UNIT_BANDIT",
-					"Year":-1680,
-					"EndYear":-1550,
-					"SpawnFrequency":11
-				},
-				{
-					"Amount":2,
-					"UnitType":"UNIT_NUBIAN_MEDJAY",
-					"Year":-1560,
-					"EndYear":-800,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":7
 		},
 		{
 			"Name":"Persia",
@@ -2092,30 +312,7 @@ application/json
 			"Left":53,
 			"Bottom":32,
 			"Right":62,
-			"Top":37,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-1000,
-					"EndYear":-250,
-					"SpawnFrequency":10
-				},
-				{
-					"Amount":2,
-					"UnitType":"UNIT_AXEMAN",
-					"Year":-250,
-					"EndYear":250,
-					"SpawnFrequency":9
-				},
-				{
-					"Amount":2,
-					"UnitType":"UNIT_HEAVY_AXEMAN",
-					"Year":250,
-					"EndYear":600,
-					"SpawnFrequency":8
-				}
-			]
+			"Top":37
 		},
 		{
 			"Name":"Armenia",
@@ -2157,41 +354,7 @@ application/json
 			"Left":23,
 			"Bottom":42,
 			"Right":31,
-			"Top":53,
-			"Units":[
-				{
-					"UnitType":"UNIT_HORSEMAN",
-					"Year":-1000,
-					"EndYear":-250,
-					"SpawnFrequency":10
-				},
-				{
-					"UnitType":"UNIT_HORSE_ARCHER",
-					"Year":-250,
-					"EndYear":250,
-					"SpawnFrequency":9
-				},
-				{
-					"UnitType":"UNIT_NOBLE_CAVALRY",
-					"Year":250,
-					"EndYear":600,
-					"SpawnFrequency":8
-				},
-				{
-					"Amount":4,
-					"UnitType":"UNIT_GERMANIC_SWORDSMAN",
-					"Year":-300,
-					"EndYear":-200,
-					"SpawnFrequency":10
-				},
-				{
-					"Amount":4,
-					"UnitType":"UNIT_VANDAL",
-					"Year":400,
-					"EndYear":475,
-					"SpawnFrequency":6
-				}
-			]
+			"Top":53
 		},
 		{
 			"Name":"Scandinavia",
@@ -2226,16 +389,7 @@ application/json
 			"Left":28,
 			"Bottom":38,
 			"Right":36,
-			"Top":42,
-			"Units":[
-				{
-					"Amount":3,
-					"UnitType":"UNIT_DACIAN",
-					"Year":-300,
-					"EndYear":100,
-					"SpawnFrequency":10
-				}
-			]
+			"Top":42
 		},
 		{
 			"Name":"Corsica",
@@ -2270,16 +424,7 @@ application/json
 			"Left":7,
 			"Bottom":48,
 			"Right":19,
-			"Top":54,
-			"Units":[
-				{
-					"Amount":4,
-					"UnitType":"UNIT_ANGLE",
-					"Year":400,
-					"EndYear":500,
-					"SpawnFrequency":7
-				}
-			]
+			"Top":54
 		},
 		{
 			"Name":"Caledonia",
@@ -4622,34 +2767,7 @@ application/json
 				"CIVILIZATION_EGYPT":500,
 				"CIVILIZATION_NUBIA":500,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_NUBIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-788
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_NUBIA",
-					"UnitType":"UNIT_NUBIAN_MEDJAY",
-					"Year":-788
-				},
-				{
-					"Amount":7,
-					"UnitOwner":"CIVILIZATION_NUBIA",
-					"UnitType":"UNIT_SWORDSMAN",
-					"Year":-788,
-					"UnitAIType":"UNITAI_ATTACK_CITY"
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_NUBIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-788
-				}
-			]
+			}
 		},
 		{
 			"x":32,
@@ -5275,20 +3393,7 @@ application/json
 			"x":46,
 			"y":6,
 			"PlotType":3,
-			"TerrainType":"TERRAIN_COAST",
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-600
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-600,
-				"CityPopulation":1
-			}
+			"TerrainType":"TERRAIN_COAST"
 		},
 		{
 			"x":47,
@@ -7051,26 +5156,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_EGYPT",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-4400,
-					"UnitAIType":"UNITAI_ATTACK"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_EGYPT",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-4400,
-					"UnitAIType":"UNITAI_SETTLE"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_EGYPT",
-					"UnitType":"UNIT_PESEDJET_PRIEST",
-					"Year":-4400
-				}
-			]
+			}
 		},
 		{
 			"x":32,
@@ -7625,20 +5711,7 @@ application/json
 			"x":42,
 			"y":11,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-800
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_BARBARIAN",
-				"Year":-800,
-				"CityPopulation":1
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":43,
@@ -9051,18 +7124,6 @@ application/json
 			"BonusType":"BONUS_INCENSE",
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":50
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-1350
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-1350,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -9093,20 +7154,7 @@ application/json
 			"x":46,
 			"y":14,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-650
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_BARBARIAN",
-				"Year":-650,
-				"CityPopulation":1
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":47,
@@ -10070,18 +8118,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
 				"CIVILIZATION_BYZANTIUM":200
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_TOWN_GUARD",
-					"Year":-3400
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_BARBARIAN",
-				"Year":-3400,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -11256,19 +9292,6 @@ application/json
 				"CIVILIZATION_PHOENICIA":300,
 				"CIVILIZATION_CARTHAGE":300,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-631
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-631,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -11438,35 +9461,7 @@ application/json
 				"CIVILIZATION_ASSYRIA":300,
 				"CIVILIZATION_ISRAEL":700,
 				"CIVILIZATION_BYZANTIUM":300
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_ISRAEL",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-1052
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ISRAEL",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-1052
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ISRAEL",
-					"UnitType":"UNIT_MACCABEE",
-					"Year":-1052
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ISRAEL",
-					"UnitType":"UNIT_JEWISH_MISSIONARY",
-					"Year":-1052
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ISRAEL",
-					"UnitType":"UNIT_WORKER",
-					"Year":-1052
-				}
-			]
+			}
 		},
 		{
 			"x":42,
@@ -12165,61 +10160,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_SASSANID":700
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_SETTLER",
-					"Year":226
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_ARCHER",
-					"Year":226
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_AUXILLIA",
-					"Year":226
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_SASSANID_AZADAN",
-					"Year":226
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_NOBLE_CAVALRY",
-					"Year":226
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_WAR_ELEPHANT",
-					"Year":226
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_CATAPULT",
-					"Year":226
-				},
-				{
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_ZOROASTRIAN_PRIEST",
-					"Year":226
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_SASSANID",
-					"UnitType":"UNIT_WORKER",
-					"Year":226
-				}
-			]
+			}
 		},
 		{
 			"x":53,
@@ -12493,49 +10434,7 @@ application/json
 				"CIVILIZATION_CARTHAGE":700,
 				"CIVILIZATION_NUMIDIA":400,
 				"CIVILIZATION_BYZANTIUM":300
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-812
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-812
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-812
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_WAR_ELEPHANT",
-					"Year":-812
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_CARTHAGE_NUMIDIAN_CAVALRY",
-					"Year":-812
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_BAALITE_PRIEST",
-					"Year":-812
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_WORKER",
-					"Year":-812
-				}
-			]
+			}
 		},
 		{
 			"x":16,
@@ -12826,19 +10725,6 @@ application/json
 				"CIVILIZATION_SUMERIA":90,
 				"CIVILIZATION_BABYLON":90,
 				"CIVILIZATION_ASSYRIA":90
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_TOWN_GUARD",
-					"Year":-4400,
-					"UnitAIType":"UNITAI_ATTACK"
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-4400,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -13133,42 +11019,7 @@ application/json
 				"CIVILIZATION_CARTHAGE":400,
 				"CIVILIZATION_NUMIDIA":700,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_NUMIDIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-200
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_NUMIDIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-200
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_NUMIDIA",
-					"UnitType":"UNIT_CARTHAGE_NUMIDIAN_CAVALRY",
-					"Year":-200,
-					"UnitAIType":"UNITAI_ATTACK_CITY",
-					"FacingDirection":2
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_NUMIDIA",
-					"UnitType":"UNIT_IMAJAGHAN",
-					"Year":-200,
-					"UnitAIType":"UNITAI_ATTACK_CITY",
-					"FacingDirection":2
-				},
-				{
-					"UnitOwner":"CIVILIZATION_NUMIDIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-200
-				}
-			]
+			}
 		},
 		{
 			"x":9,
@@ -13250,42 +11101,7 @@ application/json
 			"x":15,
 			"y":21,
 			"PlotType":3,
-			"TerrainType":"TERRAIN_COAST",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_WORKBOAT",
-					"Year":-812
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_GALLEY",
-					"Year":-812,
-					"UnitAIType":"UNITAI_SETTLER_SEA"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-812
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-812
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_GALLEY",
-					"Year":-812,
-					"UnitAIType":"UNITAI_ASSAULT_SEA"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_TRIREME",
-					"Year":-812,
-					"UnitAIType":"UNITAI_ESCORT_SEA"
-				}
-			]
+			"TerrainType":"TERRAIN_COAST"
 		},
 		{
 			"x":16,
@@ -13728,18 +11544,6 @@ application/json
 				"CIVILIZATION_SUMERIA":400,
 				"CIVILIZATION_BABYLON":400,
 				"CIVILIZATION_ASSYRIA":400
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-3500
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-3500,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -13854,62 +11658,7 @@ application/json
 				"CIVILIZATION_BABYLON":300,
 				"CIVILIZATION_ASSYRIA":300,
 				"CIVILIZATION_PERSIA":700
-			},
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-674
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-674
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-674
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_LIGHT_CAVALRY",
-					"Year":-674
-				},
-				{
-					"Amount":8,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_PERSIA_IMMORTAL",
-					"Year":-674
-				},
-				{
-					"Amount":6,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_WAR_ELEPHANT",
-					"Year":-674
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_CATAPULT",
-					"Year":-674
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_ZOROASTRIAN_PRIEST",
-					"Year":-674
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_PERSIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-674
-				}
-			]
+			}
 		},
 		{
 			"x":54,
@@ -14379,30 +12128,7 @@ application/json
 			"y":22,
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
-			"BonusType":"BONUS_FISH",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_WORKBOAT",
-					"Year":-900
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_PHOENICIANS_BIREME",
-					"Year":-900,
-					"UnitAIType":"UNITAI_SETTLER_SEA"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-900
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-900
-				}
-			]
+			"BonusType":"BONUS_FISH"
 		},
 		{
 			"x":41,
@@ -14428,38 +12154,6 @@ application/json
 				"CIVILIZATION_BABYLON":300,
 				"CIVILIZATION_ASSYRIA":300,
 				"CIVILIZATION_BYZANTIUM":200
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-2495
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-2495
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-2495
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-900
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_BAALITE_PRIEST",
-					"Year":-900
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_PHOENICIA",
-				"Year":-900,
-				"CityPopulation":5
 			}
 		},
 		{
@@ -14590,46 +12284,6 @@ application/json
 				"CIVILIZATION_SUMERIA":700,
 				"CIVILIZATION_BABYLON":700,
 				"CIVILIZATION_ASSYRIA":400
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BABYLON",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-900
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BABYLON",
-					"UnitType":"UNIT_BABYLON_BOWMAN",
-					"Year":-900
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BABYLON",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-900,
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_BABYLON",
-					"UnitType":"UNIT_JAVELINEER",
-					"Year":-900
-				},
-				{
-					"UnitOwner":"CIVILIZATION_BABYLON",
-					"UnitType":"UNIT_ANUNNAKI_PRIEST",
-					"Year":-900
-				},
-				{
-					"UnitOwner":"CIVILIZATION_BABYLON",
-					"UnitType":"UNIT_WORKER",
-					"Year":-900
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_BABYLON",
-				"Year":-900,
-				"CityPopulation":7
 			}
 		},
 		{
@@ -15064,24 +12718,6 @@ application/json
 				"CIVILIZATION_SPARTA":400,
 				"CIVILIZATION_CARTHAGE":300,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-743
-				},
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-743
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-743,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -15600,44 +13236,7 @@ application/json
 			"BonusType":"BONUS_SPICES",
 			"SettlerValues":{
 				"CIVILIZATION_INDIA":200
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-320
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_INDIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-320
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_INDIA",
-					"UnitType":"UNIT_HORSE_ARCHER",
-					"Year":-320
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_INDIA",
-					"UnitType":"UNIT_WAR_ELEPHANT",
-					"Year":-320
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_INDIA",
-					"UnitType":"UNIT_AXEMAN",
-					"Year":-320
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_INDIA",
-					"UnitType":"UNIT_INDIAN_FAST_WORKER",
-					"Year":-320
-				}
-			]
+			}
 		},
 		{
 			"x":62,
@@ -15917,39 +13516,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_SPARTA":700,
 				"CIVILIZATION_BYZANTIUM":400
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_SPARTA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-908
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_SPARTA",
-					"UnitType":"UNIT_SPARTIATES_HOPLITE",
-					"Year":-908
-				},
-				{
-					"UnitOwner":"CIVILIZATION_SPARTA",
-					"UnitType":"UNIT_HELLENIC_PRIEST",
-					"Year":-908
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_SPARTA",
-					"UnitType":"UNIT_GREEK_PHALANX",
-					"Year":-908,
-					"UnitAIType":"UNITAI_ATTACK_CITY"
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_SPARTA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-908
-				}
-			]
+			}
 		},
 		{
 			"x":30,
@@ -16689,20 +14256,7 @@ application/json
 			"x":32,
 			"y":25,
 			"PlotType":3,
-			"TerrainType":"TERRAIN_COAST",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_ATHENS",
-					"UnitType":"UNIT_GALLEY",
-					"Year":-914,
-					"UnitAIType":"UNITAI_SETTLER_SEA"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ATHENS",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-914
-				}
-			]
+			"TerrainType":"TERRAIN_COAST"
 		},
 		{
 			"x":33,
@@ -16825,18 +14379,6 @@ application/json
 				"CIVILIZATION_HITTITE":90,
 				"CIVILIZATION_ASSYRIA":300,
 				"CIVILIZATION_BYZANTIUM":200
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-3000
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-3000,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -16922,54 +14464,7 @@ application/json
 				"CIVILIZATION_BABYLON":400,
 				"CIVILIZATION_ASSYRIA":500,
 				"CIVILIZATION_PERSIA":300
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-1396
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-1396
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-1396
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_ASSYRIA_RAM",
-					"Year":-1396
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-1396
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_SWORDSMAN",
-					"Year":-1396
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_ANUNNAKI_PRIEST",
-					"Year":-1396
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ASSYRIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-1396
-				}
-			]
+			}
 		},
 		{
 			"x":47,
@@ -17532,38 +15027,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_ATHENS":700,
 				"CIVILIZATION_BYZANTIUM":400
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_ATHENS",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-914
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_ATHENS",
-					"UnitType":"UNIT_GREEK_PHALANX",
-					"Year":-914
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_ATHENS",
-					"UnitType":"UNIT_GREEK_PHALANX",
-					"Year":-914,
-					"UnitAIType":"UNITAI_ATTACK_CITY"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ATHENS",
-					"UnitType":"UNIT_HELLENIC_PRIEST",
-					"Year":-914
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_ATHENS",
-					"UnitType":"UNIT_WORKER",
-					"Year":-914
-				}
-			]
+			}
 		},
 		{
 			"x":34,
@@ -18325,25 +15789,7 @@ application/json
 			"x":29,
 			"y":27,
 			"PlotType":3,
-			"TerrainType":"TERRAIN_COAST",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_GALLEY",
-					"Year":-1600,
-					"UnitAIType":"UNITAI_SETTLER_SEA"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-1600
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-1600
-				}
-			]
+			"TerrainType":"TERRAIN_COAST"
 		},
 		{
 			"x":30,
@@ -18515,19 +15961,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_HITTITE":400,
 				"CIVILIZATION_BYZANTIUM":200
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_TOWN_GUARD",
-					"Year":-4400,
-					"UnitAIType":"UNITAI_ATTACK"
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-4400,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -18826,19 +16259,6 @@ application/json
 				"CIVILIZATION_ELAM":"Pattala",
 				"CIVILIZATION_PERSIA":"Pattala",
 				"CIVILIZATION_SASSANID":"Pattala"
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-500
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-500,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -18990,19 +16410,6 @@ application/json
 				"CIVILIZATION_PHOENICIA":400,
 				"CIVILIZATION_CARTHAGE":400,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-550
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-550,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -19158,19 +16565,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_SPARTA":500,
 				"CIVILIZATION_BYZANTIUM":200
-			},
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-700
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-700,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -19359,19 +16753,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_HITTITE":200,
 				"CIVILIZATION_BYZANTIUM":200
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-800
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-800,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -20058,19 +17439,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_MYCENAE":700,
 				"CIVILIZATION_BYZANTIUM":300
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-900
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-900,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -20686,37 +18054,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_CARTHAGE":3,
 				"CIVILIZATION_ETRURIA":400
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_GALLEY",
-					"Year":-512,
-					"UnitAIType":"UNITAI_SETTLER_SEA"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-512
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-512
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_WORKBOAT",
-					"Year":-512
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_GALLEY",
-					"Year":-512,
-					"UnitAIType":"UNITAI_ASSAULT_SEA"
-				}
-			]
+			}
 		},
 		{
 			"x":19,
@@ -20741,52 +18079,7 @@ application/json
 				"CIVILIZATION_ETRURIA":70,
 				"CIVILIZATION_ROME":700,
 				"CIVILIZATION_BYZANTIUM":400
-			},
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-512
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-512
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_HOPLITE",
-					"Year":-512
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_AUXILLIA",
-					"Year":-512
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_CATAPULT",
-					"Year":-512,
-					"UnitAIType":"UNITAI_ATTACK_CITY"
-				},
-				{
-					"Amount":8,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_ROME_PRAETORIAN",
-					"Year":-512,
-					"UnitAIType":"UNITAI_ATTACK_CITY",
-					"FacingDirection":0
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_WORKER",
-					"Year":-512
-				}
-			]
+			}
 		},
 		{
 			"x":20,
@@ -21041,19 +18334,6 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":300
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-1200
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-1200,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -21194,20 +18474,7 @@ application/json
 			"x":50,
 			"y":30,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_PLAINS",
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-1250
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_BARBARIAN",
-				"Year":-1250,
-				"CityPopulation":1
-			}
+			"TerrainType":"TERRAIN_PLAINS"
 		},
 		{
 			"x":51,
@@ -21254,19 +18521,7 @@ application/json
 			"x":55,
 			"y":30,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_DESERT",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-2000
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-2000,
-				"CityPopulation":1
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":56,
@@ -21317,18 +18572,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_INDIA":300,
 				"CIVILIZATION_BACTRIA":500
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-1000
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-1000,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -21811,18 +19054,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_HITTITE":300,
 				"CIVILIZATION_BYZANTIUM":400
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-2400
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-2400,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -21925,18 +19156,6 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_HITTITE":500,
 				"CIVILIZATION_BYZANTIUM":300
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-2400
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-2400,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -22013,19 +19232,6 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-850
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_BARBARIAN",
-				"Year":-850,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -22768,20 +19974,7 @@ application/json
 			"x":48,
 			"y":32,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_PLAINS",
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-190
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-190,
-				"CityPopulation":1
-			}
+			"TerrainType":"TERRAIN_PLAINS"
 		},
 		{
 			"x":49,
@@ -22848,18 +20041,6 @@ application/json
 				"CIVILIZATION_MACEDONIA":"Alexandria the Furthest",
 				"CIVILIZATION_BACTRIA":"Alexandria Eschate",
 				"CIVILIZATION_SASSANID":"Bactra"
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-2000
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-2000,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -23097,19 +20278,6 @@ application/json
 				"CIVILIZATION_CELT":500,
 				"CIVILIZATION_ETRURIA":200,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-600
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-600,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -23161,26 +20329,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_ETRURIA":700,
 				"CIVILIZATION_BYZANTIUM":90
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_ETRURIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-800
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_ETRURIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-800
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_ETRURIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-800
-				}
-			]
+			}
 		},
 		{
 			"x":19,
@@ -23280,56 +20429,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_MACEDONIA":700,
 				"CIVILIZATION_BYZANTIUM":200
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-476
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-476
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_SWORDSMAN",
-					"Year":-476
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_HOPLITE",
-					"Year":-476
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_GREEK_PHALANX",
-					"Year":-476,
-					"UnitAIType":"UNITAI_ATTACK_CITY"
-				},
-				{
-					"Amount":6,
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_COMPANION_CAVALRY",
-					"Year":-476,
-					"UnitAIType":"UNITAI_ATTACK_CITY"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_HELLENIC_PRIEST",
-					"Year":-476
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_MACEDONIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-476
-				}
-			]
+			}
 		},
 		{
 			"x":28,
@@ -24147,57 +21247,7 @@ application/json
 				"CIVILIZATION_ATHENS":500,
 				"CIVILIZATION_ROME":400,
 				"CIVILIZATION_BYZANTIUM":700
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_SETTLER",
-					"Year":286
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_ARCHER",
-					"Year":286
-				},
-				{
-					"Amount":6,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_LEGION",
-					"Year":286
-				},
-				{
-					"Amount":6,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_HEAVY_AXEMAN",
-					"Year":286
-				},
-				{
-					"Amount":6,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_ROME_PRAETORIAN",
-					"Year":286
-				},
-				{
-					"Amount":7,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_BYZANTINE_CATAPHRACT",
-					"Year":286
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_CHRISTIAN_MISSIONARY",
-					"Year":286
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_BYZANTIUM",
-					"UnitType":"UNIT_WORKER",
-					"Year":286
-				}
-			]
+			}
 		},
 		{
 			"x":36,
@@ -24400,55 +21450,7 @@ application/json
 			"TerrainType":"TERRAIN_PLAINS",
 			"SettlerValues":{
 				"CIVILIZATION_BACTRIA":700
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-254
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-254
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_HORSE_ARCHER",
-					"Year":-254
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_HOPLITE",
-					"Year":-254
-				},
-				{
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_CAMEL_CATAPHRACT",
-					"Year":-254
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_AXEMAN",
-					"Year":-254
-				},
-				{
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_HELLENIC_PRIEST",
-					"Year":-254
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_BACTRIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-806
-				}
-			]
+			}
 		},
 		{
 			"x":61,
@@ -28188,19 +25190,6 @@ application/json
 			"RiverWEDirection":1,
 			"SettlerValues":{
 				"CIVILIZATION_ROME":300
-			},
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SWORDSMAN",
-					"Year":-82
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-82,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -28306,19 +25295,6 @@ application/json
 			"CityNames":{
 				"CIVILIZATION_ROME":"Phanagoria",
 				"CIVILIZATION_BYZANTIUM":"Phanagoria"
-			},
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-550
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-550,
-				"CityPopulation":1
 			}
 		},
 		{
@@ -29142,40 +26118,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_CELT":700
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_CELT",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-806
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CELT",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-806
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CELT",
-					"UnitType":"UNIT_CELTIC_GALLIC_WARRIOR",
-					"Year":-806
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CELT",
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-806
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CELT",
-					"UnitType":"UNIT_LIGHT_CAVALRY",
-					"Year":-806
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CELT",
-					"UnitType":"UNIT_WORKER",
-					"Year":-806
-				}
-			]
+			}
 		},
 		{
 			"x":16,
@@ -29328,34 +26271,7 @@ application/json
 			"TerrainType":"TERRAIN_GRASS",
 			"CityNames":{
 				"CIVILIZATION_HUNS":"Hun Homelands"
-			},
-			"Units":[
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_HUNS",
-					"UnitType":"UNIT_SWORDSMAN",
-					"Year":368
-				},
-				{
-					"Amount":7,
-					"UnitOwner":"CIVILIZATION_HUNS",
-					"UnitType":"UNIT_LEGION",
-					"Year":368
-				},
-				{
-					"Amount":7,
-					"UnitOwner":"CIVILIZATION_HUNS",
-					"UnitType":"UNIT_HEAVY_AXEMAN",
-					"Year":368
-				},
-				{
-					"Amount":13,
-					"UnitOwner":"CIVILIZATION_HUNS",
-					"UnitType":"UNIT_HUN",
-					"Year":368,
-					"UnitAIType":"UNITAI_ATTACK_CITY"
-				}
-			]
+			}
 		},
 		{
 			"x":32,
@@ -29933,20 +26849,7 @@ application/json
 			"x":38,
 			"y":44,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_GRASS",
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-600
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-600,
-				"CityPopulation":1
-			}
+			"TerrainType":"TERRAIN_GRASS"
 		},
 		{
 			"x":39,
@@ -30062,32 +26965,7 @@ application/json
 			"TerrainType":"TERRAIN_PLAINS",
 			"SettlerValues":{
 				"CIVILIZATION_SCYTHIA":700
-			},
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_SCYTHIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-902
-				},
-				{
-					"Amount":4,
-					"UnitOwner":"CIVILIZATION_SCYTHIA",
-					"UnitType":"UNIT_SCYTHIA_SCYTHIAN_RIDER",
-					"Year":-902
-				},
-				{
-					"UnitOwner":"CIVILIZATION_SCYTHIA",
-					"UnitType":"UNIT_NOBLE_CAVALRY",
-					"Year":-902
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_SCYTHIA",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-902
-				}
-			]
+			}
 		},
 		{
 			"x":53,
@@ -31354,26 +28232,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_GERMANIA":700
-			},
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_GERMANIA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":160
-				},
-				{
-					"Amount":13,
-					"UnitOwner":"CIVILIZATION_GERMANIA",
-					"UnitType":"UNIT_GERMANIC_SWORDSMAN",
-					"Year":160
-				},
-				{
-					"Amount":13,
-					"UnitOwner":"CIVILIZATION_GERMANIA",
-					"UnitType":"UNIT_HEAVY_AXEMAN",
-					"Year":160
-				}
-			]
+			}
 		},
 		{
 			"x":26,

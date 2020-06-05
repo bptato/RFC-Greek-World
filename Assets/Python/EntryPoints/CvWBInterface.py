@@ -18,7 +18,8 @@ def writeDesc(argsList):
 	fileName = argsList[0]
 	global lastFileRead
 	lastFileRead=None
-	return wbParser.createWBSave(fileName)
+	print fileName
+	return wbParser.createSplitWBSave("GreekWorld", fileName) #TODO
 
 def readAndApplyDesc(argsList):
 	print "CvWBInterface.readAndApplyDesc()"
@@ -139,9 +140,7 @@ def getPlayerData():
 		playableCiv = 1
 		if i >= gc.getMAX_CIV_PLAYERS() - 2:
 			playableCiv = 0
-		
-		print "leaderType " + str(leaderType) + " civType " + str(civType) + " color " + str(color) + " artStyle " + str(artStyle) + " handicapType " + str(handicapType) + " team " + str(team) 
-		
+
 		t=t+(civType,)
 		t=t+(playableCiv,)
 		t=t+(leaderType,)

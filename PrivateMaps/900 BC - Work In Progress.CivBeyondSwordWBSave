@@ -3,7 +3,7 @@ application/json
 	"MapFile":"GreekWorld",
 	"Game":{
 		"Calendar":"CALENDAR_DEFAULT",
-		"GameTurn":0,
+		"GameTurn":226,
 		"StartYear":-4400,
 		"ModPath":"Mods\\RFC-Greek-World",
 		"Options":[

@@ -17,55 +17,83 @@ def parseValue(value): #Just convert strings to integers. Used by the legacy wbS
 		return int(value)
 	return value
 
+def getWBPlot(plots, x, y):
+	for wbPlot in plots:
+		if wbPlot['x'] == x and wbPlot['y'] == y:
+			return wbPlot
+	wbPlot = OrderedDict({})
+	wbPlot['x'] = x
+	wbPlot['y'] = y
+	plots.append(wbPlot)
+	return plots[-1]
+
 entitydefs = None
 
 class WbParser:
 	def __init__(self):
 		self.wbValues = {}
+		self.scenarioValues_var = {} #TODO
+		self.mapValues_var = {} #TODO
+		self.splitFile = False
 		self.lastOpenSlot = gc.getMAX_CIV_PLAYERS() - 1 #last slots are reserved for minors. decrement this everytime a minor civ is added. -1 because of barbs
 
 	def getLastOpenSlot(self):
 		return self.lastOpenSlot
 
+	def scenarioValues(self):
+		if self.splitFile:
+			return self.scenarioValues_var
+		else:
+			return self.wbValues
+
+	def mapValues(self):
+		if self.splitFile:
+			return self.mapValues_var
+		else:
+			return self.wbValues
+
 	def getWbValue(self, key, default):
 		ret = default
-		if key in self.wbValues:
-			ret = self.wbValues[key]
+		if key in self.scenarioValues():
+			ret = self.scenarioValues()[key]
 		return ret
 
 	def getGameValue(self, key, default):
 		ret = default
-		if key in self.wbValues['Game']:
-			ret = self.wbValues['Game'][key]
+		if key in self.scenarioValues()['Game']:
+			ret = self.scenarioValues()['Game'][key]
 		return ret
 
 	def getMapValue(self, key, default):
 		ret = default
-		if key in self.wbValues['Map']:
-			ret = self.wbValues['Map'][key]
+		if key in self.mapValues()['Map']:
+			ret = self.mapValues()['Map'][key]
 		return ret
 
 	def getPlayerValue(self, playerID, key, default):
 		ret = default
-		if key in self.wbValues['Players'][playerID]:
-			ret = self.wbValues['Players'][playerID][key]
+		if key in self.scenarioValues()['Players'][playerID]:
+			ret = self.scenarioValues()['Players'][playerID][key]
 		return ret
 
 	def getMaxTurns(self):
-		if "MaxTurns" in self.wbValues['Game']:
-			return self.wbValues['Game']['MaxTurns']
+		if "MaxTurns" in self.scenarioValues()['Game']:
+			return self.scenarioValues()['Game']['MaxTurns']
 		return 0
 
 	def getDescription(self):
-		if "Description" in self.wbValues['Game']:
-			return self.wbValues['Game']['Description']
+		if "Description" in self.scenarioValues()['Game']:
+			return self.scenarioValues()['Game']['Description']
 		return "No description"
 
 	def getModPath(self):
-		return self.wbValues['Game']['ModPath']
+		return self.scenarioValues()['Game']['ModPath']
+
+	def getMapsPath(self): #TODO: actually detect this
+		return self.getModPath() + "\\PrivateMaps\\"
 	
 	def setupEnabled(self):
-		for wbPlayer in self.wbValues['Players']:
+		for wbPlayer in self.scenarioValues()['Players']:
 			rfcPlayer = riseFall.getRFCPlayer(gc.getInfoTypeForString(wbPlayer['CivType']))
 			rfcPlayer.setEnabled(True)
 			if "MinorNationStatus" in wbPlayer:
@@ -74,10 +102,305 @@ class WbParser:
 				rfcPlayer.setMinorCiv(False)
 
 	def setupStartingYears(self):
-		for wbPlayer in self.wbValues['Players']:
+		for wbPlayer in self.scenarioValues()['Players']:
 			if not "MinorNationStatus" in wbPlayer or wbPlayer['MinorNationStatus'] == 0: #major civ
 				rfcPlayer = riseFall.getRFCPlayer(gc.getInfoTypeForString(wbPlayer['CivType']))
 				rfcPlayer.setStartingYear(wbPlayer['StartingYear'])
+
+	def getMapFile(self): #TODO store this
+		return "GreekWorld"
+
+	def saveMapFile(self, name): #Save map data.
+		values = OrderedDict({})
+		mapValues = OrderedDict({})
+
+		provinces = []
+		plots = []
+
+		#Plots
+		mapWidth = cmap.getGridWidth()
+		mapHeight = cmap.getGridHeight()
+
+		numPlotsWritten = 0
+		for y in range(mapHeight):
+			for x in range(mapWidth):
+				plot = cmap.plot(x, y)
+				wbPlot = OrderedDict({})
+
+				wbPlot['x'] = x
+				wbPlot['y'] = y
+
+				wbPlot['PlotType'] = int(plot.getPlotType())
+
+				wbPlot['TerrainType'] = gc.getTerrainInfo(plot.getTerrainType()).getType()
+
+				if plot.getFeatureType() != -1:
+					wbPlot['FeatureType'] = gc.getFeatureInfo(plot.getFeatureType()).getType()
+					wbPlot['FeatureVariety'] = plot.getFeatureVariety()
+
+				if plot.getBonusType(-1) != -1:
+					wbPlot['BonusType'] = gc.getBonusInfo(plot.getBonusType(-1)).getType()
+
+				if plot.isWOfRiver():
+					wbPlot['isWOfRiver'] = True
+					wbPlot['RiverNSDirection'] = int(plot.getRiverNSDirection())
+				if plot.isNOfRiver():
+					wbPlot['isNOfRiver'] = True
+					wbPlot['RiverWEDirection'] = int(plot.getRiverWEDirection())
+
+				for i in range(gc.getNumCivilizationInfos()):
+					if plot.getCityName(i, True) != "":
+						if "CityNames" not in wbPlot:
+							wbPlot['CityNames'] = OrderedDict({})
+						wbPlot['CityNames'][gc.getCivilizationInfo(i).getType()] = plot.getCityName(i, True)
+
+				#Settler values
+				for i in range(gc.getNumCivilizationInfos()):
+					rfcPlayer = riseFall.getRFCPlayer(i)
+					if not rfcPlayer.isMinor():
+						settlerValue = plot.getSettlerValue(i)
+						if settlerValue != 20: #20 is the default value
+							if "SettlerValues" not in wbPlot:
+								wbPlot['SettlerValues'] = OrderedDict({})
+							wbPlot['SettlerValues'][gc.getCivilizationInfo(i).getType()] = settlerValue
+
+				plots.append(wbPlot)
+				numPlotsWritten += 1
+
+		#Map
+		mapValues['grid width'] = mapWidth
+		mapValues['grid height'] = mapHeight
+		mapValues['top latitude'] = cmap.getTopLatitude()
+		mapValues['bottom latitude'] = cmap.getBottomLatitude()
+		mapValues['climate'] = gc.getClimateInfo(cmap.getClimate()).getType()
+		mapValues['sealevel'] = gc.getSeaLevelInfo(cmap.getSeaLevel()).getType()
+		mapValues['num plots written'] = numPlotsWritten
+
+		mapValues['wrap X'] = int(cmap.isWrapX())
+		mapValues['wrap Y'] = int(cmap.isWrapY())
+		mapValues['world size'] = gc.getWorldInfo(cmap.getWorldSize()).getType()
+
+		#Provinces
+		for i in range(riseFall.getNumProvinces()):
+			province = riseFall.getRFCProvince(i)
+			wbProvince = OrderedDict({})
+			wbProvince['Name'] = province.getName()
+			wbProvince['Left'] = province.getLeft()
+			wbProvince['Bottom'] = province.getBottom()
+			wbProvince['Right'] = province.getRight()
+			wbProvince['Top'] = province.getTop()
+			provinces.append(wbProvince)
+
+		values['Map'] = mapValues
+		values['Provinces'] = provinces
+		values['Plots'] = plots
+
+		f = file(name, "w")
+		f.write("application/json\n")
+		unescapedValues = StringUtils.unescape(json.dumps(values, indent=1, separators=(',', ':'))) #replace html character references with human readable characters
+		f.write(unescapedValues.encode("utf8"))
+
+	def saveScenarioFile(self, name, mapName): #Save scenario data.
+		values = OrderedDict({})
+		values['MapFile'] = mapName
+		gameValues = OrderedDict({})
+
+		players = []
+		provinces = []
+		plots = []
+
+		#Game
+		gameValues['Calendar'] = gc.getCalendarInfo(game.getCalendar()).getType()
+		gameValues['GameTurn'] = game.getGameTurn()
+		gameValues['StartYear'] = game.getStartYear()
+		if "Game" in self.scenarioValues() and "ModPath" in self.scenarioValues()['Game']:
+			gameValues['ModPath'] = self.scenarioValues()['Game']['ModPath'] #TODO
+		else:
+			gameValues['ModPath'] = ""
+
+		if gc.getNumGameOptionInfos() > 0:
+			gameValues['Options'] = []
+			for i in range(gc.getNumGameOptionInfos()):
+				if game.isOption(i):
+					gameValues['Options'].append(gc.getGameOptionInfo(i).getType())
+
+		if gc.getNumVictoryInfos() > 0:
+			gameValues['Victories'] = []
+			for i in range(gc.getNumVictoryInfos()):
+				if game.isVictoryValid(i):
+					gameValues['Victories'].append(gc.getVictoryInfo(i).getType())
+
+		#Plots
+		mapWidth = cmap.getGridWidth()
+		mapHeight = cmap.getGridHeight()
+
+		numPlotsWritten = 0
+		for y in range(mapHeight):
+			for x in range(mapWidth):
+				plot = cmap.plot(x, y)
+				wbPlot = OrderedDict({})
+
+				wbPlot['x'] = x
+				wbPlot['y'] = y
+				shouldSave = False
+
+				if plot.getNumUnits() > 0:
+					wbPlot['Units'] = []
+					for i in range(plot.getNumUnits()):
+						unit = plot.getUnit(i)
+						wbUnit = OrderedDict({})
+						wbUnit['UnitOwner'] = gc.getCivilizationInfo(gc.getPlayer(unit.getOwner()).getCivilizationType()).getType()
+						wbUnit['UnitType'] = gc.getUnitInfo(unit.getUnitType()).getType()
+						wbUnit['FacingDirection'] = int(unit.getFacingDirection())
+						wbUnit['UnitAIType'] = gc.getUnitAIInfo(unit.getUnitAIType()).getType()
+						wbUnit['Year'] = game.getGameTurnYear()
+						wbPlot['Units'].append(wbUnit)
+						#TODO experience, etc
+					shouldSave = True
+
+				if plot.isCity():
+					city = plot.getPlotCity()
+					wbPlot['City'] = OrderedDict({})
+					wbPlot['City']['CityOwner'] = gc.getCivilizationInfo(gc.getPlayer(city.getOwner()).getCivilizationType()).getType()
+					wbPlot['City']['Year'] = game.getGameTurnYear()
+					if city.getPopulation() > 1:
+						wbPlot['City']['CityPopulation'] = city.getPopulation()
+					#TODO religion, culture, etc
+					shouldSave = True
+
+				if shouldSave:
+					plots.append(wbPlot)
+
+		#Players
+		for i in range(gc.getNumCivilizationInfos()):
+			rfcPlayer = riseFall.getRFCPlayer(i)
+			if rfcPlayer.isEnabled():
+				civInfo = gc.getCivilizationInfo(i)
+				wbPlayer = OrderedDict({})
+				wbPlayer['CivType'] = civInfo.getType()
+				wbPlayer['CivicOptions'] = OrderedDict({})
+				for j in range(gc.getNumCivicOptionInfos()):
+					startingCivic = rfcPlayer.getStartingCivic(j)
+					if startingCivic != -1:
+						wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
+				wbPlayer['StartingGold'] = rfcPlayer.getStartingGold()
+				wbPlayer['StartingTechs'] = []
+				for j in range(gc.getNumTechInfos()):
+					if rfcPlayer.isStartingTech(j):
+						wbPlayer['StartingTechs'].append(gc.getTechInfo(j).getType())
+
+				wbPlayer['StartingWars'] = []
+				for j in range(gc.getNumCivilizationInfos()):
+					if rfcPlayer.isStartingWar(j):
+						wbPlayer['StartingWars'].append(gc.getCivilizationInfo(j).getType())
+
+				wbPlayer['RelatedLanguages'] = []
+				for j in range(gc.getNumCivilizationInfos()):
+					if i != j:
+						if rfcPlayer.isRelatedLanguage(j):
+							wbPlayer['RelatedLanguages'].append(gc.getCivilizationInfo(j).getType())
+
+				wbPlayer['StartingX'] = rfcPlayer.getStartingPlotX()
+				wbPlayer['StartingY'] = rfcPlayer.getStartingPlotY()
+
+				#Scheduled units&cities
+				for j in range(rfcPlayer.getNumScheduledUnits()):
+					scheduledUnit = rfcPlayer.getScheduledUnit(j)
+					wbPlot = getWBPlot(plots, scheduledUnit.getX(), scheduledUnit.getY())
+					if "Units" not in wbPlot:
+						wbPlot['Units'] = []
+					wbUnit = OrderedDict({})
+					if scheduledUnit.getAmount() > 1:
+						wbUnit['Amount'] = scheduledUnit.getAmount()
+					wbUnit['UnitOwner'] = civInfo.getType()
+					wbUnit['UnitType'] = gc.getUnitInfo(scheduledUnit.getUnitType()).getType()
+					wbUnit['Year'] = scheduledUnit.getYear()
+					if scheduledUnit.getUnitAIType() != -1:
+						wbUnit['UnitAIType'] = gc.getUnitAIInfo(scheduledUnit.getUnitAIType()).getType()
+					if scheduledUnit.getFacingDirection() != -1 and scheduledUnit.getFacingDirection() != 4:
+						wbUnit['FacingDirection'] = scheduledUnit.getFacingDirection()
+					wbPlot['Units'].append(wbUnit)
+
+				for j in range(rfcPlayer.getNumScheduledCities()):
+					scheduledCity = rfcPlayer.getScheduledCity(j)
+					wbPlot = getWBPlot(plots, scheduledCity.getX(), scheduledCity.getY())
+					wbCity = OrderedDict({})
+					wbCity['CityOwner'] = civInfo.getType()
+					wbCity['Year'] = scheduledCity.getYear()
+					wbCity['CityPopulation'] = scheduledCity.getPopulation()
+					wbPlot['City'] = wbCity
+
+				#Core provinces
+				wbPlayer['CoreProvinces'] = []
+				for j in range(rfcPlayer.getNumCoreProvinces()):
+					coreProvince = rfcPlayer.getCoreProvince(j)
+					wbPlayer['CoreProvinces'].append(rfcPlayer.getCoreProvince(j))
+
+				wbPlayer['StartingYear'] = rfcPlayer.getStartingYear()
+
+				#Minor nation?
+				if rfcPlayer.isMinor():
+					wbPlayer['MinorNationStatus'] = 1
+
+				#Modifiers
+				wbPlayer['CompactEmpireModifier'] = rfcPlayer.getCompactEmpireModifier()
+				wbPlayer['UnitUpkeepModifier'] = rfcPlayer.getUnitUpkeepModifier()
+				wbPlayer['ResearchModifier'] = rfcPlayer.getResearchModifier()
+				wbPlayer['DistanceMaintenanceModifier'] = rfcPlayer.getDistanceMaintenanceModifier()
+				wbPlayer['NumCitiesMaintenanceModifier'] = rfcPlayer.getNumCitiesMaintenanceModifier()
+				wbPlayer['UnitProductionModifier'] = rfcPlayer.getUnitProductionModifier()
+				wbPlayer['CivicUpkeepModifier'] = rfcPlayer.getCivicUpkeepModifier()
+				wbPlayer['HealthBonusModifier'] = rfcPlayer.getHealthBonusModifier()
+				wbPlayer['BuildingProductionModifier'] = rfcPlayer.getBuildingProductionModifier()
+				wbPlayer['WonderProductionModifier'] = rfcPlayer.getWonderProductionModifier()
+				wbPlayer['GreatPeopleModifier'] = rfcPlayer.getGreatPeopleModifier()
+				wbPlayer['InflationModifier'] = rfcPlayer.getInflationModifier()
+				wbPlayer['GrowthModifier'] = rfcPlayer.getGrowthModifier()
+
+				players.append(wbPlayer)
+
+		#Provinces
+		for i in range(riseFall.getNumProvinces()):
+			province = riseFall.getRFCProvince(i)
+			wbProvince = OrderedDict({})
+			wbProvince['Name'] = province.getName()
+			scheduledUnitsAmount = province.getNumScheduledUnits()
+			for i in range(scheduledUnitsAmount):
+				scheduledUnit = province.getScheduledUnit(i)
+				if "Units" not in wbProvince:
+					wbProvince['Units'] = []
+				wbUnit = OrderedDict({})
+				if scheduledUnit.getAmount() > 1:
+					wbUnit['Amount'] = scheduledUnit.getAmount()
+				#wbUnit['UnitOwner'] = civInfo.getType() #TODO
+
+				wbUnit['UnitType'] = gc.getUnitInfo(scheduledUnit.getUnitType()).getType()
+				wbUnit['Year'] = scheduledUnit.getYear()
+				wbUnit['EndYear'] = scheduledUnit.getEndYear()
+				if scheduledUnit.getUnitAIType() != -1 and scheduledUnit.getUnitAIType() != UnitAITypes.UNITAI_ATTACK: #UNITAI_ATTACK is the default barb unitai
+					wbUnit['UnitAIType'] = gc.getUnitAIInfo(scheduledUnit.getUnitAIType()).getType()
+				if scheduledUnit.getFacingDirection() != -1 and scheduledUnit.getFacingDirection() != 4:
+					wbUnit['FacingDirection'] = scheduledUnit.getFacingDirection()
+
+				wbUnit['SpawnFrequency'] = scheduledUnit.getSpawnFrequency()
+
+				wbProvince['Units'].append(wbUnit)
+
+			provinces.append(wbProvince)
+
+		values['Game'] = gameValues
+		values['Players'] = players
+		values['Provinces'] = provinces
+		values['Plots'] = plots
+
+		f = file(name, "w")
+		f.write("application/json\n")
+		unescapedValues = StringUtils.unescape(json.dumps(values, indent=1, separators=(',', ':'))) #replace html character references with human readable characters
+		f.write(unescapedValues.encode("utf8"))
+
+	def createSplitWBSave(self, mapName, scenarioName):
+		self.saveMapFile(self.getMapsPath() + mapName)
+		self.saveScenarioFile(scenarioName, mapName)
 
 	def createWBSave(self, name): #Write wbValues to a new save file in JSON format.
 		values = OrderedDict({})
@@ -124,7 +447,6 @@ class WbParser:
 
 				wbPlot['PlotType'] = int(plot.getPlotType())
 
-				print "getting terrain type"
 				wbPlot['TerrainType'] = gc.getTerrainInfo(plot.getTerrainType()).getType()
 
 				if plot.getFeatureType() != -1:
@@ -327,6 +649,7 @@ class WbParser:
 		f.write(unescapedValues.encode("utf8"))
 
 	def parseFile(self, name): #Parse a WBSave file.
+		print name
 		f = open(name, "r")
 		bGame = False
 		bPlayer = False
@@ -369,6 +692,11 @@ class WbParser:
 			#So I just used eval. We also exit instantly if our file contains a '.', '(', or ')' character for at least some safety.
 			self.wbValues = eval(file_str.getvalue())
 			f.close()
+			if "MapFile" in self.wbValues:
+				self.scenarioValues_var = self.wbValues
+				self.parseFile(self.getMapsPath() + self.wbValues['MapFile'])
+				self.mapValues_var = self.wbValues
+				self.splitFile = True
 			return
 
 		#normal wbsave parser. warning: this is incomplete
@@ -534,28 +862,34 @@ class WbParser:
 
 	def buildMap(self):
 		print "RFGWB.buildMap()"
-		game.setStartYear(self.wbValues['Game']['StartYear'])
-		mapWidth = self.wbValues['Map']['grid width']
-		mapHeight = self.wbValues['Map']['grid height']
-		wrapX = bool(self.wbValues['Map']['wrap X'])
-		wrapY = bool(self.wbValues['Map']['wrap Y'])
-		worldSize = WorldSizeTypes(CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), self.wbValues['Map']['world size']))
-		climate = CvUtil.findInfoTypeNum(gc.getClimateInfo, gc.getNumClimateInfos(), self.wbValues['Map']['climate'])
-		seaLevel = CvUtil.findInfoTypeNum(gc.getSeaLevelInfo, gc.getNumSeaLevelInfos(), self.wbValues['Map']['sealevel'])
-		cmap.rebuild(mapWidth, mapHeight, self.wbValues['Map']['top latitude'], self.wbValues['Map']['bottom latitude'], wrapX, wrapY, WorldSizeTypes(worldSize), ClimateTypes(climate), SeaLevelTypes(seaLevel), 0, None)
+
+		if "StartYear" in self.scenarioValues()['Game']:
+			game.setStartYear(self.scenarioValues()['Game']['StartYear'])
+
+		if "Map" in self.mapValues():
+			mapWidth = self.mapValues()['Map']['grid width']
+			mapHeight = self.mapValues()['Map']['grid height']
+			wrapX = bool(self.mapValues()['Map']['wrap X'])
+			wrapY = bool(self.mapValues()['Map']['wrap Y'])
+			worldSize = WorldSizeTypes(CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), self.mapValues()['Map']['world size']))
+			climate = CvUtil.findInfoTypeNum(gc.getClimateInfo, gc.getNumClimateInfos(), self.mapValues()['Map']['climate'])
+			seaLevel = CvUtil.findInfoTypeNum(gc.getSeaLevelInfo, gc.getNumSeaLevelInfos(), self.mapValues()['Map']['sealevel'])
+			cmap.rebuild(mapWidth, mapHeight, self.mapValues()['Map']['top latitude'], self.mapValues()['Map']['bottom latitude'], wrapX, wrapY, WorldSizeTypes(worldSize), ClimateTypes(climate), SeaLevelTypes(seaLevel), 0, None)
 
 		#Plots
-		for wbPlot in self.wbValues['Plots']:
+		for wbPlot in self.mapValues()['Plots']:
 			x = wbPlot['x']
 			y = wbPlot['y']
 			plot = cmap.plot(x, y)
 
 			#Plot types
-			plot.setPlotType(PlotTypes(wbPlot['PlotType']), False, False)
+			if "PlotType" in wbPlot:
+				plot.setPlotType(PlotTypes(wbPlot['PlotType']), False, False)
 
 			#Terrain types
-			terrainType = gc.getInfoTypeForString(wbPlot['TerrainType'])
-			plot.setTerrainType(terrainType, False, False)
+			if "TerrainType" in wbPlot:
+				terrainType = gc.getInfoTypeForString(wbPlot['TerrainType'])
+				plot.setTerrainType(terrainType, False, False)
 
 			#Bonuses
 			if "BonusType" in wbPlot:
@@ -582,6 +916,36 @@ class WbParser:
 			if "isWOfRiver" in wbPlot:
 				plot.setWOfRiver(True, directions[1])
 
+			#City names
+			if "CityNames" in wbPlot:
+				for i in range(gc.getNumCivilizationInfos()):
+					if gc.getCivilizationInfo(i).getType() in wbPlot['CityNames']:
+						plot.setCityName(i, wbPlot['CityNames'][gc.getCivilizationInfo(i).getType()])
+
+			#Settler values
+			if "SettlerValues" in wbPlot:
+				for i in range(gc.getNumCivilizationInfos()):
+					civType = gc.getCivilizationInfo(i).getType()
+					if civType in wbPlot['SettlerValues']:
+						plot.setSettlerValue(i, wbPlot['SettlerValues'][civType])
+
+			#legacy settler map converter thing
+			#for j in range(gc.getNumCivilizationInfos()):
+			#	rfcPlayer = riseFall.getRFCPlayer(j)
+			#	if not rfcPlayer.isMinor():
+			#		if not (gc.getCivilizationInfo(j).getType() == "CIVILIZATION_HUNS" and SettlersMaps.tSettlersMaps[j][mapHeight - 1 - y][x]):
+			#			plot.setSettlerValue(j, SettlersMaps.tSettlersMaps[j][mapHeight - 1 - y][x])
+
+			#cnm converter thing
+			#for i in range(len(CityNameMap.tCityMap)):
+			#	if x < 61 and CityNameMap.tCityMap[i][59 - y][x] != "-1":
+			#		cityName = CityNameMap.tCityMap[i][mapHeight - 1 - y][x]
+			#		plot.setCityName(i, cityName)
+
+		for wbPlot in self.scenarioValues()['Plots']:
+			x = wbPlot['x']
+			y = wbPlot['y']
+			plot = cmap.plot(x, y)
 			#Units
 			if "Units" in wbPlot:
 				for wbUnit in wbPlot['Units']:
@@ -611,18 +975,6 @@ class WbParser:
 
 					rfcPlayer.scheduleUnit(year, unitID, x, y, unitAI, facingDirection, amount)
 
-			#City names
-			if "CityNames" in wbPlot:
-				for i in range(gc.getNumCivilizationInfos()):
-					if gc.getCivilizationInfo(i).getType() in wbPlot['CityNames']:
-						plot.setCityName(i, wbPlot['CityNames'][gc.getCivilizationInfo(i).getType()])
-
-			#cnm converter thing
-			#for i in range(len(CityNameMap.tCityMap)):
-			#	if x < 61 and CityNameMap.tCityMap[i][59 - y][x] != "-1":
-			#		cityName = CityNameMap.tCityMap[i][mapHeight - 1 - y][x]
-			#		plot.setCityName(i, cityName)
-
 
 			#Barbarians and independent cities
 			if "City" in wbPlot:
@@ -642,19 +994,6 @@ class WbParser:
 
 				rfcPlayer.scheduleCity(year, x, y, population)
 
-			#Settler values
-			if "SettlerValues" in wbPlot:
-				for i in range(gc.getNumCivilizationInfos()):
-					civType = gc.getCivilizationInfo(i).getType()
-					if civType in wbPlot['SettlerValues']:
-						plot.setSettlerValue(i, wbPlot['SettlerValues'][civType])
-
-			#for j in range(gc.getNumCivilizationInfos()): #legacy settler map converter thing
-			#	rfcPlayer = riseFall.getRFCPlayer(j)
-			#	if not rfcPlayer.isMinor():
-			#		if not (gc.getCivilizationInfo(j).getType() == "CIVILIZATION_HUNS" and SettlersMaps.tSettlersMaps[j][mapHeight - 1 - y][x]):
-			#			plot.setSettlerValue(j, SettlersMaps.tSettlersMaps[j][mapHeight - 1 - y][x])
-
 		cmap.recalculateAreas()
 
 
@@ -666,10 +1005,10 @@ class WbParser:
 				break
 
 		#Provinces
-		for wbProvince in self.wbValues['Provinces']:
-			riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right']);
+		for wbProvince in self.mapValues()['Provinces']:
+			riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right'])
 			rfcProvince = riseFall.getRFCProvince(riseFall.getNumProvinces()-1) #last province should be the one we've just added
-			#Goody huts
+			#Goody huts, TODO
 			amountRand = ((rfcProvince.getTop() - rfcProvince.getBottom()) + (rfcProvince.getRight() - rfcProvince.getLeft()))/5
 			amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
 
@@ -677,8 +1016,8 @@ class WbParser:
 				randPlotX = rfcProvince.getLeft() + game.getSorenRandNum(rfcProvince.getRight() - rfcProvince.getLeft(), "Random plot x roll")
 				randPlotY = rfcProvince.getBottom() + game.getSorenRandNum(rfcProvince.getTop() - rfcProvince.getBottom(), "Random plot y roll")
 				
-				for wbPlayer in self.wbValues['Players']:
-					if wbPlayer['StartingYear'] == self.wbValues['Game']['StartYear']:
+				for wbPlayer in self.scenarioValues()['Players']:
+					if wbPlayer['StartingYear'] == self.scenarioValues()['Game']['StartYear']:
 						if randPlotX == wbPlayer['StartingX'] and randPlotY == wbPlayer['StartingY']:
 							continue
 				
@@ -686,8 +1025,10 @@ class WbParser:
 				if not (plot.isWater() or plot.isPeak()):
 					plot.setImprovementType(goodyImprovement)
 
+		for wbProvince in self.scenarioValues()['Provinces']:
 			#Units
 			if "Units" in wbProvince:
+				rfcProvince = riseFall.getRFCProvince(wbProvince['Name'])
 				for wbUnit in wbProvince['Units']:
 					if "Year" not in wbUnit or "EndYear" not in wbUnit:
 						raise Exception("No starting/ending date of barbarian unit " + str(wbUnit))
@@ -718,7 +1059,7 @@ class WbParser:
 		for i in range(gc.getMAX_CIV_PLAYERS()):
 			gc.getPlayer(i).setStartingPlot(cmap.plot(0, 0), True)
 
-		for wbPlayer in self.wbValues['Players']:
+		for wbPlayer in self.scenarioValues()['Players']:
 			playerID = gc.getInfoTypeForString(wbPlayer['CivType'])
 			rfcPlayer = riseFall.getRFCPlayer(playerID)
 
@@ -727,7 +1068,8 @@ class WbParser:
 					for wbCoreProvince in wbPlayer['CoreProvinces']:
 						rfcPlayer.addCoreProvince(wbCoreProvince)
 
-				rfcPlayer.setStartingPlot(wbPlayer['StartingX'], wbPlayer['StartingY'])
+				if "StartingX" in wbPlayer and "StartingY" in wbPlayer:
+					rfcPlayer.setStartingPlot(wbPlayer['StartingX'], wbPlayer['StartingY'])
 
 				if "StartingTechs" in wbPlayer:
 					for startingTech in wbPlayer['StartingTechs']:

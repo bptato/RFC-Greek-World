@@ -107,7 +107,6 @@ const wchar* CvInfoBase::getTextKeyWide() const
 
 //bluepotato start: fix civ listing
 //this weird hack tricks the exe's sorting algorithm into not doing anything (and thus showing civs as specified in XML)
-//as a side effect, the civilopedia is broken outside of the game
 static int* asked = NULL;
 static int civs = 0;
 
