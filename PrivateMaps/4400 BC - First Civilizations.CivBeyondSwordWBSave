@@ -503,7 +503,6 @@ application/json
 			],
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_PHOENICIA",
 				"CIVILIZATION_BABYLON",
 				"CIVILIZATION_ASSYRIA"
 			],
