@@ -415,8 +415,8 @@ class WbParser:
 		gameValues['Calendar'] = gc.getCalendarInfo(game.getCalendar()).getType()
 		gameValues['GameTurn'] = game.getGameTurn()
 		gameValues['StartYear'] = game.getStartYear()
-		if "Game" in self.wbValues and "ModPath" in self.wbValues['Game']:
-			gameValues['ModPath'] = self.wbValues['Game']['ModPath'] #TODO
+		if "Game" in self.scenarioValues() and "ModPath" in self.scenarioValues()['Game']:
+			gameValues['ModPath'] = self.scenarioValues()['Game']['ModPath'] #TODO
 		else:
 			gameValues['ModPath'] = ""
 
