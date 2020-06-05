@@ -101,11 +101,7 @@ should_compile() {
 	shift
 	pattern=$(echo "$@" | sed "s/ /\|/g")
 	latest_elem=$(ls -rt $(find . -maxdepth 1 | grep -Eio "$pattern") | tail -1)
-	latest_elem_compiled="$TARGET/${latest_elem%.*}.obj"
-	if ! test -f "$latest_elem_compiled"; then
-		return 0
-	fi
-	if test "$(date -r "$latest_elem_compiled" +%s)" -lt "$(date -r "$latest_elem" +%s)"; then
+	if test "$(date -r "$compiled" +%s)" -lt "$(date -r "$latest_elem" +%s)"; then
 		return 0
 	fi
 	return 1
