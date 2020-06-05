@@ -3375,7 +3375,10 @@ application/json
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
 			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0
+			"FeatureVariety":0,
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Sana'a"
+			}
 		},
 		{
 			"x":44,
@@ -5711,7 +5714,10 @@ application/json
 			"x":42,
 			"y":11,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT"
+			"TerrainType":"TERRAIN_DESERT",
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Tayma"
+			}
 		},
 		{
 			"x":43,
@@ -7122,6 +7128,9 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
 			"BonusType":"BONUS_INCENSE",
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Petra"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":50
 			}
@@ -7154,7 +7163,10 @@ application/json
 			"x":46,
 			"y":14,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT"
+			"TerrainType":"TERRAIN_DESERT",
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Gerrha"
+			}
 		},
 		{
 			"x":47,
@@ -8113,7 +8125,8 @@ application/json
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Tanis",
 				"CIVILIZATION_ROME":"Tanis",
-				"CIVILIZATION_BYZANTIUM":"Tanis"
+				"CIVILIZATION_BYZANTIUM":"Tanis",
+				"CIVILIZATION_BARBARIAN":"Tanis"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
@@ -9285,7 +9298,8 @@ application/json
 				"CIVILIZATION_SPARTA":"Cyrene",
 				"CIVILIZATION_CARTHAGE":"Barca",
 				"CIVILIZATION_ROME":"Tolmeta",
-				"CIVILIZATION_BYZANTIUM":"Tolmeta"
+				"CIVILIZATION_BYZANTIUM":"Tolmeta",
+				"CIVILIZATION_BARBARIAN":"Kyrene"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":200,
@@ -11538,7 +11552,8 @@ application/json
 				"CIVILIZATION_BABYLON":"Larsa",
 				"CIVILIZATION_ASSYRIA":"Larsa",
 				"CIVILIZATION_PERSIA":"Larsa",
-				"CIVILIZATION_SASSANID":"Larsa"
+				"CIVILIZATION_SASSANID":"Larsa",
+				"CIVILIZATION_BARBARIAN":"Larsa"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_SUMERIA":400,
@@ -16258,7 +16273,8 @@ application/json
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Pattala",
 				"CIVILIZATION_PERSIA":"Pattala",
-				"CIVILIZATION_SASSANID":"Pattala"
+				"CIVILIZATION_SASSANID":"Pattala",
+				"CIVILIZATION_BARBARIAN":"Pattala"
 			}
 		},
 		{
@@ -16560,7 +16576,8 @@ application/json
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
 				"CIVILIZATION_MYCENAE":"Calydon",
-				"CIVILIZATION_SPARTA":"Calydon"
+				"CIVILIZATION_SPARTA":"Calydon",
+				"CIVILIZATION_BARBARIAN":"Ambrakía"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_SPARTA":500,
@@ -16748,7 +16765,8 @@ application/json
 				"CIVILIZATION_PERSIA":"Magnesia",
 				"CIVILIZATION_ROME":"Sardis",
 				"CIVILIZATION_SASSANID":"Magnesia",
-				"CIVILIZATION_BYZANTIUM":"Sardis"
+				"CIVILIZATION_BYZANTIUM":"Sardis",
+				"CIVILIZATION_BARBARIAN":"Sfard"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_HITTITE":200,
@@ -17434,7 +17452,8 @@ application/json
 				"CIVILIZATION_ATHENS":"Thebes",
 				"CIVILIZATION_SPARTA":"Thebai",
 				"CIVILIZATION_ROME":"Thebae",
-				"CIVILIZATION_BYZANTIUM":"Thebae"
+				"CIVILIZATION_BYZANTIUM":"Thebae",
+				"CIVILIZATION_BARBARIAN":"Thêbai"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_MYCENAE":700,
@@ -18330,7 +18349,8 @@ application/json
 				"CIVILIZATION_PERSIA":"Sardis",
 				"CIVILIZATION_ROME":"Pessinus",
 				"CIVILIZATION_SASSANID":"Sardis",
-				"CIVILIZATION_BYZANTIUM":"Pessinus"
+				"CIVILIZATION_BYZANTIUM":"Pessinus",
+				"CIVILIZATION_BARBARIAN":"Górdion"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":300
@@ -18474,7 +18494,10 @@ application/json
 			"x":50,
 			"y":30,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_PLAINS"
+			"TerrainType":"TERRAIN_PLAINS",
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Hasanlu"
+			}
 		},
 		{
 			"x":51,
@@ -18567,7 +18590,8 @@ application/json
 				"CIVILIZATION_ELAM":"Taxila",
 				"CIVILIZATION_PERSIA":"Taxila",
 				"CIVILIZATION_BACTRIA":"Alexandropolis",
-				"CIVILIZATION_SASSANID":"Taxila"
+				"CIVILIZATION_SASSANID":"Taxila",
+				"CIVILIZATION_BARBARIAN":"Taxila"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_INDIA":300,
@@ -19151,7 +19175,8 @@ application/json
 				"CIVILIZATION_PERSIA":"Ancyra",
 				"CIVILIZATION_ROME":"Ancyra",
 				"CIVILIZATION_SASSANID":"Ancyra",
-				"CIVILIZATION_BYZANTIUM":"Ancyra"
+				"CIVILIZATION_BYZANTIUM":"Ancyra",
+				"CIVILIZATION_BARBARIAN":"Alaca Huyuk"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_HITTITE":500,
@@ -19228,7 +19253,8 @@ application/json
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Van",
 				"CIVILIZATION_PERSIA":"Van",
-				"CIVILIZATION_SASSANID":"Van"
+				"CIVILIZATION_SASSANID":"Van",
+				"CIVILIZATION_BARBARIAN":"Tushpa"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
@@ -19974,7 +20000,10 @@ application/json
 			"x":48,
 			"y":32,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_PLAINS"
+			"TerrainType":"TERRAIN_PLAINS",
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Artashat"
+			}
 		},
 		{
 			"x":49,
@@ -20272,7 +20301,8 @@ application/json
 				"CIVILIZATION_CELT":"Massilia",
 				"CIVILIZATION_ETRURIA":"Saba",
 				"CIVILIZATION_ROME":"Forum Iulii",
-				"CIVILIZATION_BYZANTIUM":"Forum Iulii"
+				"CIVILIZATION_BYZANTIUM":"Forum Iulii",
+				"CIVILIZATION_BARBARIAN":"Massalia"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_CELT":500,
@@ -25188,6 +25218,9 @@ application/json
 			"TerrainType":"TERRAIN_GRASS",
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Sarmizegetusa"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_ROME":300
 			}
@@ -25294,7 +25327,8 @@ application/json
 			"TerrainType":"TERRAIN_GRASS",
 			"CityNames":{
 				"CIVILIZATION_ROME":"Phanagoria",
-				"CIVILIZATION_BYZANTIUM":"Phanagoria"
+				"CIVILIZATION_BYZANTIUM":"Phanagoria",
+				"CIVILIZATION_BARBARIAN":"Padikápeon"
 			}
 		},
 		{
@@ -26849,7 +26883,10 @@ application/json
 			"x":38,
 			"y":44,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_GRASS"
+			"TerrainType":"TERRAIN_GRASS",
+			"CityNames":{
+				"CIVILIZATION_BARBARIAN":"Olbia"
+			}
 		},
 		{
 			"x":39,
