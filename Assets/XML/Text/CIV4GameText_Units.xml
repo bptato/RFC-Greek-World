@@ -218,6 +218,14 @@
 		<English>Coracle</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CORACLE_STRATEGY</Tag>
+		<English>This early naval unit is relatively weak and slow, but has space to transport 1 land unit across the seas.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOWN_GUARD_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Town Guards[COLOR_REVERT] are weak, but get extra defense in cities. Use them to defend your early settlements.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAPPED_RAM</Tag>
 		<English>Capped Ram</English>
 	</TEXT>
@@ -307,7 +315,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENICIANS_BIREME_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Bireme[COLOR_REVERT] is the Phoenician replacement for the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT]. It has an extra move per turn</English>
+		<English>The [COLOR_UNIT_TEXT]Bireme[COLOR_REVERT] is the Phoenician replacement for the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT]. It has an extra move per turn.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARABIA_CAMELARCHER</Tag>
@@ -348,6 +356,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JAVELINEER_PEDIA</Tag>
 		<English>Javelins were carried by Egyptian light infantry, as a main weapon, and as an alternative to a spear or a bow and arrow, generally along with a shield.</English>
+	</TEXT>
+	<TEXT>
+	<Tag>TXT_KEY_UNIT_JAVELINEER_STRATEGY</Tag>
+	<English>The [COLOR_UNIT_TEXT]Javelineer's[COLOR_REVERT] first strike and ability to cause collateral damage make it excellent for weakening enemy stacks</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_CAVALRY_PEDIA</Tag>
@@ -419,7 +431,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PESEDJET_PRIEST_STRATEGY</Tag>
-		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Sphinx[COLOR_REVERT]</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Sphinx[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ANUNNAKI_PRIEST</Tag>
@@ -431,7 +443,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ANUNNAKI_PRIEST_STRATEGY</Tag>
-		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT]</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_PRIEST</Tag>
@@ -443,7 +455,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_PRIEST_STRATEGY</Tag>
-		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT]</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST</Tag>
@@ -455,7 +467,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HELLENIC_PRIEST_STRATEGY</Tag>
-		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Labyrinth[COLOR_REVERT]</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Labyrinth[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST</Tag>
@@ -467,6 +479,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST_STRATEGY</Tag>
-		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your culture if you have the [COLOR_BUILDING_TEXT]Ma'abed[COLOR_REVERT]</English>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your culture if you have the [COLOR_BUILDING_TEXT]Ma'abed[COLOR_REVERT].</English>
 	</TEXT>
 </Civ4GameText>
