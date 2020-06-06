@@ -5,50 +5,59 @@ Author: bluepotato
 #include "CvRFCCity.h"
 
 CvRFCCity::CvRFCCity() : //only for reading!
-year(0),
-x(0),
-y(0),
-population(0)
-{
-}
-
-CvRFCCity::CvRFCCity(int constYear, int constX, int constY, int constPopulation) :
-year(constYear),
-x(constX),
-y(constY),
-population(constPopulation)
+_year(0),
+_x(0),
+_y(0),
+_population(0)
 {
 }
 
 CvRFCCity::~CvRFCCity() {
 }
 
+void CvRFCCity::setYear(int year) {
+	_year = year;
+}
+
+void CvRFCCity::setX(int x) {
+	_x = x;
+}
+
+void CvRFCCity::setY(int y) {
+	_y = y;
+}
+
+void CvRFCCity::setPopulation(int population) {
+	_population = population;
+}
+
+
 int CvRFCCity::getYear() const {
-	return year;
+	return _year;
 }
 
 int CvRFCCity::getX() const {
-	return x;
+	return _x;
 }
 
 int CvRFCCity::getY() const {
-	return y;
+	return _y;
 }
 
 int CvRFCCity::getPopulation() const {
-	return population;
+	return _population;
 }
 
 void CvRFCCity::write(FDataStreamBase* stream) {
-	stream->Write(year);
-	stream->Write(x);
-	stream->Write(y);
-	stream->Write(population);
+	stream->Write(_year);
+	stream->Write(_x);
+	stream->Write(_y);
+	stream->Write(_population);
 }
 
 void CvRFCCity::read(FDataStreamBase* stream) {
-	stream->Read(&year);
-	stream->Read(&x);
-	stream->Read(&y);
-	stream->Read(&population);
+	stream->Read(&_year);
+	stream->Read(&_x);
+	stream->Read(&_y);
+	stream->Read(&_population);
 }

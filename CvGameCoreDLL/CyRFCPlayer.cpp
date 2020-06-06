@@ -28,7 +28,11 @@ void CyRFCPlayer::scheduleUnit(int year, int unitType, int x, int y, int unitAIT
 }
 
 void CyRFCPlayer::scheduleCity(int year, int x, int y, int population) {
-	CvRFCCity rfcCity(year, x, y, population);
+	CvRFCCity rfcCity;
+	rfcCity.setYear(year);
+	rfcCity.setX(x);
+	rfcCity.setY(y);
+	rfcCity.setPopulation(population);
 	rfcPlayer->scheduleCity(rfcCity);
 }
 
