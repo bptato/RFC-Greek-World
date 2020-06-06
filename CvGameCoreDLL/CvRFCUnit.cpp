@@ -4,45 +4,17 @@ Author: bluepotato
 #include "CvGameCoreDLL.h"
 #include "CvRFCUnit.h"
 
-CvRFCUnit::CvRFCUnit() : //empty constructor, only for reading!
-year(0),
-x(0),
-y(0),
-unitType(NO_UNIT),
-unitAIType(NO_UNITAI),
-facingDirection(NO_DIRECTION),
-amount(0),
-endYear(0),
-spawnFrequency(0),
-lastSpawned(0)
-{
-}
-
-CvRFCUnit::CvRFCUnit(int constYear, int constX, int constY, UnitTypes constUnitType, UnitAITypes constUnitAIType, DirectionTypes constFacingDirection, int constAmount) : //scheduled unit constructor
-year(constYear),
-x(constX),
-y(constY),
-unitType(constUnitType),
-unitAIType(constUnitAIType),
-facingDirection(constFacingDirection),
-amount(constAmount),
-endYear(0),
-spawnFrequency(0),
-lastSpawned(0)
-{
-}
-
-CvRFCUnit::CvRFCUnit(int constYear, UnitTypes constUnitType, UnitAITypes constUnitAIType, DirectionTypes constFacingDirection, int constAmount, int constEndYear, int constSpawnFrequency) : //barb constructor
-year(constYear),
-x(-1),
-y(-1),
-unitType(constUnitType),
-unitAIType(constUnitAIType),
-facingDirection(constFacingDirection),
-amount(constAmount),
-endYear(constEndYear),
-spawnFrequency(constSpawnFrequency),
-lastSpawned(0)
+CvRFCUnit::CvRFCUnit() :
+_year(0),
+_x(0),
+_y(0),
+_unitType(NO_UNIT),
+_unitAIType(NO_UNITAI),
+_facingDirection(NO_DIRECTION),
+_amount(0),
+_endYear(0),
+_spawnFrequency(0),
+_lastSpawned(0)
 {
 }
 
@@ -50,73 +22,109 @@ CvRFCUnit::~CvRFCUnit() {
 
 }
 
+void CvRFCUnit::setYear(int year) {
+	_year = year;
+}
+
+void CvRFCUnit::setX(int x) {
+	_x = x;
+}
+
+void CvRFCUnit::setY(int y) {
+	_y = y;
+}
+
+void CvRFCUnit::setUnitType(UnitTypes unitType) {
+	_unitType = unitType;
+}
+
+void CvRFCUnit::setUnitAIType(UnitAITypes unitAIType) {
+	_unitAIType = unitAIType;
+}
+
+void CvRFCUnit::setFacingDirection(DirectionTypes facingDirection) {
+	_facingDirection = facingDirection;
+}
+
+void CvRFCUnit::setAmount(int amount) {
+	_amount = amount;
+}
+
+void CvRFCUnit::setEndYear(int endYear) {
+	_endYear = endYear;
+}
+
+void CvRFCUnit::setSpawnFrequency(int spawnFrequency) {
+	_spawnFrequency = spawnFrequency;
+}
+
 void CvRFCUnit::setLastSpawned(int turn) {
-	lastSpawned = turn;
+	_lastSpawned = turn;
 }
 
 
 int CvRFCUnit::getLastSpawned() const {
-	return lastSpawned;
+	return _lastSpawned;
 }
 
 int CvRFCUnit::getYear() const {
-	return year;
+	return _year;
 }
 
 int CvRFCUnit::getEndYear() const { //only for province barb spawning, returns the end of barb wave
-	return endYear;
+	return _endYear;
 }
 
 int CvRFCUnit::getX() const {
-	return x;
+	return _x;
 }
 
 int CvRFCUnit::getY() const {
-	return y;
+	return _y;
 }
 
 UnitTypes CvRFCUnit::getUnitType() const {
-	return unitType;
+	return _unitType;
 }
 
 UnitAITypes CvRFCUnit::getUnitAIType() const {
-	return unitAIType;
+	return _unitAIType;
 }
 
 int CvRFCUnit::getAmount() const {
-	return amount;
+	return _amount;
 }
 
 int CvRFCUnit::getSpawnFrequency() const { //only for province barb spawning, returns how often barbs are spawned
-	return spawnFrequency;
+	return _spawnFrequency;
 }
 
 DirectionTypes CvRFCUnit::getFacingDirection() const {
-	return facingDirection;
+	return _facingDirection;
 }
 
 void CvRFCUnit::write(FDataStreamBase* stream) {
-	stream->Write(year);
-	stream->Write(x);
-	stream->Write(y);
-	stream->Write(unitType);
-	stream->Write(unitAIType);
-	stream->Write(facingDirection);
-	stream->Write(amount);
-	stream->Write(endYear);
-	stream->Write(spawnFrequency);
-	stream->Write(lastSpawned);
+	stream->Write(_year);
+	stream->Write(_x);
+	stream->Write(_y);
+	stream->Write(_unitType);
+	stream->Write(_unitAIType);
+	stream->Write(_facingDirection);
+	stream->Write(_amount);
+	stream->Write(_endYear);
+	stream->Write(_spawnFrequency);
+	stream->Write(_lastSpawned);
 }
 
 void CvRFCUnit::read(FDataStreamBase* stream) {
-	stream->Read(&year);
-	stream->Read(&x);
-	stream->Read(&y);
-	stream->Read((int*)&unitType);
-	stream->Read((int*)&unitAIType);
-	stream->Read((int*)&facingDirection);
-	stream->Read(&amount);
-	stream->Read(&endYear);
-	stream->Read(&spawnFrequency);
-	stream->Read(&lastSpawned);
+	stream->Read(&_year);
+	stream->Read(&_x);
+	stream->Read(&_y);
+	stream->Read((int*)&_unitType);
+	stream->Read((int*)&_unitAIType);
+	stream->Read((int*)&_facingDirection);
+	stream->Read(&_amount);
+	stream->Read(&_endYear);
+	stream->Read(&_spawnFrequency);
+	stream->Read(&_lastSpawned);
 }

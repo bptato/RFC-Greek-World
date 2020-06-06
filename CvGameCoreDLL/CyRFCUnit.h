@@ -9,6 +9,7 @@ class CyRFCUnit {
 		CyRFCUnit();
 		CyRFCUnit(CvRFCUnit* rfcUnit);
 
+
 		int getYear();
 		int getX();
 		int getY();

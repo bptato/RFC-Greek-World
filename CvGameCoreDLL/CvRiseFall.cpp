@@ -592,7 +592,14 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 				loopUnit = ::getUnit(unitNode->m_data);
 
 				if(loopUnit->getOwnerINLINE() != newOwnerType && (previousOwnerType==NO_PLAYER || previousOwnerType==loopUnit->getOwnerINLINE())) {
-					CvRFCUnit scheduledUnit(GC.getGame().getGameTurnYear(), x, y, loopUnit->getUnitType(), NO_UNITAI, DIRECTION_SOUTH, 1);
+					CvRFCUnit scheduledUnit;
+					scheduledUnit.setYear(GC.getGame().getGameTurnYear());
+					scheduledUnit.setX(x);
+					scheduledUnit.setY(y);
+					scheduledUnit.setUnitType(loopUnit->getUnitType());
+					scheduledUnit.setUnitAIType(NO_UNITAI);
+					scheduledUnit.setFacingDirection(DIRECTION_SOUTH);
+					scheduledUnit.setAmount(1);
 					getRFCPlayer(newCivType).scheduleUnit(scheduledUnit);
 					oldUnits.push_back(unitNode->m_data);
 				}

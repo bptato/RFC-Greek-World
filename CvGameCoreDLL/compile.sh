@@ -17,27 +17,28 @@ DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
 OWINEPREFIX="$HOME/compile_linux"
 PYTHON=".\Python24"
 BOOST=".\Boost-1.32.0"
-PARALLEL=1 #Spawn a bunch of child processes in release mode. 1 - on, 0 - off 
+PARALLEL=1 #Spawn a bunch of child processes in release mode. 1 - on, 0 - off
 
 #You probably won't have to change anything below
-set -e
 export WINEDEBUG=-all
 
 error() {
-	echo "ERROR: $*"
+	echo "ERROR: $*" >&2
 	exit 1
 }
 
 CLEAN=1
 
 if [ $# -lt 1 ]; then
-	error "Unspecified target. USAGE: ./compile.sh [Release/Debug] [clean]" 
+	error "Unspecified target. USAGE: ./compile.sh [Release/Debug] [clean]"
 else #iterate over arguments
 	for arg in "$@"; do
 		if test "$arg" = "Release" || test "$arg" = "Debug"; then
 			TARGET=$arg
 		elif test "$arg" = "clean"; then
 			CLEAN=0
+		else
+			error "Incorrect argument $arg"
 		fi
 	done
 fi
@@ -77,7 +78,9 @@ owine() { #wine 1.7.55
 }
 
 cl() {
-	owine "$VCTOOLKIT\bin\cl.exe" "$@"
+	if ! owine "$VCTOOLKIT\bin\cl.exe" "$@"; then
+		error "Failed to compile $1"
+	fi
 }
 
 link() {
@@ -96,7 +99,7 @@ should_compile() {
 	elif [ "$(date -r "$compiled" +%s)" -lt "$(date -r "$1" +%s)" ]; then
 		return 0
 	fi
-	
+
 	set $(echo "$DEPENDS" | sed "${c_index}q;d")
 	shift
 	pattern=$(echo "$@" | sed "s/ /\|/g")
@@ -118,10 +121,10 @@ done
 DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends)" #A hacky way for getting fastdep to cooperate. For some reason .\.\ nukes the entire variable.
 DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\\\r\n\t //g')
 DEPENDS=$(echo "$DEPENDS" | sed ':a;N;$!ba;s/\r//g')
-echo "$DEPENDS" > depends
+#echo "$DEPENDS" > depends
 
 #Set flags for compilation
-GLOBAL_CFLAGS="/nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /Fp$PCH"
+GLOBAL_CFLAGS="/nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /c /Fp$PCH"
 if test "$TARGET" = "Release"; then
 	set "/MD" "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
 elif test "$TARGET" = "Debug"; then
@@ -132,29 +135,36 @@ fi
 ci=1
 if should_compile "_precompile.cpp" $ci "CvGameCoreDLL.pch"; then
 	echo "Generating precompiled header..."
-	cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET\_precompile.obj" "/c" "_precompile.cpp"
+	cl "_precompile.cpp" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET\_precompile.obj"
 fi
 
 #Compile the files
 if test "$TARGET" = "Release"; then
 	if test "$PARALLEL" -eq 1; then
-		for COMPILEFILE in *; do
-			if test "$(echo "$COMPILEFILE" | awk -F . '{print $NF}')" = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+		PIDS=""
+		for COMPILEFILE in *.cpp; do
+			if test "$COMPILEFILE" != "_precompile.cpp"; then
 				ci=$((ci+1))
 				(
 				if should_compile "$COMPILEFILE" $ci; then
-					cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj"
 				fi
 				)&
+				PIDS="$PIDS $!"
 			fi
 		done
-		wait
+		for p in $PIDS; do
+			if ! wait $p; then
+				test -z "$(jobs -p)" || kill $(jobs -p)
+				exit 1
+			fi
+		done
 	elif test "$PARALLEL" -eq 0; then
-		for COMPILEFILE in *; do
-			if test "$(echo "$COMPILEFILE" | awk -F . '{print $NF}')" = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+		for COMPILEFILE in *.cpp; do
+			if test "$COMPILEFILE" != "_precompile.cpp"; then
 				ci=$((ci+1))
 				if should_compile "$COMPILEFILE" $ci; then
-					cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj"
 				fi
 			fi
 		done
@@ -162,11 +172,11 @@ if test "$TARGET" = "Release"; then
 		error "PARALLEL not set to a valid value"
 	fi
 elif test "$TARGET" = "Debug"; then
-	for COMPILEFILE in *; do
-		if test "$(echo "$COMPILEFILE" | awk -F . '{print $NF}')" = "cpp" && test "$COMPILEFILE" != "_precompile.cpp"; then
+	for COMPILEFILE in *.cpp; do
+		if test "$COMPILEFILE" != "_precompile.cpp"; then
 			ci=$((ci+1))
 			if should_compile "$COMPILEFILE" $ci; then
-				cl "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj" "/c" "$COMPILEFILE"
+				cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj"
 			fi
 		fi
 	done

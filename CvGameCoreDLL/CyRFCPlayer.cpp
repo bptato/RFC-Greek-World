@@ -15,8 +15,15 @@ void CyRFCPlayer::setStartingYear(int newStartingYear) {
 	rfcPlayer->setStartingYear(newStartingYear);
 }
 
-void CyRFCPlayer::scheduleUnit(int year, int unitID, int x, int y, int unitAI, int facingDirection, int amount) {
-	CvRFCUnit rfcUnit(year, x, y, (UnitTypes)unitID, (UnitAITypes)unitAI, (DirectionTypes)facingDirection, amount);
+void CyRFCPlayer::scheduleUnit(int year, int unitType, int x, int y, int unitAIType, int facingDirection, int amount) {
+	CvRFCUnit rfcUnit;
+	rfcUnit.setYear(year);
+	rfcUnit.setUnitType((UnitTypes)unitType);
+	rfcUnit.setX(x);
+	rfcUnit.setY(y);
+	rfcUnit.setUnitAIType((UnitAITypes)unitAIType);
+	rfcUnit.setFacingDirection((DirectionTypes)facingDirection);
+	rfcUnit.setAmount(amount);
 	rfcPlayer->scheduleUnit(rfcUnit);
 }
 
