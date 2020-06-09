@@ -49,7 +49,7 @@ int CyRFCPlayer::getNumScheduledCities() {
 }
 
 CyRFCCity* CyRFCPlayer::getScheduledCity(int i) {
-	return new CyRFCCity(&(rfcPlayer->getScheduledCities()[i]));
+	return new CyRFCCity(&(rfcPlayer->getScheduledCity(i)));
 }
 
 void CyRFCPlayer::setStartingCivic(int civicOptionType, int civicType) {

@@ -6,6 +6,7 @@ Author: bluepotato
 class CvRFCCity {
 	public:
 		CvRFCCity();
+		CvRFCCity(int year, int x, int y);
 		~CvRFCCity();
 
 		void setYear(int year);

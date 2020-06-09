@@ -754,6 +754,7 @@ class WbParser:
 					year = game.getGameTurnYear()
 
 				rfcPlayer.scheduleCity(year, x, y, population)
+				scheduledCity = rfcPlayer.getScheduledCity(rfcPlayer.getNumScheduledCities()-1)
 
 		cmap.recalculateAreas()
 

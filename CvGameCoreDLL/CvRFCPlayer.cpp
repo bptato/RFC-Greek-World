@@ -546,6 +546,14 @@ std::vector<CvRFCCity>& CvRFCPlayer::getScheduledCities() {
 	return scheduledCities;
 }
 
+CvRFCUnit& CvRFCPlayer::getScheduledUnit(int i) {
+	return scheduledUnits[i];
+}
+
+CvRFCCity& CvRFCPlayer::getScheduledCity(int i) {
+	return scheduledCities[i];
+}
+
 int CvRFCPlayer::getNumScheduledUnits() const {
 	return scheduledUnits.size();
 }

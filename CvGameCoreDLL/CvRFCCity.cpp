@@ -12,6 +12,14 @@ _population(0)
 {
 }
 
+CvRFCCity::CvRFCCity(int year, int x, int y) :
+_year(year),
+_x(x),
+_y(y),
+_population(0)
+{
+}
+
 CvRFCCity::~CvRFCCity() {
 }
 
