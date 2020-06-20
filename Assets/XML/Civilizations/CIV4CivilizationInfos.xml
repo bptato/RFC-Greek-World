@@ -671,7 +671,7 @@
 			<Buildings>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
-					<BuildingType>BUILDING_VIKING_TRADING_POST</BuildingType>
+					<BuildingType>BUILDING_PHOENICIAN_TRADING_PORT</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

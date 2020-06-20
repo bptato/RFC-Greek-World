@@ -30,7 +30,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE</Tag>
+		<Tag>TXT_KEY_BUILDING_ADUR_FARNBAG</Tag>
 		<English>Adur Farnbag</English>
 		<French>
 			<Text>Adur Farnbag</Text>
@@ -75,7 +75,7 @@
 		<Spanish>
 			<Text>Templo hel&#233;nico:Templos hel&#233;nicos</Text>
 			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
+				<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -137,7 +137,7 @@
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_PEDIA</Tag>
 		<English>[TAB]A fire temple in Zoroastrianism is the place of worship for Zoroastrians. Although Zoroastrians revere fire in any form, the temple fire is not literally for the reverence of fire: In the Zoroastrian religion, fire (Atar), together with clean water (Aban), is an agent of ritual purity. Clean, white "ash for the purification ceremonies [is] regarded as the basis of ritual life," which, "are essentially the rites
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_PEDIA</Tag>
+		<Tag>TXT_KEY_BUILDING_ADUR_FARNBAG_PEDIA</Tag>
 		<English>[TAB]Apart from (relatively) minor fire temples, three were said to derive directly from Ahura Mazda, thus making them the most important in Zoroastrian tradition. These were the "Great Fires" or "Royal Fires" of Adur Burzen-Mihr, Adur Farnbag, and Adur Gushnasp. The legends of the great fires are probably of antiquity, for by the 3rd century CE, miracles were said to happen at the sites and the fires were popularly associated with other legends such as those of the folktale heroes Fereydun, Jamshid and Rustam.[PARAGRAPH:2:1]The Bundahishn, a Zoroastrian view of creation finished in the 11th or 12th century CE, states that the Great Fires had existed since creation and had been brought forth on the back of the ox Srishok to propagate the faith, dispel doubt, and to protect all humankind. Other texts observe that the Great Fires were also vehicles of propaganda and symbols of imperial sovereignty.[PARAGRAPH:2:1]The priests of these respective "Royal Fires" are said to have competed with each other to draw pilgrims by promoting the legends and miracles that were purported to have occurred at their respective sites. Each of the three is also said to have mirrored social and feudal divisions: "The fire which is Farnbag has made its place among the priests; ... the fire which is Gushnasp has made its place among the warriors; ... the fire which is Burzin-Mitro has made its place among agriculturists" (Denkard, 6.293). These divisions, from an archaeological point of view, are most revealing, since from at least the 1st century BCE onwards, society was divided into four, not three, feudal estates.[PARAGRAPH:2:1]The Farnbag fire (translated as 'the fire Glory-Given' by Darmesteter) was considered the most venerated of the three because it was seen as the earthly representative of the Atar Spenishta, 'Holiest Fire' of Yasna 17.11 and described in a Zend commentary on that verse as the "the one burning in Paradise in the presence of Ohrmazd."</English>
 	</TEXT> proper to the tending of a domestic fire, for the temple [fire] is that of the hearth fire raised to a new solemnity" (Boyce, 1975:455).</English>
 	</TEXT>
@@ -160,5 +160,65 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_BAAL_PEDIA</Tag>
 		<English>The temple was built on a tell with stratification indicating human occupation that goes back to the third millennium BC. The area was occupied in pre-Roman periods with a former temple that is usually referred to as "the first temple of Bel" and "the Hellenistic temple".</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ADUR_FARNBAG_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LABYRINTH_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Labyrinth[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hellenistic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPHINX_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Sphinx[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Pesedjet Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAABED_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ma'abed[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Baalist Shrine[COLOR_REVERT]) produces one culture each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Anunnaki Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALITE_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANUNNAKI_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_AMUN_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALITE_SANCTUARY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANUNNAKI_MONASTERY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
 	</TEXT>
 </Civ4GameText>

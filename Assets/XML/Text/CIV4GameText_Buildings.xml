@@ -195,7 +195,7 @@
 		<Spanish>Goldsmith</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_VIKING_TRADING_POST</Tag>
+		<Tag>TXT_KEY_BUILDING_PHOENICIAN_TRADING_PORT</Tag>
 		<English>Phoenician Trading Port</English>
 	</TEXT>
 	 <TEXT>
@@ -259,7 +259,7 @@
 		<English>The Western Wall, Wailing Wall, or Kotel, known in Islam as the Buraq Wall, is an ancient limestone wall in the Old City of Jerusalem. It is a relatively small segment of a far longer ancient retaining wall, known also in its entirety as the "Western Wall".</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PHOENECIAN_TRADING_POST_PEDIA</Tag>
+		<Tag>TXT_KEY_BUILDING_PHOENICIAN_TRADING_PORT_PEDIA</Tag>
 		<English>In the centuries after 1200 BC, the Phoenicians were the major naval and trading power of the region. Phoenician trade was founded on the Tyrian purple dye, a violet-purple dye derived from the hypobranchial gland of the Murex sea-snail, once profusely available in coastal waters of the eastern Mediterranean Sea but exploited to local extinction. James B. Pritchard's excavations at Sarepta in present-day Lebanon revealed crushed Murex shells and pottery containers stained with the dye that was being produced at the site. The Phoenicians established a second production center for the dye in Mogador, in present-day Morocco. Brilliant textiles were a part of Phoenician wealth, and Phoenician glass was another export ware.</English>
 	</TEXT>
 	<TEXT>
@@ -317,65 +317,5 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SLAVE_MARKET_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Slave Market[COLOR_REVERT] increases production and commerce of a city.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_LABYRINTH_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Labyrinth[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hellenistic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Hellenism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SPHINX_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Sphinx[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Pesedjet Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Pesedjetism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BAALITE_MAABED_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ma'abed[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Baalist Shrine[COLOR_REVERT]) produces one culture each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Annunaki Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Annunakism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_HELLENIC_TEMPLE_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_BAALITE_TEMPLE_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_ANUNNAKI_TEMPLE_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture. They are especially useful for expanding your civilization's borders during the early game.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_HELLENIC_ORACLE_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_TEMPLE_OF_AMUN_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_BAALITE_SANCTUARY_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
-	</TEXT>
-	<TEXT>
-	<Tag>TXT_KEY_BUILDING_ANUNNAKI_MONASTERY_STRATEGY</Tag>
-	<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
 	</TEXT>
 </Civ4GameText>
