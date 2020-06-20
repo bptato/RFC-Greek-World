@@ -353,4 +353,29 @@
 		<Tag>TXT_KEY_UHV_ASY3</Tag>
 		<English>Control Subartu, Akkad, Phoenicia, Sumer, Khuzestan, Palestine and Lower Egypt by 671 BC</English>
 	</TEXT>
+    	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
+		<English>God's Chosen People</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2</Tag>
+		<English>Spread Judaism to 30% of the world by 63 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1_TITLE</Tag>
+		<English>King David's Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1</Tag>
+		<English>Control Palestine and Phoenicia by 587 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
+		<English>The Abrahamic religions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3</Tag>
+		<English>Be the first to found Judaism and Christianity</English>
+	</TEXT>
+    
 </Civ4GameText>
