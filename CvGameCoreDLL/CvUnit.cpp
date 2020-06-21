@@ -2270,6 +2270,10 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 	if(getCivilizationType() == CIVILIZATION_PHOENICIA && getDomainType() == DOMAIN_SEA) {
 		return true;
 	}
+
+	if(GC.getRiseFall().getRFCPlayer(getCivilizationType()).getStartingTurn() == GC.getGame().getGameTurn()) {
+		return true;
+	}
 	//bluepotato end
 
 	return false;
