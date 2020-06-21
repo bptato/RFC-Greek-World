@@ -748,11 +748,15 @@ class CvEventManager:
 		CvUtil.pyPrint('%s was selected by Player %d' %(PyInfo.TechnologyInfo(iTechType).getDescription(), iPlayer))
 
 	def onReligionFounded(self, argsList):
+		iReligion, iFounder = argsList
+
+		if gc.getPlayer(iFounder).isHuman():
+			self.vic.onReligionFounded(iReligion, iFounder)
+
 	## Platy Builder ##
 		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
 	## Platy Builder ##
 		'Religion Founded'
-		iReligion, iFounder = argsList
 		player = PyPlayer(iFounder)
 
 		iCityId = gc.getGame().getHolyCity(iReligion).getID()

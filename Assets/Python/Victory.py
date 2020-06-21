@@ -74,6 +74,9 @@ def controlsProvince(playerType, province):
 			if province.getNumCities(i) >= 1:
 				return False
 	return True
+	
+def religion(religionName):
+	return CvUtil.findInfoTypeNum(gc.getReligionInfo, gc.getNumReligionInfos(), "RELIGION_" + religionName.upper())
 
 class Victory:
 	def initGlobals(self):
@@ -99,9 +102,11 @@ class Victory:
 		global i900BC
 		global i671BC
 		global i600BC
+		global i587BC
 		global i500BC
 		global i250BC
 		global i100BC
+		global i63BC
 		
 		i4000BC = getTurnForYear(-4000)
 		i3000BC = getTurnForYear(-3000)
@@ -122,9 +127,11 @@ class Victory:
 		i900BC = getTurnForYear(-900)
 		i671BC = getTurnForYear(-671)
 		i600BC = getTurnForYear(-600)
+		i587BC = getTurnForYear(-587)
 		i500BC = getTurnForYear(-500)
 		i250BC = getTurnForYear(-250)
 		i100BC = getTurnForYear(-100)
+		i63BC = getTurnForYear(-63)
 		
 		
 		global provPalestine
@@ -219,6 +226,15 @@ class Victory:
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['lSumerianTechs'][i] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
+		
+	def getReligionFounded( self, iCiv ):
+		scriptDict = pickle.loads( gc.getGame().getScriptData() )
+		return scriptDict['lReligionFounded'][iCiv]
+
+	def setReligionFounded( self, iCiv, iNewValue ):
+		scriptDict = pickle.loads( gc.getGame().getScriptData() )
+		scriptDict['lReligionFounded'][iCiv] = iNewValue
+		gc.getGame().setScriptData( pickle.dumps(scriptDict) )
 
 	def onLoadGame(self):
 		self.initGlobals()
@@ -234,6 +250,7 @@ class Victory:
 					'babyloniaKilledCivs': 0,
 					'hittiteKilledUnits': 0,
 					'mycenaeTombsBuilt': 0,
+					'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1],
 					'l2OutOf3': [False] * iNumCivs,
 		}
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
@@ -636,11 +653,52 @@ class Victory:
 				elif iGameTurn > i671BC:
 					self.setGoal(iAssyria, 2, 0)
 
+		elif civType == iIsrael:
+			if (self.getGoal(iIsrael, 1) == -1):
+					if (iGameTurn <= i63BC):
+							Judaism = gc.getInfoTypeForString("RELIGION_JUDAISM")
+							religionPercent = gc.getGame().calculateReligionPercent(Judaism)
+							#print ("religionPercent", religionPercent)
+							if (religionPercent >= 30.0):
+									self.setGoal(iIsrael, 1, 1)
+					else:
+												self.setGoal(iIsrael, 1, 0)
+			if self.getGoal(iIsrael, 0) == -1:
+				goalCompleted =	controlsProvince(iPlayer, provPhoenicia) and \
+						controlsProvince(iPlayer, provPalestine)
+				if goalCompleted:
+					self.setGoal(iIsrael, 0, 1)
+				elif iGameTurn > i587BC:
+					self.setGoal(iIsrael, 0, 0)
+					
+
 	def onCityBuilt(self, city):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
+		
+	def onReligionFounded(self, iReligion, iFounder):
+		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+			return
+
+		iGameTurn = gc.getGame().getGameTurn()
+		civType = gc.getPlayer(iFounder).getCivilizationType()
+
+		if (civType == iIsrael):
+			self.setReligionFounded(iReligion, 1)
+
+		if civType == iIsrael:
+			if (self.getGoal(iIsrael, 0) == -1):
+				if (iReligion == religion('Judaism')):
+					if (iFounder != iIsrael):
+						self.setGoal(iIsrael, 2, 0)
+				elif (iReligion == religion('Christianity')):
+					if (iFounder != iIsrael):
+						self.setGoal(iIsrael, 2, 0)
+
+		if (self.getReligionFounded(religion('Judaism')) == 1 and self.getReligionFounded(religion('Christianity')) == 1):
+			self.setGoal(iIsrael, 2, 1)
 
 	def onCityAcquired(self, owner, attacker, city, bConquest):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
