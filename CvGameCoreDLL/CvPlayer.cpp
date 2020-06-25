@@ -9946,6 +9946,11 @@ void CvPlayer::setAlive(bool bNewValue)
 					//bluepotato start: remove culture of dead civs to prevent new civs from getting it
 					for(int i = 0; i<GC.getMapINLINE().numPlotsINLINE(); ++i) {
 						CvPlot* loopPlot = GC.getMapINLINE().plotByIndexINLINE(i);
+						for(int j = 0; j<MAX_CIV_TEAMS; ++j) {
+							if(loopPlot->getRevealedOwner((TeamTypes)j, false) == getID()) {
+								loopPlot->setRevealedOwner((TeamTypes)j, NO_PLAYER);
+							}
+						}
 						loopPlot->setCulture(getID(), 0, true, true);
 					}
 					//bluepotato end

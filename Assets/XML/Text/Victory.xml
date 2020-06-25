@@ -353,7 +353,7 @@
 		<Tag>TXT_KEY_UHV_ASY3</Tag>
 		<English>Control Subartu, Akkad, Phoenicia, Sumer, Khuzestan, Palestine and Lower Egypt by 671 BC</English>
 	</TEXT>
-    	<TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
 		<English>God's Chosen People</English>
 	</TEXT>
@@ -377,5 +377,4 @@
 		<Tag>TXT_KEY_UHV_ISR3</Tag>
 		<English>Be the first to found Judaism and Christianity</English>
 	</TEXT>
-    
 </Civ4GameText>

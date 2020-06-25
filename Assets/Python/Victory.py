@@ -227,14 +227,14 @@ class Victory:
 		scriptDict['lSumerianTechs'][i] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 		
-	def getReligionFounded( self, iCiv ):
-		scriptDict = pickle.loads( gc.getGame().getScriptData() )
+	def getReligionFounded(self, iCiv):
+		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		return scriptDict['lReligionFounded'][iCiv]
 
-	def setReligionFounded( self, iCiv, iNewValue ):
-		scriptDict = pickle.loads( gc.getGame().getScriptData() )
+	def setReligionFounded(self, iCiv, iNewValue ):
+		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['lReligionFounded'][iCiv] = iNewValue
-		gc.getGame().setScriptData( pickle.dumps(scriptDict) )
+		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def onLoadGame(self):
 		self.initGlobals()
@@ -280,116 +280,6 @@ class Victory:
 				return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
-
-	def squareSearch(self, tTopLeft, tBottomRight, function, argsList): #by LOQ
-		"""Searches all tile in the square from tTopLeft to tBottomRight and calls function for
-		every tile, passing argsList. The function called must return a tuple: (1) a result, (2) if
-		a plot should be painted and (3) if the search should continue."""
-		tPaintedList = []
-		result = None
-		for x in range(tTopLeft[0], tBottomRight[0]+1):
-			for y in range(tTopLeft[1], tBottomRight[1]+1):
-				result, bPaintPlot, bContinueSearch = function((x, y), result, argsList)
-				if bPaintPlot:			# paint plot
-					tPaintedList.append((x, y))
-				if not bContinueSearch:		# goal reached, so stop
-					return result, tPaintedList
-		return result, tPaintedList
-
-	def checkOwnedArea(self, iActiveCiv, tTopLeft, tBottomRight, iThreshold):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.ownedCityPlots, iActiveCiv)
-		if (len(plotList) >= iThreshold):
-			return True
-		else:
-			return False
-
-
-	def checkOwnedAreaAdjacentArea(self, iActiveCiv, tTopLeft, tBottomRight, iThreshold, tPlotArea):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.ownedCityPlotsAdjacentArea, [iActiveCiv, tPlotArea])
-		if (len(plotList) >= iThreshold):
-			print(len(plotList))
-			return True
-		else:
-			print(len(plotList))
-			return False
-
-
-	def checkFoundedArea(self, iActiveCiv, tTopLeft, tBottomRight, iThreshold):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.foundedCityPlots, iActiveCiv)
-		if (len(plotList) >= iThreshold):
-			return True
-		else:
-			return False
-
-	def checkNotOwnedArea(self, iActiveCiv, tTopLeft, tBottomRight):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.ownedCityPlots, iActiveCiv)
-		if (len(plotList)):
-			return False
-		else:
-			return True
-
-	def checkNotOwnedArea_Skip(self, iActiveCiv, tTopLeft, tBottomRight, tSkipTopLeft, tSkipBottomRight):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.ownedCityPlots, iActiveCiv)
-		if (not len(plotList)):
-			return True
-		else:
-			for loopPlot in plotList:
-				if not (loopPlot[0] >= tSkipTopLeft[0] and loopPlot[0] <= tSkipBottomRight[0] and \
-				    loopPlot[1] >= tSkipTopLeft[1] and loopPlot[1] <= tSkipBottomRight[1]):
-					return False
-		return True
-
-
-	def checkOwnedCoastalArea(self, iActiveCiv, tTopLeft, tBottomRight, iThreshold):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.ownedCityPlots, iActiveCiv)
-		iCounter = 0
-		for i in range(len(plotList)):
-			x = plotList[i][0]
-			y = plotList[i][1]
-			plot = gc.getMap().plot(x, y)
-			if (plot.isCity()):
-			       if (plot.getPlotCity().isCoastalOld()):
-				       iCounter += 1
-		if (iCounter >= iThreshold):
-			return True
-		else:
-			return False
-
-	def checkOwnedCoastalAreaExceptions(self, iActiveCiv, tTopLeft, tBottomRight, tExceptionList, iThreshold):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.ownedCityPlots, iActiveCiv)
-		iCounter = 0
-		for i in range(len(plotList)):
-			x = plotList[i][0]
-			y = plotList[i][1]
-			plot = gc.getMap().plot(x, y)
-			if (plot.isCity()):
-			       if (plot.getPlotCity().isCoastalOld()):
-				       bOK = True
-				       for j in tExceptionList:
-					       if (x == j[0] and y == j[1]):
-						       bOK = False
-						       break
-				       if (bOK):
-					       iCounter += 1
-		if (iCounter >= iThreshold):
-			return True
-		else:
-			return False
-
-	def checkFoundedCoastalArea(self, iActiveCiv, tTopLeft, tBottomRight, iThreshold):
-		dummy1, plotList = self.squareSearch(tTopLeft, tBottomRight, self.foundedCityPlots, iActiveCiv)
-		iCounter = 0
-		for i in range(len(plotList)):
-			x = plotList[i][0]
-			y = plotList[i][1]
-			plot = gc.getMap().plot(x, y)
-			if (plot.isCity()):
-			       if (plot.getPlotCity().isCoastalOld()):
-				       iCounter += 1
-		if (iCounter >= iThreshold):
-			return True
-		else:
-			return False
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
@@ -539,7 +429,7 @@ class Victory:
 					for x in range(mapWidth):
 						for y in range(mapHeight):
 							if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
-							      lRevealedMap[iCiv] += 1
+								lRevealedMap[iCiv] += 1
 				bBestMap = True
 				for iCiv in range(iNumPlayers):
 					if (lRevealedMap[iPlayer] < lRevealedMap[iCiv]):
@@ -656,16 +546,15 @@ class Victory:
 		elif civType == iIsrael:
 			if (self.getGoal(iIsrael, 1) == -1):
 					if (iGameTurn <= i63BC):
-							Judaism = gc.getInfoTypeForString("RELIGION_JUDAISM")
-							religionPercent = gc.getGame().calculateReligionPercent(Judaism)
-							#print ("religionPercent", religionPercent)
-							if (religionPercent >= 30.0):
-									self.setGoal(iIsrael, 1, 1)
+						Judaism = gc.getInfoTypeForString("RELIGION_JUDAISM")
+						religionPercent = gc.getGame().calculateReligionPercent(Judaism)
+						if (religionPercent >= 30.0):
+							self.setGoal(iIsrael, 1, 1)
 					else:
-												self.setGoal(iIsrael, 1, 0)
+							self.setGoal(iIsrael, 1, 0)
 			if self.getGoal(iIsrael, 0) == -1:
-				goalCompleted =	controlsProvince(iPlayer, provPhoenicia) and \
-						controlsProvince(iPlayer, provPalestine)
+				goalCompleted = controlsProvince(iPlayer, provPhoenicia) and \
+					controlsProvince(iPlayer, provPalestine)
 				if goalCompleted:
 					self.setGoal(iIsrael, 0, 1)
 				elif iGameTurn > i587BC:
@@ -687,15 +576,11 @@ class Victory:
 
 		if (civType == iIsrael):
 			self.setReligionFounded(iReligion, 1)
-
-		if civType == iIsrael:
-			if (self.getGoal(iIsrael, 0) == -1):
-				if (iReligion == religion('Judaism')):
-					if (iFounder != iIsrael):
-						self.setGoal(iIsrael, 2, 0)
-				elif (iReligion == religion('Christianity')):
-					if (iFounder != iIsrael):
-						self.setGoal(iIsrael, 2, 0)
+		elif (self.getGoal(iIsrael, 0) == -1):
+			if (iReligion == religion('Judaism')):
+					self.setGoal(iIsrael, 2, 0)
+			elif (iReligion == religion('Christianity')):
+					self.setGoal(iIsrael, 2, 0)
 
 		if (self.getReligionFounded(religion('Judaism')) == 1 and self.getReligionFounded(religion('Christianity')) == 1):
 			self.setGoal(iIsrael, 2, 1)
