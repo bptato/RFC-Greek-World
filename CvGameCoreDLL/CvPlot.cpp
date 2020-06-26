@@ -5935,6 +5935,14 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
+	//bluepotato start: Phoenician UHV
+	if(ePlayer != NO_PLAYER && eYield == YIELD_COMMERCE) {
+		if(GET_PLAYER(ePlayer).getCivilizationType() == CIVILIZATION_PHOENICIA) {
+			iYield *= 2;
+		}
+	}
+	//bluepotato end
+
 /*************************************************************************************************/
 /* UNOFFICIAL_PATCH                       06/02/10                     Afforess & jdog5000       */
 /*                                                                                               */
