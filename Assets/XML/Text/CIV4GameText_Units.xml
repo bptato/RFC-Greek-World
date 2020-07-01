@@ -475,10 +475,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST_PEDIA</Tag>
-		<English>[TAB]To-do</English>
+		<English>[TAB]References to the priests of Ba?al describe their burning of incense in prayer and their offering of sacrifice while adorned in special vestments.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BAALITE_PRIEST_STRATEGY</Tag>
 		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your culture if you have the [COLOR_BUILDING_TEXT]Ma'abed[COLOR_REVERT].</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_UNIT_MINOA_TRIREME</Tag>
+		<English>Argo</English>
 	</TEXT>
 </Civ4GameText>
