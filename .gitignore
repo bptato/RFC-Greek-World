@@ -10,3 +10,4 @@ CvGameCoreDLL.lib
 *.pch.@
 *.geany
 depends
+Makefile.settings
