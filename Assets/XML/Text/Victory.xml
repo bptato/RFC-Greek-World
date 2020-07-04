@@ -377,4 +377,28 @@
 		<Tag>TXT_KEY_UHV_ISR3</Tag>
 		<English>Be the first to found Judaism and Christianity</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH1_TITLE</Tag>
+		<English>Ancient Greek Technology & Innovation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH1</Tag>
+		<English>Be the first to discover Drama, Democracy and Engineering</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH2_TITLE</Tag>
+		<English>The Wonders of the Ancient World</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH2</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus and the Temple of Artemis by 450 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH3_TITLE</Tag>
+		<English>Domination of the Mediterranean trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH3</Tag>
+		<English>Build 7 harbours by 400 BC</English>
+	</TEXT>
 </Civ4GameText>
