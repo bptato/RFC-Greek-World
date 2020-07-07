@@ -761,7 +761,7 @@ class Victory:
 					if self.getAthensHarborBuilt() >= 7:
 						self.setGoal(iAthens, 2, 1)
 			if (self.getGoal(iAthens, 1) == -1):
-					if (iBuilding == building('Oracle') or iBuilding == building('Colossus') or iBuilding == building('Parthenon') or Building == building('Artemis')):
+					if (iBuilding == building('Oracle') or iBuilding == building('Colossus') or iBuilding == building('Parthenon') or iBuilding == building('Artemis')):
 						self.setWondersBuilt(iAthens, self.getWondersBuilt(iAthens) + 1)
 					if (self.getWondersBuilt(iAthens) == 4):
 						self.setGoal(iAthens, 1, 1)
