@@ -11,3 +11,4 @@ CvGameCoreDLL.lib
 *.geany
 depends
 Makefile.settings
+tags

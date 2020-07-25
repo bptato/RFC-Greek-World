@@ -68,11 +68,10 @@ class CvWorldBuilderScreen:
 		self.m_iCost = 0
 
 ## Platy Builder ##
-		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot", "CityName"] #bluepotato
+		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot", "CityName", "SettlerValue"] #bluepotato
 		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features"]
 		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
 		self.iBrushWidth = 1
-		self.oldCityNameCiv = -1 #bluepotato
 		self.cityNameCiv = 0 #bluepotato
 		self.iBrushHeight = 1
 		self.iPlayerAddMode = "Units"
@@ -116,7 +115,10 @@ class CvWorldBuilderScreen:
 		self.m_iCurrentX = self.m_pCurrentPlot.getX()
 		self.m_iCurrentY = self.m_pCurrentPlot.getY()
 		if not CyInterface().isInAdvancedStart():
-			sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY)
+			if self.iPlayerAddMode == "SettlerValue":
+				sText = "<font=3b>%s, X: %d, Y: %d, Settler val: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY, self.m_pCurrentPlot.getSettlerValue(self.cityNameCiv))
+			else:
+				sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY)
 			screen.setLabel( "WBCoords", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 
 		if self.iPlayerAddMode in self.RevealMode:
@@ -444,6 +446,9 @@ class CvWorldBuilderScreen:
 			popupInfo.setData3(self.m_pCurrentPlot.getY())
 			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_CITY_NAME)
 			popupInfo.addPopup(CyGame().getActivePlayer())
+		elif self.iPlayerAddMode == "SettlerValue": #bluepotato
+			self.m_pCurrentPlot.setSettlerValue(self.cityNameCiv, self.iSelection)
+			self.settlerValueOverlay()
 	## Python Effects ##
 		elif self.iPlayerAddMode == "Improvements":
 			self.m_pCurrentPlot.setImprovementType(self.iSelection)
@@ -585,6 +590,9 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "CityName": #bluepotato
 			self.m_pCurrentPlot.setCityName(self.cityNameCiv, "")
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
+		elif self.iPlayerAddMode == "SettlerValue": #bluepotato
+			self.m_pCurrentPlot.setSettlerValue(self.cityNameCiv, 20)
+			self.settlerValueOverlay()
 		elif self.iPlayerAddMode == "Improvements":
 			self.m_pCurrentPlot.setImprovementType(-1)
 			return 1
@@ -1014,9 +1022,12 @@ class CvWorldBuilderScreen:
 		iAdjust = iButtonWidth + 3
 		iScreenWidth = 16 + iAdjust * 6
 		iScreenHeight = 16 + iAdjust * 4
-		
+
 		if self.iPlayerAddMode != "CityName": #bluepotato
 			self.removeLandmarks()
+
+		if self.iPlayerAddMode != "SettlerValue": #bluepotato
+			self.hideSettlerValueOverlay()
 
 		if CyInterface().isInAdvancedStart():
 			iX = 50
@@ -1044,6 +1055,8 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("AddBuildingsButton")
 			screen.deleteWidget("AddCityButton")
 			screen.deleteWidget("CityNameButton") #bluepotato
+			screen.deleteWidget("CityNameCivList") #bluepotato
+			screen.deleteWidget("SettlerValueButton") #bluepotato
 			screen.deleteWidget("EditStartingPlot")
 			screen.deleteWidget("EditPlotData")
 			screen.deleteWidget("AddImprovementButton")
@@ -1109,13 +1122,14 @@ class CvWorldBuilderScreen:
 				screen.addCheckBoxGFC("AddCityButton", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,4,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 18, ButtonStyles.BUTTON_STYLE_LABEL)
 				iX += iAdjust
+				screen.addCheckBoxGFC("SettlerValueButton", ",Art/Interface/Buttons/Units/Settler.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,5", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
+				iX += iAdjust
 				screen.addDropDownBoxGFC("ChangeBy", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 
 				#bluepotato
 				iY += iAdjust
 				iX = iXStart + 8
-				screen.addCheckBoxGFC("CityNameButton", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,4,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
-					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
+				screen.addCheckBoxGFC("CityNameButton", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,4,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
 
 				iX += iAdjust
 				screen.addDropDownBoxGFC("CityNameCivList", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -1258,6 +1272,7 @@ class CvWorldBuilderScreen:
 		screen.setState("AddBuildingsButton", self.iPlayerAddMode == "Buildings")
 		screen.setState("AddCityButton", self.iPlayerAddMode == "City")
 		screen.setState("CityNameButton", self.iPlayerAddMode == "CityName") # bluepotato
+		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue") # bluepotato
 		screen.setState("EditStartingPlot", self.iPlayerAddMode == "StartingPlot")
 		screen.setState("EditPlotData", self.iPlayerAddMode == "PlotData")
 		screen.setState("EditEvents", self.iPlayerAddMode == "Events")
@@ -1470,6 +1485,20 @@ class CvWorldBuilderScreen:
 			screen.setTableText("WBSelectItem", 0, 2, "<font=3>" + gc.getTerrainInfo(item).getDescription() + "</font>", gc.getTerrainInfo(item).getButton(), WidgetTypes.WIDGET_PYTHON, 7875, item, CvUtil.FONT_LEFT_JUSTIFY)
 			item = gc.getInfoTypeForString("TERRAIN_OCEAN")
 			screen.setTableText("WBSelectItem", 0, 3, "<font=3>" + gc.getTerrainInfo(item).getDescription() + "</font>", gc.getTerrainInfo(item).getButton(), WidgetTypes.WIDGET_PYTHON, 7875, item, CvUtil.FONT_LEFT_JUSTIFY)
+
+		elif self.iPlayerAddMode == "SettlerValue":
+			iY = 25
+			items = [700, 500, 400, 300, 200, 90, 70, 50, 20, 3, 0]
+			iHeight = len(items) * 24 + 2
+			screen.addTableControlGFC("WBSelectItem", 1, 0, 25, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
+			screen.setTableColumnHeader("WBSelectItem", 0, "", iWidth)
+			if self.iSelection == -1:
+				self.iSelection = items[0]
+			for i in xrange(len(items)):
+				screen.appendTableRow("WBSelectItem")
+			for i in xrange(len(items)):
+				print "Art/Interface/Buttons/SettlerValues/btn_" + str(items[i]) + ".dds"
+				screen.setTableText("WBSelectItem", 0, i, "<font=3>Value: " + str(items[i]) + "</font>", "Art/Interface/Buttons/SettlerValues/btn_" + str(items[i]) + ".dds", WidgetTypes.WIDGET_PYTHON, 8207, items[i], CvUtil.FONT_LEFT_JUSTIFY)
 		self.refreshSelection()
 
 	def refreshSelection(self):
@@ -1514,6 +1543,9 @@ class CvWorldBuilderScreen:
 			ItemInfo = gc.getTerrainInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7875, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
+		elif self.iPlayerAddMode == "SettlerValue":
+			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + str(self.iSelection) + "</color></font>"
+			screen.setTableText("WBCurrentItem", 0, 0 , sText, "Art/Interface/Buttons/SettlerValues/btn_" + str(self.iSelection) + ".dds", WidgetTypes.WIDGET_PYTHON, 8207, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 		else:
 			screen.hide("WBCurrentItem")
 
@@ -1922,6 +1954,13 @@ class CvWorldBuilderScreen:
 			self.iPlayerAddMode = "CityName"
 			self.refreshSideMenu()
 
+		#bluepotato
+		elif inputClass.getFunctionName() == "SettlerValueButton":
+			self.settlerValueOverlay()
+			self.iPlayerAddMode = "SettlerValue"
+			self.iSelection = -1
+			self.refreshSideMenu()
+
 		elif inputClass.getFunctionName() == "EditCityDataII":
 			self.iPlayerAddMode = "CityDataII"
 			self.refreshSideMenu()
@@ -1993,9 +2032,13 @@ class CvWorldBuilderScreen:
 
 		#bluepotato
 		elif inputClass.getFunctionName() == "CityNameCivList":
-			self.iPlayerAddMode = "CityName"
+			if self.iPlayerAddMode not in ("CityName", "SettlerValue"):
+				self.iPlayerAddMode = "CityName"
 			self.cityNameCiv = screen.getPullDownData("CityNameCivList", screen.getSelectedPullDownID("CityNameCivList"))
-			self.cityNameLandmarks()
+			if self.iPlayerAddMode == "CityName":
+				self.cityNameLandmarks()
+			elif self.iPlayerAddMode == "SettlerValue":
+				self.settlerValueOverlay()
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "BrushHeight":
@@ -2022,7 +2065,6 @@ class CvWorldBuilderScreen:
 			CyEngine().removeSign(plot, CyGame().getActivePlayer())
 
 	def addLandmarks(self):
-		self.oldCityNameCiv = self.cityNameCiv
 		numPlots = CyMap().numPlots()
 		for i in range(numPlots):
 			plot = CyMap().plotByIndex(i)
@@ -2033,3 +2075,39 @@ class CvWorldBuilderScreen:
 	def cityNameLandmarks(self):
 		self.removeLandmarks()
 		self.addLandmarks()
+
+	def showSettlerValueOverlay(self):
+		numPlots = CyMap().numPlots()
+		for i in range(numPlots):
+			plot = CyMap().plotByIndex(i)
+			settlerValue = plot.getSettlerValue(self.cityNameCiv)
+			if settlerValue == 700:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_BLUE", 0.7)
+			elif settlerValue == 500:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1001, "COLOR_PLAYER_DARK_GREEN", 0.7)
+			elif settlerValue == 400:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1002, "COLOR_PLAYER_LIGHT_BLUE", 0.7)
+			elif settlerValue == 300:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1003, "COLOR_CITY_BROWN", 0.7)
+			elif settlerValue == 200:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1004, "COLOR_PLAYER_GREEN", 0.7)
+			elif settlerValue == 90:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1005, "COLOR_PLAYER_ORANGE", 0.7)
+			elif settlerValue == 70:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1006, "COLOR_YELLOW", 0.7)
+			elif settlerValue == 50:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1007, "COLOR_PLAYER_LIGHT_GREEN", 0.7)
+			elif settlerValue == 20:
+				pass
+			elif settlerValue == 3:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1008, "COLOR_RED", 0.7)
+			elif settlerValue == 0:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1009, "COLOR_PLAYER_DARK_RED", 0.7)
+
+	def hideSettlerValueOverlay(self):
+		for i in xrange(1000, 1010):
+			CyEngine().clearAreaBorderPlots(i)
+
+	def settlerValueOverlay(self):
+		self.hideSettlerValueOverlay()
+		self.showSettlerValueOverlay()

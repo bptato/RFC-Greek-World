@@ -11,25 +11,28 @@
 
 #You might want to change some of these variables here:
 wine17="$HOME/.wine_versions/linux-x86/1.7.55/bin/wine" #Path to your wine 1.7.55 binary.
-PSDK="C:\\Program Files\\Microsoft Platform SDK"
-VCTOOLKIT="C:\\Program Files\\Microsoft Visual C++ Toolkit 2003"
+PSDK="C:/Program Files/Microsoft Platform SDK"
+VCTOOLKIT="C:/Program Files/Microsoft Visual C++ Toolkit 2003"
 DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
 OWINEPREFIX="$HOME/compile_linux"
-PYTHON=".\\Python24"
-BOOST=".\\Boost-1.32.0"
+PYTHON="./Python24"
+BOOST="./Boost-1.32.0"
 PARALLEL=1 #Spawn a bunch of child processes in release mode. 1 - on, 0 - off
 
 #You probably won't have to change anything below
+set -e
 export WINEDEBUG=-all
+
+trap '[ "$?" -ne 77 ] || exit 77' EXIT
 
 error() {
 	echo "ERROR: $*" >&2
-	exit 1
+	exit 77
 }
 
 CLEAN=1
 
-if [ $# -lt 1 ]; then
+if test $# -lt 1; then
 	error "Unspecified target. USAGE: ./compile.sh [Release/Debug] [clean]"
 else #iterate over arguments
 	for arg in "$@"; do
@@ -78,13 +81,13 @@ owine() { #wine 1.7.55
 }
 
 cl() {
-	if ! owine "$VCTOOLKIT\\bin\\cl.exe" "$@"; then
+	if ! owine "$VCTOOLKIT/bin/cl.exe" "$@"; then
 		error "Failed to compile $1"
 	fi
 }
 
 link() {
-	owine "$VCTOOLKIT\\bin\\link.exe" "$@"
+	owine "$VCTOOLKIT/bin/link.exe" "$@"
 }
 
 should_compile() {
@@ -105,7 +108,7 @@ should_compile() {
 	test "$(date -r "$compiled" +%s)" -lt "$(date -r "$(ls -rt $(find . -maxdepth 1 | grep -Eio "$(echo "$@" | sed "s/ /\|/g")") | tail -1)" +%s)"
 }
 
-PCH="$TARGET\\CvGameCoreDLL.pch"
+PCH="$TARGET/CvGameCoreDLL.pch"
 
 echo "Finding dependencies..."
 owine bin/fastdep.exe --objectextension=pch -q -O "$TARGET" CvGameCoreDLL.cpp > depends
