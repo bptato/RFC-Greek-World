@@ -2483,16 +2483,6 @@ application/json
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
 					"UnitType":"UNIT_WARRIOR",
 					"Year":-2495
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-2495
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_BAALITE_PRIEST",
-					"Year":-2495
 				}
 			]
 		},
@@ -2513,6 +2503,16 @@ application/json
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
 					"UnitType":"UNIT_SPEARMAN",
+					"Year":-2495
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_WORKER",
+					"Year":-2495
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_BAALITE_PRIEST",
 					"Year":-2495
 				}
 			]

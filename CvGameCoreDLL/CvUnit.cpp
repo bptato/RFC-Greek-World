@@ -2266,11 +2266,7 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 		}
 	}
 
-	//bluepotato start: Phoenician UP
-	if(getCivilizationType() == CIVILIZATION_PHOENICIA && getDomainType() == DOMAIN_SEA) {
-		return true;
-	}
-
+	//bluepotato start
 	if(GC.getRiseFall().getRFCPlayer(getCivilizationType()).getStartingTurn() == GC.getGame().getGameTurn()) {
 		return true;
 	}

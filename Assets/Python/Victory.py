@@ -64,7 +64,7 @@ def player2civ(playerType):
 	return gc.getPlayer(playerType).getCivilizationType()
 
 
-	
+
 def controlsProvince(playerType, province):
 	for i in range(iNumPlayers):
 		if i == playerType:
@@ -74,7 +74,7 @@ def controlsProvince(playerType, province):
 			if province.getNumCities(i) >= 1:
 				return False
 	return True
-	
+
 def religion(religionName):
 	return CvUtil.findInfoTypeNum(gc.getReligionInfo, gc.getNumReligionInfos(), "RELIGION_" + religionName.upper())
 
@@ -109,7 +109,7 @@ class Victory:
 		global i250BC
 		global i100BC
 		global i63BC
-		
+
 		i4000BC = getTurnForYear(-4000)
 		i3000BC = getTurnForYear(-3000)
 		i2200BC = getTurnForYear(-2200)
@@ -136,8 +136,8 @@ class Victory:
 		i250BC = getTurnForYear(-250)
 		i100BC = getTurnForYear(-100)
 		i63BC = getTurnForYear(-63)
-		
-		
+
+
 		global provPalestine
 		global provPhoenicia
 		global provUpperEgypt
@@ -150,7 +150,7 @@ class Victory:
 		global provAfrica
 		global provCyprus
 		global provSouthernIberia
-		
+
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getRFCProvince("Palestine")
 		provPhoenicia = riseFall.getRFCProvince("Phoenicia")
@@ -203,7 +203,7 @@ class Victory:
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['mycenaeTombsBuilt'] = i
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-		
+
 	def getAthensHarborBuilt(self):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		return scriptDict['AthensharborBuilt']
@@ -239,7 +239,7 @@ class Victory:
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['lSumerianTechs'][i] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-		
+
 	def getAthensTechs(self, i):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		return scriptDict['lAthensTechs'][i]
@@ -248,7 +248,7 @@ class Victory:
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['lAthensTechs'][i] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-		
+
 	def getWondersBuilt( self, iCiv ):
 		scriptDict = pickle.loads( gc.getGame().getScriptData() )
 		return scriptDict['lWondersBuilt'][iCiv]
@@ -257,7 +257,7 @@ class Victory:
 		scriptDict = pickle.loads( gc.getGame().getScriptData() )
 		scriptDict['lWondersBuilt'][iCiv] = iNewValue
 		gc.getGame().setScriptData( pickle.dumps(scriptDict) )
-		
+
 	def getReligionFounded(self, iCiv):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		return scriptDict['lReligionFounded'][iCiv]
@@ -318,9 +318,9 @@ class Victory:
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
 			return
-		
+
 		pPlayer = gc.getPlayer(iPlayer)
-		
+
 		if not pPlayer.isAlive():
 			return
 
@@ -593,12 +593,11 @@ class Victory:
 					self.setGoal(iIsrael, 0, 1)
 				elif iGameTurn > i587BC:
 					self.setGoal(iIsrael, 0, 0)
-					
-					
+
 		elif civType == iAthens:
 			if self.getGoal(iAthens, 2) == -1 and iGameTurn > i400BC:
 				self.setGoal(iAthens, 2, 0)
-				
+
 			if self.getGoal(iAthens, 1) == -1 and iGameTurn > i450BC:
 				self.setGoal(iAthens, 1, 0)
 
@@ -607,7 +606,7 @@ class Victory:
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
-		
+
 	def onReligionFounded(self, iReligion, iFounder):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
 			return
@@ -633,7 +632,7 @@ class Victory:
 		iGameTurn = gc.getGame().getGameTurn()
 		cityX = city.getX()
 		cityY = city.getY()
-		
+
 		ownerType = gc.getPlayer(owner).getCivilizationType()
 		attackerType = gc.getPlayer(attacker).getCivilizationType()
 
@@ -673,9 +672,9 @@ class Victory:
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
-		if iGameTurn == gc.getGame().getStartTurn(): 
+		if iGameTurn == gc.getGame().getStartTurn():
 			return
-		
+
 		civType = gc.getPlayer(iPlayer).getCivilizationType()
 
 		if (civType == iSumeria):
@@ -702,7 +701,7 @@ class Victory:
 					self.setGoal(iSumeria, 0, 1)
 				elif (self.getSumerianTechs(0) == 0 or self.getSumerianTechs(1) == 0 or self.getSumerianTechs(2) == 0):
 					self.setGoal(iSumeria, 0, 0)
-					
+
 		elif (civType == iAthens):
 			if (self.getGoal(iAthens, 0) == -1):
 				if (iTech == tech('drama')):
@@ -727,7 +726,7 @@ class Victory:
 					self.setGoal(iAthens, 0, 1)
 				elif (self.getAthensTechs(0) == 0 or self.getAthensTechs(1) == 0 or self.getAthensTechs(2) == 0):
 					self.setGoal(iAthens, 0, 0)
-					
+
 		elif civType == iBabylonia:
 			if self.getGoal(iBabylonia, 1) == -1:
 				if iTech == tech('code_of_laws'):
@@ -754,17 +753,15 @@ class Victory:
 			elif iBuilding == building('lion_gate'):
 				if self.getGoal(iMycenae, 1) == -1:
 					self.setGoal(iMycenae, 1, 1)
-					
+
 		elif civType == iAthens:
 			if iBuilding == building('harbor'):
 				if self.getGoal(iAthens, 2) == -1:
 					self.setAthensHarborBuilt(self.getAthensHarborBuilt() + 1)
 					if self.getAthensHarborBuilt() >= 7:
 						self.setGoal(iAthens, 2, 1)
-		
-		elif civType == iAthens:
 			if (self.getGoal(iAthens, 1) == -1):
-					if (iBuilding == building('Oracle') or iBuilding == building('Colossus') or iBuilding == building('Parthenon') or Building == building('Artemis')):
+					if (iBuilding == building('Oracle') or iBuilding == building('Colossus') or iBuilding == building('Parthenon') or iBuilding == building('Artemis')):
 						self.setWondersBuilt(iAthens, self.getWondersBuilt(iAthens) + 1)
 					if (self.getWondersBuilt(iAthens) == 4):
 						self.setGoal(iAthens, 1, 1)

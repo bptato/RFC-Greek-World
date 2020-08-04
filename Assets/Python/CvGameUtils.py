@@ -670,6 +670,8 @@ class CvGameUtils:
 				else:
 					sText += "\n" + CyTranslator().getText("TXT_KEY_CIVICS_SCREEN_NO_UPKEEP", ())
 				return sText
+			elif iData1 == 8207:
+				return str(iData2) + ": " + self.getSettlerValueDescription(iData2)
 ## Ultrapack ##
 		return u""
 
@@ -686,3 +688,29 @@ class CvGameUtils:
 		if 0 != iModifier:
 			iExperienceNeeded += (iExperienceNeeded * iModifier + 99) / 100   # ROUND UP
 		return iExperienceNeeded
+
+	#bluepotato: settler value descriptions (from Autumn Leaf's settler value editor thing)
+	#note: in RFGW these may or may not apply due to the decision to settle different spots being made differently. They still work the same for stability purposes, however.
+	def getSettlerValueDescription(self, settlerValue):
+		if settlerValue == 700:
+			return "Core land"
+		elif settlerValue == 500:
+			return "Starting land"
+		elif settlerValue == 400:
+			return "Primary colonies"
+		elif settlerValue == 300:
+			return "Secondary colonies"
+		elif settlerValue == 200:
+			return "Secondary colonies w/o name"
+		elif settlerValue == 90:
+			return "Unwanted colonies (allowed)"
+		elif settlerValue == 70:
+			return "Unwanted colonies (not allowed)"
+		elif settlerValue == 50:
+			return "Possible colonies"
+		elif settlerValue == 20:
+			return "Default"
+		elif settlerValue == 3:
+			return "Probably forbidden"
+		elif settlerValue == 0:
+			return "Definitely forbidden"
