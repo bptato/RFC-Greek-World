@@ -1122,6 +1122,7 @@ application/json
 			"StartingWars":[
 				"CIVILIZATION_PHOENICIA",
 				"CIVILIZATION_HITTITE",
+				"CIVILIZATION_MYCENAE",
 				"CIVILIZATION_ASSYRIA",
 				"CIVILIZATION_ISRAEL",
 				"CIVILIZATION_ATHENS",
@@ -1803,7 +1804,20 @@ application/json
 					"UnitType":"UNIT_HYSKOS",
 					"Year":-1800,
 					"EndYear":-1500,
-					"SpawnFrequency":15
+					"SpawnFrequency":8
+				},
+				{
+					"Amount":3,
+					"UnitType":"UNIT_SEAPEOPLE",
+					"Year":-1200,
+					"EndYear":-1000,
+					"SpawnFrequency":8
+				},
+				{
+					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
+					"Year":-1300,
+					"EndYear":-850,
+					"SpawnFrequency":10
 				}
 			]
 		},
@@ -1818,6 +1832,13 @@ application/json
 					"Year":-3000,
 					"EndYear":-2000,
 					"SpawnFrequency":11
+				},
+				{
+					"Amount":2,
+					"UnitType":"UNIT_SUMERIAN_VULTURE",
+					"Year":-1900,
+					"EndYear":-1200,
+					"SpawnFrequency":10
 				}
 			]
 		},
@@ -1836,6 +1857,20 @@ application/json
 					"Year":-3000,
 					"EndYear":-2000,
 					"SpawnFrequency":10
+				},
+				{
+					"Amount":2,
+					"UnitType":"UNIT_SUMERIAN_VULTURE",
+					"Year":-2000,
+					"EndYear":-1200,
+					"SpawnFrequency":9
+				},
+				{
+					"Amount":3,
+					"UnitType":"UNIT_SPEARMAN",
+					"Year":-1200,
+					"EndYear":-650,
+					"SpawnFrequency":9
 				}
 			]
 		},
@@ -1905,6 +1940,13 @@ application/json
 					"Year":-1200,
 					"EndYear":-1000,
 					"SpawnFrequency":7
+				},
+				{
+					"Amount":3,
+					"UnitType":"UNIT_SPEARMAN",
+					"Year":-1200,
+					"EndYear":-700,
+					"SpawnFrequency":10
 				}
 			]
 		},
@@ -2151,7 +2193,15 @@ application/json
 			"Name":"Persia"
 		},
 		{
-			"Name":"Media"
+			"Name":"Media",
+			"Units":[
+				{
+					"UnitType":"UNIT_LIGHT_CAVALRY",
+					"Year":-850,
+					"EndYear":-680,
+					"SpawnFrequency":9
+				}
+			]
 		},
 		{
 			"Name":"Bactria",
