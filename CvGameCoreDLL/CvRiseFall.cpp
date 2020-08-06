@@ -86,6 +86,7 @@ void CvRiseFall::checkTurn() {
 				spawnedNow = true; //for unit immobilization
 
 				if(rfcPlayer.isHuman()) { //major human civs
+					GC.logMsg("Spawning human civ %d at turn %d", i, game.getGameTurn());
 					spawnHumanCivilization((CivilizationTypes)i);
 				} else if(playerType == BARBARIAN_PLAYER) { //barbarian
 					rfcPlayer.setSpawned(true);
@@ -98,6 +99,7 @@ void CvRiseFall::checkTurn() {
 				} else if(rfcPlayer.isMinor()) { //minor civs
 					spawnMinorCivilization((CivilizationTypes)i);
 				} else { //major AI civs
+					GC.logMsg("Spawning ai civ %d at turn %d", i, game.getGameTurn());
 					spawnAICivilization((CivilizationTypes)i);
 				}
 				spawnedNow = true;
@@ -399,6 +401,7 @@ void CvRiseFall::spawnHumanCivilization(CivilizationTypes civType) {
 			}
 
 			finishMajorCivSpawn(civType, (PlayerTypes)i);
+			game.setActivePlayer((PlayerTypes)i);
 			GC.logMsg("CvRiseFall::spawnHumanCivilization - Spawned human civ %i", civType);
 			return;
 		}
@@ -453,7 +456,7 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 
 	eraseSurroundings(civType, playerType);
 	GET_TEAM(GET_PLAYER(BARBARIAN_PLAYER).getTeam()).declareWar(player.getTeam(), false, WARPLAN_TOTAL);
-	player.setAlive(true);
+	//player.setAlive(true); //TODO: I haven't fully investigated the consequences of disabling this yet, but since calling it here seems to do more harm than good I'll comment it out for now.
 	assignStartingTechs(civType, playerType);
 	assignStartingCivics(civType, playerType);
 	setupStartingWars(civType, playerType);
@@ -461,7 +464,7 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 	rfcPlayer.setStartingTurn(game.getGameTurn());
 	rfcPlayer.setSpawned(true);
 	player.setGold(rfcPlayer.getStartingGold());
-	player.processDynamicNames();
+	player.processDynamicNames(true);
 }
 
 void CvRiseFall::assignStartingTechs(CivilizationTypes civType, PlayerTypes playerType) {

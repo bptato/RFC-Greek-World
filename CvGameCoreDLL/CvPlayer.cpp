@@ -21985,8 +21985,8 @@ void CvPlayer::setCivDescription(std::wstring szNewDesc) //Rhye
 	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 }
 
-void CvPlayer::processDynamicNames() {
-	if (isMinorCiv() || isBarbarian() || !isAlive())
+void CvPlayer::processDynamicNames(bool force) {
+	if ((isMinorCiv() || isBarbarian() || !isAlive()) && !force)
 		return;
 
 	PlayerTypes masterType = NO_PLAYER;

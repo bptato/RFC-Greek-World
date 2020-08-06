@@ -3910,9 +3910,12 @@ void CvGame::setAIAutoPlay(int iNewValue)
 			for(int i = 0; i<GC.getMAX_PLAYERS(); ++i) {
 				GET_PLAYER((PlayerTypes)i).setAlive(false);
 			}
+			GC.logMsg("enabling autoplay");
 			//bluepotato end
 			GET_PLAYER(getActivePlayer()).killUnits();
 			GET_PLAYER(getActivePlayer()).killCities();
+		} else {
+			GC.logMsg("disabling autoplay");
 		}
 	}
 }
