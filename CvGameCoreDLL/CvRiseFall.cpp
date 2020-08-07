@@ -86,7 +86,6 @@ void CvRiseFall::checkTurn() {
 				spawnedNow = true; //for unit immobilization
 
 				if(rfcPlayer.isHuman()) { //major human civs
-					GC.logMsg("Spawning human civ %d at turn %d", i, game.getGameTurn());
 					spawnHumanCivilization((CivilizationTypes)i);
 				} else if(playerType == BARBARIAN_PLAYER) { //barbarian
 					rfcPlayer.setSpawned(true);
@@ -99,7 +98,6 @@ void CvRiseFall::checkTurn() {
 				} else if(rfcPlayer.isMinor()) { //minor civs
 					spawnMinorCivilization((CivilizationTypes)i);
 				} else { //major AI civs
-					GC.logMsg("Spawning ai civ %d at turn %d", i, game.getGameTurn());
 					spawnAICivilization((CivilizationTypes)i);
 				}
 				spawnedNow = true;
