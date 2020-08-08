@@ -2081,8 +2081,8 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 void createTestFontString(CvWStringBuffer& szString)
 {
 	int iI;
-	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[×]^_`abcdefghijklmnopqrstuvwxyz\n");
-	szString.append(L"{}~\\ßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞŸßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ¿¡«»°ŠŒšœ™©®€£¢”‘“…’");
+	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[?]^_`abcdefghijklmnopqrstuvwxyz\n");
+	szString.append(L"{}~\\??????????????????????????????ŞŸ???????????????????????????????????????????????????????");
 	for (iI=0;iI<NUM_YIELD_TYPES;++iI)
 		szString.append(CvWString::format(L"%c", GC.getYieldInfo((YieldTypes) iI).getChar()));
 
@@ -3703,9 +3703,10 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		if (!bDawnOfMan)
 		{
 			// Civ Name
-			szBuffer.Format(SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getCivilizationInfo(eCivilization).getDescription());
+			szBuffer.Format(SETCOLR L"%s" ENDCOLR NEWLINE, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getCivilizationInfo(eCivilization).getDescription());
 			szInfoText.append(szBuffer);
 
+			/* bluepotato
 			// Free Techs
 			szBuffer.Format(NEWLINE SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), gDLL->getText("TXT_KEY_FREE_TECHS").GetCString());
 			szInfoText.append(szBuffer);
@@ -3728,19 +3729,29 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 				szBuffer.Format(L"%s  %s", NEWLINE, gDLL->getText("TXT_KEY_FREE_TECHS_NO").GetCString());
 				szInfoText.append(szBuffer);
 			}
+			*/
 		}
 
 		//bluepotato start: display starting year
 		szText = gDLL->getText("TXT_KEY_STARTING_YEAR");
-		szTempString.Format(NEWLINE SETCOLR L"%s: " ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
+		if(bDawnOfMan) {
+			szTempString.Format(SETCOLR L"%s: " ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
+		} else {
+			szTempString.Format(NEWLINE SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), szText.GetCString());
+		}
 		szInfoText.append(szTempString);
 		int startingYear = GC.getRiseFall().getRFCPlayer(eCivilization).getStartingYear();
 		if(startingYear < 0) {
-			szInfoText.append(gDLL->getText("TXT_KEY_TIME_BC", -startingYear));
+			szText = gDLL->getText("TXT_KEY_TIME_BC", -startingYear);
 		} else {
-			szInfoText.append(gDLL->getText("TXT_KEY_TIME_AD", startingYear));
+			szText = gDLL->getText("TXT_KEY_TIME_AD", startingYear);
 		}
-		szInfoText.append(NEWLINE);
+		if(bDawnOfMan) {
+			szTempString.Format(L"%s" NEWLINE, szText.GetCString());
+		} else {
+			szTempString.Format(NEWLINE L"  %c%s", gDLL->getSymbolID(BULLET_CHAR), szText.GetCString());
+		}
+		szInfoText.append(szTempString);
 		//bluepotato end
 
 		// Free Units
@@ -3871,14 +3882,25 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		if(bDawnOfMan) {
 			szTempString.Format(NEWLINE SETCOLR L"%s:" NEWLINE ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
 		} else {
-			szTempString.Format(NEWLINE SETCOLR L"%s" NEWLINE ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
+			szTempString.Format(NEWLINE SETCOLR L"%s" NEWLINE ENDCOLR , TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), szText.GetCString());
 		}
 		szInfoText.append(szTempString);
 
-		szTempString.Format(L"TXT_KEY_UP_%s_TITLE", GC.getCivilizationInfo(eCivilization).getRFCID().c_str());
-		szText = gDLL->getText(szTempString);
-		szTempString.Format(L"%s:", szText.GetCString());
-		szInfoText.append(szTempString);
+		if(bDawnOfMan) {
+			szTempString.Format(L"TXT_KEY_UP_%s_TITLE", GC.getCivilizationInfo(eCivilization).getRFCID().c_str());
+			szText = gDLL->getText(szTempString);
+			szTempString.Format(L"%s:", szText.GetCString());
+			szInfoText.append(szTempString);
+			szTempString.Format(L"TXT_KEY_UP_%s", GC.getCivilizationInfo(eCivilization).getRFCID().c_str());
+			szText = gDLL->getText(szTempString);
+			szTempString.Format(L" %s", szText.GetCString());
+			szInfoText.append(szTempString);
+		} else {
+			szTempString.Format(L"TXT_KEY_UP_%s", GC.getCivilizationInfo(eCivilization).getRFCID().c_str());
+			szText = gDLL->getText(szTempString);
+			szTempString.Format(L"  %c%s", gDLL->getSymbolID(BULLET_CHAR), szText.GetCString());
+			szInfoText.append(szTempString);
+		}
 
 		szTempString.Format(L"TXT_KEY_UP_%s", GC.getCivilizationInfo(eCivilization).getRFCID().c_str());
 		szText = gDLL->getText(szTempString);
@@ -3890,12 +3912,11 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		if(bDawnOfMan) {
 			szTempString.Format(NEWLINE SETCOLR L"%s " ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
 		} else {
-			szTempString.Format(NEWLINE SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
+			szTempString.Format(NEWLINE SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), szText.GetCString());
 		}
 		szInfoText.append(szTempString);
 
-		szText = NEWLINE L"  ";
-		szText += gDLL->getText("TXT_KEY_ICON_BULLET");
+		szText = gDLL->getText("TXT_KEY_ICON_BULLET");
 		szTempString.Format(L"TXT_KEY_UHV_%s1", GC.getCivilizationInfo(eCivilization).getRFCID().c_str());
 		szText += gDLL->getText(szTempString);
 		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_ICON_BULLET");
@@ -3907,7 +3928,7 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 
 		if (bDawnOfMan)
 		{
-			szTempString.Format(L"%s", szText.GetCString());
+			szTempString.Format(L"%s%s", NEWLINE, szText.GetCString());
 		}
 		else
 		{
