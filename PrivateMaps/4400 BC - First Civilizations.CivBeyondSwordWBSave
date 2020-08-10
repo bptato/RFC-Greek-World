@@ -238,7 +238,7 @@ application/json
 			"CompactEmpireModifier":5,
 			"UnitUpkeepModifier":130,
 			"ResearchModifier":90,
-			"DistanceMaintenanceModifier":100,
+			"DistanceMaintenanceModifier":20,
 			"NumCitiesMaintenanceModifier":100,
 			"UnitProductionModifier":100,
 			"CivicUpkeepModifier":100,
@@ -246,7 +246,7 @@ application/json
 			"BuildingProductionModifier":100,
 			"WonderProductionModifier":120,
 			"GreatPeopleModifier":120,
-			"InflationModifier":80,
+			"InflationModifier":90,
 			"GrowthModifier":100
 		},
 		{

@@ -9,8 +9,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_MERCENARIES_PEDIA</Tag>
 		<English>[H1]Mercenaries[\H1][PARAGRAPH:2]Mercenaries are soldiers who fight primarily for private gain, usually with little regard for ideological, national, political, or moral considerations. However, when the term is used to refer to a soldier in a regular national army, it is usually considered an insult.[PARAGRAPH:2][PARAGRAPH:2]Mercenaries have seen regular deployment in battle since the time of Ancient Egypt and Carthage, up through the 16th century, including the famous Swiss Guard and the Landsknechts. In the game, Mercenaries can be hired only until the discovery of Nationalism, which changed the conception of armies and caused a rapid decline in Mercenary usage.[PARAGRAPH:2]</English>
-		<French>[H1]Mercenaires[\H1][PARAGRAPH:2]Les mercenaires sont des soldats qui se battent avant tout pour leur profit personnel, et n'ont que peu de considérations idéologiques, territoriales, politiques ou morales. Lorsque ce terme est utilisé pour un soldat d'une armée régulière, c'est en général insultant.[PARAGRAPH:2][PARAGRAPH:2]Les mercenaires ont souvent été employés depuis l'époque de l'Egypte ancienne et de Carthage, jusqu'au 16e siècle, avec les célèbres Gardes Suisses et les Lansquenets. Vous pouvez recruter des mercenaires jusqu'à la découverte du nationalisme, qui modifie la conception des armées et entraîne un rapide déclin de l'utilisation des mercenaires.[PARAGRAPH:2]</French>
-		<German>[H1]Söldner[\H1][PARAGRAPH:2]Söldner sind Kämpfer, die meist ohne jede Rücksicht auf ideologische, patriotische, politische oder moralische Überlegungen in erster Linie ihre persönlichen Interessen verfolgen. Manchmal wird der Begriff auch als Bezeichnung für Soldaten verwendet, die in einer regulären nationalen Armee ihren Dienst verrichten, in diesem Fall ist er jedoch in aller Regel als Beleidigung zu verstehen.[PARAGRAPH:2][PARAGRAPH:2]Der Einsatz von Söldnern in der Schlacht war seit der Zeit des antiken Ägyptens und Karthagos bis ins 16. Jahrhundert, beispielsweise mit der Schweizergarde und den Landsknechten, weit verbreitet. Im Spiel können Söldner bis zur Entdeckung des "Nationalismus" angeheuert werden, der das Prinzip des strukturellen Aufbaus einer Armee so stark veränderte, dass er das Ende des Söldnertums einläutete.[PARAGRAPH:2]</German>
+		<French>[H1]Mercenaires[\H1][PARAGRAPH:2]Les mercenaires sont des soldats qui se battent avant tout pour leur profit personnel, et n'ont que peu de consid?rations id?ologiques, territoriales, politiques ou morales. Lorsque ce terme est utilis? pour un soldat d'une arm?e r?guli?re, c'est en g?n?ral insultant.[PARAGRAPH:2][PARAGRAPH:2]Les mercenaires ont souvent ?t? employ?s depuis l'?poque de l'Egypte ancienne et de Carthage, jusqu'au 16e si?cle, avec les c?l?bres Gardes Suisses et les Lansquenets. Vous pouvez recruter des mercenaires jusqu'? la d?couverte du nationalisme, qui modifie la conception des arm?es et entra?ne un rapide d?clin de l'utilisation des mercenaires.[PARAGRAPH:2]</French>
+		<German>[H1]S?ldner[\H1][PARAGRAPH:2]S?ldner sind K?mpfer, die meist ohne jede R?cksicht auf ideologische, patriotische, politische oder moralische ?berlegungen in erster Linie ihre pers?nlichen Interessen verfolgen. Manchmal wird der Begriff auch als Bezeichnung f?r Soldaten verwendet, die in einer regul?ren nationalen Armee ihren Dienst verrichten, in diesem Fall ist er jedoch in aller Regel als Beleidigung zu verstehen.[PARAGRAPH:2][PARAGRAPH:2]Der Einsatz von S?ldnern in der Schlacht war seit der Zeit des antiken ?gyptens und Karthagos bis ins 16. Jahrhundert, beispielsweise mit der Schweizergarde und den Landsknechten, weit verbreitet. Im Spiel k?nnen S?ldner bis zur Entdeckung des "Nationalismus" angeheuert werden, der das Prinzip des strukturellen Aufbaus einer Armee so stark ver?nderte, dass er das Ende des S?ldnertums einl?utete.[PARAGRAPH:2]</German>
 		<Italian>[H1]Mercenari[\H1][PARAGRAPH:2]I mercenari sono soldati che combattono principalmente per un tornaconto privato, di solito senza considerazioni di ordine ideologico, nazionale, politico o morale. Per&#242; quando il termine viene utilizzato riferendosi a un soldato di un regolare esercito nazionale, &#232; considerato un insulto.[PARAGRAPH:2][PARAGRAPH:2]I mercenari sono stati impiegati in battaglia fin dai tempi dell'antico Egitto e di Cartagine fino al sedicesimo secolo, e tra l'altro includono i famosi Lanzichenecchi e la Guardia Svizzera. Nel gioco i mercenari possono essere assoldati solo fino alla scoperta del nazionalismo, che ha rivoluzionato la concezione degli eserciti e ha causato un rapido declino nell'utilizzo di truppe a pagamento.[PARAGRAPH:2]</Italian>
 		<Spanish>[H1]Mercenarios[\H1][PARAGRAPH:2]Los mercenarios son soldados a los que no les interesan las consideraciones ideol&#243;gicas, nacionales, pol&#237;ticas ni morales y que combaten fundamentalmente en busca de un beneficio propio. Sin embargo, cuando se utiliza este t&#233;rmino para referirse a un soldado de un ej&#233;rcito permanente, suele considerarse un insulto.[PARAGRAPH:2][PARAGRAPH:2]Los mercenarios han participado en guerras con regularidad desde la &#233;poca del antiguo Egipto y Cartago hasta el siglo XVI, como la famosa Guardia Suiza y los Lansquenetes. En el juego, solo se pueden contratar mercenarios hasta el descubrimiento del nacionalismo, que cambi&#243; la concepci&#243;n de los ej&#233;rcitos y provoc&#243; un r&#225;pido declive del empleo de mercenarios.[PARAGRAPH:2]</Spanish>
 	</TEXT>
@@ -65,7 +65,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNITS_CONTRACTED_OUT</Tag>
 		<English>Units Contracted Out</English>
-		<French>Unités sous contrat</French>
+		<French>Unit?s sous contrat</French>
 		<German>Ausgeschiedene Einheiten</German>
 		<Italian>Unit&#224; assegnate</Italian>
 		<Spanish>Unidades subcontratadas</Spanish>
@@ -73,7 +73,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HIRED_MERCENARIES</Tag>
 		<English>Hired Mercenaries</English>
-		<French>Mercenaires recrutés</French>
+		<French>Mercenaires recrut?s</French>
 		<German>Angeheuerte S&#246;ldner</German>
 		<Italian>Mercenari assoldati</Italian>
 		<Spanish>Mercenarios contratados</Spanish>
@@ -81,7 +81,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HIRED_MERCENARY_GROUPS</Tag>
 		<English>Hired Mercenary Groups</English>
-		<French>Groupes de mercenaires recrutés</French>
+		<French>Groupes de mercenaires recrut?s</French>
 		<German>Angeheuerte S&#246;ldner-Gruppen</German>
 		<Italian>Gruppi mercenari assoldati</Italian>
 		<Spanish>Grupos de mercenarios contratados</Spanish>
@@ -89,7 +89,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_AVAILABLE_UNITS</Tag>
 		<English>Available Units</English>
-		<French>Unités disponibles</French>
+		<French>Unit?s disponibles</French>
 		<German>Verf&#252;gbare Einheiten</German>
 		<Italian>Unit&#224; disponibili</Italian>
 		<Spanish>Unidades disponibles</Spanish>
@@ -113,7 +113,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INFORMATION</Tag>
 		<English>Unit Information</English>
-		<French>Informations d'unité</French>
+		<French>Informations d'unit?</French>
 		<German>Einheiten-Informationen</German>
 		<Italian>Informazioni sulle unit&#224;</Italian>
 		<Spanish>Informaci&#243;n de la unidad</Spanish>
@@ -121,8 +121,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_FINANCIAL_ADVISOR_MERCENARY_MAINTENANCE_COST</Tag>
 		<English>Mercenary Maintenance Cost</English>
-		<French>Coût d'entretien des mercenaires</French>
-		<German>Söldner-Unterhaltskosten</German>
+		<French>Co?t d'entretien des mercenaires</French>
+		<German>S?ldner-Unterhaltskosten</German>
 		<Italian>Costo mantenimento mercenari</Italian>
 		<Spanish>Coste de mantenimiento de mercenarios</Spanish>
 	</TEXT>
@@ -130,7 +130,7 @@
 		<Tag>TXT_KEY_FINANCIAL_ADVISOR_MERCENARY_CONTRACT_INCOME</Tag>
 		<English>Mercenary Contract Income</English>
 		<French>Revenu du contrat de mercenaire</French>
-		<German>Söldner-Vertragseinnahmen</German>
+		<German>S?ldner-Vertragseinnahmen</German>
 		<Italian>Entrata contratto mercenari</Italian>
 		<Spanish>Ingresos de contratos de mercenarios</Spanish>
 	</TEXT>
@@ -264,6 +264,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NEW_MERCENARIES</Tag>
-		<English>New mercenaries are available for hire in the province of %s.</English>
+		<English>New mercenaries are available for hire in the province of %s1.</English>
 	</TEXT>
 </Civ4GameText>
