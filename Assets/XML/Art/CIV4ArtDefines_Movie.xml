@@ -174,5 +174,9 @@
 			<Type>ART_DEF_MOVIE_ASHURBANIPAL_LIBRARY</Type>
 			<Path>Art/Movies/Wonders/AshurbanipalLibrary.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_OLYMPIC_GAMES</Type>
+			<Path>Art/Movies/Wonders/OlympicGames.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

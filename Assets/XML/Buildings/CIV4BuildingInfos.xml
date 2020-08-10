@@ -16452,15 +16452,15 @@
 			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OLYMPIC_PARK</BuildingClass>
-			<Type>BUILDING_OLYMPIC_PARK</Type>
+			<BuildingClass>BUILDINGCLASS_OLYMPIC_GAMES</BuildingClass>
+			<Type>BUILDING_OLYMPIC_GAMES</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
-			<Description>Olympic Park</Description>
-			<Civilopedia>TXT_KEY_BUILDING_OLYMPIC_PARK_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_TAJ_MAHAL_STRATEGY</Strategy>
+			<Description>TXT_KEY_BUILDING_OLYMPIC_GAMES</Description>
+			<Civilopedia>TXT_KEY_BUILDING_OLYMPIC_GAMES_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_OLYMPIC_GAMES_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_OLYMPIC_PARK</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_OLYMPIC_PARK</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_OLYMPIC_GAMES</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_OLYMPIC_GAMES</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
@@ -16671,7 +16671,7 @@
 			<bForceTeamVoteEligible>0</bForceTeamVoteEligible>
 			<bCapital>0</bCapital>
 			<bGovernmentCenter>0</bGovernmentCenter>
-			<bGoldenAge>0</bGoldenAge>
+			<bGoldenAge>1</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>

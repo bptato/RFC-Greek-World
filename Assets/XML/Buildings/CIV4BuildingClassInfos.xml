@@ -847,15 +847,15 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_OLYMPIC_PARK</Type>
-			<Description>TXT_KEY_BUILDING_OLYMPIC_PARK</Description>
+			<Type>BUILDINGCLASS_OLYMPIC_GAMES</Type>
+			<Description>TXT_KEY_BUILDING_OLYMPIC_GAMES</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_OLYMPIC_PARK</DefaultBuilding>
+			<DefaultBuilding>BUILDING_OLYMPIC_GAMES</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>

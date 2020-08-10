@@ -1178,7 +1178,7 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,14</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_OLYMPIC_PARK</Type>
+			<Type>ART_DEF_BUILDING_OLYMPIC_GAMES</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>

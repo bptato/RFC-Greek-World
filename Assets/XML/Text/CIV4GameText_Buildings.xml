@@ -20,7 +20,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKERY_PEDIA</Tag>
 		<English>A baker is someone who primarily bakes and sells bread. Cakes and similar foods may also be produced, as the traditional boundaries between what is produced by a baker as opposed to a pastry chef have blurred in recent decades. The place where a baker works is called a bakehouse, bakeshop, or bakery. [PARAGRAPH:2]The first group of people to bake bread were ancient Egyptians, in 2600-2100 BC. It was believed that they learnt their skills from the Babylonians. In the royal bakery of Ramesses, bread and cakes were often made in shapes of animals and used for sacrifices. [PARAGRAPH:2]The Greek culture influenced the Romans a lot after the Egyptians. From there, Bakery was transformed and flourished. The Romans were lusty and festive, soon the art of Bakering were a highly respected profession during the fourth century (A.D). The "job" was so profitable that in the time of Christ there were about three hundred Bakers around Rome. [PARAGRAPH:2]From the Roman Empire, the art of Bakery spread throughout Europe and the rest of the world. During the Middle ages, it was common for each landlord to have a bakery, which was actually more of a public oven. Housewives would bring dough that they had prepared to the baker, who would use the oven to bake it into bread. As time went on, bakers began to bake their own goods, creating numerous tricks. For example, some bakers had trap doors that would allow a small boy to pinch off a bit of the dough to later sell off as his own. This practice eventually led in England to a regulation known as the Assize of Bread and Ale, which provided harsh punishments for bakers who were caught cheating. In response, bakers commonly threw in an extra loaf of bread; this tradition lives on in the modern "baker's dozen".</English>
-		<Polish>Piekarnia to zaklad rzemieslniczy lub przemyslowy, który produkuje pieczywo. Glówne dzialy: ciastownia, obrabialnia, piecownia.</Polish>
+		<Polish>Piekarnia to zaklad rzemieslniczy lub przemyslowy, kt?ry produkuje pieczywo. Gl?wne dzialy: ciastownia, obrabialnia, piecownia.</Polish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKERY_STRATEGY</Tag>
@@ -317,5 +317,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SLAVE_MARKET_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Slave Market[COLOR_REVERT] increases production and commerce of a city.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_GAMES</Tag>
+		<English>Olympic Games</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_GAMES_PEDIA</Tag>
+		<English>The ancient Olympic Games were originally a festival, or celebration, of and for Zeus; events such as a footrace, a javelin contest, and wrestling matches were added later. The Olympic Games were a series of athletic competitions among representatives of city-states and one of the Panhellenic Games of ancient Greece. They were held in honor of Zeus, and the Greeks gave them a mythological origin. The first Olympics is traditionally dated to 776 BC. They continued to be celebrated when Greece came under Roman rule, until the emperor Theodosius I suppressed them in AD 393 as part of the campaign to impose Christianity as the State religion of Rome. The games were held every four years, or olympiad, which became a unit of time in historical chronologies.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_GAMES_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Olympic Games[COLOR_REVERT] wonder starts a golden age.</English>
 	</TEXT>
 </Civ4GameText>
