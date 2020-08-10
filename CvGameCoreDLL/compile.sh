@@ -22,12 +22,11 @@ PARALLEL=1 #Spawn a bunch of child processes in release mode. 1 - on, 0 - off
 #You probably won't have to change anything below
 set -e
 export WINEDEBUG=-all
-
-trap '[ "$?" -ne 77 ] || exit 77' EXIT
+PID="$$"
 
 error() {
 	echo "ERROR: $*" >&2
-	exit 77
+	exit 2
 }
 
 CLEAN=1
@@ -46,13 +45,13 @@ else #iterate over arguments
 	done
 fi
 
-if test "$TARGET" != ""; then
+if test "$TARGET"; then
 	echo "TARGET: $TARGET"
 fi
 
 #Clean mode.
 if test $CLEAN = 0; then
-	if test "$TARGET" != ""; then
+	if test "$TARGET"; then
 		if test -e "$TARGET"; then
 			echo "CLEAN: cleaning $TARGET"
 			rm -r ./"$TARGET"
@@ -82,7 +81,8 @@ owine() { #wine 1.7.55
 
 cl() {
 	if ! owine "$VCTOOLKIT/bin/cl.exe" "$@"; then
-		error "Failed to compile $1"
+		echo "Failed to compile $1" >&2
+		kill -9 "$PID" #Yes this is quite brutal but I'm not aware of any better methods to do this
 	fi
 }
 
@@ -96,14 +96,12 @@ should_compile() {
 	else
 		compiled="$TARGET/${1%.*}.obj"
 	fi
-	c_index=$2
-	if ! test -f "$compiled"; then
-		return 0
-	elif test "$(date -r "$compiled" +%s)" -lt "$(date -r "$1" +%s)"; then
+
+	if ! test -f "$compiled" || test "$(date -r "$compiled" +%s)" -lt "$(date -r "$1" +%s)"; then
 		return 0
 	fi
 
-	set $(echo "$DEPENDS" | sed "${c_index}q;d")
+	set $(echo "$DEPENDS" | sed "${2}q;d")
 	shift
 	test "$(date -r "$compiled" +%s)" -lt "$(date -r "$(ls -rt $(find . -maxdepth 1 | grep -Eio "$(echo "$@" | sed "s/ /\|/g")") | tail -1)" +%s)"
 }
@@ -120,18 +118,18 @@ DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends | sed ':a;N;$!ba;s/\\\r\n\t //g' | 
 #echo "$DEPENDS" > depends
 
 #Set flags for compilation
-GLOBAL_CFLAGS="/nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /c /Fp$PCH"
+GLOBAL_CFLAGS="/MD /nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /c /Fp$PCH"
 if test "$TARGET" = "Release"; then
-	set "/MD" "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
+	set "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
 elif test "$TARGET" = "Debug"; then
-	set "/MD" "/Zi" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
+	set "/Zi" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
 fi
 
 #Generate precompiled header
 ci=1
 if should_compile "_precompile.cpp" $ci "CvGameCoreDLL.pch"; then
 	echo "Generating precompiled header..."
-	cl "_precompile.cpp" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET\\_precompile.obj"
+	cl "_precompile.cpp" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET/_precompile.obj"
 fi
 
 #Compile the files
@@ -143,7 +141,7 @@ if test "$TARGET" = "Release"; then
 				ci=$((ci+1))
 				(
 				if should_compile "$COMPILEFILE" $ci; then
-					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj"
+					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
 				fi
 				)&
 				PIDS="$PIDS $!"
@@ -160,7 +158,7 @@ if test "$TARGET" = "Release"; then
 			if test "$COMPILEFILE" != "_precompile.cpp"; then
 				ci=$((ci+1))
 				if should_compile "$COMPILEFILE" $ci; then
-					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj"
+					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
 				fi
 			fi
 		done
@@ -172,24 +170,24 @@ elif test "$TARGET" = "Debug"; then
 		if test "$COMPILEFILE" != "_precompile.cpp"; then
 			ci=$((ci+1))
 			if should_compile "$COMPILEFILE" $ci; then
-				cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET\\${COMPILEFILE%.*}.obj"
+				cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
 			fi
 		fi
 	done
 fi
 
+#Link resulting files
 LINKFILES="$(find "$TARGET"/*.obj)"
 
-GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$TARGET\\CvGameCoreDLL.pdb"
+GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$TARGET/CvGameCoreDLL.pdb"
 if test "$TARGET" = "Release"; then
 	FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
 	set ""
 else
-	FLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$TARGET\CvGameCoreDLL.lib"
-	set " " "$PSDK\\Lib\\AMD64\\msvcprtd.lib"
+	FLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$TARGET/CvGameCoreDLL.lib"
+	set " " "$PSDK/Lib/AMD64/msvcprtd.lib"
 fi
 
-#Create a DLL.
-link $FLAGS "/LIBPATH:$PSDK\\Lib" "$BOOST\\libs\\boost_python-vc71-mt-1_32.lib" "winmm.lib" "user32.lib" "$VCTOOLKIT\\lib\\msvcprt.lib" "$VCTOOLKIT\\lib\\msvcrt.lib" "$PYTHON\\libs\\python24.lib" "$VCTOOLKIT\\lib\\OLDNAMES.lib" "/out:$DLLOUTPUT""$@"
+link $FLAGS "/LIBPATH:$PSDK/Lib" "$BOOST/libs/boost_python-vc71-mt-1_32.lib" "winmm.lib" "user32.lib" "$VCTOOLKIT/lib/msvcprt.lib" "$VCTOOLKIT/lib/msvcrt.lib" "$PYTHON/libs/python24.lib" "$VCTOOLKIT/lib/OLDNAMES.lib" "/out:$DLLOUTPUT""$@"
 
 echo "Done!"

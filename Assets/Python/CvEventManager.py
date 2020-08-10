@@ -921,14 +921,41 @@ class CvEventManager:
 		self.vic.onCityRazed(city, iPlayer, city.getOwner())
 
 	def onCityAcquired(self, argsList):
+		iPreviousOwner,iNewOwner,pCity,bConquest,bTrade = argsList
+		'City Acquired'
+		#bluepotato
+		if gc.getPlayer(iNewOwner).getCivilizationType() == Victory.iHuns:
+			freeUnits = gc.getInfoTypeForString("UNIT_HUN")
+		elif gc.getPlayer(iNewOwner).getCivilizationType() == Victory.iGermania:
+			freeUnits = gc.getInfoTypeForString("UNIT_GERMANIC_SWORDSMAN")
+		else:
+			freeUnits = None
+		if freeUnits != None:
+			plots = []
+			for x in range(pCity.getX() - 5, pCity.getX() + 5):
+				for y in range(pCity.getY() - 5, pCity.getY() + 5):
+					plot = CyMap().plot(x, y)
+					if (plot.isHills() or plot.isFlatlands()) and not plot.isImpassable():
+						plots.append(plot)
+			if len(plots):
+				amount = gc.getGame().getSorenRandNum(2, 'Spawned unit amount') + 2
+				rndNum = gc.getGame().getSorenRandNum(len(plots), 'Spawn units')
+				result = plots[rndNum]
+				for i in range(amount):
+					gc.getPlayer(iNewOwner).initUnit(freeUnits, result.getX(), result.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+
+		self.vic.onCityAcquired(iPreviousOwner, iNewOwner, pCity, bConquest)
 	## Platy Builder ##
 		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
 	## Platy Builder ##
-		'City Acquired'
-		iPreviousOwner,iNewOwner,pCity,bConquest,bTrade = argsList
 		CvUtil.pyPrint('City Acquired Event: %s' %(pCity.getName()))
-		#bluepotato
-		self.vic.onCityAcquired(iPreviousOwner, iNewOwner, pCity, bConquest)
+
+
+	def spawnUnits(self, iCiv, tTopLeft, tBottomRight, iUnitType, iNumUnits, function, iForceAttack):
+		dummy, plotList = utils.squareSearch(tTopLeft, tBottomRight, function, [])
+		if (len(plotList)):
+			if (result):
+				self.makeUnit(iUnitType, iCiv, result, iNumUnits, iForceAttack)
 
 	def onCityAcquiredAndKept(self, argsList):
 		'City Acquired and Kept'
