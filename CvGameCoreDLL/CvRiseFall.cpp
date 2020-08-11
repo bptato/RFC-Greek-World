@@ -70,6 +70,7 @@ void CvRiseFall::checkTurn() {
 			if(!rfcPlayer.isSpawned()) {
 				//conditional spawns
 				if(!rfcPlayer.isHuman()) {
+					bool skipConditionalSpawn = false;
 					if((CivilizationTypes)i == CIVILIZATION_SASSANID) {
 						if(getPlayerTypeForCiv(CIVILIZATION_PERSIA) != NO_PLAYER || getPlayerTypeForCiv(CIVILIZATION_ELAM) != NO_PLAYER) {
 							continue;
@@ -77,9 +78,17 @@ void CvRiseFall::checkTurn() {
 					} else if((CivilizationTypes)i == CIVILIZATION_BYZANTIUM) {
 						PlayerTypes romePlayer = getPlayerTypeForCiv(CIVILIZATION_ROME);
 						CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
-						if(romePlayer == NO_PLAYER || startingPlot->getOwnerINLINE() != romePlayer || rfcPlayer.getTotalStability() >= 40) {
+						if(romePlayer == NO_PLAYER || startingPlot->getOwnerINLINE() != romePlayer || getRFCPlayer(GET_PLAYER(romePlayer).getCivilizationType()).getTotalStability() >= 40) {
 							continue;
 						}
+					}
+					if(skipConditionalSpawn) {
+						if(rfcPlayer.getStartingTurn() < 0) {
+							rfcPlayer.setStartingTurn(game.getGameTurnYear());
+						} else if(rfcPlayer.getStartingTurn() < game.getGameTurnYear() - 10) {
+							rfcPlayer.setSpawned(true);
+						}
+						continue;
 					}
 				}
 

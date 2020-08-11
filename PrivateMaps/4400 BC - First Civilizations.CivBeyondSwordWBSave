@@ -1005,7 +1005,7 @@ application/json
 			"BuildingProductionModifier":100,
 			"WonderProductionModifier":100,
 			"GreatPeopleModifier":90,
-			"InflationModifier":100,
+			"InflationModifier":90,
 			"GrowthModifier":80
 		},
 		{

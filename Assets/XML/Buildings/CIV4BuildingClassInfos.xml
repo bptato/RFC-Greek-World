@@ -981,7 +981,7 @@
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TRAJANS_COLUMN</Type>
 			<Description>TXT_KEY_BUILDING_TRAJANS_COLUMN</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>

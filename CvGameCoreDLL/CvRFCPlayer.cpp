@@ -15,7 +15,7 @@ CvRFCPlayer::~CvRFCPlayer() {
 void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 	civilizationType = newCivType;
 	startingYear = 0;
-	startingTurn = 0;
+	startingTurn = -1;
 	startingPlotX = 0;
 	startingPlotY = 0;
 	startingGold = 0;

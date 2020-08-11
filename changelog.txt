@@ -8,6 +8,9 @@ Added slave markets
 Merged Sevopedia (was in previous versions as well, it just hadn't made it into the beta version of the rewrite)
 Re-added holy city relocations
 Added new diplomusic for Satur and Hiram
+Assyrian UHV
+Israelite UHV
+Athenian UHV
 
 General changes:
 Athens now starts with Deification
@@ -30,12 +33,16 @@ Removed railroads
 Implemented city renaming on conquest
 Changed Assyrian selection sounds (from Arabian to Babylonian, since both Babylonians and Assyrians spoke Akkadian)
 First Mycenaean UHV condition now requires four Tholoi
+The Hunnic and Germanic civs now receive 2-3 units for capturing cities
+Renamed Olympic Parks to Olympic Games
+Adjusted Phoenician modifiers
 
 Technical changes:
 Moved some hardcoded mercenary values to XML
 Replaced Sanguo Mod Performance labels to make a future merge easier
 Disabled some python callbacks
 Removed some obsolete XML stuff
+Split worldbuilder saves into two parts
 
 Fixes:
 Fixed some UHVs

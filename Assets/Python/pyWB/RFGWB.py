@@ -100,11 +100,14 @@ class WbParser:
 		return "No description"
 
 	def getModPath(self):
-		return self.scenarioValues['Game']['ModPath']
+		if "Game" in self.scenarioValues:
+			return self.scenarioValues['Game']['ModPath']
+		else:
+			return "Mods\\RFC-Greek-World"
 
 	def getMapsPath(self): #TODO: actually detect this
 		return self.getModPath() + "\\PrivateMaps\\"
-	
+
 	def setupEnabled(self):
 		for wbPlayer in self.scenarioValues['Players']:
 			rfcPlayer = riseFall.getRFCPlayer(gc.getInfoTypeForString(wbPlayer['CivType']))
@@ -777,12 +780,12 @@ class WbParser:
 			for i in range(amount):
 				randPlotX = rfcProvince.getLeft() + game.getSorenRandNum(rfcProvince.getRight() - rfcProvince.getLeft(), "Random plot x roll")
 				randPlotY = rfcProvince.getBottom() + game.getSorenRandNum(rfcProvince.getTop() - rfcProvince.getBottom(), "Random plot y roll")
-				
+
 				for wbPlayer in self.scenarioValues['Players']:
 					if wbPlayer['StartingYear'] == self.scenarioValues['Game']['StartYear']:
 						if randPlotX == wbPlayer['StartingX'] and randPlotY == wbPlayer['StartingY']:
 							continue
-				
+
 				plot = cmap.plot(randPlotX, randPlotY)
 				if not (plot.isWater() or plot.isPeak()):
 					plot.setImprovementType(goodyImprovement)

@@ -1083,8 +1083,6 @@ application/json
 			"y":1,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_JUNGLE",
-			"FeatureVariety":0,
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":70
 			}
@@ -1917,8 +1915,6 @@ application/json
 			"y":3,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"isNOfRiver":true,
@@ -2781,8 +2777,6 @@ application/json
 			"y":5,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
@@ -2819,6 +2813,8 @@ application/json
 			"y":5,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
+			"FeatureType":"FEATURE_FLOOD_PLAINS",
+			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Gebtu",
 				"CIVILIZATION_ROME":"Diospolis Magna",
@@ -2835,8 +2831,6 @@ application/json
 			"y":5,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"isNOfRiver":true,
@@ -3767,6 +3761,7 @@ application/json
 			"y":7,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
+			"BonusType":"BONUS_IRON",
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Beni Hasan"
 			},
@@ -5249,8 +5244,6 @@ application/json
 			"y":10,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
@@ -6627,6 +6620,7 @@ application/json
 			"y":13,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
+			"BonusType":"BONUS_SILVER",
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -6653,8 +6647,6 @@ application/json
 			"y":13,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
@@ -10431,8 +10423,6 @@ application/json
 			"y":19,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -12049,8 +12039,6 @@ application/json
 			"y":21,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -12075,8 +12063,6 @@ application/json
 			"y":21,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_SUMERIA":"Anshan",
 				"CIVILIZATION_ELAM":"Anshan",
@@ -12620,8 +12606,6 @@ application/json
 			"y":22,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Damascus",
 				"CIVILIZATION_SUMERIA":"Tyre",
@@ -12653,6 +12637,8 @@ application/json
 			"y":22,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
@@ -12742,8 +12728,6 @@ application/json
 			"y":22,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_SUMERIA":"Babylon",
 				"CIVILIZATION_ELAM":"Babylon",
@@ -13306,8 +13290,6 @@ application/json
 			"y":23,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SHEEP",
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
@@ -14141,8 +14123,6 @@ application/json
 			"y":24,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Argos",
 				"CIVILIZATION_MYCENAE":"Argos",
@@ -14307,8 +14287,6 @@ application/json
 			"y":24,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_DYE",
 			"CityNames":{
 				"CIVILIZATION_SUMERIA":"Mari",
@@ -14808,8 +14786,6 @@ application/json
 			"y":25,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_ETRURIA":"Popianu",
 				"CIVILIZATION_ROME":"Croton",
@@ -14900,8 +14876,6 @@ application/json
 			"y":25,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_WINE",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Tegea",
@@ -15096,8 +15070,6 @@ application/json
 			"y":25,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"CityNames":{
@@ -15154,8 +15126,6 @@ application/json
 			"y":25,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_INCENSE",
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
@@ -15935,8 +15905,6 @@ application/json
 			"y":26,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_SUMERIA":"Aleppo",
 				"CIVILIZATION_ELAM":"Aleppo",
@@ -15971,8 +15939,6 @@ application/json
 			"y":26,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_DYE",
 			"CityNames":{
 				"CIVILIZATION_SUMERIA":"Carchemish",
@@ -16169,8 +16135,6 @@ application/json
 			"y":26,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"CityNames":{
@@ -16233,8 +16197,6 @@ application/json
 			"y":26,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SHEEP",
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Herat",
@@ -16738,8 +16700,6 @@ application/json
 			"y":27,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_STONE",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Marathon",
@@ -16761,8 +16721,6 @@ application/json
 			"y":27,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Marathon",
 				"CIVILIZATION_MYCENAE":"Decelea",
@@ -16897,8 +16855,6 @@ application/json
 			"y":27,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Issus",
 				"CIVILIZATION_PHOENICIA":"Myriandrus",
@@ -16960,8 +16916,6 @@ application/json
 			"y":27,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -17561,8 +17515,6 @@ application/json
 			"y":28,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SHEEP",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Chalkis",
@@ -17919,8 +17871,6 @@ application/json
 			"y":28,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Jarmy",
 				"CIVILIZATION_PERSIA":"Jarmy",
@@ -17939,8 +17889,6 @@ application/json
 			"y":28,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Jarmy",
 				"CIVILIZATION_PERSIA":"Jarmy",
@@ -17957,8 +17905,6 @@ application/json
 			"y":28,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_STONE",
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Rhagae",
@@ -18099,8 +18045,6 @@ application/json
 			"y":28,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"SettlerValues":{
 				"CIVILIZATION_INDUS_VALLEY":700,
 				"CIVILIZATION_PERSIA":90,
@@ -18168,6 +18112,8 @@ application/json
 			"y":29,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_CARTHAGE":"Carmona",
 				"CIVILIZATION_ROME":"Corduba",
@@ -18214,6 +18160,8 @@ application/json
 			"y":29,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
 			"CityNames":{
@@ -19084,6 +19032,8 @@ application/json
 			"y":30,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"CityNames":{
@@ -19251,8 +19201,6 @@ application/json
 			"y":30,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SHEEP",
 			"CityNames":{
 				"CIVILIZATION_MYCENAE":"Metapontum",
@@ -19391,8 +19339,6 @@ application/json
 			"y":30,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Larissa",
 				"CIVILIZATION_ATHENS":"Larissa",
@@ -19729,8 +19675,6 @@ application/json
 			"y":30,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Hecatompylos",
 				"CIVILIZATION_PERSIA":"Hecatompylos",
@@ -19747,8 +19691,6 @@ application/json
 			"y":30,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"SettlerValues":{
@@ -19848,8 +19790,6 @@ application/json
 			"y":30,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_JUNGLE",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SPICES",
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Taxila",
@@ -20107,6 +20047,8 @@ application/json
 			"y":31,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"SettlerValues":{
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_BYZANTIUM":90
@@ -20140,8 +20082,6 @@ application/json
 			"y":31,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_CELT":"Rome",
 				"CIVILIZATION_ETRURIA":"Vetluna",
@@ -20613,8 +20553,6 @@ application/json
 			"y":31,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"SettlerValues":{
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -20685,8 +20623,6 @@ application/json
 			"y":31,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_ELAM":"Bactra",
 				"CIVILIZATION_PERSIA":"Bactra",
@@ -20768,8 +20704,6 @@ application/json
 			"y":31,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"SettlerValues":{
 				"CIVILIZATION_INDUS_VALLEY":500,
 				"CIVILIZATION_PERSIA":90,
@@ -20888,6 +20822,8 @@ application/json
 			"y":32,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_CARTHAGE":"Azaila",
 				"CIVILIZATION_ROME":"Caesaraugusta",
@@ -21002,8 +20938,6 @@ application/json
 			"y":32,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SHEEP",
 			"CityNames":{
 				"CIVILIZATION_CARTHAGE":"Trasimenus",
@@ -21116,8 +21050,6 @@ application/json
 			"y":32,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SHEEP",
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
@@ -21695,8 +21627,6 @@ application/json
 			"y":33,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_WHEAT",
 			"CityNames":{
 				"CIVILIZATION_PHOENICIA":"Massilia",
@@ -21873,6 +21803,7 @@ application/json
 			"y":33,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
+			"BonusType":"BONUS_IRON",
 			"CityNames":{
 				"CIVILIZATION_ROME":"Ulpiana",
 				"CIVILIZATION_BYZANTIUM":"Ulpiana"
@@ -23163,6 +23094,8 @@ application/json
 			"y":35,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
@@ -23176,6 +23109,8 @@ application/json
 			"y":35,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_CELT":"Tolosa",
 				"CIVILIZATION_ROME":"Tolosa",
@@ -23887,8 +23822,6 @@ application/json
 			"y":36,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":1,
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -24523,8 +24456,6 @@ application/json
 			"y":37,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ETRURIA":"Precsena",
 				"CIVILIZATION_ROME":"Bergomum",
@@ -25068,6 +24999,8 @@ application/json
 			"y":38,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_CELT":"Burdigala",
 				"CIVILIZATION_ROME":"Burdigala",
@@ -25093,6 +25026,8 @@ application/json
 			"y":38,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ROME":"Lugdunum",
 				"CIVILIZATION_BYZANTIUM":"Lugdunum"
@@ -25131,6 +25066,8 @@ application/json
 			"y":38,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ETRURIA":"Precsena",
 				"CIVILIZATION_ROME":"Bergomum",
@@ -25163,8 +25100,6 @@ application/json
 			"y":38,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ETRURIA":"Suntriu",
 				"CIVILIZATION_ROME":"Verona",
@@ -25291,8 +25226,6 @@ application/json
 			"y":38,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_COW",
 			"CityNames":{
 				"CIVILIZATION_ROME":"Viminacium",
@@ -25904,6 +25837,8 @@ application/json
 			"y":39,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"CityNames":{
@@ -25919,6 +25854,8 @@ application/json
 			"y":39,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -25970,6 +25907,8 @@ application/json
 			"y":39,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ROME":"Tomis",
 				"CIVILIZATION_BYZANTIUM":"Tomis"
@@ -26334,6 +26273,8 @@ application/json
 			"y":40,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
@@ -26435,8 +26376,6 @@ application/json
 			"y":40,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SHEEP",
 			"CityNames":{
 				"CIVILIZATION_ROME":"Savaria",
@@ -26563,6 +26502,8 @@ application/json
 			"y":40,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ROME":"Moncastrum",
 				"CIVILIZATION_BYZANTIUM":"Moncastrum"
@@ -27064,6 +27005,8 @@ application/json
 			"y":41,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"SettlerValues":{
 				"CIVILIZATION_ROME":300
 			}
@@ -27716,6 +27659,8 @@ application/json
 			"y":42,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isWOfRiver":true,
 			"RiverNSDirection":2
 		},
@@ -27731,6 +27676,8 @@ application/json
 			"y":42,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isWOfRiver":true,
 			"RiverNSDirection":2
 		},
@@ -28044,6 +27991,8 @@ application/json
 			"y":43,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ROME":"Portus Namnetum",
 				"CIVILIZATION_BYZANTIUM":"Portus Namnetum"
@@ -28101,6 +28050,8 @@ application/json
 			"y":43,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_CELT":"Lutetia",
 				"CIVILIZATION_ROME":"Durocorturum",
@@ -28313,8 +28264,6 @@ application/json
 			"y":43,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_HORSE"
 		},
 		{
@@ -28684,8 +28633,6 @@ application/json
 			"y":44,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_CELT":"Lutetia",
 				"CIVILIZATION_ROME":"Durocorturum",
@@ -28756,6 +28703,8 @@ application/json
 			"y":44,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"BonusType":"BONUS_DEER",
 			"CityNames":{
 				"CIVILIZATION_CELT":"Bagacum"
@@ -28829,7 +28778,9 @@ application/json
 			"x":29,
 			"y":44,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_GRASS"
+			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":30,
@@ -29269,6 +29220,8 @@ application/json
 			"y":45,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_CELT":"Rotomagus",
 				"CIVILIZATION_ROME":"Samarobriva",
@@ -29299,6 +29252,8 @@ application/json
 			"y":45,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_ROME":"Noviomagus",
 				"CIVILIZATION_BYZANTIUM":"Noviomagus"
@@ -29468,9 +29423,7 @@ application/json
 			"x":37,
 			"y":45,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_GRASS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":1
+			"TerrainType":"TERRAIN_GRASS"
 		},
 		{
 			"x":38,
@@ -29533,6 +29486,8 @@ application/json
 			"y":45,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_SCYTHIA":"Scyths"
 			},
@@ -29574,8 +29529,6 @@ application/json
 			"y":45,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_WHEAT",
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
@@ -29601,6 +29554,8 @@ application/json
 			"y":45,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
 			"SettlerValues":{
@@ -29645,6 +29600,8 @@ application/json
 			"y":45,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"SettlerValues":{
 				"CIVILIZATION_SCYTHIA":500
 			}
@@ -29862,6 +29819,8 @@ application/json
 			"y":46,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_CELT":"Bagacum"
 			},
@@ -30060,6 +30019,8 @@ application/json
 			"y":46,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"CityNames":{
@@ -30462,7 +30423,9 @@ application/json
 			"x":35,
 			"y":47,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":36,
@@ -30509,6 +30472,8 @@ application/json
 			"y":47,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"CityNames":{
 				"CIVILIZATION_SCYTHIA":"Altai"
 			}
@@ -30989,7 +30954,9 @@ application/json
 			"x":36,
 			"y":48,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":37,
@@ -31300,6 +31267,8 @@ application/json
 			"y":49,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"SettlerValues":{
 				"CIVILIZATION_ROME":300
 			}
@@ -31467,7 +31436,9 @@ application/json
 			"x":33,
 			"y":49,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":34,
@@ -31782,6 +31753,8 @@ application/json
 			"y":50,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"SettlerValues":{
 				"CIVILIZATION_ROME":90
 			}
@@ -31791,6 +31764,8 @@ application/json
 			"y":50,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"SettlerValues":{
 				"CIVILIZATION_CELT":400,
 				"CIVILIZATION_ROME":90
@@ -31979,7 +31954,9 @@ application/json
 			"x":39,
 			"y":50,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":40,
@@ -32580,13 +32557,17 @@ application/json
 			"x":57,
 			"y":51,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":58,
 			"y":51,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":59,
@@ -32723,6 +32704,8 @@ application/json
 			"y":52,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1,
 			"SettlerValues":{
 				"CIVILIZATION_ROME":90
 			}
@@ -33784,7 +33767,9 @@ application/json
 			"x":30,
 			"y":54,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_GRASS"
+			"TerrainType":"TERRAIN_GRASS",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":31,
@@ -34390,7 +34375,9 @@ application/json
 			"x":53,
 			"y":55,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":54,
@@ -35186,7 +35173,9 @@ application/json
 			"x":44,
 			"y":57,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":45,
@@ -35523,7 +35512,9 @@ application/json
 			"x":31,
 			"y":58,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":32,
@@ -35927,7 +35918,9 @@ application/json
 			"x":28,
 			"y":59,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":29,
@@ -36129,7 +36122,9 @@ application/json
 			"x":58,
 			"y":59,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_TUNDRA"
+			"TerrainType":"TERRAIN_TUNDRA",
+			"FeatureType":"FEATURE_FOREST",
+			"FeatureVariety":1
 		},
 		{
 			"x":59,
