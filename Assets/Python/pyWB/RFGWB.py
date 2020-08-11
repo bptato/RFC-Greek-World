@@ -415,7 +415,9 @@ class WbParser:
 		f.write(unescapedValues.encode("utf8"))
 
 	def createSplitWBSave(self, mapName, scenarioName):
-		self.saveMapFile(self.getMapsPath() + mapName)
+		mapPath = scenarioName.split('/')
+		mapPath.pop(len(mapPath)-1)
+		self.saveMapFile('/'.join(mapPath) + '/' + mapName)
 		self.saveScenarioFile(scenarioName, mapName)
 
 	def parseFile(self, name): #Parse a WBSave file.
