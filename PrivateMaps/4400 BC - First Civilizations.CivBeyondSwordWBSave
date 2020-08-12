@@ -2611,6 +2611,15 @@ application/json
 					"UnitOwner":"CIVILIZATION_BABYLON",
 					"UnitType":"UNIT_WORKER",
 					"Year":-1890
+				},
+				{
+					"Amount":5,
+					"UnitOwner":"CIVILIZATION_BABYLON",
+					"UnitType":"UNIT_BABYLON_BOWMAN",
+					"Year":-620,
+					"UnitAIType":"UNITAI_ATTACK_CITY",
+					"AIOnly":true,
+					"DeclareWar":true
 				}
 			]
 		},
@@ -2900,6 +2909,62 @@ application/json
 			]
 		},
 		{
+			"x":27,
+			"y":30,
+			"Units":[
+				{
+					"Amount":2,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":33,
+			"y":29,
+			"Units":[
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":27,
+			"y":25,
+			"Units":[
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":15,
+			"y":18,
+			"Units":[
+				{
+					"Amount":5,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-203,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
 			"x":15,
 			"y":20,
 			"Units":[
@@ -3018,6 +3083,25 @@ application/json
 					"UnitOwner":"CIVILIZATION_CELT",
 					"UnitType":"UNIT_WORKER",
 					"Year":-806
+				}
+			]
+		},
+		{
+			"x":17,
+			"y":50,
+			"Units":[
+				{
+					"UnitOwner":"CIVILIZATION_CELT",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-350,
+					"AIOnly":true
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CELT",
+					"UnitType":"UNIT_CELTIC_GALLIC_WARRIOR",
+					"Year":-350,
+					"AIOnly":true
+	
 				}
 			]
 		},

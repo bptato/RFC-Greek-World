@@ -392,7 +392,7 @@ class WbParser:
 				wbUnit = OrderedDict({})
 				if scheduledUnit.getAmount() > 1:
 					wbUnit['Amount'] = scheduledUnit.getAmount()
-				#wbUnit['UnitOwner'] = civInfo.getType() #TODO
+				#wbUnit['UnitOwner'] = civInfo.getType()
 
 				wbUnit['UnitType'] = gc.getUnitInfo(scheduledUnit.getUnitType()).getType()
 				wbUnit['Year'] = scheduledUnit.getYear()
