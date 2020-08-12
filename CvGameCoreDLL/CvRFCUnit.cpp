@@ -14,7 +14,9 @@ _facingDirection(NO_DIRECTION),
 _amount(0),
 _endYear(0),
 _spawnFrequency(0),
-_lastSpawned(0)
+_lastSpawned(0),
+_aiOnly(false),
+_declareWar(false)
 {
 }
 
@@ -62,6 +64,14 @@ void CvRFCUnit::setLastSpawned(int turn) {
 	_lastSpawned = turn;
 }
 
+void CvRFCUnit::setAIOnly(bool aiOnly) {
+	_aiOnly = aiOnly;
+}
+
+void CvRFCUnit::setDeclareWar(bool declareWar) {
+	_declareWar = declareWar;
+}
+
 
 int CvRFCUnit::getLastSpawned() const {
 	return _lastSpawned;
@@ -103,6 +113,14 @@ DirectionTypes CvRFCUnit::getFacingDirection() const {
 	return _facingDirection;
 }
 
+bool CvRFCUnit::isAIOnly() const {
+	return _aiOnly;
+}
+
+bool CvRFCUnit::isDeclareWar() const {
+	return _declareWar;
+}
+
 void CvRFCUnit::write(FDataStreamBase* stream) {
 	stream->Write(_year);
 	stream->Write(_x);
@@ -114,6 +132,8 @@ void CvRFCUnit::write(FDataStreamBase* stream) {
 	stream->Write(_endYear);
 	stream->Write(_spawnFrequency);
 	stream->Write(_lastSpawned);
+	stream->Write(_aiOnly);
+	stream->Write(_declareWar);
 }
 
 void CvRFCUnit::read(FDataStreamBase* stream) {
@@ -127,4 +147,6 @@ void CvRFCUnit::read(FDataStreamBase* stream) {
 	stream->Read(&_endYear);
 	stream->Read(&_spawnFrequency);
 	stream->Read(&_lastSpawned);
+	stream->Read(&_aiOnly);
+	stream->Read(&_declareWar);
 }

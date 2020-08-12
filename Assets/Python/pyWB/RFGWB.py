@@ -319,7 +319,7 @@ class WbParser:
 				wbPlayer['StartingX'] = rfcPlayer.getStartingPlotX()
 				wbPlayer['StartingY'] = rfcPlayer.getStartingPlotY()
 
-				#Scheduled units&cities
+				#Scheduled units & cities
 				for j in range(rfcPlayer.getNumScheduledUnits()):
 					scheduledUnit = rfcPlayer.getScheduledUnit(j)
 					wbPlot = getWBPlot(plots, scheduledUnit.getX(), scheduledUnit.getY())
@@ -335,6 +335,10 @@ class WbParser:
 						wbUnit['UnitAIType'] = gc.getUnitAIInfo(scheduledUnit.getUnitAIType()).getType()
 					if scheduledUnit.getFacingDirection() != -1 and scheduledUnit.getFacingDirection() != 4:
 						wbUnit['FacingDirection'] = scheduledUnit.getFacingDirection()
+					if scheduledUnit.isAIOnly():
+						wbUnit['AIOnly'] = scheduledUnit.isAIOnly()
+					if scheduledUnit.isDeclareWar():
+						wbUnit['DeclareWar'] = scheduledUnit.isDeclareWar()
 					wbPlot['Units'].append(wbUnit)
 
 				for j in range(rfcPlayer.getNumScheduledCities()):
@@ -739,7 +743,17 @@ class WbParser:
 					else:
 						year = game.getGameTurnYear()
 
-					rfcPlayer.scheduleUnit(year, unitID, x, y, unitAI, facingDirection, amount)
+					if "AIOnly" in wbUnit:
+						aiOnly = wbUnit['AIOnly']
+					else:
+						aiOnly = False
+
+					if "DeclareWar" in wbUnit:
+						declareWar = wbUnit['DeclareWar']
+					else:
+						declareWar = False
+
+					rfcPlayer.scheduleUnit(year, unitID, x, y, unitAI, facingDirection, amount, aiOnly, declareWar)
 
 
 			#Barbarians and independent cities

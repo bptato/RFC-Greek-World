@@ -9,7 +9,6 @@ class CyRFCUnit {
 		CyRFCUnit();
 		CyRFCUnit(CvRFCUnit* rfcUnit);
 
-
 		int getYear();
 		int getX();
 		int getY();
@@ -19,6 +18,8 @@ class CyRFCUnit {
 		int getAmount();
 		int getEndYear();
 		int getSpawnFrequency();
+		bool isAIOnly();
+		bool isDeclareWar();
 
 	protected:
 		CvRFCUnit* rfcUnit;

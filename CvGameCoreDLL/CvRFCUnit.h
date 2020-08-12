@@ -18,6 +18,8 @@ class CvRFCUnit {
 		void setEndYear(int endYear);
 		void setSpawnFrequency(int spawnFrequency);
 		void setLastSpawned(int lastSpawned);
+		void setAIOnly(bool aiOnly);
+		void setDeclareWar(bool declareWar);
 
 		int getYear() const;
 		int getX() const;
@@ -29,6 +31,8 @@ class CvRFCUnit {
 		int getEndYear() const;
 		int getSpawnFrequency() const;
 		int getLastSpawned() const;
+		bool isAIOnly() const;
+		bool isDeclareWar() const;
 
 		void write(FDataStreamBase* stream);
 		void read(FDataStreamBase* stream);
@@ -44,4 +48,6 @@ class CvRFCUnit {
 		int _endYear;
 		int _spawnFrequency;
 		int _lastSpawned;
+		bool _aiOnly;
+		bool _declareWar;
 };

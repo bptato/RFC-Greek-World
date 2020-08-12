@@ -45,3 +45,11 @@ int CyRFCUnit::getEndYear() {
 int CyRFCUnit::getSpawnFrequency() {
 	return rfcUnit->getSpawnFrequency();
 }
+
+bool CyRFCUnit::isAIOnly() {
+	return rfcUnit->isAIOnly();
+}
+
+bool CyRFCUnit::isDeclareWar() {
+	return rfcUnit->isDeclareWar();
+}

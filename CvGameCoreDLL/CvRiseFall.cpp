@@ -242,10 +242,20 @@ void CvRiseFall::checkTurn() {
 				std::vector<CvRFCUnit>& scheduledUnits = rfcPlayer.getScheduledUnits();
 				for(std::vector<CvRFCUnit>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end();) {
 					if(game.getGameTurnYear() >= it->getYear()) {
-						for(int j = 0; j<it->getAmount(); j++) {
-							CvUnit* unit = player.initUnit(it->getUnitType(), it->getX(), it->getY(), it->getUnitAIType(), it->getFacingDirection()); //unitID, x, y, unitAI, facingDirection
-							if(unit != NULL && spawnedNow && !rfcPlayer.isHuman() && GC.getUnitInfo(it->getUnitType()).getDefaultUnitAIType() != UNITAI_SETTLE) {
-								unit->setImmobileTimer(2);
+						if(!it->isAIOnly() || !rfcPlayer.isHuman()) {
+							for(int j = 0; j<it->getAmount(); j++) {
+								CvUnit* unit = player.initUnit(it->getUnitType(), it->getX(), it->getY(), it->getUnitAIType(), it->getFacingDirection()); //unitID, x, y, unitAI, facingDirection
+								if(unit != NULL && spawnedNow && !rfcPlayer.isHuman() && GC.getUnitInfo(it->getUnitType()).getDefaultUnitAIType() != UNITAI_SETTLE) {
+									unit->setImmobileTimer(2);
+								}
+							}
+							if(it->isDeclareWar()) {
+								PlayerTypes plotOwner = GC.getMap().plot(it->getX(), it->getY())->getOwner();
+								if(plotOwner != NO_PLAYER) {
+									if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
+										GET_TEAM(player.getTeam()).setAtWar(GET_PLAYER(plotOwner).getTeam(), true);
+									}
+								}
 							}
 						}
 						it = scheduledUnits.erase(it);
