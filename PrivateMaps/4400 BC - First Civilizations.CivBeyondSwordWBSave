@@ -2533,6 +2533,38 @@ application/json
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
 					"UnitType":"UNIT_WARRIOR",
 					"Year":-2495
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_PHOENICIANS_BIREME",
+					"Year":-1600,
+					"UnitAIType":"UNITAI_SETTLER_SEA"
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-1600
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-1600
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_PHOENICIANS_BIREME",
+					"Year":-850,
+					"UnitAIType":"UNITAI_SETTLER_SEA"
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-850
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-850
 				}
 			]
 		},
@@ -3046,6 +3078,21 @@ application/json
 					"UnitType":"UNIT_TRIREME",
 					"Year":-812,
 					"UnitAIType":"UNITAI_ESCORT_SEA"
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_GALLEY",
+					"Year":-450
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-450
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-450
 				}
 			]
 		},
