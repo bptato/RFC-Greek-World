@@ -127,7 +127,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY2</Tag>
-		<English>Have the highest score by 1690 BC</English>
+		<English>Have the highest score in 1690 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_EGY3_TITLE</Tag>
@@ -400,5 +400,29 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ATH3</Tag>
 		<English>Build 7 harbours by 400 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA2_TITLE</Tag>
+		<English>The Peloponnesian War</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA2</Tag>
+		<English>Be victors in the Peloponnesian War by controlling all of Greece (Peloponese, Attica, Macedonia, Central Greece, Euboea, Cyclades) by 400 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA3_TITLE</Tag>
+		<English>Spartan hegemony</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA3</Tag>
+		<English>Have the highest score in 350 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
+		<English>This is Sparta!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA1</Tag>
+		<English>Control an army of 30 units in 450 BC</English>
 	</TEXT>
 </Civ4GameText>
