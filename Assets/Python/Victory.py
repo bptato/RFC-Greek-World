@@ -284,7 +284,7 @@ class Victory:
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['lReligionFounded'][iCiv] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-		
+
 	def onLoadGame(self):
 		self.initGlobals()
 
@@ -618,7 +618,7 @@ class Victory:
 
 			if self.getGoal(iAthens, 1) == -1 and iGameTurn > i450BC:
 				self.setGoal(iAthens, 1, 0)
-				
+
 		elif civType == iSparta:
 			if self.getGoal(iSparta, 1) == -1:
 				goalCompleted = controlsProvince(iPlayer, provPeloponnese) and \
@@ -629,20 +629,20 @@ class Victory:
 						controlsProvince(iPlayer, provCyclades)
 				if goalCompleted:
 					self.setGoal(iSparta, 1, 1)
-				elif iGameTurn > i400BC:
+				elif iGameTurn >= i400BC - 1: #TODO: remove this ASAP
 					self.setGoal(iSparta, 1, 0)
-					
+
 			if (iGameTurn == i350BC):
 					if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
 						self.setGoal(iSparta, 2, 1)
 					else:
 						self.setGoal(iSparta, 2, 0)
-						
+
 			if (iGameTurn == i450BC):
 					if (pPlayer.getNumUnits() >= 30):
-							self.setGoal(iSparta, 0, 1)
+						self.setGoal(iSparta, 0, 1)
 					else:
-							self.setGoal(iSparta, 0, 0)
+						self.setGoal(iSparta, 0, 0)
 
 	def onCityBuilt(self, city):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
