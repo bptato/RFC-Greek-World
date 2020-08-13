@@ -100,12 +100,15 @@ class Victory:
 		global i1070BC
 		global i1000BC
 		global i900BC
+		global i800BC
 		global i671BC
 		global i600BC
 		global i587BC
 		global i500BC
 		global i450BC
 		global i400BC
+		global i350BC
+		global i300BC
 		global i250BC
 		global i100BC
 		global i63BC
@@ -127,12 +130,15 @@ class Victory:
 		i1070BC = getTurnForYear(-1070)
 		i1000BC = getTurnForYear(-1000)
 		i900BC = getTurnForYear(-900)
+		i800BC = getTurnForYear(-800)
 		i671BC = getTurnForYear(-671)
 		i600BC = getTurnForYear(-600)
 		i587BC = getTurnForYear(-587)
 		i500BC = getTurnForYear(-500)
 		i450BC = getTurnForYear(-450)
 		i400BC = getTurnForYear(-400)
+		i350BC = getTurnForYear(-350)
+		i300BC = getTurnForYear(-300)
 		i250BC = getTurnForYear(-250)
 		i100BC = getTurnForYear(-100)
 		i63BC = getTurnForYear(-63)
@@ -150,6 +156,12 @@ class Victory:
 		global provAfrica
 		global provCyprus
 		global provSouthernIberia
+		global provPeloponnese
+		global provAttica
+		global provMacedonia
+		global provCentralGreece
+		global provEuboea
+		global provCyclades
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getRFCProvince("Palestine")
@@ -165,6 +177,12 @@ class Victory:
 		provCyprus = riseFall.getRFCProvince("Cyprus")
 		provSouthernIberia = riseFall.getRFCProvince("Southern Iberia")
 		provPersia = riseFall.getRFCProvince("Persia")
+		provPeloponnese = riseFall.getRFCProvince("Peloponnese")
+		provAttica = riseFall.getRFCProvince("Attica")
+		provMacedonia = riseFall.getRFCProvince("Macedonia")
+		provCentralGreece = riseFall.getRFCProvince("Central Greece")
+		provEuboea = riseFall.getRFCProvince("Euboea")
+		provCyclades = riseFall.getRFCProvince("Cyclades")
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -266,7 +284,7 @@ class Victory:
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['lReligionFounded'][iCiv] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-
+		
 	def onLoadGame(self):
 		self.initGlobals()
 
@@ -600,6 +618,31 @@ class Victory:
 
 			if self.getGoal(iAthens, 1) == -1 and iGameTurn > i450BC:
 				self.setGoal(iAthens, 1, 0)
+				
+		elif civType == iSparta:
+			if self.getGoal(iSparta, 1) == -1:
+				goalCompleted = controlsProvince(iPlayer, provPeloponnese) and \
+						controlsProvince(iPlayer, provAttica) and \
+						controlsProvince(iPlayer, provMacedonia) and \
+						controlsProvince(iPlayer, provCentralGreece) and \
+						controlsProvince(iPlayer, provEuboea) and \
+						controlsProvince(iPlayer, provCyclades)
+				if goalCompleted:
+					self.setGoal(iSparta, 1, 1)
+				elif iGameTurn > i400BC:
+					self.setGoal(iSparta, 1, 0)
+					
+			if (iGameTurn == i350BC):
+					if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+						self.setGoal(iSparta, 2, 1)
+					else:
+						self.setGoal(iSparta, 2, 0)
+						
+			if (iGameTurn == i450BC):
+					if (pPlayer.getNumUnits() >= 30):
+							self.setGoal(iSparta, 0, 1)
+					else:
+							self.setGoal(iSparta, 0, 0)
 
 	def onCityBuilt(self, city):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
