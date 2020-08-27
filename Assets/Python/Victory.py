@@ -363,7 +363,7 @@ class Victory:
 					bNubia = provNubia.getNumCities(iPlayer) >= 2
 					if (bPhoenicia and bPalestine and bEgypt and bNubia):
 						self.setGoal(iEgypt, 2, 1)
-					elif iGameTurn > i1070BC:
+					elif iGameTurn >= i1070BC:
 						self.setGoal(iEgypt, 2, 0)
 		elif (civType == iSumeria):
 			if (iGameTurn == i2200BC):

@@ -2005,26 +2005,26 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 	iTurnCount = 0;
 	iMonthCount = 0;
 
-		for (iI = 0; iI < GC.getGameSpeedInfo(eSpeed).getNumTurnIncrements(); iI++)
+	for (iI = 0; iI < GC.getGameSpeedInfo(eSpeed).getNumTurnIncrements(); iI++)
+	{
+		if (iTurnMonth > (iMonthCount + GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement * GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement))
 		{
-			if (iTurnMonth > (iMonthCount + GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement * GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement))
-			{
-				iMonthCount += (GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement * GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement);
-				iTurnCount += GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement;
-			}
-			else
-			{
-				for (iJ = 0; iJ < GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement; iJ++)
-				{
-					iMonthIncrement = GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement;
-					iMonthCount += iMonthIncrement;
-					if (iMonthCount >= (iTurnMonth + iMonthIncrement/2))
-						break;
-					iTurnCount++;
-				}
-				break;
-			}
+			iMonthCount += (GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement * GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement);
+			iTurnCount += GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement;
 		}
+		else
+		{
+			for (iJ = 0; iJ < GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement; iJ++)
+			{
+				iMonthIncrement = GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement;
+				iMonthCount += iMonthIncrement;
+				if (iMonthCount >= (iTurnMonth + iMonthIncrement/2))
+					break;
+				iTurnCount++;
+			}
+			break;
+		}
+	}
 
 	return iTurnCount;
 }
