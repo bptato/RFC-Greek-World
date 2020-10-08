@@ -3,8 +3,8 @@ application/json
 	"MapFile":"GreekWorld",
 	"Game":{
 		"Calendar":"CALENDAR_DEFAULT",
-		"GameTurn":226,
-		"StartYear":-4400,
+		"GameTurn":0,
+		"StartYear":-900,
 		"ModPath":"Mods\\RFC-Greek-World",
 		"Options":[
 			"GAMEOPTION_RAGING_BARBARIANS",
@@ -43,7 +43,7 @@ application/json
 				"Upper Egypt",
 				"Lower Egypt"
 			],
-			"StartingYear":-4400,
+			"StartingYear":-900,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":110,
 			"ResearchModifier":110,
@@ -56,158 +56,6 @@ application/json
 			"WonderProductionModifier":90,
 			"GreatPeopleModifier":90,
 			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_SUMERIA",
-			"CivicOptions":{},
-			"StartingGold":100,
-			"StartingTechs":[
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION"
-			],
-			"StartingWars":[],
-			"RelatedLanguages":[],
-			"StartingX":46,
-			"StartingY":19,
-			"CoreProvinces":[
-				"Sumer"
-			],
-			"StartingYear":-4400,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":110,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":90,
-			"GreatPeopleModifier":90,
-			"InflationModifier":110,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_INDUS_VALLEY",
-			"CivicOptions":{},
-			"StartingGold":100,
-			"StartingTechs":[
-				"TECH_AGRICULTURE",
-				"TECH_LOGGING",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING"
-			],
-			"StartingWars":[],
-			"RelatedLanguages":[],
-			"StartingX":61,
-			"StartingY":28,
-			"CoreProvinces":[
-				"Indus Valley"
-			],
-			"StartingYear":-3290,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":110,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":2,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_ELAM",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":100,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_FISHING",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_LOGGING",
-				"TECH_BREAD_MAKING",
-				"TECH_WARRIOR_CODE"
-			],
-			"StartingWars":[
-				"CIVILIZATION_SUMERIA"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_PERSIA"
-			],
-			"StartingX":50,
-			"StartingY":23,
-			"CoreProvinces":[
-				"Khuzestan"
-			],
-			"StartingYear":-2720,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":140,
-			"ResearchModifier":110,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":140,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":120,
-			"InflationModifier":100,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_MINOA",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":100,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_FISHING",
-				"TECH_AGRICULTURE",
-				"TECH_MASONRY",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_BOATS"
-			],
-			"StartingWars":[],
-			"RelatedLanguages":[
-				"CIVILIZATION_MYCENAE",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_MACEDONIA",
-				"CIVILIZATION_BACTRIA"
-			],
-			"StartingX":33,
-			"StartingY":21,
-			"CoreProvinces":[
-				"Crete",
-				"Cyclades"
-			],
-			"StartingYear":-2690,
-			"CompactEmpireModifier":40,
-			"UnitUpkeepModifier":130,
-			"ResearchModifier":90,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":110,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":90,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":110,
-			"InflationModifier":90,
 			"GrowthModifier":100
 		},
 		{
@@ -234,11 +82,11 @@ application/json
 				"Phoenicia",
 				"Cyprus"
 			],
-			"StartingYear":-2495,
+			"StartingYear":-900,
 			"CompactEmpireModifier":5,
 			"UnitUpkeepModifier":130,
 			"ResearchModifier":90,
-			"DistanceMaintenanceModifier":100,
+			"DistanceMaintenanceModifier":20,
 			"NumCitiesMaintenanceModifier":100,
 			"UnitProductionModifier":100,
 			"CivicUpkeepModifier":100,
@@ -246,7 +94,7 @@ application/json
 			"BuildingProductionModifier":100,
 			"WonderProductionModifier":120,
 			"GreatPeopleModifier":120,
-			"InflationModifier":80,
+			"InflationModifier":90,
 			"GrowthModifier":100
 		},
 		{
@@ -272,8 +120,6 @@ application/json
 				"TECH_ARROWS"
 			],
 			"StartingWars":[
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_ELAM",
 				"CIVILIZATION_INDEPENDENT",
 				"CIVILIZATION_INDEPENDENT2"
 			],
@@ -284,7 +130,7 @@ application/json
 				"Akkad",
 				"Sumer"
 			],
-			"StartingYear":-1890,
+			"StartingYear":-900,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":120,
 			"ResearchModifier":110,
@@ -297,119 +143,6 @@ application/json
 			"WonderProductionModifier":90,
 			"GreatPeopleModifier":90,
 			"InflationModifier":110,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_HITTITE",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_CLIENT_KINGDOMS"
-			},
-			"StartingGold":150,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_FORTIFICATION",
-				"TECH_SPOKES",
-				"TECH_ARROWS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_BABYLON",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[],
-			"StartingX":41,
-			"StartingY":30,
-			"CoreProvinces":[
-				"Anatolia"
-			],
-			"StartingYear":-1610,
-			"CompactEmpireModifier":30,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":100,
-			"InflationModifier":110,
-			"GrowthModifier":100
-		},
-		{
-			"CivType":"CIVILIZATION_MYCENAE",
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":200,
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_POTTERY",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_LOGGING",
-				"TECH_URBAN_CULTURE",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_SPOKES",
-				"TECH_BOATS"
-			],
-			"StartingWars":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_INDEPENDENT",
-				"CIVILIZATION_INDEPENDENT2"
-			],
-			"RelatedLanguages":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_ATHENS",
-				"CIVILIZATION_SPARTA",
-				"CIVILIZATION_MACEDONIA",
-				"CIVILIZATION_BACTRIA"
-			],
-			"StartingX":30,
-			"StartingY":26,
-			"CoreProvinces":[
-				"Peloponnese"
-			],
-			"StartingYear":-1600,
-			"CompactEmpireModifier":30,
-			"UnitUpkeepModifier":100,
-			"ResearchModifier":100,
-			"DistanceMaintenanceModifier":100,
-			"NumCitiesMaintenanceModifier":100,
-			"UnitProductionModifier":100,
-			"CivicUpkeepModifier":100,
-			"HealthBonusModifier":0,
-			"BuildingProductionModifier":100,
-			"WonderProductionModifier":100,
-			"GreatPeopleModifier":90,
-			"InflationModifier":100,
 			"GrowthModifier":100
 		},
 		{
@@ -447,10 +180,8 @@ application/json
 			],
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_SUMERIA",
 				"CIVILIZATION_PHOENICIA",
 				"CIVILIZATION_BABYLON",
-				"CIVILIZATION_HITTITE",
 				"CIVILIZATION_INDEPENDENT",
 				"CIVILIZATION_INDEPENDENT2"
 			],
@@ -461,7 +192,7 @@ application/json
 				"Subartu",
 				"Akkad"
 			],
-			"StartingYear":-1396,
+			"StartingYear":-900,
 			"CompactEmpireModifier":20,
 			"UnitUpkeepModifier":110,
 			"ResearchModifier":100,
@@ -512,7 +243,7 @@ application/json
 			"CoreProvinces":[
 				"Palestine"
 			],
-			"StartingYear":-1052,
+			"StartingYear":-900,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":130,
 			"ResearchModifier":100,
@@ -565,13 +296,10 @@ application/json
 				"TECH_ARROWS"
 			],
 			"StartingWars":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
 				"CIVILIZATION_INDEPENDENT",
 				"CIVILIZATION_INDEPENDENT2"
 			],
 			"RelatedLanguages":[
-				"CIVILIZATION_MINOA",
 				"CIVILIZATION_MYCENAE",
 				"CIVILIZATION_SPARTA",
 				"CIVILIZATION_MACEDONIA",
@@ -583,7 +311,7 @@ application/json
 				"Attica",
 				"Euboea"
 			],
-			"StartingYear":-914,
+			"StartingYear":-900,
 			"CompactEmpireModifier":5,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -634,8 +362,6 @@ application/json
 				"TECH_ARROWS"
 			],
 			"StartingWars":[
-				"CIVILIZATION_MINOA",
-				"CIVILIZATION_MYCENAE",
 				"CIVILIZATION_INDEPENDENT",
 				"CIVILIZATION_INDEPENDENT2"
 			],
@@ -651,7 +377,7 @@ application/json
 			"CoreProvinces":[
 				"Peloponnese"
 			],
-			"StartingYear":-908,
+			"StartingYear":-900,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -700,7 +426,7 @@ application/json
 				"Crimea",
 				"Sarmatia"
 			],
-			"StartingYear":-902,
+			"StartingYear":-900,
 			"CompactEmpireModifier":20,
 			"UnitUpkeepModifier":90,
 			"ResearchModifier":130,
@@ -971,12 +697,8 @@ application/json
 			],
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_INDUS_VALLEY",
-				"CIVILIZATION_ELAM",
 				"CIVILIZATION_PHOENICIA",
 				"CIVILIZATION_BABYLON",
-				"CIVILIZATION_HITTITE",
 				"CIVILIZATION_ASSYRIA",
 				"CIVILIZATION_ATHENS",
 				"CIVILIZATION_SPARTA",
@@ -1005,7 +727,7 @@ application/json
 			"BuildingProductionModifier":100,
 			"WonderProductionModifier":100,
 			"GreatPeopleModifier":90,
-			"InflationModifier":100,
+			"InflationModifier":90,
 			"GrowthModifier":80
 		},
 		{
@@ -1121,7 +843,6 @@ application/json
 			],
 			"StartingWars":[
 				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_HITTITE",
 				"CIVILIZATION_ASSYRIA",
 				"CIVILIZATION_ISRAEL",
 				"CIVILIZATION_ATHENS",
@@ -1206,7 +927,6 @@ application/json
 				"TECH_ARROWS"
 			],
 			"StartingWars":[
-				"CIVILIZATION_INDUS_VALLEY",
 				"CIVILIZATION_PERSIA"
 			],
 			"RelatedLanguages":[],
@@ -1276,7 +996,6 @@ application/json
 				"TECH_ARROWS"
 			],
 			"StartingWars":[
-				"CIVILIZATION_INDUS_VALLEY",
 				"CIVILIZATION_PERSIA",
 				"CIVILIZATION_INDIA"
 			],
@@ -1497,8 +1216,6 @@ application/json
 				"TECH_ARROWS"
 			],
 			"StartingWars":[
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_INDUS_VALLEY",
 				"CIVILIZATION_ASSYRIA",
 				"CIVILIZATION_PERSIA",
 				"CIVILIZATION_ROME",
@@ -1670,13 +1387,7 @@ application/json
 			],
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_SUMERIA",
-				"CIVILIZATION_INDUS_VALLEY",
-				"CIVILIZATION_ELAM",
-				"CIVILIZATION_MINOA",
 				"CIVILIZATION_PHOENICIA",
-				"CIVILIZATION_HITTITE",
-				"CIVILIZATION_MYCENAE",
 				"CIVILIZATION_ASSYRIA",
 				"CIVILIZATION_ISRAEL",
 				"CIVILIZATION_ATHENS",
@@ -1803,7 +1514,20 @@ application/json
 					"UnitType":"UNIT_HYSKOS",
 					"Year":-1800,
 					"EndYear":-1500,
-					"SpawnFrequency":15
+					"SpawnFrequency":8
+				},
+				{
+					"Amount":3,
+					"UnitType":"UNIT_SEAPEOPLE",
+					"Year":-1200,
+					"EndYear":-1000,
+					"SpawnFrequency":8
+				},
+				{
+					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
+					"Year":-1300,
+					"EndYear":-850,
+					"SpawnFrequency":10
 				}
 			]
 		},
@@ -1818,6 +1542,13 @@ application/json
 					"Year":-3000,
 					"EndYear":-2000,
 					"SpawnFrequency":11
+				},
+				{
+					"Amount":2,
+					"UnitType":"UNIT_SUMERIAN_VULTURE",
+					"Year":-1900,
+					"EndYear":-1200,
+					"SpawnFrequency":10
 				}
 			]
 		},
@@ -1836,6 +1567,20 @@ application/json
 					"Year":-3000,
 					"EndYear":-2000,
 					"SpawnFrequency":10
+				},
+				{
+					"Amount":2,
+					"UnitType":"UNIT_SUMERIAN_VULTURE",
+					"Year":-2000,
+					"EndYear":-1200,
+					"SpawnFrequency":9
+				},
+				{
+					"Amount":3,
+					"UnitType":"UNIT_SPEARMAN",
+					"Year":-1200,
+					"EndYear":-650,
+					"SpawnFrequency":9
 				}
 			]
 		},
@@ -1905,6 +1650,13 @@ application/json
 					"Year":-1200,
 					"EndYear":-1000,
 					"SpawnFrequency":7
+				},
+				{
+					"Amount":3,
+					"UnitType":"UNIT_SPEARMAN",
+					"Year":-1200,
+					"EndYear":-700,
+					"SpawnFrequency":10
 				}
 			]
 		},
@@ -2151,7 +1903,15 @@ application/json
 			"Name":"Persia"
 		},
 		{
-			"Name":"Media"
+			"Name":"Media",
+			"Units":[
+				{
+					"UnitType":"UNIT_LIGHT_CAVALRY",
+					"Year":-850,
+					"EndYear":-680,
+					"SpawnFrequency":9
+				}
+			]
 		},
 		{
 			"Name":"Bactria",
@@ -2305,157 +2065,21 @@ application/json
 					"UnitType":"UNIT_WARRIOR",
 					"FacingDirection":4,
 					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-4400
+					"Year":-900
 				},
 				{
 					"UnitOwner":"CIVILIZATION_EGYPT",
 					"UnitType":"UNIT_PESEDJET_PRIEST",
 					"FacingDirection":4,
 					"UnitAIType":"UNITAI_MISSIONARY",
-					"Year":-4400
+					"Year":-900
 				},
 				{
 					"UnitOwner":"CIVILIZATION_EGYPT",
 					"UnitType":"UNIT_SETTLER",
 					"FacingDirection":4,
 					"UnitAIType":"UNITAI_SETTLE",
-					"Year":-4400
-				}
-			]
-		},
-		{
-			"x":46,
-			"y":19,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_SUMERIA",
-					"UnitType":"UNIT_WARRIOR",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-4400
-				},
-				{
-					"UnitOwner":"CIVILIZATION_SUMERIA",
-					"UnitType":"UNIT_ANUNNAKI_PRIEST",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_MISSIONARY",
-					"Year":-4400
-				},
-				{
-					"UnitOwner":"CIVILIZATION_SUMERIA",
-					"UnitType":"UNIT_SETTLER",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_SETTLE",
-					"Year":-4400
-				}
-			]
-		},
-		{
-			"x":43,
-			"y":20,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_TOWN_GUARD",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-4400
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-4400
-			}
-		},
-		{
-			"x":40,
-			"y":27,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_TOWN_GUARD",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-4400
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-4400
-			}
-		},
-		{
-			"x":61,
-			"y":28,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDUS_VALLEY",
-					"UnitType":"UNIT_HARAPPAN_CITY_BUILDER",
-					"Year":-3290
-				},
-				{
-					"UnitOwner":"CIVILIZATION_INDUS_VALLEY",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-3290
-				},
-				{
-					"UnitOwner":"CIVILIZATION_INDUS_VALLEY",
-					"UnitType":"UNIT_WORKER",
-					"Year":-3290
-				}
-			]
-		},
-		{
-			"x":50,
-			"y":23,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_ELAM",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-2720
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ELAM",
-					"UnitType":"UNIT_ELAM_KASSU_RISA",
-					"Year":-2720
-				},
-				{
-					"UnitOwner":"CIVILIZATION_ELAM",
-					"UnitType":"UNIT_WORKER",
-					"Year":-2720
-				}
-			]
-		},
-		{
-			"x":33,
-			"y":21,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_MINOA",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-2690
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MINOA",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-2690
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MINOA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-2690
-				}
-			]
-		},
-		{
-			"x":33,
-			"y":22,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_MINOA",
-					"UnitType":"UNIT_MINOA_TRIREME",
-					"Year":-2690,
-					"UnitAIType":"UNITAI_ESCORT_SEA"
+					"Year":-900
 				}
 			]
 		},
@@ -2486,13 +2110,35 @@ application/json
 				},
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_WORKER",
-					"Year":-2495
+					"UnitType":"UNIT_PHOENICIANS_BIREME",
+					"Year":-1600,
+					"UnitAIType":"UNITAI_SETTLER_SEA"
 				},
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_BAALITE_PRIEST",
-					"Year":-2495
+					"UnitType":"UNIT_SETTLER",
+					"Year":-1600
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-1600
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_PHOENICIANS_BIREME",
+					"Year":-850,
+					"UnitAIType":"UNITAI_SETTLER_SEA"
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-850
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-850
 				}
 			]
 		},
@@ -2513,6 +2159,16 @@ application/json
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
 					"UnitType":"UNIT_SPEARMAN",
+					"Year":-2495
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_WORKER",
+					"Year":-2495
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_BAALITE_PRIEST",
 					"Year":-2495
 				}
 			]
@@ -2561,91 +2217,15 @@ application/json
 					"UnitOwner":"CIVILIZATION_BABYLON",
 					"UnitType":"UNIT_WORKER",
 					"Year":-1890
-				}
-			]
-		},
-		{
-			"x":41,
-			"y":30,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_HITTITE",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-1610
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_HITTITE",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-1610
 				},
 				{
 					"Amount":5,
-					"UnitOwner":"CIVILIZATION_HITTITE",
-					"UnitType":"UNIT_HITTITE_HULUGANNI",
-					"Year":-1610
-				},
-				{
-					"UnitOwner":"CIVILIZATION_HITTITE",
-					"UnitType":"UNIT_WORKER",
-					"Year":-1610
-				}
-			]
-		},
-		{
-			"x":30,
-			"y":26,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-1600
-				},
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_MYCENAE_EQETA",
-					"Year":-1600
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-1600
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_HELLENIC_PRIEST",
-					"Year":-1600
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_WORKER",
-					"Year":-1600
-				}
-			]
-		},
-		{
-			"x":29,
-			"y":27,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_GALLEY",
-					"Year":-1600,
-					"UnitAIType":"UNITAI_SETTLER_SEA"
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-1600
-				},
-				{
-					"UnitOwner":"CIVILIZATION_MYCENAE",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-1600
+					"UnitOwner":"CIVILIZATION_BABYLON",
+					"UnitType":"UNIT_BABYLON_BOWMAN",
+					"Year":-620,
+					"UnitAIType":"UNITAI_ATTACK_CITY",
+					"AIOnly":true,
+					"DeclareWar":true
 				}
 			]
 		},
@@ -2850,6 +2430,62 @@ application/json
 			]
 		},
 		{
+			"x":27,
+			"y":30,
+			"Units":[
+				{
+					"Amount":2,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":33,
+			"y":29,
+			"Units":[
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":27,
+			"y":25,
+			"Units":[
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":15,
+			"y":18,
+			"Units":[
+				{
+					"Amount":5,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-203,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
 			"x":15,
 			"y":20,
 			"Units":[
@@ -2931,6 +2567,21 @@ application/json
 					"UnitType":"UNIT_TRIREME",
 					"Year":-812,
 					"UnitAIType":"UNITAI_ESCORT_SEA"
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_GALLEY",
+					"Year":-450
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-450
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-450
 				}
 			]
 		},
@@ -2968,6 +2619,25 @@ application/json
 					"UnitOwner":"CIVILIZATION_CELT",
 					"UnitType":"UNIT_WORKER",
 					"Year":-806
+				}
+			]
+		},
+		{
+			"x":17,
+			"y":50,
+			"Units":[
+				{
+					"UnitOwner":"CIVILIZATION_CELT",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-350,
+					"AIOnly":true
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CELT",
+					"UnitType":"UNIT_CELTIC_GALLIC_WARRIOR",
+					"Year":-350,
+					"AIOnly":true
+	
 				}
 			]
 		},
@@ -3775,7 +3445,7 @@ application/json
 		},
 		{
 			"x":46,
-			"y":6,
+			"y":3,
 			"Units":[
 				{
 					"Amount":2,
@@ -3787,22 +3457,6 @@ application/json
 			"City":{
 				"CityOwner":"CIVILIZATION_INDEPENDENT2",
 				"Year":-600,
-				"CityPopulation":1
-			}
-		},
-		{
-			"x":42,
-			"y":25,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-3000
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-3000,
 				"CityPopulation":1
 			}
 		},
@@ -3853,22 +3507,6 @@ application/json
 			"City":{
 				"CityOwner":"CIVILIZATION_INDEPENDENT2",
 				"Year":-2000,
-				"CityPopulation":1
-			}
-		},
-		{
-			"x":41,
-			"y":31,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
-					"UnitType":"UNIT_WARRIOR",
-					"Year":-2400
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT2",
-				"Year":-2400,
 				"CityPopulation":1
 			}
 		},

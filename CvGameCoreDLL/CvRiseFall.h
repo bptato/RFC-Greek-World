@@ -22,6 +22,8 @@ class CvRiseFall {
 		void checkLeader(CivilizationTypes civType, PlayerTypes playerType);
 		void checkMinorWars(PlayerTypes playerID, int turn);
 		bool checkUnitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign);
+		void updatePlayerPlots();
+		void checkStabilityEffect(CivilizationTypes civType, PlayerTypes playerType);
 
 		void spawnHumanCivilization(CivilizationTypes civType);
 		void spawnAICivilization(CivilizationTypes civType);
@@ -47,6 +49,7 @@ class CvRiseFall {
 		CvRFCProvince* getRFCProvince(int provinceID);
 		int getNumProvinces();
 		CvRFCProvince* getProvinceForPlot(int x, int y);
+		bool skipConditionalSpawn(CivilizationTypes civType);
 
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);

@@ -17,30 +17,52 @@ DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
 OWINEPREFIX="$HOME/compile_linux"
 PYTHON="./Python24"
 BOOST="./Boost-1.32.0"
-PARALLEL=1 #Spawn a bunch of child processes in release mode. 1 - on, 0 - off
+#Spawn a bunch of child processes in release mode. true - on, false - off
+PARALLEL=true
+#Generate compile_commands.json for the clangd language server. true - on, false - off
+#TODO: this doesn't work yet
+CLANGD=false
 
 #You probably won't have to change anything below
 set -e
 export WINEDEBUG=-all
 PID="$$"
+WINEPWD="$(winepath -w "$PWD")"
+
+if $CLEAN && $CLANGD; then
+	printf '[\n' > ./compile_commands.json.new
+fi
 
 error() {
 	echo "ERROR: $*" >&2
 	exit 2
 }
 
-CLEAN=1
+CLEAN=false
+
+tolower() {
+	printf '%s\n' "$1" | tr '[:upper:]' '[:lower:]'
+}
+
+toupper() {
+	printf '%s\n' "$1" | tr '[:lower:]' '[:upper:]'
+}
+
+dec() {
+	printf '%d\n' $(($1-1))
+}
 
 if test $# -lt 1; then
 	error "Unspecified target. USAGE: ./compile.sh [Release/Debug] [clean]"
 else #iterate over arguments
 	for arg in "$@"; do
-		if test "$arg" = "Release" || test "$arg" = "Debug"; then
-			TARGET=$arg
-		elif test "$arg" = "clean"; then
-			CLEAN=0
+		larg="$(tolower "$arg")"
+		if test "$larg" = "release" || test "$larg" = "debug"; then
+			TARGET="$(toupper "$(printf '%s\n' "$arg" | head -c1)")$(tolower "$(printf '%s\n' "$arg" | tail -c+2)")"
+		elif test "$larg" = "clean"; then
+			CLEAN=true
 		else
-			error "Incorrect argument $arg"
+			error "Invalid argument $arg"
 		fi
 	done
 fi
@@ -50,7 +72,7 @@ if test "$TARGET"; then
 fi
 
 #Clean mode.
-if test $CLEAN = 0; then
+if $CLEAN; then
 	if test "$TARGET"; then
 		if test -e "$TARGET"; then
 			echo "CLEAN: cleaning $TARGET"
@@ -79,10 +101,24 @@ owine() { #wine 1.7.55
 	WINEPREFIX="$OWINEPREFIX" $wine17 "$@"
 }
 
+generate_compile_command() {
+	printf \
+'{
+"directory": "%s",
+"command": "%s",
+"file": "%s"
+},\n' "$WINEPWD" "$(printf '"%s" ' "$@" | sed 's/"\/G7" //g' | sed 's/"/\\"/g')" "$WINEPWD/$2" >> compile_commands.json.new
+}
+
 cl() {
 	if ! owine "$VCTOOLKIT/bin/cl.exe" "$@"; then
 		echo "Failed to compile $1" >&2
-		kill -9 "$PID" #Yes this is quite brutal but I'm not aware of any better methods to do this
+		#Yes this is quite brutal but I'm not aware of any better methods to do this
+		kill -9 "$PID"
+		exit 1
+	fi
+	if $CLEAN && $CLANGD; then
+		generate_compile_command "c++" "$@"
 	fi
 }
 
@@ -134,7 +170,7 @@ fi
 
 #Compile the files
 if test "$TARGET" = "Release"; then
-	if test "$PARALLEL" -eq 1; then
+	if $PARALLEL; then
 		PIDS=""
 		for COMPILEFILE in *.cpp; do
 			if test "$COMPILEFILE" != "_precompile.cpp"; then
@@ -153,7 +189,7 @@ if test "$TARGET" = "Release"; then
 				exit 1
 			fi
 		done
-	elif test "$PARALLEL" -eq 0; then
+	else
 		for COMPILEFILE in *.cpp; do
 			if test "$COMPILEFILE" != "_precompile.cpp"; then
 				ci=$((ci+1))
@@ -162,8 +198,6 @@ if test "$TARGET" = "Release"; then
 				fi
 			fi
 		done
-	else
-		error "PARALLEL not set to a valid value"
 	fi
 elif test "$TARGET" = "Debug"; then
 	for COMPILEFILE in *.cpp; do
@@ -189,5 +223,11 @@ else
 fi
 
 link $FLAGS "/LIBPATH:$PSDK/Lib" "$BOOST/libs/boost_python-vc71-mt-1_32.lib" "winmm.lib" "user32.lib" "$VCTOOLKIT/lib/msvcprt.lib" "$VCTOOLKIT/lib/msvcrt.lib" "$PYTHON/libs/python24.lib" "$VCTOOLKIT/lib/OLDNAMES.lib" "/out:$DLLOUTPUT""$@"
+
+if $CLEAN && $CLANGD; then
+	cat compile_commands.json.new | head -n$(dec $(cat compile_commands.json.new | wc -l)) > compile_commands.json
+	rm compile_commands.json.new
+	printf '}\n]\n' >> compile_commands.json
+fi
 
 echo "Done!"

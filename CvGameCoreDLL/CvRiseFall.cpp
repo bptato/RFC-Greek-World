@@ -39,6 +39,7 @@ void CvRiseFall::onGameStarted() {
 	GC.logMsg("CvRiseFall::onGameStarted");
 	CvGame& game = GC.getGameINLINE();
 
+	bool activePlayerSet = false;
 	for(int i = 0; i<MAX_CIV_PLAYERS; i++) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isHuman()) {
@@ -47,6 +48,9 @@ void CvRiseFall::onGameStarted() {
 			CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
 			player.initUnit(((UnitTypes)0), rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY()); //will be killed as soon as autoplay starts, this is just to reveal the player's starting position like in RFC
 			gDLL->getEngineIFace()->cameraLookAt(startingPlot->getPoint());
+			if(!activePlayerSet) {
+				game.setActivePlayer((PlayerTypes)i); //just to be sure
+			}
 		}
 	}
 
@@ -69,27 +73,13 @@ void CvRiseFall::checkTurn() {
 			bool spawnedNow = false;
 			if(!rfcPlayer.isSpawned()) {
 				//conditional spawns
-				if(!rfcPlayer.isHuman()) {
-					bool skipConditionalSpawn = false;
-					if((CivilizationTypes)i == CIVILIZATION_SASSANID) {
-						if(getPlayerTypeForCiv(CIVILIZATION_PERSIA) != NO_PLAYER || getPlayerTypeForCiv(CIVILIZATION_ELAM) != NO_PLAYER) {
-							continue;
-						}
-					} else if((CivilizationTypes)i == CIVILIZATION_BYZANTIUM) {
-						PlayerTypes romePlayer = getPlayerTypeForCiv(CIVILIZATION_ROME);
-						CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
-						if(romePlayer == NO_PLAYER || startingPlot->getOwnerINLINE() != romePlayer || getRFCPlayer(GET_PLAYER(romePlayer).getCivilizationType()).getTotalStability() >= 40) {
-							continue;
-						}
+				if(!rfcPlayer.isHuman() && skipConditionalSpawn((CivilizationTypes)i)) {
+					if(rfcPlayer.getStartingTurn() < 0) {
+						rfcPlayer.setStartingTurn(game.getGameTurnYear());
+					} else if(rfcPlayer.getStartingTurn() < game.getGameTurnYear() - 10) {
+						rfcPlayer.setSpawned(true);
 					}
-					if(skipConditionalSpawn) {
-						if(rfcPlayer.getStartingTurn() < 0) {
-							rfcPlayer.setStartingTurn(game.getGameTurnYear());
-						} else if(rfcPlayer.getStartingTurn() < game.getGameTurnYear() - 10) {
-							rfcPlayer.setSpawned(true);
-						}
-						continue;
-					}
+					continue;
 				}
 
 				spawnedNow = true; //for unit immobilization
@@ -117,81 +107,8 @@ void CvRiseFall::checkTurn() {
 			if(playerType != NO_PLAYER) { //if yes, check stability, flipping, scheduled units and cities.
 				CvPlayer& player = GET_PLAYER(playerType);
 
-				//Stability effect check
 				if(!player.isMinorCiv() && !player.isBarbarian()) {
-					if(game.getGameTurn() % 6 == 0 && game.getGameTurn()>rfcPlayer.getStartingTurn() + 20) { //we don't want new civs to collapse, nor do we want to check all of this every turn
-						int totalStability = rfcPlayer.getTotalStability();
-						if(rfcPlayer.getTotalStability() < 0) {
-							//shaky, risk of city independent secessions
-							if(game.getSorenRandNum(100, "Secession roll") <= 5) {
-								int j;
-								CvCity* chosenCity = NULL;
-								int chosenHappiness = 0; //no secessions if all cities are happy.
-
-								for(CvCity* city = player.firstCity(&j); NULL != city; city = player.nextCity(&j)) {
-									if(!city->isCapital()) {
-										if(city->happyLevel() - city->unhappyLevel() < chosenHappiness || chosenCity == NULL) {
-											chosenHappiness = city->happyLevel() - city->unhappyLevel();
-											chosenCity = city;
-										}
-									}
-								}
-
-								if(chosenCity != NULL) {
-									citySecession(chosenCity);
-									GC.logMsg("CvRiseFall::checkTurn - City secession!");
-								}
-
-								for(j = 0; j<STABILITY_CATEGORIES; ++j) {
-									int newStability = rfcPlayer.getPermStability(j) / 3;
-									newStability *= 2;
-									rfcPlayer.setPermStability(j, newStability);
-								}
-							}
-						}
-						if(rfcPlayer.getTotalStability() < -20) {
-							//TODO: rebirths?
-							if(game.getSorenRandNum(100, "Secession roll") <= 10) {
-								int j;
-								CvCity* chosenCity = NULL;
-								int chosenHappiness = 0; //no secessions if all cities are happy.
-
-								for(CvCity* city = player.firstCity(&j); NULL != city; city = player.nextCity(&j)) {
-									if(!city->isCapital()) {
-										if(city->happyLevel() - city->unhappyLevel() < chosenHappiness || chosenCity == NULL) {
-											chosenHappiness = city->happyLevel() - city->unhappyLevel();
-											chosenCity = city;
-										}
-									}
-								}
-
-								if(chosenCity != NULL) {
-									citySecession(chosenCity);
-								}
-
-								for(j = 0; j<STABILITY_CATEGORIES; ++j) {
-									int newStability = rfcPlayer.getPermStability(j) / 4;
-									newStability *= 3;
-									rfcPlayer.setPermStability(j, newStability);
-								}
-							}
-						}
-						if(rfcPlayer.getTotalStability() < -40) {
-							//collapsing, risk of complete collapse (or collapse to core in case of the human player)
-							if(game.getSorenRandNum(100, "Collapse roll") <= 40) {
-								if(player.isHuman()) {
-									capitalCollapse(playerType);
-								} else {
-									completeCollapse(playerType);
-								}
-								for(int j = 0; j<STABILITY_CATEGORIES; ++j) {
-									rfcPlayer.setPermStability(j, 0);
-									rfcPlayer.setTempStability(j, 0);
-								}
-							}
-						}
-					}
-
+					checkStabilityEffect((CivilizationTypes)i, playerType);
 
 					//Flip check (here because we want the flipped units to be spawned right after flipping the cities)
 					int flipCountdown = rfcPlayer.getFlipCountdown();
@@ -213,8 +130,8 @@ void CvRiseFall::checkTurn() {
 
 							if(toFlip.size()>0) {
 								for(std::vector<CvCity*>::iterator it = toFlip.begin(); it != toFlip.end(); ++it) {
-									if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER((*it)->getOwnerINLINE()).getTeam())) {
-										GET_TEAM(player.getTeam()).declareWar(GET_PLAYER((*it)->getOwnerINLINE()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
+									if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER((*it)->getOwner()).getTeam())) {
+										GET_TEAM(player.getTeam()).declareWar(GET_PLAYER((*it)->getOwner()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
 									}
 									flipCity(*it, playerType, true);
 								}
@@ -247,7 +164,7 @@ void CvRiseFall::checkTurn() {
 								PlayerTypes plotOwner = GC.getMap().plot(it->getX(), it->getY())->getOwner();
 								if(plotOwner != NO_PLAYER) {
 									if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
-										GET_TEAM(player.getTeam()).setAtWar(GET_PLAYER(plotOwner).getTeam(), true);
+										GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(plotOwner).getTeam(), true, WARPLAN_TOTAL);
 									}
 								}
 							}
@@ -305,29 +222,7 @@ void CvRiseFall::checkTurn() {
 	}
 
 	//Player plot stability
-	int* ownedPlots = new int[GC.getNumCivilizationInfos()];
-
-	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
-		ownedPlots[i] = 0;
-	}
-
-	for(int x = 0; x<GC.getMap().getGridWidth(); ++x) {
-		for(int y = 0; y<GC.getMap().getGridHeight(); ++y) {
-			CvPlot* plot = GC.getMap().plot(x, y);
-			if(!plot->isWater() && !plot->isPeak() && plot->getOwner() != NO_PLAYER) {
-				CivilizationTypes civType = GET_PLAYER(plot->getOwner()).getCivilizationType();
-				if(plot->getSettlerValue(civType) < 90) {
-					ownedPlots[civType] += 1;
-				}
-			}
-		}
-	}
-
-	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
-		getRFCPlayer((CivilizationTypes)i).setNumPlots(ownedPlots[i]);
-	}
-
-	SAFE_DELETE_ARRAY(ownedPlots);
+	updatePlayerPlots();
 }
 
 void CvRiseFall::checkPlayerTurn(PlayerTypes playerID) {
@@ -390,6 +285,7 @@ void CvRiseFall::checkLeader(CivilizationTypes civType, PlayerTypes playerType) 
 	int reign = 0;
 	bool reignSet = false;
 	for(int i = 0; i<GC.getNumLeaderHeadInfos(); i++) {
+		GC.logMsg("isLeaders(%d)", i);
 		if(civInfo.isLeaders(i)) {
 			CvLeaderHeadInfo& leaderInfo = GC.getLeaderHeadInfo((LeaderHeadTypes)i);
 			if(leaderInfo.getLeaderReign() <= GC.getGameINLINE().getGameTurnYear() && (!reignSet || reign < leaderInfo.getLeaderReign())) {
@@ -418,12 +314,119 @@ void CvRiseFall::spawnHumanCivilization(CivilizationTypes civType) {
 			}
 
 			finishMajorCivSpawn(civType, (PlayerTypes)i);
-			game.setActivePlayer((PlayerTypes)i);
+			//game.setActivePlayer((PlayerTypes)i);
 			GC.logMsg("CvRiseFall::spawnHumanCivilization - Spawned human civ %i", civType);
 			return;
 		}
 	}
 	GC.logMsg("CvRiseFall::spawnHumanCivilization - Failed to spawn human civ %i", civType);
+}
+
+void CvRiseFall::updatePlayerPlots() {
+	int* ownedPlots = new int[GC.getNumCivilizationInfos()];
+
+	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
+		ownedPlots[i] = 0;
+	}
+
+	for(int x = 0; x<GC.getMap().getGridWidth(); ++x) {
+		for(int y = 0; y<GC.getMap().getGridHeight(); ++y) {
+			CvPlot* plot = GC.getMap().plot(x, y);
+			if(!plot->isWater() && !plot->isPeak() && plot->getOwner() != NO_PLAYER) {
+				CivilizationTypes civType = GET_PLAYER(plot->getOwner()).getCivilizationType();
+				if(plot->getSettlerValue(civType) < 90) {
+					ownedPlots[civType] += 1;
+				}
+			}
+		}
+	}
+
+	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
+		getRFCPlayer((CivilizationTypes)i).setNumPlots(ownedPlots[i]);
+	}
+
+	SAFE_DELETE_ARRAY(ownedPlots);
+}
+
+void CvRiseFall::checkStabilityEffect(CivilizationTypes civType, PlayerTypes playerType) {
+	CvGame& game = GC.getGameINLINE();
+	//we don't want new civs to collapse, nor do we want to check all of this every turn
+	if(game.getGameTurn() % 6 != 0) {
+		return;
+	}
+	CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
+	if(game.getGameTurn() <= rfcPlayer.getStartingTurn() + 20) {
+		return;
+	}
+	CvPlayer& player = GET_PLAYER(playerType);
+
+	if(rfcPlayer.getTotalStability() < 0) {
+		//shaky, risk of city independent secessions
+		if(game.getSorenRandNum(100, "Secession roll") <= 5) {
+			int j;
+			CvCity* chosenCity = NULL;
+			int chosenHappiness = 0; //no secessions if all cities are happy.
+
+			for(CvCity* city = player.firstCity(&j); NULL != city; city = player.nextCity(&j)) {
+				if(!city->isCapital()) {
+					if(city->happyLevel() - city->unhappyLevel() < chosenHappiness) {
+						chosenHappiness = city->happyLevel() - city->unhappyLevel();
+						chosenCity = city;
+					}
+				}
+			}
+
+			if(chosenCity != NULL) {
+				citySecession(chosenCity);
+
+				for(j = 0; j < STABILITY_CATEGORIES; ++j) {
+					int newStability = rfcPlayer.getPermStability(j) / 3;
+					newStability *= 2;
+					rfcPlayer.setPermStability(j, newStability);
+				}
+			}
+		}
+	}
+	if(rfcPlayer.getTotalStability() < -20) {
+		if(game.getSorenRandNum(100, "Secession roll") <= 10) {
+			int j;
+			CvCity* chosenCity = NULL;
+			int chosenHappiness = 0;
+
+			for(CvCity* city = player.firstCity(&j); NULL != city; city = player.nextCity(&j)) {
+				if(!city->isCapital()) {
+					if(city->happyLevel() - city->unhappyLevel() < chosenHappiness || chosenCity == NULL) {
+						chosenHappiness = city->happyLevel() - city->unhappyLevel();
+						chosenCity = city;
+					}
+				}
+			}
+
+			if(chosenCity != NULL) {
+				citySecession(chosenCity);
+			}
+
+			for(j = 0; j < STABILITY_CATEGORIES; ++j) {
+				int newStability = rfcPlayer.getPermStability(j) / 4;
+				newStability *= 3;
+				rfcPlayer.setPermStability(j, newStability);
+			}
+		}
+	}
+	if(rfcPlayer.getTotalStability() < -40) {
+		//collapsing, risk of complete collapse (or collapse to core in case of the human player)
+		if(game.getSorenRandNum(100, "Collapse roll") <= 40) {
+			if(player.isHuman()) {
+				capitalCollapse(playerType);
+			} else {
+				completeCollapse(playerType);
+			}
+			for(int j = 0; j<STABILITY_CATEGORIES; ++j) {
+				rfcPlayer.setPermStability(j, 0);
+				rfcPlayer.setTempStability(j, 0);
+			}
+		}
+	}
 }
 
 void CvRiseFall::spawnAICivilization(CivilizationTypes civType) {
@@ -472,8 +475,8 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 	CvGame& game = GC.getGameINLINE();
 
 	eraseSurroundings(civType, playerType);
-	GET_TEAM(GET_PLAYER(BARBARIAN_PLAYER).getTeam()).declareWar(player.getTeam(), false, WARPLAN_TOTAL);
 	//player.setAlive(true); //TODO: I haven't fully investigated the consequences of disabling this yet, but since calling it here seems to do more harm than good I'll comment it out for now.
+	player.setAlive(true); //enabling it for now...
 	assignStartingTechs(civType, playerType);
 	assignStartingCivics(civType, playerType);
 	setupStartingWars(civType, playerType);
@@ -512,8 +515,8 @@ void CvRiseFall::setupStartingWars(CivilizationTypes civType, PlayerTypes player
 		PlayerTypes loopPlayerType = getPlayerTypeForCiv(*it);
 		if(loopPlayerType != NO_PLAYER) {
 			CvPlayer& loopPlayer = GET_PLAYER(loopPlayerType);
-			GET_TEAM(player.getTeam()).setAtWar(loopPlayer.getTeam(), true);
-			GET_TEAM(loopPlayer.getTeam()).setAtWar(player.getTeam(), true);
+			GET_TEAM(player.getTeam()).declareWar(loopPlayer.getTeam(), true, WARPLAN_TOTAL);
+			GET_TEAM(loopPlayer.getTeam()).declareWar(player.getTeam(), true, WARPLAN_TOTAL);
 		}
 	}
 }
@@ -611,7 +614,7 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 			while (unitNode != NULL) {
 				loopUnit = ::getUnit(unitNode->m_data);
 
-				if(loopUnit->getOwnerINLINE() != newOwnerType && (previousOwnerType==NO_PLAYER || previousOwnerType==loopUnit->getOwnerINLINE())) {
+				if(loopUnit->getOwner() != newOwnerType && (previousOwnerType==NO_PLAYER || previousOwnerType==loopUnit->getOwner())) {
 					CvRFCUnit scheduledUnit;
 					scheduledUnit.setYear(GC.getGame().getGameTurnYear());
 					scheduledUnit.setX(x);
@@ -707,9 +710,28 @@ CvRFCProvince* CvRiseFall::getProvinceForPlot(int x, int y) {
 bool CvRiseFall::checkUnitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign) {
 	int i;
 	for(CvUnit* unit = GET_PLAYER(owner).firstUnit(&i); unit != NULL; unit = GET_PLAYER(owner).nextUnit(&i)) {
-		if(unit->plot()->getOwnerINLINE() == foreign) {
+		if(unit->plot()->getOwner() == foreign) {
 			return true;
 		}
+	}
+	return false;
+}
+
+bool CvRiseFall::skipConditionalSpawn(CivilizationTypes civType) {
+	switch(civType) {
+		case CIVILIZATION_SASSANID:
+			if(getPlayerTypeForCiv(CIVILIZATION_PERSIA) != NO_PLAYER || getPlayerTypeForCiv(CIVILIZATION_ELAM) != NO_PLAYER) {
+				return true;
+			}
+			break;
+		case CIVILIZATION_BYZANTIUM:
+			PlayerTypes romePlayer = getPlayerTypeForCiv(CIVILIZATION_ROME);
+			CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
+			CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
+			if(romePlayer == NO_PLAYER || startingPlot->getOwner() != romePlayer || getRFCPlayer(GET_PLAYER(romePlayer).getCivilizationType()).getTotalStability() >= 40) {
+				return true;
+			}
+			break;
 	}
 	return false;
 }
