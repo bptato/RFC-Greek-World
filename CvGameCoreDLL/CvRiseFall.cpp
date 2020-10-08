@@ -476,7 +476,8 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 
 	eraseSurroundings(civType, playerType);
 	//player.setAlive(true); //TODO: I haven't fully investigated the consequences of disabling this yet, but since calling it here seems to do more harm than good I'll comment it out for now.
-	player.setAlive(true); //enabling it for now...
+	//player.setAlive(true); //enabling it for now...
+	GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(BARBARIAN_PLAYER).getTeam(), true, NO_WARPLAN);
 	assignStartingTechs(civType, playerType);
 	assignStartingCivics(civType, playerType);
 	setupStartingWars(civType, playerType);

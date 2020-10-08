@@ -126,11 +126,6 @@ void CvInfoBase::resetAsked() {
 
 const wchar* CvInfoBase::getDescription(uint uiForm) const
 {
-	while(m_aCachedDescriptions.size() <= uiForm)
-	{
-		m_aCachedDescriptions.push_back(gDLL->getObjectText(m_szTextKey, m_aCachedDescriptions.size()));
-	}
-
 	//bluepotato start: fix civ listing
 	if(!GC.getGame().isFinalInitialized()) {
 		if(asked==NULL) {
@@ -159,6 +154,11 @@ const wchar* CvInfoBase::getDescription(uint uiForm) const
 		}
 	}
 	//bluepotato end
+
+	while(m_aCachedDescriptions.size() <= uiForm)
+	{
+		m_aCachedDescriptions.push_back(gDLL->getObjectText(m_szTextKey, m_aCachedDescriptions.size()));
+	}
 
 	return m_aCachedDescriptions[uiForm];
 }
