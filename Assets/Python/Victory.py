@@ -162,6 +162,7 @@ class Victory:
 		global provCentralGreece
 		global provEuboea
 		global provCyclades
+		global provAnatolia
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getRFCProvince("Palestine")
@@ -183,6 +184,7 @@ class Victory:
 		provCentralGreece = riseFall.getRFCProvince("Central Greece")
 		provEuboea = riseFall.getRFCProvince("Euboea")
 		provCyclades = riseFall.getRFCProvince("Cyclades")
+		provAnatolia = riseFall.getRFCProvince("Anatolia")
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -579,7 +581,7 @@ class Victory:
 					if holyCity.getOwner() == iPlayer and holyCity.isCapital():
 						ashurbanipalLibrary = gc.getInfoTypeForString("BUILDING_ASHURBANIPAL_LIBRARY")
 						if holyCity.isHasBuilding(ashurbanipalLibrary):
-							self.setGoal(Assyria, 1, 1)
+							self.setGoal(iAssyria, 1, 1)
 			if self.getGoal(iAssyria, 2) == -1:
 				goalCompleted = controlsProvince(iPlayer, provSubartu) and \
 						controlsProvince(iPlayer, provAkkad) and \
