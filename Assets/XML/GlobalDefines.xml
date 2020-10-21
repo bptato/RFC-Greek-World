@@ -1690,4 +1690,8 @@
 		<DefineName>MERCENARY_MIN_LAST_ACTION_DIFFERENCE</DefineName>
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>HOLY_CITY_RELOCATION_RATE</DefineName>
+		<iDefineIntVal>30</iDefineIntVal>
+	</Define>
 </Civ4Defines>
