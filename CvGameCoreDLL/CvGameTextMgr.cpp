@@ -3902,12 +3902,6 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			szInfoText.append(szTempString);
 		}
 
-		szTempString.Format(L"TXT_KEY_UP_%s", GC.getCivilizationInfo(eCivilization).getRFCID().c_str());
-		szText = gDLL->getText(szTempString);
-		szTempString.Format(L" %s", szText.GetCString());
-		szInfoText.append(szTempString);
-
-
 		szText = gDLL->getText("TXT_KEY_UHV_GOALS");
 		if(bDawnOfMan) {
 			szTempString.Format(NEWLINE SETCOLR L"%s " ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
