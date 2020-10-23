@@ -6292,6 +6292,11 @@ void CvGame::createBarbarianUnits()
 
 	bAnimals = false;
 
+	//bluepotato
+	if(getCurrentEra() == NO_ERA) {
+		return;
+	}
+
 	if (GC.getEraInfo(getCurrentEra()).isNoBarbUnits())
 	{
 		bAnimals = true;
@@ -7474,7 +7479,9 @@ void CvGame::addReplayMessage(ReplayMessageTypes eType, PlayerTypes ePlayer, CvW
 
 		//bluepotato
 		if(eType == REPLAY_MESSAGE_PLOT_OWNER_CHANGE) {
-			pMessage->setPlayerColor(GET_PLAYER(ePlayer).getPlayerColor());
+			if(ePlayer != NO_PLAYER) {
+				pMessage->setPlayerColor(GET_PLAYER(ePlayer).getPlayerColor());
+			}
 		}
 
 		m_listReplayMessages.push_back(pMessage);

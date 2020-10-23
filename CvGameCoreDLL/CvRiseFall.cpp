@@ -60,127 +60,21 @@ void CvRiseFall::onGameStarted() {
 
 void CvRiseFall::checkTurn() {
 	CvGame& game = GC.getGameINLINE();
+	GC.logMsg("CvRiseFall::checkTurn - turn %d", game.getGameTurn());
 
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
 		CvRFCPlayer& rfcPlayer = getRFCPlayer((CivilizationTypes)i);
-
-		if(!rfcPlayer.isEnabled()) {
-			continue;
+		if(rfcPlayer.isHuman()) {
+			int turn = game.getGameTurn();
+			turn = turn <= 1 ? turn : turn + 1;
+			checkTurnForPlayer((CivilizationTypes)i, turn);
 		}
-		PlayerTypes playerType = getPlayerTypeForCiv((CivilizationTypes)i);
+	}
 
-		if(rfcPlayer.getStartingYear() <= game.getGameTurnYear() || playerType != NO_PLAYER || rfcPlayer.isMinor()) { //barbarians & minors as well
-			bool spawnedNow = false;
-			if(!rfcPlayer.isSpawned()) {
-				//conditional spawns
-				if(!rfcPlayer.isHuman() && skipConditionalSpawn((CivilizationTypes)i)) {
-					if(rfcPlayer.getStartingTurn() < 0) {
-						rfcPlayer.setStartingTurn(game.getGameTurnYear());
-					} else if(rfcPlayer.getStartingTurn() < game.getGameTurnYear() - 10) {
-						rfcPlayer.setSpawned(true);
-					}
-					continue;
-				}
-
-				spawnedNow = true; //for unit immobilization
-
-				if(rfcPlayer.isHuman()) { //major human civs
-					spawnHumanCivilization((CivilizationTypes)i);
-				} else if(playerType == BARBARIAN_PLAYER) { //barbarian
-					rfcPlayer.setSpawned(true);
-					CvPlayer& barbPlayer = GET_PLAYER(playerType);
-					for (int j = 0; j < MAX_CIV_TEAMS; j++) {
-						if ((TeamTypes)j != barbPlayer.getTeam()) {
-							GET_TEAM(barbPlayer.getTeam()).declareWar(((TeamTypes)j), false, NO_WARPLAN);
-						}
-					}
-				} else if(rfcPlayer.isMinor()) { //minor civs
-					spawnMinorCivilization((CivilizationTypes)i);
-				} else { //major AI civs
-					spawnAICivilization((CivilizationTypes)i);
-				}
-				spawnedNow = true;
-			}
-
-			playerType = getPlayerTypeForCiv((CivilizationTypes)i); //refresh playerType as we might've spawned now
-
-			if(playerType != NO_PLAYER) { //if yes, check stability, flipping, scheduled units and cities.
-				CvPlayer& player = GET_PLAYER(playerType);
-
-				if(!player.isMinorCiv() && !player.isBarbarian()) {
-					checkStabilityEffect((CivilizationTypes)i, playerType);
-
-					//Flip check (here because we want the flipped units to be spawned right after flipping the cities)
-					int flipCountdown = rfcPlayer.getFlipCountdown();
-					if(flipCountdown>=0) {
-						rfcPlayer.setFlipCountdown(flipCountdown - 1);
-						if(flipCountdown==0) {
-							std::vector<CvCity*> toFlip;
-							for(int j = 0; j<MAX_PLAYERS; ++j) {
-								if((PlayerTypes)j != playerType) {
-									CvPlayer& loopPlayer = GET_PLAYER((PlayerTypes)j);
-									int k;
-									for(CvCity* loopCity = loopPlayer.firstCity(&k); loopCity != NULL; loopCity = loopPlayer.nextCity(&k)) {
-										if(rfcPlayer.isInCoreBounds(loopCity->getX(), loopCity->getY()) && !loopCity->isCapital()) {
-											toFlip.push_back(loopCity);
-										}
-									}
-								}
-							}
-
-							if(toFlip.size()>0) {
-								for(std::vector<CvCity*>::iterator it = toFlip.begin(); it != toFlip.end(); ++it) {
-									if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER((*it)->getOwner()).getTeam())) {
-										GET_TEAM(player.getTeam()).declareWar(GET_PLAYER((*it)->getOwner()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
-									}
-									flipCity(*it, playerType, true);
-								}
-							}
-						}
-					}
-				}
-
-				//Check scheduled cities
-				std::vector<CvRFCCity>& scheduledCities = rfcPlayer.getScheduledCities();
-				for(std::vector<CvRFCCity>::iterator it = scheduledCities.begin(); it != scheduledCities.end();) {
-					if(game.getGameTurnYear() >= it->getYear()) {
-						player.found(it->getX(), it->getY());
-						if(GC.getMap().plot(it->getX(), it->getY())->isCity()) {
-							CvCity* city = GC.getMap().plot(it->getX(), it->getY())->getPlotCity();
-							city->setPopulation(it->getPopulation());
-						}
-						it = scheduledCities.erase(it);
-					} else {
-						++it;
-					}
-				}
-
-				//Check scheduled units
-				std::vector<CvRFCUnit>& scheduledUnits = rfcPlayer.getScheduledUnits();
-				for(std::vector<CvRFCUnit>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end();) {
-					if(game.getGameTurnYear() >= it->getYear()) {
-						if(!it->isAIOnly() || !rfcPlayer.isHuman()) {
-							if(it->isDeclareWar()) {
-								PlayerTypes plotOwner = GC.getMap().plot(it->getX(), it->getY())->getOwner();
-								if(plotOwner != NO_PLAYER) {
-									if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
-										GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(plotOwner).getTeam(), true, WARPLAN_TOTAL);
-									}
-								}
-							}
-							for(int j = 0; j<it->getAmount(); j++) {
-								CvUnit* unit = player.initUnit(it->getUnitType(), it->getX(), it->getY(), it->getUnitAIType(), it->getFacingDirection()); //unitID, x, y, unitAI, facingDirection
-								if(unit != NULL && spawnedNow && !rfcPlayer.isHuman() && GC.getUnitInfo(it->getUnitType()).getDefaultUnitAIType() != UNITAI_SETTLE) {
-									unit->setImmobileTimer(2);
-								}
-							}
-						}
-						it = scheduledUnits.erase(it);
-					} else {
-						++it;
-					}
-				}
-			}
+	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
+		CvRFCPlayer& rfcPlayer = getRFCPlayer((CivilizationTypes)i);
+		if(!rfcPlayer.isHuman()) {
+			checkTurnForPlayer((CivilizationTypes)i, game.getGameTurn());
 		}
 	}
 
@@ -220,10 +114,135 @@ void CvRiseFall::checkTurn() {
 			rfcProvince->checkMercenaries();
 		}
 	}
-
 	//Player plot stability
 	updatePlayerPlots();
 }
+
+void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
+	CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
+	if(!rfcPlayer.isEnabled()) {
+		return;
+	}
+	CvGame& game = GC.getGameINLINE();
+	PlayerTypes playerType = getPlayerTypeForCiv(civType);
+
+	if(rfcPlayer.getStartingYear() <= game.getTurnYear(turn) || playerType != NO_PLAYER || rfcPlayer.isMinor()) { //barbarians & minors as well
+		if(rfcPlayer.isHuman()) {
+			GC.logMsg("Checking human at year %d for year %d", game.getGameTurnYear(), game.getTurnYear(turn));
+		}
+		bool spawnedNow = false;
+		if(!rfcPlayer.isSpawned()) {
+			//conditional spawns
+			if(!rfcPlayer.isHuman() && skipConditionalSpawn(civType)) {
+				if(rfcPlayer.getStartingTurn() < 0) {
+					rfcPlayer.setStartingTurn(turn);
+				} else if(rfcPlayer.getStartingTurn() < turn - 10) {
+					rfcPlayer.setSpawned(true);
+				}
+				return;
+			}
+
+			spawnedNow = true; //for unit immobilization
+
+			if(rfcPlayer.isHuman()) { //major human civs
+				spawnHumanCivilization(civType);
+			} else if(playerType == BARBARIAN_PLAYER) { //barbarian
+				rfcPlayer.setSpawned(true);
+				CvPlayer& barbPlayer = GET_PLAYER(playerType);
+				for (int j = 0; j < MAX_CIV_TEAMS; j++) {
+					if ((TeamTypes)j != barbPlayer.getTeam()) {
+						GET_TEAM(barbPlayer.getTeam()).declareWar(((TeamTypes)j), false, NO_WARPLAN);
+					}
+				}
+			} else if(rfcPlayer.isMinor()) { //minor civs
+				spawnMinorCivilization(civType);
+			} else { //major AI civs
+				spawnAICivilization(civType);
+			}
+		}
+
+		playerType = getPlayerTypeForCiv(civType); //refresh playerType as we might've spawned now
+
+		if(playerType != NO_PLAYER) { //if yes, check stability, flipping, scheduled units and cities.
+			CvPlayer& player = GET_PLAYER(playerType);
+
+			if(!player.isMinorCiv() && !player.isBarbarian()) {
+				checkStabilityEffect(civType, playerType);
+
+				//Flip check (here because we want the flipped units to be spawned right after flipping the cities)
+				int flipCountdown = rfcPlayer.getFlipCountdown();
+				if(flipCountdown>=0) {
+					rfcPlayer.setFlipCountdown(flipCountdown - 1);
+					if(flipCountdown==0) {
+						std::vector<CvCity*> toFlip;
+						for(int j = 0; j<MAX_PLAYERS; ++j) {
+							if((PlayerTypes)j != playerType) {
+								CvPlayer& loopPlayer = GET_PLAYER((PlayerTypes)j);
+								int k;
+								for(CvCity* loopCity = loopPlayer.firstCity(&k); loopCity != NULL; loopCity = loopPlayer.nextCity(&k)) {
+									if(rfcPlayer.isInCoreBounds(loopCity->getX(), loopCity->getY()) && !loopCity->isCapital()) {
+										toFlip.push_back(loopCity);
+									}
+								}
+							}
+						}
+
+						if(toFlip.size()>0) {
+							for(std::vector<CvCity*>::iterator it = toFlip.begin(); it != toFlip.end(); ++it) {
+								if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER((*it)->getOwner()).getTeam())) {
+									GET_TEAM(player.getTeam()).declareWar(GET_PLAYER((*it)->getOwner()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
+								}
+								flipCity(*it, playerType, true);
+							}
+						}
+					}
+				}
+			}
+
+			//Check scheduled cities
+			std::vector<CvRFCCity>& scheduledCities = rfcPlayer.getScheduledCities();
+			for(std::vector<CvRFCCity>::iterator it = scheduledCities.begin(); it != scheduledCities.end();) {
+				if(game.getTurnYear(turn) >= it->getYear()) {
+					player.found(it->getX(), it->getY());
+					if(GC.getMap().plot(it->getX(), it->getY())->isCity()) {
+						CvCity* city = GC.getMap().plot(it->getX(), it->getY())->getPlotCity();
+						city->setPopulation(it->getPopulation());
+					}
+					it = scheduledCities.erase(it);
+				} else {
+					++it;
+				}
+			}
+
+			//Check scheduled units
+			std::vector<CvRFCUnit>& scheduledUnits = rfcPlayer.getScheduledUnits();
+			for(std::vector<CvRFCUnit>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end();) {
+				if(game.getTurnYear(turn) >= it->getYear()) {
+					if(!it->isAIOnly() || !rfcPlayer.isHuman()) {
+						if(it->isDeclareWar()) {
+							PlayerTypes plotOwner = GC.getMap().plot(it->getX(), it->getY())->getOwner();
+							if(plotOwner != NO_PLAYER) {
+								if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
+									GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(plotOwner).getTeam(), true, WARPLAN_TOTAL);
+								}
+							}
+						}
+						for(int j = 0; j<it->getAmount(); j++) {
+							CvUnit* unit = player.initUnit(it->getUnitType(), it->getX(), it->getY(), it->getUnitAIType(), it->getFacingDirection()); //unitID, x, y, unitAI, facingDirection
+							if(unit != NULL && spawnedNow && !rfcPlayer.isHuman() && GC.getUnitInfo(it->getUnitType()).getDefaultUnitAIType() != UNITAI_SETTLE) {
+								unit->setImmobileTimer(2);
+							}
+						}
+					}
+					it = scheduledUnits.erase(it);
+				} else {
+					++it;
+				}
+			}
+		}
+	}
+}
+
 
 void CvRiseFall::checkPlayerTurn(PlayerTypes playerID) {
 	CvPlayer& player = GET_PLAYER(playerID);
@@ -314,7 +333,6 @@ void CvRiseFall::spawnHumanCivilization(CivilizationTypes civType) {
 			}
 
 			finishMajorCivSpawn(civType, (PlayerTypes)i);
-			//game.setActivePlayer((PlayerTypes)i);
 			GC.logMsg("CvRiseFall::spawnHumanCivilization - Spawned human civ %i", civType);
 			return;
 		}
@@ -475,8 +493,7 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 	CvGame& game = GC.getGameINLINE();
 
 	eraseSurroundings(civType, playerType);
-	//player.setAlive(true); //TODO: I haven't fully investigated the consequences of disabling this yet, but since calling it here seems to do more harm than good I'll comment it out for now.
-	//player.setAlive(true); //enabling it for now...
+	player.setAlive(true);
 	if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER(BARBARIAN_PLAYER).getTeam())) {
 		GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(BARBARIAN_PLAYER).getTeam(), true, NO_WARPLAN);
 	}

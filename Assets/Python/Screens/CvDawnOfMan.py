@@ -102,7 +102,7 @@ class CvDawnOfMan:
 		self.endTurn = 0
 		if CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear() != gc.getGame().getGameTurnYear():
 			for i in range(gc.getGame().getMaxTurns()):
-				if gc.getGame().getTurnYear(i) > CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear():
+				if gc.getGame().getTurnYear(i) >= CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear():
 					self.endTurn = i
 					break
 		

@@ -17,6 +17,7 @@ class CvRiseFall {
 
 		void onGameStarted();
 		void checkTurn();
+		void checkTurnForPlayer(CivilizationTypes civType, int turn);
 		void checkPlayerTurn(PlayerTypes playerID);
 
 		void checkLeader(CivilizationTypes civType, PlayerTypes playerType);
