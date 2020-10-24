@@ -13550,7 +13550,8 @@ application/json
 				"CIVILIZATION_MACEDONIA":"Babylon",
 				"CIVILIZATION_BACTRIA":"Babylon",
 				"CIVILIZATION_SASSANID":"Ctesiphon",
-				"CIVILIZATION_BYZANTIUM":"Seleucea"
+				"CIVILIZATION_BYZANTIUM":"Seleucea",
+				"CIVILIZATION_BARBARIAN":"Agade"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_SUMERIA":500,

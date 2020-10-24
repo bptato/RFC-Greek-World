@@ -4153,6 +4153,23 @@ application/json
 				"Year":-850,
 				"CityPopulation":1
 			}
+		},
+		{
+			"x":46,
+			"y":23,
+			"Units":[
+				{
+					"Amount":2,
+					"UnitOwner":"CIVILIZATION_INDEPENDENT",
+					"UnitType":"UNIT_SUMERIAN_VULTURE",
+					"Year":-2334
+				}
+			],
+			"City":{
+				"CityOwner":"CIVILIZATION_INDEPENDENT",
+				"Year":-2334,
+				"CityPopulation":2
+			}
 		}
 	]
 }
