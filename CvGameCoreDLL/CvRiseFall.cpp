@@ -222,17 +222,19 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 						int ix = it->getX();
 						int iy = it->getY();
 						CvPlot* plot = GC.getMap().plot(ix, iy);
-						if(plot->isCity() && plot->getOwnerINLINE() != civType) {
-							for(int x = ix - 1; x < ix + 1; ++x) {
-								for(int y = iy - 1; y < iy + 1; ++y) {
-									if(GC.getMap().isPlot(x, y)) {
-										plot = GC.getMap().plot(x, y);
-										if(!GC.getMap().plot(x, y)->isCity()) {
-											DomainTypes domainType = (DomainTypes)GC.getUnitInfo(it->getUnitType()).getDomainType();
-											if(plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA && !plot->isPeak()) {
-												ix = x;
-												iy = y;
-												goto canSpawn; //ok im done, TODO
+						if(plot->isCity() && it->isDeclareWar()) {
+							if(plot->getPlotCity()->getOwnerINLINE() != civType) {
+								for(int x = ix - 1; x < ix + 1; ++x) {
+									for(int y = iy - 1; y < iy + 1; ++y) {
+										if(GC.getMap().isPlot(x, y)) {
+											plot = GC.getMap().plot(x, y);
+											if(!GC.getMap().plot(x, y)->isCity()) {
+												DomainTypes domainType = (DomainTypes)GC.getUnitInfo(it->getUnitType()).getDomainType();
+												if(plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA && !plot->isPeak()) {
+													ix = x;
+													iy = y;
+													goto canSpawn; //ok im done, TODO
+												}
 											}
 										}
 									}
