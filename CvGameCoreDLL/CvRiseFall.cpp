@@ -219,8 +219,31 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 			for(std::vector<CvRFCUnit>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end();) {
 				if(game.getTurnYear(turn) >= it->getYear()) {
 					if(!it->isAIOnly() || !rfcPlayer.isHuman()) {
+						int ix = it->getX();
+						int iy = it->getY();
+						CvPlot* plot = GC.getMap().plot(ix, iy);
+						if(plot->isCity() && plot->getOwnerINLINE() != civType) {
+							for(int x = ix - 1; x < ix + 1; ++x) {
+								for(int y = iy - 1; y < iy + 1; ++y) {
+									if(GC.getMap().isPlot(x, y)) {
+										plot = GC.getMap().plot(x, y);
+										if(!GC.getMap().plot(x, y)->isCity()) {
+											DomainTypes domainType = (DomainTypes)GC.getUnitInfo(it->getUnitType()).getDomainType();
+											if(plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA && !plot->isPeak()) {
+												ix = x;
+												iy = y;
+												goto canSpawn; //ok im done, TODO
+											}
+										}
+									}
+								}
+							}
+							break;
+						}
+
+						canSpawn:
 						if(it->isDeclareWar()) {
-							PlayerTypes plotOwner = GC.getMap().plot(it->getX(), it->getY())->getOwner();
+							PlayerTypes plotOwner = plot->getOwner();
 							if(plotOwner != NO_PLAYER) {
 								if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
 									GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(plotOwner).getTeam(), true, WARPLAN_TOTAL);
@@ -228,7 +251,7 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 							}
 						}
 						for(int j = 0; j<it->getAmount(); j++) {
-							CvUnit* unit = player.initUnit(it->getUnitType(), it->getX(), it->getY(), it->getUnitAIType(), it->getFacingDirection()); //unitID, x, y, unitAI, facingDirection
+							CvUnit* unit = player.initUnit(it->getUnitType(), ix, iy, it->getUnitAIType(), it->getFacingDirection());
 							if(unit != NULL && spawnedNow && !rfcPlayer.isHuman() && GC.getUnitInfo(it->getUnitType()).getDefaultUnitAIType() != UNITAI_SETTLE) {
 								unit->setImmobileTimer(2);
 							}
