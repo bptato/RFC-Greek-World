@@ -428,8 +428,8 @@ class Victory:
 
 		elif civType == iElam and iGameTurn <= i1000BC:
 			if iGameTurn < i1900BC:
-				cIndusValley = civ2player(iIndusValley)
-				if civ2player(cIndusValley) != None and pPlayer.canContact(cIndusValley) and pPlayer.canTradeNetworkWith(cIndusValley):
+				pIndusValley = civ2player(iIndusValley)
+				if pIndusValley != None and pPlayer.canContact(pIndusValley) and pPlayer.canTradeNetworkWith(pIndusValley):
 					self.setGoal(iElam, 1, 1)
 			elif iGameTurn == i1900BC and self.getGoal(iElam, 1) == -1:
 				self.setGoal(iElam, 1, 0)
