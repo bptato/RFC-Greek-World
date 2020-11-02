@@ -51,7 +51,6 @@ class CvRiseFall {
 		int getNumProvinces();
 		CvRFCProvince* getProvinceForPlot(int x, int y);
 		bool skipConditionalSpawn(CivilizationTypes civType);
-		CvPlot* findSpawnPlot(int ix, int iy, DomainTypes domainType);
 
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);
