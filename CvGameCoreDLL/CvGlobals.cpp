@@ -3614,15 +3614,8 @@ void CvGlobals::onCivSelectionScreenLoaded() {
 void CvGlobals::setupEnabled() {
 	for(int i = 0; i<getNumCivilizationInfos(); ++i) {
 		CvRFCPlayer& rfcPlayer = getRiseFall().getRFCPlayer((CivilizationTypes)i);
-		if(rfcPlayer.isEnabled()) {
-			if(!rfcPlayer.isMinor()) {
-				getCivilizationInfo((CivilizationTypes)i).setPlayable(true);
-			} else {
-				getCivilizationInfo((CivilizationTypes)i).setPlayable(false);
-			}
-		} else {
+		if(!rfcPlayer.isEnabled()) {
 			getCivilizationInfo((CivilizationTypes)i).setPlayable(false);
-			getCivilizationInfo((CivilizationTypes)i).setAIPlayable(false);
 		}
 	}
 	CvInfoBase::resetAsked();

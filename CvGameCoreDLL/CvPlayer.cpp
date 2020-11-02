@@ -13038,7 +13038,7 @@ void CvPlayer::doGold()
 
 	iGoldChange = calculateGoldRate();
 
-	FAssert(isHuman() || isBarbarian() || ((getGold() + iGoldChange) >= 0) || isAnarchy());
+	FAssert(isHuman() || isBarbarian() || isMinorCiv() /* bluepotato */ || ((getGold() + iGoldChange) >= 0) || isAnarchy());
 
 	changeGold(iGoldChange);
 
@@ -13048,7 +13048,7 @@ void CvPlayer::doGold()
 	{
 		setGold(0);
 
-		if (!isBarbarian() && (getNumCities() > 0))
+		if (!isBarbarian() && !isMinorCiv() /* bluepotato */ && (getNumCities() > 0))
 		{
 			bStrike = true;
 		}
