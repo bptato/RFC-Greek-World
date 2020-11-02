@@ -224,26 +224,14 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 						CvPlot* plot = GC.getMap().plot(ix, iy);
 						if(plot->isCity() && it->isDeclareWar()) {
 							if(plot->getPlotCity()->getOwnerINLINE() != civType) {
-								for(int x = ix - 1; x < ix + 1; ++x) {
-									for(int y = iy - 1; y < iy + 1; ++y) {
-										if(GC.getMap().isPlot(x, y)) {
-											plot = GC.getMap().plot(x, y);
-											if(!GC.getMap().plot(x, y)->isCity()) {
-												DomainTypes domainType = (DomainTypes)GC.getUnitInfo(it->getUnitType()).getDomainType();
-												if(plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA && !plot->isPeak()) {
-													ix = x;
-													iy = y;
-													goto canSpawn; //ok im done, TODO
-												}
-											}
-										}
-									}
+								DomainTypes domainType = (DomainTypes)GC.getUnitInfo(it->getUnitType()).getDomainType();
+								plot = findSpawnPlot(ix, iy, domainType);
+								if(plot == NULL) {
+									continue;
 								}
 							}
-							break;
 						}
 
-						canSpawn:
 						if(it->isDeclareWar()) {
 							PlayerTypes plotOwner = plot->getOwner();
 							if(plotOwner != NO_PLAYER) {
@@ -779,6 +767,22 @@ bool CvRiseFall::skipConditionalSpawn(CivilizationTypes civType) {
 			break;
 	}
 	return false;
+}
+
+CvPlot* CvRiseFall::findSpawnPlot(int ix, int iy, DomainTypes domainType) {
+	for(int x = ix - 1; x < ix + 1; ++x) {
+		for(int y = iy - 1; y < iy + 1; ++y) {
+			if(GC.getMap().isPlot(x, y)) {
+				CvPlot* plot = GC.getMap().plot(x, y);
+				if(!plot->isCity()) {
+					if((plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA) && !plot->isPeak()) {
+						return plot;
+					}
+				}
+			}
+		}
+	}
+	return NULL;
 }
 
 
