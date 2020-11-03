@@ -159,7 +159,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SUM3</Tag>
-		<English>Control a city in Sumer, Akkad, Subartu and Khuzestan by 2180 BC</English>
+		<English>Control a city in Sumer, Babylonia, Subartu and Khuzestan in 2180 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IVC1_TITLE</Tag>
@@ -387,19 +387,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ATH2_TITLE</Tag>
-		<English>The Wonders of the Ancient World</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ATH2</Tag>
-		<English>Build the Oracle, the Parthenon, the Colossus and the Temple of Artemis by 450 BC</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ATH3_TITLE</Tag>
 		<English>Domination of the Mediterranean trade</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH2</Tag>
+		<English>Build 5 harbours by 450 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ATH3_TITLE</Tag>
+		<English>The Wonders of the Ancient World</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ATH3</Tag>
-		<English>Build 7 harbours by 400 BC</English>
+		<English>Build the Oracle, the Parthenon, the Colossus and the Temple of Artemis by 300 BC</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
+		<English>This is Sparta!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA1</Tag>
+		<English>Control an army of 30 units in 450 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA2_TITLE</Tag>
@@ -407,7 +415,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA2</Tag>
-		<English>Be victors in the Peloponnesian War by controlling all of Greece (Peloponese, Attica, Macedonia, Central Greece, Euboea, Cyclades) by 400 BC</English>
+		<English>Be victors in the Peloponnesian War by controlling all of Greece (Peloponese, Attica, Macedonia, Central Greece, Euboea, Cyclades) in 400 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA3_TITLE</Tag>
@@ -418,11 +426,27 @@
 		<English>Have the highest score in 350 BC</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
-		<English>This is Sparta!</English>
+		<Tag>TXT_KEY_UHV_SCY1_TITLE</Tag>
+		<English>Horse Culture</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_SPA1</Tag>
-		<English>Control an army of 30 units in 450 BC</English>
+		<Tag>TXT_KEY_UHV_SCY1</Tag>
+		<English>Own 4 horses (including by trade) in 500 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SCY2_TITLE</Tag>
+		<English>Destruction of Nineveh</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SCY2</Tag>
+		<English>Destroy 3 civilizations by 300 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SCY3_TITLE</Tag>
+		<English>Nomadic Way of Life</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SCY3</Tag>
+		<English>No foreign culture in Crimea, Sarmatia, Caucasus and Scythia in 100 BC</English>
 	</TEXT>
 </Civ4GameText>
