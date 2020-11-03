@@ -78,6 +78,9 @@ def controlsProvince(playerType, province):
 def religion(religionName):
 	return CvUtil.findInfoTypeNum(gc.getReligionInfo, gc.getNumReligionInfos(), "RELIGION_" + religionName.upper())
 
+def bonus(bonusName):
+    return CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), "BONUS_" + bonusName.upper())
+
 class Victory:
 	def initGlobals(self):
 		global iNumCivs
@@ -162,6 +165,7 @@ class Victory:
 		global provCentralGreece
 		global provEuboea
 		global provCyclades
+		global provAnatolia
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getRFCProvince("Palestine")
@@ -183,6 +187,7 @@ class Victory:
 		provCentralGreece = riseFall.getRFCProvince("Central Greece")
 		provEuboea = riseFall.getRFCProvince("Euboea")
 		provCyclades = riseFall.getRFCProvince("Cyclades")
+		provAnatolia = riseFall.getRFCProvince("Anatolia")
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -211,6 +216,15 @@ class Victory:
 	def setBabyloniaKilledCivs(self, i):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['babyloniaKilledCivs'] = i
+		gc.getGame().setScriptData(pickle.dumps(scriptDict))
+		
+	def getScythianKilledCivs(self):
+		scriptDict = pickle.loads(gc.getGame().getScriptData())
+		return scriptDict['scythianKilledCivs']
+
+	def setScythianKilledCivs(self, i):
+		scriptDict = pickle.loads(gc.getGame().getScriptData())
+		scriptDict['scythianKilledCivs'] = i
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def getMycenaeTombsBuilt(self):
@@ -284,7 +298,7 @@ class Victory:
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['lReligionFounded'][iCiv] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-		
+
 	def onLoadGame(self):
 		self.initGlobals()
 
@@ -299,6 +313,7 @@ class Victory:
 					'lAthensTechs': [-1, -1, -1],
 					'lWondersBuilt': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 					'babyloniaKilledCivs': 0,
+					'scythianKilledCivs': 0,
 					'hittiteKilledUnits': 0,
 					'mycenaeTombsBuilt': 0,
 					'AthensharborBuilt': 0,
@@ -363,7 +378,7 @@ class Victory:
 					bNubia = provNubia.getNumCities(iPlayer) >= 2
 					if (bPhoenicia and bPalestine and bEgypt and bNubia):
 						self.setGoal(iEgypt, 2, 1)
-					elif iGameTurn > i1070BC:
+					elif iGameTurn >= i1070BC:
 						self.setGoal(iEgypt, 2, 0)
 		elif (civType == iSumeria):
 			if (iGameTurn == i2200BC):
@@ -579,7 +594,7 @@ class Victory:
 					if holyCity.getOwner() == iPlayer and holyCity.isCapital():
 						ashurbanipalLibrary = gc.getInfoTypeForString("BUILDING_ASHURBANIPAL_LIBRARY")
 						if holyCity.isHasBuilding(ashurbanipalLibrary):
-							self.setGoal(Assyria, 1, 1)
+							self.setGoal(iAssyria, 1, 1)
 			if self.getGoal(iAssyria, 2) == -1:
 				goalCompleted = controlsProvince(iPlayer, provSubartu) and \
 						controlsProvince(iPlayer, provAkkad) and \
@@ -613,36 +628,77 @@ class Victory:
 					self.setGoal(iIsrael, 0, 0)
 
 		elif civType == iAthens:
-			if self.getGoal(iAthens, 2) == -1 and iGameTurn > i400BC:
+			if self.getGoal(iAthens, 2) == -1 and iGameTurn > i300BC:
 				self.setGoal(iAthens, 2, 0)
 
 			if self.getGoal(iAthens, 1) == -1 and iGameTurn > i450BC:
 				self.setGoal(iAthens, 1, 0)
-				
+
 		elif civType == iSparta:
-			if self.getGoal(iSparta, 1) == -1:
+			if (iGameTurn == i400BC):
+				bPeloponnese = provPeloponnese.getNumCities(iPlayer) >= 1
+				bAttica = provAttica.getNumCities(iPlayer) >= 1
+				bMacedonia = provMacedonia.getNumCities(iPlayer) >= 1
+				bCentralGreece = provCentralGreece.getNumCities(iPlayer) >= 1
+				bEuboea = provEuboea.getNumCities(iPlayer) >= 1
+				bCyclades = provCyclades.getNumCities(iPlayer) >= 1
 				goalCompleted = controlsProvince(iPlayer, provPeloponnese) and \
 						controlsProvince(iPlayer, provAttica) and \
 						controlsProvince(iPlayer, provMacedonia) and \
 						controlsProvince(iPlayer, provCentralGreece) and \
 						controlsProvince(iPlayer, provEuboea) and \
 						controlsProvince(iPlayer, provCyclades)
-				if goalCompleted:
+				if bPeloponnese and bAttica and bMacedonia and bCentralGreece and bEuboea and bCyclades:
 					self.setGoal(iSparta, 1, 1)
-				elif iGameTurn > i400BC:
+				else:
 					self.setGoal(iSparta, 1, 0)
-					
+
 			if (iGameTurn == i350BC):
 					if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
 						self.setGoal(iSparta, 2, 1)
 					else:
 						self.setGoal(iSparta, 2, 0)
-						
+
 			if (iGameTurn == i450BC):
 					if (pPlayer.getNumUnits() >= 30):
-							self.setGoal(iSparta, 0, 1)
+						self.setGoal(iSparta, 0, 1)
 					else:
-							self.setGoal(iSparta, 0, 0)
+						self.setGoal(iSparta, 0, 0)
+		
+		
+		elif civType == iScythia:
+			if (iGameTurn == i100BC):
+				bForeignPresence = False
+				for x in range(38, 59):
+					for y in range(38, 59):
+ 						pCurrent = gc.getMap().plot(x,y)
+						if not pCurrent.isWater():
+							for iLoop in range(iNumPlayers): #no minor civs
+								if (iLoop != iScythia):
+									if (pCurrent.getCulture(iLoop) > 0):
+										bForeignPresence = True
+#print (iLoop, "presence in Scythia")
+
+				#print ("bForeignPresence ", bForeignPresence)
+				if (bForeignPresence == False):
+					self.setGoal(iScythia, 2, 1)
+				else:
+					self.setGoal(iScythia, 2, 0)
+
+			if (iGameTurn == i500BC):
+					if pPlayer.countOwnedBonuses(bonus('Horse')) + pPlayer.getBonusImport(bonus('Horse')) >= 4:
+						self.setGoal(iScythia, 0, 1)
+					else:
+						self.setGoal(iScythia, 0, 0)
+											
+			if iGameTurn < i300BC:
+				if self.getScythianKilledCivs() >= 3:
+					self.setGoal(iScythia, 1, 1)
+			elif iGameTurn == i300BC:
+				if self.getScythianKilledCivs() < 3:
+					self.setGoal(iScythia, 1, 0)
+				else:
+					self.setGoal(iScythia, 1, 1)
 
 	def onCityBuilt(self, city):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
@@ -679,6 +735,11 @@ class Victory:
 		ownerType = gc.getPlayer(owner).getCivilizationType()
 		attackerType = gc.getPlayer(attacker).getCivilizationType()
 
+		if self.getGoal(iScythia, 1) == -1: # Check if last city
+			if attackerType == iScythia:
+				if gc.getPlayer(owner).getNumCities() == 0:
+					self.setScythianKilledCivs(self.getScythianKilledCivs()+1)
+
 		if self.getGoal(iElam, 0) == -1 and cityX == 46 and cityY == 19: #Ur captured by Elam
 			if attackerType == iElam:
 				self.setGoal(iElam, 0, 1)
@@ -700,9 +761,15 @@ class Victory:
 			if gc.getPlayer(owner).getNumCities() == 0:
 				self.setBabyloniaKilledCivs(self.getBabyloniaKilledCivs()+1)
 
+
 	def onCityRazed(self, city, conqueror, owner):
 		if (not gc.getGame().isVictoryValid(7)): #7 == historical
 			return
+
+		if self.getGoal(iScythia, 1) == -1: # Check if last city
+			if conqueror == iScythia:
+				if gc.getPlayer(owner).getNumCities() == 0:
+					self.setScythianKilledCivs(self.getScythianKilledCivs()+1)
 
 		if self.getGoal(iElam, 0) == -1 and city.getX() == 46 and city.getY() == 19: #Ur captured by Elam
 			if gc.getPlayer(conqueror).getCivilizationType() == iElam:
@@ -799,15 +866,15 @@ class Victory:
 
 		elif civType == iAthens:
 			if iBuilding == building('harbor'):
-				if self.getGoal(iAthens, 2) == -1:
+				if self.getGoal(iAthens, 1) == -1:
 					self.setAthensHarborBuilt(self.getAthensHarborBuilt() + 1)
-					if self.getAthensHarborBuilt() >= 7:
-						self.setGoal(iAthens, 2, 1)
-			if (self.getGoal(iAthens, 1) == -1):
+					if self.getAthensHarborBuilt() >= 5:
+						self.setGoal(iAthens, 1, 1)
+			if (self.getGoal(iAthens, 2) == -1):
 					if (iBuilding == building('Oracle') or iBuilding == building('Colossus') or iBuilding == building('Parthenon') or iBuilding == building('Artemis')):
 						self.setWondersBuilt(iAthens, self.getWondersBuilt(iAthens) + 1)
 					if (self.getWondersBuilt(iAthens) == 4):
-						self.setGoal(iAthens, 1, 1)
+						self.setGoal(iAthens, 2, 1)
 
 	def onCombatResult(self, argsList):
 
