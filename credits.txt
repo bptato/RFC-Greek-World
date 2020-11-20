@@ -30,6 +30,9 @@ PIE's Ancient Europe: https://forums.civfanatics.com/threads/pies-ancient-europe
 Just Another Religion Mod: https://forums.civfanatics.com/resources/just-another-religion-mod-bts-modular-v-1-2.10354/
 Realism Invictus: https://forums.civfanatics.com/threads/realism-invictus.411799/
 
+Specific code credits:
+Automatic HidePythonExceptions disabler by Nightinggale
+
 Civilizations
 The Minoan civilization was borrowed from Civ Gold mod, credit goes to the civs original creator.
 The Mycenae civilization was created by cybrxkhan
