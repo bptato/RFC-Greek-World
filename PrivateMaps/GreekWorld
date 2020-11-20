@@ -22814,13 +22814,13 @@ application/json
 				"CIVILIZATION_MINOA":"Byzantion",
 				"CIVILIZATION_ATHENS":"Byzantion",
 				"CIVILIZATION_SPARTA":"Byzantion",
-				"CIVILIZATION_ROME":"Byzantium",
-				"CIVILIZATION_BYZANTIUM":"Constantinopole"
+				"CIVILIZATION_ROME":"Constantinopolis",
+				"CIVILIZATION_BYZANTIUM":"Constantinopolis"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_ATHENS":400,
 				"CIVILIZATION_PERSIA":300,
-				"CIVILIZATION_ROME":400,
+				"CIVILIZATION_ROME":700,
 				"CIVILIZATION_MACEDONIA":70,
 				"CIVILIZATION_BYZANTIUM":700
 			}

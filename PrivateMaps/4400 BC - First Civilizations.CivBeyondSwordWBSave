@@ -2941,62 +2941,6 @@ application/json
 			]
 		},
 		{
-			"x":27,
-			"y":30,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_ROME_PRAETORIAN",
-					"Year":-210,
-					"AIOnly":true,
-					"DeclareWar":true
-				}
-			]
-		},
-		{
-			"x":33,
-			"y":29,
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_ROME_PRAETORIAN",
-					"Year":-210,
-					"AIOnly":true,
-					"DeclareWar":true
-				}
-			]
-		},
-		{
-			"x":27,
-			"y":25,
-			"Units":[
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_ROME_PRAETORIAN",
-					"Year":-210,
-					"AIOnly":true,
-					"DeclareWar":true
-				}
-			]
-		},
-		{
-			"x":15,
-			"y":18,
-			"Units":[
-				{
-					"Amount":5,
-					"UnitOwner":"CIVILIZATION_ROME",
-					"UnitType":"UNIT_ROME_PRAETORIAN",
-					"Year":-203,
-					"AIOnly":true,
-					"DeclareWar":true
-				}
-			]
-		},
-		{
 			"x":15,
 			"y":20,
 			"Units":[
@@ -3148,7 +3092,6 @@ application/json
 					"UnitType":"UNIT_CELTIC_GALLIC_WARRIOR",
 					"Year":-350,
 					"AIOnly":true
-	
 				}
 			]
 		},
@@ -3262,6 +3205,62 @@ application/json
 					"UnitOwner":"CIVILIZATION_PERSIA",
 					"UnitType":"UNIT_WORKER",
 					"Year":-674
+				}
+			]
+		},
+		{
+			"x":27,
+			"y":30,
+			"Units":[
+				{
+					"Amount":2,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":33,
+			"y":29,
+			"Units":[
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":27,
+			"y":25,
+			"Units":[
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-210,
+					"AIOnly":true,
+					"DeclareWar":true
+				}
+			]
+		},
+		{
+			"x":15,
+			"y":18,
+			"Units":[
+				{
+					"Amount":5,
+					"UnitOwner":"CIVILIZATION_ROME",
+					"UnitType":"UNIT_ROME_PRAETORIAN",
+					"Year":-203,
+					"AIOnly":true,
+					"DeclareWar":true
 				}
 			]
 		},
@@ -3956,6 +3955,23 @@ application/json
 		},
 		{
 			"x":46,
+			"y":23,
+			"Units":[
+				{
+					"Amount":2,
+					"UnitOwner":"CIVILIZATION_INDEPENDENT",
+					"UnitType":"UNIT_SUMERIAN_VULTURE",
+					"Year":-2334
+				}
+			],
+			"City":{
+				"CityOwner":"CIVILIZATION_INDEPENDENT",
+				"Year":-2334,
+				"CityPopulation":2
+			}
+		},
+		{
+			"x":46,
 			"y":3,
 			"Units":[
 				{
@@ -4152,23 +4168,6 @@ application/json
 				"CityOwner":"CIVILIZATION_BARBARIAN",
 				"Year":-850,
 				"CityPopulation":1
-			}
-		},
-		{
-			"x":46,
-			"y":23,
-			"Units":[
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-2334
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-2334,
-				"CityPopulation":2
 			}
 		}
 	]
