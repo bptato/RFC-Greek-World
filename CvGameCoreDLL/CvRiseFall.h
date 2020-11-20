@@ -18,11 +18,12 @@ class CvRiseFall {
 		void onGameStarted();
 		void checkTurn();
 		void checkTurnForPlayer(CivilizationTypes civType, int turn);
-		void checkPlayerTurn(PlayerTypes playerID);
+		void checkScheduledCities(PlayerTypes playerType, CivilizationTypes civType, int turn);
+		void checkScheduledUnits(PlayerTypes playerType, CivilizationTypes civType, int turn, bool spawnedNow);
 
+		void checkPlayerTurn(PlayerTypes playerType);
 		void checkLeader(CivilizationTypes civType, PlayerTypes playerType);
 		void checkMinorWars(PlayerTypes playerID, int turn);
-		bool checkUnitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign);
 		void updatePlayerPlots();
 		void checkStabilityEffect(CivilizationTypes civType, PlayerTypes playerType);
 
@@ -44,14 +45,15 @@ class CvRiseFall {
 		void capitalCollapse(PlayerTypes playerType);
 		void completeCollapse(PlayerTypes playerType);
 
-		PlayerTypes getPlayerTypeForCiv(CivilizationTypes civType);
-		CvRFCPlayer& getRFCPlayer(CivilizationTypes civType);
+		PlayerTypes getPlayerTypeForCiv(CivilizationTypes civType) const;
+		CvRFCPlayer& getRFCPlayer(CivilizationTypes civType) const;
 		CvRFCProvince* getRFCProvince(const wchar* provinceName);
 		CvRFCProvince* getRFCProvince(int provinceID);
-		int getNumProvinces();
+		int getNumProvinces() const;
 		CvRFCProvince* getProvinceForPlot(int x, int y);
-		bool skipConditionalSpawn(CivilizationTypes civType);
-		CvPlot* findSpawnPlot(int ix, int iy, DomainTypes domainType);
+		bool skipConditionalSpawn(CivilizationTypes civType) const;
+		bool unitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign) const;
+		CvPlot* findSpawnPlot(int ix, int iy, DomainTypes domainType) const;
 
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);

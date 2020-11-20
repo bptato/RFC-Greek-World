@@ -549,7 +549,7 @@ CvRFCUnit& CvRFCPlayer::getScheduledUnit(int i) {
 	return scheduledUnits[i];
 }
 
-CvRFCCity* CvRFCPlayer::getScheduledCity(int i) {
+CvRFCCity* CvRFCPlayer::getScheduledCity(int i) const {
 	return scheduledCities[i];
 }
 

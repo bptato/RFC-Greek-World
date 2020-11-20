@@ -10,6 +10,9 @@ CvRFCCity::CvRFCCity() {
 	_x = 0;
 	_population = 0;
 	_buildings = new int[GC.getNumBuildingInfos()];
+	for(int i = 0; i < GC.getNumBuildingInfos(); ++i) {
+		_buildings[i] = 0;
+	}
 }
 
 CvRFCCity::~CvRFCCity() {
@@ -67,7 +70,7 @@ void CvRFCCity::write(FDataStreamBase* stream) {
 	stream->Write(_x);
 	stream->Write(_y);
 	stream->Write(_population);
-	//stream->Write(GC.getNumBuildingInfos(), _buildings);
+	stream->Write(GC.getNumBuildingInfos(), _buildings);
 }
 
 void CvRFCCity::read(FDataStreamBase* stream) {
@@ -75,5 +78,5 @@ void CvRFCCity::read(FDataStreamBase* stream) {
 	stream->Read(&_x);
 	stream->Read(&_y);
 	stream->Read(&_population);
-	//stream->Read(GC.getNumBuildingInfos(), _buildings);
+	stream->Read(GC.getNumBuildingInfos(), _buildings);
 }

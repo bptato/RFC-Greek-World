@@ -277,10 +277,18 @@ class WbParser:
 				if plot.isCity():
 					city = plot.getPlotCity()
 					wbPlot['City'] = OrderedDict({})
-					wbPlot['City']['CityOwner'] = gc.getCivilizationInfo(gc.getPlayer(city.getOwner()).getCivilizationType()).getType()
-					wbPlot['City']['Year'] = game.getGameTurnYear()
+					wbCity = wbPlot['City']
+
+					wbCity['CityOwner'] = gc.getCivilizationInfo(gc.getPlayer(city.getOwner()).getCivilizationType()).getType()
+					wbCity['Year'] = game.getGameTurnYear()
 					if city.getPopulation() > 1:
-						wbPlot['City']['CityPopulation'] = city.getPopulation()
+						wbCity['CityPopulation'] = city.getPopulation()
+
+					for i in range(gc.getNumBuildingInfos()):
+						if city.getNumRealBuilding(i) > 0:
+							if "Buildings" not in wbCity:
+								wbCity['Buildings'] = {}
+							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = city.getNumRealBuilding(i)
 					#TODO religion, culture, etc
 					shouldSave = True
 
@@ -348,6 +356,12 @@ class WbParser:
 					wbCity['CityOwner'] = civInfo.getType()
 					wbCity['Year'] = scheduledCity.getYear()
 					wbCity['CityPopulation'] = scheduledCity.getPopulation()
+					for i in range(gc.getNumBuildingInfos()):
+						if scheduledCity.getNumBuilding(i) > 0:
+							if "Buildings" not in wbCity:
+								wbCity['Buildings'] = {}
+							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = city.getNumBuilding(i)
+
 					wbPlot['City'] = wbCity
 
 				#Core provinces
@@ -756,7 +770,7 @@ class WbParser:
 					rfcPlayer.scheduleUnit(year, unitID, x, y, unitAI, facingDirection, amount, aiOnly, declareWar)
 
 
-			#Barbarians and independent cities
+			#Cities
 			if "City" in wbPlot:
 				wbCity = wbPlot['City']
 				ownerID = gc.getInfoTypeForString(wbCity['CityOwner'])
@@ -772,8 +786,18 @@ class WbParser:
 				else:
 					year = game.getGameTurnYear()
 
-				rfcPlayer.scheduleCity(year, x, y, population)
-				scheduledCity = rfcPlayer.getScheduledCity(rfcPlayer.getNumScheduledCities()-1)
+				scheduledCity = rfcPlayer.addScheduledCity()
+				scheduledCity.setYear(year)
+				scheduledCity.setX(x)
+				scheduledCity.setY(y)
+				scheduledCity.setPopulation(population)
+
+				if "Buildings" in wbCity:
+					for i in range(gc.getNumBuildingInfos()):
+						buildingType = gc.getBuildingInfo(i).getType()
+						if buildingType in wbCity['Buildings']:
+							scheduledCity.setNumBuilding(i, wbCity['Buildings'][buildingType])
+							print buildingType
 
 		cmap.recalculateAreas()
 

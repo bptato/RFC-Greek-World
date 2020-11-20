@@ -29,13 +29,6 @@ void CyRFCPlayer::scheduleUnit(int year, int unitType, int x, int y, int unitAIT
 	rfcPlayer->scheduleUnit(rfcUnit);
 }
 
-void CyRFCPlayer::scheduleCity(int year, int x, int y, int population) {
-	CvRFCCity* rfcCity = rfcPlayer->addScheduledCity();
-	rfcCity->setYear(year);
-	rfcCity->setX(x);
-	rfcCity->setY(y);
-	rfcCity->setPopulation(population);
-}
 
 int CyRFCPlayer::getNumScheduledUnits() {
 	return rfcPlayer->getNumScheduledUnits();
@@ -47,6 +40,10 @@ CyRFCUnit* CyRFCPlayer::getScheduledUnit(int i) {
 
 int CyRFCPlayer::getNumScheduledCities() {
 	return rfcPlayer->getNumScheduledCities();
+}
+
+CyRFCCity* CyRFCPlayer::addScheduledCity() {
+	return new CyRFCCity(rfcPlayer->addScheduledCity());
 }
 
 CyRFCCity* CyRFCPlayer::getScheduledCity(int i) {

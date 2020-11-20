@@ -56,7 +56,7 @@ class CvRFCPlayer {
 		std::vector<CvRFCUnit>& getScheduledUnits();
 		std::vector<CvRFCCity*>& getScheduledCities();
 		CvRFCUnit& getScheduledUnit(int i);
-		CvRFCCity* getScheduledCity(int i);
+		CvRFCCity* getScheduledCity(int i) const;
 		int getNumScheduledUnits() const;
 		int getNumScheduledCities() const;
 		std::vector<CivilizationTypes>& getRelatedLanguages();

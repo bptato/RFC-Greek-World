@@ -13,7 +13,6 @@ class CyRFCPlayer {
 
 		void setStartingYear(int newStartingYear);
 		void scheduleUnit(int year, int unitID, int x, int y, int unitAI, int facingDirection, int amount, bool aiOnly, bool declareWar);
-		void scheduleCity(int year, int x, int y, int population);
 		void setStartingCivic(int civicOptionType, int civicType);
 		void addStartingTech(int techType);
 		void addStartingWar(int civType);
@@ -55,6 +54,7 @@ class CyRFCPlayer {
 		int getNumScheduledUnits();
 		CyRFCUnit* getScheduledUnit(int i);
 		int getNumScheduledCities();
+		CyRFCCity* addScheduledCity();
 		CyRFCCity* getScheduledCity(int i);
 		int getNumCoreProvinces();
 		std::wstring getCoreProvince(int i);
