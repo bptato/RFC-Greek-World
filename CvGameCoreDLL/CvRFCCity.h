@@ -6,18 +6,20 @@ Author: bluepotato
 class CvRFCCity {
 	public:
 		CvRFCCity();
-		CvRFCCity(int year, int x, int y);
 		~CvRFCCity();
+		void init();
 
 		void setYear(int year);
 		void setX(int x);
 		void setY(int y);
 		void setPopulation(int population);
+		void setNumBuilding(BuildingTypes building, int value);
 
 		int getYear() const;
 		int getX() const;
 		int getY() const;
 		int getPopulation() const;
+		int getNumBuilding(BuildingTypes building) const;
 
 		void write(FDataStreamBase* stream);
 		void read(FDataStreamBase* stream);
@@ -27,4 +29,5 @@ class CvRFCCity {
 		int _x;
 		int _y;
 		int _population;
+		int* _buildings;
 };

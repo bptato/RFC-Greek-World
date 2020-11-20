@@ -13,6 +13,7 @@ class CyRFCCity {
 		int getX();
 		int getY();
 		int getPopulation();
+		int getNumBuilding(int building);
 	protected:
 		CvRFCCity* rfcCity;
 };

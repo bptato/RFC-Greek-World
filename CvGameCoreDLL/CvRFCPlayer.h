@@ -14,7 +14,6 @@ class CvRFCPlayer {
 
 		void setCivilizationType(CivilizationTypes newCivType);
 		void scheduleUnit(CvRFCUnit rfcUnit);
-		void scheduleCity(CvRFCCity rfcCity);
 		void setEnabled(bool newEnabled);
 		void setStartingCivic(CivicOptionTypes civicOptionType, CivicTypes civicType);
 		void setStartingYear(int year);
@@ -55,9 +54,9 @@ class CvRFCPlayer {
 
 		CivilizationTypes getCivilizationType();
 		std::vector<CvRFCUnit>& getScheduledUnits();
-		std::vector<CvRFCCity>& getScheduledCities();
+		std::vector<CvRFCCity*>& getScheduledCities();
 		CvRFCUnit& getScheduledUnit(int i);
-		CvRFCCity& getScheduledCity(int i);
+		CvRFCCity* getScheduledCity(int i);
 		int getNumScheduledUnits() const;
 		int getNumScheduledCities() const;
 		std::vector<CivilizationTypes>& getRelatedLanguages();
@@ -109,6 +108,8 @@ class CvRFCPlayer {
 
 		int getNewCityFreePopulation() const;
 
+		CvRFCCity* addScheduledCity();
+
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);
 
@@ -117,7 +118,7 @@ class CvRFCPlayer {
 
 		CivilizationTypes civilizationType;
 		std::vector<CvRFCUnit> scheduledUnits;
-		std::vector<CvRFCCity> scheduledCities;
+		std::vector<CvRFCCity*> scheduledCities;
 		int* startingCivics;
 		int startingYear;
 		int startingTurn;

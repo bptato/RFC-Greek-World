@@ -1769,12 +1769,14 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 		//bluepotato start
 		//Macedonian UP (converted from Python)
-		if(getCivilizationType()==CIVILIZATION_MACEDONIA) {
-			for(int x = pNewCity->getX()-2; x<=pNewCity->getX()+2; ++x) {
-				for(int y = pNewCity->getY()-2; y<=pNewCity->getY()+2; ++y) {
+		if(getCivilizationType() == CIVILIZATION_MACEDONIA) {
+			for(int x = pNewCity->getX()-2; x <= pNewCity->getX()+2; ++x) {
+				for(int y = pNewCity->getY()-2; y <= pNewCity->getY()+2; ++y) {
+					if(!GC.getMap().isPlot(x, y))
+						continue;
 					CvPlot* loopPlot = GC.getMap().plot(x, y);
 					int percent = -1;
-					if(x==pNewCity->getX() && y==pNewCity->getY()) {
+					if(x == pNewCity->getX() && y == pNewCity->getY()) {
 						percent = 51;
 					} else if(!loopPlot->isCity()) {
 						 if(::plotDistance(x, y, pNewCity->getX(), pNewCity->getY()) == 1) {
@@ -5412,7 +5414,8 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 
 	eUnitClass = ((UnitClassTypes)(GC.getUnitInfo(eUnit).getUnitClassType()));
 
-	FAssert(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass) == eUnit);
+	//bluepotato: afaict this fails because of mercenaries, so I disabled it
+	//FAssert(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass) == eUnit);
 	if (GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass) != eUnit)
 	{
 		return false;

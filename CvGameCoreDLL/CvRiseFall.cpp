@@ -200,13 +200,14 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 			}
 
 			//Check scheduled cities
-			std::vector<CvRFCCity>& scheduledCities = rfcPlayer.getScheduledCities();
-			for(std::vector<CvRFCCity>::iterator it = scheduledCities.begin(); it != scheduledCities.end();) {
-				if(game.getTurnYear(turn) >= it->getYear()) {
-					player.found(it->getX(), it->getY());
-					if(GC.getMap().plot(it->getX(), it->getY())->isCity()) {
-						CvCity* city = GC.getMap().plot(it->getX(), it->getY())->getPlotCity();
-						city->setPopulation(it->getPopulation());
+			std::vector<CvRFCCity*>& scheduledCities = rfcPlayer.getScheduledCities();
+			for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end();) {
+				CvRFCCity* scheduledCity = *it;
+				if(game.getTurnYear(turn) >= scheduledCity->getYear()) {
+					player.found(scheduledCity->getX(), scheduledCity->getY());
+					if(GC.getMap().plot(scheduledCity->getX(), scheduledCity->getY())->isCity()) {
+						CvCity* city = GC.getMap().plot(scheduledCity->getX(), scheduledCity->getY())->getPlotCity();
+						city->setPopulation(scheduledCity->getPopulation());
 					}
 					it = scheduledCities.erase(it);
 				} else {

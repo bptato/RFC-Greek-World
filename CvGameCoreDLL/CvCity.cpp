@@ -2868,15 +2868,6 @@ int CvCity::getProductionNeeded(BuildingTypes eBuilding) const
 {
 	int iProductionNeeded = GET_PLAYER(getOwnerINLINE()).getProductionNeeded(eBuilding);
 
-	//bluepotato start: Celtiberian UP
-	if(getCivilizationType() == CIVILIZATION_CELTIBERIA) {
-		if(!isLimitedWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType())) {
-			iProductionNeeded *= 80;
-			iProductionNeeded /= 100;
-		}
-	}
-	//bluepotato end
-
 	// Python cost modifier
 	if (GC.getUSE_GET_BUILDING_COST_MOD_CALLBACK())
 	{

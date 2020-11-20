@@ -24,3 +24,7 @@ int CyRFCCity::getY() {
 int CyRFCCity::getPopulation() {
 	return rfcCity->getPopulation();
 }
+
+int CyRFCCity::getNumBuilding(int building) {
+	return rfcCity->getNumBuilding((BuildingTypes)building);
+}

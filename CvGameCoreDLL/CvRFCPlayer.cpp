@@ -60,6 +60,9 @@ void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 	}
 
 	scheduledUnits.clear();
+	for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end(); ++it) {
+		SAFE_DELETE(*it);
+	}
 	scheduledCities.clear();
 	startingTechs.clear();
 	coreProvinces.clear();
@@ -73,10 +76,6 @@ void CvRFCPlayer::setCivilizationType(CivilizationTypes newCivType) {
 
 void CvRFCPlayer::scheduleUnit(CvRFCUnit rfcUnit) {
 	scheduledUnits.push_back(rfcUnit);
-}
-
-void CvRFCPlayer::scheduleCity(CvRFCCity rfcCity) {
-	scheduledCities.push_back(rfcCity);
 }
 
 void CvRFCPlayer::setEnabled(bool newEnabled) {
@@ -542,7 +541,7 @@ std::vector<CvRFCUnit>& CvRFCPlayer::getScheduledUnits() {
 	return scheduledUnits;
 }
 
-std::vector<CvRFCCity>& CvRFCPlayer::getScheduledCities() {
+std::vector<CvRFCCity*>& CvRFCPlayer::getScheduledCities() {
 	return scheduledCities;
 }
 
@@ -550,7 +549,7 @@ CvRFCUnit& CvRFCPlayer::getScheduledUnit(int i) {
 	return scheduledUnits[i];
 }
 
-CvRFCCity& CvRFCPlayer::getScheduledCity(int i) {
+CvRFCCity* CvRFCPlayer::getScheduledCity(int i) {
 	return scheduledCities[i];
 }
 
@@ -783,6 +782,12 @@ int CvRFCPlayer::getNewCityFreePopulation() const {
 	return newCityFreePopulation;
 }
 
+CvRFCCity* CvRFCPlayer::addScheduledCity() {
+	CvRFCCity* rfcCity = new CvRFCCity();
+	scheduledCities.push_back(rfcCity);
+	return rfcCity;
+}
+
 
 void CvRFCPlayer::read(FDataStreamBase* stream) {
 	{
@@ -802,8 +807,8 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)
 		{
-			CvRFCCity scheduledCity;
-			scheduledCity.read(stream);
+			CvRFCCity* scheduledCity = new CvRFCCity();
+			scheduledCity->read(stream);
 			scheduledCities.push_back(scheduledCity);
 		}
 	}
@@ -902,8 +907,8 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	{
 		uint size = scheduledCities.size();
 		stream->Write(size);
-		for(std::vector<CvRFCCity>::iterator it = scheduledCities.begin(); it != scheduledCities.end(); ++it) {
-			it->write(stream);
+		for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end(); ++it) {
+			(*it)->write(stream);
 		}
 	}
 
