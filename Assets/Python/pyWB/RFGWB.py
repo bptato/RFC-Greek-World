@@ -733,9 +733,9 @@ class WbParser:
 			#Units
 			if "Units" in wbPlot:
 				for wbUnit in wbPlot['Units']:
-					unitID = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), wbUnit['UnitType'])
-					ownerID = gc.getInfoTypeForString(wbUnit['UnitOwner'])
-					rfcPlayer = riseFall.getRFCPlayer(ownerID)
+					unitType = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), wbUnit['UnitType'])
+					ownerType = gc.getInfoTypeForString(wbUnit['UnitOwner'])
+					rfcPlayer = riseFall.getRFCPlayer(ownerType)
 
 					if "FacingDirection" in wbUnit:
 						facingDirection = wbUnit['FacingDirection']
@@ -767,7 +767,16 @@ class WbParser:
 					else:
 						declareWar = False
 
-					rfcPlayer.scheduleUnit(year, unitID, x, y, unitAI, facingDirection, amount, aiOnly, declareWar)
+					rfcUnit = rfcPlayer.addScheduledUnit()
+					rfcUnit.setYear(year)
+					rfcUnit.setUnitType(unitType)
+					rfcUnit.setX(x)
+					rfcUnit.setY(y)
+					rfcUnit.setUnitAIType(unitAI)
+					rfcUnit.setFacingDirection(facingDirection)
+					rfcUnit.setAmount(amount)
+					rfcUnit.setAIOnly(aiOnly)
+					rfcUnit.setDeclareWar(declareWar)
 
 
 			#Cities

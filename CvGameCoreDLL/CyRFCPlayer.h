@@ -12,7 +12,6 @@ class CyRFCPlayer {
 		CyRFCPlayer(CvRFCPlayer* rfcPlayerConst);
 
 		void setStartingYear(int newStartingYear);
-		void scheduleUnit(int year, int unitID, int x, int y, int unitAI, int facingDirection, int amount, bool aiOnly, bool declareWar);
 		void setStartingCivic(int civicOptionType, int civicType);
 		void addStartingTech(int techType);
 		void addStartingWar(int civType);
@@ -52,6 +51,7 @@ class CyRFCPlayer {
 		bool isSpawned();
 
 		int getNumScheduledUnits();
+		CyRFCUnit* addScheduledUnit();
 		CyRFCUnit* getScheduledUnit(int i);
 		int getNumScheduledCities();
 		CyRFCCity* addScheduledCity();

@@ -59,6 +59,9 @@ void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 		permStability[i] = 0;
 	}
 
+	for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+		SAFE_DELETE(*it);
+	}
 	scheduledUnits.clear();
 	for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end(); ++it) {
 		SAFE_DELETE(*it);
@@ -72,10 +75,6 @@ void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 
 void CvRFCPlayer::setCivilizationType(CivilizationTypes newCivType) {
 	civilizationType = newCivType;
-}
-
-void CvRFCPlayer::scheduleUnit(CvRFCUnit rfcUnit) {
-	scheduledUnits.push_back(rfcUnit);
 }
 
 void CvRFCPlayer::setEnabled(bool newEnabled) {
@@ -537,7 +536,7 @@ CivilizationTypes CvRFCPlayer::getCivilizationType() {
 	return civilizationType;
 }
 
-std::vector<CvRFCUnit>& CvRFCPlayer::getScheduledUnits() {
+std::vector<CvRFCUnit*>& CvRFCPlayer::getScheduledUnits() {
 	return scheduledUnits;
 }
 
@@ -545,8 +544,20 @@ std::vector<CvRFCCity*>& CvRFCPlayer::getScheduledCities() {
 	return scheduledCities;
 }
 
-CvRFCUnit& CvRFCPlayer::getScheduledUnit(int i) {
+CvRFCUnit* CvRFCPlayer::addScheduledUnit() {
+	CvRFCUnit* rfcUnit = new CvRFCUnit();
+	scheduledUnits.push_back(rfcUnit);
+	return rfcUnit;
+}
+
+CvRFCUnit* CvRFCPlayer::getScheduledUnit(int i) const {
 	return scheduledUnits[i];
+}
+
+CvRFCCity* CvRFCPlayer::addScheduledCity() {
+	CvRFCCity* rfcCity = new CvRFCCity();
+	scheduledCities.push_back(rfcCity);
+	return rfcCity;
 }
 
 CvRFCCity* CvRFCPlayer::getScheduledCity(int i) const {
@@ -782,12 +793,6 @@ int CvRFCPlayer::getNewCityFreePopulation() const {
 	return newCityFreePopulation;
 }
 
-CvRFCCity* CvRFCPlayer::addScheduledCity() {
-	CvRFCCity* rfcCity = new CvRFCCity();
-	scheduledCities.push_back(rfcCity);
-	return rfcCity;
-}
-
 
 void CvRFCPlayer::read(FDataStreamBase* stream) {
 	{
@@ -796,8 +801,8 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)
 		{
-			CvRFCUnit scheduledUnit;
-			scheduledUnit.read(stream);
+			CvRFCUnit* scheduledUnit = new CvRFCUnit();
+			scheduledUnit->read(stream);
 			scheduledUnits.push_back(scheduledUnit);
 		}
 	}
@@ -900,8 +905,8 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	{
 		uint size = scheduledUnits.size();
 		stream->Write(size);
-		for(std::vector<CvRFCUnit>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
-			it->write(stream);
+		for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+			(*it)->write(stream);
 		}
 	}
 	{
@@ -954,7 +959,7 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 		uint size = startingTechs.size();
 		stream->Write(size);
 		for(std::vector<TechTypes>::iterator it = startingTechs.begin(); it != startingTechs.end(); ++it) {
-			stream->Write((*it));
+			stream->Write(*it);
 		}
 	}
 
@@ -970,7 +975,7 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 		uint size = startingWars.size();
 		stream->Write(size);
 		for(std::vector<CivilizationTypes>::iterator it = startingWars.begin(); it != startingWars.end(); ++it) {
-			stream->Write((*it));
+			stream->Write(*it);
 		}
 	}
 
@@ -978,7 +983,7 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 		uint size = relatedLanguages.size();
 		stream->Write(size);
 		for(std::vector<CivilizationTypes>::iterator it = relatedLanguages.begin(); it != relatedLanguages.end(); ++it) {
-			stream->Write((*it));
+			stream->Write(*it);
 		}
 	}
 }

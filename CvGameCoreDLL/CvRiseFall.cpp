@@ -228,16 +228,17 @@ void CvRiseFall::checkScheduledCities(PlayerTypes playerType, CivilizationTypes 
 }
 
 void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes civType, int turn, bool spawnedNow) {
-	std::vector<CvRFCUnit>& scheduledUnits = getRFCPlayer(civType).getScheduledUnits();
-	for(std::vector<CvRFCUnit>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end();) {
-		if(GC.getGame().getTurnYear(turn) >= it->getYear()) {
-			if(!it->isAIOnly() || !getRFCPlayer(civType).isHuman()) {
-				int ix = it->getX();
-				int iy = it->getY();
+	std::vector<CvRFCUnit*>& scheduledUnits = getRFCPlayer(civType).getScheduledUnits();
+	for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end();) {
+		CvRFCUnit* rfcUnit = *it;
+		if(GC.getGame().getTurnYear(turn) >= rfcUnit->getYear()) {
+			if(!rfcUnit->isAIOnly() || !getRFCPlayer(civType).isHuman()) {
+				int ix = rfcUnit->getX();
+				int iy = rfcUnit->getY();
 				CvPlot* plot = GC.getMap().plot(ix, iy);
-				if(plot->isCity() && it->isDeclareWar()) {
+				if(plot->isCity() && rfcUnit->isDeclareWar()) {
 					if(plot->getPlotCity()->getOwnerINLINE() != civType) {
-						DomainTypes domainType = (DomainTypes)GC.getUnitInfo(it->getUnitType()).getDomainType();
+						DomainTypes domainType = (DomainTypes)GC.getUnitInfo(rfcUnit->getUnitType()).getDomainType();
 						plot = findSpawnPlot(ix, iy, domainType);
 						if(plot == NULL) {
 							continue;
@@ -245,7 +246,7 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 					}
 				}
 
-				if(it->isDeclareWar()) {
+				if(rfcUnit->isDeclareWar()) {
 					PlayerTypes plotOwner = plot->getOwner();
 					if(plotOwner != NO_PLAYER) {
 						if(!GET_TEAM(GET_PLAYER(playerType).getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
@@ -253,9 +254,9 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 						}
 					}
 				}
-				for(int j = 0; j<it->getAmount(); j++) {
-					CvUnit* unit = GET_PLAYER(playerType).initUnit(it->getUnitType(), ix, iy, it->getUnitAIType(), it->getFacingDirection());
-					if(unit != NULL && spawnedNow && !getRFCPlayer(civType).isHuman() && GC.getUnitInfo(it->getUnitType()).getDefaultUnitAIType() != UNITAI_SETTLE) {
+				for(int j = 0; j < rfcUnit->getAmount(); j++) {
+					CvUnit* unit = GET_PLAYER(playerType).initUnit(rfcUnit->getUnitType(), ix, iy, rfcUnit->getUnitAIType(), rfcUnit->getFacingDirection());
+					if(unit != NULL && spawnedNow && !getRFCPlayer(civType).isHuman() && GC.getUnitInfo(rfcUnit->getUnitType()).getDefaultUnitAIType() != UNITAI_SETTLE) {
 						unit->setImmobileTimer(2);
 					}
 				}
@@ -659,15 +660,14 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 				loopUnit = ::getUnit(unitNode->m_data);
 
 				if(loopUnit->getOwner() != newOwnerType && (previousOwnerType==NO_PLAYER || previousOwnerType==loopUnit->getOwner())) {
-					CvRFCUnit scheduledUnit;
-					scheduledUnit.setYear(GC.getGame().getGameTurnYear());
-					scheduledUnit.setX(x);
-					scheduledUnit.setY(y);
-					scheduledUnit.setUnitType(loopUnit->getUnitType());
-					scheduledUnit.setUnitAIType(NO_UNITAI);
-					scheduledUnit.setFacingDirection(DIRECTION_SOUTH);
-					scheduledUnit.setAmount(1);
-					getRFCPlayer(newCivType).scheduleUnit(scheduledUnit);
+					CvRFCUnit* scheduledUnit = getRFCPlayer(newCivType).addScheduledUnit();
+					scheduledUnit->setYear(GC.getGame().getGameTurnYear());
+					scheduledUnit->setX(x);
+					scheduledUnit->setY(y);
+					scheduledUnit->setUnitType(loopUnit->getUnitType());
+					scheduledUnit->setUnitAIType(NO_UNITAI);
+					scheduledUnit->setFacingDirection(DIRECTION_SOUTH);
+					scheduledUnit->setAmount(1);
 					oldUnits.push_back(unitNode->m_data);
 				}
 				unitNode = GC.getMap().plot(x, y)->nextUnitNode(unitNode);
