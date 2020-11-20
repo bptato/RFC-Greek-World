@@ -1867,7 +1867,8 @@ application/json
 				"CIVILIZATION_EGYPT":"Aswan"
 			},
 			"SettlerValues":{
-				"CIVILIZATION_EGYPT":300
+				"CIVILIZATION_EGYPT":300,
+				"CIVILIZATION_NUBIA":400
 			}
 		},
 		{
@@ -1882,7 +1883,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
-				"CIVILIZATION_NUBIA":300
+				"CIVILIZATION_NUBIA":400
 			}
 		},
 		{
@@ -1894,7 +1895,8 @@ application/json
 				"CIVILIZATION_EGYPT":"Tayu-djayet"
 			},
 			"SettlerValues":{
-				"CIVILIZATION_EGYPT":300
+				"CIVILIZATION_EGYPT":300,
+				"CIVILIZATION_NUBIA":400
 			}
 		},
 		{
@@ -2323,7 +2325,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
-				"CIVILIZATION_NUBIA":300,
+				"CIVILIZATION_NUBIA":400,
 				"CIVILIZATION_ROME":70
 			}
 		},
@@ -2790,7 +2792,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
-				"CIVILIZATION_NUBIA":300,
+				"CIVILIZATION_NUBIA":400,
 				"CIVILIZATION_ROME":70,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -3287,7 +3289,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
-				"CIVILIZATION_NUBIA":300,
+				"CIVILIZATION_NUBIA":400,
 				"CIVILIZATION_ROME":70,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -3856,6 +3858,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_BYZANTIUM":90
 			}
 		},
@@ -4314,6 +4317,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":70,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4336,6 +4340,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4355,6 +4360,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4774,6 +4780,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_BYZANTIUM":90
 			}
 		},
@@ -4793,6 +4800,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4811,6 +4819,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -5240,6 +5249,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -5260,6 +5270,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -5278,6 +5289,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -5715,6 +5727,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_SASSANID":70,
@@ -5737,6 +5750,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_SASSANID":70,
@@ -5755,6 +5769,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_BYZANTIUM":90
 			}
 		},
@@ -6189,6 +6204,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
@@ -6211,6 +6227,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
@@ -6228,6 +6245,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90
 			}
@@ -6664,6 +6682,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
@@ -6685,6 +6704,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
@@ -6704,6 +6724,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":200,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_BYZANTIUM":90
@@ -7132,6 +7153,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
 				"CIVILIZATION_SASSANID":70,
@@ -7156,6 +7178,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
@@ -7181,6 +7204,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
@@ -7201,6 +7225,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":90,
 				"CIVILIZATION_MACEDONIA":50,
@@ -7650,6 +7675,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":50,
 				"CIVILIZATION_SASSANID":70,
@@ -7670,6 +7696,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":50,
@@ -7691,6 +7718,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":50,
@@ -7714,6 +7742,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":50,
@@ -7739,6 +7768,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":50,
@@ -7762,6 +7792,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":50,
@@ -8257,6 +8288,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -8278,6 +8310,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -8302,6 +8335,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -8324,6 +8358,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -8343,6 +8378,7 @@ application/json
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -8368,6 +8404,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
 				"CIVILIZATION_MINOA":70,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -8971,6 +9008,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
 				"CIVILIZATION_MINOA":70,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -8993,6 +9031,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
 				"CIVILIZATION_MINOA":70,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -9014,6 +9053,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
 				"CIVILIZATION_MINOA":70,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
@@ -9037,6 +9077,7 @@ application/json
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
 				"CIVILIZATION_MINOA":70,
+				"CIVILIZATION_NUBIA":300,
 				"CIVILIZATION_PERSIA":300,
 				"CIVILIZATION_ROME":300,
 				"CIVILIZATION_MACEDONIA":70,
