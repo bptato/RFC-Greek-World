@@ -4696,7 +4696,8 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 
 		if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
 		{
-			return false;
+			if(pCity->getCivilizationType() != CIVILIZATION_MACEDONIA) //bluepotato
+				return false;
 		}
 	}
 
