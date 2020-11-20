@@ -45,6 +45,8 @@ class CvRiseFall {
 		void capitalCollapse(PlayerTypes playerType);
 		void completeCollapse(PlayerTypes playerType);
 
+		void setMapFile(const wchar* newName);
+
 		PlayerTypes getPlayerTypeForCiv(CivilizationTypes civType) const;
 		CvRFCPlayer& getRFCPlayer(CivilizationTypes civType) const;
 		CvRFCProvince* getRFCProvince(const wchar* provinceName);
@@ -54,11 +56,13 @@ class CvRiseFall {
 		bool skipConditionalSpawn(CivilizationTypes civType) const;
 		bool unitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign) const;
 		CvPlot* findSpawnPlot(int ix, int iy, DomainTypes domainType) const;
+		const wchar* getMapFile() const;
 
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);
 
 	protected:
-		CvRFCPlayer* rfcPlayers;
-		std::vector<CvRFCProvince*> rfcProvinces;
+		CvRFCPlayer* _rfcPlayers;
+		std::vector<CvRFCProvince*> _rfcProvinces;
+		CvWString _mapFile;
 };

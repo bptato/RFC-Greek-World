@@ -17,6 +17,8 @@ void CyRiseFallInterface()
 		.def("getRFCProvince", &CyRiseFall::getRFCProvinceByName, python::return_value_policy<python::reference_existing_object>(), "(str provinceName)")
 		.def("getRFCProvince", &CyRiseFall::getRFCProvince, python::return_value_policy<python::reference_existing_object>(), "(int province)")
 		.def("addProvince", &CyRiseFall::addProvince, "void (str name, int bottom, int left, int top, int right)")
+		.def("setMapFile", &CyRiseFall::setMapFile, "void (str name)")
+		.def("getMapFile", &CyRiseFall::getMapFile, "str ()")
 		;
 
 	python::class_<CyRFCCity>("CyRFCCity")

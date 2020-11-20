@@ -123,8 +123,8 @@ class WbParser:
 				rfcPlayer = riseFall.getRFCPlayer(gc.getInfoTypeForString(wbPlayer['CivType']))
 				rfcPlayer.setStartingYear(wbPlayer['StartingYear'])
 
-	def getMapFile(self): #TODO store this
-		return "GreekWorld"
+	def getMapFile(self):
+		return riseFall.getMapFile()
 
 	def saveMapFile(self, name): #Save map data.
 		values = OrderedDict({})
@@ -478,6 +478,7 @@ class WbParser:
 			f.close()
 			if "MapFile" in self.wbValues:
 				self.scenarioValues = self.wbValues
+				riseFall.setMapFile(self.wbValues['MapFile'])
 				self.parseFile(self.getMapsPath() + self.wbValues['MapFile'])
 				self.mapValues = self.wbValues
 				self.splitFile = True

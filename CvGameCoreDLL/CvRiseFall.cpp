@@ -15,26 +15,26 @@ Author: bluepotato
 #include "CvRFCProvince.h"
 
 CvRiseFall::CvRiseFall() {
-	rfcPlayers = new CvRFCPlayer[GC.getNumCivilizationInfos()];
+	_rfcPlayers = new CvRFCPlayer[GC.getNumCivilizationInfos()];
 }
 
 CvRiseFall::~CvRiseFall() {
-	SAFE_DELETE_ARRAY(rfcPlayers);
-	for(std::vector<CvRFCProvince*>::iterator it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+	SAFE_DELETE_ARRAY(_rfcPlayers);
+	for(std::vector<CvRFCProvince*>::iterator it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
 		SAFE_DELETE(*it);
 	}
-	rfcProvinces.clear();
+	_rfcProvinces.clear();
 }
 
 void CvRiseFall::reset() {
 	GC.logMsg("CvRiseFall::reset");
 	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
-		rfcPlayers[i].reset((CivilizationTypes)i);
+		_rfcPlayers[i].reset((CivilizationTypes)i);
 	}
-	for(std::vector<CvRFCProvince*>::iterator it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+	for(std::vector<CvRFCProvince*>::iterator it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
 		SAFE_DELETE(*it);
 	}
-	rfcProvinces.clear();
+	_rfcProvinces.clear();
 }
 
 void CvRiseFall::onGameStarted() {
@@ -608,7 +608,7 @@ void CvRiseFall::addProvince(const wchar* name, int bottom, int left, int top, i
 	CvRFCProvince* province = new CvRFCProvince();
 	province->setName(name);
 	province->setBounds(bottom, left, top, right);
-	rfcProvinces.push_back(province);
+	_rfcProvinces.push_back(province);
 }
 
 void CvRiseFall::citySecession(CvCity* city) {
@@ -707,6 +707,11 @@ void CvRiseFall::completeCollapse(PlayerTypes playerType) {
 	player.killUnits();
 }
 
+void CvRiseFall::setMapFile(const wchar* mapFile) {
+	CvWString cwvMapFile(mapFile);
+	_mapFile = cwvMapFile;
+}
+
 
 PlayerTypes CvRiseFall::getPlayerTypeForCiv(CivilizationTypes civType) const {
 	for(int i = 0; i<MAX_PLAYERS; i++) {
@@ -723,12 +728,12 @@ PlayerTypes CvRiseFall::getPlayerTypeForCiv(CivilizationTypes civType) const {
 }
 
 CvRFCPlayer& CvRiseFall::getRFCPlayer(CivilizationTypes civType) const {
-	return rfcPlayers[civType];
+	return _rfcPlayers[civType];
 }
 
 CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
 	std::vector<CvRFCProvince*>::iterator it;
-	for (it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+	for (it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
 		if(wcscmp(provinceName, (*it)->getName()) == 0) {
 			return (*it);
 		}
@@ -737,16 +742,16 @@ CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
 }
 
 CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) {
-	return rfcProvinces[provinceID];
+	return _rfcProvinces[provinceID];
 }
 
 int CvRiseFall::getNumProvinces() const {
-	return rfcProvinces.size();
+	return _rfcProvinces.size();
 }
 
 CvRFCProvince* CvRiseFall::getProvinceForPlot(int x, int y) {
 	std::vector<CvRFCProvince*>::iterator it;
-	for (it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+	for (it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
 		if((*it)->isInBounds(x, y)) {
 			return (*it);
 		}
@@ -799,22 +804,26 @@ CvPlot* CvRiseFall::findSpawnPlot(int ix, int iy, DomainTypes domainType) const 
 	return NULL;
 }
 
+const wchar* CvRiseFall::getMapFile() const {
+	return _mapFile;
+}
+
 
 //read & write
 void CvRiseFall::read(FDataStreamBase* stream) {
 	reset();
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
-		rfcPlayers[i].read(stream);
+		_rfcPlayers[i].read(stream);
 	}
 
 	{
-		rfcProvinces.clear();
+		_rfcProvinces.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
 			CvRFCProvince* rfcProvince = new CvRFCProvince();
 			rfcProvince->read(stream);
-			rfcProvinces.push_back(rfcProvince);
+			_rfcProvinces.push_back(rfcProvince);
 		}
 	}
 }
@@ -822,13 +831,13 @@ void CvRiseFall::read(FDataStreamBase* stream) {
 
 void CvRiseFall::write(FDataStreamBase* stream) {
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
-		rfcPlayers[i].write(stream);
+		_rfcPlayers[i].write(stream);
 	}
 
 	{
-		uint size = rfcProvinces.size();
+		uint size = _rfcProvinces.size();
 		stream->Write(size);
-		for(std::vector<CvRFCProvince*>::iterator it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+		for(std::vector<CvRFCProvince*>::iterator it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
 			(*it)->write(stream);
 		}
 	}
