@@ -11,6 +11,9 @@ Added new diplomusic for Satur and Hiram
 Assyrian UHV
 Israelite UHV
 Athenian UHV
+Spartan UHV
+Scythian UHV
+City name and settler map editors
 
 General changes:
 Athens now starts with Deification
@@ -36,6 +39,8 @@ First Mycenaean UHV condition now requires four Tholoi
 The Hunnic and Germanic civs now receive 2-3 units for capturing cities
 Renamed Olympic Parks to Olympic Games
 Adjusted Phoenician modifiers
+Improved most settler maps
+Macedonia can now raze cities above culture threshold
 
 Technical changes:
 Moved some hardcoded mercenary values to XML
@@ -43,6 +48,8 @@ Replaced Sanguo Mod Performance labels to make a future merge easier
 Disabled some python callbacks
 Removed some obsolete XML stuff
 Split worldbuilder saves into two parts
+Removed a few unnecessary assertions
+Moved a couple of objects off the stack to avoid some memory-related errors
 
 Fixes:
 Fixed some UHVs
@@ -53,6 +60,9 @@ Fixed some asserts
 Fixed being able to negotiate peace, war and trade embargos concerning Independents
 Fixed the defeat message
 Escape key no longer kills the player during autoplay
+Fixed CtD and other strange behavior when selecting 900 BC
+Fixed units spawning on top of cities
+Fixed some civs starting at incorrect turns
 
 PREVIOUS VERSIONS:
 Version 2.0 beta
