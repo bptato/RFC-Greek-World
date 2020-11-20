@@ -730,18 +730,21 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			CvPlot* plot = GC.getMap().plot(x, y);
 			CvWString result;
 			CvWString editBoxData = pPopupReturn->getEditBoxString(0);
-			CyArgsList argsList;
-			argsList.add(editBoxData.c_str());
-			gDLL->getPythonIFace()->callFunction(PYScreensModule, "unicodeToXML", argsList.makeFunctionArgs(), &result);
-			plot->setCityName(civType, result.c_str());
+			if(!editBoxData.empty()) {
+				CyArgsList argsList;
+				argsList.add(editBoxData.c_str());
+				gDLL->getPythonIFace()->callFunction(PYScreensModule, "unicodeToXML", argsList.makeFunctionArgs(), &result);
+				plot->setCityName(civType, result.c_str());
 
-			CyArgsList argsList2;
-			argsList2.add(x);
-			argsList2.add(y);
-			argsList2.add(GC.getGame().getActivePlayer());
-			argsList2.add(editBoxData.c_str());
-			gDLL->getPythonIFace()->callFunction(PYScreensModule, "addSign", argsList2.makeFunctionArgs());
+				CyArgsList argsList2;
+				argsList2.add(x);
+				argsList2.add(y);
+				argsList2.add(GC.getGame().getActivePlayer());
+				argsList2.add(editBoxData.c_str());
+				gDLL->getPythonIFace()->callFunction(PYScreensModule, "addSign", argsList2.makeFunctionArgs());
+			}
 		}
+		break;
 	//bluepotato end
 
 	default:

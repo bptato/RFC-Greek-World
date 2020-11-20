@@ -543,6 +543,7 @@ enum WidgetTypes					// Exposed to Python
 
 	//bluepotato start: city name widget
 	WIDGET_WB_CITY_NAME,
+	WIDGET_WB_SETTLER_MAP,
 	//bluepotato end
 
 #ifdef _USRDLL
