@@ -25,13 +25,6 @@ CLANGD=false
 
 #You probably won't have to change anything below
 set -e
-export WINEDEBUG=-all
-PID="$$"
-WINEPWD="$(winepath -w "$PWD")"
-
-if $CLEAN && $CLANGD; then
-	printf '[\n' > ./compile_commands.json.new
-fi
 
 error() {
 	echo "ERROR: $*" >&2
@@ -65,6 +58,14 @@ else #iterate over arguments
 			error "Invalid argument $arg"
 		fi
 	done
+fi
+
+export WINEDEBUG=-all
+PID="$$"
+WINEPWD="$(winepath -w "$PWD")"
+
+if $CLEAN && $CLANGD; then
+	printf '[\n' > ./compile_commands.json.new
 fi
 
 if test "$TARGET"; then
