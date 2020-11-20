@@ -208,18 +208,19 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 void CvRiseFall::checkScheduledCities(PlayerTypes playerType, CivilizationTypes civType, int turn) {
 	std::vector<CvRFCCity*>& scheduledCities = getRFCPlayer(civType).getScheduledCities();
 	for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end();) {
-		CvRFCCity* scheduledCity = *it;
-		if(GC.getGame().getTurnYear(turn) >= scheduledCity->getYear()) {
-			GET_PLAYER(playerType).found(scheduledCity->getX(), scheduledCity->getY());
-			if(GC.getMap().plot(scheduledCity->getX(), scheduledCity->getY())->isCity()) {
-				CvCity* city = GC.getMap().plot(scheduledCity->getX(), scheduledCity->getY())->getPlotCity();
-				city->setPopulation(scheduledCity->getPopulation());
+		CvRFCCity* rfcCity = *it;
+		if(GC.getGame().getTurnYear(turn) >= rfcCity->getYear()) {
+			GET_PLAYER(playerType).found(rfcCity->getX(), rfcCity->getY());
+			if(GC.getMap().plot(rfcCity->getX(), rfcCity->getY())->isCity()) {
+				CvCity* city = GC.getMap().plot(rfcCity->getX(), rfcCity->getY())->getPlotCity();
+				city->setPopulation(rfcCity->getPopulation());
 				for(int i = 0; i < GC.getNumBuildingInfos(); ++i) {
-					int buildingNum = scheduledCity->getNumBuilding((BuildingTypes)i);
+					int buildingNum = rfcCity->getNumBuilding((BuildingTypes)i);
 					if(buildingNum > 0)
 						city->setNumRealBuilding((BuildingTypes)i, buildingNum);
 				}
 			}
+			SAFE_DELETE(rfcCity);
 			it = scheduledCities.erase(it);
 		} else {
 			++it;
@@ -261,6 +262,7 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 					}
 				}
 			}
+			SAFE_DELETE(rfcUnit);
 			it = scheduledUnits.erase(it);
 		} else {
 			++it;
