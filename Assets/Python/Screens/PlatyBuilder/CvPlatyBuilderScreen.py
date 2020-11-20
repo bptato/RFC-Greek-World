@@ -1497,7 +1497,6 @@ class CvWorldBuilderScreen:
 			for i in xrange(len(items)):
 				screen.appendTableRow("WBSelectItem")
 			for i in xrange(len(items)):
-				print "Art/Interface/Buttons/SettlerValues/btn_" + str(items[i]) + ".dds"
 				screen.setTableText("WBSelectItem", 0, i, "<font=3>Value: " + str(items[i]) + "</font>", "Art/Interface/Buttons/SettlerValues/btn_" + str(items[i]) + ".dds", WidgetTypes.WIDGET_PYTHON, 8207, items[i], CvUtil.FONT_LEFT_JUSTIFY)
 		self.refreshSelection()
 
