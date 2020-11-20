@@ -60,5 +60,5 @@ class CvRiseFall {
 
 	protected:
 		CvRFCPlayer* rfcPlayers;
-		std::vector<CvRFCProvince> rfcProvinces;
+		std::vector<CvRFCProvince*> rfcProvinces;
 };

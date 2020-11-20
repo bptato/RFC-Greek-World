@@ -20,17 +20,19 @@ CvRiseFall::CvRiseFall() {
 
 CvRiseFall::~CvRiseFall() {
 	SAFE_DELETE_ARRAY(rfcPlayers);
+	for(std::vector<CvRFCProvince*>::iterator it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+		SAFE_DELETE(*it);
+	}
 	rfcProvinces.clear();
 }
 
 void CvRiseFall::reset() {
-	if(GC.getNumCivilizationInfos()<1) {
-		GC.logMsg("CvRiseFall::reset - no civs!");
-	} else {
-		GC.logMsg("CvRiseFall::reset - civs!");
-		for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
-			rfcPlayers[i].reset((CivilizationTypes)i);
-		}
+	GC.logMsg("CvRiseFall::reset");
+	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
+		rfcPlayers[i].reset((CivilizationTypes)i);
+	}
+	for(std::vector<CvRFCProvince*>::iterator it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+		SAFE_DELETE(*it);
 	}
 	rfcProvinces.clear();
 }
@@ -40,7 +42,7 @@ void CvRiseFall::onGameStarted() {
 	CvGame& game = GC.getGameINLINE();
 
 	bool activePlayerSet = false;
-	for(int i = 0; i<MAX_CIV_PLAYERS; i++) {
+	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isHuman()) {
 			CvRFCPlayer& rfcPlayer = getRFCPlayer(player.getCivilizationType());
@@ -603,9 +605,9 @@ void CvRiseFall::eraseSurroundings(CivilizationTypes civType, PlayerTypes player
 }
 
 void CvRiseFall::addProvince(const wchar* name, int bottom, int left, int top, int right) {
-	CvRFCProvince province;
-	province.setName(name);
-	province.setBounds(bottom, left, top, right);
+	CvRFCProvince* province = new CvRFCProvince();
+	province->setName(name);
+	province->setBounds(bottom, left, top, right);
 	rfcProvinces.push_back(province);
 }
 
@@ -725,17 +727,17 @@ CvRFCPlayer& CvRiseFall::getRFCPlayer(CivilizationTypes civType) const {
 }
 
 CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
-	std::vector<CvRFCProvince>::iterator it;
+	std::vector<CvRFCProvince*>::iterator it;
 	for (it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
-		if(wcscmp(provinceName, (*it).getName()) == 0) {
-			return &(*it);
+		if(wcscmp(provinceName, (*it)->getName()) == 0) {
+			return (*it);
 		}
 	}
 	return NULL;
 }
 
 CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) {
-	return &rfcProvinces[provinceID];
+	return rfcProvinces[provinceID];
 }
 
 int CvRiseFall::getNumProvinces() const {
@@ -743,10 +745,10 @@ int CvRiseFall::getNumProvinces() const {
 }
 
 CvRFCProvince* CvRiseFall::getProvinceForPlot(int x, int y) {
-	std::vector<CvRFCProvince>::iterator it;
+	std::vector<CvRFCProvince*>::iterator it;
 	for (it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
-		if((*it).isInBounds(x, y)) {
-			return &(*it);
+		if((*it)->isInBounds(x, y)) {
+			return (*it);
 		}
 	}
 	return NULL;
@@ -810,8 +812,8 @@ void CvRiseFall::read(FDataStreamBase* stream) {
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
-			CvRFCProvince rfcProvince;
-			rfcProvince.read(stream);
+			CvRFCProvince* rfcProvince = new CvRFCProvince();
+			rfcProvince->read(stream);
 			rfcProvinces.push_back(rfcProvince);
 		}
 	}
@@ -826,8 +828,8 @@ void CvRiseFall::write(FDataStreamBase* stream) {
 	{
 		uint size = rfcProvinces.size();
 		stream->Write(size);
-		for(std::vector<CvRFCProvince>::iterator it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
-			it->write(stream);
+		for(std::vector<CvRFCProvince*>::iterator it = rfcProvinces.begin(); it != rfcProvinces.end(); ++it) {
+			(*it)->write(stream);
 		}
 	}
 }

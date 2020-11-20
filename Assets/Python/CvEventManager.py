@@ -935,7 +935,7 @@ class CvEventManager:
 			for x in range(pCity.getX() - 5, pCity.getX() + 5):
 				for y in range(pCity.getY() - 5, pCity.getY() + 5):
 					plot = CyMap().plot(x, y)
-					if (plot.isHills() or plot.isFlatlands()) and not plot.isImpassable():
+					if (plot.isHills() or plot.isFlatlands()) and not plot.isImpassable() and not plot.isCity():
 						plots.append(plot)
 			if len(plots):
 				amount = gc.getGame().getSorenRandNum(2, 'Spawned unit amount') + 2
