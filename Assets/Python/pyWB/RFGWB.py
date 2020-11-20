@@ -867,7 +867,14 @@ class WbParser:
 
 					unitID = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), wbUnit['UnitType'])
 
-					rfcProvince.scheduleUnit(year, unitID, unitAI, facingDirection, amount, endYear, wbUnit['SpawnFrequency'])
+					rfcUnit = rfcProvince.addScheduledUnit()
+					rfcUnit.setYear(year)
+					rfcUnit.setUnitType(unitID)
+					rfcUnit.setUnitAIType(unitAI)
+					rfcUnit.setFacingDirection(facingDirection)
+					rfcUnit.setAmount(amount)
+					rfcUnit.setEndYear(endYear)
+					rfcUnit.setSpawnFrequency(wbUnit['SpawnFrequency'])
 
 		#Players
 		for i in range(gc.getMAX_CIV_PLAYERS()):

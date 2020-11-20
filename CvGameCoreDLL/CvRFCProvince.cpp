@@ -23,12 +23,15 @@ void CvRFCProvince::reset() {
 	right = -1;
 	top = -1;
 	left = -1;
+	name.clear();
+	mercenaries.clear();
 }
 
 void CvRFCProvince::uninit() {
-	name.clear();
+	for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+		SAFE_DELETE(*it);
+	}
 	scheduledUnits.clear();
-	mercenaries.clear();
 }
 
 void CvRFCProvince::setName(const wchar* newName) {
@@ -41,10 +44,6 @@ void CvRFCProvince::setBounds(int newBottom, int newLeft, int newTop, int newRig
 	left = newLeft;
 	top = newTop;
 	right = newRight;
-}
-
-void CvRFCProvince::scheduleUnit(CvRFCUnit scheduledUnit) {
-	scheduledUnits.push_back(scheduledUnit);
 }
 
 void CvRFCProvince::addMercenary(CvRFCMercenary mercenary) {
@@ -221,11 +220,17 @@ int CvRFCProvince::getNumScheduledUnits() const {
 	return scheduledUnits.size();
 }
 
-CvRFCUnit& CvRFCProvince::getScheduledUnit(int i) {
+CvRFCUnit* CvRFCProvince::addScheduledUnit() {
+	CvRFCUnit* rfcUnit = new CvRFCUnit();
+	scheduledUnits.push_back(rfcUnit);
+	return rfcUnit;
+}
+
+CvRFCUnit* CvRFCProvince::getScheduledUnit(int i) const {
 	return scheduledUnits[i];
 }
 
-std::vector<CvRFCUnit>& CvRFCProvince::getScheduledUnits() {
+std::vector<CvRFCUnit*>& CvRFCProvince::getScheduledUnits() {
 	return scheduledUnits;
 }
 
@@ -297,8 +302,8 @@ void CvRFCProvince::write(FDataStreamBase* stream) {
 	{
 		uint size = scheduledUnits.size();
 		stream->Write(size);
-		for(std::vector<CvRFCUnit>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
-			it->write(stream);
+		for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+			(*it)->write(stream);
 		}
 	}
 
@@ -323,8 +328,8 @@ void CvRFCProvince::read(FDataStreamBase* stream) {
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i < size; i++) {
-			CvRFCUnit scheduledUnit;
-			scheduledUnit.read(stream);
+			CvRFCUnit* scheduledUnit = new CvRFCUnit();
+			scheduledUnit->read(stream);
 			scheduledUnits.push_back(scheduledUnit);
 		}
 	}

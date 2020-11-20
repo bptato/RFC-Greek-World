@@ -13,7 +13,6 @@ class CvRFCProvince {
 
 		void setName(const wchar* newName);
 		void setBounds(int newBottom, int newRight, int newTop, int newLeft);
-		void scheduleUnit(CvRFCUnit unit);
 		void addMercenary(CvRFCMercenary mercenary);
 		void checkMercenaries();
 		void hireMercenary(PlayerTypes playerType, int mercenaryID);
@@ -26,8 +25,9 @@ class CvRFCProvince {
 		int getLeft() const;
 		bool isBorderProvince(CvRFCProvince* province) const;
 		int getNumScheduledUnits() const;
-		CvRFCUnit& getScheduledUnit(int i);
-		std::vector<CvRFCUnit>& getScheduledUnits();
+		CvRFCUnit* addScheduledUnit();
+		CvRFCUnit* getScheduledUnit(int i) const;
+		std::vector<CvRFCUnit*>& getScheduledUnits();
 		int getNumMercenaries() const;
 		CvRFCMercenary& getMercenary(int i);
 		std::vector<CvRFCMercenary>& getMercenaries();
@@ -44,6 +44,6 @@ class CvRFCProvince {
 		int left;
 		int top;
 		int right;
-		std::vector<CvRFCUnit> scheduledUnits; //barbs
+		std::vector<CvRFCUnit*> scheduledUnits; //barbs
 		std::vector<CvRFCMercenary> mercenaries;
 };

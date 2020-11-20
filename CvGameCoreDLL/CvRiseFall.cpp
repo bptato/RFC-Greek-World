@@ -94,15 +94,15 @@ void CvRiseFall::checkTurn() {
 			}
 			if(plots.size()>0) {
 				for(int j = 0; j<numScheduledUnits; j++) {
-					CvRFCUnit& rfcUnit = rfcProvince->getScheduledUnit(j);
-					if(rfcUnit.getLastSpawned() == -1 || rfcUnit.getLastSpawned() + rfcUnit.getSpawnFrequency()/2 < game.getGameTurn()) {
-						if(rfcUnit.getYear() <= game.getGameTurnYear() && rfcUnit.getEndYear() >= game.getGameTurnYear() && game.getSorenRandNum(rfcUnit.getSpawnFrequency()/2, "Unit spawn roll") == 0) {
+					CvRFCUnit* rfcUnit = rfcProvince->getScheduledUnit(j);
+					if(rfcUnit->getLastSpawned() == -1 || rfcUnit->getLastSpawned() + rfcUnit->getSpawnFrequency()/2 < game.getGameTurn()) {
+						if(rfcUnit->getYear() <= game.getGameTurnYear() && rfcUnit->getEndYear() >= game.getGameTurnYear() && game.getSorenRandNum(rfcUnit->getSpawnFrequency()/2, "Unit spawn roll") == 0) {
 							CvPlayer& barbPlayer = GET_PLAYER(BARBARIAN_PLAYER); //TODO: different rfcUnit owner civs?
 							CvPlot* randomPlot = plots[game.getSorenRandNum(plots.size(), "Barb spawning plot roll")];
-							for(int k = 0; k<rfcUnit.getAmount(); k++) {
-								barbPlayer.initUnit(rfcUnit.getUnitType(), randomPlot->getX(), randomPlot->getY(), rfcUnit.getUnitAIType(), rfcUnit.getFacingDirection());
+							for(int k = 0; k<rfcUnit->getAmount(); k++) {
+								barbPlayer.initUnit(rfcUnit->getUnitType(), randomPlot->getX(), randomPlot->getY(), rfcUnit->getUnitAIType(), rfcUnit->getFacingDirection());
 							}
-							rfcUnit.setLastSpawned(game.getGameTurn());
+							rfcUnit->setLastSpawned(game.getGameTurn());
 						}
 					}
 				}
@@ -329,7 +329,6 @@ void CvRiseFall::checkLeader(CivilizationTypes civType, PlayerTypes playerType) 
 	int reign = 0;
 	bool reignSet = false;
 	for(int i = 0; i<GC.getNumLeaderHeadInfos(); i++) {
-		GC.logMsg("isLeaders(%d)", i);
 		if(civInfo.isLeaders(i)) {
 			CvLeaderHeadInfo& leaderInfo = GC.getLeaderHeadInfo((LeaderHeadTypes)i);
 			if(leaderInfo.getLeaderReign() <= GC.getGameINLINE().getGameTurnYear() && (!reignSet || reign < leaderInfo.getLeaderReign())) {
@@ -422,7 +421,7 @@ void CvRiseFall::checkStabilityEffect(CivilizationTypes civType, PlayerTypes pla
 			if(chosenCity != NULL) {
 				citySecession(chosenCity);
 
-				for(j = 0; j < STABILITY_CATEGORIES; ++j) {
+				for(j = 0; j < NUM_STABILITY_CATEGORIES; ++j) {
 					int newStability = rfcPlayer.getPermStability(j) / 3;
 					newStability *= 2;
 					rfcPlayer.setPermStability(j, newStability);
@@ -449,7 +448,7 @@ void CvRiseFall::checkStabilityEffect(CivilizationTypes civType, PlayerTypes pla
 				citySecession(chosenCity);
 			}
 
-			for(j = 0; j < STABILITY_CATEGORIES; ++j) {
+			for(j = 0; j < NUM_STABILITY_CATEGORIES; ++j) {
 				int newStability = rfcPlayer.getPermStability(j) / 4;
 				newStability *= 3;
 				rfcPlayer.setPermStability(j, newStability);
@@ -464,7 +463,7 @@ void CvRiseFall::checkStabilityEffect(CivilizationTypes civType, PlayerTypes pla
 			} else {
 				completeCollapse(playerType);
 			}
-			for(int j = 0; j<STABILITY_CATEGORIES; ++j) {
+			for(int j = 0; j < NUM_STABILITY_CATEGORIES; ++j) {
 				rfcPlayer.setPermStability(j, 0);
 				rfcPlayer.setTempStability(j, 0);
 			}

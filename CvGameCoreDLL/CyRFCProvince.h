@@ -11,7 +11,6 @@ class CyRFCProvince {
 		CyRFCProvince();
 		CyRFCProvince(CvRFCProvince* rfcProvinceConst);
 
-		void scheduleUnit(int year, int unitID, int unitAI, int facingDirection, int amount, int endYear, int spawnFrequency);
 		void hireMercenary(int playerType, int mercenaryID);
 
 		std::wstring getName();
@@ -20,6 +19,7 @@ class CyRFCProvince {
 		int getTop();
 		int getRight();
 		int getNumScheduledUnits();
+		CyRFCUnit* addScheduledUnit();
 		CyRFCUnit* getScheduledUnit(int i);
 		int getNumMercenaries();
 		CyRFCMercenary* getMercenary(int i);

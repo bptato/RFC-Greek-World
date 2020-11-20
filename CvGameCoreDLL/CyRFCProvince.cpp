@@ -12,18 +12,6 @@ CyRFCProvince::CyRFCProvince(CvRFCProvince* rfcProvinceConst) : rfcProvince(rfcP
 }
 
 
-void CyRFCProvince::scheduleUnit(int year, int unitType, int unitAIType, int facingDirection, int amount, int endYear, int spawnFrequency) {
-	CvRFCUnit rfcUnit;
-	rfcUnit.setYear(year);
-	rfcUnit.setUnitType((UnitTypes)unitType);
-	rfcUnit.setUnitAIType((UnitAITypes)unitAIType);
-	rfcUnit.setFacingDirection((DirectionTypes)facingDirection);
-	rfcUnit.setAmount(amount);
-	rfcUnit.setEndYear(endYear);
-	rfcUnit.setSpawnFrequency(spawnFrequency);
-	rfcProvince->scheduleUnit(rfcUnit);
-}
-
 void CyRFCProvince::hireMercenary(int playerType, int mercenaryID) {
 	rfcProvince->hireMercenary((PlayerTypes)playerType, mercenaryID);
 }
@@ -53,8 +41,12 @@ int CyRFCProvince::getNumScheduledUnits() {
 	return rfcProvince->getNumScheduledUnits();
 }
 
+CyRFCUnit* CyRFCProvince::addScheduledUnit() {
+	return new CyRFCUnit(rfcProvince->addScheduledUnit());
+}
+
 CyRFCUnit* CyRFCProvince::getScheduledUnit(int i) {
-	return new CyRFCUnit(&rfcProvince->getScheduledUnit(i));
+	return new CyRFCUnit(rfcProvince->getScheduledUnit(i));
 }
 
 int CyRFCProvince::getNumMercenaries() {

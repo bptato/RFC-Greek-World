@@ -4,16 +4,21 @@ Author: bluepotato
 */
 #include "CvGameCoreDLL.h"
 
-#define STABILITY_CATEGORIES 5 //cities (0), civics (1), economic (2), expansion (3), foreign (4)
+#define NUM_STABILITY_CATEGORIES 5
+#define STABILITY_CITIES 0
+#define STABILITY_CIVICS 1
+#define STABILITY_ECONOMY 2
+#define STABILITY_EXPANSION 3
+#define STABILITY_FOREIGN 4
 
 class CvRFCPlayer {
 	public:
 		CvRFCPlayer();
 		~CvRFCPlayer();
 		void reset(CivilizationTypes newCivType);
+		void uninit();
 
 		void setCivilizationType(CivilizationTypes newCivType);
-		void scheduleUnit(CvRFCUnit rfcUnit);
 		void setEnabled(bool newEnabled);
 		void setStartingCivic(CivicOptionTypes civicOptionType, CivicTypes civicType);
 		void setStartingYear(int year);
@@ -132,8 +137,8 @@ class CvRFCPlayer {
 		std::vector<CvWString> coreProvinces;
 		std::vector<TechTypes> startingTechs;
 		std::vector<CivilizationTypes> startingWars;
-		int tempStability[STABILITY_CATEGORIES];
-		int permStability[STABILITY_CATEGORIES];
+		int tempStability[NUM_STABILITY_CATEGORIES];
+		int permStability[NUM_STABILITY_CATEGORIES];
 		int flipCountdown;
 		int GNP;
 		int numPlots;

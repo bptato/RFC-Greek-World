@@ -10,9 +10,11 @@ CvRFCPlayer::CvRFCPlayer() {
 
 CvRFCPlayer::~CvRFCPlayer() {
 	SAFE_DELETE_ARRAY(startingCivics);
+	uninit();
 }
 
 void CvRFCPlayer::reset(CivilizationTypes newCivType) {
+	uninit();
 	civilizationType = newCivType;
 	startingYear = 0;
 	startingTurn = -1;
@@ -50,15 +52,22 @@ void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 
 	newCityFreePopulation = 0;
 
-	for(int i = 0; i<GC.getNumCivicOptionInfos(); i++) {
+	for(int i = 0; i < GC.getNumCivicOptionInfos(); i++) {
 		startingCivics[i] = NO_CIVIC;
 	}
 
-	for(int i = 0; i<STABILITY_CATEGORIES; i++) {
+	for(int i = 0; i < NUM_STABILITY_CATEGORIES; i++) {
 		tempStability[i] = 0;
 		permStability[i] = 0;
 	}
 
+	startingTechs.clear();
+	coreProvinces.clear();
+	startingWars.clear();
+	relatedLanguages.clear();
+}
+
+void CvRFCPlayer::uninit() {
 	for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
 		SAFE_DELETE(*it);
 	}
@@ -67,10 +76,6 @@ void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 		SAFE_DELETE(*it);
 	}
 	scheduledCities.clear();
-	startingTechs.clear();
-	coreProvinces.clear();
-	startingWars.clear();
-	relatedLanguages.clear();
 }
 
 void CvRFCPlayer::setCivilizationType(CivilizationTypes newCivType) {
@@ -453,13 +458,13 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 	newExpansionStability += std::min(5, corePopulation * 5 - getNumPlots());
 
 	//Set new stability
-	setTempStability(0, newCitiesStability);
-	setTempStability(1, newCivicsStability);
-	setTempStability(2, newEconomicStability);
-	setTempStability(3, newExpansionStability);
-	setTempStability(4, newForeignStability);
+	setTempStability(STABILITY_CITIES, newCitiesStability);
+	setTempStability(STABILITY_CIVICS, newCivicsStability);
+	setTempStability(STABILITY_ECONOMY, newEconomicStability);
+	setTempStability(STABILITY_EXPANSION, newExpansionStability);
+	setTempStability(STABILITY_FOREIGN, newForeignStability);
 
-	setPermStability(2, permEconomicStability);
+	setPermStability(STABILITY_ECONOMY, permEconomicStability);
 }
 
 void CvRFCPlayer::applyStability(PlayerTypes playerType, int* num, CivicTypes civicType1, CivicTypes civicType2, int stability) {
@@ -682,7 +687,7 @@ int CvRFCPlayer::getStability(int category) const {
 
 int CvRFCPlayer::getTotalStability() const {
 	int totalStability = 0;
-	for(int i = 0; i<STABILITY_CATEGORIES; i++) {
+	for(int i = 0; i < NUM_STABILITY_CATEGORIES; i++) {
 		totalStability += tempStability[i];
 		totalStability += permStability[i];
 	}
@@ -820,8 +825,8 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 
 	stream->Read((int*)&civilizationType);
 	stream->Read(GC.getNumCivicOptionInfos(), startingCivics);
-	stream->Read(STABILITY_CATEGORIES, tempStability);
-	stream->Read(STABILITY_CATEGORIES, permStability);
+	stream->Read(NUM_STABILITY_CATEGORIES, tempStability);
+	stream->Read(NUM_STABILITY_CATEGORIES, permStability);
 	stream->Read(&startingYear);
 	stream->Read(&startingTurn);
 	stream->Read(&startingPlotX);
@@ -919,8 +924,8 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 
 	stream->Write(civilizationType);
 	stream->Write(GC.getNumCivicOptionInfos(), startingCivics);
-	stream->Write(STABILITY_CATEGORIES, tempStability);
-	stream->Write(STABILITY_CATEGORIES, permStability);
+	stream->Write(NUM_STABILITY_CATEGORIES, tempStability);
+	stream->Write(NUM_STABILITY_CATEGORIES, permStability);
 	stream->Write(startingYear);
 	stream->Write(startingTurn);
 	stream->Write(startingPlotX);
