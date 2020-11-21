@@ -18,8 +18,7 @@ def writeDesc(argsList):
 	fileName = argsList[0]
 	global lastFileRead
 	lastFileRead=None
-	print fileName
-	return wbParser.createSplitWBSave("GreekWorld", fileName) #TODO
+	return wbParser.createSplitWBSave(gc.getRiseFall().getMapFile(), fileName) #TODO
 
 def readAndApplyDesc(argsList):
 	print "CvWBInterface.readAndApplyDesc()"
