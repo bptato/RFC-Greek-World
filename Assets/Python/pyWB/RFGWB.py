@@ -952,10 +952,10 @@ class WbParser:
 					rfcPlayer.setInflationModifier(wbPlayer['InflationModifier'])
 				if "GrowthModifier" in wbPlayer:
 					rfcPlayer.setGrowthModifier(wbPlayer['GrowthModifier'])
+				if "StartingYear" in wbPlayer:
+					rfcPlayer.setStartingYear(wbPlayer['StartingYear'])
 			elif wbPlayer['CivType'] != "CIVILIZATION_BARBARIAN": #barbarians are minors and always occupy last slot; we don't want them to reduce available slots
 				gc.setMinorNationCiv(self.lastOpenSlot, playerID, True)
 				self.lastOpenSlot -= 1
 			else:
 				gc.setMinorNationCiv(gc.getMAX_CIV_PLAYERS(), playerID, True)
-
-		self.setupStartingYears()

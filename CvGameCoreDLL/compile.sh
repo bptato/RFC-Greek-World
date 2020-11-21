@@ -46,7 +46,7 @@ dec() {
 }
 
 if test $# -lt 1; then
-	error "Unspecified target. USAGE: ./compile.sh [Release/Debug] [clean]"
+	error "Unspecified target. USAGE: ./compile.sh [release/debug] [clean]"
 else #iterate over arguments
 	for arg in "$@"; do
 		larg="$(tolower "$arg")"
