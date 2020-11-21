@@ -65,8 +65,7 @@ void CvRiseFall::checkTurn() {
 	GC.logMsg("CvRiseFall::checkTurn - turn %d", game.getGameTurn());
 
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
-		CvRFCPlayer& rfcPlayer = getRFCPlayer((CivilizationTypes)i);
-		if(rfcPlayer.isHuman()) {
+		if(getRFCPlayer((CivilizationTypes)i).isHuman()) {
 			int turn = game.getGameTurn();
 			turn = turn <= 1 ? turn : turn + 1;
 			checkTurnForPlayer((CivilizationTypes)i, turn);
@@ -74,8 +73,7 @@ void CvRiseFall::checkTurn() {
 	}
 
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
-		CvRFCPlayer& rfcPlayer = getRFCPlayer((CivilizationTypes)i);
-		if(!rfcPlayer.isHuman()) {
+		if(!getRFCPlayer((CivilizationTypes)i).isHuman()) {
 			checkTurnForPlayer((CivilizationTypes)i, game.getGameTurn());
 		}
 	}
@@ -521,7 +519,9 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 	CvGame& game = GC.getGameINLINE();
 
 	eraseSurroundings(civType, playerType);
-	player.setAlive(true);
+	if(player.isHuman()) {
+		player.setAlive(true);
+	}
 	if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER(BARBARIAN_PLAYER).getTeam())) {
 		GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(BARBARIAN_PLAYER).getTeam(), true, NO_WARPLAN);
 	}
