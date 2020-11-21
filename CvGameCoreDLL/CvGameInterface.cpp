@@ -1375,6 +1375,8 @@ bool CvGame::canDoControl(ControlTypes eControl) const
 		}
 		break;
 	case CONTROL_MERCENARIES_MANAGER: //bluepotato
+		return true;
+		break;
 
 	default:
 		FAssertMsg(false, "eControl did not match any valid options");

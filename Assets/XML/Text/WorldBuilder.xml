@@ -825,4 +825,24 @@
 		<English>Settler Maps</English>
 		<German>Siedlerwertkarten</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_EDIT_CIVILIZATION</Tag>
+		<English>Edit RFC Player</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ADD_RFC_UNIT</Tag>
+		<English>Add RFC Unit</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_EDIT_RFC_UNIT</Tag>
+		<English>Edit RFC Unit</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ADD_RFC_CITY</Tag>
+		<English>Add RFC City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_EDIT_RFC_CITY</Tag>
+		<English>Edit RFC City</English>
+	</TEXT>
 </Civ4GameText>

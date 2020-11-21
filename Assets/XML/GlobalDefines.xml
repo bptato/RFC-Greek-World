@@ -1672,7 +1672,7 @@
 	</Define>
 	<Define>
 		<DefineName>MERCENARY_WANDERING_RATE</DefineName>
-		<iDefineIntVal>60</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MERCENARY_CREATION_RATE</DefineName>
