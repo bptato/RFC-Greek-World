@@ -87,7 +87,6 @@ class CvWorldBuilderScreen:
 
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
-		self.__init__()
 		screen.setCloseOnEscape(False)
 		screen.setAlwaysShown(True)
 		self.setSideMenu()
@@ -108,6 +107,7 @@ class CvWorldBuilderScreen:
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_WORLD_BUILDER)
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_HIGHLIGHT_PLOT)
+		self.__init__()
 
 	def mouseOverPlot (self, argsList):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
