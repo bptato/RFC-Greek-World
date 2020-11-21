@@ -1831,14 +1831,14 @@ application/json
 					"UnitType":"UNIT_SUMERIAN_VULTURE",
 					"Year":-3000,
 					"EndYear":-2000,
-					"SpawnFrequency":11
+					"SpawnFrequency":14
 				},
 				{
 					"Amount":2,
 					"UnitType":"UNIT_SUMERIAN_VULTURE",
 					"Year":-1900,
 					"EndYear":-1200,
-					"SpawnFrequency":10
+					"SpawnFrequency":13
 				}
 			]
 		},
@@ -1856,14 +1856,14 @@ application/json
 					"UnitType":"UNIT_SUMERIAN_VULTURE",
 					"Year":-3000,
 					"EndYear":-2000,
-					"SpawnFrequency":10
+					"SpawnFrequency":12
 				},
 				{
 					"Amount":2,
 					"UnitType":"UNIT_SUMERIAN_VULTURE",
 					"Year":-2000,
 					"EndYear":-1200,
-					"SpawnFrequency":9
+					"SpawnFrequency":11
 				},
 				{
 					"Amount":3,

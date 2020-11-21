@@ -604,13 +604,6 @@ void CvRiseFall::eraseSurroundings(CivilizationTypes civType, PlayerTypes player
 	}
 }
 
-void CvRiseFall::addProvince(const wchar* name, int bottom, int left, int top, int right) {
-	CvRFCProvince* province = new CvRFCProvince();
-	province->setName(name);
-	province->setBounds(bottom, left, top, right);
-	_rfcProvinces.push_back(province);
-}
-
 void CvRiseFall::citySecession(CvCity* city) {
 	int minorCivs = 0;
 	for(int i = 0; i<MAX_PLAYERS; i++) {
@@ -713,6 +706,14 @@ void CvRiseFall::setMapFile(const wchar* mapFile) {
 }
 
 
+CvRFCProvince* CvRiseFall::addProvince(const wchar* name, int bottom, int left, int top, int right) {
+	CvRFCProvince* province = new CvRFCProvince();
+	province->setName(name);
+	province->setBounds(bottom, left, top, right);
+	_rfcProvinces.push_back(province);
+	return province;
+}
+
 PlayerTypes CvRiseFall::getPlayerTypeForCiv(CivilizationTypes civType) const {
 	for(int i = 0; i<MAX_PLAYERS; i++) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
@@ -741,7 +742,7 @@ CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
 	return NULL;
 }
 
-CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) {
+CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) const {
 	return _rfcProvinces[provinceID];
 }
 

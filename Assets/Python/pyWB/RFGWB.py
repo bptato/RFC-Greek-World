@@ -807,7 +807,6 @@ class WbParser:
 						buildingType = gc.getBuildingInfo(i).getType()
 						if buildingType in wbCity['Buildings']:
 							scheduledCity.setNumBuilding(i, wbCity['Buildings'][buildingType])
-							print buildingType
 
 		cmap.recalculateAreas()
 
@@ -821,23 +820,33 @@ class WbParser:
 
 		#Provinces
 		for wbProvince in self.mapValues['Provinces']:
-			riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right'])
-			rfcProvince = riseFall.getRFCProvince(riseFall.getNumProvinces()-1) #last province should be the one we've just added
-			#Goody huts, TODO
+			rfcProvince = riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right'])
+			#Goody huts
 			amountRand = ((rfcProvince.getTop() - rfcProvince.getBottom()) + (rfcProvince.getRight() - rfcProvince.getLeft()))/5
 			amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
 
-			for i in range(amount):
-				randPlotX = rfcProvince.getLeft() + game.getSorenRandNum(rfcProvince.getRight() - rfcProvince.getLeft(), "Random plot x roll")
-				randPlotY = rfcProvince.getBottom() + game.getSorenRandNum(rfcProvince.getTop() - rfcProvince.getBottom(), "Random plot y roll")
+			plots = []
+			for x in range(rfcProvince.getLeft(), rfcProvince.getRight()):
+				for y in range(rfcProvince.getBottom(), rfcProvince.getTop()):
+					plot = cmap.plot(x, y)
+					if plot.isWater() or plot.isPeak():
+						continue
+					unavail = false
+					for wbPlayer in self.scenarioValues['Players']:
+						if wbPlayer['StartingYear'] == self.scenarioValues['Game']['StartYear']:
+							if x == wbPlayer['StartingX'] and y == wbPlayer['StartingY']:
+								unavail = true
+								break
+					if unavail:
+						continue
 
-				for wbPlayer in self.scenarioValues['Players']:
-					if wbPlayer['StartingYear'] == self.scenarioValues['Game']['StartYear']:
-						if randPlotX == wbPlayer['StartingX'] and randPlotY == wbPlayer['StartingY']:
-							continue
+					plots.append(plot)
 
-				plot = cmap.plot(randPlotX, randPlotY)
-				if not (plot.isWater() or plot.isPeak()):
+			if len(plots):
+				for i in range(amount):
+					rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
+
+					plot = plots[rndNum]
 					plot.setImprovementType(goodyImprovement)
 
 		for wbProvince in self.scenarioValues['Provinces']:

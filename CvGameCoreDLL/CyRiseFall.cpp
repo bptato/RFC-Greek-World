@@ -29,8 +29,8 @@ CyRFCProvince* CyRiseFall::getRFCProvinceByName(std::wstring provinceName) {
 	return new CyRFCProvince(riseFall->getRFCProvince(provinceName.c_str()));
 }
 
-void CyRiseFall::addProvince(std::wstring provinceName, int bottom, int left, int top, int right) {
-	riseFall->addProvince(provinceName.c_str(), bottom, left, top, right);
+CyRFCProvince* CyRiseFall::addProvince(std::wstring provinceName, int bottom, int left, int top, int right) {
+	return new CyRFCProvince(riseFall->addProvince(provinceName.c_str(), bottom, left, top, right));
 }
 
 void CyRiseFall::setMapFile(std::wstring name) {

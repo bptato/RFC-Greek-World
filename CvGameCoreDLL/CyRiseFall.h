@@ -15,7 +15,7 @@ class CyRiseFall {
 		int getNumProvinces();
 		CyRFCProvince* getRFCProvince(int province);
 		CyRFCProvince* getRFCProvinceByName(std::wstring provinceName);
-		void addProvince(std::wstring provinceName, int bottom, int left, int top, int right);
+		CyRFCProvince* addProvince(std::wstring provinceName, int bottom, int left, int top, int right);
 		void setMapFile(std::wstring name);
 		std::wstring getMapFile();
 	protected:

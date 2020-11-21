@@ -38,7 +38,6 @@ class CvRiseFall {
 		void assignStartingCivics(CivilizationTypes civType, PlayerTypes playerType);
 		void setupStartingWars(CivilizationTypes civType, PlayerTypes playerType);
 
-		void addProvince(const wchar* name, int bottom, int left, int top, int right);
 		void citySecession(CvCity* city);
 		void flipCity(CvCity* city, PlayerTypes newOwnerType, bool flipAllUnits);
 		void flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOwnerType, int left, int bottom, int right, int top, PlayerTypes previousOwnerType = NO_PLAYER);
@@ -47,10 +46,12 @@ class CvRiseFall {
 
 		void setMapFile(const wchar* newName);
 
+		CvRFCProvince* addProvince(const wchar* name, int bottom, int left, int top, int right);
+
 		PlayerTypes getPlayerTypeForCiv(CivilizationTypes civType) const;
 		CvRFCPlayer& getRFCPlayer(CivilizationTypes civType) const;
 		CvRFCProvince* getRFCProvince(const wchar* provinceName);
-		CvRFCProvince* getRFCProvince(int provinceID);
+		CvRFCProvince* getRFCProvince(int provinceID) const;
 		int getNumProvinces() const;
 		CvRFCProvince* getProvinceForPlot(int x, int y);
 		bool skipConditionalSpawn(CivilizationTypes civType) const;
