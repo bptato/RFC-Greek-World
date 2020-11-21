@@ -441,8 +441,8 @@ class Victory:
 
 		elif civType == iElam and iGameTurn <= i1000BC:
 			if iGameTurn < i1900BC:
-				cIndusValley = civ2player(iIndusValley)
-				if civ2player(cIndusValley) != None and pPlayer.canContact(cIndusValley) and pPlayer.canTradeNetworkWith(cIndusValley):
+				pIndusValley = civ2player(iIndusValley)
+				if pIndusValley != None and pPlayer.canContact(pIndusValley) and pPlayer.canTradeNetworkWith(pIndusValley):
 					self.setGoal(iElam, 1, 1)
 			elif iGameTurn == i1900BC and self.getGoal(iElam, 1) == -1:
 				self.setGoal(iElam, 1, 0)
@@ -565,12 +565,15 @@ class Victory:
 			if self.getGoal(iMycenae, 1) == -1 and iGameTurn > i1100BC:
 				self.setGoal(iMycenae, 1, 0)
 			if iGameTurn == i1000BC:
-				barbCities = provLydia.getNumCities(civ2player(iBarbarian)) \
-				+ provLydia.getNumCities(civ2player(iIndependent)) \
-				+ provLydia.getNumCities(civ2player(iIndependent2)) \
-				+ provAnatolia.getNumCities(civ2player(iBarbarian)) \
-				+ provAnatolia.getNumCities(civ2player(iIndependent)) \
-				+ provAnatolia.getNumCities(civ2player(iIndependent2))
+				pBarbarian = civ2player(iBarbarian)
+				pIndependent = civ2player(iIndependent)
+				pIndependent2 = civ2player(iIndependent2)
+				barbCities = provLydia.getNumCities(pBarbarian) \
+				+ provLydia.getNumCities(pIndependent) \
+				+ provLydia.getNumCities(pIndependent2) \
+				+ provAnatolia.getNumCities(pBarbarian) \
+				+ provAnatolia.getNumCities(pIndependent) \
+				+ provAnatolia.getNumCities(pIndependent2)
 
 				if barbCities > 0:
 					self.setGoal(iMycenae, 2, 0)
