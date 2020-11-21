@@ -169,38 +169,42 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 			if(!player.isMinorCiv() && !player.isBarbarian()) {
 				checkStabilityEffect(civType, playerType);
 
-				//Flip check (here because we want the flipped units to be spawned right after flipping the cities)
-				int flipCountdown = rfcPlayer.getFlipCountdown();
-				if(flipCountdown>=0) {
-					rfcPlayer.setFlipCountdown(flipCountdown - 1);
-					if(flipCountdown==0) {
-						std::vector<CvCity*> toFlip;
-						for(int j = 0; j<MAX_PLAYERS; ++j) {
-							if((PlayerTypes)j != playerType) {
-								CvPlayer& loopPlayer = GET_PLAYER((PlayerTypes)j);
-								int k;
-								for(CvCity* loopCity = loopPlayer.firstCity(&k); loopCity != NULL; loopCity = loopPlayer.nextCity(&k)) {
-									if(rfcPlayer.isInCoreBounds(loopCity->getX(), loopCity->getY()) && !loopCity->isCapital()) {
-										toFlip.push_back(loopCity);
-									}
-								}
-							}
-						}
+				//Flip here because we want the flipped units to be spawned right after flipping the cities
+				checkFlip(playerType, civType);
+			}
 
-						if(toFlip.size()>0) {
-							for(std::vector<CvCity*>::iterator it = toFlip.begin(); it != toFlip.end(); ++it) {
-								if(!GET_TEAM(player.getTeam()).isAtWar(GET_PLAYER((*it)->getOwner()).getTeam())) {
-									GET_TEAM(player.getTeam()).declareWar(GET_PLAYER((*it)->getOwner()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
-								}
-								flipCity(*it, playerType, true);
-							}
+			checkScheduledCities(playerType, civType, turn);
+			checkScheduledUnits(playerType, civType, turn, spawnedNow);
+		}
+	}
+}
+
+void CvRiseFall::checkFlip(PlayerTypes playerType, CivilizationTypes civType) {
+	int flipCountdown = getRFCPlayer(civType).getFlipCountdown();
+	if(flipCountdown>=0) {
+		getRFCPlayer(civType).setFlipCountdown(flipCountdown - 1);
+		if(flipCountdown==0) {
+			std::vector<CvCity*> toFlip;
+			for(int j = 0; j<MAX_PLAYERS; ++j) {
+				if((PlayerTypes)j != playerType) {
+					CvPlayer& loopPlayer = GET_PLAYER((PlayerTypes)j);
+					int k;
+					for(CvCity* loopCity = loopPlayer.firstCity(&k); loopCity != NULL; loopCity = loopPlayer.nextCity(&k)) {
+						if(getRFCPlayer(civType).isInCoreBounds(loopCity->getX(), loopCity->getY()) && !loopCity->isCapital()) {
+							toFlip.push_back(loopCity);
 						}
 					}
 				}
 			}
 
-			checkScheduledCities(playerType, civType, turn);
-			checkScheduledUnits(playerType, civType, turn, spawnedNow);
+			if(toFlip.size()>0) {
+				for(std::vector<CvCity*>::iterator it = toFlip.begin(); it != toFlip.end(); ++it) {
+					if(!GET_TEAM(GET_PLAYER(playerType).getTeam()).isAtWar(GET_PLAYER((*it)->getOwner()).getTeam())) {
+						GET_TEAM(GET_PLAYER(playerType).getTeam()).declareWar(GET_PLAYER((*it)->getOwner()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
+					}
+					flipCity(*it, playerType, true);
+				}
+			}
 		}
 	}
 }
@@ -210,14 +214,24 @@ void CvRiseFall::checkScheduledCities(PlayerTypes playerType, CivilizationTypes 
 	for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end();) {
 		CvRFCCity* rfcCity = *it;
 		if(GC.getGame().getTurnYear(turn) >= rfcCity->getYear()) {
-			GET_PLAYER(playerType).found(rfcCity->getX(), rfcCity->getY());
-			if(GC.getMap().plot(rfcCity->getX(), rfcCity->getY())->isCity()) {
+			if(GET_PLAYER(playerType).canFound(rfcCity->getX(), rfcCity->getY())) {
+				GET_PLAYER(playerType).initCity(rfcCity->getX(), rfcCity->getY(), true, true);
 				CvCity* city = GC.getMap().plot(rfcCity->getX(), rfcCity->getY())->getPlotCity();
 				city->setPopulation(rfcCity->getPopulation());
 				for(int i = 0; i < GC.getNumBuildingInfos(); ++i) {
 					int buildingNum = rfcCity->getNumBuilding((BuildingTypes)i);
 					if(buildingNum > 0)
 						city->setNumRealBuilding((BuildingTypes)i, buildingNum);
+				}
+				for(int i = 0; i < GC.getNumReligionInfos(); ++i) {
+					if(rfcCity->getReligion((ReligionTypes)i)) {
+						city->setHasReligion((ReligionTypes)i, true, false, false);
+					}
+				}
+				for(int i = 0; i < GC.getNumReligionInfos(); ++i) {
+					if(rfcCity->getHolyCityReligion((ReligionTypes)i)) {
+						GC.getGame().setHolyCity((ReligionTypes)i, city, false);
+					}
 				}
 			}
 			SAFE_DELETE(rfcCity);

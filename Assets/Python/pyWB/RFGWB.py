@@ -289,7 +289,19 @@ class WbParser:
 							if "Buildings" not in wbCity:
 								wbCity['Buildings'] = {}
 							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = city.getNumRealBuilding(i)
-					#TODO religion, culture, etc
+
+					for i in range(gc.getNumReligionInfos()):
+						if city.isHasReligion(i):
+							if "Religions" not in wbCity:
+								wbCity['Religions'] = {}
+							wbCity['Religions'][gc.getReligionInfo(i).getType()] = true
+
+					for i in range(gc.getNumReligionInfos()):
+						if city.isHolyCityByType(i):
+							if "HolyCityReligions" not in wbCity:
+								wbCity['HolyCityReligions'] = {}
+							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = true
+					#TODO culture, etc
 					shouldSave = True
 
 				if shouldSave:
@@ -361,6 +373,12 @@ class WbParser:
 							if "Buildings" not in wbCity:
 								wbCity['Buildings'] = {}
 							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = city.getNumBuilding(i)
+
+					for i in range(gc.getNumReligionInfos()):
+						if scheduledCity.getHolyCityReligion(i):
+							if "HolyCityReligions" not in wbCity:
+								wbCity['HolyCityReligions'] = {}
+							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = true
 
 					wbPlot['City'] = wbCity
 
@@ -807,6 +825,18 @@ class WbParser:
 						buildingType = gc.getBuildingInfo(i).getType()
 						if buildingType in wbCity['Buildings']:
 							scheduledCity.setNumBuilding(i, wbCity['Buildings'][buildingType])
+
+				if "Religions" in wbCity:
+					for i in range(gc.getNumReligionInfos()):
+						religionType = gc.getReligionInfo(i).getType()
+						if religionType in wbCity['Religions']:
+							scheduledCity.setReligion(i, wbCity['Religions'][religionType])
+
+				if "HolyCityReligions" in wbCity:
+					for i in range(gc.getNumReligionInfos()):
+						religionType = gc.getReligionInfo(i).getType()
+						if religionType in wbCity['HolyCityReligions']:
+							scheduledCity.setHolyCityReligion(i, wbCity['HolyCityReligions'][religionType])
 
 		cmap.recalculateAreas()
 

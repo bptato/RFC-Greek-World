@@ -14,12 +14,16 @@ class CvRFCCity {
 		void setY(int y);
 		void setPopulation(int population);
 		void setNumBuilding(BuildingTypes building, int value);
+		void setReligion(ReligionTypes religion, bool value);
+		void setHolyCityReligion(ReligionTypes religion, bool value);
 
 		int getYear() const;
 		int getX() const;
 		int getY() const;
 		int getPopulation() const;
 		int getNumBuilding(BuildingTypes building) const;
+		bool getReligion(ReligionTypes religion) const;
+		bool getHolyCityReligion(ReligionTypes religion) const;
 
 		void write(FDataStreamBase* stream);
 		void read(FDataStreamBase* stream);
@@ -30,4 +34,6 @@ class CvRFCCity {
 		int _y;
 		int _population;
 		int* _buildings;
+		bool* _religions;
+		bool* _holyCityReligions;
 };

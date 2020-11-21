@@ -79,7 +79,7 @@ def religion(religionName):
 	return CvUtil.findInfoTypeNum(gc.getReligionInfo, gc.getNumReligionInfos(), "RELIGION_" + religionName.upper())
 
 def bonus(bonusName):
-    return CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), "BONUS_" + bonusName.upper())
+	return CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), "BONUS_" + bonusName.upper())
 
 class Victory:
 	def initGlobals(self):
@@ -322,6 +322,9 @@ class Victory:
 		}
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
+	def allowEvent(self): #Do not check events until game is loaded
+		return gc.getGame().isVictoryValid(7) and len(gc.getGame().getScriptData()) > 0
+
 	def ownedCityPlots(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it contains a city belonging to the civ"""
@@ -349,7 +352,7 @@ class Victory:
 		return (None, not bPaint, bContinue)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		pPlayer = gc.getPlayer(iPlayer)
@@ -704,13 +707,13 @@ class Victory:
 					self.setGoal(iScythia, 1, 1)
 
 	def onCityBuilt(self, city):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
 
 	def onReligionFounded(self, iReligion, iFounder):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -728,7 +731,7 @@ class Victory:
 			self.setGoal(iIsrael, 2, 1)
 
 	def onCityAcquired(self, owner, attacker, city, bConquest):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -766,7 +769,7 @@ class Victory:
 
 
 	def onCityRazed(self, city, conqueror, owner):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		if self.getGoal(iScythia, 1) == -1: # Check if last city
@@ -781,7 +784,7 @@ class Victory:
 				self.setGoal(iElam, 0, 0)
 
 	def onTechAcquired(self, iTech, iPlayer):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -851,7 +854,7 @@ class Victory:
 								break
 
 	def onBuildingBuilt(self, iPlayer, iBuilding):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -880,8 +883,7 @@ class Victory:
 						self.setGoal(iAthens, 2, 1)
 
 	def onCombatResult(self, argsList):
-
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		pWinningUnit,pLosingUnit = argsList

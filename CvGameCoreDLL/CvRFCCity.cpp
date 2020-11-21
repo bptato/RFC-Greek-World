@@ -13,10 +13,20 @@ CvRFCCity::CvRFCCity() {
 	for(int i = 0; i < GC.getNumBuildingInfos(); ++i) {
 		_buildings[i] = 0;
 	}
+	_religions = new bool[GC.getNumReligionInfos()];
+	for(int i = 0; i < GC.getNumReligionInfos(); ++i) {
+		_religions[i] = 0;
+	}
+	_holyCityReligions = new bool[GC.getNumReligionInfos()];
+	for(int i = 0; i < GC.getNumReligionInfos(); ++i) {
+		_holyCityReligions[i] = 0;
+	}
 }
 
 CvRFCCity::~CvRFCCity() {
 	SAFE_DELETE_ARRAY(_buildings);
+	SAFE_DELETE_ARRAY(_religions);
+	SAFE_DELETE_ARRAY(_holyCityReligions);
 }
 
 void CvRFCCity::setYear(int year) {
@@ -41,6 +51,18 @@ void CvRFCCity::setNumBuilding(BuildingTypes building, int value) {
 	_buildings[building] = value;
 }
 
+void CvRFCCity::setReligion(ReligionTypes religion, bool value) {
+	FAssert(religion >= 0);
+	FAssert(religion < GC.getNumReligionInfos());
+	_religions[religion] = value;
+}
+
+void CvRFCCity::setHolyCityReligion(ReligionTypes religion, bool value) {
+	FAssert(religion >= 0);
+	FAssert(religion < GC.getNumReligionInfos());
+	_holyCityReligions[religion] = value;
+}
+
 
 int CvRFCCity::getYear() const {
 	return _year;
@@ -62,6 +84,18 @@ int CvRFCCity::getNumBuilding(BuildingTypes building) const {
 	FAssert(building >= 0);
 	FAssert(building < GC.getNumBuildingInfos());
 	return _buildings[building];
+}
+
+bool CvRFCCity::getReligion(ReligionTypes religion) const {
+	FAssert(religion >= 0);
+	FAssert(religion < GC.getNumReligionInfos());
+	return _religions[religion];
+}
+
+bool CvRFCCity::getHolyCityReligion(ReligionTypes religion) const {
+	FAssert(religion >= 0);
+	FAssert(religion < GC.getNumReligionInfos());
+	return _holyCityReligions[religion];
 }
 
 

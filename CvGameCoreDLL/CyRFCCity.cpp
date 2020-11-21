@@ -30,6 +30,14 @@ void CyRFCCity::setNumBuilding(int building, int num) {
 	rfcCity->setNumBuilding((BuildingTypes)building, num);
 }
 
+void CyRFCCity::setReligion(int religion, bool value) {
+	rfcCity->setReligion((ReligionTypes)religion, value);
+}
+
+void CyRFCCity::setHolyCityReligion(int religion, bool value) {
+	rfcCity->setHolyCityReligion((ReligionTypes)religion, value);
+}
+
 
 int CyRFCCity::getYear() {
 	return rfcCity->getYear();
@@ -49,4 +57,12 @@ int CyRFCCity::getPopulation() {
 
 int CyRFCCity::getNumBuilding(int building) {
 	return rfcCity->getNumBuilding((BuildingTypes)building);
+}
+
+bool CyRFCCity::getReligion(int religion) {
+	return rfcCity->getReligion((ReligionTypes)religion);
+}
+
+bool CyRFCCity::getHolyCityReligion(int religion) {
+	return rfcCity->getHolyCityReligion((ReligionTypes)religion);
 }
