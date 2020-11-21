@@ -83,7 +83,7 @@ def addSign(argsList):
 	i = argsList[2]
 	s = argsList[3]
 	CyEngine().removeSign(CyMap().plot(x, y), i) #does nothing if plot has no sign, otherwise just adding a new one won't work
-	CyEngine().addSign(CyMap().plot(x, y), i, s.encode("utf-8"))
+	CyEngine().addSign(CyMap().plot(x, y), i, s.encode("iso-8859-1"))
 
 def toggleSetNoScreens():
 	global g_bIsScreenActive

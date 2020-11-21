@@ -2067,7 +2067,7 @@ class CvWorldBuilderScreen:
 		numPlots = CyMap().numPlots()
 		for i in range(numPlots):
 			plot = CyMap().plotByIndex(i)
-			cityName = StringUtils.unescape(plot.getCityName(self.cityNameCiv, True)).encode("utf-8")
+			cityName = StringUtils.unescape(plot.getCityName(self.cityNameCiv, True)).encode("iso-8859-1")
 			if cityName != "":
 				CyEngine().addSign(plot, CyGame().getActivePlayer(), cityName)
 

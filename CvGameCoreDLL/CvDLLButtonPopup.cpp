@@ -728,9 +728,9 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			int x = info.getData2();
 			int y = info.getData3();
 			CvPlot* plot = GC.getMap().plot(x, y);
-			CvWString result;
 			CvWString editBoxData = pPopupReturn->getEditBoxString(0);
 			if(!editBoxData.empty()) {
+				CvWString result;
 				CyArgsList argsList;
 				argsList.add(editBoxData.c_str());
 				gDLL->getPythonIFace()->callFunction(PYScreensModule, "unicodeToXML", argsList.makeFunctionArgs(), &result);
@@ -2173,7 +2173,11 @@ bool CvDLLButtonPopup::launchCityNamePopup(CvPopup* popup, CvPopupInfo &info) {
 	int y = info.getData3();
 
 	CvPlot* plot = GC.getMap().plot(x, y);
-	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, plot->getCityName(civType, true), WIDGET_GENERAL, gDLL->getText("TXT_KEY_POPUP_CITY_NAME"), 0, POPUP_LAYOUT_STRETCH, 0, 20);
+	CvWString result;
+	CyArgsList argsList;
+	argsList.add(plot->getCityName(civType, true));
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "unescape", argsList.makeFunctionArgs(), &result);
+	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, result.c_str(), WIDGET_GENERAL, gDLL->getText("TXT_KEY_POPUP_CITY_NAME"), 0, POPUP_LAYOUT_STRETCH, 0, 20);
 	gDLL->getInterfaceIFace()->popupLaunch(popup, true, POPUPSTATE_IMMEDIATE);
 	return true;
 }
