@@ -903,7 +903,9 @@ application/json
 			],
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
-				"CIVILIZATION_ASSYRIA"
+				"CIVILIZATION_ASSYRIA",
+				"CIVILIZATION_INDEPENDENT",
+				"CIVILIZATION_INDEPENDENT2"
 			],
 			"RelatedLanguages":[
 				"CIVILIZATION_EGYPT"
