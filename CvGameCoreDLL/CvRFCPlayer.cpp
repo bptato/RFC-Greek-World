@@ -5,166 +5,171 @@ Author: bluepotato
 #include "CvRFCPlayer.h"
 
 CvRFCPlayer::CvRFCPlayer() {
-	startingCivics = new int[GC.getNumCivicOptionInfos()];
+	_startingCivics = new int[GC.getNumCivicOptionInfos()];
 }
 
 CvRFCPlayer::~CvRFCPlayer() {
-	SAFE_DELETE_ARRAY(startingCivics);
+	SAFE_DELETE_ARRAY(_startingCivics);
 	uninit();
 }
 
-void CvRFCPlayer::reset(CivilizationTypes newCivType) {
+void CvRFCPlayer::reset(CivilizationTypes civilizationType) {
 	uninit();
-	civilizationType = newCivType;
-	startingYear = 0;
-	startingTurn = -1;
-	startingPlotX = 0;
-	startingPlotY = 0;
-	startingGold = 0;
-	flipCountdown = 0;
-	GNP = 0;
-	numPlots = 0;
+	_civilizationType = civilizationType;
+	_startingYear = 0;
+	_startingTurn = -1;
+	_startingPlotX = 0;
+	_startingPlotY = 0;
+	_startingGold = 0;
+	_startingReligion = NO_RELIGION;
+	_flipCountdown = 0;
+	_GNP = 0;
+	_numPlots = 0;
 
 	//modifiers (following values are BTS defaults, though some of them replace handicap values)
-	compactEmpireModifier = 50;
-	unitUpkeepModifier = 100;
-	researchModifier = 100;
-	distanceMaintenanceModifier = 100;
-	numCitiesMaintenanceModifier = 100;
-	unitProductionModifier = 100;
-	civicUpkeepModifier = 100;
-	healthBonusModifier = 0;
-	buildingProductionModifier = 100;
-	wonderProductionModifier = 100;
-	greatPeopleModifier = 100;
-	inflationModifier = 100;
-	growthModifier = 100;
+	_compactEmpireModifier = 50;
+	_unitUpkeepModifier = 100;
+	_researchModifier = 100;
+	_distanceMaintenanceModifier = 100;
+	_numCitiesMaintenanceModifier = 100;
+	_unitProductionModifier = 100;
+	_civicUpkeepModifier = 100;
+	_healthBonusModifier = 0;
+	_buildingProductionModifier = 100;
+	_wonderProductionModifier = 100;
+	_greatPeopleModifier = 100;
+	_inflationModifier = 100;
+	_growthModifier = 100;
 
-	enabled = false;
-	spawned = false;
-	minor = false;
-	human = false;
-	flipped = false;
+	_enabled = false;
+	_spawned = false;
+	_minor = false;
+	_human = false;
+	_flipped = false;
 
-	vassalBonus = false;
-	foundBonus = false;
-	conquestBonus = false;
-	commerceBonus = false;
+	_vassalBonus = false;
+	_foundBonus = false;
+	_conquestBonus = false;
+	_commerceBonus = false;
 
-	newCityFreePopulation = 0;
+	_newCityFreePopulation = 0;
 
 	for(int i = 0; i < GC.getNumCivicOptionInfos(); i++) {
-		startingCivics[i] = NO_CIVIC;
+		_startingCivics[i] = NO_CIVIC;
 	}
 
 	for(int i = 0; i < NUM_STABILITY_CATEGORIES; i++) {
-		tempStability[i] = 0;
-		permStability[i] = 0;
+		_tempStability[i] = 0;
+		_permStability[i] = 0;
 	}
 
-	startingTechs.clear();
-	coreProvinces.clear();
-	startingWars.clear();
-	relatedLanguages.clear();
+	_startingTechs.clear();
+	_coreProvinces.clear();
+	_startingWars.clear();
+	_relatedLanguages.clear();
 }
 
 void CvRFCPlayer::uninit() {
-	for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+	for(std::vector<CvRFCUnit*>::iterator it = _scheduledUnits.begin(); it != _scheduledUnits.end(); ++it) {
 		SAFE_DELETE(*it);
 	}
-	scheduledUnits.clear();
-	for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end(); ++it) {
+	_scheduledUnits.clear();
+	for(std::vector<CvRFCCity*>::iterator it = _scheduledCities.begin(); it != _scheduledCities.end(); ++it) {
 		SAFE_DELETE(*it);
 	}
-	scheduledCities.clear();
+	_scheduledCities.clear();
 }
 
-void CvRFCPlayer::setCivilizationType(CivilizationTypes newCivType) {
-	civilizationType = newCivType;
+void CvRFCPlayer::setCivilizationType(CivilizationTypes civilizationType) {
+	_civilizationType = civilizationType;
 }
 
-void CvRFCPlayer::setEnabled(bool newEnabled) {
-	enabled = newEnabled;
+void CvRFCPlayer::setEnabled(bool enabled) {
+	_enabled = enabled;
 }
 
 void CvRFCPlayer::setStartingCivic(CivicOptionTypes civicOptionType, CivicTypes civicType) {
-	startingCivics[civicOptionType] = civicType;
+	_startingCivics[civicOptionType] = civicType;
 }
 
-void CvRFCPlayer::setStartingYear(int year) {
-	startingYear = year;
+void CvRFCPlayer::setStartingYear(int startingYear) {
+	_startingYear = startingYear;
 }
 
-void CvRFCPlayer::setStartingTurn(int turn) {
-	startingTurn = turn;
+void CvRFCPlayer::setStartingTurn(int startingTurn) {
+	_startingTurn = startingTurn;
 }
 
-void CvRFCPlayer::setStartingPlotX(int x) {
-	startingPlotX = x;
+void CvRFCPlayer::setStartingPlotX(int startingPlotX) {
+	_startingPlotX = startingPlotX;
 }
 
-void CvRFCPlayer::setStartingPlotY(int y) {
-	startingPlotY = y;
+void CvRFCPlayer::setStartingPlotY(int startingPlotY) {
+	_startingPlotY = startingPlotY;
 }
 
-void CvRFCPlayer::setStartingGold(int gold) {
-	startingGold = gold;
+void CvRFCPlayer::setStartingGold(int startingGold) {
+	_startingGold = startingGold;
 }
 
-void CvRFCPlayer::setMinorCiv(bool newMinor) {
-	minor = newMinor;
+void CvRFCPlayer::setStartingReligion(ReligionTypes startingReligion) {
+	_startingReligion = startingReligion;
 }
 
-void CvRFCPlayer::setHuman(bool newHuman) {
-	human = newHuman;
+void CvRFCPlayer::setMinorCiv(bool minor) {
+	_minor = minor;
 }
 
-void CvRFCPlayer::setSpawned(bool newSpawned) {
-	spawned = newSpawned;
+void CvRFCPlayer::setHuman(bool human) {
+	_human = human;
 }
 
-void CvRFCPlayer::setFlipped(bool newFlipped) {
-	flipped = newFlipped;
+void CvRFCPlayer::setSpawned(bool spawned) {
+	_spawned = spawned;
+}
+
+void CvRFCPlayer::setFlipped(bool flipped) {
+	_flipped = flipped;
 }
 
 void CvRFCPlayer::addStartingTech(TechTypes tech) {
 	if(tech != NO_TECH) {
-		startingTechs.push_back(tech);
+		_startingTechs.push_back(tech);
 	}
 }
 
 void CvRFCPlayer::addCoreProvince(const wchar* newProvince) {
-	coreProvinces.push_back(newProvince);
+	_coreProvinces.push_back(newProvince);
 }
 
-void CvRFCPlayer::setFlipCountdown(int newFlipCountdown) {
-	flipCountdown = newFlipCountdown;
+void CvRFCPlayer::setFlipCountdown(int flipCountdown) {
+	_flipCountdown = flipCountdown;
 }
 
-void CvRFCPlayer::setTempStability(int category, int newStability) {
-	tempStability[category] = newStability;
+void CvRFCPlayer::setTempStability(int category, int stability) {
+	_tempStability[category] = stability;
 }
 
-void CvRFCPlayer::setPermStability(int category, int newStability) {
-	permStability[category] = newStability;
+void CvRFCPlayer::setPermStability(int category, int stability) {
+	_permStability[category] = stability;
 }
 
-void CvRFCPlayer::setGNP(int newGNP) {
-	GNP = newGNP;
+void CvRFCPlayer::setGNP(int GNP) {
+	_GNP = GNP;
 }
 
 void CvRFCPlayer::addStartingWar(CivilizationTypes civType) {
 	if(civType != NO_CIVILIZATION) {
-		startingWars.push_back(civType);
+		_startingWars.push_back(civType);
 	}
 }
 
 void CvRFCPlayer::addRelatedLanguage(CivilizationTypes civType) {
-	relatedLanguages.push_back(civType);
+	_relatedLanguages.push_back(civType);
 }
 
-void CvRFCPlayer::setNumPlots(int newNumPlots) {
-	numPlots = newNumPlots;
+void CvRFCPlayer::setNumPlots(int numPlots) {
+	_numPlots = numPlots;
 }
 
 void CvRFCPlayer::checkStability(PlayerTypes playerType) {
@@ -194,27 +199,27 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 	int eraModifier = player.getCurrentEra(); //can be 0!
 
 	//Civics
-	vassalBonus = false;
-	foundBonus = false;
-	conquestBonus = false;
-	commerceBonus = false;
+	_vassalBonus = false;
+	_foundBonus = false;
+	_conquestBonus = false;
+	_commerceBonus = false;
 	for(i = 0; i<GC.getNumCivicOptionInfos(); ++i) {
 		CvCivicInfo& civicInfo = GC.getCivicInfo(player.getCivics((CivicOptionTypes)i));
 		if(civicInfo.isStabilityVassalBonus()) {
-			vassalBonus = true;
+			_vassalBonus = true;
 		}
 		if(civicInfo.isStabilityFoundBonus()) {
-			foundBonus = true;
+			_foundBonus = true;
 		}
 		if(civicInfo.isStabilityConquestBonus()) {
-			conquestBonus = true;
+			_conquestBonus = true;
 		}
 		if(civicInfo.isStabilityCommerceBonus()) {
-			commerceBonus = true;
+			_commerceBonus = true;
 		}
 	}
 
-	if(vassalBonus) {
+	if(_vassalBonus) {
 		for(i = 0; i<MAX_TEAMS; ++i) {
 			if(GET_TEAM((TeamTypes)i).isVassal(player.getTeam())) {
 				newCivicsStability += 2;
@@ -222,7 +227,7 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 		}
 	}
 
-	if(commerceBonus) {
+	if(_commerceBonus) {
 		if(newEconomicStability<0) {
 			newEconomicStability *= 90;
 			newEconomicStability /= 100;
@@ -324,7 +329,7 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 	ReligionTypes stateReligion = player.getStateReligion();
 	for(CvCity* loopCity = player.firstCity(&i); loopCity != NULL; loopCity = player.nextCity(&i)) {
 		int cityStability = 0;
-		if(loopCity->isOccupation() && !conquestBonus) {
+		if(loopCity->isOccupation() && !_conquestBonus) {
 			cityStability -= 3;
 		} else {
 			cityStability += std::min(2, std::max(-2, loopCity->happyLevel() - loopCity->unhappyLevel()));
@@ -482,180 +487,184 @@ void CvRFCPlayer::applyStability(PlayerTypes playerType, int* num, CivicTypes ci
 }
 
 void CvRFCPlayer::setCompactEmpireModifier(int modifier) {
-	compactEmpireModifier = modifier;
+	_compactEmpireModifier = modifier;
 }
 
 void CvRFCPlayer::setUnitUpkeepModifier(int modifier) {
-	unitUpkeepModifier = modifier;
+	_unitUpkeepModifier = modifier;
 }
 
 void CvRFCPlayer::setResearchModifier(int modifier) {
-	researchModifier = modifier;
+	_researchModifier = modifier;
 }
 
 void CvRFCPlayer::setDistanceMaintenanceModifier(int modifier) {
-	distanceMaintenanceModifier = modifier;
+	_distanceMaintenanceModifier = modifier;
 }
 
 void CvRFCPlayer::setNumCitiesMaintenanceModifier(int modifier) {
-	numCitiesMaintenanceModifier = modifier;
+	_numCitiesMaintenanceModifier = modifier;
 }
 
 void CvRFCPlayer::setUnitProductionModifier(int modifier) {
-	unitProductionModifier = modifier;
+	_unitProductionModifier = modifier;
 }
 
 void CvRFCPlayer::setCivicUpkeepModifier(int modifier) {
-	civicUpkeepModifier = modifier;
+	_civicUpkeepModifier = modifier;
 }
 
 void CvRFCPlayer::setHealthBonusModifier(int modifier) {
-	healthBonusModifier = modifier;
+	_healthBonusModifier = modifier;
 }
 
 void CvRFCPlayer::setBuildingProductionModifier(int modifier) {
-	buildingProductionModifier = modifier;
+	_buildingProductionModifier = modifier;
 }
 
 void CvRFCPlayer::setWonderProductionModifier(int modifier) {
-	wonderProductionModifier = modifier;
+	_wonderProductionModifier = modifier;
 }
 
 void CvRFCPlayer::setGreatPeopleModifier(int modifier) {
-	greatPeopleModifier = modifier;
+	_greatPeopleModifier = modifier;
 }
 
 void CvRFCPlayer::setInflationModifier(int modifier) {
-	inflationModifier = modifier;
+	_inflationModifier = modifier;
 }
 
 void CvRFCPlayer::setGrowthModifier(int modifier) {
-	growthModifier = modifier;
+	_growthModifier = modifier;
 }
 
 void CvRFCPlayer::setNewCityFreePopulation(int population) {
-	newCityFreePopulation = population;
+	_newCityFreePopulation = population;
 }
 
 void CvRFCPlayer::changeNewCityFreePopulation(int population) {
-	newCityFreePopulation += population;
+	_newCityFreePopulation += population;
 }
 
 
 CivilizationTypes CvRFCPlayer::getCivilizationType() {
-	return civilizationType;
+	return _civilizationType;
 }
 
 std::vector<CvRFCUnit*>& CvRFCPlayer::getScheduledUnits() {
-	return scheduledUnits;
+	return _scheduledUnits;
 }
 
 std::vector<CvRFCCity*>& CvRFCPlayer::getScheduledCities() {
-	return scheduledCities;
+	return _scheduledCities;
 }
 
 CvRFCUnit* CvRFCPlayer::addScheduledUnit() {
 	CvRFCUnit* rfcUnit = new CvRFCUnit();
-	scheduledUnits.push_back(rfcUnit);
+	_scheduledUnits.push_back(rfcUnit);
 	return rfcUnit;
 }
 
 CvRFCUnit* CvRFCPlayer::getScheduledUnit(int i) const {
-	return scheduledUnits[i];
+	return _scheduledUnits[i];
 }
 
 CvRFCCity* CvRFCPlayer::addScheduledCity() {
 	CvRFCCity* rfcCity = new CvRFCCity();
-	scheduledCities.push_back(rfcCity);
+	_scheduledCities.push_back(rfcCity);
 	return rfcCity;
 }
 
 CvRFCCity* CvRFCPlayer::getScheduledCity(int i) const {
-	return scheduledCities[i];
+	return _scheduledCities[i];
 }
 
 int CvRFCPlayer::getNumScheduledUnits() const {
-	return scheduledUnits.size();
+	return _scheduledUnits.size();
 }
 
 int CvRFCPlayer::getNumScheduledCities() const {
-	return scheduledCities.size();
+	return _scheduledCities.size();
 }
 
 CivicTypes CvRFCPlayer::getStartingCivic(CivicOptionTypes civicOptionType) const {
-	return (CivicTypes)startingCivics[civicOptionType];
+	return (CivicTypes)_startingCivics[civicOptionType];
 }
 
 bool CvRFCPlayer::isEnabled() const {
-	return enabled;
+	return _enabled;
 }
 
 int CvRFCPlayer::getStartingPlotX() const {
-	return startingPlotX;
+	return _startingPlotX;
 }
 
 int CvRFCPlayer::getStartingPlotY() const {
-	return startingPlotY;
+	return _startingPlotY;
 }
 
 int CvRFCPlayer::getStartingYear() const {
-	return startingYear;
+	return _startingYear;
 }
 
 //WARNING: this is only set after spawning. Use getStartingYear to determine when the player starts.
 int CvRFCPlayer::getStartingTurn() const {
-	return startingTurn;
+	return _startingTurn;
 }
 
 int CvRFCPlayer::getStartingGold() const {
-	return startingGold;
+	return _startingGold;
+}
+
+ReligionTypes CvRFCPlayer::getStartingReligion() const {
+	return _startingReligion;
 }
 
 bool CvRFCPlayer::isSpawned() const {
-	return spawned;
+	return _spawned;
 }
 
 bool CvRFCPlayer::isHuman() const {
-	return human;
+	return _human;
 }
 
 bool CvRFCPlayer::isMinor() const {
-	return minor;
+	return _minor;
 }
 
 bool CvRFCPlayer::isFlipped() const {
-	return flipped;
+	return _flipped;
 }
 
 std::vector<TechTypes>& CvRFCPlayer::getStartingTechs() {
-	return startingTechs;
+	return _startingTechs;
 }
 
 std::vector<CivilizationTypes>& CvRFCPlayer::getStartingWars() {
-	return startingWars;
+	return _startingWars;
 }
 
 std::vector<CivilizationTypes>& CvRFCPlayer::getRelatedLanguages() {
-	return relatedLanguages;
+	return _relatedLanguages;
 }
 
 bool CvRFCPlayer::isStartingTech(TechTypes tech) const {
-	if(std::find(startingTechs.begin(), startingTechs.end(), tech) != startingTechs.end()) {
+	if(std::find(_startingTechs.begin(), _startingTechs.end(), tech) != _startingTechs.end()) {
 		return true;
 	}
 	return false;
 }
 
 bool CvRFCPlayer::isStartingWar(CivilizationTypes civType) const {
-	if(std::find(startingWars.begin(), startingWars.end(), civType) != startingWars.end()) {
+	if(std::find(_startingWars.begin(), _startingWars.end(), civType) != _startingWars.end()) {
 		return true;
 	}
 	return false;
 }
 
 bool CvRFCPlayer::isInCoreBounds(int x, int y) {
-	for(uint i = 0; i<coreProvinces.size(); i++) {
-		CvRFCProvince* coreProvince = GC.getRiseFall().getRFCProvince(coreProvinces[i]);
+	for(uint i = 0; i<_coreProvinces.size(); i++) {
+		CvRFCProvince* coreProvince = GC.getRiseFall().getRFCProvince(_coreProvinces[i]);
 		FAssert(coreProvince != NULL);
 		if(coreProvince->isInBounds(x, y)) {
 			return true;
@@ -669,8 +678,8 @@ bool CvRFCPlayer::isInBorderBounds(int x, int y) {
 	if(borderProvince == NULL) {
 		return false;
 	}
-	for(uint i = 0; i<coreProvinces.size(); i++) {
-		CvRFCProvince* coreProvince = GC.getRiseFall().getRFCProvince(coreProvinces[i]);
+	for(uint i = 0; i<_coreProvinces.size(); i++) {
+		CvRFCProvince* coreProvince = GC.getRiseFall().getRFCProvince(_coreProvinces[i]);
 		if(coreProvince->isBorderProvince(borderProvince)) {
 			return true;
 		}
@@ -679,116 +688,116 @@ bool CvRFCPlayer::isInBorderBounds(int x, int y) {
 }
 
 int CvRFCPlayer::getFlipCountdown() const {
-	return flipCountdown;
+	return _flipCountdown;
 }
 
 int CvRFCPlayer::getTempStability(int category) const {
-	return tempStability[category];
+	return _tempStability[category];
 }
 
 int CvRFCPlayer::getPermStability(int category) const {
-	return permStability[category];
+	return _permStability[category];
 }
 
 int CvRFCPlayer::getStability(int category) const {
-	return tempStability[category] + permStability[category];
+	return _tempStability[category] + _permStability[category];
 }
 
 int CvRFCPlayer::getTotalStability() const {
 	int totalStability = 0;
 	for(int i = 0; i < NUM_STABILITY_CATEGORIES; i++) {
-		totalStability += tempStability[i];
-		totalStability += permStability[i];
+		totalStability += _tempStability[i];
+		totalStability += _permStability[i];
 	}
 	return totalStability;
 }
 
 int CvRFCPlayer::getGNP() const {
-	return GNP;
+	return _GNP;
 }
 
 int CvRFCPlayer::getNumCoreProvinces() const {
-	return coreProvinces.size();
+	return _coreProvinces.size();
 }
 
 std::wstring CvRFCPlayer::getCoreProvince(int i) const {
-	return coreProvinces[i];
+	return _coreProvinces[i];
 }
 
 int CvRFCPlayer::getNumPlots() const {
-	return numPlots;
+	return _numPlots;
 }
 
 int CvRFCPlayer::getCompactEmpireModifier() const {
-	return compactEmpireModifier;
+	return _compactEmpireModifier;
 }
 
 int CvRFCPlayer::getUnitUpkeepModifier() const {
-	return unitUpkeepModifier;
+	return _unitUpkeepModifier;
 }
 
 int CvRFCPlayer::getResearchModifier() const {
-	return researchModifier;
+	return _researchModifier;
 }
 
 int CvRFCPlayer::getDistanceMaintenanceModifier() const {
-	return distanceMaintenanceModifier;
+	return _distanceMaintenanceModifier;
 }
 
 int CvRFCPlayer::getNumCitiesMaintenanceModifier() const {
-	return numCitiesMaintenanceModifier;
+	return _numCitiesMaintenanceModifier;
 }
 
 int CvRFCPlayer::getUnitProductionModifier() const {
-	return unitProductionModifier;
+	return _unitProductionModifier;
 }
 
 int CvRFCPlayer::getCivicUpkeepModifier() const {
-	return civicUpkeepModifier;
+	return _civicUpkeepModifier;
 }
 
 int CvRFCPlayer::getHealthBonusModifier() const {
-	return healthBonusModifier;
+	return _healthBonusModifier;
 }
 
 int CvRFCPlayer::getBuildingProductionModifier() const {
-	return buildingProductionModifier;
+	return _buildingProductionModifier;
 }
 
 int CvRFCPlayer::getWonderProductionModifier() const {
-	return wonderProductionModifier;
+	return _wonderProductionModifier;
 }
 
 int CvRFCPlayer::getGreatPeopleModifier() const {
-	return greatPeopleModifier;
+	return _greatPeopleModifier;
 }
 
 int CvRFCPlayer::getInflationModifier() const {
-	return inflationModifier;
+	return _inflationModifier;
 }
 
 int CvRFCPlayer::getGrowthModifier() const {
-	return growthModifier;
+	return _growthModifier;
 }
 
 bool CvRFCPlayer::isVassalBonus() const {
-	return vassalBonus;
+	return _vassalBonus;
 }
 
 bool CvRFCPlayer::isFoundBonus() const {
-	return foundBonus;
+	return _foundBonus;
 }
 
 bool CvRFCPlayer::isConquestBonus() const {
-	return conquestBonus;
+	return _conquestBonus;
 }
 
 bool CvRFCPlayer::isCommerceBonus() const {
-	return commerceBonus;
+	return _commerceBonus;
 }
 
 bool CvRFCPlayer::isRelatedLanguage(CivilizationTypes civType) {
-	for(std::vector<CivilizationTypes>::iterator it = relatedLanguages.begin(); it != relatedLanguages.end(); ++it) {
+	for(std::vector<CivilizationTypes>::iterator it = _relatedLanguages.begin(); it != _relatedLanguages.end(); ++it) {
 		if(*it == civType) {
 			return true;
 		}
@@ -804,201 +813,204 @@ bool CvRFCPlayer::isRelatedLanguage(CivilizationTypes civType) {
 }
 
 int CvRFCPlayer::getNewCityFreePopulation() const {
-	return newCityFreePopulation;
+	return _newCityFreePopulation;
 }
 
 
 void CvRFCPlayer::read(FDataStreamBase* stream) {
+	reset(NO_CIVILIZATION);
 	{
-		scheduledUnits.clear();
+		_scheduledUnits.clear();
 		uint size;
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)
 		{
 			CvRFCUnit* scheduledUnit = new CvRFCUnit();
 			scheduledUnit->read(stream);
-			scheduledUnits.push_back(scheduledUnit);
+			_scheduledUnits.push_back(scheduledUnit);
 		}
 	}
 	{
-		scheduledCities.clear();
+		_scheduledCities.clear();
 		uint size;
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)
 		{
 			CvRFCCity* scheduledCity = new CvRFCCity();
 			scheduledCity->read(stream);
-			scheduledCities.push_back(scheduledCity);
+			_scheduledCities.push_back(scheduledCity);
 		}
 	}
 
-	stream->Read((int*)&civilizationType);
-	stream->Read(GC.getNumCivicOptionInfos(), startingCivics);
-	stream->Read(NUM_STABILITY_CATEGORIES, tempStability);
-	stream->Read(NUM_STABILITY_CATEGORIES, permStability);
-	stream->Read(&startingYear);
-	stream->Read(&startingTurn);
-	stream->Read(&startingPlotX);
-	stream->Read(&startingPlotY);
-	stream->Read(&startingGold);
-	stream->Read(&enabled);
-	stream->Read(&spawned);
-	stream->Read(&human);
-	stream->Read(&minor);
-	stream->Read(&flipped);
-	stream->Read(&flipCountdown);
-	stream->Read(&GNP);
-	stream->Read(&numPlots);
+	stream->Read((int*)&_civilizationType);
+	stream->Read(GC.getNumCivicOptionInfos(), _startingCivics);
+	stream->Read(NUM_STABILITY_CATEGORIES, _tempStability);
+	stream->Read(NUM_STABILITY_CATEGORIES, _permStability);
+	stream->Read(&_startingYear);
+	stream->Read(&_startingTurn);
+	stream->Read(&_startingPlotX);
+	stream->Read(&_startingPlotY);
+	stream->Read(&_startingGold);
+	stream->Read((int*)&_startingReligion);
+	stream->Read(&_enabled);
+	stream->Read(&_spawned);
+	stream->Read(&_human);
+	stream->Read(&_minor);
+	stream->Read(&_flipped);
+	stream->Read(&_flipCountdown);
+	stream->Read(&_GNP);
+	stream->Read(&_numPlots);
 
-	stream->Read(&compactEmpireModifier);
-	stream->Read(&unitUpkeepModifier);
-	stream->Read(&researchModifier);
-	stream->Read(&distanceMaintenanceModifier);
-	stream->Read(&numCitiesMaintenanceModifier);
-	stream->Read(&unitProductionModifier);
-	stream->Read(&civicUpkeepModifier);
-	stream->Read(&healthBonusModifier);
-	stream->Read(&buildingProductionModifier);
-	stream->Read(&wonderProductionModifier);
-	stream->Read(&greatPeopleModifier);
-	stream->Read(&inflationModifier);
-	stream->Read(&growthModifier);
+	stream->Read(&_compactEmpireModifier);
+	stream->Read(&_unitUpkeepModifier);
+	stream->Read(&_researchModifier);
+	stream->Read(&_distanceMaintenanceModifier);
+	stream->Read(&_numCitiesMaintenanceModifier);
+	stream->Read(&_unitProductionModifier);
+	stream->Read(&_civicUpkeepModifier);
+	stream->Read(&_healthBonusModifier);
+	stream->Read(&_buildingProductionModifier);
+	stream->Read(&_wonderProductionModifier);
+	stream->Read(&_greatPeopleModifier);
+	stream->Read(&_inflationModifier);
+	stream->Read(&_growthModifier);
 
-	stream->Read(&vassalBonus);
-	stream->Read(&foundBonus);
-	stream->Read(&conquestBonus);
-	stream->Read(&commerceBonus);
+	stream->Read(&_vassalBonus);
+	stream->Read(&_foundBonus);
+	stream->Read(&_conquestBonus);
+	stream->Read(&_commerceBonus);
 
-	stream->Read(&newCityFreePopulation);
+	stream->Read(&_newCityFreePopulation);
 
 	{
-		startingTechs.clear();
+		_startingTechs.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
 			int techID;
 			stream->Read(&techID);
-			startingTechs.push_back((TechTypes)techID);
+			_startingTechs.push_back((TechTypes)techID);
 		}
 	}
 
 	{
-		coreProvinces.clear();
+		_coreProvinces.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
 			CvWString coreProvince;
 			stream->ReadString(coreProvince);
-			coreProvinces.push_back(coreProvince);
+			_coreProvinces.push_back(coreProvince);
 		}
 	}
 
 	{
-		startingWars.clear();
+		_startingWars.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
 			int civType;
 			stream->Read(&civType);
-			startingWars.push_back((CivilizationTypes)civType);
+			_startingWars.push_back((CivilizationTypes)civType);
 		}
 	}
 
 	{
-		relatedLanguages.clear();
+		_relatedLanguages.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
 			int civType;
 			stream->Read(&civType);
-			relatedLanguages.push_back((CivilizationTypes)civType);
+			_relatedLanguages.push_back((CivilizationTypes)civType);
 		}
 	}
 }
 
 void CvRFCPlayer::write(FDataStreamBase* stream) {
 	{
-		uint size = scheduledUnits.size();
+		uint size = _scheduledUnits.size();
 		stream->Write(size);
-		for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+		for(std::vector<CvRFCUnit*>::iterator it = _scheduledUnits.begin(); it != _scheduledUnits.end(); ++it) {
 			(*it)->write(stream);
 		}
 	}
 	{
-		uint size = scheduledCities.size();
+		uint size = _scheduledCities.size();
 		stream->Write(size);
-		for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end(); ++it) {
+		for(std::vector<CvRFCCity*>::iterator it = _scheduledCities.begin(); it != _scheduledCities.end(); ++it) {
 			(*it)->write(stream);
 		}
 	}
 
-	stream->Write(civilizationType);
-	stream->Write(GC.getNumCivicOptionInfos(), startingCivics);
-	stream->Write(NUM_STABILITY_CATEGORIES, tempStability);
-	stream->Write(NUM_STABILITY_CATEGORIES, permStability);
-	stream->Write(startingYear);
-	stream->Write(startingTurn);
-	stream->Write(startingPlotX);
-	stream->Write(startingPlotY);
-	stream->Write(startingGold);
-	stream->Write(enabled);
-	stream->Write(spawned);
-	stream->Write(human);
-	stream->Write(minor);
-	stream->Write(flipped);
-	stream->Write(flipCountdown);
-	stream->Write(GNP);
-	stream->Write(numPlots);
+	stream->Write(_civilizationType);
+	stream->Write(GC.getNumCivicOptionInfos(), _startingCivics);
+	stream->Write(NUM_STABILITY_CATEGORIES, _tempStability);
+	stream->Write(NUM_STABILITY_CATEGORIES, _permStability);
+	stream->Write(_startingYear);
+	stream->Write(_startingTurn);
+	stream->Write(_startingPlotX);
+	stream->Write(_startingPlotY);
+	stream->Write(_startingGold);
+	stream->Write(_startingReligion);
+	stream->Write(_enabled);
+	stream->Write(_spawned);
+	stream->Write(_human);
+	stream->Write(_minor);
+	stream->Write(_flipped);
+	stream->Write(_flipCountdown);
+	stream->Write(_GNP);
+	stream->Write(_numPlots);
 
-	stream->Write(compactEmpireModifier);
-	stream->Write(unitUpkeepModifier);
-	stream->Write(researchModifier);
-	stream->Write(distanceMaintenanceModifier);
-	stream->Write(numCitiesMaintenanceModifier);
-	stream->Write(unitProductionModifier);
-	stream->Write(civicUpkeepModifier);
-	stream->Write(healthBonusModifier);
-	stream->Write(buildingProductionModifier);
-	stream->Write(wonderProductionModifier);
-	stream->Write(greatPeopleModifier);
-	stream->Write(inflationModifier);
-	stream->Write(growthModifier);
+	stream->Write(_compactEmpireModifier);
+	stream->Write(_unitUpkeepModifier);
+	stream->Write(_researchModifier);
+	stream->Write(_distanceMaintenanceModifier);
+	stream->Write(_numCitiesMaintenanceModifier);
+	stream->Write(_unitProductionModifier);
+	stream->Write(_civicUpkeepModifier);
+	stream->Write(_healthBonusModifier);
+	stream->Write(_buildingProductionModifier);
+	stream->Write(_wonderProductionModifier);
+	stream->Write(_greatPeopleModifier);
+	stream->Write(_inflationModifier);
+	stream->Write(_growthModifier);
 
-	stream->Write(vassalBonus);
-	stream->Write(foundBonus);
-	stream->Write(conquestBonus);
-	stream->Write(commerceBonus);
+	stream->Write(_vassalBonus);
+	stream->Write(_foundBonus);
+	stream->Write(_conquestBonus);
+	stream->Write(_commerceBonus);
 
-	stream->Write(newCityFreePopulation);
+	stream->Write(_newCityFreePopulation);
 
 	{
-		uint size = startingTechs.size();
+		uint size = _startingTechs.size();
 		stream->Write(size);
-		for(std::vector<TechTypes>::iterator it = startingTechs.begin(); it != startingTechs.end(); ++it) {
+		for(std::vector<TechTypes>::iterator it = _startingTechs.begin(); it != _startingTechs.end(); ++it) {
 			stream->Write(*it);
 		}
 	}
 
 	{
-		uint size = coreProvinces.size();
+		uint size = _coreProvinces.size();
 		stream->Write(size);
-		for(std::vector<CvWString>::iterator it = coreProvinces.begin(); it != coreProvinces.end(); ++it) {
+		for(std::vector<CvWString>::iterator it = _coreProvinces.begin(); it != _coreProvinces.end(); ++it) {
 			stream->WriteString(*it);
 		}
 	}
 
 	{
-		uint size = startingWars.size();
+		uint size = _startingWars.size();
 		stream->Write(size);
-		for(std::vector<CivilizationTypes>::iterator it = startingWars.begin(); it != startingWars.end(); ++it) {
+		for(std::vector<CivilizationTypes>::iterator it = _startingWars.begin(); it != _startingWars.end(); ++it) {
 			stream->Write(*it);
 		}
 	}
 
 	{
-		uint size = relatedLanguages.size();
+		uint size = _relatedLanguages.size();
 		stream->Write(size);
-		for(std::vector<CivilizationTypes>::iterator it = relatedLanguages.begin(); it != relatedLanguages.end(); ++it) {
+		for(std::vector<CivilizationTypes>::iterator it = _relatedLanguages.begin(); it != _relatedLanguages.end(); ++it) {
 			stream->Write(*it);
 		}
 	}

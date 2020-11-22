@@ -18,7 +18,7 @@ class CvRFCPlayer {
 		void reset(CivilizationTypes newCivType);
 		void uninit();
 
-		void setCivilizationType(CivilizationTypes newCivType);
+		void setCivilizationType(CivilizationTypes civilizationType);
 		void setEnabled(bool newEnabled);
 		void setStartingCivic(CivicOptionTypes civicOptionType, CivicTypes civicType);
 		void setStartingYear(int year);
@@ -26,10 +26,11 @@ class CvRFCPlayer {
 		void setStartingPlotX(int x);
 		void setStartingPlotY(int y);
 		void setStartingGold(int gold);
-		void setMinorCiv(bool newMinor);
-		void setHuman(bool newHuman);
-		void setSpawned(bool newSpawned);
-		void setFlipped(bool newFlipped);
+		void setStartingReligion(ReligionTypes startingReligion);
+		void setMinorCiv(bool minor);
+		void setHuman(bool human);
+		void setSpawned(bool spawned);
+		void setFlipped(bool flipped);
 		void addStartingTech(TechTypes tech);
 		void addStartingWar(CivilizationTypes civType);
 		void addCoreProvince(const wchar* province);
@@ -75,6 +76,7 @@ class CvRFCPlayer {
 		int getStartingYear() const;
 		int getStartingTurn() const;
 		int getStartingGold() const;
+		ReligionTypes getStartingReligion() const;
 		bool isSpawned() const;
 		bool isHuman() const;
 		bool isMinor() const;
@@ -123,51 +125,52 @@ class CvRFCPlayer {
 	protected:
 		void applyStability(PlayerTypes playerType, int* num, CivicTypes civicType1, CivicTypes civicType2, int stability);
 
-		CivilizationTypes civilizationType;
-		std::vector<CvRFCUnit*> scheduledUnits;
-		std::vector<CvRFCCity*> scheduledCities;
-		int* startingCivics;
-		int startingYear;
-		int startingTurn;
-		int startingPlotX;
-		int startingPlotY;
-		int startingGold;
-		bool enabled;
-		bool spawned;
-		bool human;
-		bool minor;
-		bool flipped;
-		std::vector<CvWString> coreProvinces;
-		std::vector<TechTypes> startingTechs;
-		std::vector<CivilizationTypes> startingWars;
-		int tempStability[NUM_STABILITY_CATEGORIES];
-		int permStability[NUM_STABILITY_CATEGORIES];
-		int flipCountdown;
-		int GNP;
-		int numPlots;
-		std::vector<CivilizationTypes> relatedLanguages;
+		CivilizationTypes _civilizationType;
+		std::vector<CvRFCUnit*> _scheduledUnits;
+		std::vector<CvRFCCity*> _scheduledCities;
+		int* _startingCivics;
+		int _startingYear;
+		int _startingTurn;
+		int _startingPlotX;
+		int _startingPlotY;
+		int _startingGold;
+		ReligionTypes _startingReligion;
+		bool _enabled;
+		bool _spawned;
+		bool _human;
+		bool _minor;
+		bool _flipped;
+		std::vector<CvWString> _coreProvinces;
+		std::vector<TechTypes> _startingTechs;
+		std::vector<CivilizationTypes> _startingWars;
+		int _tempStability[NUM_STABILITY_CATEGORIES];
+		int _permStability[NUM_STABILITY_CATEGORIES];
+		int _flipCountdown;
+		int _GNP;
+		int _numPlots;
+		std::vector<CivilizationTypes> _relatedLanguages;
 
 		//modifiers
-		int compactEmpireModifier;
-		int unitUpkeepModifier;
-		int researchModifier;
-		int distanceMaintenanceModifier;
-		int numCitiesMaintenanceModifier;
-		int unitProductionModifier;
-		int civicUpkeepModifier;
-		int healthBonusModifier;
-		int buildingProductionModifier;
-		int wonderProductionModifier;
-		int greatPeopleModifier;
-		int inflationModifier;
-		int growthModifier;
+		int _compactEmpireModifier;
+		int _unitUpkeepModifier;
+		int _researchModifier;
+		int _distanceMaintenanceModifier;
+		int _numCitiesMaintenanceModifier;
+		int _unitProductionModifier;
+		int _civicUpkeepModifier;
+		int _healthBonusModifier;
+		int _buildingProductionModifier;
+		int _wonderProductionModifier;
+		int _greatPeopleModifier;
+		int _inflationModifier;
+		int _growthModifier;
 
 		//civic stability
-		bool vassalBonus;
-		bool foundBonus;
-		bool conquestBonus;
-		bool commerceBonus;
+		bool _vassalBonus;
+		bool _foundBonus;
+		bool _conquestBonus;
+		bool _commerceBonus;
 
 		//misc
-		int newCityFreePopulation;
+		int _newCityFreePopulation;
 };

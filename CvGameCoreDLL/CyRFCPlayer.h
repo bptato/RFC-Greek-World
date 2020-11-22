@@ -18,6 +18,7 @@ class CyRFCPlayer {
 		void addRelatedLanguage(int civType);
 		void setStartingPlot(int x, int y);
 		void setStartingGold(int gold);
+		void setStartingReligion(int religion);
 		void addCoreProvince(std::wstring provinceName);
 		void setEnabled(bool newEnabled);
 		void setMinorCiv(bool minor);
@@ -43,6 +44,7 @@ class CyRFCPlayer {
 		bool isEnabled();
 		int getStartingCivic(int civicOptionType);
 		int getStartingGold();
+		int getStartingReligion();
 		bool isStartingTech(int tech);
 		bool isStartingWar(int civType);
 		bool isRelatedLanguage(int civType);

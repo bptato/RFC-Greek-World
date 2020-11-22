@@ -334,6 +334,8 @@ class WbParser:
 							if startingCivic != -1:
 								wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
 						wbPlayer['StartingGold'] = player.getGold()
+						if player.getStateReligion() != ReligionTypes.NO_RELIGION:
+							wbPlayer['StartingReligion'] = gc.getReligionInfo(player.getStateReligion()).getType()
 
 						for k in range(gc.getNumTechInfos()):
 							if gc.getTeam(player.getTeam()).isHasTech(k):
@@ -348,6 +350,8 @@ class WbParser:
 							wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
 
 					wbPlayer['StartingGold'] = rfcPlayer.getStartingGold()
+					if rfcPlayer.getStartingReligion() != ReligionTypes.NO_RELIGION:
+						wbPlayer['StartingReligion'] = gc.getReligionInfo(rfcPlayer.getStartingReligion()).getType()
 
 					for j in range(gc.getNumTechInfos()):
 						if rfcPlayer.isStartingTech(j):
@@ -379,7 +383,7 @@ class WbParser:
 					wbUnit['UnitOwner'] = civInfo.getType()
 					wbUnit['UnitType'] = gc.getUnitInfo(scheduledUnit.getUnitType()).getType()
 					wbUnit['Year'] = scheduledUnit.getYear()
-					if scheduledUnit.getUnitAIType() != -1:
+					if scheduledUnit.getUnitAIType() != UnitAITypes.NO_UNITAI:
 						wbUnit['UnitAIType'] = gc.getUnitAIInfo(scheduledUnit.getUnitAIType()).getType()
 					if scheduledUnit.getFacingDirection() != -1 and scheduledUnit.getFacingDirection() != 4:
 						wbUnit['FacingDirection'] = scheduledUnit.getFacingDirection()
@@ -991,11 +995,14 @@ class WbParser:
 					for i in range(gc.getNumCivicOptionInfos()):
 						civicOptionType = gc.getCivicOptionInfo(i).getType()
 						if civicOptionType in wbPlayer['CivicOptions']:
-							civicOptionTypeNum = CvUtil.findInfoTypeNum(gc.getCivicOptionInfo, gc.getNumCivicOptionInfos(), wbPlayer['CivicOptions'][civicOptionType])
+							civicOptionTypeNum = gc.getInfoTypeForString(wbPlayer['CivicOptions'][civicOptionType])
 							rfcPlayer.setStartingCivic(i, civicOptionTypeNum)
 
 				if "StartingGold" in wbPlayer:
 					rfcPlayer.setStartingGold(wbPlayer['StartingGold'])
+
+				if "StartingReligion" in wbPlayer:
+					rfcPlayer.setStartingReligion(gc.getInfoTypeForString(wbPlayer['StartingReligion']))
 
 				if "StartingWars" in wbPlayer:
 					for startingWar in wbPlayer['StartingWars']:

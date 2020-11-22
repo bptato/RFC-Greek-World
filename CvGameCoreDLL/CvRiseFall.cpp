@@ -562,6 +562,9 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 	rfcPlayer.setStartingTurn(game.getGameTurn());
 	rfcPlayer.setSpawned(true);
 	player.setGold(rfcPlayer.getStartingGold());
+	if(rfcPlayer.getStartingReligion() != NO_RELIGION) {
+		player.setLastStateReligion(rfcPlayer.getStartingReligion());
+	}
 	player.processDynamicNames(true);
 }
 

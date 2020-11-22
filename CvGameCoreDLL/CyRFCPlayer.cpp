@@ -65,6 +65,10 @@ void CyRFCPlayer::setStartingGold(int gold) {
 	rfcPlayer->setStartingGold(gold);
 }
 
+void CyRFCPlayer::setStartingReligion(int religion) {
+	rfcPlayer->setStartingReligion((ReligionTypes)religion);
+}
+
 void CyRFCPlayer::addCoreProvince(std::wstring provinceName) {
 	rfcPlayer->addCoreProvince(provinceName.c_str());
 }
@@ -156,6 +160,10 @@ int CyRFCPlayer::getStartingCivic(int civicOptionType) {
 
 int CyRFCPlayer::getStartingGold() {
 	return rfcPlayer->getStartingGold();
+}
+
+int CyRFCPlayer::getStartingReligion() {
+	return rfcPlayer->getStartingReligion();
 }
 
 bool CyRFCPlayer::isStartingTech(int tech) {
