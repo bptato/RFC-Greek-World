@@ -29,6 +29,7 @@ class CvRFCPlayer {
 		void setMinorCiv(bool newMinor);
 		void setHuman(bool newHuman);
 		void setSpawned(bool newSpawned);
+		void setFlipped(bool newFlipped);
 		void addStartingTech(TechTypes tech);
 		void addStartingWar(CivilizationTypes civType);
 		void addCoreProvince(const wchar* province);
@@ -77,6 +78,7 @@ class CvRFCPlayer {
 		bool isSpawned() const;
 		bool isHuman() const;
 		bool isMinor() const;
+		bool isFlipped() const;
 		std::vector<TechTypes>& getStartingTechs();
 		std::vector<CivilizationTypes>& getStartingWars();
 		bool isInCoreBounds(int x, int y);
@@ -134,6 +136,7 @@ class CvRFCPlayer {
 		bool spawned;
 		bool human;
 		bool minor;
+		bool flipped;
 		std::vector<CvWString> coreProvinces;
 		std::vector<TechTypes> startingTechs;
 		std::vector<CivilizationTypes> startingWars;

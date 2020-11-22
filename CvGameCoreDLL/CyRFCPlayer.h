@@ -21,6 +21,7 @@ class CyRFCPlayer {
 		void addCoreProvince(std::wstring provinceName);
 		void setEnabled(bool newEnabled);
 		void setMinorCiv(bool minor);
+		void setFlipped(bool flipped);
 
 		void setCompactEmpireModifier(int modifier);
 		void setUnitUpkeepModifier(int modifier);
@@ -49,6 +50,7 @@ class CyRFCPlayer {
 		int getStartingPlotY();
 		bool isMinor();
 		bool isSpawned();
+		bool isFlipped();
 
 		int getNumScheduledUnits();
 		CyRFCUnit* addScheduledUnit();

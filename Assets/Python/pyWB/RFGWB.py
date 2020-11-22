@@ -414,6 +414,9 @@ class WbParser:
 				if rfcPlayer.isMinor():
 					wbPlayer['MinorNationStatus'] = 1
 
+				#Already flipped?
+				wbPlayer['Flipped'] = rfcPlayer.isFlipped()
+
 				#Modifiers
 				wbPlayer['CompactEmpireModifier'] = rfcPlayer.getCompactEmpireModifier()
 				wbPlayer['UnitUpkeepModifier'] = rfcPlayer.getUnitUpkeepModifier()
@@ -1004,6 +1007,8 @@ class WbParser:
 					rfcPlayer.setGrowthModifier(wbPlayer['GrowthModifier'])
 				if "StartingYear" in wbPlayer:
 					rfcPlayer.setStartingYear(wbPlayer['StartingYear'])
+				if "Flipped" in wbPlayer:
+					rfcPlayer.setFlipped(wbPlayer['Flipped'])
 			elif wbPlayer['CivType'] != "CIVILIZATION_BARBARIAN": #barbarians are minors and always occupy last slot; we don't want them to reduce available slots
 				gc.setMinorNationCiv(self.lastOpenSlot, playerID, True)
 				self.lastOpenSlot -= 1

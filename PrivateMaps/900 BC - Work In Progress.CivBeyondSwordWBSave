@@ -78,6 +78,7 @@ application/json
 				"Lower Egypt"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":110,
 			"ResearchModifier":110,
@@ -150,6 +151,7 @@ application/json
 				"Cyprus"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":5,
 			"UnitUpkeepModifier":130,
 			"ResearchModifier":90,
@@ -222,6 +224,7 @@ application/json
 				"Sumer"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":120,
 			"ResearchModifier":110,
@@ -299,6 +302,7 @@ application/json
 				"Akkad"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":20,
 			"UnitUpkeepModifier":110,
 			"ResearchModifier":100,
@@ -373,6 +377,7 @@ application/json
 				"Palestine"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":130,
 			"ResearchModifier":100,
@@ -452,6 +457,7 @@ application/json
 				"Euboea"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":5,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -531,6 +537,7 @@ application/json
 				"Peloponnese"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -606,6 +613,7 @@ application/json
 				"Sarmatia"
 			],
 			"StartingYear":-900,
+			"Flipped":true,
 			"CompactEmpireModifier":20,
 			"UnitUpkeepModifier":90,
 			"ResearchModifier":130,
@@ -643,6 +651,7 @@ application/json
 				"Numidia"
 			],
 			"StartingYear":-812,
+			"Flipped":false,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -681,6 +690,7 @@ application/json
 				"Brittany"
 			],
 			"StartingYear":-806,
+			"Flipped":false,
 			"CompactEmpireModifier":20,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":120,
@@ -717,6 +727,7 @@ application/json
 				"Italy"
 			],
 			"StartingYear":-800,
+			"Flipped":false,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -756,6 +767,7 @@ application/json
 				"Nubia"
 			],
 			"StartingYear":-788,
+			"Flipped":false,
 			"CompactEmpireModifier":20,
 			"UnitUpkeepModifier":110,
 			"ResearchModifier":100,
@@ -803,6 +815,7 @@ application/json
 				"Media"
 			],
 			"StartingYear":-674,
+			"Flipped":false,
 			"CompactEmpireModifier":10,
 			"UnitUpkeepModifier":70,
 			"ResearchModifier":100,
@@ -852,6 +865,7 @@ application/json
 				"Corsica"
 			],
 			"StartingYear":-512,
+			"Flipped":false,
 			"CompactEmpireModifier":10,
 			"UnitUpkeepModifier":70,
 			"ResearchModifier":95,
@@ -903,6 +917,7 @@ application/json
 				"Central Greece"
 			],
 			"StartingYear":-476,
+			"Flipped":false,
 			"CompactEmpireModifier":30,
 			"UnitUpkeepModifier":80,
 			"ResearchModifier":100,
@@ -919,50 +934,16 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_INDIA",
-			"StartingTechs":[
-				"TECH_MYSTICISM",
-				"TECH_MYTHOLOGY",
-				"TECH_POLYTHEISM",
-				"TECH_PRIESTHOOD",
-				"TECH_TYRANNY",
-				"TECH_CODE_OF_LAWS",
-				"TECH_CITIZENSHIP",
-				"TECH_TRADE",
-				"TECH_FISHING",
-				"TECH_THE_WHEEL",
-				"TECH_AGRICULTURE",
-				"TECH_POTTERY",
-				"TECH_WRITING",
-				"TECH_MATHEMATICS",
-				"TECH_ALPHABET",
-				"TECH_CURRENCY",
-				"TECH_EDUCATION",
-				"TECH_HERBALISM",
-				"TECH_MEDICINE",
-				"TECH_HUNTING",
-				"TECH_MINING",
-				"TECH_ARCHERY",
-				"TECH_MASONRY",
-				"TECH_ANIMAL_HUSBANDRY",
-				"TECH_BRONZE_WORKING",
-				"TECH_HORSEBACK_RIDING",
-				"TECH_LOGGING",
-				"TECH_STORYTELLING",
-				"TECH_RECORD_KEEPING",
-				"TECH_URBAN_CULTURE",
-				"TECH_SLASH_AND_BURN",
-				"TECH_BREAD_MAKING",
-				"TECH_FERMENTATION",
-				"TECH_WARRIOR_CODE",
-				"TECH_COPPER_WORKING",
-				"TECH_PACHYDERM_DOMESTICATION",
-				"TECH_EQUINE_DOMESTICATION",
-				"TECH_SPOKES",
-				"TECH_BOATS",
-				"TECH_ARROWS"
-			],
-			"CivicOptions":{},
-			"StartingGold":250,
+			"StartingTechs":[],
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
+				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
+				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":0,
 			"StartingWars":[
 				"CIVILIZATION_PERSIA"
 			],
@@ -974,6 +955,7 @@ application/json
 				"Indus Valley"
 			],
 			"StartingYear":-320,
+			"Flipped":false,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -1017,6 +999,7 @@ application/json
 				"Bactria"
 			],
 			"StartingYear":-254,
+			"Flipped":false,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -1054,6 +1037,7 @@ application/json
 				"Mauretania"
 			],
 			"StartingYear":-200,
+			"Flipped":false,
 			"CompactEmpireModifier":40,
 			"UnitUpkeepModifier":130,
 			"ResearchModifier":130,
@@ -1096,6 +1080,7 @@ application/json
 				"Germania"
 			],
 			"StartingYear":160,
+			"Flipped":false,
 			"CompactEmpireModifier":10,
 			"UnitUpkeepModifier":50,
 			"ResearchModifier":100,
@@ -1139,6 +1124,7 @@ application/json
 				"Media"
 			],
 			"StartingYear":226,
+			"Flipped":false,
 			"CompactEmpireModifier":10,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -1188,6 +1174,7 @@ application/json
 				"Peloponnese"
 			],
 			"StartingYear":286,
+			"Flipped":false,
 			"CompactEmpireModifier":5,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -1242,6 +1229,7 @@ application/json
 			"StartingY":43,
 			"CoreProvinces":[],
 			"StartingYear":368,
+			"Flipped":false,
 			"CompactEmpireModifier":10,
 			"UnitUpkeepModifier":50,
 			"ResearchModifier":100,
@@ -1275,6 +1263,7 @@ application/json
 			"CoreProvinces":[],
 			"StartingYear":0,
 			"MinorNationStatus":1,
+			"Flipped":false,
 			"CompactEmpireModifier":50,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -1308,6 +1297,7 @@ application/json
 			"CoreProvinces":[],
 			"StartingYear":0,
 			"MinorNationStatus":1,
+			"Flipped":false,
 			"CompactEmpireModifier":50,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -1341,6 +1331,7 @@ application/json
 			"CoreProvinces":[],
 			"StartingYear":0,
 			"MinorNationStatus":1,
+			"Flipped":false,
 			"CompactEmpireModifier":50,
 			"UnitUpkeepModifier":100,
 			"ResearchModifier":100,
@@ -1997,6 +1988,19 @@ application/json
 					"RELIGION_PESEDJET":1
 				}
 			}
+		},
+		{
+			"x":34,
+			"y":13,
+			"Units":[
+				{
+					"UnitOwner":"CIVILIZATION_BARBARIAN",
+					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
+					"FacingDirection":4,
+					"UnitAIType":"UNITAI_ATTACK",
+					"Year":-896
+				}
+			]
 		},
 		{
 			"x":29,
@@ -3119,6 +3123,26 @@ application/json
 				"CityOwner":"CIVILIZATION_INDEPENDENT",
 				"Year":-896
 			}
+		},
+		{
+			"x":54,
+			"y":36,
+			"Units":[
+				{
+					"UnitOwner":"CIVILIZATION_BARBARIAN",
+					"UnitType":"UNIT_WARRIOR",
+					"FacingDirection":4,
+					"UnitAIType":"UNITAI_ATTACK",
+					"Year":-896
+				},
+				{
+					"UnitOwner":"CIVILIZATION_BARBARIAN",
+					"UnitType":"UNIT_WARRIOR",
+					"FacingDirection":4,
+					"UnitAIType":"UNITAI_ATTACK",
+					"Year":-896
+				}
+			]
 		},
 		{
 			"x":27,

@@ -77,6 +77,10 @@ void CyRFCPlayer::setMinorCiv(bool minor) {
 	rfcPlayer->setMinorCiv(minor);
 }
 
+void CyRFCPlayer::setFlipped(bool flipped) {
+	rfcPlayer->setFlipped(flipped);
+}
+
 void CyRFCPlayer::setCompactEmpireModifier(int modifier) {
 	rfcPlayer->setCompactEmpireModifier(modifier);
 }
@@ -188,6 +192,10 @@ bool CyRFCPlayer::isMinor() {
 
 bool CyRFCPlayer::isSpawned() {
 	return rfcPlayer->isSpawned();
+}
+
+bool CyRFCPlayer::isFlipped() {
+	return rfcPlayer->isFlipped();
 }
 
 int CyRFCPlayer::getCompactEmpireModifier() {

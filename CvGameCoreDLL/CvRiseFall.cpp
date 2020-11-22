@@ -218,6 +218,7 @@ void CvRiseFall::checkFlip(PlayerTypes playerType, CivilizationTypes civType) {
 					flipCity(*it, playerType, true);
 				}
 			}
+			getRFCPlayer(civType).setFlipped(true);
 		}
 	}
 }
@@ -555,7 +556,9 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 	assignStartingTechs(civType, playerType);
 	assignStartingCivics(civType, playerType);
 	setupStartingWars(civType, playerType);
-	rfcPlayer.setFlipCountdown(3);
+	if(!rfcPlayer.isFlipped()) {
+		rfcPlayer.setFlipCountdown(3);
+	}
 	rfcPlayer.setStartingTurn(game.getGameTurn());
 	rfcPlayer.setSpawned(true);
 	player.setGold(rfcPlayer.getStartingGold());
@@ -745,17 +748,17 @@ PlayerTypes CvRiseFall::getPlayerTypeForCiv(CivilizationTypes civType) const {
 	for(int i = 0; i<MAX_PLAYERS; i++) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
-		if(!rfcPlayer.isMinor() && GC.getGame().getGameTurn()==GC.getGame().getStartTurn() && rfcPlayer.getStartingYear() > GC.getGame().getGameTurnYear()) {
+		if(!rfcPlayer.isMinor() && GC.getGame().getGameTurn() == GC.getGame().getStartTurn() && rfcPlayer.getStartingYear() > GC.getGame().getGameTurnYear()) {
 			continue;
 		}
-		if((rfcPlayer.getFlipCountdown() == 3 || player.isAlive() || player.isMinorCiv() || player.isBarbarian()) && player.getCivilizationType() == civType) {
+		if((rfcPlayer.getStartingTurn() == GC.getGame().getGameTurn() || player.isAlive() || player.isMinorCiv() || player.isBarbarian()) && player.getCivilizationType() == civType) {
 			return (PlayerTypes)i;
 		}
 	}
 	return NO_PLAYER;
 }
 
-CvRFCPlayer& CvRiseFall::getRFCPlayer(CivilizationTypes civType) const {
+inline CvRFCPlayer& CvRiseFall::getRFCPlayer(CivilizationTypes civType) const {
 	return _rfcPlayers[civType];
 }
 
@@ -769,7 +772,7 @@ CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
 	return NULL;
 }
 
-CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) const {
+inline CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) const {
 	return _rfcProvinces[provinceID];
 }
 

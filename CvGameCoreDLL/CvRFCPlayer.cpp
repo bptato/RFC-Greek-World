@@ -44,6 +44,7 @@ void CvRFCPlayer::reset(CivilizationTypes newCivType) {
 	spawned = false;
 	minor = false;
 	human = false;
+	flipped = false;
 
 	vassalBonus = false;
 	foundBonus = false;
@@ -120,6 +121,10 @@ void CvRFCPlayer::setHuman(bool newHuman) {
 
 void CvRFCPlayer::setSpawned(bool newSpawned) {
 	spawned = newSpawned;
+}
+
+void CvRFCPlayer::setFlipped(bool newFlipped) {
+	flipped = newFlipped;
 }
 
 void CvRFCPlayer::addStartingTech(TechTypes tech) {
@@ -618,6 +623,10 @@ bool CvRFCPlayer::isMinor() const {
 	return minor;
 }
 
+bool CvRFCPlayer::isFlipped() const {
+	return flipped;
+}
+
 std::vector<TechTypes>& CvRFCPlayer::getStartingTechs() {
 	return startingTechs;
 }
@@ -836,6 +845,7 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 	stream->Read(&spawned);
 	stream->Read(&human);
 	stream->Read(&minor);
+	stream->Read(&flipped);
 	stream->Read(&flipCountdown);
 	stream->Read(&GNP);
 	stream->Read(&numPlots);
@@ -935,6 +945,7 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	stream->Write(spawned);
 	stream->Write(human);
 	stream->Write(minor);
+	stream->Write(flipped);
 	stream->Write(flipCountdown);
 	stream->Write(GNP);
 	stream->Write(numPlots);
