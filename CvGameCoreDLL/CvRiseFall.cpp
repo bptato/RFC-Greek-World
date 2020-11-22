@@ -247,6 +247,19 @@ void CvRiseFall::checkScheduledCities(PlayerTypes playerType, CivilizationTypes 
 						GC.getGame().setHolyCity((ReligionTypes)i, city, false);
 					}
 				}
+				for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
+					if(rfcCity->getCulture((CivilizationTypes)i) > 0) {
+						PlayerTypes cultureCiv = NO_PLAYER;
+						for(int j = 0; j < MAX_PLAYERS; ++j) {
+							if(GET_PLAYER((PlayerTypes)j).isAlive() && GET_PLAYER((PlayerTypes)j).getCivilizationType() == (CivilizationTypes)i) {
+								cultureCiv = (PlayerTypes)j;
+							}
+						}
+						if(cultureCiv != NO_PLAYER) {
+							city->setCulture(cultureCiv, rfcCity->getCulture((CivilizationTypes)i), true, true);
+						}
+					}
+				}
 			}
 			SAFE_DELETE(rfcCity);
 			it = scheduledCities.erase(it);

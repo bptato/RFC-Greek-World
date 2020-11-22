@@ -13,9 +13,10 @@ class CyRFCCity {
 		void setX(int x);
 		void setY(int y);
 		void setPopulation(int population);
-		void setNumBuilding(int building, int num);
-		void setReligion(int religion, bool num);
-		void setHolyCityReligion(int religion, bool num);
+		void setNumBuilding(int building, int value);
+		void setReligion(int religion, bool value);
+		void setHolyCityReligion(int religion, bool value);
+		void setCulture(int civType, int value);
 
 		int getYear();
 		int getX();
@@ -24,6 +25,7 @@ class CyRFCCity {
 		int getNumBuilding(int building);
 		bool getReligion(int religion);
 		bool getHolyCityReligion(int religion);
+		int getCulture(int civType);
 
 	protected:
 		CvRFCCity* rfcCity;

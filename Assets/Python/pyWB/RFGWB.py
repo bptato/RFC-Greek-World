@@ -309,7 +309,11 @@ class WbParser:
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
 							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
-					#TODO culture
+					for i in range(gc.getNumCivilizationInfos()):
+						if city.getCulture(i) > 0:
+							if "Culture" not in wbCity:
+								wbCity['Culture'] = {}
+							wbCity['Culture'][gc.getCivilizationInfo(i).getType()] = city.getCulture(i)
 					shouldSave = True
 
 				if shouldSave:
@@ -411,6 +415,11 @@ class WbParser:
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
 							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
+					for i in range(gc.getNumCivilizationInfos()):
+						if scheduledCity.getCulture(i) > 0:
+							if "Culture" not in wbCity:
+								wbCity['Culture'] = {}
+							wbCity['Culture'][gc.getCivilizationInfo(i).getType()] = scheduledCity.getCulture(i)
 
 					wbPlot['City'] = wbCity
 
@@ -880,6 +889,12 @@ class WbParser:
 						religionType = gc.getReligionInfo(i).getType()
 						if religionType in wbCity['HolyCityReligions']:
 							scheduledCity.setHolyCityReligion(i, wbCity['HolyCityReligions'][religionType])
+
+				if "Culture" in wbCity:
+					for i in range(gc.getNumCivilizationInfos()):
+						civType = gc.getCivilizationInfo(i).getType()
+						if civType in wbCity['Culture']:
+							scheduledCity.setCulture(i, wbCity['Culture'][civType])
 
 			#Improvements
 			if "ImprovementType" in wbPlot:

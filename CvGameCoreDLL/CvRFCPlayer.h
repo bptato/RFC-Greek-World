@@ -15,7 +15,8 @@ class CvRFCPlayer {
 	public:
 		CvRFCPlayer();
 		~CvRFCPlayer();
-		void reset(CivilizationTypes newCivType);
+		void reset(CivilizationTypes civilizationType);
+		void init(CivilizationTypes civilizationType);
 		void uninit();
 
 		void setCivilizationType(CivilizationTypes civilizationType);

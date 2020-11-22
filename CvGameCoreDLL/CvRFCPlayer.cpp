@@ -6,15 +6,20 @@ Author: bluepotato
 
 CvRFCPlayer::CvRFCPlayer() {
 	_startingCivics = new int[GC.getNumCivicOptionInfos()];
+	init(NO_CIVILIZATION);
 }
 
 CvRFCPlayer::~CvRFCPlayer() {
-	SAFE_DELETE_ARRAY(_startingCivics);
 	uninit();
+	SAFE_DELETE_ARRAY(_startingCivics);
 }
 
 void CvRFCPlayer::reset(CivilizationTypes civilizationType) {
 	uninit();
+	init(civilizationType);
+}
+
+void CvRFCPlayer::init(CivilizationTypes civilizationType) {
 	_civilizationType = civilizationType;
 	_startingYear = 0;
 	_startingTurn = -1;

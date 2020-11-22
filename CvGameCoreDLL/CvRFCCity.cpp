@@ -5,6 +5,19 @@ Author: bluepotato
 #include "CvRFCCity.h"
 
 CvRFCCity::CvRFCCity() {
+	init();
+}
+
+CvRFCCity::~CvRFCCity() {
+	uninit();
+}
+
+void CvRFCCity::reset() {
+	uninit();
+	init();
+}
+
+void CvRFCCity::init() {
 	_year = 0;
 	_y = 0;
 	_x = 0;
@@ -21,12 +34,17 @@ CvRFCCity::CvRFCCity() {
 	for(int i = 0; i < GC.getNumReligionInfos(); ++i) {
 		_holyCityReligions[i] = 0;
 	}
+	_culture = new int[GC.getNumCivilizationInfos()];
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
+		_culture[i] = 0;
+	}
 }
 
-CvRFCCity::~CvRFCCity() {
+void CvRFCCity::uninit() {
 	SAFE_DELETE_ARRAY(_buildings);
 	SAFE_DELETE_ARRAY(_religions);
 	SAFE_DELETE_ARRAY(_holyCityReligions);
+	SAFE_DELETE_ARRAY(_culture);
 }
 
 void CvRFCCity::setYear(int year) {
@@ -61,6 +79,12 @@ void CvRFCCity::setHolyCityReligion(ReligionTypes religion, bool value) {
 	FAssert(religion >= 0);
 	FAssert(religion < GC.getNumReligionInfos());
 	_holyCityReligions[religion] = value;
+}
+
+void CvRFCCity::setCulture(CivilizationTypes civType, int value) {
+	FAssert(civType >= 0);
+	FAssert(civType < GC.getNumCivilizationInfos());
+	_culture[civType] = value;
 }
 
 
@@ -98,6 +122,12 @@ bool CvRFCCity::getHolyCityReligion(ReligionTypes religion) const {
 	return _holyCityReligions[religion];
 }
 
+int CvRFCCity::getCulture(CivilizationTypes civType) const {
+	FAssert(civType >= 0);
+	FAssert(civType < GC.getNumCivilizationInfos());
+	return _culture[civType];
+}
+
 
 void CvRFCCity::write(FDataStreamBase* stream) {
 	stream->Write(_year);
@@ -105,12 +135,19 @@ void CvRFCCity::write(FDataStreamBase* stream) {
 	stream->Write(_y);
 	stream->Write(_population);
 	stream->Write(GC.getNumBuildingInfos(), _buildings);
+	stream->Write(GC.getNumReligionInfos(), _religions);
+	stream->Write(GC.getNumReligionInfos(), _holyCityReligions);
+	stream->Write(GC.getNumCivilizationInfos(), _culture);
 }
 
 void CvRFCCity::read(FDataStreamBase* stream) {
+	reset();
 	stream->Read(&_year);
 	stream->Read(&_x);
 	stream->Read(&_y);
 	stream->Read(&_population);
 	stream->Read(GC.getNumBuildingInfos(), _buildings);
+	stream->Read(GC.getNumReligionInfos(), _religions);
+	stream->Read(GC.getNumReligionInfos(), _holyCityReligions);
+	stream->Read(GC.getNumCivilizationInfos(), _culture);
 }

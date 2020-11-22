@@ -38,6 +38,10 @@ void CyRFCCity::setHolyCityReligion(int religion, bool value) {
 	rfcCity->setHolyCityReligion((ReligionTypes)religion, value);
 }
 
+void CyRFCCity::setCulture(int civType, int value) {
+	rfcCity->setCulture((CivilizationTypes)civType, value);
+}
+
 
 int CyRFCCity::getYear() {
 	return rfcCity->getYear();
@@ -65,4 +69,8 @@ bool CyRFCCity::getReligion(int religion) {
 
 bool CyRFCCity::getHolyCityReligion(int religion) {
 	return rfcCity->getHolyCityReligion((ReligionTypes)religion);
+}
+
+int CyRFCCity::getCulture(int civType) {
+	return rfcCity->getCulture((CivilizationTypes)civType);
 }
