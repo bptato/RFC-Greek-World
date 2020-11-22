@@ -83,10 +83,10 @@ class WbParser:
 			ret = self.mapValues['Map'][key]
 		return ret
 
-	def getPlayerValue(self, playerID, key, default):
+	def getPlayerValue(self, civType, key, default):
 		ret = default
-		if key in self.scenarioValues['Players'][playerID]:
-			ret = self.scenarioValues['Players'][playerID][key]
+		if key in self.scenarioValues['Players'][civType]:
+			ret = self.scenarioValues['Players'][civType][key]
 		return ret
 
 	def getMaxTurns(self):
@@ -260,6 +260,14 @@ class WbParser:
 				wbPlot['y'] = y
 				shouldSave = False
 
+				if plot.getImprovementType() != -1:
+					wbPlot['ImprovementType'] = gc.getImprovementInfo(plot.getImprovementType()).getType()
+					shouldSave = True
+
+				if plot.getRouteType() != -1:
+					wbPlot['RouteType'] = gc.getRouteInfo(plot.getRouteType()).getType()
+					shouldSave = True
+
 				if plot.getNumUnits() > 0:
 					wbPlot['Units'] = []
 					for i in range(plot.getNumUnits()):
@@ -271,7 +279,7 @@ class WbParser:
 						wbUnit['UnitAIType'] = gc.getUnitAIInfo(unit.getUnitAIType()).getType()
 						wbUnit['Year'] = game.getGameTurnYear()
 						wbPlot['Units'].append(wbUnit)
-						#TODO experience, etc
+						#TODO experience, promotions
 					shouldSave = True
 
 				if plot.isCity():
@@ -294,14 +302,14 @@ class WbParser:
 						if city.isHasReligion(i):
 							if "Religions" not in wbCity:
 								wbCity['Religions'] = {}
-							wbCity['Religions'][gc.getReligionInfo(i).getType()] = true
+							wbCity['Religions'][gc.getReligionInfo(i).getType()] = True
 
 					for i in range(gc.getNumReligionInfos()):
 						if city.isHolyCityByType(i):
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
-							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = true
-					#TODO culture, etc
+							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
+					#TODO culture
 					shouldSave = True
 
 				if shouldSave:
@@ -330,7 +338,7 @@ class WbParser:
 						for k in range(gc.getNumTechInfos()):
 							if gc.getTeam(player.getTeam()).isHasTech(k):
 								wbPlayer['StartingTechs'].append(gc.getTechInfo(k).getType())
-						alive = true
+						alive = True
 						break
 
 				if not alive:
@@ -398,7 +406,7 @@ class WbParser:
 						if scheduledCity.getHolyCityReligion(i):
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
-							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = true
+							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
 
 					wbPlot['City'] = wbCity
 
@@ -688,6 +696,7 @@ class WbParser:
 
 	def buildMap(self):
 		print "RFGWB.buildMap()"
+		self.lastOpenSlot = gc.getMAX_CIV_PLAYERS() - 1 #needs to be reset, TODO maybe not here?
 
 		if "StartYear" in self.scenarioValues['Game']:
 			game.setStartYear(self.scenarioValues['Game']['StartYear'])
@@ -717,6 +726,12 @@ class WbParser:
 				terrainType = gc.getInfoTypeForString(wbPlot['TerrainType'])
 				plot.setTerrainType(terrainType, False, False)
 
+		cmap.recalculateAreas()
+
+		for wbPlot in self.mapValues['Plots']:
+			x = wbPlot['x']
+			y = wbPlot['y']
+			plot = cmap.plot(x, y)
 			#Bonuses
 			if "BonusType" in wbPlot:
 				plot.setBonusType(gc.getInfoTypeForString(wbPlot['BonusType']))
@@ -772,6 +787,7 @@ class WbParser:
 			x = wbPlot['x']
 			y = wbPlot['y']
 			plot = cmap.plot(x, y)
+
 			#Units
 			if "Units" in wbPlot:
 				for wbUnit in wbPlot['Units']:
@@ -861,7 +877,15 @@ class WbParser:
 						if religionType in wbCity['HolyCityReligions']:
 							scheduledCity.setHolyCityReligion(i, wbCity['HolyCityReligions'][religionType])
 
-		cmap.recalculateAreas()
+			#Improvements
+			if "ImprovementType" in wbPlot:
+				improvementType = gc.getInfoTypeForString(wbPlot['ImprovementType'])
+				plot.setImprovementType(improvementType)
+
+			#Roads
+			if "RouteType" in wbPlot:
+				routeType = gc.getInfoTypeForString(wbPlot['RouteType'])
+				plot.setRouteType(routeType)
 
 
 		#Goody huts
@@ -891,7 +915,7 @@ class WbParser:
 						for wbPlayer in self.scenarioValues['Players']:
 							if wbPlayer['StartingYear'] == self.scenarioValues['Game']['StartYear']:
 								if x == wbPlayer['StartingX'] and y == wbPlayer['StartingY']:
-									unavail = true
+									unavail = True
 									break
 						if unavail:
 							continue
@@ -947,8 +971,8 @@ class WbParser:
 			gc.getPlayer(i).setStartingPlot(cmap.plot(0, 0), True)
 
 		for wbPlayer in self.scenarioValues['Players']:
-			playerID = gc.getInfoTypeForString(wbPlayer['CivType'])
-			rfcPlayer = riseFall.getRFCPlayer(playerID)
+			civType = gc.getInfoTypeForString(wbPlayer['CivType'])
+			rfcPlayer = riseFall.getRFCPlayer(civType)
 
 			if not "MinorNationStatus" in wbPlayer or wbPlayer['MinorNationStatus'] == 0: #major civ
 				if "CoreProvinces" in wbPlayer:
@@ -1013,7 +1037,7 @@ class WbParser:
 				if "Flipped" in wbPlayer:
 					rfcPlayer.setFlipped(wbPlayer['Flipped'])
 			elif wbPlayer['CivType'] != "CIVILIZATION_BARBARIAN": #barbarians are minors and always occupy last slot; we don't want them to reduce available slots
-				gc.setMinorNationCiv(self.lastOpenSlot, playerID, True)
+				gc.setMinorNationCiv(self.lastOpenSlot, civType, True)
 				self.lastOpenSlot -= 1
 			else:
-				gc.setMinorNationCiv(gc.getMAX_CIV_PLAYERS(), playerID, True)
+				gc.setMinorNationCiv(gc.getMAX_CIV_PLAYERS(), civType, True)

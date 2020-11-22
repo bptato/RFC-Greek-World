@@ -1743,6 +1743,7 @@ application/json
 		{
 			"x":32,
 			"y":10,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT",
@@ -1779,16 +1780,17 @@ application/json
 					"BUILDING_BREWERY":1
 				},
 				"Religions":{
-					"RELIGION_PESEDJET":1
+					"RELIGION_PESEDJET":true
 				},
 				"HolyCityReligions":{
-					"RELIGION_PESEDJET":1
+					"RELIGION_PESEDJET":true
 				}
 			}
 		},
 		{
 			"x":31,
 			"y":13,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_BARBARIAN",
@@ -1815,13 +1817,25 @@ application/json
 					"BUILDING_OBELISK":1
 				},
 				"Religions":{
-					"RELIGION_PESEDJET":1
+					"RELIGION_PESEDJET":true
 				}
 			}
 		},
 		{
+			"x":32,
+			"y":14,
+			"ImprovementType":"IMPROVEMENT_FARM",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
+			"x":28,
+			"y":15,
+			"ImprovementType":"IMPROVEMENT_QUARRY"
+		},
+		{
 			"x":29,
 			"y":16,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
@@ -1855,13 +1869,14 @@ application/json
 					"BUILDING_OBELISK":1
 				},
 				"Religions":{
-					"RELIGION_PESEDJET":1
+					"RELIGION_PESEDJET":true
 				}
 			}
 		},
 		{
 			"x":33,
 			"y":16,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_EGYPT",
@@ -1924,13 +1939,20 @@ application/json
 					"BUILDING_EGYPTIAN_OBELISK":1
 				},
 				"Religions":{
-					"RELIGION_PESEDJET":1
+					"RELIGION_PESEDJET":true
 				}
 			}
 		},
 		{
+			"x":40,
+			"y":17,
+			"ImprovementType":"IMPROVEMENT_QUARRY",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
 			"x":41,
 			"y":18,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_ISRAEL",
@@ -1991,16 +2013,23 @@ application/json
 					"BUILDING_PALACE":1
 				},
 				"Religions":{
-					"RELIGION_JUDAISM":1
+					"RELIGION_JUDAISM":true
 				},
 				"HolyCityReligions":{
-					"RELIGION_JUDAISM":1
+					"RELIGION_JUDAISM":true
 				}
 			}
 		},
 		{
+			"x":40,
+			"y":19,
+			"ImprovementType":"IMPROVEMENT_PASTURE",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
 			"x":46,
 			"y":19,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
@@ -2021,16 +2050,17 @@ application/json
 				"CityOwner":"CIVILIZATION_INDEPENDENT2",
 				"Year":-896,
 				"Religions":{
-					"RELIGION_ANUNNAKI":1
+					"RELIGION_ANUNNAKI":true
 				},
 				"HolyCityReligions":{
-					"RELIGION_ANUNNAKI":1
+					"RELIGION_ANUNNAKI":true
 				}
 			}
 		},
 		{
 			"x":15,
 			"y":20,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2087,13 +2117,14 @@ application/json
 					"BUILDING_PHOENICIAN_TRADING_PORT":1
 				},
 				"Religions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				}
 			}
 		},
 		{
 			"x":41,
 			"y":20,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2137,13 +2168,19 @@ application/json
 					"BUILDING_PHOENICIAN_TRADING_PORT":1
 				},
 				"Religions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				}
 			}
 		},
 		{
+			"x":46,
+			"y":20,
+			"ImprovementType":"IMPROVEMENT_FARM"
+		},
+		{
 			"x":9,
 			"y":21,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2160,13 +2197,14 @@ application/json
 					"BUILDING_PHOENICIAN_TRADING_PORT":1
 				},
 				"Religions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				}
 			}
 		},
 		{
 			"x":33,
 			"y":21,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
@@ -2180,13 +2218,14 @@ application/json
 				"CityOwner":"CIVILIZATION_INDEPENDENT2",
 				"Year":-896,
 				"Religions":{
-					"RELIGION_HELLENISM":1
+					"RELIGION_HELLENISM":true
 				}
 			}
 		},
 		{
 			"x":38,
 			"y":21,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2204,13 +2243,19 @@ application/json
 					"BUILDING_HARBOR":1
 				},
 				"Religions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				}
 			}
 		},
 		{
+			"x":41,
+			"y":21,
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
 			"x":48,
 			"y":21,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_BARBARIAN",
@@ -2245,13 +2290,14 @@ application/json
 				"CityOwner":"CIVILIZATION_BARBARIAN",
 				"Year":-896,
 				"Religions":{
-					"RELIGION_ANUNNAKI":1
+					"RELIGION_ANUNNAKI":true
 				}
 			}
 		},
 		{
 			"x":40,
 			"y":22,
+			"ImprovementType":"IMPROVEMENT_FISHING_BOATS",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2265,13 +2311,6 @@ application/json
 					"UnitType":"UNIT_PHOENICIANS_BIREME",
 					"FacingDirection":4,
 					"UnitAIType":"UNITAI_SETTLER_SEA",
-					"Year":-896
-				},
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_WORKBOAT",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_WORKER_SEA",
 					"Year":-896
 				},
 				{
@@ -2316,6 +2355,7 @@ application/json
 		{
 			"x":41,
 			"y":22,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2351,16 +2391,22 @@ application/json
 					"BUILDING_HARBOR":1
 				},
 				"Religions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				},
 				"HolyCityReligions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				}
 			}
 		},
 		{
+			"x":45,
+			"y":22,
+			"ImprovementType":"IMPROVEMENT_VILLAGE"
+		},
+		{
 			"x":46,
 			"y":22,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_BABYLON",
@@ -2420,14 +2466,21 @@ application/json
 					"BUILDING_ANUNNAKI_MONASTERY":1
 				},
 				"Religions":{
-					"RELIGION_ANUNNAKI":1,
-					"RELIGION_JUDAISM":1
+					"RELIGION_ANUNNAKI":true,
+					"RELIGION_JUDAISM":true
 				}
 			}
 		},
 		{
+			"x":49,
+			"y":22,
+			"ImprovementType":"IMPROVEMENT_PASTURE",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
 			"x":4,
 			"y":24,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2444,13 +2497,14 @@ application/json
 					"BUILDING_PHOENICIAN_TRADING_PORT":1
 				},
 				"Religions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				}
 			}
 		},
 		{
 			"x":29,
 			"y":24,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_SPARTA",
@@ -2537,7 +2591,7 @@ application/json
 					"BUILDING_PALACE":1
 				},
 				"Religions":{
-					"RELIGION_HELLENISM":1
+					"RELIGION_HELLENISM":true
 				}
 			}
 		},
@@ -2562,8 +2616,14 @@ application/json
 			]
 		},
 		{
+			"x":48,
+			"y":25,
+			"ImprovementType":"IMPROVEMENT_MINE"
+		},
+		{
 			"x":15,
 			"y":26,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
@@ -2580,13 +2640,20 @@ application/json
 					"BUILDING_PHOENICIAN_TRADING_PORT":1
 				},
 				"Religions":{
-					"RELIGION_BAALISM":1
+					"RELIGION_BAALISM":true
 				}
 			}
 		},
 		{
+			"x":16,
+			"y":26,
+			"ImprovementType":"IMPROVEMENT_PASTURE",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
 			"x":33,
 			"y":26,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_ATHENS",
@@ -2659,13 +2726,14 @@ application/json
 					"BUILDING_PALACE":1
 				},
 				"Religions":{
-					"RELIGION_HELLENISM":1
+					"RELIGION_HELLENISM":true
 				}
 			}
 		},
 		{
 			"x":47,
 			"y":26,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_ASSYRIA",
@@ -2765,13 +2833,19 @@ application/json
 					"BUILDING_FORGE":1
 				},
 				"Religions":{
-					"RELIGION_ANUNNAKI":1
+					"RELIGION_ANUNNAKI":true
 				}
 			}
 		},
 		{
+			"x":48,
+			"y":26,
+			"ImprovementType":"IMPROVEMENT_COTTAGE"
+		},
+		{
 			"x":44,
 			"y":27,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_ASSYRIA",
@@ -2794,8 +2868,27 @@ application/json
 			}
 		},
 		{
+			"x":45,
+			"y":27,
+			"ImprovementType":"IMPROVEMENT_PASTURE",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
+			"x":47,
+			"y":27,
+			"ImprovementType":"IMPROVEMENT_FARM",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
+			"x":31,
+			"y":28,
+			"ImprovementType":"IMPROVEMENT_QUARRY",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
 			"x":30,
 			"y":29,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT",
@@ -2816,16 +2909,23 @@ application/json
 				"CityOwner":"CIVILIZATION_INDEPENDENT",
 				"Year":-896,
 				"Religions":{
-					"RELIGION_HELLENISM":1
+					"RELIGION_HELLENISM":true
 				},
 				"HolyCityReligions":{
-					"RELIGION_HELLENISM":1
+					"RELIGION_HELLENISM":true
 				}
 			}
 		},
 		{
+			"x":37,
+			"y":30,
+			"ImprovementType":"IMPROVEMENT_PASTURE",
+			"RouteType":"ROUTE_ROAD"
+		},
+		{
 			"x":38,
 			"y":30,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT2",
@@ -2846,13 +2946,14 @@ application/json
 				"CityOwner":"CIVILIZATION_INDEPENDENT2",
 				"Year":-896,
 				"Religions":{
-					"RELIGION_HELLENISM":1
+					"RELIGION_HELLENISM":true
 				}
 			}
 		},
 		{
 			"x":50,
 			"y":30,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_BARBARIAN",
@@ -2877,6 +2978,7 @@ application/json
 		{
 			"x":58,
 			"y":30,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT",
@@ -2894,6 +2996,7 @@ application/json
 		{
 			"x":35,
 			"y":31,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT",
@@ -2907,13 +3010,14 @@ application/json
 				"CityOwner":"CIVILIZATION_INDEPENDENT",
 				"Year":-896,
 				"Religions":{
-					"RELIGION_HELLENISM":1
+					"RELIGION_HELLENISM":true
 				}
 			}
 		},
 		{
 			"x":57,
 			"y":32,
+			"RouteType":"ROUTE_ROAD",
 			"Units":[
 				{
 					"UnitOwner":"CIVILIZATION_INDEPENDENT",
@@ -2927,6 +3031,12 @@ application/json
 				"CityOwner":"CIVILIZATION_INDEPENDENT",
 				"Year":-896
 			}
+		},
+		{
+			"x":58,
+			"y":33,
+			"ImprovementType":"IMPROVEMENT_PASTURE",
+			"RouteType":"ROUTE_ROAD"
 		},
 		{
 			"x":52,

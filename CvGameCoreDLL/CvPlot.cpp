@@ -10074,7 +10074,8 @@ void CvPlot::eraseAIDevelopment()
 		pCity->kill(false);
 	}
 
-	setImprovementType(NO_IMPROVEMENT);
+	//bluepotato: this breaks scenarios with improvements and I don't really see why it's needed at all
+	//setImprovementType(NO_IMPROVEMENT);
 }
 //Rhye - end
 

@@ -620,6 +620,7 @@ void CvRiseFall::eraseSurroundings(CivilizationTypes civType, PlayerTypes player
 		GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(startingPlot->getOwner()).getTeam(), true, WARPLAN_TOTAL);
 	}
 
+	startingPlot->setImprovementType(NO_IMPROVEMENT);
 	for(int i = startingX-1; i<startingX+2; i++) {
 		for(int j = startingY-1; j<startingY+2; j++) {
 			CvPlot* plot = GC.getMap().plot(i, j);
