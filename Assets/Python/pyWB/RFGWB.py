@@ -865,42 +865,45 @@ class WbParser:
 
 
 		#Goody huts
-		goodyImprovement = -1
-		for i in range(gc.getNumImprovementInfos()):
-			if gc.getImprovementInfo(i).isGoody():
-				goodyImprovement = i
-				break
+		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in self.scenarioValues['Game']['Options']
+		if not disableGoodies:
+			goodyImprovement = -1
+			for i in range(gc.getNumImprovementInfos()):
+				if gc.getImprovementInfo(i).isGoody():
+					goodyImprovement = i
+					break
 
 		#Provinces
 		for wbProvince in self.mapValues['Provinces']:
 			rfcProvince = riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right'])
 			#Goody huts
-			amountRand = ((rfcProvince.getTop() - rfcProvince.getBottom()) + (rfcProvince.getRight() - rfcProvince.getLeft()))/5
-			amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
+			if not disableGoodies:
+				amountRand = ((rfcProvince.getTop() - rfcProvince.getBottom()) + (rfcProvince.getRight() - rfcProvince.getLeft()))/5
+				amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
 
-			plots = []
-			for x in range(rfcProvince.getLeft(), rfcProvince.getRight()):
-				for y in range(rfcProvince.getBottom(), rfcProvince.getTop()):
-					plot = cmap.plot(x, y)
-					if plot.isWater() or plot.isPeak():
-						continue
-					unavail = false
-					for wbPlayer in self.scenarioValues['Players']:
-						if wbPlayer['StartingYear'] == self.scenarioValues['Game']['StartYear']:
-							if x == wbPlayer['StartingX'] and y == wbPlayer['StartingY']:
-								unavail = true
-								break
-					if unavail:
-						continue
+				plots = []
+				for x in range(rfcProvince.getLeft(), rfcProvince.getRight()):
+					for y in range(rfcProvince.getBottom(), rfcProvince.getTop()):
+						plot = cmap.plot(x, y)
+						if plot.isWater() or plot.isPeak():
+							continue
+						unavail = false
+						for wbPlayer in self.scenarioValues['Players']:
+							if wbPlayer['StartingYear'] == self.scenarioValues['Game']['StartYear']:
+								if x == wbPlayer['StartingX'] and y == wbPlayer['StartingY']:
+									unavail = true
+									break
+						if unavail:
+							continue
 
-					plots.append(plot)
+						plots.append(plot)
 
-			if len(plots):
-				for i in range(amount):
-					rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
+				if len(plots):
+					for i in range(amount):
+						rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
 
-					plot = plots[rndNum]
-					plot.setImprovementType(goodyImprovement)
+						plot = plots[rndNum]
+						plot.setImprovementType(goodyImprovement)
 
 		for wbProvince in self.scenarioValues['Provinces']:
 			#Units

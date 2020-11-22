@@ -9,7 +9,8 @@ application/json
 		"Options":[
 			"GAMEOPTION_RAGING_BARBARIANS",
 			"GAMEOPTION_AGGRESSIVE_AI",
-			"GAMEOPTION_NO_TECH_BROKERING"
+			"GAMEOPTION_NO_TECH_BROKERING",
+			"GAMEOPTION_NO_GOODY_HUTS"
 		],
 		"Victories":[
 			"VICTORY_SCORE",
@@ -1354,22 +1355,9 @@ application/json
 			"Name":"Lower Egypt",
 			"Units":[
 				{
-					"UnitType":"UNIT_HYSKOS",
-					"Year":-1800,
-					"EndYear":-1500,
-					"SpawnFrequency":8
-				},
-				{
-					"Amount":3,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":8
-				},
-				{
 					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
-					"Year":-1300,
-					"EndYear":-850,
+					"Year":-800,
+					"EndYear":-400,
 					"SpawnFrequency":10
 				}
 			]
@@ -1378,50 +1366,15 @@ application/json
 			"Name":"Upper Egypt"
 		},
 		{
-			"Name":"Sumer",
-			"Units":[
-				{
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-3000,
-					"EndYear":-2000,
-					"SpawnFrequency":11
-				},
-				{
-					"Amount":2,
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-1900,
-					"EndYear":-1200,
-					"SpawnFrequency":10
-				}
-			]
+			"Name":"Sumer"
 		},
 		{
 			"Name":"Akkad",
 			"Units":[
 				{
-					"Amount":2,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":12
-				},
-				{
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-3000,
-					"EndYear":-2000,
-					"SpawnFrequency":10
-				},
-				{
-					"Amount":2,
-					"UnitType":"UNIT_SUMERIAN_VULTURE",
-					"Year":-2000,
-					"EndYear":-1200,
-					"SpawnFrequency":9
-				},
-				{
 					"Amount":3,
 					"UnitType":"UNIT_SPEARMAN",
-					"Year":-1200,
+					"Year":-840,
 					"EndYear":-650,
 					"SpawnFrequency":9
 				}
@@ -1434,125 +1387,43 @@ application/json
 			"Name":"Khuzestan"
 		},
 		{
-			"Name":"Indus Valley",
-			"Units":[
-				{
-					"UnitType":"UNIT_BANDIT",
-					"Year":-2800,
-					"EndYear":-2000,
-					"SpawnFrequency":9
-				},
-				{
-					"Amount":4,
-					"UnitType":"UNIT_AXEMAN_INDIAN",
-					"Year":-2000,
-					"EndYear":-1500,
-					"SpawnFrequency":8
-				}
-			]
+			"Name":"Indus Valley"
 		},
 		{
-			"Name":"Crete",
-			"Units":[
-				{
-					"Amount":6,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1050,
-					"SpawnFrequency":7
-				}
-			]
+			"Name":"Crete"
 		},
 		{
 			"Name":"Cyprus"
 		},
 		{
-			"Name":"Phoenicia",
-			"Units":[
-				{
-					"Amount":2,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Name":"Phoenicia"
 		},
 		{
 			"Name":"Anatolia",
 			"Units":[
 				{
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-2000,
-					"EndYear":-1610,
-					"SpawnFrequency":11
-				},
-				{
-					"Amount":4,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":7
-				},
-				{
 					"Amount":3,
 					"UnitType":"UNIT_SPEARMAN",
-					"Year":-1200,
-					"EndYear":-700,
+					"Year":-800,
+					"EndYear":-400,
 					"SpawnFrequency":10
 				}
 			]
 		},
 		{
-			"Name":"Peloponnese",
-			"Units":[
-				{
-					"Amount":4,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Name":"Peloponnese"
 		},
 		{
-			"Name":"Central Greece",
-			"Units":[
-				{
-					"Amount":3,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Name":"Central Greece"
 		},
 		{
-			"Name":"Attica",
-			"Units":[
-				{
-					"Amount":3,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":10
-				}
-			]
+			"Name":"Attica"
 		},
 		{
 			"Name":"Euboea"
 		},
 		{
-			"Name":"Palestine",
-			"Units":[
-				{
-					"Amount":4,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":11
-				}
-			]
+			"Name":"Palestine"
 		},
 		{
 			"Name":"Arabia Felix"
@@ -1564,33 +1435,11 @@ application/json
 			"Name":"Sinai"
 		},
 		{
-			"Name":"Lydia",
-			"Units":[
-				{
-					"UnitType":"UNIT_CHARIOT",
-					"Year":-2000,
-					"EndYear":-1610,
-					"SpawnFrequency":12
-				},
-				{
-					"Amount":5,
-					"UnitType":"UNIT_SEAPEOPLE",
-					"Year":-1200,
-					"EndYear":-1000,
-					"SpawnFrequency":9
-				}
-			]
+			"Name":"Lydia"
 		},
 		{
 			"Name":"Scythia",
 			"Units":[
-				{
-					"Amount":2,
-					"UnitType":"UNIT_HORSEMAN",
-					"Year":-1000,
-					"EndYear":-250,
-					"SpawnFrequency":10
-				},
 				{
 					"Amount":2,
 					"UnitType":"UNIT_HORSE_ARCHER",
@@ -1625,7 +1474,7 @@ application/json
 			"Units":[
 				{
 					"UnitType":"UNIT_HORSEMAN",
-					"Year":-1000,
+					"Year":-800,
 					"EndYear":-250,
 					"SpawnFrequency":10
 				},
@@ -1654,8 +1503,8 @@ application/json
 			"Units":[
 				{
 					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
-					"Year":-1200,
-					"EndYear":-850,
+					"Year":-850,
+					"EndYear":-700,
 					"SpawnFrequency":10
 				}
 			]
@@ -1732,15 +1581,7 @@ application/json
 			"Name":"Brittany"
 		},
 		{
-			"Name":"Nubia",
-			"Units":[
-				{
-					"UnitType":"UNIT_NUBIAN_MEDJAY",
-					"Year":-1560,
-					"EndYear":-800,
-					"SpawnFrequency":10
-				}
-			]
+			"Name":"Nubia"
 		},
 		{
 			"Name":"Persia"
@@ -1762,7 +1603,7 @@ application/json
 				{
 					"Amount":2,
 					"UnitType":"UNIT_WARRIOR",
-					"Year":-1000,
+					"Year":-800,
 					"EndYear":-250,
 					"SpawnFrequency":10
 				},
@@ -1802,7 +1643,7 @@ application/json
 			"Units":[
 				{
 					"UnitType":"UNIT_HORSEMAN",
-					"Year":-1000,
+					"Year":-800,
 					"EndYear":-250,
 					"SpawnFrequency":10
 				},
@@ -1900,19 +1741,6 @@ application/json
 	],
 	"Plots":[
 		{
-			"x":28,
-			"y":2,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_NUBIAN_MEDJAY",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-896
-				}
-			]
-		},
-		{
 			"x":32,
 			"y":10,
 			"Units":[
@@ -1990,19 +1818,6 @@ application/json
 					"RELIGION_PESEDJET":1
 				}
 			}
-		},
-		{
-			"x":34,
-			"y":13,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-896
-				}
-			]
 		},
 		{
 			"x":29,
@@ -2112,19 +1927,6 @@ application/json
 					"RELIGION_PESEDJET":1
 				}
 			}
-		},
-		{
-			"x":18,
-			"y":17,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-896
-				}
-			]
 		},
 		{
 			"x":41,
@@ -3127,39 +2929,6 @@ application/json
 			}
 		},
 		{
-			"x":54,
-			"y":36,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_WARRIOR",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-896
-				},
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_WARRIOR",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-896
-				}
-			]
-		},
-		{
-			"x":27,
-			"y":42,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_HORSEMAN",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-896
-				}
-			]
-		},
-		{
 			"x":52,
 			"y":44,
 			"Units":[
@@ -3231,32 +3000,6 @@ application/json
 					"UnitType":"UNIT_SETTLER",
 					"FacingDirection":4,
 					"UnitAIType":"UNITAI_SETTLE",
-					"Year":-896
-				}
-			]
-		},
-		{
-			"x":29,
-			"y":46,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_HORSEMAN",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-896
-				}
-			]
-		},
-		{
-			"x":38,
-			"y":49,
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_BARBARIAN",
-					"UnitType":"UNIT_HORSEMAN",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
 					"Year":-896
 				}
 			]

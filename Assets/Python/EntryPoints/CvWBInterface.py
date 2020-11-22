@@ -84,7 +84,7 @@ def getGameData():
 		option = CvUtil.findInfoTypeNum(gc.getGameOptionInfo, gc.getNumGameOptionInfos(), options[i])
 		t=t+(option,)
 	
-	mpOptions =  wbParser.getGameValue("MpOptions", []) #TODO
+	mpOptions = wbParser.getGameValue("MpOptions", []) #TODO
 	
 	t=t+(len(mpOptions),)
 	for i in range(len(mpOptions)):
