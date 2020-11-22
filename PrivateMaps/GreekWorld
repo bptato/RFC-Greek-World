@@ -2279,10 +2279,7 @@ application/json
 			"x":25,
 			"y":4,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Akhetaten"
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":26,
@@ -2294,10 +2291,7 @@ application/json
 			"x":27,
 			"y":4,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Zawty"
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":28,
@@ -2755,28 +2749,19 @@ application/json
 			"x":25,
 			"y":5,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Speos Artemidos"
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":26,
 			"y":5,
 			"PlotType":1,
-			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Meir"
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":27,
 			"y":5,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Meir"
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":28,
@@ -3248,28 +3233,19 @@ application/json
 			"x":25,
 			"y":6,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Speos Artemidos"
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":26,
 			"y":6,
 			"PlotType":2,
-			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Speos Artemidos"
-			}
+			"TerrainType":"TERRAIN_DESERT"
 		},
 		{
 			"x":27,
 			"y":6,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Meir"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -3384,7 +3360,6 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Abdju",
 				"CIVILIZATION_NUBIA":"Napata"
 			},
 			"SettlerValues":{
@@ -3757,9 +3732,6 @@ application/json
 			"y":7,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Beni Hasan"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -3769,9 +3741,6 @@ application/json
 			"y":7,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Beni Hasan"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -3868,7 +3837,6 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tjenu",
 				"CIVILIZATION_NUBIA":"Napata"
 			},
 			"SettlerValues":{
@@ -3883,7 +3851,6 @@ application/json
 			"FeatureType":"FEATURE_FLOOD_PLAINS",
 			"FeatureVariety":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Abdju",
 				"CIVILIZATION_NUBIA":"Napata"
 			},
 			"SettlerValues":{
@@ -4257,9 +4224,6 @@ application/json
 			"y":8,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Hebenu"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4269,9 +4233,6 @@ application/json
 			"y":8,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Dehenet"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4370,9 +4331,6 @@ application/json
 			"y":8,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Hawara"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500,
 				"CIVILIZATION_BYZANTIUM":90
@@ -4760,9 +4718,6 @@ application/json
 			"y":9,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tpyhwt"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500,
 				"CIVILIZATION_BYZANTIUM":90
@@ -4829,9 +4784,6 @@ application/json
 			"y":9,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Abydos"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500
 			}
@@ -5280,12 +5232,11 @@ application/json
 			"y":10,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Mennefer",
+				"CIVILIZATION_EGYPT":"Waset",
 				"CIVILIZATION_ROME":"Oxyrhynchus",
-				"CIVILIZATION_BYZANTIUM":"Oxyrhynchus"
+				"CIVILIZATION_BYZANTIUM":"Oxyrhynchus",
+				"CIVILIZATION_BARBARIAN":"Waset"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
@@ -5299,9 +5250,6 @@ application/json
 			"y":10,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Abydos"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500
 			}
@@ -6198,7 +6146,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Memphis",
+				"CIVILIZATION_EGYPT":"Giza",
 				"CIVILIZATION_ROME":"Memphis",
 				"CIVILIZATION_BYZANTIUM":"Memphis"
 			},
@@ -6240,9 +6188,6 @@ application/json
 			"y":12,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Iuno"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":500,
 				"CIVILIZATION_NUBIA":300,
@@ -6658,7 +6603,7 @@ application/json
 			"FeatureVariety":0,
 			"BonusType":"BONUS_HORSE",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Naucratis"
+				"CIVILIZATION_EGYPT":"Giza"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
@@ -6676,7 +6621,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Memphis",
+				"CIVILIZATION_EGYPT":"Giza",
 				"CIVILIZATION_ROME":"Memphis",
 				"CIVILIZATION_BYZANTIUM":"Memphis"
 			},
@@ -6695,12 +6640,11 @@ application/json
 			"y":13,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Memphis",
 				"CIVILIZATION_ROME":"Memphis",
-				"CIVILIZATION_BYZANTIUM":"Memphis"
+				"CIVILIZATION_BYZANTIUM":"Memphis",
+				"CIVILIZATION_BARBARIAN":"Memphis"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
@@ -6720,7 +6664,7 @@ application/json
 			"FeatureType":"FEATURE_FLOOD_PLAINS",
 			"FeatureVariety":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Pi-Atum"
+				"CIVILIZATION_EGYPT":"Iunu"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":700,
@@ -7147,7 +7091,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Zau",
+				"CIVILIZATION_EGYPT":"Merimda",
 				"CIVILIZATION_ROME":"Naucratis",
 				"CIVILIZATION_BYZANTIUM":"Naucratis"
 			},
@@ -7170,9 +7114,7 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":-1,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Zau",
-				"CIVILIZATION_MYCENAE":"Naucratis",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Merimda",
 				"CIVILIZATION_ROME":"Cleopatris",
 				"CIVILIZATION_BYZANTIUM":"Cleopatris"
 			},
@@ -7197,8 +7139,6 @@ application/json
 			"RiverWEDirection":1,
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Giza",
-				"CIVILIZATION_MYCENAE":"Naucratis",
-				"CIVILIZATION_SPARTA":"Naucratis",
 				"CIVILIZATION_ROME":"Cleopatris",
 				"CIVILIZATION_BYZANTIUM":"Cleopatris"
 			},
@@ -7221,7 +7161,7 @@ application/json
 			"FeatureVariety":0,
 			"BonusType":"BONUS_WHEAT",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Thmuis"
+				"CIVILIZATION_EGYPT":"Iunu"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
@@ -7259,7 +7199,6 @@ application/json
 			"TerrainType":"TERRAIN_DESERT",
 			"BonusType":"BONUS_COPPER",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tjeku",
 				"CIVILIZATION_ROME":"Clysma",
 				"CIVILIZATION_BYZANTIUM":"Clysma"
 			},
@@ -7615,7 +7554,6 @@ application/json
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Hesperis",
 				"CIVILIZATION_SPARTA":"Hesperis"
 			}
 		},
@@ -7669,7 +7607,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Damanhur",
+				"CIVILIZATION_EGYPT":"Piemro",
 				"CIVILIZATION_ROME":"Ammonion",
 				"CIVILIZATION_BYZANTIUM":"Ammonion"
 			},
@@ -7690,7 +7628,7 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Damahur",
+				"CIVILIZATION_EGYPT":"Piemro",
 				"CIVILIZATION_ROME":"Naucratis",
 				"CIVILIZATION_BYZANTIUM":"Naucratis"
 			},
@@ -7712,7 +7650,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Per-Wadjet",
+				"CIVILIZATION_EGYPT":"Merimda",
 				"CIVILIZATION_ROME":"Naucratis",
 				"CIVILIZATION_BYZANTIUM":"Naucratis"
 			},
@@ -7734,9 +7672,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Khaset",
-				"CIVILIZATION_MYCENAE":"Naucratis",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Per-Bast",
 				"CIVILIZATION_ROME":"Leontopolis",
 				"CIVILIZATION_BYZANTIUM":"Leontopolis"
 			},
@@ -7760,9 +7696,7 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Bah",
-				"CIVILIZATION_MYCENAE":"Naucratis",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Per-Bast",
 				"CIVILIZATION_ROME":"Leontopolis",
 				"CIVILIZATION_BYZANTIUM":"Leontopolis"
 			},
@@ -7784,9 +7718,7 @@ application/json
 			"FeatureType":"FEATURE_FLOOD_PLAINS",
 			"FeatureVariety":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Djanet",
-				"CIVILIZATION_MYCENAE":"Naucratis",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Hatwaret",
 				"CIVILIZATION_ROME":"Clysma",
 				"CIVILIZATION_BYZANTIUM":"Clysma"
 			},
@@ -7806,8 +7738,7 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Avaris",
-				"CIVILIZATION_MYCENAE":"Naucratis",
+				"CIVILIZATION_EGYPT":"Hatwaret",
 				"CIVILIZATION_ROME":"Clysma",
 				"CIVILIZATION_BYZANTIUM":"Clysma"
 			},
@@ -8210,10 +8141,8 @@ application/json
 			"TerrainType":"TERRAIN_DESERT",
 			"CityNames":{
 				"CIVILIZATION_PHOENICIA":"Arae",
-				"CIVILIZATION_MYCENAE":"Barca",
 				"CIVILIZATION_CARTHAGE":"Arae",
-				"CIVILIZATION_MACEDONIA":"Alexandria",
-				"CIVILIZATION_BACTRIA":"Alexandria"
+				"CIVILIZATION_MACEDONIA":"Alexandria"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_CARTHAGE":300
@@ -8225,9 +8154,7 @@ application/json
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Barca",
-				"CIVILIZATION_MACEDONIA":"Alexandria",
-				"CIVILIZATION_BACTRIA":"Alexandria"
+				"CIVILIZATION_MACEDONIA":"Alexandria"
 			}
 		},
 		{
@@ -8235,9 +8162,6 @@ application/json
 			"y":16,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
-			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Cyrene"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -8247,9 +8171,6 @@ application/json
 			"y":16,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Cyrene"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":200
 			}
@@ -8282,7 +8203,7 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":-1,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Heraclion",
+				"CIVILIZATION_EGYPT":"Rosetta",
 				"CIVILIZATION_ROME":"Paraetonium",
 				"CIVILIZATION_BYZANTIUM":"Paraetonium"
 			},
@@ -8304,9 +8225,10 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Heraclion",
+				"CIVILIZATION_EGYPT":"Zau",
 				"CIVILIZATION_ROME":"Alexandria",
-				"CIVILIZATION_BYZANTIUM":"Alexandria"
+				"CIVILIZATION_BYZANTIUM":"Alexandria",
+				"CIVILIZATION_BARBARIAN":"Zau"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":400,
@@ -8328,8 +8250,7 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":-1,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Per-Wadjet",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Khaset",
 				"CIVILIZATION_ROME":"Alexandria",
 				"CIVILIZATION_BYZANTIUM":"Alexandria"
 			},
@@ -8351,8 +8272,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Cais",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Tamiat",
 				"CIVILIZATION_ROME":"Leontopolis",
 				"CIVILIZATION_BYZANTIUM":"Leontopolis"
 			},
@@ -8372,7 +8292,7 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Bah",
+				"CIVILIZATION_EGYPT":"Tanis",
 				"CIVILIZATION_ROME":"Tanis",
 				"CIVILIZATION_BYZANTIUM":"Tanis"
 			},
@@ -8418,7 +8338,7 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Avaris",
+				"CIVILIZATION_EGYPT":"Per-Amun",
 				"CIVILIZATION_ROME":"Pelusium",
 				"CIVILIZATION_BYZANTIUM":"Pelusium"
 			},
@@ -8892,7 +8812,6 @@ application/json
 				"CIVILIZATION_CARTHAGE":"Arae",
 				"CIVILIZATION_ROME":"Leptis Magna",
 				"CIVILIZATION_MACEDONIA":"Alexandria",
-				"CIVILIZATION_BACTRIA":"Alexandria",
 				"CIVILIZATION_BYZANTIUM":"Leptis Magna"
 			},
 			"SettlerValues":{
@@ -8912,7 +8831,6 @@ application/json
 				"CIVILIZATION_CARTHAGE":"Arae",
 				"CIVILIZATION_ROME":"Berenice",
 				"CIVILIZATION_MACEDONIA":"Alexandria",
-				"CIVILIZATION_BACTRIA":"Alexandria",
 				"CIVILIZATION_BYZANTIUM":"Berenice"
 			},
 			"SettlerValues":{
@@ -8930,7 +8848,6 @@ application/json
 			"CityNames":{
 				"CIVILIZATION_ROME":"Berenice",
 				"CIVILIZATION_MACEDONIA":"Alexandria",
-				"CIVILIZATION_BACTRIA":"Alexandria",
 				"CIVILIZATION_BYZANTIUM":"Berenice"
 			},
 			"SettlerValues":{
@@ -8944,9 +8861,6 @@ application/json
 			"y":17,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Cyrene"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
 				"CIVILIZATION_ROME":300,
@@ -9001,7 +8915,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Heraclion",
+				"CIVILIZATION_EGYPT":"Zau",
 				"CIVILIZATION_ROME":"Alexandria",
 				"CIVILIZATION_BYZANTIUM":"Alexandria"
 			},
@@ -9024,7 +8938,7 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Heraclion",
+				"CIVILIZATION_EGYPT":"Per-Wadjet",
 				"CIVILIZATION_ROME":"Alexandria",
 				"CIVILIZATION_BYZANTIUM":"Alexandria"
 			},
@@ -9045,8 +8959,7 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Cais",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Tamiat",
 				"CIVILIZATION_ROME":"Alexandria",
 				"CIVILIZATION_BYZANTIUM":"Alexandria"
 			},
@@ -9069,8 +8982,7 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Cais",
-				"CIVILIZATION_SPARTA":"Naucratis",
+				"CIVILIZATION_EGYPT":"Tamiat",
 				"CIVILIZATION_ROME":"Tanis",
 				"CIVILIZATION_BYZANTIUM":"Tanis"
 			},
@@ -9090,20 +9002,13 @@ application/json
 			"y":17,
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
-			"BonusType":"BONUS_FISH",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tanis",
-				"CIVILIZATION_SPARTA":"Naucratis"
-			}
+			"BonusType":"BONUS_FISH"
 		},
 		{
 			"x":34,
 			"y":17,
 			"PlotType":3,
-			"TerrainType":"TERRAIN_COAST",
-			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tanis"
-			}
+			"TerrainType":"TERRAIN_COAST"
 		},
 		{
 			"x":35,
@@ -10239,6 +10144,7 @@ application/json
 			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_PHOENICIA":"Barca",
+				"CIVILIZATION_MYCENAE":"Kyrene",
 				"CIVILIZATION_SPARTA":"Cyrene",
 				"CIVILIZATION_CARTHAGE":"Barca",
 				"CIVILIZATION_ROME":"Tolmeta",
@@ -10472,8 +10378,6 @@ application/json
 			"y":19,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -10482,7 +10386,8 @@ application/json
 				"CIVILIZATION_BABYLON":"Ur",
 				"CIVILIZATION_ASSYRIA":"Ur",
 				"CIVILIZATION_PERSIA":"Ur",
-				"CIVILIZATION_SASSANID":"Ur"
+				"CIVILIZATION_SASSANID":"Ur",
+				"CIVILIZATION_BARBARIAN":"Ur"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_SUMERIA":700,
@@ -11685,7 +11590,8 @@ application/json
 				"CIVILIZATION_HITTITE":"Kaptara",
 				"CIVILIZATION_ATHENS":"Knossos",
 				"CIVILIZATION_ROME":"Cnossus",
-				"CIVILIZATION_BYZANTIUM":"Cnossus"
+				"CIVILIZATION_BYZANTIUM":"Cnossus",
+				"CIVILIZATION_BARBARIAN":"Knossos"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_MINOA":700,
@@ -11991,8 +11897,6 @@ application/json
 			"y":21,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"CityNames":{
@@ -12581,7 +12485,6 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
-				"CIVILIZATION_PHOENICIA":"Kition",
 				"CIVILIZATION_HITTITE":"Alasiya",
 				"CIVILIZATION_SPARTA":"Soli",
 				"CIVILIZATION_ROME":"Citium",
@@ -12783,8 +12686,6 @@ application/json
 			"y":22,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"CityNames":{
 				"CIVILIZATION_SUMERIA":"Babylon",
 				"CIVILIZATION_ELAM":"Babylon",
@@ -16130,8 +16031,6 @@ application/json
 			"y":26,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"isWOfRiver":true,
 			"RiverNSDirection":2,
 			"isNOfRiver":true,
@@ -17002,8 +16901,6 @@ application/json
 			"y":27,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"FeatureType":"FEATURE_FOREST",
-			"FeatureVariety":0,
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -20383,7 +20280,7 @@ application/json
 				"CIVILIZATION_ROME":"Pergamum",
 				"CIVILIZATION_SASSANID":"Ilion",
 				"CIVILIZATION_BYZANTIUM":"Pergamum",
-				"CIVILIZATION_BARBARIAN":"Troy"
+				"CIVILIZATION_BARBARIAN":"Troía"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_MYCENAE":200,

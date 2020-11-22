@@ -206,6 +206,7 @@ class WBUnitScreen:
 		if bResetMission:
 			iMissionType = max(0, iFirstMission)
 
+
 		iY += 30
 		iHeight = (screen.getYResolution()/2 - iY) /24 * 24 + 2
 		screen.addTableControlGFC("MissionInput", 1, iX, iY, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
@@ -219,6 +220,9 @@ class WBUnitScreen:
 				iData1 = lMissionData[i]
 				if iMissionData1 not in lMissionData:
 					iMissionData1 = iData1
+				#bluepotato: wtf? whatever, TODO: figure out what platy wanted to do here, here's a hack for now
+				if iFirstMission < 0:
+					iFirstMission = 0
 				if pUnit.getGroup().canStartMission(iMissionType, iData1, -1, pPlot, True):
 					ItemInfo = self.lSelectableMissions[sMissionType][0](iData1)
 					sDescription = ItemInfo.getDescription()

@@ -7669,7 +7669,7 @@
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
-	<UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_TREBUCHET</Class>
 			<Type>UNIT_TREBUCHET</Type>
 			<UniqueNames/>
@@ -13706,8 +13706,8 @@
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
-	<UnitInfo>
-			<Class>UNITCLASS_RAM</Class>
+		<UnitInfo>
+			<Class>UNITCLASS_CAPPED_RAM</Class>
 			<Type>UNIT_ASSYRIA_RAM</Type>
 			<UniqueNames/>
 			<Special>NONE</Special>
@@ -13726,13 +13726,13 @@
 			<bNoBadGoodies>0</bNoBadGoodies>
 			<bOnlyDefensive>0</bOnlyDefensive>
 			<bNoCapture>0</bNoCapture>
-		<bQuickCombat>0</bQuickCombat>
+			<bQuickCombat>0</bQuickCombat>
 			<bRivalTerritory>0</bRivalTerritory>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-		<bSpy>0</bSpy>
+			<bSpy>0</bSpy>
 			<bSabotage>0</bSabotage>
 			<bDestroy>0</bDestroy>
 			<bStealPlans>0</bStealPlans>
@@ -13745,7 +13745,7 @@
 			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<bIgnoreBuildingDefense>0</bIgnoreBuildingDefense>
 			<bCanMoveImpassable>0</bCanMoveImpassable>
-		<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
+			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
 			<bNukeImmune>0</bNukeImmune>
@@ -13898,7 +13898,7 @@
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
-	<UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_HORSE_ARCHER</Class>
 			<Type>UNIT_SCYTHIA_SCYTHIAN_RIDER</Type>
 			<UniqueNames/>
@@ -13918,13 +13918,13 @@
 			<bNoBadGoodies>0</bNoBadGoodies>
 			<bOnlyDefensive>0</bOnlyDefensive>
 			<bNoCapture>0</bNoCapture>
-		<bQuickCombat>0</bQuickCombat>
+			<bQuickCombat>0</bQuickCombat>
 			<bRivalTerritory>0</bRivalTerritory>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
-		<bSpy>0</bSpy>
+			<bSpy>0</bSpy>
 			<bSabotage>0</bSabotage>
 			<bDestroy>0</bDestroy>
 			<bStealPlans>0</bStealPlans>
@@ -13937,7 +13937,7 @@
 			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<bIgnoreBuildingDefense>0</bIgnoreBuildingDefense>
 			<bCanMoveImpassable>0</bCanMoveImpassable>
-		<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
+			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
 			<bNukeImmune>0</bNukeImmune>
@@ -14836,11 +14836,11 @@
 			<FeatureAttacks/>
 			<FeatureDefenses/>
 			<UnitClassAttackMods>
-		<UnitClassAttackMod>
+			<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
 					<iUnitClassMod>20</iUnitClassMod>
 				</UnitClassAttackMod>
-		<UnitClassAttackMod>
+			<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_RAM</UnitClassType>
 					<iUnitClassMod>20</iUnitClassMod>
 				</UnitClassAttackMod>
@@ -14881,7 +14881,7 @@
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
-	<UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_CAPPED_RAM</Class>
 			<Type>UNIT_CAPPED_RAM</Type>
 			<UniqueNames/>
@@ -15073,7 +15073,7 @@
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
-	<UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_CORACLE</Class>
 			<Type>UNIT_CORACLE</Type>
 			<UniqueNames/>
@@ -15257,7 +15257,7 @@
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
-	<UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_CHARIOT</Class>
 			<Type>UNIT_HITTITE_HULUGANNI</Type>
 			<UniqueNames/>
@@ -17906,7 +17906,7 @@
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
-	<UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_HEAVY_AXEMAN</Class>
 			<Type>UNIT_SUEVES</Type>
 			<UniqueNames/>

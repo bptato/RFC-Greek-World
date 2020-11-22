@@ -314,16 +314,36 @@ class WbParser:
 				civInfo = gc.getCivilizationInfo(i)
 				wbPlayer = OrderedDict({})
 				wbPlayer['CivType'] = civInfo.getType()
-				wbPlayer['CivicOptions'] = OrderedDict({})
-				for j in range(gc.getNumCivicOptionInfos()):
-					startingCivic = rfcPlayer.getStartingCivic(j)
-					if startingCivic != -1:
-						wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
-				wbPlayer['StartingGold'] = rfcPlayer.getStartingGold()
 				wbPlayer['StartingTechs'] = []
-				for j in range(gc.getNumTechInfos()):
-					if rfcPlayer.isStartingTech(j):
-						wbPlayer['StartingTechs'].append(gc.getTechInfo(j).getType())
+				wbPlayer['CivicOptions'] = OrderedDict({})
+
+				alive = false
+				for j in range(gc.getMAX_PLAYERS()):
+					player = gc.getPlayer(j)
+					if player.getCivilizationType() == i:
+						for j in range(gc.getNumCivicOptionInfos()):
+							startingCivic = player.getCivics(j)
+							if startingCivic != -1:
+								wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
+						wbPlayer['StartingGold'] = player.getGold()
+
+						for k in range(gc.getNumTechInfos()):
+							if gc.getTeam(player.getTeam()).isHasTech(k):
+								wbPlayer['StartingTechs'].append(gc.getTechInfo(k).getType())
+						alive = true
+						break
+
+				if not alive:
+					for j in range(gc.getNumCivicOptionInfos()):
+						startingCivic = rfcPlayer.getStartingCivic(j)
+						if startingCivic != -1:
+							wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
+
+					wbPlayer['StartingGold'] = rfcPlayer.getStartingGold()
+
+					for j in range(gc.getNumTechInfos()):
+						if rfcPlayer.isStartingTech(j):
+							wbPlayer['StartingTechs'].append(gc.getTechInfo(j).getType())
 
 				wbPlayer['StartingWars'] = []
 				for j in range(gc.getNumCivilizationInfos()):

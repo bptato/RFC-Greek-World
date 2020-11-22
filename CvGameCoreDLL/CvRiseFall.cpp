@@ -57,7 +57,16 @@ void CvRiseFall::onGameStarted() {
 	}
 
 	game.setAIAutoPlay(1);
+	/* TODO: this is ugly. the nicer alternative would be to call this function
+	from setFinalInitialized if the value set there is true and CvRiseFall is initialized.
+	But this seems to work for now so we'll leave it like that. */
+	game.setFinalInitialized(false);
 	checkTurn();
+	game.setFinalInitialized(true);
+	for(int i = 0; i < MAX_CIV_PLAYERS; ++i) {
+		GET_PLAYER((PlayerTypes)i).processDynamicNames();
+		checkLeader(GET_PLAYER((PlayerTypes)i).getCivilizationType(), (PlayerTypes)i);
+	}
 }
 
 void CvRiseFall::checkTurn() {
@@ -285,49 +294,49 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 }
 
 
-void CvRiseFall::checkPlayerTurn(PlayerTypes playerID) {
-	CvPlayer& player = GET_PLAYER(playerID);
+void CvRiseFall::checkPlayerTurn(PlayerTypes playerType) {
+	CvPlayer& player = GET_PLAYER(playerType);
 	CvGame& game = GC.getGame();
 
 	if(!player.isBarbarian() && !player.isMinorCiv()) {
-		checkMinorWars(playerID, game.getGameTurn());
+		checkMinorWars(playerType, game.getGameTurn());
 		if(game.getGameTurn() % 3 == 2) {
-			getRFCPlayer(player.getCivilizationType()).checkStability(playerID);
+			getRFCPlayer(player.getCivilizationType()).checkStability(playerType);
 			if(!player.isHuman()) {
-				checkLeader(player.getCivilizationType(), playerID);
+				checkLeader(player.getCivilizationType(), playerType);
 			}
 		}
 	}
 }
 
-void CvRiseFall::checkMinorWars(PlayerTypes playerID, int turn) {
+void CvRiseFall::checkMinorWars(PlayerTypes playerType, int turn) {
 	if(turn % 2 == 0) {
 		return;
 	}
 
-	CvPlayer& player = GET_PLAYER(playerID);
+	CvPlayer& player = GET_PLAYER(playerType);
 
-	PlayerTypes minorCivID = NO_PLAYER;
+	PlayerTypes minorCivType = NO_PLAYER;
 
 	for(int i = 0; i<MAX_CIV_PLAYERS; i++) {
 		CvPlayer& loopCiv = GET_PLAYER((PlayerTypes)i);
 		if(loopCiv.isAlive() && loopCiv.isMinorCiv() && !loopCiv.isBarbarian()) {
 			if(GC.getGame().getSorenRandNum(100, "Minor civ for checkMinorWars") < 50) {
-				minorCivID = (PlayerTypes)i;
+				minorCivType = (PlayerTypes)i;
 			}
 		}
 	}
 
-	if(minorCivID == NO_PLAYER) {
+	if(minorCivType == NO_PLAYER) {
 		return;
 	}
 
-	CvPlayer& minorCiv = GET_PLAYER(minorCivID);
+	CvPlayer& minorCiv = GET_PLAYER(minorCivType);
 
 	if(GET_TEAM(player.getTeam()).isAtWar(minorCiv.getTeam())) {
 		int rand = player.isHuman() ? 30 : 20;
 		if(GC.getGame().getSorenRandNum(100, "Peace for checkMinorWars") <= rand) {
-			if(!unitsInForeignTerritory(playerID, minorCivID)) {
+			if(!unitsInForeignTerritory(playerType, minorCivType)) {
 				GET_TEAM(player.getTeam()).makePeace(minorCiv.getTeam(), false);
 			}
 		}
