@@ -159,6 +159,7 @@ class Victory:
 		global provAfrica
 		global provCyprus
 		global provSouthernIberia
+		global provPersia
 		global provPeloponnese
 		global provAttica
 		global provMacedonia
