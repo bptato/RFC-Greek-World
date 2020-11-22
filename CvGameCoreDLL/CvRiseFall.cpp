@@ -64,8 +64,12 @@ void CvRiseFall::onGameStarted() {
 	checkTurn();
 	game.setFinalInitialized(true);
 	for(int i = 0; i < MAX_CIV_PLAYERS; ++i) {
-		GET_PLAYER((PlayerTypes)i).processDynamicNames();
-		checkLeader(GET_PLAYER((PlayerTypes)i).getCivilizationType(), (PlayerTypes)i);
+		if(GET_PLAYER((PlayerTypes)i).isAlive()) {
+			GET_PLAYER((PlayerTypes)i).processDynamicNames();
+			if(!GET_PLAYER((PlayerTypes)i).isHuman()) {
+				checkLeader(GET_PLAYER((PlayerTypes)i).getCivilizationType(), (PlayerTypes)i);
+			}
+		}
 	}
 }
 
