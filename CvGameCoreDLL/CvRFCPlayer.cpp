@@ -565,7 +565,7 @@ std::vector<CvRFCCity*>& CvRFCPlayer::getScheduledCities() {
 }
 
 CvRFCUnit* CvRFCPlayer::addScheduledUnit() {
-	CvRFCUnit* rfcUnit = new CvRFCUnit();
+	CvRFCUnit* rfcUnit = new CvRFCUnit;
 	_scheduledUnits.push_back(rfcUnit);
 	return rfcUnit;
 }
@@ -575,7 +575,7 @@ CvRFCUnit* CvRFCPlayer::getScheduledUnit(int i) const {
 }
 
 CvRFCCity* CvRFCPlayer::addScheduledCity() {
-	CvRFCCity* rfcCity = new CvRFCCity();
+	CvRFCCity* rfcCity = new CvRFCCity;
 	_scheduledCities.push_back(rfcCity);
 	return rfcCity;
 }
@@ -829,7 +829,7 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)
 		{
-			CvRFCUnit* scheduledUnit = new CvRFCUnit();
+			CvRFCUnit* scheduledUnit = new CvRFCUnit;
 			scheduledUnit->read(stream);
 			_scheduledUnits.push_back(scheduledUnit);
 		}
@@ -839,7 +839,7 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)
 		{
-			CvRFCCity* scheduledCity = new CvRFCCity();
+			CvRFCCity* scheduledCity = new CvRFCCity;
 			scheduledCity->read(stream);
 			_scheduledCities.push_back(scheduledCity);
 		}

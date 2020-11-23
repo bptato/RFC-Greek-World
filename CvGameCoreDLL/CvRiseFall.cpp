@@ -751,7 +751,7 @@ void CvRiseFall::setMapFile(const wchar* mapFile) {
 
 
 CvRFCProvince* CvRiseFall::addProvince(const wchar* name, int bottom, int left, int top, int right) {
-	CvRFCProvince* province = new CvRFCProvince();
+	CvRFCProvince* province = new CvRFCProvince;
 	province->setName(name);
 	province->setBounds(bottom, left, top, right);
 	_rfcProvinces.push_back(province);
@@ -865,7 +865,7 @@ void CvRiseFall::read(FDataStreamBase* stream) {
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
-			CvRFCProvince* rfcProvince = new CvRFCProvince();
+			CvRFCProvince* rfcProvince = new CvRFCProvince;
 			rfcProvince->read(stream);
 			_rfcProvinces.push_back(rfcProvince);
 		}
