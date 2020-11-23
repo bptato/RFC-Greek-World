@@ -825,7 +825,6 @@ int CvRFCPlayer::getNewCityFreePopulation() const {
 void CvRFCPlayer::read(FDataStreamBase* stream) {
 	reset(NO_CIVILIZATION);
 	{
-		_scheduledUnits.clear();
 		uint size;
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)
@@ -836,7 +835,6 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 		}
 	}
 	{
-		_scheduledCities.clear();
 		uint size;
 		stream->Read(&size);
 		for (uint i = 0; i < size; i++)

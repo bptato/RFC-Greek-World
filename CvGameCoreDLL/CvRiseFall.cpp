@@ -862,7 +862,6 @@ void CvRiseFall::read(FDataStreamBase* stream) {
 	}
 
 	{
-		_rfcProvinces.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
