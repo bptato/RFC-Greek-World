@@ -22,9 +22,9 @@ class CvRFCMercenary {
 		void read(FDataStreamBase* stream);
 
 	protected:
-		int hireCost;
-		int maintenanceCost;
-		int experience;
-		UnitTypes unitType;
-		std::vector<PromotionTypes> promotions;
+		int _hireCost;
+		int _maintenanceCost;
+		int _experience;
+		UnitTypes _unitType;
+		std::vector<PromotionTypes> _promotions;
 };

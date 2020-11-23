@@ -5,91 +5,91 @@ Author: bluepotato
 #include "CvRFCMercenary.h"
 
 CvRFCMercenary::CvRFCMercenary() : //empty constructor, only for reading!
-hireCost(-1),
-maintenanceCost(-1),
-experience(-1),
-unitType(NO_UNIT)
+_hireCost(-1),
+_maintenanceCost(-1),
+_experience(-1),
+_unitType(NO_UNIT)
 {
 }
 
-CvRFCMercenary::CvRFCMercenary(int constHireCost, int constMaintenanceCost, int constExperience, UnitTypes constUnitType) :
-hireCost(constHireCost),
-maintenanceCost(constMaintenanceCost),
-experience(constExperience),
-unitType(constUnitType)
+CvRFCMercenary::CvRFCMercenary(int hireCost, int maintenanceCost, int experience, UnitTypes unitType) :
+_hireCost(hireCost),
+_maintenanceCost(maintenanceCost),
+_experience(experience),
+_unitType(unitType)
 {
 }
 
 CvRFCMercenary::~CvRFCMercenary() {
-	promotions.clear();
+	_promotions.clear();
 }
 
 
 void CvRFCMercenary::addPromotion(PromotionTypes promotion) {
-	promotions.push_back(promotion);
+	_promotions.push_back(promotion);
 }
 
 
 int CvRFCMercenary::getHireCost() const {
 	if(GC.getGame().getActiveCivilizationType() == CIVILIZATION_SUMERIA) { //TODO: does getActiveCivilizationType always work here?
-		return hireCost/2;
+		return _hireCost / 2;
 	}
-	return hireCost;
+	return _hireCost;
 }
 
 int CvRFCMercenary::getExperience() const {
-	return experience;
+	return _experience;
 }
 
 UnitTypes CvRFCMercenary::getUnitType() const {
-	return unitType;
+	return _unitType;
 }
 
 int CvRFCMercenary::getNumPromotions() const {
-	return promotions.size();
+	return _promotions.size();
 }
 
 PromotionTypes CvRFCMercenary::getPromotion(int i) const {
-	return promotions[i];
+	return _promotions[i];
 }
 
 int CvRFCMercenary::getMaintenanceCost() const {
 	if(GC.getGame().getActiveCivilizationType() == CIVILIZATION_SUMERIA) { //TODO: does getActiveCivilizationType always work here?
-		return maintenanceCost/2;
+		return _maintenanceCost / 2;
 	}
-	return maintenanceCost;
+	return _maintenanceCost;
 }
 
 
 void CvRFCMercenary::write(FDataStreamBase* stream) {
-	stream->Write(hireCost);
-	stream->Write(maintenanceCost);
-	stream->Write(experience);
-	stream->Write(unitType);
+	stream->Write(_hireCost);
+	stream->Write(_maintenanceCost);
+	stream->Write(_experience);
+	stream->Write(_unitType);
 
 	{
-		uint size = promotions.size();
+		uint size = _promotions.size();
 		stream->Write(size);
-		for(std::vector<PromotionTypes>::iterator it = promotions.begin(); it != promotions.end(); ++it) {
-			stream->Write((*it));
+		for(std::vector<PromotionTypes>::iterator it = _promotions.begin(); it != _promotions.end(); ++it) {
+			stream->Write(*it);
 		}
 	}
 }
 
 void CvRFCMercenary::read(FDataStreamBase* stream) {
-	stream->Read(&hireCost);
-	stream->Read(&maintenanceCost);
-	stream->Read(&experience);
-	stream->Read((int*)&unitType);
+	stream->Read(&_hireCost);
+	stream->Read(&_maintenanceCost);
+	stream->Read(&_experience);
+	stream->Read((int*)&_unitType);
 
 	{
-		promotions.clear();
+		_promotions.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
 			int promotionType;
 			stream->Read(&promotionType);
-			promotions.push_back((PromotionTypes)promotionType);
+			_promotions.push_back((PromotionTypes)promotionType);
 		}
 	}
 }
