@@ -35,13 +35,13 @@ void CvRiseFall::reset() {
 		SAFE_DELETE(*it);
 	}
 	_rfcProvinces.clear();
+	_mapFile.clear();
 }
 
 void CvRiseFall::onGameStarted() {
 	GC.logMsg("CvRiseFall::onGameStarted");
 	CvGame& game = GC.getGameINLINE();
 
-	bool activePlayerSet = false;
 	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isHuman()) {
@@ -50,9 +50,6 @@ void CvRiseFall::onGameStarted() {
 			CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
 			player.initUnit(((UnitTypes)0), rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY()); //will be killed as soon as autoplay starts, this is just to reveal the player's starting position like in RFC
 			gDLL->getEngineIFace()->cameraLookAt(startingPlot->getPoint());
-			if(!activePlayerSet) {
-				game.setActivePlayer((PlayerTypes)i); //just to be sure
-			}
 		}
 	}
 
@@ -874,6 +871,7 @@ void CvRiseFall::read(FDataStreamBase* stream) {
 			_rfcProvinces.push_back(rfcProvince);
 		}
 	}
+	stream->ReadString(_mapFile);
 }
 
 
@@ -889,4 +887,5 @@ void CvRiseFall::write(FDataStreamBase* stream) {
 			(*it)->write(stream);
 		}
 	}
+	stream->WriteString(_mapFile);
 }

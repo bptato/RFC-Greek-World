@@ -14848,7 +14848,7 @@ application/json
 			"BonusType":"BONUS_WINE",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Tegea",
-				"CIVILIZATION_MYCENAE":"Mycenae",
+				"CIVILIZATION_MYCENAE":"Mykenai",
 				"CIVILIZATION_ATHENS":"Tegea",
 				"CIVILIZATION_SPARTA":"Mykenai",
 				"CIVILIZATION_ROME":"Aegium",
@@ -14869,7 +14869,7 @@ application/json
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Argos",
-				"CIVILIZATION_MYCENAE":"Mycenae",
+				"CIVILIZATION_MYCENAE":"Mykenai",
 				"CIVILIZATION_ATHENS":"Argos",
 				"CIVILIZATION_SPARTA":"Mycenae",
 				"CIVILIZATION_ROME":"Argos",
@@ -15689,7 +15689,7 @@ application/json
 			"BonusType":"BONUS_OLIVES",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Corinth",
-				"CIVILIZATION_MYCENAE":"Mycenae",
+				"CIVILIZATION_MYCENAE":"Mykenai",
 				"CIVILIZATION_ATHENS":"Mycenae",
 				"CIVILIZATION_SPARTA":"Mycenae",
 				"CIVILIZATION_ROME":"Corinthus",
@@ -18376,7 +18376,6 @@ application/json
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"CassopeAmbracia",
 				"CIVILIZATION_SPARTA":"CassopeAmbracia"
 			}
 		},
@@ -18387,6 +18386,7 @@ application/json
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Astakos",
+				"CIVILIZATION_MYCENAE":"Ambrakía",
 				"CIVILIZATION_ATHENS":"Astakos",
 				"CIVILIZATION_ROME":"Apollonia",
 				"CIVILIZATION_BYZANTIUM":"Apollonia"
@@ -18440,7 +18440,6 @@ application/json
 			"PlotType":0,
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Chaeronea",
 				"CIVILIZATION_SPARTA":"Chaeronea"
 			},
 			"SettlerValues":{
@@ -18475,7 +18474,6 @@ application/json
 			"PlotType":0,
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Thebai",
 				"CIVILIZATION_SPARTA":"Thebai"
 			}
 		},
@@ -19265,7 +19263,6 @@ application/json
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Nekromanteion",
 				"CIVILIZATION_SPARTA":"Nekromanteion"
 			}
 		},
@@ -19276,7 +19273,7 @@ application/json
 			"TerrainType":"TERRAIN_PLAINS",
 			"BonusType":"BONUS_SHEEP",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Dodona",
+				"CIVILIZATION_MYCENAE":"Nekromanteion",
 				"CIVILIZATION_ATHENS":"Mycenae",
 				"CIVILIZATION_SPARTA":"Dodona",
 				"CIVILIZATION_ROME":"Dyracchium",
@@ -19297,6 +19294,7 @@ application/json
 			"BonusType":"BONUS_INCENSE",
 			"CityNames":{
 				"CIVILIZATION_MINOA":"Stratos",
+				"CIVILIZATION_MYCENAE":"Dodona",
 				"CIVILIZATION_ATHENS":"Stratos",
 				"CIVILIZATION_ROME":"Apollonia",
 				"CIVILIZATION_BYZANTIUM":"Apollonia"
@@ -19372,7 +19370,6 @@ application/json
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"-1-1-1",
 				"CIVILIZATION_SPARTA":"-1-1-1"
 			}
 		},
@@ -20175,7 +20172,6 @@ application/json
 			"PlotType":0,
 			"TerrainType":"TERRAIN_PLAINS",
 			"CityNames":{
-				"CIVILIZATION_MYCENAE":"Phoenice",
 				"CIVILIZATION_SPARTA":"Phoenice"
 			}
 		},

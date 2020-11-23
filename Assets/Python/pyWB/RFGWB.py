@@ -246,6 +246,14 @@ class WbParser:
 				if game.isVictoryValid(i):
 					gameValues['Victories'].append(gc.getVictoryInfo(i).getType())
 
+		#Goody huts
+		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in self.scenarioValues['Game']['Options']
+		goodyImprovement = -1
+		for i in range(gc.getNumImprovementInfos()):
+			if gc.getImprovementInfo(i).isGoody():
+				goodyImprovement = i
+				break
+
 		#Plots
 		mapWidth = cmap.getGridWidth()
 		mapHeight = cmap.getGridHeight()
@@ -261,8 +269,9 @@ class WbParser:
 				shouldSave = False
 
 				if plot.getImprovementType() != -1:
-					wbPlot['ImprovementType'] = gc.getImprovementInfo(plot.getImprovementType()).getType()
-					shouldSave = True
+					if disableGoodies or plot.getImprovementType() != goodyImprovement:
+						wbPlot['ImprovementType'] = gc.getImprovementInfo(plot.getImprovementType()).getType()
+						shouldSave = True
 
 				if plot.getRouteType() != -1:
 					wbPlot['RouteType'] = gc.getRouteInfo(plot.getRouteType()).getType()
@@ -906,15 +915,13 @@ class WbParser:
 				routeType = gc.getInfoTypeForString(wbPlot['RouteType'])
 				plot.setRouteType(routeType)
 
-
 		#Goody huts
 		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in self.scenarioValues['Game']['Options']
-		if not disableGoodies:
-			goodyImprovement = -1
-			for i in range(gc.getNumImprovementInfos()):
-				if gc.getImprovementInfo(i).isGoody():
-					goodyImprovement = i
-					break
+		goodyImprovement = -1
+		for i in range(gc.getNumImprovementInfos()):
+			if gc.getImprovementInfo(i).isGoody():
+				goodyImprovement = i
+				break
 
 		#Provinces
 		for wbProvince in self.mapValues['Provinces']:
