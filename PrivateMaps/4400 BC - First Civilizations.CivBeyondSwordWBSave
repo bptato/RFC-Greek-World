@@ -40,7 +40,7 @@ application/json
 			"RelatedLanguages":[
 				"CIVILIZATION_NUBIA"
 			],
-			"StartingX":31,
+			"StartingX":32,
 			"StartingY":10,
 			"CoreProvinces":[
 				"Upper Egypt",
@@ -1802,7 +1802,7 @@ application/json
 				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
 				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
 			},
-			"StartingGold":48,
+			"StartingGold":0,
 			"StartingWars":[],
 			"RelatedLanguages":[],
 			"StartingX":0,
@@ -2404,7 +2404,7 @@ application/json
 	],
 	"Plots":[
 		{
-			"x":31,
+			"x":32,
 			"y":10,
 			"Units":[
 				{
