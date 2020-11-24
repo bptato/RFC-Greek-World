@@ -1895,7 +1895,7 @@ application/json
 					"UnitType":"UNIT_SUMERIAN_VULTURE",
 					"Year":-1900,
 					"EndYear":-1200,
-					"SpawnFrequency":13
+					"SpawnFrequency":14
 				}
 			]
 		},
@@ -1944,14 +1944,14 @@ application/json
 					"UnitType":"UNIT_BANDIT",
 					"Year":-2800,
 					"EndYear":-2000,
-					"SpawnFrequency":9
+					"SpawnFrequency":11
 				},
 				{
 					"Amount":4,
 					"UnitType":"UNIT_AXEMAN_INDIAN",
-					"Year":-2000,
+					"Year":-1800,
 					"EndYear":-1500,
-					"SpawnFrequency":8
+					"SpawnFrequency":9
 				}
 			]
 		},
