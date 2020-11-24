@@ -123,7 +123,7 @@ class WbParser:
 				rfcPlayer = riseFall.getRFCPlayer(gc.getInfoTypeForString(wbPlayer['CivType']))
 				rfcPlayer.setStartingYear(wbPlayer['StartingYear'])
 
-	def getMapFile(self):
+	def getMapFile(self): #TODO: apparently this doesn't always work?
 		return riseFall.getMapFile()
 
 	def saveMapFile(self, name): #Save map data.
@@ -267,6 +267,20 @@ class WbParser:
 				wbPlot['x'] = x
 				wbPlot['y'] = y
 				shouldSave = False
+
+				#TODO: for now there is no practical way to load this so we might as well not save it.
+				#the main problem is that plot culture and plot ownership is tied to player IDs, which is all fine when saving but we don't know the assigned player ID of civs when loading.
+				#so ideally we'd save culture/plot ownership by civilization ID but I don't want to make such an error-prone fundamental change for now.
+				#for i in range(gc.getMAX_PLAYERS()):
+				#	if plot.getCulture(i) > 0:
+				#		if "Culture" not in wbPlot:
+				#			wbPlot['Culture'] = OrderedDict({})
+				#		wbPlot['Culture'][gc.getCivilizationInfo(gc.getPlayer(i).getCivilizationType()).getType()] = plot.getCulture(i)
+				#	shouldSave = True
+
+				#if plot.getOwner() != PlayerTypes.NO_PLAYER:
+				#	wbPlot['Owner'] = gc.getCivilizationInfo(gc.getPlayer(plot.getOwner()).getCivilizationType()).getType()
+				#	shouldSave = True
 
 				if plot.getImprovementType() != -1:
 					if disableGoodies or plot.getImprovementType() != goodyImprovement:
@@ -417,7 +431,7 @@ class WbParser:
 						if scheduledCity.getNumBuilding(i) > 0:
 							if "Buildings" not in wbCity:
 								wbCity['Buildings'] = {}
-							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = city.getNumBuilding(i)
+							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = scheduledCity.getNumBuilding(i)
 
 					for i in range(gc.getNumReligionInfos()):
 						if scheduledCity.getHolyCityReligion(i):

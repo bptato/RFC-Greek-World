@@ -470,13 +470,7 @@ class CvGameUtils:
 				elif iData2 == 35:
 					return CyTranslator().getText("TXT_KEY_WB_EDIT_CIVILIZATION", ())
 				elif iData2 == 36:
-					return CyTranslator().getText("TXT_KEY_WB_ADD_RFC_UNIT", ())
-				elif iData2 == 37:
-					return CyTranslator().getText("TXT_KEY_WB_EDIT_RFC_UNIT", ())
-				elif iData2 == 38:
-					return CyTranslator().getText("TXT_KEY_WB_ADD_RFC_CITY", ())
-				elif iData2 == 39:
-					return CyTranslator().getText("TXT_KEY_WB_EDIT_RFC_CITY", ())
+					return CyTranslator().getText("TXT_KEY_WB_RFGW_MAPS", ())
 			elif iData1 > 1029 and iData1 < 1040:
 				if iData1 %2:
 					return "-"

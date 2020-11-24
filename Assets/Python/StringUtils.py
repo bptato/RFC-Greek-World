@@ -1,5 +1,13 @@
 import re
 
+def getStrForYear(year): #bluepotato: convert a numerical year to a human readable format. eg -4400 to 4400BC
+	yearStr = str(year).replace("-", "")
+	if year < 0:
+		yearStr += " BC"
+	else:
+		yearStr += " AD"
+	return yearStr
+
 def unicodeToXML(u):
 	u = u.encode("ascii", "xmlcharrefreplace")
 	return u

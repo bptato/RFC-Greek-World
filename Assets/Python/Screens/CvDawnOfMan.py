@@ -3,19 +3,12 @@
 
 import CvUtil
 from CvPythonExtensions import *
+import StringUtils
 import math
 
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
 gc = CyGlobalContext()
-
-def getStrForYear(year): #bluepotato: convert a numerical year to a human readable format. eg -4400 to 4400BC
-	yearStr = str(year).replace("-", "")
-	if year < 0:
-		yearStr += " BC"
-	else:
-		yearStr += " AD"
-	return yearStr
 
 class CvDawnOfMan:
 	"Dawn of man screen"
@@ -84,7 +77,7 @@ class CvDawnOfMan:
 		szDawnTitle = u"<font=3>" + localText.getText("TXT_KEY_DAWN_OF_MAN_SCREEN_TITLE", ()).upper() + u"</font>"
 		screen.setLabel("DawnTitle", "Background", szDawnTitle, CvUtil.FONT_CENTER_JUSTIFY,
 				self.X_TEXT_PANEL + (self.W_TEXT_PANEL / 2), self.Y_TEXT_PANEL + 15, -2.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-		bodyString = localText.getText("TXT_KEY_DAWN_OF_MAN_TEXT", (getStrForYear(CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear()), self.player.getCivilizationAdjectiveKey(), self.player.getNameKey()))
+		bodyString = localText.getText("TXT_KEY_DAWN_OF_MAN_TEXT", (StringUtils.getStrForYear(CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear()), self.player.getCivilizationAdjectiveKey(), self.player.getNameKey()))
 		screen.addMultilineText("BodyText", bodyString, self.X_TEXT_PANEL + self.iMarginSpace, self.Y_TEXT_PANEL + self.iMarginSpace + self.iTEXT_PANEL_MARGIN, self.W_TEXT_PANEL - (self.iMarginSpace * 2), self.H_TEXT_PANEL - (self.iMarginSpace * 2) - 75, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		
 		screen.setButtonGFC("Exit", self.EXIT_TEXT, "", self.X_EXIT, self.Y_EXIT, self.W_EXIT, self.H_EXIT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)

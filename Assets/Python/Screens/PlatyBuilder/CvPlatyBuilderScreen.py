@@ -71,9 +71,10 @@ class CvWorldBuilderScreen:
 		self.m_iCost = 0
 
 ## Platy Builder ##
-		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot", "CityName", "SettlerValue", "AddRFCUnit", "EditRFCUnit", "AddRFCCity", "EditRFCCity"] #bluepotato
+		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot"] #bluepotato
 		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features"]
 		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
+		self.RFGWMode = ["CityName", "SettlerValue"]
 		self.iBrushWidth = 1
 		self.cityNameCiv = 0 #bluepotato
 		self.iBrushHeight = 1
@@ -596,14 +597,6 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "CityName":
 			self.m_pCurrentPlot.setCityName(self.cityNameCiv, "")
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
-		elif self.iPlayerAddMode == "AddRFCUnit":
-			pass
-		elif self.iPlayerAddMode == "EditRFCUnit":
-			pass
-		elif self.iPlayerAddMode == "AddRFCCity":
-			pass
-		elif self.iPlayerAddMode == "EditRFCCity":
-			pass
 		#bluepotato end
 		elif self.iPlayerAddMode == "Improvements":
 			self.m_pCurrentPlot.setImprovementType(-1)
@@ -917,7 +910,7 @@ class CvWorldBuilderScreen:
 		iAdjust = iButtonWidth + 3
 
 		iScreenWidth = 16 + iAdjust * 6
-		iScreenHeight = 16 + iAdjust * 4
+		iScreenHeight = 16 + iAdjust * 5
 
 		iXStart = screen.getXResolution() - iScreenWidth
 		if CyInterface().isInAdvancedStart():
@@ -1022,6 +1015,16 @@ class CvWorldBuilderScreen:
 				 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 10, ButtonStyles.BUTTON_STYLE_LABEL)
 			screen.setStyle("EditEvents", "Button_HUDLog_Style")
 
+			#bluepotato start
+			iY += iAdjust
+			iX = iXStart + 8
+
+			screen.addCheckBoxGFC("RFGWMode", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,12", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 36, ButtonStyles.BUTTON_STYLE_LABEL)
+
+			iX += iAdjust
+			screen.setImageButton("EditCivilizationButton", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/FinalFrontier1_Atlas.dds,2,15", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 35)
+			#bluepotato end
+
 			self.setCurrentModeCheckbox()
 		return
 
@@ -1033,11 +1036,11 @@ class CvWorldBuilderScreen:
 		iButtonWidth = 32
 		iAdjust = iButtonWidth + 3
 		iScreenWidth = 16 + iAdjust * 6
-		iScreenHeight = 16 + iAdjust * 4
+		iScreenHeight = 16 + iAdjust * 5
 
 		#bluepotato start
 		if self.iPlayerAddMode != "CityName":
-			self.removeLandmarks()
+			self.removeSigns()
 
 		if self.iPlayerAddMode != "SettlerValue":
 			self.hideSettlerValueOverlay()
@@ -1072,11 +1075,6 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("CityNameButton")
 			screen.deleteWidget("CityNameCivList")
 			screen.deleteWidget("SettlerValueButton")
-			screen.deleteWidget("EditCivilizationButton")
-			screen.deleteWidget("AddRFCUnitButton")
-			screen.deleteWidget("EditRFCUnitButton")
-			screen.deleteWidget("AddRFCCityButton")
-			screen.deleteWidget("EditRFCCityButton")
 			#bluepotato end
 			screen.deleteWidget("EditStartingPlot")
 			screen.deleteWidget("EditPlotData")
@@ -1097,10 +1095,11 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("SensibilityCheck")
 ## Panel Screen ##
 			nRows = 1
-			if self.iPlayerAddMode in self.RevealMode or self.iPlayerAddMode in self.MapMode:
+			if self.iPlayerAddMode in self.RevealMode or self.iPlayerAddMode in self.MapMode or self.iPlayerAddMode in self.PlayerMode:
 				nRows = 3
-			elif self.iPlayerAddMode in self.PlayerMode: #bluepotato: appropriately sized panel
-				nRows = 5
+			elif self.iPlayerAddMode in self.RFGWMode:
+				nRows = 2
+
 			iHeight = 16 + iAdjust * nRows
 			iXStart = screen.getXResolution() - iScreenWidth
 			screen.addPanel("WorldBuilderBackgroundBottomPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN )
@@ -1144,40 +1143,9 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				screen.addCheckBoxGFC("AddCityButton", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,4,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 18, ButtonStyles.BUTTON_STYLE_LABEL)
-				#bluepotato start
+
 				iX += iAdjust
 				screen.addDropDownBoxGFC("ChangeBy", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-
-				iY += iAdjust
-				iX = iXStart + 8
-				screen.addCheckBoxGFC("SettlerValueButton", ",Art/Interface/Buttons/Units/Settler.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,5", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_SETTLER_MAP, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
-
-				iX += iAdjust
-				screen.setImageButton("EditCivilizationButton", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/FinalFrontier1_Atlas.dds,2,15", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 35)
-
-				iX += iAdjust
-				screen.addCheckBoxGFC("AddRFCUnitButton",  ",Art/Interface/Buttons/Units/Warrior.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,6,10", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 36, ButtonStyles.BUTTON_STYLE_LABEL)
-
-				iX += iAdjust
-				screen.addCheckBoxGFC("EditRFCUnitButton", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,12", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 37, ButtonStyles.BUTTON_STYLE_LABEL)
-
-				iX += iAdjust
-				screen.addCheckBoxGFC("AddRFCCityButton", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,4,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 38, ButtonStyles.BUTTON_STYLE_LABEL)
-
-				iX += iAdjust
-				screen.addCheckBoxGFC("EditRFCCityButton", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CITYSELECTION").getPath(), CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 39, ButtonStyles.BUTTON_STYLE_LABEL)
-
-				iX = iXStart + 8
-				iY += iAdjust
-				screen.addCheckBoxGFC("CityNameButton", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,4,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_CITY_NAME, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
-
-
-				iX += iAdjust
-				screen.addDropDownBoxGFC("CityNameCivList", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				for i in range(gc.getNumCivilizationInfos()):
-					screen.addPullDownString("CityNameCivList", gc.getCivilizationInfo(i).getDescription(), i, i, i == self.cityNameCiv)
-				#bluepotato end
-
 				i = 1
 				while i < 1001:
 					screen.addPullDownString("ChangeBy", str(i), i, i, iChange == i)
@@ -1295,6 +1263,20 @@ class CvWorldBuilderScreen:
 				for i in range(1, 11):
 					screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
 				screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
+			#bluepotato start
+			elif self.iPlayerAddMode in self.RFGWMode:
+				iX = iXStart + 8
+				screen.addCheckBoxGFC("CityNameButton", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,4,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_CITY_NAME, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
+
+				iX += iAdjust
+				screen.addDropDownBoxGFC("CityNameCivList", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+				for i in range(gc.getNumCivilizationInfos()):
+					screen.addPullDownString("CityNameCivList", gc.getCivilizationInfo(i).getDescription(), i, i, i == self.cityNameCiv)
+
+				iY += iAdjust
+				iX = iXStart + 8
+				screen.addCheckBoxGFC("SettlerValueButton", ",Art/Interface/Buttons/Units/Settler.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,5", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_SETTLER_MAP, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
+			#bluepotato end
 			else:
 				screen.deleteWidget("WorldBuilderBackgroundBottomPanel")
 			self.setCurrentModeCheckbox()
@@ -1314,12 +1296,9 @@ class CvWorldBuilderScreen:
 		screen.setState("AddBuildingsButton", self.iPlayerAddMode == "Buildings")
 		screen.setState("AddCityButton", self.iPlayerAddMode == "City")
 		#bluepotato start
+		screen.setState("RFGWMode", self.iPlayerAddMode in self.RFGWMode)
 		screen.setState("CityNameButton", self.iPlayerAddMode == "CityName")
 		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue")
-		screen.setState("AddRFCUnitButton", self.iPlayerAddMode == "AddRFCUnit")
-		screen.setState("EditRFCUnitButton", self.iPlayerAddMode == "EditRFCUnit")
-		screen.setState("AddRFCCityButton", self.iPlayerAddMode == "AddRFCCity")
-		screen.setState("EditRFCCityButton", self.iPlayerAddMode == "EditRFCCity")
 		#bluepotato end
 		screen.setState("EditStartingPlot", self.iPlayerAddMode == "StartingPlot")
 		screen.setState("EditPlotData", self.iPlayerAddMode == "PlotData")
@@ -1639,7 +1618,7 @@ class CvWorldBuilderScreen:
 ## Platy Reveal Mode End ##
 
 	def Exit(self):
-		self.removeLandmarks()
+		self.removeSigns()
 		CyInterface().setWorldBuilder(False)
 		return
 
@@ -1997,7 +1976,7 @@ class CvWorldBuilderScreen:
 
 		#bluepotato start
 		elif inputClass.getFunctionName() == "CityNameButton":
-			self.cityNameLandmarks()
+			self.cityNameSigns()
 			self.iPlayerAddMode = "CityName"
 			self.refreshSideMenu()
 
@@ -2010,27 +1989,9 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "EditCivilizationButton":
 			WBRFCPlayerScreen.WBRFCPlayerScreen().interfaceScreen(self.cityNameCiv)
 
-		elif inputClass.getFunctionName() == "AddRFCUnitButton":
-			self.settlerValueOverlay()
-			self.iPlayerAddMode = "AddRFCUnit"
-			self.iSelection = -1
-			self.refreshSideMenu()
-
-		elif inputClass.getFunctionName() == "EditRFCUnitButton":
-			self.settlerValueOverlay()
-			self.iPlayerAddMode = "EditRFCUnit"
-			self.iSelection = -1
-			self.refreshSideMenu()
-
-		elif inputClass.getFunctionName() == "AddRFCCityButton":
-			self.settlerValueOverlay()
-			self.iPlayerAddMode = "AddRFCCity"
-			self.iSelection = -1
-			self.refreshSideMenu()
-
-		elif inputClass.getFunctionName() == "EditRFCCityButton":
-			self.settlerValueOverlay()
-			self.iPlayerAddMode = "EditRFCCity"
+		elif inputClass.getFunctionName() == "RFGWMode":
+			self.cityNameSigns()
+			self.iPlayerAddMode = "CityName"
 			self.iSelection = -1
 			self.refreshSideMenu()
 		#bluepotato end
@@ -2110,7 +2071,7 @@ class CvWorldBuilderScreen:
 				self.iPlayerAddMode = "CityName"
 			self.cityNameCiv = screen.getPullDownData("CityNameCivList", screen.getSelectedPullDownID("CityNameCivList"))
 			if self.iPlayerAddMode == "CityName":
-				self.cityNameLandmarks()
+				self.cityNameSigns()
 			elif self.iPlayerAddMode == "SettlerValue":
 				self.settlerValueOverlay()
 			self.refreshSideMenu()
@@ -2133,13 +2094,13 @@ class CvWorldBuilderScreen:
 		return 1
 
 	#bluepotato start
-	def removeLandmarks(self):
+	def removeSigns(self):
 		numPlots = CyMap().numPlots()
 		for i in range(numPlots):
 			plot = CyMap().plotByIndex(i)
 			CyEngine().removeSign(plot, CyGame().getActivePlayer())
 
-	def addLandmarks(self):
+	def addCityNameSigns(self):
 		numPlots = CyMap().numPlots()
 		for i in range(numPlots):
 			plot = CyMap().plotByIndex(i)
@@ -2147,9 +2108,9 @@ class CvWorldBuilderScreen:
 			if cityName != "":
 				CyEngine().addSign(plot, CyGame().getActivePlayer(), cityName)
 
-	def cityNameLandmarks(self):
-		self.removeLandmarks()
-		self.addLandmarks()
+	def cityNameSigns(self):
+		self.removeSigns()
+		self.addCityNameSigns()
 
 	def showSettlerValueOverlay(self):
 		numPlots = CyMap().numPlots()
