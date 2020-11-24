@@ -355,7 +355,7 @@ class WbParser:
 				alive = false
 				for j in range(gc.getMAX_PLAYERS()):
 					player = gc.getPlayer(j)
-					if player.isAlive() and player.getCivilizationType() == i:
+					if player.isAlive() and player.getCivilizationType() == i and not player.isBarbarian() and not player.isMinorCiv():
 						for j in range(gc.getNumCivicOptionInfos()):
 							startingCivic = player.getCivics(j)
 							if startingCivic != -1:

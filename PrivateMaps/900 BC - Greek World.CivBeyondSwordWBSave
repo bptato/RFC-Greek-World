@@ -1650,14 +1650,7 @@ application/json
 		{
 			"CivType":"CIVILIZATION_INDEPENDENT",
 			"StartingTechs":[],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
+			"CivicOptions":{},
 			"StartingGold":0,
 			"StartingWars":[],
 			"RelatedLanguages":[],
@@ -1684,14 +1677,7 @@ application/json
 		{
 			"CivType":"CIVILIZATION_INDEPENDENT2",
 			"StartingTechs":[],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
+			"CivicOptions":{},
 			"StartingGold":0,
 			"StartingWars":[],
 			"RelatedLanguages":[],
@@ -1718,14 +1704,7 @@ application/json
 		{
 			"CivType":"CIVILIZATION_BARBARIAN",
 			"StartingTechs":[],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
+			"CivicOptions":{},
 			"StartingGold":0,
 			"StartingWars":[],
 			"RelatedLanguages":[],
