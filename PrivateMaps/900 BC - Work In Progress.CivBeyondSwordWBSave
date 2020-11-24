@@ -1634,7 +1634,7 @@ application/json
 			"StartingYear":368,
 			"Flipped":false,
 			"CompactEmpireModifier":10,
-			"UnitUpkeepModifier":50,
+			"UnitUpkeepModifier":40,
 			"ResearchModifier":100,
 			"DistanceMaintenanceModifier":100,
 			"NumCitiesMaintenanceModifier":100,
