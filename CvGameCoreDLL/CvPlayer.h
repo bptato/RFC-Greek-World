@@ -1063,7 +1063,6 @@ public:
 	virtual int AI_maxGoldPerTurnTrade(PlayerTypes ePlayer) const = 0;
 	virtual int AI_maxGoldTrade(PlayerTypes ePlayer) const = 0;
 	//bluepotato start
-	void setCivDescription(std::wstring szNewDesc);
 	void processDynamicNames(bool force = false);
 	//bluepotato end
 

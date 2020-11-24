@@ -1692,7 +1692,7 @@ application/json
 				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
 				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
 			},
-			"StartingGold":48,
+			"StartingGold":0,
 			"StartingWars":[],
 			"RelatedLanguages":[],
 			"StartingX":0,
@@ -1718,7 +1718,14 @@ application/json
 		{
 			"CivType":"CIVILIZATION_BARBARIAN",
 			"StartingTechs":[],
-			"CivicOptions":{},
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
+				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
+				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
 			"StartingGold":0,
 			"StartingWars":[],
 			"RelatedLanguages":[],
@@ -2177,6 +2184,9 @@ application/json
 				},
 				"HolyCityReligions":{
 					"RELIGION_PESEDJET":true
+				},
+				"Culture":{
+					"CIVILIZATION_INDEPENDENT":110
 				}
 			}
 		},
@@ -2263,6 +2273,9 @@ application/json
 				},
 				"Religions":{
 					"RELIGION_PESEDJET":true
+				},
+				"Culture":{
+					"CIVILIZATION_INDEPENDENT2":10
 				}
 			}
 		},
@@ -2333,6 +2346,9 @@ application/json
 				},
 				"Religions":{
 					"RELIGION_PESEDJET":true
+				},
+				"Culture":{
+					"CIVILIZATION_EGYPT":10
 				}
 			}
 		},
@@ -2410,6 +2426,9 @@ application/json
 				},
 				"HolyCityReligions":{
 					"RELIGION_JUDAISM":true
+				},
+				"Culture":{
+					"CIVILIZATION_ISRAEL":610
 				}
 			}
 		},
@@ -2447,6 +2466,9 @@ application/json
 				},
 				"HolyCityReligions":{
 					"RELIGION_ANUNNAKI":true
+				},
+				"Culture":{
+					"CIVILIZATION_INDEPENDENT2":110
 				}
 			}
 		},
@@ -2562,6 +2584,9 @@ application/json
 				},
 				"Religions":{
 					"RELIGION_BAALISM":true
+				},
+				"Culture":{
+					"CIVILIZATION_PHOENICIA":1010
 				}
 			}
 		},
@@ -2788,6 +2813,9 @@ application/json
 				},
 				"HolyCityReligions":{
 					"RELIGION_BAALISM":true
+				},
+				"Culture":{
+					"CIVILIZATION_PHOENICIA":10
 				}
 			}
 		},
@@ -2861,6 +2889,9 @@ application/json
 				"Religions":{
 					"RELIGION_ANUNNAKI":true,
 					"RELIGION_JUDAISM":true
+				},
+				"Culture":{
+					"CIVILIZATION_BABYLON":210
 				}
 			}
 		},
@@ -3227,6 +3258,9 @@ application/json
 				},
 				"Religions":{
 					"RELIGION_ANUNNAKI":true
+				},
+				"Culture":{
+					"CIVILIZATION_ASSYRIA":110
 				}
 			}
 		},

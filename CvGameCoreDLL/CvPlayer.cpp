@@ -21982,21 +21982,6 @@ bool CvPlayer::hasSpaceshipArrived() const
 }
 
 //bluepotato start: dynamic names
-void CvPlayer::setCivDescription(std::wstring szNewDesc) //Rhye
-{
-	m_szCivDescKey = szNewDesc;
-	CvWString delimiter = (CvWString)":";
-	int pos = gDLL->getText(szNewDesc).find_first_of(delimiter, 0);
-	m_szCivDesc = gDLL->getText(szNewDesc).substr(0, pos);
-
-	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
-}
-
 void CvPlayer::processDynamicNames(bool force) {
 	if ((isMinorCiv() || isBarbarian() || !isAlive()) && !force)
 		return;
@@ -22012,10 +21997,11 @@ void CvPlayer::processDynamicNames(bool force) {
 		}
 	}
 
-	std::string newDesc;
 	std::wstringstream o;
 	o << L"TXT_KEY_DN_";
 	o << GC.getCivilizationInfo(getCivilizationType()).getRFCID();
+
+	CvWString extraParam;
 
 	if (masterType != NO_PLAYER) {
 		CvPlayer& master = GET_PLAYER(masterType);
@@ -22031,6 +22017,11 @@ void CvPlayer::processDynamicNames(bool force) {
 			o << L"00";
 		} else if(getNumCities() <= 1) {
 			o << L"01";
+			switch(getCivilizationType()) {
+				case CIVILIZATION_BABYLON:
+					extraParam = getCapitalCity()->getName();
+					break;
+			}
 		} else if(getNumCities() <= 3) {
 			o << L"02";
 		} else if(getNumCities() <= 5) {
@@ -22045,6 +22036,19 @@ void CvPlayer::processDynamicNames(bool force) {
 			o << L"07";
 		}
 	}
-	setCivDescription(o.str());
+
+	m_szCivDescKey = o.str();
+	CvWString delimiter = (CvWString)":";
+	CvWString text = extraParam.empty() ? gDLL->getText(o.str()) : gDLL->getText(o.str(), extraParam.GetCString());
+
+	int pos = text.find_first_of(delimiter, 0);
+	m_szCivDesc = text.substr(0, pos);
+
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 }
 //bluepotato end

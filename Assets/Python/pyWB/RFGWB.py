@@ -332,11 +332,11 @@ class WbParser:
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
 							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
-					for i in range(gc.getNumCivilizationInfos()):
+					for i in range(gc.getMAX_PLAYERS()):
 						if city.getCulture(i) > 0:
 							if "Culture" not in wbCity:
 								wbCity['Culture'] = {}
-							wbCity['Culture'][gc.getCivilizationInfo(i).getType()] = city.getCulture(i)
+							wbCity['Culture'][gc.getCivilizationInfo(gc.getPlayer(i).getCivilizationType()).getType()] = city.getCulture(i)
 					shouldSave = True
 
 				if shouldSave:
