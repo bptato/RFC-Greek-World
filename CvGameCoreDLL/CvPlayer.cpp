@@ -4352,6 +4352,7 @@ DenialTypes CvPlayer::getTradeDenial(PlayerTypes eWhoTo, TradeData item) const
 		break;
 
 	case TRADE_VASSAL:
+		GC.logMsg("Team %d is trying to vassaltrade player %d.", getTeam(), eWhoTo);
 		return GET_TEAM(getTeam()).AI_vassalTrade(GET_PLAYER(eWhoTo).getTeam());
 		break;
 
@@ -19201,6 +19202,12 @@ bool CvPlayer::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer, Relig
 	{
 		return false;
 	}
+
+	//bluepotato start: avoid events with independents
+	if(isMinorCiv() || GET_PLAYER(ePlayer).isMinorCiv()) {
+		return false;
+	}
+	//bluepotato end
 
 	CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eTrigger);

@@ -209,6 +209,7 @@ void CvRiseFall::checkFlip(PlayerTypes playerType, CivilizationTypes civType) {
 
 			if(toFlip.size()>0) {
 				for(std::vector<CvCity*>::iterator it = toFlip.begin(); it != toFlip.end(); ++it) {
+					FAssert((*it)->getOwner() != playerType);
 					if(!GET_TEAM(GET_PLAYER(playerType).getTeam()).isAtWar(GET_PLAYER((*it)->getOwner()).getTeam())) {
 						GET_TEAM(GET_PLAYER(playerType).getTeam()).declareWar(GET_PLAYER((*it)->getOwner()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
 					}
@@ -287,7 +288,7 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 
 				if(rfcUnit->isDeclareWar()) {
 					PlayerTypes plotOwner = plot->getOwner();
-					if(plotOwner != NO_PLAYER) {
+					if(plotOwner != NO_PLAYER && plotOwner != playerType) {
 						if(!GET_TEAM(GET_PLAYER(playerType).getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
 							GET_TEAM(GET_PLAYER(playerType).getTeam()).declareWar(GET_PLAYER(plotOwner).getTeam(), true, WARPLAN_TOTAL);
 						}
@@ -605,9 +606,11 @@ void CvRiseFall::setupStartingWars(CivilizationTypes civType, PlayerTypes player
 	for(std::vector<CivilizationTypes>::iterator it = rfcPlayer.getStartingWars().begin(); it != rfcPlayer.getStartingWars().end(); ++it) {
 		PlayerTypes loopPlayerType = getPlayerTypeForCiv(*it);
 		if(loopPlayerType != NO_PLAYER) {
+			FAssert(loopPlayerType != playerType);
 			CvPlayer& loopPlayer = GET_PLAYER(loopPlayerType);
 			GET_TEAM(player.getTeam()).declareWar(loopPlayer.getTeam(), true, WARPLAN_TOTAL);
-			GET_TEAM(loopPlayer.getTeam()).declareWar(player.getTeam(), true, WARPLAN_TOTAL);
+			//I don't think this makes sense?
+			//GET_TEAM(loopPlayer.getTeam()).declareWar(player.getTeam(), true, WARPLAN_TOTAL);
 		}
 	}
 }
@@ -630,6 +633,7 @@ void CvRiseFall::eraseSurroundings(CivilizationTypes civType, PlayerTypes player
 	}
 
 	if(startingPlot->getOwner() != NO_PLAYER) {
+		FAssert(startingPlot->getOwner() != playerType);
 		GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(startingPlot->getOwner()).getTeam(), true, WARPLAN_TOTAL);
 	}
 
