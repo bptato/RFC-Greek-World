@@ -35,7 +35,6 @@ void CvRiseFall::reset() {
 		SAFE_DELETE(*it);
 	}
 	_rfcProvinces.clear();
-	_mapFile.clear();
 }
 
 void CvRiseFall::onGameStarted() {

@@ -564,6 +564,7 @@ class WbParser:
 			if "MapFile" in self.wbValues:
 				self.scenarioValues = self.wbValues
 				riseFall.setMapFile(self.wbValues['MapFile'])
+				print "set map file to " + self.wbValues['MapFile']
 				self.parseFile(self.getMapsPath() + self.wbValues['MapFile'])
 				self.mapValues = self.wbValues
 				self.splitFile = True
