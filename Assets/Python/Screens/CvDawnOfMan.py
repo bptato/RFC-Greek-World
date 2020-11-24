@@ -92,12 +92,7 @@ class CvDawnOfMan:
 		screen.setStackedBarColors("ProgressBar", InfoBarTypes.INFOBAR_RATE, gc.getInfoTypeForString("COLOR_RESEARCH_RATE"))
 		screen.setStackedBarColors("ProgressBar", InfoBarTypes.INFOBAR_RATE_EXTRA, gc.getInfoTypeForString("COLOR_EMPTY"))
 		screen.setStackedBarColors("ProgressBar", InfoBarTypes.INFOBAR_EMPTY, gc.getInfoTypeForString("COLOR_EMPTY"))
-		self.endTurn = 0
-		if CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear() != gc.getGame().getGameTurnYear():
-			for i in range(gc.getGame().getMaxTurns()):
-				if gc.getGame().getTurnYear(i) >= CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear():
-					self.endTurn = i
-					break
+		self.endTurn = getTurnForYear(CyRiseFall().getRFCPlayer(self.player.getCivilizationType()).getStartingYear())
 		
 	def handleInput(self, inputClass):
 		return 0
