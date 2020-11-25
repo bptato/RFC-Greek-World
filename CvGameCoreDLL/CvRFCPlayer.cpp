@@ -824,6 +824,10 @@ bool CvRFCPlayer::isRelatedLanguage(CivilizationTypes civType) {
 	return false;
 }
 
+bool CvRFCPlayer::isPlayable() const {
+	return _enabled && !_minor;
+}
+
 int CvRFCPlayer::getNewCityFreePopulation() const {
 	return _newCityFreePopulation;
 }

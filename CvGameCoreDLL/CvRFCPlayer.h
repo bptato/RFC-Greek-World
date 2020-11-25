@@ -122,6 +122,8 @@ class CvRFCPlayer {
 
 		int getNewCityFreePopulation() const;
 
+		bool isPlayable() const;
+
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);
 
