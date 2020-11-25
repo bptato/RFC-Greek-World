@@ -33,7 +33,7 @@ class CvRFCPlayer {
 		void setSpawned(bool spawned);
 		void setFlipped(bool flipped);
 		void addStartingTech(TechTypes tech);
-		void addStartingWar(CivilizationTypes civType);
+		void setStartingWar(CivilizationTypes civType, bool startingWar);
 		void addCoreProvince(const wchar* province);
 		void setFlipCountdown(int newFlipCountdown);
 		void setTempStability(int category, int newStability);
@@ -130,6 +130,7 @@ class CvRFCPlayer {
 		std::vector<CvRFCUnit*> _scheduledUnits;
 		std::vector<CvRFCCity*> _scheduledCities;
 		int* _startingCivics;
+		int* _startingWars;
 		int _startingYear;
 		int _startingTurn;
 		int _startingPlotX;
@@ -143,7 +144,6 @@ class CvRFCPlayer {
 		bool _flipped;
 		std::vector<CvWString> _coreProvinces;
 		std::vector<TechTypes> _startingTechs;
-		std::vector<CivilizationTypes> _startingWars;
 		int _tempStability[NUM_STABILITY_CATEGORIES];
 		int _permStability[NUM_STABILITY_CATEGORIES];
 		int _flipCountdown;

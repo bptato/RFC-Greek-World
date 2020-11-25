@@ -1039,7 +1039,7 @@ class WbParser:
 
 				if "StartingWars" in wbPlayer:
 					for startingWar in wbPlayer['StartingWars']:
-						rfcPlayer.addStartingWar(gc.getInfoTypeForString(startingWar))
+						rfcPlayer.setStartingWar(gc.getInfoTypeForString(startingWar), True)
 
 				if "RelatedLanguages" in wbPlayer:
 					for relatedLanguage in wbPlayer['RelatedLanguages']:

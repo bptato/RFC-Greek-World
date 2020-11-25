@@ -1153,7 +1153,7 @@ class CvWorldBuilderScreen:
 						i *= 5
 					else:
 						i *= 2
-				sText = "<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
+				sText = "<font=3b>" + CyTranslator().getText("TXT_KEY_WB_HIDE_INACTIVE", ()) + "</font>"
 
 			elif self.iPlayerAddMode in self.MapMode:
 				iX = iXStart + 8

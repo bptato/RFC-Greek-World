@@ -676,6 +676,9 @@ class CvGameUtils:
 				return sText
 			elif iData1 == 8207:
 				return str(iData2) + ": " + self.getSettlerValueDescription(iData2)
+			#bluepotato
+			elif iData1 == 8208:
+				return CyGameTextMgr().parseCivInfos(iData2, False)
 ## Ultrapack ##
 		return u""
 

@@ -594,14 +594,16 @@ void CvRiseFall::setupStartingWars(CivilizationTypes civType, PlayerTypes player
 	CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
 	CvPlayer& player = GET_PLAYER(playerType);
 
-	for(std::vector<CivilizationTypes>::iterator it = rfcPlayer.getStartingWars().begin(); it != rfcPlayer.getStartingWars().end(); ++it) {
-		PlayerTypes loopPlayerType = getPlayerTypeForCiv(*it);
-		if(loopPlayerType != NO_PLAYER) {
-			FAssert(loopPlayerType != playerType);
-			CvPlayer& loopPlayer = GET_PLAYER(loopPlayerType);
-			GET_TEAM(player.getTeam()).declareWar(loopPlayer.getTeam(), true, WARPLAN_TOTAL);
-			//I don't think this makes sense?
-			//GET_TEAM(loopPlayer.getTeam()).declareWar(player.getTeam(), true, WARPLAN_TOTAL);
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
+		if(rfcPlayer.isStartingWar((CivilizationTypes)i)) {
+			PlayerTypes loopPlayerType = getPlayerTypeForCiv((CivilizationTypes)i);
+			if(loopPlayerType != NO_PLAYER) {
+				FAssert(loopPlayerType != playerType);
+				CvPlayer& loopPlayer = GET_PLAYER(loopPlayerType);
+				GET_TEAM(player.getTeam()).declareWar(loopPlayer.getTeam(), true, WARPLAN_TOTAL);
+				//I don't think this makes sense?
+				//GET_TEAM(loopPlayer.getTeam()).declareWar(player.getTeam(), true, WARPLAN_TOTAL);
+			}
 		}
 	}
 }

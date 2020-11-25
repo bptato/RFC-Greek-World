@@ -48,8 +48,8 @@ void CyRFCPlayer::addStartingTech(int techType) {
 	rfcPlayer->addStartingTech((TechTypes)techType);
 }
 
-void CyRFCPlayer::addStartingWar(int civType) {
-	rfcPlayer->addStartingWar((CivilizationTypes)civType);
+void CyRFCPlayer::setStartingWar(int civType, bool startingWar) {
+	rfcPlayer->setStartingWar((CivilizationTypes)civType, startingWar);
 }
 
 void CyRFCPlayer::addRelatedLanguage(int civType) {

@@ -11,6 +11,7 @@ class WBRFCPlayerScreen:
 		self.civType = None
 		self.rfcPlayer = None
 		self.civInfo = None
+		self.civDesc = ""
 		self.change = 1
 		self.screen = None
 		self.changeButtons = {}
@@ -19,8 +20,9 @@ class WBRFCPlayerScreen:
 	def interfaceScreen(self, civType):
 		self.screen = CyGInterfaceScreen("WBRFCPlayerScreen", CvScreenEnums.WB_RFC_PLAYER)
 		self.civType = civType
-		self.civInfo = gc.getCivilizationInfo(civType)
-		self.rfcPlayer = gc.getRiseFall().getRFCPlayer(civType)
+		self.civInfo = gc.getCivilizationInfo(self.civType)
+		self.rfcPlayer = gc.getRiseFall().getRFCPlayer(self.civType)
+		self.civDesc = self.getCivName(self.civType)
 
 		xres = self.screen.getXResolution()
 		yres = self.screen.getYResolution()
@@ -34,10 +36,10 @@ class WBRFCPlayerScreen:
 
 		self.addDropdown("CurrentRFCPlayer", xres/5, self.civType, 0, gc.getNumCivilizationInfos(),
 				lambda i: i + 1,
-				lambda i: ("*", "")[gc.getRiseFall().getRFCPlayer(i).isEnabled()] + CyTranslator().getText(gc.getCivilizationInfo(i).getShortDescriptionKey().encode("iso-8859-1"), ()))
+				lambda i: ("*", "")[gc.getRiseFall().getRFCPlayer(i).isEnabled()] + self.getCivName(i))
 
 		self.y += 30
-		self.addDropdown("ChangeBy", xres/5, self.change, 1, 1000001,
+		self.addDropdown("ChangeBy", xres / 5, self.change, 1, 1000001,
 				lambda i: i * (5, 2)[str(i)[0] == "1"],
 				lambda i: "(+/-) " + str(i))
 
@@ -45,13 +47,29 @@ class WBRFCPlayerScreen:
 		self.addBooleanButton("PlayerEnabled", "TXT_KEY_WB_ENABLED", self.rfcPlayer.isEnabled, self.rfcPlayer.setEnabled)
 		self.y += 20
 		self.addStartingValues()
+
+		self.y = yres - 20 - yres / 4
 		self.x = 20
-		self.y = yres / 2 + yres / 3
-		self.addTable("WBRFCPlayerCivics", gc.getNumCivicOptionInfos(), gc.getNumCivicInfos(), xres / 2 + 30, (yres - self.y - 40) / 24 * 24 + 2,
+		self.addTable("WBRFCPlayerCivics", gc.getNumCivicOptionInfos(), gc.getNumCivicInfos(), xres / 2 + 30, yres - self.y - 20,
 			lambda i: gc.getCivicOptionInfo(i).getDescription(),
 			lambda i, j: gc.getCivicInfo(j).getCivicOptionType() == i,
 			lambda i, j: CyTranslator().getText(("[COLOR_POSITIVE_TEXT]", "[COLOR_YELLOW]")[self.rfcPlayer.getStartingCivic(i) != j], ()) + gc.getCivicInfo(j).getDescription(),
-			lambda j: gc.getCivicInfo(j).getButton())
+			lambda j: gc.getCivicInfo(j).getButton(),
+			8205)
+
+		self.x = xres / 4 + 20
+		self.y = 20
+		self.addText("WBRFCPlayerWarsText", CyTranslator().getText("TXT_KEY_WB_STARTING_WARS", ()))
+		self.y += 20
+
+		self.addList("WBRFCPlayerWars", gc.getNumCivilizationInfos(), xres / 4 + 30, yres - yres / 4 - 80, self.civDesc,
+			lambda i: i < self.civType,
+			lambda i: CyTranslator().getText(("[COLOR_YELLOW]", "[COLOR_NEGATIVE_TEXT]")[self.rfcPlayer.isStartingWar(i)], ()) + self.getCivName(i),
+			lambda i: gc.getCivilizationInfo(i).getButton(),
+			8208)
+
+	def getCivName(self, i):
+		return CyTranslator().getText(gc.getCivilizationInfo(i).getShortDescriptionKey().encode("iso-8859-1"), ())
 
 	def addStartingValues(self):
 		self.addChangeButtons("StartingGold", "TXT_KEY_WB_STARTING_GOLD", self.rfcPlayer.getStartingGold, self.rfcPlayer.setStartingGold)
@@ -116,7 +134,22 @@ class WBRFCPlayerScreen:
 		self.booleanButtons[name]['get'] = getter
 		self.booleanButtons[name]['set'] = setter
 
-	def addTable(self, name, columns, items, w, h, colTitle, showItem, itemText, itemButton):
+	def addList(self, name, items, w, h, title, showItem, itemText, itemButton, tableid):
+		self.screen.addTableControlGFC(name, 2, self.x, self.y, w, h, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
+		self.screen.setTableColumnHeader(name, 0, "", w)
+
+		self.screen.setTableText(name, 0, 0, "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + title + "</font></color>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+
+		self.screen.appendTableRow(name)
+		row = 0
+		for i in xrange(items):
+			if not showItem(i): continue
+			self.screen.appendTableRow(name)
+			self.screen.setTableText(name, 0, row, "<font=3>" + itemText(i) + "</font></color>", itemButton(i), WidgetTypes.WIDGET_PYTHON, tableid, i, CvUtil.FONT_LEFT_JUSTIFY)
+			row += 1
+
+
+	def addTable(self, name, columns, items, w, h, colTitle, showItem, itemText, itemButton, tableid):
 		self.screen.addTableControlGFC(name, columns, self.x, self.y, w, h, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 		for i in xrange(columns):
 			self.screen.setTableColumnHeader(name, i, "", w / columns)
@@ -130,7 +163,6 @@ class WBRFCPlayerScreen:
 			if row > maxRow:
 				self.screen.appendTableRow(name)
 				maxRow = row
-			sText = gc.getCivicOptionInfo(i).getDescription()
 			self.screen.setTableText(name, column, row, "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + colTitle(i) + "</font></color>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 
 			for j in xrange(items):
@@ -139,7 +171,7 @@ class WBRFCPlayerScreen:
 				if row > maxRow:
 					self.screen.appendTableRow(name)
 					maxRow = row
-				self.screen.setTableText(name, column, row, "<font=3>" + itemText(i, j) + "</font></color>", itemButton(j), WidgetTypes.WIDGET_PYTHON, 8205, j, CvUtil.FONT_LEFT_JUSTIFY)
+				self.screen.setTableText(name, column, row, "<font=3>" + itemText(i, j) + "</font></color>", itemButton(j), WidgetTypes.WIDGET_PYTHON, tableid, j, CvUtil.FONT_LEFT_JUSTIFY)
 
 			if i % columns == columns - 1 and i < columns - 1:
 				self.screen.appendTableRow(name)
@@ -159,18 +191,26 @@ class WBRFCPlayerScreen:
 		elif funcName.endswith("Plus") and funcName.replace("Plus", "") in self.changeButtons:
 			modifier = self.changeButtons[funcName.replace("Plus", "")]
 			modifier['set'](modifier['get']() + self.change)
+
 			self.interfaceScreen(self.civType)
 		elif funcName.endswith("Minus") and funcName.replace("Minus", "") in self.changeButtons:
 			modifier = self.changeButtons[funcName.replace("Minus", "")]
 			modifier['set'](modifier['get']() - self.change)
+
 			self.interfaceScreen(self.civType)
 		elif funcName in self.booleanButtons:
 			button = self.booleanButtons[funcName]
 			button['set'](not button['get']())
+
 			self.interfaceScreen(self.civType)
 		elif funcName == "WBRFCPlayerCivics":
 			civic = inputClass.getData2()
 			self.rfcPlayer.setStartingCivic(gc.getCivicInfo(civic).getCivicOptionType(), civic)
+			self.interfaceScreen(self.civType)
+		elif funcName == "WBRFCPlayerWars":
+			civ = inputClass.getData2()
+			self.rfcPlayer.setStartingWar(civ, not self.rfcPlayer.isStartingWar(civ))
+
 			self.interfaceScreen(self.civType)
 		return 1
 

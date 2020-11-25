@@ -906,4 +906,12 @@
 		<Tag>TXT_KEY_WB_STARTING_Y</Tag>
 		<English>Starting Position Y</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STARTING_WARS</Tag>
+		<English>Start at war with</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_HIDE_INACTIVE</Tag>
+		<English>Start at war with</English>
+	</TEXT>
 </Civ4GameText>

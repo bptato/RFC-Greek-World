@@ -14,7 +14,7 @@ class CyRFCPlayer {
 		void setStartingYear(int newStartingYear);
 		void setStartingCivic(int civicOptionType, int civicType);
 		void addStartingTech(int techType);
-		void addStartingWar(int civType);
+		void setStartingWar(int civType, bool startingWar);
 		void addRelatedLanguage(int civType);
 		void setStartingPlot(int x, int y);
 		void setStartingGold(int gold);
