@@ -149,12 +149,12 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 
 			if(rfcPlayer.isHuman()) { //major human civs
 				spawnHumanCivilization(civType);
-			} else if(playerType == BARBARIAN_PLAYER) { //barbarian
+			} else if(civType == CIVILIZATION_BARBARIAN) { //barbarian
 				rfcPlayer.setSpawned(true);
-				rfcPlayer.setPlayerType(playerType);
+				rfcPlayer.setPlayerType(BARBARIAN_PLAYER);
 				for (int j = 0; j < MAX_CIV_TEAMS; j++) {
-					if ((TeamTypes)j != GET_PLAYER(playerType).getTeam()) {
-						GET_TEAM(GET_PLAYER(playerType).getTeam()).declareWar(((TeamTypes)j), false, NO_WARPLAN);
+					if ((TeamTypes)j != GET_PLAYER(BARBARIAN_PLAYER).getTeam()) {
+						GET_TEAM(GET_PLAYER(BARBARIAN_PLAYER).getTeam()).declareWar(((TeamTypes)j), false, NO_WARPLAN);
 					}
 				}
 			} else if(rfcPlayer.isMinor()) { //minor civs
