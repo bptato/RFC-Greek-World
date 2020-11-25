@@ -136,6 +136,7 @@ void CyRiseFallInterface()
 		.def("getGrowthModifier", &CyRFCPlayer::getGrowthModifier, "int ()")
 		.def("setStartingReligion", &CyRFCPlayer::setStartingReligion, "void (int religion)")
 		.def("getStartingReligion", &CyRFCPlayer::getStartingReligion, "int ()")
+		.def("getPlayerType", &CyRFCPlayer::getPlayerType, "int ()")
 		;
 
 	python::class_<CyRFCProvince>("CyRFCProvince")

@@ -55,10 +55,7 @@ def unit(unitName):
 	return CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), "UNIT_" + unitName.upper())
 
 def civ2player(civType):
-	for i in range(gc.getMAX_CIV_PLAYERS()):
-		if gc.getPlayer(i).getCivilizationType() == civType:
-			return i
-	return None
+	return gc.getRiseFall().getRFCPlayer(civType).getPlayerType()
 
 def player2civ(playerType):
 	return gc.getPlayer(playerType).getCivilizationType()
@@ -446,7 +443,7 @@ class Victory:
 		elif civType == iElam and iGameTurn <= i1000BC:
 			if iGameTurn < i1900BC:
 				pIndusValley = civ2player(iIndusValley)
-				if pIndusValley != None and pPlayer.canContact(pIndusValley) and pPlayer.canTradeNetworkWith(pIndusValley):
+				if pIndusValley != PlayerTypes.NO_PLAYER and pPlayer.canContact(pIndusValley) and pPlayer.canTradeNetworkWith(pIndusValley):
 					self.setGoal(iElam, 1, 1)
 			elif iGameTurn == i1900BC and self.getGoal(iElam, 1) == -1:
 				self.setGoal(iElam, 1, 0)

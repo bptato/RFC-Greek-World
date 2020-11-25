@@ -138,6 +138,10 @@ void CyRFCPlayer::setGrowthModifier(int modifier) {
 }
 
 
+int CyRFCPlayer::getPlayerType() {
+	return rfcPlayer->getPlayerType();
+}
+
 int CyRFCPlayer::getStability(int category) {
 	return rfcPlayer->getStability(category);
 }

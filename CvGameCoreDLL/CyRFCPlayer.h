@@ -38,6 +38,7 @@ class CyRFCPlayer {
 		void setInflationModifier(int modifier);
 		void setGrowthModifier(int modifier);
 
+		int getPlayerType();
 		int getStability(int category);
 		int getTotalStability();
 		int getStartingYear();

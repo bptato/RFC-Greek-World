@@ -49,7 +49,6 @@ class CvRiseFall {
 
 		CvRFCProvince* addProvince(const wchar* name, int bottom, int left, int top, int right);
 
-		PlayerTypes getPlayerTypeForCiv(CivilizationTypes civType) const;
 		inline CvRFCPlayer& getRFCPlayer(CivilizationTypes civType) const;
 		CvRFCProvince* getRFCProvince(const wchar* provinceName);
 		inline CvRFCProvince* getRFCProvince(int provinceID) const;

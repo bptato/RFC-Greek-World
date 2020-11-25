@@ -23,6 +23,7 @@ void CvRFCPlayer::reset(CivilizationTypes civilizationType) {
 
 void CvRFCPlayer::init(CivilizationTypes civilizationType) {
 	_civilizationType = civilizationType;
+	_playerType = NO_PLAYER;
 	_startingYear = 0;
 	_startingTurn = -1;
 	_startingPlotX = 0;
@@ -92,6 +93,10 @@ void CvRFCPlayer::uninit() {
 
 void CvRFCPlayer::setCivilizationType(CivilizationTypes civilizationType) {
 	_civilizationType = civilizationType;
+}
+
+void CvRFCPlayer::setPlayerType(PlayerTypes playerType) {
+	_playerType = playerType;
 }
 
 void CvRFCPlayer::setEnabled(bool enabled) {
@@ -556,8 +561,12 @@ void CvRFCPlayer::changeNewCityFreePopulation(int population) {
 }
 
 
-CivilizationTypes CvRFCPlayer::getCivilizationType() {
+CivilizationTypes CvRFCPlayer::getCivilizationType() const {
 	return _civilizationType;
+}
+
+PlayerTypes CvRFCPlayer::getPlayerType() const {
+	return _playerType;
 }
 
 std::vector<CvRFCUnit*>& CvRFCPlayer::getScheduledUnits() {
@@ -844,10 +853,11 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 	}
 
 	stream->Read((int*)&_civilizationType);
+	stream->Read((int*)&_playerType);
 	stream->Read(GC.getNumCivicOptionInfos(), _startingCivics);
+	stream->Read(GC.getNumCivilizationInfos(), _startingWars);
 	stream->Read(NUM_STABILITY_CATEGORIES, _tempStability);
 	stream->Read(NUM_STABILITY_CATEGORIES, _permStability);
-	stream->Read(GC.getNumCivilizationInfos(), _startingWars);
 	stream->Read(&_startingYear);
 	stream->Read(&_startingTurn);
 	stream->Read(&_startingPlotX);
@@ -935,10 +945,11 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	}
 
 	stream->Write(_civilizationType);
+	stream->Write(_playerType);
 	stream->Write(GC.getNumCivicOptionInfos(), _startingCivics);
+	stream->Write(GC.getNumCivilizationInfos(), _startingWars);
 	stream->Write(NUM_STABILITY_CATEGORIES, _tempStability);
 	stream->Write(NUM_STABILITY_CATEGORIES, _permStability);
-	stream->Write(GC.getNumCivilizationInfos(), _startingWars);
 	stream->Write(_startingYear);
 	stream->Write(_startingTurn);
 	stream->Write(_startingPlotX);

@@ -20,6 +20,7 @@ class CvRFCPlayer {
 		void uninit();
 
 		void setCivilizationType(CivilizationTypes civilizationType);
+		void setPlayerType(PlayerTypes playerType);
 		void setEnabled(bool newEnabled);
 		void setStartingCivic(CivicOptionTypes civicOptionType, CivicTypes civicType);
 		void setStartingYear(int year);
@@ -60,7 +61,8 @@ class CvRFCPlayer {
 		void setNewCityFreePopulation(int population);
 		void changeNewCityFreePopulation(int population);
 
-		CivilizationTypes getCivilizationType();
+		CivilizationTypes getCivilizationType() const;
+		PlayerTypes getPlayerType() const;
 		std::vector<CvRFCUnit*>& getScheduledUnits();
 		std::vector<CvRFCCity*>& getScheduledCities();
 		CvRFCUnit* addScheduledUnit();
@@ -127,6 +129,7 @@ class CvRFCPlayer {
 		void applyStability(PlayerTypes playerType, int* num, CivicTypes civicType1, CivicTypes civicType2, int stability);
 
 		CivilizationTypes _civilizationType;
+		PlayerTypes _playerType;
 		std::vector<CvRFCUnit*> _scheduledUnits;
 		std::vector<CvRFCCity*> _scheduledCities;
 		int* _startingCivics;

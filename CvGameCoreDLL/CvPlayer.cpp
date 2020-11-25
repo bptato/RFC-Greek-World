@@ -9944,6 +9944,9 @@ void CvPlayer::setAlive(bool bNewValue)
 				gDLL->closeSlot(getID());
 			}
 
+			//bluepotato: remove association with rfcplayer
+			GC.getRiseFall().getRFCPlayer(getCivilizationType()).setPlayerType(NO_PLAYER);
+
 			if (GC.getGameINLINE().getElapsedGameTurns() > 0)
 			{
 				if (!isBarbarian() && !isMinorCiv()) //bluepotato: minor civs as well
