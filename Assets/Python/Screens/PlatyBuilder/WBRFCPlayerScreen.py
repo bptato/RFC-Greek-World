@@ -93,7 +93,7 @@ class WBRFCPlayerScreen:
 		self.screen.setButtonGFC(name, "", "", self.x, self.y, w, h, WidgetTypes.WIDGET_PYTHON, textid, -1, style)
 
 	def getDropdownData(self, name):
-		return screen.getPullDownData(name, screen.getSelectedPullDownID(name))
+		return self.screen.getPullDownData(name, self.screen.getSelectedPullDownID(name))
 
 	def handleInput(self, inputClass):
 		self.screen = CyGInterfaceScreen("WBRFCPlayerScreen", CvScreenEnums.WB_RFC_PLAYER)
