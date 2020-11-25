@@ -886,4 +886,24 @@
 		<Tag>TXT_KEY_WB_GROWTH_MODIFIER</Tag>
 		<English>Growth Modifier</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ENABLED</Tag>
+		<English>Enabled</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STARTING_GOLD</Tag>
+		<English>Starting Gold</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STARTING_YEAR</Tag>
+		<English>Starting Year</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STARTING_X</Tag>
+		<English>Starting Position X</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STARTING_Y</Tag>
+		<English>Starting Position Y</English>
+	</TEXT>
 </Civ4GameText>

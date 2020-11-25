@@ -71,10 +71,10 @@ class CvWorldBuilderScreen:
 		self.m_iCost = 0
 
 ## Platy Builder ##
-		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot"] #bluepotato
+		self.PlayerMode = ["Ownership", "Units", "Buildings", "City"]
 		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features"]
 		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
-		self.RFGWMode = ["CityName", "SettlerValue"]
+		self.RFGWMode = ["CityName", "SettlerValue", "StartingPlot"]
 		self.iBrushWidth = 1
 		self.cityNameCiv = 0 #bluepotato
 		self.iBrushHeight = 1
@@ -207,13 +207,16 @@ class CvWorldBuilderScreen:
 
 	def refreshStartingPlots(self) :
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
-		for iPlayerX in xrange(gc.getMAX_PLAYERS()):
-			pPlayerX = gc.getPlayer(iPlayerX)
-			pPlot = pPlayerX.getStartingPlot()
+		for i in xrange(gc.getNumCivilizationInfos()):
+			rfcPlayer = gc.getRiseFall().getRFCPlayer(i)
+			x = rfcPlayer.getStartingPlotX()
+			y = rfcPlayer.getStartingPlotY()
+			pPlot = CyMap().plot(x, y)
 			if not pPlot.isNone():
-				sColor = "COLOR_MAGENTA"
-				if iPlayerX == self.m_iCurrentPlayer:
+				if i == gc.getPlayer(self.m_iCurrentPlayer).getCivilizationType():
 					sColor = "COLOR_BLACK"
+				else:
+					sColor = "COLOR_MAGENTA"
 				CyEngine().fillAreaBorderPlotAlt(pPlot.getX(), pPlot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
 
 	########################################################
@@ -1129,9 +1132,6 @@ class CvWorldBuilderScreen:
 				screen.setImageButton("EditProjects", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,6", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 4)
 				iX += iAdjust
 				screen.setImageButton("EditUnitsCities", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,12", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 5)
-				iX += iAdjust
-				screen.addCheckBoxGFC("EditStartingPlot", ",Art/Interface/Buttons/Units/Warrior.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,13", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
-					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 32, ButtonStyles.BUTTON_STYLE_LABEL)
 
 				iY += iAdjust
 				iX = iXStart + 8
@@ -1276,6 +1276,10 @@ class CvWorldBuilderScreen:
 				iY += iAdjust
 				iX = iXStart + 8
 				screen.addCheckBoxGFC("SettlerValueButton", ",Art/Interface/Buttons/Units/Settler.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,5", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_SETTLER_MAP, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
+
+				iX += iAdjust
+				screen.addCheckBoxGFC("EditStartingPlot", ",Art/Interface/Buttons/Units/Warrior.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,13", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
+					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 32, ButtonStyles.BUTTON_STYLE_LABEL)
 			#bluepotato end
 			else:
 				screen.deleteWidget("WorldBuilderBackgroundBottomPanel")
@@ -1720,7 +1724,7 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "Events":
 			WBEventScreen.WBEventScreen().interfaceScreen(self.m_pCurrentPlot)
 		elif self.iPlayerAddMode == "StartingPlot":
-			pPlayer.setStartingPlot(self.m_pCurrentPlot, True)
+			gc.getRiseFall().getRFCPlayer(self.cityNameCiv).setStartingPlot(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 			self.refreshStartingPlots()
 		elif self.iPlayerAddMode == "TargetPlot":
 			self.iTargetPlotX = self.m_pCurrentPlot.getX()
