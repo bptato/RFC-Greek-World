@@ -460,7 +460,7 @@ class CvGameUtils:
 				elif iData2 == 30:
 					return CyTranslator().getText("TXT_KEY_WB_REPEATABLE",())
 				elif iData2 == 31:
-					return CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ())
+					return CyTranslator().getText("TXT_KEY_WB_HIDE_INACTIVE", ())
 				elif iData2 == 32:
 					return CyTranslator().getText("TXT_KEY_WB_STARTING_PLOT", ())
 				elif iData2 == 33:
