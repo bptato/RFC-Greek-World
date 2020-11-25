@@ -9,8 +9,7 @@ def getStrForYear(year): #bluepotato: convert a numerical year to a human readab
 	return yearStr
 
 def unicodeToXML(u):
-	u = u.encode("ascii", "xmlcharrefreplace")
-	return u
+	return u.encode("ascii", "xmlcharrefreplace")
 
 def unescape(s): #backported from python 2.7, see https://hg.python.org/cpython/file/2.7/Lib/HTMLParser.py#l447 vs https://hg.python.org/cpython/file/2.5/Lib/HTMLParser.py#l361
 	if '&' not in s:

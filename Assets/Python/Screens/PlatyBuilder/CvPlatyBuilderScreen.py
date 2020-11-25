@@ -1987,7 +1987,7 @@ class CvWorldBuilderScreen:
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "EditCivilizationButton":
-			WBRFCPlayerScreen.WBRFCPlayerScreen().interfaceScreen(self.cityNameCiv)
+			WBRFCPlayerScreen.rfcPlayerScreen.interfaceScreen(self.cityNameCiv)
 
 		elif inputClass.getFunctionName() == "RFGWMode":
 			self.cityNameSigns()
