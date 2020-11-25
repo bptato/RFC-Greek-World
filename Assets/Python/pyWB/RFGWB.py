@@ -356,10 +356,6 @@ class WbParser:
 				for j in range(gc.getMAX_PLAYERS()):
 					player = gc.getPlayer(j)
 					if player.isAlive() and player.getCivilizationType() == i and not player.isBarbarian() and not player.isMinorCiv():
-						for j in range(gc.getNumCivicOptionInfos()):
-							startingCivic = player.getCivics(j)
-							if startingCivic != -1:
-								wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
 						wbPlayer['StartingGold'] = player.getGold()
 						if player.getStateReligion() != ReligionTypes.NO_RELIGION:
 							wbPlayer['StartingReligion'] = gc.getReligionInfo(player.getStateReligion()).getType()
@@ -370,11 +366,11 @@ class WbParser:
 						alive = True
 						break
 
+				for j in range(gc.getNumCivicOptionInfos()):
+					startingCivic = rfcPlayer.getStartingCivic(j)
+					if startingCivic != -1:
+						wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
 				if not alive:
-					for j in range(gc.getNumCivicOptionInfos()):
-						startingCivic = rfcPlayer.getStartingCivic(j)
-						if startingCivic != -1:
-							wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
 
 					wbPlayer['StartingGold'] = rfcPlayer.getStartingGold()
 					if rfcPlayer.getStartingReligion() != ReligionTypes.NO_RELIGION:

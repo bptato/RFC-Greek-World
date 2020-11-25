@@ -1,5 +1,3 @@
-#Author: bluepotato
-
 from CvPythonExtensions import *
 import CvUtil
 import ScreenInput
@@ -47,6 +45,13 @@ class WBRFCPlayerScreen:
 		self.addBooleanButton("PlayerEnabled", "TXT_KEY_WB_ENABLED", self.rfcPlayer.isEnabled, self.rfcPlayer.setEnabled)
 		self.y += 20
 		self.addStartingValues()
+		self.x = 20
+		self.y = yres / 2 + yres / 3
+		self.addTable("WBRFCPlayerCivics", gc.getNumCivicOptionInfos(), gc.getNumCivicInfos(), xres / 2 + 30, (yres - self.y - 40) / 24 * 24 + 2,
+			lambda i: gc.getCivicOptionInfo(i).getDescription(),
+			lambda i, j: gc.getCivicInfo(j).getCivicOptionType() == i,
+			lambda i, j: CyTranslator().getText(("[COLOR_POSITIVE_TEXT]", "[COLOR_YELLOW]")[self.rfcPlayer.getStartingCivic(i) != j], ()) + gc.getCivicInfo(j).getDescription(),
+			lambda j: gc.getCivicInfo(j).getButton())
 
 	def addStartingValues(self):
 		self.addChangeButtons("StartingGold", "TXT_KEY_WB_STARTING_GOLD", self.rfcPlayer.getStartingGold, self.rfcPlayer.setStartingGold)
@@ -111,6 +116,35 @@ class WBRFCPlayerScreen:
 		self.booleanButtons[name]['get'] = getter
 		self.booleanButtons[name]['set'] = setter
 
+	def addTable(self, name, columns, items, w, h, colTitle, showItem, itemText, itemButton):
+		self.screen.addTableControlGFC(name, columns, self.x, self.y, w, h, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
+		for i in xrange(columns):
+			self.screen.setTableColumnHeader(name, i, "", w / columns)
+
+		maxRow = -1
+		currentMaxRow = 0
+
+		for i in xrange(columns):
+			column = i % columns
+			row = currentMaxRow
+			if row > maxRow:
+				self.screen.appendTableRow(name)
+				maxRow = row
+			sText = gc.getCivicOptionInfo(i).getDescription()
+			self.screen.setTableText(name, column, row, "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + colTitle(i) + "</font></color>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+
+			for j in xrange(items):
+				if not showItem(i, j): continue
+				row += 1
+				if row > maxRow:
+					self.screen.appendTableRow(name)
+					maxRow = row
+				self.screen.setTableText(name, column, row, "<font=3>" + itemText(i, j) + "</font></color>", itemButton(j), WidgetTypes.WIDGET_PYTHON, 8205, j, CvUtil.FONT_LEFT_JUSTIFY)
+
+			if i % columns == columns - 1 and i < columns - 1:
+				self.screen.appendTableRow(name)
+				currentMaxRow = maxRow + 2
+
 	def getDropdownData(self, name):
 		return self.screen.getPullDownData(name, self.screen.getSelectedPullDownID(name))
 
@@ -134,7 +168,10 @@ class WBRFCPlayerScreen:
 			button = self.booleanButtons[funcName]
 			button['set'](not button['get']())
 			self.interfaceScreen(self.civType)
-
+		elif funcName == "WBRFCPlayerCivics":
+			civic = inputClass.getData2()
+			self.rfcPlayer.setStartingCivic(gc.getCivicInfo(civic).getCivicOptionType(), civic)
+			self.interfaceScreen(self.civType)
 		return 1
 
 	def update(self, fDelta):
