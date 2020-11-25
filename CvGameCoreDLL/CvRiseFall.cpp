@@ -27,7 +27,6 @@ CvRiseFall::~CvRiseFall() {
 }
 
 void CvRiseFall::reset() {
-	GC.logMsg("CvRiseFall::reset");
 	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
 		_rfcPlayers[i].reset((CivilizationTypes)i);
 	}
@@ -38,7 +37,6 @@ void CvRiseFall::reset() {
 }
 
 void CvRiseFall::onGameStarted() {
-	GC.logMsg("CvRiseFall::onGameStarted");
 	CvGame& game = GC.getGameINLINE();
 
 	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
@@ -71,7 +69,6 @@ void CvRiseFall::onGameStarted() {
 
 void CvRiseFall::checkTurn() {
 	CvGame& game = GC.getGameINLINE();
-	GC.logMsg("CvRiseFall::checkTurn - turn %d", game.getGameTurn());
 
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
 		if(getRFCPlayer((CivilizationTypes)i).isHuman()) {
@@ -136,9 +133,6 @@ void CvRiseFall::checkTurnForPlayer(CivilizationTypes civType, int turn) {
 	PlayerTypes playerType = getPlayerTypeForCiv(civType);
 
 	if(rfcPlayer.getStartingYear() <= game.getTurnYear(turn) || playerType != NO_PLAYER || rfcPlayer.isMinor()) { //barbarians & minors as well
-		if(rfcPlayer.isHuman()) {
-			GC.logMsg("Checking human at year %d for year %d", game.getGameTurnYear(), game.getTurnYear(turn));
-		}
 		bool spawnedNow = false;
 		if(!rfcPlayer.isSpawned()) {
 			//conditional spawns
@@ -397,7 +391,6 @@ void CvRiseFall::spawnHumanCivilization(CivilizationTypes civType) {
 			}
 
 			finishMajorCivSpawn(civType, (PlayerTypes)i);
-			GC.logMsg("CvRiseFall::spawnHumanCivilization - Spawned human civ %i", civType);
 			return;
 		}
 	}
@@ -517,7 +510,6 @@ void CvRiseFall::spawnAICivilization(CivilizationTypes civType) {
 		if(!player.isAlive() && !player.isBarbarian() && !player.isMinorCiv() && !player.isHuman()) { //use slot if it isn't occupied by a human, barbarian or minor civ.
 			setupAIPlayer(civType, (PlayerTypes)i);
 			finishMajorCivSpawn(civType, (PlayerTypes)i);
-			GC.logMsg("CvRiseFall::spawnAICivilization - Spawned ai civ %i", civType);
 			return;
 		}
 	}
@@ -728,7 +720,6 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 
 void CvRiseFall::capitalCollapse(PlayerTypes playerType) {
 	CvPlayer& player = GET_PLAYER(playerType);
-	GC.logMsg("CvRiseFall::capitalCollapse %i", player.getCivilizationType());
 	int i;
 	for(CvCity* city = player.firstCity(&i); NULL != city; city = player.nextCity(&i)) {
 		if(!city->isCapital()) {
@@ -739,7 +730,6 @@ void CvRiseFall::capitalCollapse(PlayerTypes playerType) {
 
 void CvRiseFall::completeCollapse(PlayerTypes playerType) {
 	CvPlayer& player = GET_PLAYER(playerType);
-	GC.logMsg("CvRiseFall::completeCollapse %i", player.getCivilizationType());
 	int i;
 	for(CvCity* city = player.firstCity(&i); NULL != city; city = player.nextCity(&i)) {
 		citySecession(city);

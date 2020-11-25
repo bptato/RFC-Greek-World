@@ -4352,7 +4352,6 @@ DenialTypes CvPlayer::getTradeDenial(PlayerTypes eWhoTo, TradeData item) const
 		break;
 
 	case TRADE_VASSAL:
-		GC.logMsg("Team %d is trying to vassaltrade player %d.", getTeam(), eWhoTo);
 		return GET_TEAM(getTeam()).AI_vassalTrade(GET_PLAYER(eWhoTo).getTeam());
 		break;
 
