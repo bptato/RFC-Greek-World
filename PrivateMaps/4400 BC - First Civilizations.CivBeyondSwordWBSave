@@ -1930,7 +1930,7 @@ application/json
 					"UnitType":"UNIT_BANDIT",
 					"Year":-2800,
 					"EndYear":-2000,
-					"SpawnFrequency":11
+					"SpawnFrequency":18
 				},
 				{
 					"Amount":4,
