@@ -1767,7 +1767,7 @@ application/json
 			"StartingX":0,
 			"StartingY":0,
 			"CoreProvinces":[],
-			"StartingYear":0,
+			"StartingYear":-4400,
 			"MinorNationStatus":1,
 			"Flipped":false,
 			"CompactEmpireModifier":50,
@@ -1794,7 +1794,7 @@ application/json
 			"StartingX":0,
 			"StartingY":0,
 			"CoreProvinces":[],
-			"StartingYear":0,
+			"StartingYear":-4400,
 			"MinorNationStatus":1,
 			"Flipped":false,
 			"CompactEmpireModifier":50,
@@ -1821,7 +1821,7 @@ application/json
 			"StartingX":0,
 			"StartingY":0,
 			"CoreProvinces":[],
-			"StartingYear":0,
+			"StartingYear":-4400,
 			"MinorNationStatus":1,
 			"Flipped":false,
 			"CompactEmpireModifier":50,
@@ -2510,6 +2510,7 @@ application/json
 					"Year":-2720
 				},
 				{
+					"Amount":2,
 					"UnitOwner":"CIVILIZATION_ELAM",
 					"UnitType":"UNIT_ELAM_KASSU_RISA",
 					"Year":-2720
