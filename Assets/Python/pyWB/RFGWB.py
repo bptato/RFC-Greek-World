@@ -761,6 +761,10 @@ class WbParser:
 
 		cmap.recalculateAreas()
 
+		#Provinces
+		for wbProvince in self.mapValues['Provinces']:
+			rfcProvince = riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right'])
+
 		for wbPlot in self.mapValues['Plots']:
 			x = wbPlot['x']
 			y = wbPlot['y']
@@ -772,6 +776,10 @@ class WbParser:
 			#Features
 			if "FeatureType" in wbPlot:
 				plot.setFeatureType(gc.getInfoTypeForString(wbPlot['FeatureType']), wbPlot['FeatureVariety'])
+
+			#Provinces
+			if "ProvinceType" in wbPlot:
+				plot.setProvinceType(gc.getRiseFall().getRFCProvince(wbPlot['ProvinceType']))
 
 			#Rivers
 			directions = [CardinalDirectionTypes.NO_CARDINALDIRECTION, CardinalDirectionTypes.NO_CARDINALDIRECTION]
@@ -936,7 +944,6 @@ class WbParser:
 
 		#Provinces
 		for wbProvince in self.mapValues['Provinces']:
-			rfcProvince = riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right'])
 			#Goody huts
 			if not disableGoodies:
 				amountRand = ((rfcProvince.getTop() - rfcProvince.getBottom()) + (rfcProvince.getRight() - rfcProvince.getLeft()))/5

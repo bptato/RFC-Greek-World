@@ -3588,10 +3588,6 @@ void CvGlobals::setMinorNationCiv(PlayerTypes eID, CivilizationTypes civType, bo
 	getInitCore().setMinorNationCiv(eID, bMinorNationCiv);
 }
 
-CvRiseFall& CvGlobals::getRiseFall() {
-	return *riseFall;
-}
-
 static bool riseFallConstructed = false;
 void CvGlobals::resetRiseFall() {
 	if(!riseFallConstructed && getNumCivilizationInfos()>0) {

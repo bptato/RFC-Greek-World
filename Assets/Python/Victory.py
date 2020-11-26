@@ -445,7 +445,7 @@ class Victory:
 				pIndusValley = civ2player(iIndusValley)
 				if pIndusValley != PlayerTypes.NO_PLAYER and pPlayer.canContact(pIndusValley) and pPlayer.canTradeNetworkWith(pIndusValley):
 					self.setGoal(iElam, 1, 1)
-			elif iGameTurn == i1900BC and self.getGoal(iElam, 1) == -1:
+			elif iGameTurn == i1800BC and self.getGoal(iElam, 1) == -1:
 				self.setGoal(iElam, 1, 0)
 			elif iGameTurn < i1500BC and self.getGoal(iElam, 2) == -1:
 				if provPersia.getNumCities(iPlayer) >= 5:

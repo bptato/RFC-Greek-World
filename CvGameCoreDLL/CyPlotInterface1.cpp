@@ -258,6 +258,8 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("setCityName", &CyPlot::setCityName, "void (int, str)")
 		.def("getSettlerValue", &CyPlot::getSettlerValue, "int (int)")
 		.def("setSettlerValue", &CyPlot::setSettlerValue, "void (int)")
+		.def("getRFCProvince", &CyPlot::getRFCProvince, "int (int)")
+		.def("setRFCProvince", &CyPlot::setRFCProvince, "void (int)")
 		//bluepotato end
 	;
 }

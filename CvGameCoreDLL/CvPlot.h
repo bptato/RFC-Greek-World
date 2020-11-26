@@ -485,6 +485,8 @@ public:
 	void setCityName(CivilizationTypes civType, const wchar* newName);
 	short getSettlerValue(CivilizationTypes civType);
 	void setSettlerValue(CivilizationTypes civType, short settlerValue);
+	void setRFCProvince(ProvinceTypes provinceType);
+	ProvinceTypes getRFCProvince() const;
 	//Sanguo Mod Performance
 	int getPlayerDangerCache(PlayerTypes ePlayer, int iRange);
 	void setPlayerDangerCache(PlayerTypes ePlayer, int iRange, int iNewValue);
@@ -581,8 +583,9 @@ protected:
 	friend class CvGameTextMgr;
 
 	//bluepotato start
-	CvWString* cityNames;
-	short* settlerValues;
+	CvWString* _cityNames;
+	short* _settlerValues;
+	ProvinceTypes _provinceType;
 	//bluepotato end
 };
 

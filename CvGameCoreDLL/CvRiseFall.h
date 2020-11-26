@@ -51,7 +51,7 @@ class CvRiseFall {
 
 		inline CvRFCPlayer& getRFCPlayer(CivilizationTypes civType) const;
 		CvRFCProvince* getRFCProvince(const wchar* provinceName);
-		inline CvRFCProvince* getRFCProvince(int provinceID) const;
+		inline CvRFCProvince* getRFCProvince(ProvinceTypes provinceType) const;
 		int getNumProvinces() const;
 		CvRFCProvince* getProvinceForPlot(int x, int y);
 		bool skipConditionalSpawn(CivilizationTypes civType) const;

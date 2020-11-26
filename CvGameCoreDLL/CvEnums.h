@@ -2799,4 +2799,9 @@ enum CivilopediaWidgetShowTypes
 	CIVILOPEDIA_WIDGET_SHOW_WATER,
 };
 
+//bluepotato start: provinces
+enum ProvinceTypes {
+	NO_PROVINCE
+};
+
 #endif	// CVENUMS_h

@@ -1953,4 +1953,9 @@ void CyEnumsPythonInterface()
 		.value("ADVANCEDSTARTACTION_VISIBILITY", ADVANCEDSTARTACTION_VISIBILITY)
 		.value("ADVANCEDSTARTACTION_AUTOMATE", ADVANCEDSTARTACTION_AUTOMATE)
 		;
+
+	//bluepotato
+	python::enum_<ProvinceTypes>("ProvinceTypes")
+		.value("NO_PROVINCE", NO_PROVINCE)
+		;
 }

@@ -1053,4 +1053,13 @@ void CyPlot::setSettlerValue(int civType, short settlerValue) {
 	if(m_pPlot)
 		m_pPlot->setSettlerValue((CivilizationTypes)civType, settlerValue);
 }
+
+int CyPlot::getRFCProvince() {
+	return m_pPlot ? m_pPlot->getRFCProvince() : -1;
+}
+
+void CyPlot::setRFCProvince(int provinceType) {
+	if(m_pPlot)
+		m_pPlot->setRFCProvince((ProvinceTypes)provinceType);
+}
 //bluepotato end

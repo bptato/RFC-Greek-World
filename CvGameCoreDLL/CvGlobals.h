@@ -884,7 +884,7 @@ public:
 
 	//bluepotato start
 	void setMinorNationCiv(PlayerTypes eID, CivilizationTypes civType, bool bMinorNationCiv);
-	CvRiseFall& getRiseFall();
+	inline CvRiseFall& getRiseFall() const { return *riseFall; }
 	void resetRiseFall();
 	void onCivSelectionScreenLoaded();
 	void setupEnabled();

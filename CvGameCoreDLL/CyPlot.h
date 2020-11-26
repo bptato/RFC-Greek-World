@@ -264,6 +264,8 @@ public:
 	std::wstring getCityName(int civType, bool precise);
 	short getSettlerValue(int civType);
 	void setSettlerValue(int civType, short settlerValue);
+	void setRFCProvince(int provinceType);
+	int getRFCProvince();
 	//bluepotato end
 
 private:

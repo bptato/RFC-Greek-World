@@ -22,7 +22,7 @@ int CyRiseFall::getNumProvinces() {
 }
 
 CyRFCProvince* CyRiseFall::getRFCProvince(int province) {
-	return new CyRFCProvince(riseFall->getRFCProvince(province));
+	return new CyRFCProvince(riseFall->getRFCProvince((ProvinceTypes)province));
 }
 
 CyRFCProvince* CyRiseFall::getRFCProvinceByName(std::wstring provinceName) {

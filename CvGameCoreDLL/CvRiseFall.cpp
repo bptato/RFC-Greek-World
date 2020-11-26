@@ -85,7 +85,7 @@ void CvRiseFall::checkTurn() {
 	}
 
 	for(int i = 0; i < getNumProvinces(); i++) {
-		CvRFCProvince* rfcProvince = getRFCProvince(i);
+		CvRFCProvince* rfcProvince = getRFCProvince((ProvinceTypes)i);
 		//Historical barbs
 		int numScheduledUnits = rfcProvince->getNumScheduledUnits();
 		if(numScheduledUnits>0) {
@@ -767,14 +767,14 @@ CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
 	std::vector<CvRFCProvince*>::iterator it;
 	for (it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
 		if(wcscmp(provinceName, (*it)->getName()) == 0) {
-			return (*it);
+			return *it;
 		}
 	}
 	return NULL;
 }
 
-inline CvRFCProvince* CvRiseFall::getRFCProvince(int provinceID) const {
-	return _rfcProvinces[provinceID];
+inline CvRFCProvince* CvRiseFall::getRFCProvince(ProvinceTypes provinceType) const {
+	return _rfcProvinces[provinceType];
 }
 
 int CvRiseFall::getNumProvinces() const {

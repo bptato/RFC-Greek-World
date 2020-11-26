@@ -141,8 +141,8 @@ void CvPlot::uninit()
 
 	m_units.clear();
 	//bluepotato start
-	SAFE_DELETE_ARRAY(cityNames);
-	SAFE_DELETE_ARRAY(settlerValues);
+	SAFE_DELETE_ARRAY(_cityNames);
+	SAFE_DELETE_ARRAY(_settlerValues);
 	//bluepotato end
 }
 
@@ -202,11 +202,12 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	}
 
 	//bluepotato start
-	settlerValues = new short[GC.getNumCivilizationInfos()];
+	_settlerValues = new short[GC.getNumCivilizationInfos()];
 	for(int i = 0; i<GC.getNumCivilizationInfos(); i++) {
-		settlerValues[i] = 20;
+		_settlerValues[i] = 20;
 	}
-	cityNames = new CvWString[GC.getNumCivilizationInfos()];
+	_cityNames = new CvWString[GC.getNumCivilizationInfos()];
+	_provinceType = NO_PROVINCE;
 	//bluepotato end
 }
 
@@ -8642,19 +8643,21 @@ void CvPlot::read(FDataStreamBase* pStream)
 		short settlerValue;
 		int amount;
 		pStream->Read(&amount);
-		for(int i = 0; i<amount; ++i) {
+		for(int i = 0; i < amount; ++i) {
 			pStream->Read(&civ);
 			pStream->Read(&settlerValue);
-			settlerValues[civ] = settlerValue;
+			_settlerValues[civ] = settlerValue;
 		}
 
 		pStream->Read(&amount);
-		for(int i = 0; i<amount; ++i) {
+		for(int i = 0; i < amount; ++i) {
 			pStream->Read(&civ);
 			CvWString cityName;
 			pStream->ReadString(cityName);
-			cityNames[civ] = cityName;
+			_cityNames[civ] = cityName;
 		}
+
+		pStream->Read((int*)&_provinceType);
 	}
 	//bluepotato end
 
@@ -8882,27 +8885,29 @@ void CvPlot::write(FDataStreamBase* pStream)
 	int settlerValuesCount = 0;
 	int cityNameCount = 0;
 	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
-		if(settlerValues[i] != 20) {
+		if(_settlerValues[i] != 20) {
 			++settlerValuesCount;
 		}
-		if(!cityNames[i].empty()) {
+		if(!_cityNames[i].empty()) {
 			++cityNameCount;
 		}
 	}
 	pStream->Write(settlerValuesCount);
 	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
-		if(settlerValues[i] != 20) {
+		if(_settlerValues[i] != 20) {
 			pStream->Write(i);
-			pStream->Write(settlerValues[i]);
+			pStream->Write(_settlerValues[i]);
 		}
 	}
 	pStream->Write(cityNameCount);
 	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
-		if(!cityNames[i].empty()) {
+		if(!_cityNames[i].empty()) {
 			pStream->Write(i);
-			pStream->WriteString(cityNames[i]);
+			pStream->WriteString(_cityNames[i]);
 		}
 	}
+
+	pStream->Write(_provinceType);
 	//bluepotato end
 
 	if (NULL == m_aiCulture)
@@ -10081,18 +10086,18 @@ void CvPlot::eraseAIDevelopment()
 
 //bluepotato start
 const wchar* CvPlot::getCityName(CivilizationTypes civType, bool precise, bool relatedOnly) {
-	if(!cityNames[civType].empty()) {
-		return cityNames[civType];
+	if(!_cityNames[civType].empty()) {
+		return _cityNames[civType];
 	}
 
 	const wchar* fallback = L"";
 	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
-		if(!cityNames[i].empty() && !precise) {
+		if(!_cityNames[i].empty() && !precise) {
 			if(GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).isRelatedLanguage(civType)) {
-				return cityNames[i];
+				return _cityNames[i];
 			}
 			if(!relatedOnly) {
-				fallback = cityNames[i];
+				fallback = _cityNames[i];
 			}
 		}
 	}
@@ -10101,14 +10106,22 @@ const wchar* CvPlot::getCityName(CivilizationTypes civType, bool precise, bool r
 
 void CvPlot::setCityName(CivilizationTypes civType, const wchar* newName) {
 	CvWString cvwNewName(newName);
-	cityNames[civType] = cvwNewName;
+	_cityNames[civType] = cvwNewName;
 }
 
 short CvPlot::getSettlerValue(CivilizationTypes civType) {
-	return settlerValues[civType];
+	return _settlerValues[civType];
 }
 
 void CvPlot::setSettlerValue(CivilizationTypes civType, short settlerValue) {
-	settlerValues[civType] = settlerValue;
+	_settlerValues[civType] = settlerValue;
+}
+
+void CvPlot::setRFCProvince(ProvinceTypes provinceType) {
+	_provinceType = provinceType;
+}
+
+ProvinceTypes CvPlot::getRFCProvince() const {
+	return _provinceType;
 }
 //bluepotato end
