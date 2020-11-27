@@ -914,4 +914,8 @@
 		<Tag>TXT_KEY_WB_HIDE_INACTIVE</Tag>
 		<English>Hide Inactive</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_PROVINCE_AREAS</Tag>
+		<English>Province Areas</English>
+	</TEXT>
 </Civ4GameText>

@@ -88,25 +88,25 @@ void CvRiseFall::checkTurn() {
 		CvRFCProvince* rfcProvince = getRFCProvince((ProvinceTypes)i);
 		//Historical barbs
 		int numScheduledUnits = rfcProvince->getNumScheduledUnits();
-		if(numScheduledUnits>0) {
+		if(numScheduledUnits > 0) {
 			std::vector<CvPlot*> plots;
-			for(int provX = rfcProvince->getLeft(); provX<=rfcProvince->getRight(); provX++) {
-				for(int provY = rfcProvince->getBottom(); provY<=rfcProvince->getTop(); provY++) {
-					CvPlot* loopPlot = GC.getMap().plot(provX, provY);
-					if(!loopPlot->isWater() && !loopPlot->isPeak() && !loopPlot->isCity() && !loopPlot->isBeingWorked() && !loopPlot->isUnit()) {
-						plots.push_back(loopPlot);
-					}
+			//TODO: cache province plots
+			for(int i = 0; i < GC.getMap().numPlots(); ++i) {
+				CvPlot* loopPlot = GC.getMap().plotByIndex(i);
+				if(!loopPlot->isWater() && !loopPlot->isPeak() && !loopPlot->isCity() && !loopPlot->isBeingWorked() && !loopPlot->isUnit()) {
+					plots.push_back(loopPlot);
 				}
 			}
-			if(plots.size()>0) {
-				for(int j = 0; j<numScheduledUnits; j++) {
+
+			if(plots.size() > 0) {
+				for(int j = 0; j < numScheduledUnits; ++j) {
 					CvRFCUnit* rfcUnit = rfcProvince->getScheduledUnit(j);
 					if(rfcUnit->getLastSpawned() == -1 || rfcUnit->getLastSpawned() + rfcUnit->getSpawnFrequency()/2 < game.getGameTurn()) {
 						if(rfcUnit->getYear() <= game.getGameTurnYear() && rfcUnit->getEndYear() >= game.getGameTurnYear() && game.getSorenRandNum(rfcUnit->getSpawnFrequency()/2, "Unit spawn roll") == 0) {
-							CvPlayer& barbPlayer = GET_PLAYER(BARBARIAN_PLAYER); //TODO: different rfcUnit owner civs?
 							CvPlot* randomPlot = plots[game.getSorenRandNum(plots.size(), "Barb spawning plot roll")];
-							for(int k = 0; k<rfcUnit->getAmount(); k++) {
-								barbPlayer.initUnit(rfcUnit->getUnitType(), randomPlot->getX(), randomPlot->getY(), rfcUnit->getUnitAIType(), rfcUnit->getFacingDirection());
+							for(int k = 0; k < rfcUnit->getAmount(); ++k) {
+								//TODO: different rfcUnit owner civs?
+								GET_PLAYER(BARBARIAN_PLAYER).initUnit(rfcUnit->getUnitType(), randomPlot->getX(), randomPlot->getY(), rfcUnit->getUnitAIType(), rfcUnit->getFacingDirection());
 							}
 							rfcUnit->setLastSpawned(game.getGameTurn());
 						}
@@ -751,10 +751,9 @@ void CvRiseFall::setMapFile(const wchar* mapFile) {
 }
 
 
-CvRFCProvince* CvRiseFall::addProvince(const wchar* name, int bottom, int left, int top, int right) {
+CvRFCProvince* CvRiseFall::addProvince(CvString type) {
 	CvRFCProvince* province = new CvRFCProvince;
-	province->setName(name);
-	province->setBounds(bottom, left, top, right);
+	province->setType(type);
 	_rfcProvinces.push_back(province);
 	return province;
 }
@@ -763,14 +762,13 @@ inline CvRFCPlayer& CvRiseFall::getRFCPlayer(CivilizationTypes civType) const {
 	return _rfcPlayers[civType];
 }
 
-CvRFCProvince* CvRiseFall::getRFCProvince(const wchar* provinceName) {
-	std::vector<CvRFCProvince*>::iterator it;
-	for (it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
-		if(wcscmp(provinceName, (*it)->getName()) == 0) {
-			return *it;
+ProvinceTypes CvRiseFall::findRFCProvince(const char* provinceType) const {
+	for (int i = 0; i < getNumProvinces(); ++i) {
+		if(strcmp(provinceType, getRFCProvince((ProvinceTypes)i)->getType()) == 0) {
+			return (ProvinceTypes)i;
 		}
 	}
-	return NULL;
+	return NO_PROVINCE;
 }
 
 inline CvRFCProvince* CvRiseFall::getRFCProvince(ProvinceTypes provinceType) const {
@@ -779,16 +777,6 @@ inline CvRFCProvince* CvRiseFall::getRFCProvince(ProvinceTypes provinceType) con
 
 int CvRiseFall::getNumProvinces() const {
 	return _rfcProvinces.size();
-}
-
-CvRFCProvince* CvRiseFall::getProvinceForPlot(int x, int y) {
-	std::vector<CvRFCProvince*>::iterator it;
-	for (it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
-		if((*it)->isInBounds(x, y)) {
-			return (*it);
-		}
-	}
-	return NULL;
 }
 
 bool CvRiseFall::unitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign) const {
@@ -838,6 +826,32 @@ CvPlot* CvRiseFall::findSpawnPlot(int ix, int iy, DomainTypes domainType) const 
 
 const wchar* CvRiseFall::getMapFile() const {
 	return _mapFile;
+}
+
+bool CvRiseFall::isBorderProvince(ProvinceTypes province1, ProvinceTypes province2) const {
+	for(int x = 0; x < GC.getMap().getGridWidth(); ++x) {
+		for(int y = 0; y < GC.getMap().getGridHeight(); ++y) {
+			if(!GC.getMap().isPlot(x, y)) {
+				continue;
+			}
+			if(GC.getMap().plot(x, y)->getProvinceType() == province1) {
+				CvPlot* north = GC.getMap().plot(x, y - 1);
+				if(GC.getMap().isPlot(x, y - 1))
+					if(GC.getMap().plot(x, y - 1)->getProvinceType() == province2)
+						return true;
+				if(GC.getMap().isPlot(x, y + 1))
+					if(GC.getMap().plot(x, y + 1)->getProvinceType() == province2)
+						return true;
+				if(GC.getMap().isPlot(x + 1, y))
+					if(GC.getMap().plot(x + 1, y)->getProvinceType() == province2)
+						return true;
+				if(GC.getMap().isPlot(x - 1, y))
+					if(GC.getMap().plot(x - 1, y)->getProvinceType() == province2)
+						return true;
+			}
+		}
+	}
+	return false;
 }
 
 

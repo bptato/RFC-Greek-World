@@ -10117,11 +10117,11 @@ void CvPlot::setSettlerValue(CivilizationTypes civType, short settlerValue) {
 	_settlerValues[civType] = settlerValue;
 }
 
-void CvPlot::setRFCProvince(ProvinceTypes provinceType) {
+void CvPlot::setProvinceType(ProvinceTypes provinceType) {
 	_provinceType = provinceType;
 }
 
-ProvinceTypes CvPlot::getRFCProvince() const {
+ProvinceTypes CvPlot::getProvinceType() const {
 	return _provinceType;
 }
 //bluepotato end

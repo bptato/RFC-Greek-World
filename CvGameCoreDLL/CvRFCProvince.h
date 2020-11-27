@@ -7,23 +7,19 @@ class CvRFCProvince {
 	public:
 		CvRFCProvince();
 		~CvRFCProvince();
-		void reset();
-		void init();
+		void init(ProvinceTypes provinceType);
+		void reset(ProvinceTypes provinceType);
 		void uninit();
 
-		void setName(const wchar* newName);
-		void setBounds(int newBottom, int newRight, int newTop, int newLeft);
+		void setType(CvString type);
+		void setProvinceType(ProvinceTypes provinceType);
 		void addMercenary(CvRFCMercenary mercenary);
 		void checkMercenaries();
 		void hireMercenary(PlayerTypes playerType, int mercenaryID);
 
+		const char* getType() const;
+		ProvinceTypes getProvinceType() const;
 		const wchar* getName() const;
-		bool isInBounds(int x, int y) const;
-		int getBottom() const;
-		int getRight() const;
-		int getTop() const;
-		int getLeft() const;
-		bool isBorderProvince(CvRFCProvince* province) const;
 		int getNumScheduledUnits() const;
 		CvRFCUnit* addScheduledUnit();
 		CvRFCUnit* getScheduledUnit(int i) const;
@@ -39,11 +35,9 @@ class CvRFCProvince {
 		void read(FDataStreamBase* stream);
 
 	protected:
-		CvWString name;
-		int bottom;
-		int left;
-		int top;
-		int right;
-		std::vector<CvRFCUnit*> scheduledUnits; //barbs
-		std::vector<CvRFCMercenary> mercenaries;
+		CvString _type;
+		CvWString _name;
+		ProvinceTypes _provinceType;
+		std::vector<CvRFCUnit*> _scheduledUnits; //barbs
+		std::vector<CvRFCMercenary> _mercenaries;
 };

@@ -47,17 +47,17 @@ class CvRiseFall {
 
 		void setMapFile(const wchar* newName);
 
-		CvRFCProvince* addProvince(const wchar* name, int bottom, int left, int top, int right);
+		CvRFCProvince* addProvince(CvString type);
 
 		inline CvRFCPlayer& getRFCPlayer(CivilizationTypes civType) const;
-		CvRFCProvince* getRFCProvince(const wchar* provinceName);
+		ProvinceTypes findRFCProvince(const char* provinceName) const;
 		inline CvRFCProvince* getRFCProvince(ProvinceTypes provinceType) const;
 		int getNumProvinces() const;
-		CvRFCProvince* getProvinceForPlot(int x, int y);
 		bool skipConditionalSpawn(CivilizationTypes civType) const;
 		bool unitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign) const;
 		CvPlot* findSpawnPlot(int ix, int iy, DomainTypes domainType) const;
 		const wchar* getMapFile() const;
+		bool isBorderProvince(ProvinceTypes province1, ProvinceTypes province2) const;
 
 		void read(FDataStreamBase* stream);
 		void write(FDataStreamBase* stream);

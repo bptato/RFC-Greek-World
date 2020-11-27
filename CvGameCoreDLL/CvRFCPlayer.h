@@ -35,7 +35,7 @@ class CvRFCPlayer {
 		void setFlipped(bool flipped);
 		void addStartingTech(TechTypes tech);
 		void setStartingWar(CivilizationTypes civType, bool startingWar);
-		void addCoreProvince(const wchar* province);
+		void addCoreProvince(const char* province);
 		void setFlipCountdown(int newFlipCountdown);
 		void setTempStability(int category, int newStability);
 		void setPermStability(int category, int newStability);
@@ -97,7 +97,7 @@ class CvRFCPlayer {
 		bool isStartingTech(TechTypes tech) const;
 		bool isStartingWar(CivilizationTypes civType) const;
 		int getNumCoreProvinces() const;
-		std::wstring getCoreProvince(int i) const;
+		std::string getCoreProvince(int i) const;
 		int getNumPlots() const;
 		bool isRelatedLanguage(CivilizationTypes civType);
 
@@ -147,7 +147,7 @@ class CvRFCPlayer {
 		bool _human;
 		bool _minor;
 		bool _flipped;
-		std::vector<CvWString> _coreProvinces;
+		std::vector<CvString> _coreProvinces;
 		std::vector<TechTypes> _startingTechs;
 		int _tempStability[NUM_STABILITY_CATEGORIES];
 		int _permStability[NUM_STABILITY_CATEGORIES];

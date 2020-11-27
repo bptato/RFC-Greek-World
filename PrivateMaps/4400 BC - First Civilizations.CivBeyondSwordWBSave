@@ -43,8 +43,8 @@ application/json
 			"StartingX":32,
 			"StartingY":10,
 			"CoreProvinces":[
-				"Upper Egypt",
-				"Lower Egypt"
+				"PROVINCE_UPPER_EGYPT",
+				"PROVINCE_LOWER_EGYPT"
 			],
 			"StartingYear":-4400,
 			"Flipped":false,
@@ -82,7 +82,7 @@ application/json
 			"StartingX":46,
 			"StartingY":19,
 			"CoreProvinces":[
-				"Sumer"
+				"PROVINCE_SUMER"
 			],
 			"StartingYear":-4400,
 			"Flipped":false,
@@ -115,7 +115,7 @@ application/json
 			"StartingX":61,
 			"StartingY":28,
 			"CoreProvinces":[
-				"Indus Valley"
+				"PROVINCE_INDUS_VALLEY"
 			],
 			"StartingYear":-3290,
 			"Flipped":false,
@@ -158,7 +158,7 @@ application/json
 			"StartingX":50,
 			"StartingY":23,
 			"CoreProvinces":[
-				"Khuzestan"
+				"PROVINCE_KHUZESTAN"
 			],
 			"StartingYear":-2720,
 			"Flipped":false,
@@ -206,8 +206,8 @@ application/json
 			"StartingX":33,
 			"StartingY":21,
 			"CoreProvinces":[
-				"Crete",
-				"Cyclades"
+				"PROVINCE_CRETE",
+				"PROVINCE_CYCLADES"
 			],
 			"StartingYear":-2690,
 			"Flipped":false,
@@ -246,8 +246,8 @@ application/json
 			"StartingX":41,
 			"StartingY":22,
 			"CoreProvinces":[
-				"Phoenicia",
-				"Cyprus"
+				"PROVINCE_PHOENICIA",
+				"PROVINCE_CYPRUS"
 			],
 			"StartingYear":-2495,
 			"Flipped":false,
@@ -297,8 +297,8 @@ application/json
 			"StartingX":46,
 			"StartingY":22,
 			"CoreProvinces":[
-				"Akkad",
-				"Sumer"
+				"PROVINCE_AKKAD",
+				"PROVINCE_SUMER"
 			],
 			"StartingYear":-1890,
 			"Flipped":false,
@@ -356,7 +356,7 @@ application/json
 			"StartingX":41,
 			"StartingY":30,
 			"CoreProvinces":[
-				"Anatolia"
+				"PROVINCE_ANATOLIA"
 			],
 			"StartingYear":-1610,
 			"Flipped":false,
@@ -413,7 +413,7 @@ application/json
 			"StartingX":30,
 			"StartingY":26,
 			"CoreProvinces":[
-				"Peloponnese"
+				"PROVINCE_PELOPONNESE"
 			],
 			"StartingYear":-1600,
 			"Flipped":false,
@@ -477,8 +477,8 @@ application/json
 			"StartingX":46,
 			"StartingY":25,
 			"CoreProvinces":[
-				"Subartu",
-				"Akkad"
+				"PROVINCE_SUBARTU",
+				"PROVINCE_AKKAD"
 			],
 			"StartingYear":-1396,
 			"Flipped":false,
@@ -530,7 +530,7 @@ application/json
 			"StartingX":41,
 			"StartingY":18,
 			"CoreProvinces":[
-				"Palestine"
+				"PROVINCE_PALESTINE"
 			],
 			"StartingYear":-1052,
 			"Flipped":false,
@@ -601,8 +601,8 @@ application/json
 			"StartingX":33,
 			"StartingY":26,
 			"CoreProvinces":[
-				"Attica",
-				"Euboea"
+				"PROVINCE_ATTICA",
+				"PROVINCE_EUBOEA"
 			],
 			"StartingYear":-914,
 			"Flipped":false,
@@ -671,7 +671,7 @@ application/json
 			"StartingX":29,
 			"StartingY":24,
 			"CoreProvinces":[
-				"Peloponnese"
+				"PROVINCE_PELOPONNESE"
 			],
 			"StartingYear":-908,
 			"Flipped":false,
@@ -719,9 +719,9 @@ application/json
 			"StartingX":52,
 			"StartingY":44,
 			"CoreProvinces":[
-				"Scythia",
-				"Crimea",
-				"Sarmatia"
+				"PROVINCE_SCYTHIA",
+				"PROVINCE_CRIMEA",
+				"PROVINCE_SARMATIA"
 			],
 			"StartingYear":-902,
 			"Flipped":false,
@@ -775,8 +775,8 @@ application/json
 			"StartingX":15,
 			"StartingY":20,
 			"CoreProvinces":[
-				"Africa",
-				"Numidia"
+				"PROVINCE_AFRICA",
+				"PROVINCE_NUMIDIA"
 			],
 			"StartingYear":-812,
 			"Flipped":false,
@@ -827,8 +827,8 @@ application/json
 			"StartingX":15,
 			"StartingY":43,
 			"CoreProvinces":[
-				"Celtic Gaul",
-				"Brittany"
+				"PROVINCE_CELTIC_GAUL",
+				"PROVINCE_BRITTANY"
 			],
 			"StartingYear":-806,
 			"Flipped":false,
@@ -879,7 +879,7 @@ application/json
 			"StartingX":18,
 			"StartingY":33,
 			"CoreProvinces":[
-				"Italy"
+				"PROVINCE_ITALY"
 			],
 			"StartingYear":-800,
 			"Flipped":false,
@@ -940,7 +940,7 @@ application/json
 			"StartingX":31,
 			"StartingY":5,
 			"CoreProvinces":[
-				"Nubia"
+				"PROVINCE_NUBIA"
 			],
 			"StartingYear":-788,
 			"Flipped":false,
@@ -1019,9 +1019,9 @@ application/json
 			"StartingX":53,
 			"StartingY":21,
 			"CoreProvinces":[
-				"Khuzestan",
-				"Persia",
-				"Media"
+				"PROVINCE_KHUZESTAN",
+				"PROVINCE_PERSIA",
+				"PROVINCE_MEDIA"
 			],
 			"StartingYear":-674,
 			"Flipped":false,
@@ -1096,13 +1096,13 @@ application/json
 			"StartingX":19,
 			"StartingY":30,
 			"CoreProvinces":[
-				"Italy",
-				"Sicily",
-				"Venetia",
-				"Bruttium",
-				"Messapia",
-				"Sardinia",
-				"Corsica"
+				"PROVINCE_ITALY",
+				"PROVINCE_SICILY",
+				"PROVINCE_VENETIA",
+				"PROVINCE_BRUTTIUM",
+				"PROVINCE_MESSAPIA",
+				"PROVINCE_SARDINIA",
+				"PROVINCE_CORSICA"
 			],
 			"StartingYear":-512,
 			"Flipped":false,
@@ -1173,9 +1173,9 @@ application/json
 			"StartingX":27,
 			"StartingY":33,
 			"CoreProvinces":[
-				"Macedonia",
-				"Thracia",
-				"Central Greece"
+				"PROVINCE_MACEDONIA",
+				"PROVINCE_THRACIA",
+				"PROVINCE_CENTRAL_GREECE"
 			],
 			"StartingYear":-476,
 			"Flipped":false,
@@ -1247,8 +1247,8 @@ application/json
 			"StartingX":61,
 			"StartingY":23,
 			"CoreProvinces":[
-				"India",
-				"Indus Valley"
+				"PROVINCE_INDIA",
+				"PROVINCE_INDUS_VALLEY"
 			],
 			"StartingYear":-320,
 			"Flipped":false,
@@ -1325,7 +1325,7 @@ application/json
 			"StartingX":60,
 			"StartingY":34,
 			"CoreProvinces":[
-				"Bactria"
+				"PROVINCE_BACTRIA"
 			],
 			"StartingYear":-254,
 			"Flipped":false,
@@ -1390,8 +1390,8 @@ application/json
 			"StartingX":8,
 			"StartingY":21,
 			"CoreProvinces":[
-				"Numidia",
-				"Mauretania"
+				"PROVINCE_NUMIDIA",
+				"PROVINCE_MAURETANIA"
 			],
 			"StartingYear":-200,
 			"Flipped":false,
@@ -1464,7 +1464,7 @@ application/json
 			"StartingX":25,
 			"StartingY":47,
 			"CoreProvinces":[
-				"Germania"
+				"PROVINCE_GERMANIA"
 			],
 			"StartingYear":160,
 			"Flipped":false,
@@ -1548,9 +1548,9 @@ application/json
 			"StartingX":52,
 			"StartingY":19,
 			"CoreProvinces":[
-				"Khuzestan",
-				"Persia",
-				"Media"
+				"PROVINCE_KHUZESTAN",
+				"PROVINCE_PERSIA",
+				"PROVINCE_MEDIA"
 			],
 			"StartingYear":226,
 			"Flipped":false,
@@ -1641,13 +1641,13 @@ application/json
 			"StartingX":35,
 			"StartingY":34,
 			"CoreProvinces":[
-				"Thracia",
-				"Lydia",
-				"Anatolia",
-				"Central Greece",
-				"Euboea",
-				"Attica",
-				"Peloponnese"
+				"PROVINCE_THRACIA",
+				"PROVINCE_LYDIA",
+				"PROVINCE_ANATOLIA",
+				"PROVINCE_CENTRAL_GREECE",
+				"PROVINCE_EUBOEA",
+				"PROVINCE_ATTICA",
+				"PROVINCE_PELOPONNESE"
 			],
 			"StartingYear":286,
 			"Flipped":false,
@@ -1841,7 +1841,7 @@ application/json
 	],
 	"Provinces":[
 		{
-			"Name":"Lower Egypt",
+			"Type":"PROVINCE_LOWER_EGYPT",
 			"Units":[
 				{
 					"UnitType":"UNIT_HYSKOS",
@@ -1865,10 +1865,10 @@ application/json
 			]
 		},
 		{
-			"Name":"Upper Egypt"
+			"Type":"PROVINCE_UPPER_EGYPT"
 		},
 		{
-			"Name":"Sumer",
+			"Type":"PROVINCE_SUMER",
 			"Units":[
 				{
 					"UnitType":"UNIT_SUMERIAN_VULTURE",
@@ -1886,7 +1886,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Akkad",
+			"Type":"PROVINCE_AKKAD",
 			"Units":[
 				{
 					"Amount":2,
@@ -1918,13 +1918,13 @@ application/json
 			]
 		},
 		{
-			"Name":"Subartu"
+			"Type":"PROVINCE_SUBARTU"
 		},
 		{
-			"Name":"Khuzestan"
+			"Type":"PROVINCE_KHUZESTAN"
 		},
 		{
-			"Name":"Indus Valley",
+			"Type":"PROVINCE_INDUS_VALLEY",
 			"Units":[
 				{
 					"UnitType":"UNIT_BANDIT",
@@ -1942,7 +1942,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Crete",
+			"Type":"PROVINCE_CRETE",
 			"Units":[
 				{
 					"Amount":6,
@@ -1954,10 +1954,10 @@ application/json
 			]
 		},
 		{
-			"Name":"Cyprus"
+			"Type":"PROVINCE_CYPRUS"
 		},
 		{
-			"Name":"Phoenicia",
+			"Type":"PROVINCE_PHOENICIA",
 			"Units":[
 				{
 					"Amount":2,
@@ -1969,7 +1969,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Anatolia",
+			"Type":"PROVINCE_ANATOLIA",
 			"Units":[
 				{
 					"UnitType":"UNIT_CHARIOT",
@@ -1994,7 +1994,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Peloponnese",
+			"Type":"PROVINCE_PELOPONNESE",
 			"Units":[
 				{
 					"Amount":4,
@@ -2006,7 +2006,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Central Greece",
+			"Type":"PROVINCE_CENTRAL_GREECE",
 			"Units":[
 				{
 					"Amount":3,
@@ -2018,7 +2018,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Attica",
+			"Type":"PROVINCE_ATTICA",
 			"Units":[
 				{
 					"Amount":3,
@@ -2030,10 +2030,10 @@ application/json
 			]
 		},
 		{
-			"Name":"Euboea"
+			"Type":"PROVINCE_EUBOEA"
 		},
 		{
-			"Name":"Palestine",
+			"Type":"PROVINCE_PALESTINE",
 			"Units":[
 				{
 					"Amount":4,
@@ -2045,16 +2045,16 @@ application/json
 			]
 		},
 		{
-			"Name":"Arabia Felix"
+			"Type":"PROVINCE_ARABIA_FELIX"
 		},
 		{
-			"Name":"Bahrain"
+			"Type":"PROVINCE_BAHRAIN"
 		},
 		{
-			"Name":"Sinai"
+			"Type":"PROVINCE_SINAI"
 		},
 		{
-			"Name":"Lydia",
+			"Type":"PROVINCE_LYDIA",
 			"Units":[
 				{
 					"UnitType":"UNIT_CHARIOT",
@@ -2072,7 +2072,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Scythia",
+			"Type":"PROVINCE_SCYTHIA",
 			"Units":[
 				{
 					"Amount":2,
@@ -2105,13 +2105,13 @@ application/json
 			]
 		},
 		{
-			"Name":"Crimea"
+			"Type":"PROVINCE_CRIMEA"
 		},
 		{
-			"Name":"Caucasus"
+			"Type":"PROVINCE_CAUCASUS"
 		},
 		{
-			"Name":"Sarmatia",
+			"Type":"PROVINCE_SARMATIA",
 			"Units":[
 				{
 					"UnitType":"UNIT_HORSEMAN",
@@ -2134,13 +2134,13 @@ application/json
 			]
 		},
 		{
-			"Name":"Pannonia"
+			"Type":"PROVINCE_PANNONIA"
 		},
 		{
-			"Name":"Thracia"
+			"Type":"PROVINCE_THRACIA"
 		},
 		{
-			"Name":"Africa",
+			"Type":"PROVINCE_AFRICA",
 			"Units":[
 				{
 					"UnitType":"UNIT_LIBYAN_CAMELARCHER",
@@ -2151,7 +2151,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Numidia",
+			"Type":"PROVINCE_NUMIDIA",
 			"Units":[
 				{
 					"Amount":3,
@@ -2163,10 +2163,10 @@ application/json
 			]
 		},
 		{
-			"Name":"Mauretania"
+			"Type":"PROVINCE_MAURETANIA"
 		},
 		{
-			"Name":"Sahara",
+			"Type":"PROVINCE_SAHARA",
 			"Units":[
 				{
 					"UnitType":"UNIT_ARABIA_CAMELARCHER",
@@ -2177,22 +2177,22 @@ application/json
 			]
 		},
 		{
-			"Name":"Messapia"
+			"Type":"PROVINCE_MESSAPIA"
 		},
 		{
-			"Name":"Bruttium"
+			"Type":"PROVINCE_BRUTTIUM"
 		},
 		{
-			"Name":"Sicily"
+			"Type":"PROVINCE_SICILY"
 		},
 		{
-			"Name":"Italy"
+			"Type":"PROVINCE_ITALY"
 		},
 		{
-			"Name":"Venetia"
+			"Type":"PROVINCE_VENETIA"
 		},
 		{
-			"Name":"Celtic Gaul",
+			"Type":"PROVINCE_CELTIC_GAUL",
 			"Units":[
 				{
 					"Amount":4,
@@ -2204,10 +2204,10 @@ application/json
 			]
 		},
 		{
-			"Name":"Southern Iberia"
+			"Type":"PROVINCE_SOUTHERN_IBERIA"
 		},
 		{
-			"Name":"Northern Iberia",
+			"Type":"PROVINCE_NORTHERN_IBERIA",
 			"Units":[
 				{
 					"Amount":4,
@@ -2219,10 +2219,10 @@ application/json
 			]
 		},
 		{
-			"Name":"Brittany"
+			"Type":"PROVINCE_BRITTANY"
 		},
 		{
-			"Name":"Nubia",
+			"Type":"PROVINCE_NUBIA",
 			"Units":[
 				{
 					"UnitType":"UNIT_NUBIAN_MEDJAY",
@@ -2233,10 +2233,10 @@ application/json
 			]
 		},
 		{
-			"Name":"Persia"
+			"Type":"PROVINCE_PERSIA"
 		},
 		{
-			"Name":"Media",
+			"Type":"PROVINCE_MEDIA",
 			"Units":[
 				{
 					"UnitType":"UNIT_LIGHT_CAVALRY",
@@ -2247,7 +2247,7 @@ application/json
 			]
 		},
 		{
-			"Name":"Bactria",
+			"Type":"PROVINCE_BACTRIA",
 			"Units":[
 				{
 					"Amount":2,
@@ -2273,22 +2273,22 @@ application/json
 			]
 		},
 		{
-			"Name":"Armenia"
+			"Type":"PROVINCE_ARMENIA"
 		},
 		{
-			"Name":"India"
+			"Type":"PROVINCE_INDIA"
 		},
 		{
-			"Name":"Abyssinia"
+			"Type":"PROVINCE_ABYSSINIA"
 		},
 		{
-			"Name":"Red Sea Coast"
+			"Type":"PROVINCE_RED_SEA_COAST"
 		},
 		{
-			"Name":"Macedonia"
+			"Type":"PROVINCE_MACEDONIA"
 		},
 		{
-			"Name":"Germania",
+			"Type":"PROVINCE_GERMANIA",
 			"Units":[
 				{
 					"UnitType":"UNIT_HORSEMAN",
@@ -2325,19 +2325,19 @@ application/json
 			]
 		},
 		{
-			"Name":"Scandinavia"
+			"Type":"PROVINCE_SCANDINAVIA"
 		},
 		{
-			"Name":"Far North"
+			"Type":"PROVINCE_FAR_NORTH"
 		},
 		{
-			"Name":"Dalmatia"
+			"Type":"PROVINCE_DALMATIA"
 		},
 		{
-			"Name":"Moesia"
+			"Type":"PROVINCE_MOESIA"
 		},
 		{
-			"Name":"Dacia",
+			"Type":"PROVINCE_DACIA",
 			"Units":[
 				{
 					"Amount":3,
@@ -2349,19 +2349,16 @@ application/json
 			]
 		},
 		{
-			"Name":"Corsica"
+			"Type":"PROVINCE_CORSICA"
 		},
 		{
-			"Name":"Sardinia"
+			"Type":"PROVINCE_SARDINIA"
 		},
 		{
-			"Name":"Cyclades"
+			"Type":"PROVINCE_CYCLADES"
 		},
 		{
-			"Name":"Cyclades"
-		},
-		{
-			"Name":"Britannia",
+			"Type":"PROVINCE_BRITANNIA",
 			"Units":[
 				{
 					"Amount":4,
@@ -2373,19 +2370,19 @@ application/json
 			]
 		},
 		{
-			"Name":"Caledonia"
+			"Type":"PROVINCE_CALEDONIA"
 		},
 		{
-			"Name":"Hibernia"
+			"Type":"PROVINCE_HIBERNIA"
 		},
 		{
-			"Name":"Raetia"
+			"Type":"PROVINCE_RAETIA"
 		},
 		{
-			"Name":"Belgic Gaul"
+			"Type":"PROVINCE_BELGIC_GAUL"
 		},
 		{
-			"Name":"Ionian Islands"
+			"Type":"PROVINCE_IONIAN_ISLANDS"
 		}
 	],
 	"Plots":[

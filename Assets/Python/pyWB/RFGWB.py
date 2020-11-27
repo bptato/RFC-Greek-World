@@ -138,8 +138,8 @@ class WbParser:
 		mapHeight = cmap.getGridHeight()
 
 		numPlotsWritten = 0
-		for y in range(mapHeight):
-			for x in range(mapWidth):
+		for y in xrange(mapHeight):
+			for x in xrange(mapWidth):
 				plot = cmap.plot(x, y)
 				wbPlot = OrderedDict({})
 
@@ -157,6 +157,10 @@ class WbParser:
 				if plot.getBonusType(-1) != -1:
 					wbPlot['BonusType'] = gc.getBonusInfo(plot.getBonusType(-1)).getType()
 
+				if plot.getProvinceType() != ProvinceTypes.NO_PROVINCE:
+					wbPlot['ProvinceType'] = gc.getRiseFall().getRFCProvince(plot.getProvinceType()).getType()
+
+
 				if plot.isWOfRiver():
 					wbPlot['isWOfRiver'] = True
 					wbPlot['RiverNSDirection'] = int(plot.getRiverNSDirection())
@@ -164,14 +168,14 @@ class WbParser:
 					wbPlot['isNOfRiver'] = True
 					wbPlot['RiverWEDirection'] = int(plot.getRiverWEDirection())
 
-				for i in range(gc.getNumCivilizationInfos()):
+				for i in xrange(gc.getNumCivilizationInfos()):
 					if plot.getCityName(i, True) != "":
 						if "CityNames" not in wbPlot:
 							wbPlot['CityNames'] = OrderedDict({})
 						wbPlot['CityNames'][gc.getCivilizationInfo(i).getType()] = plot.getCityName(i, True)
 
 				#Settler values
-				for i in range(gc.getNumCivilizationInfos()):
+				for i in xrange(gc.getNumCivilizationInfos()):
 					rfcPlayer = riseFall.getRFCPlayer(i)
 					if not rfcPlayer.isMinor():
 						settlerValue = plot.getSettlerValue(i)
@@ -197,14 +201,10 @@ class WbParser:
 		mapValues['world size'] = gc.getWorldInfo(cmap.getWorldSize()).getType()
 
 		#Provinces
-		for i in range(riseFall.getNumProvinces()):
+		for i in xrange(riseFall.getNumProvinces()):
 			province = riseFall.getRFCProvince(i)
 			wbProvince = OrderedDict({})
-			wbProvince['Name'] = province.getName()
-			wbProvince['Left'] = province.getLeft()
-			wbProvince['Bottom'] = province.getBottom()
-			wbProvince['Right'] = province.getRight()
-			wbProvince['Top'] = province.getTop()
+			wbProvince['Type'] = province.getType()
 			provinces.append(wbProvince)
 
 		values['Map'] = mapValues
@@ -236,20 +236,20 @@ class WbParser:
 
 		if gc.getNumGameOptionInfos() > 0:
 			gameValues['Options'] = []
-			for i in range(gc.getNumGameOptionInfos()):
+			for i in xrange(gc.getNumGameOptionInfos()):
 				if game.isOption(i):
 					gameValues['Options'].append(gc.getGameOptionInfo(i).getType())
 
 		if gc.getNumVictoryInfos() > 0:
 			gameValues['Victories'] = []
-			for i in range(gc.getNumVictoryInfos()):
+			for i in xrange(gc.getNumVictoryInfos()):
 				if game.isVictoryValid(i):
 					gameValues['Victories'].append(gc.getVictoryInfo(i).getType())
 
 		#Goody huts
 		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in self.scenarioValues['Game']['Options']
 		goodyImprovement = -1
-		for i in range(gc.getNumImprovementInfos()):
+		for i in xrange(gc.getNumImprovementInfos()):
 			if gc.getImprovementInfo(i).isGoody():
 				goodyImprovement = i
 				break
@@ -259,8 +259,8 @@ class WbParser:
 		mapHeight = cmap.getGridHeight()
 
 		numPlotsWritten = 0
-		for y in range(mapHeight):
-			for x in range(mapWidth):
+		for y in xrange(mapHeight):
+			for x in xrange(mapWidth):
 				plot = cmap.plot(x, y)
 				wbPlot = OrderedDict({})
 
@@ -271,7 +271,7 @@ class WbParser:
 				#TODO: for now there is no practical way to load this so we might as well not save it.
 				#the main problem is that plot culture and plot ownership is tied to player IDs, which is all fine when saving but we don't know the assigned player ID of civs when loading.
 				#so ideally we'd save culture/plot ownership by civilization ID but I don't want to make such an error-prone fundamental change for now.
-				#for i in range(gc.getMAX_PLAYERS()):
+				#for i in xrange(gc.getMAX_PLAYERS()):
 				#	if plot.getCulture(i) > 0:
 				#		if "Culture" not in wbPlot:
 				#			wbPlot['Culture'] = OrderedDict({})
@@ -293,7 +293,7 @@ class WbParser:
 
 				if plot.getNumUnits() > 0:
 					wbPlot['Units'] = []
-					for i in range(plot.getNumUnits()):
+					for i in xrange(plot.getNumUnits()):
 						unit = plot.getUnit(i)
 						wbUnit = OrderedDict({})
 						wbUnit['UnitOwner'] = gc.getCivilizationInfo(gc.getPlayer(unit.getOwner()).getCivilizationType()).getType()
@@ -315,24 +315,24 @@ class WbParser:
 					if city.getPopulation() > 1:
 						wbCity['CityPopulation'] = city.getPopulation()
 
-					for i in range(gc.getNumBuildingInfos()):
+					for i in xrange(gc.getNumBuildingInfos()):
 						if city.getNumRealBuilding(i) > 0:
 							if "Buildings" not in wbCity:
 								wbCity['Buildings'] = {}
 							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = city.getNumRealBuilding(i)
 
-					for i in range(gc.getNumReligionInfos()):
+					for i in xrange(gc.getNumReligionInfos()):
 						if city.isHasReligion(i):
 							if "Religions" not in wbCity:
 								wbCity['Religions'] = {}
 							wbCity['Religions'][gc.getReligionInfo(i).getType()] = True
 
-					for i in range(gc.getNumReligionInfos()):
+					for i in xrange(gc.getNumReligionInfos()):
 						if city.isHolyCityByType(i):
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
 							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
-					for i in range(gc.getMAX_PLAYERS()):
+					for i in xrange(gc.getMAX_PLAYERS()):
 						if city.getCulture(i) > 0:
 							if "Culture" not in wbCity:
 								wbCity['Culture'] = {}
@@ -343,7 +343,7 @@ class WbParser:
 					plots.append(wbPlot)
 
 		#Players
-		for i in range(gc.getNumCivilizationInfos()):
+		for i in xrange(gc.getNumCivilizationInfos()):
 			rfcPlayer = riseFall.getRFCPlayer(i)
 			if rfcPlayer.isEnabled():
 				civInfo = gc.getCivilizationInfo(i)
@@ -353,20 +353,20 @@ class WbParser:
 				wbPlayer['CivicOptions'] = OrderedDict({})
 
 				alive = false
-				for j in range(gc.getMAX_PLAYERS()):
+				for j in xrange(gc.getMAX_PLAYERS()):
 					player = gc.getPlayer(j)
 					if player.isAlive() and player.getCivilizationType() == i and not player.isBarbarian() and not player.isMinorCiv():
 						wbPlayer['StartingGold'] = player.getGold()
 						if player.getStateReligion() != ReligionTypes.NO_RELIGION:
 							wbPlayer['StartingReligion'] = gc.getReligionInfo(player.getStateReligion()).getType()
 
-						for k in range(gc.getNumTechInfos()):
+						for k in xrange(gc.getNumTechInfos()):
 							if gc.getTeam(player.getTeam()).isHasTech(k):
 								wbPlayer['StartingTechs'].append(gc.getTechInfo(k).getType())
 						alive = True
 						break
 
-				for j in range(gc.getNumCivicOptionInfos()):
+				for j in xrange(gc.getNumCivicOptionInfos()):
 					startingCivic = rfcPlayer.getStartingCivic(j)
 					if startingCivic != -1:
 						wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
@@ -376,17 +376,17 @@ class WbParser:
 					if rfcPlayer.getStartingReligion() != ReligionTypes.NO_RELIGION:
 						wbPlayer['StartingReligion'] = gc.getReligionInfo(rfcPlayer.getStartingReligion()).getType()
 
-					for j in range(gc.getNumTechInfos()):
+					for j in xrange(gc.getNumTechInfos()):
 						if rfcPlayer.isStartingTech(j):
 							wbPlayer['StartingTechs'].append(gc.getTechInfo(j).getType())
 
 				wbPlayer['StartingWars'] = []
-				for j in range(gc.getNumCivilizationInfos()):
+				for j in xrange(gc.getNumCivilizationInfos()):
 					if rfcPlayer.isStartingWar(j):
 						wbPlayer['StartingWars'].append(gc.getCivilizationInfo(j).getType())
 
 				wbPlayer['RelatedLanguages'] = []
-				for j in range(gc.getNumCivilizationInfos()):
+				for j in xrange(gc.getNumCivilizationInfos()):
 					if i != j:
 						if rfcPlayer.isRelatedLanguage(j):
 							wbPlayer['RelatedLanguages'].append(gc.getCivilizationInfo(j).getType())
@@ -395,7 +395,7 @@ class WbParser:
 				wbPlayer['StartingY'] = rfcPlayer.getStartingPlotY()
 
 				#Scheduled units & cities
-				for j in range(rfcPlayer.getNumScheduledUnits()):
+				for j in xrange(rfcPlayer.getNumScheduledUnits()):
 					scheduledUnit = rfcPlayer.getScheduledUnit(j)
 					wbPlot = getWBPlot(plots, scheduledUnit.getX(), scheduledUnit.getY())
 					if "Units" not in wbPlot:
@@ -416,25 +416,25 @@ class WbParser:
 						wbUnit['DeclareWar'] = scheduledUnit.isDeclareWar()
 					wbPlot['Units'].append(wbUnit)
 
-				for j in range(rfcPlayer.getNumScheduledCities()):
+				for j in xrange(rfcPlayer.getNumScheduledCities()):
 					scheduledCity = rfcPlayer.getScheduledCity(j)
 					wbPlot = getWBPlot(plots, scheduledCity.getX(), scheduledCity.getY())
 					wbCity = OrderedDict({})
 					wbCity['CityOwner'] = civInfo.getType()
 					wbCity['Year'] = scheduledCity.getYear()
 					wbCity['CityPopulation'] = scheduledCity.getPopulation()
-					for i in range(gc.getNumBuildingInfos()):
+					for i in xrange(gc.getNumBuildingInfos()):
 						if scheduledCity.getNumBuilding(i) > 0:
 							if "Buildings" not in wbCity:
 								wbCity['Buildings'] = {}
 							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = scheduledCity.getNumBuilding(i)
 
-					for i in range(gc.getNumReligionInfos()):
+					for i in xrange(gc.getNumReligionInfos()):
 						if scheduledCity.getHolyCityReligion(i):
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
 							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
-					for i in range(gc.getNumCivilizationInfos()):
+					for i in xrange(gc.getNumCivilizationInfos()):
 						if scheduledCity.getCulture(i) > 0:
 							if "Culture" not in wbCity:
 								wbCity['Culture'] = {}
@@ -444,7 +444,7 @@ class WbParser:
 
 				#Core provinces
 				wbPlayer['CoreProvinces'] = []
-				for j in range(rfcPlayer.getNumCoreProvinces()):
+				for j in xrange(rfcPlayer.getNumCoreProvinces()):
 					coreProvince = rfcPlayer.getCoreProvince(j)
 					wbPlayer['CoreProvinces'].append(rfcPlayer.getCoreProvince(j))
 
@@ -475,12 +475,12 @@ class WbParser:
 				players.append(wbPlayer)
 
 		#Provinces
-		for i in range(riseFall.getNumProvinces()):
+		for i in xrange(riseFall.getNumProvinces()):
 			province = riseFall.getRFCProvince(i)
 			wbProvince = OrderedDict({})
-			wbProvince['Name'] = province.getName()
+			wbProvince['Type'] = province.getType()
 			scheduledUnitsAmount = province.getNumScheduledUnits()
-			for i in range(scheduledUnitsAmount):
+			for i in xrange(scheduledUnitsAmount):
 				scheduledUnit = province.getScheduledUnit(i)
 				if "Units" not in wbProvince:
 					wbProvince['Units'] = []
@@ -514,9 +514,9 @@ class WbParser:
 		f.write(unescapedValues.encode("utf8"))
 
 	def createSplitWBSave(self, mapName, scenarioName):
-		mapPath = scenarioName.split('/')
+		mapPath = scenarioName.replace('/', '\\').split('\\')
 		mapPath.pop(len(mapPath)-1)
-		self.saveMapFile('/'.join(mapPath) + '/' + mapName)
+		self.saveMapFile('\\'.join(mapPath) + '\\' + mapName)
 		self.saveScenarioFile(scenarioName, mapName)
 
 	def parseFile(self, name): #Parse a WBSave file.
@@ -560,8 +560,9 @@ class WbParser:
 			if "MapFile" in self.wbValues:
 				self.scenarioValues = self.wbValues
 				riseFall.setMapFile(self.wbValues['MapFile'])
-				print "set map file to " + self.wbValues['MapFile']
-				self.parseFile(self.getMapsPath() + self.wbValues['MapFile'])
+				mapPath = name.replace('/', '\\').split('\\')
+				mapPath.pop(len(mapPath)-1)
+				self.parseFile('\\'.join(mapPath) + '\\' + self.wbValues['MapFile'])
 				self.mapValues = self.wbValues
 				self.splitFile = True
 			return
@@ -603,7 +604,7 @@ class WbParser:
 							raise Exception(str(lineNum) + ": no Y position found for " + parseValue(splitLine[1]) + "!")
 					elif splitLine[0] == "Techs":
 						startingTechs = []
-						for i in range(len(splitLine) - 1): #do not add "Techs" to the list
+						for i in xrange(len(splitLine) - 1): #do not add "Techs" to the list
 							startingTechs.append(splitLine[i + 1])
 						player['StartingTechs'] = startingTechs
 					else:
@@ -763,7 +764,7 @@ class WbParser:
 
 		#Provinces
 		for wbProvince in self.mapValues['Provinces']:
-			rfcProvince = riseFall.addProvince(wbProvince['Name'], wbProvince['Bottom'], wbProvince['Left'], wbProvince['Top'], wbProvince['Right'])
+			rfcProvince = riseFall.addProvince(wbProvince['Type'])
 
 		for wbPlot in self.mapValues['Plots']:
 			x = wbPlot['x']
@@ -779,10 +780,11 @@ class WbParser:
 
 			#Provinces
 			if "ProvinceType" in wbPlot:
-				plot.setProvinceType(gc.getRiseFall().getRFCProvince(wbPlot['ProvinceType']))
+				plot.setProvinceType(gc.getRiseFall().findRFCProvince(wbPlot['ProvinceType']))
 
 			#Rivers
 			directions = [CardinalDirectionTypes.NO_CARDINALDIRECTION, CardinalDirectionTypes.NO_CARDINALDIRECTION]
+
 			if "RiverNSDirection" in wbPlot:
 				if wbPlot['RiverNSDirection'] == 0:
 					directions[1] = CardinalDirectionTypes.CARDINALDIRECTION_NORTH
@@ -798,28 +800,29 @@ class WbParser:
 			if "isWOfRiver" in wbPlot:
 				plot.setWOfRiver(True, directions[1])
 
+
 			#City names
 			if "CityNames" in wbPlot:
-				for i in range(gc.getNumCivilizationInfos()):
+				for i in xrange(gc.getNumCivilizationInfos()):
 					if gc.getCivilizationInfo(i).getType() in wbPlot['CityNames']:
 						plot.setCityName(i, wbPlot['CityNames'][gc.getCivilizationInfo(i).getType()])
 
 			#Settler values
 			if "SettlerValues" in wbPlot:
-				for i in range(gc.getNumCivilizationInfos()):
+				for i in xrange(gc.getNumCivilizationInfos()):
 					civType = gc.getCivilizationInfo(i).getType()
 					if civType in wbPlot['SettlerValues']:
 						plot.setSettlerValue(i, wbPlot['SettlerValues'][civType])
 
 			#legacy settler map converter thing
-			#for j in range(gc.getNumCivilizationInfos()):
+			#for j in xrange(gc.getNumCivilizationInfos()):
 			#	rfcPlayer = riseFall.getRFCPlayer(j)
 			#	if not rfcPlayer.isMinor():
 			#		if not (gc.getCivilizationInfo(j).getType() == "CIVILIZATION_HUNS" and SettlersMaps.tSettlersMaps[j][mapHeight - 1 - y][x]):
 			#			plot.setSettlerValue(j, SettlersMaps.tSettlersMaps[j][mapHeight - 1 - y][x])
 
 			#cnm converter thing
-			#for i in range(len(CityNameMap.tCityMap)):
+			#for i in xrange(len(CityNameMap.tCityMap)):
 			#	if x < 61 and CityNameMap.tCityMap[i][59 - y][x] != "-1":
 			#		cityName = CityNameMap.tCityMap[i][mapHeight - 1 - y][x]
 			#		plot.setCityName(i, cityName)
@@ -901,25 +904,25 @@ class WbParser:
 				scheduledCity.setPopulation(population)
 
 				if "Buildings" in wbCity:
-					for i in range(gc.getNumBuildingInfos()):
+					for i in xrange(gc.getNumBuildingInfos()):
 						buildingType = gc.getBuildingInfo(i).getType()
 						if buildingType in wbCity['Buildings']:
 							scheduledCity.setNumBuilding(i, wbCity['Buildings'][buildingType])
 
 				if "Religions" in wbCity:
-					for i in range(gc.getNumReligionInfos()):
+					for i in xrange(gc.getNumReligionInfos()):
 						religionType = gc.getReligionInfo(i).getType()
 						if religionType in wbCity['Religions']:
 							scheduledCity.setReligion(i, wbCity['Religions'][religionType])
 
 				if "HolyCityReligions" in wbCity:
-					for i in range(gc.getNumReligionInfos()):
+					for i in xrange(gc.getNumReligionInfos()):
 						religionType = gc.getReligionInfo(i).getType()
 						if religionType in wbCity['HolyCityReligions']:
 							scheduledCity.setHolyCityReligion(i, wbCity['HolyCityReligions'][religionType])
 
 				if "Culture" in wbCity:
-					for i in range(gc.getNumCivilizationInfos()):
+					for i in xrange(gc.getNumCivilizationInfos()):
 						civType = gc.getCivilizationInfo(i).getType()
 						if civType in wbCity['Culture']:
 							scheduledCity.setCulture(i, wbCity['Culture'][civType])
@@ -934,49 +937,10 @@ class WbParser:
 				routeType = gc.getInfoTypeForString(wbPlot['RouteType'])
 				plot.setRouteType(routeType)
 
-		#Goody huts
-		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in self.scenarioValues['Game']['Options']
-		goodyImprovement = -1
-		for i in range(gc.getNumImprovementInfos()):
-			if gc.getImprovementInfo(i).isGoody():
-				goodyImprovement = i
-				break
-
-		#Provinces
-		for wbProvince in self.mapValues['Provinces']:
-			#Goody huts
-			if not disableGoodies:
-				amountRand = ((rfcProvince.getTop() - rfcProvince.getBottom()) + (rfcProvince.getRight() - rfcProvince.getLeft()))/5
-				amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
-
-				plots = []
-				for x in range(rfcProvince.getLeft(), rfcProvince.getRight()):
-					for y in range(rfcProvince.getBottom(), rfcProvince.getTop()):
-						plot = cmap.plot(x, y)
-						if plot.isWater() or plot.isPeak():
-							continue
-						unavail = false
-						for wbPlayer in self.scenarioValues['Players']:
-							if wbPlayer['StartingYear'] == self.scenarioValues['Game']['StartYear']:
-								if x == wbPlayer['StartingX'] and y == wbPlayer['StartingY']:
-									unavail = True
-									break
-						if unavail:
-							continue
-
-						plots.append(plot)
-
-				if len(plots):
-					for i in range(amount):
-						rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
-
-						plot = plots[rndNum]
-						plot.setImprovementType(goodyImprovement)
-
 		for wbProvince in self.scenarioValues['Provinces']:
 			#Units
 			if "Units" in wbProvince:
-				rfcProvince = riseFall.getRFCProvince(wbProvince['Name'])
+				rfcProvince = riseFall.getRFCProvince(riseFall.findRFCProvince(wbProvince['Type']))
 				for wbUnit in wbProvince['Units']:
 					if "Year" not in wbUnit or "EndYear" not in wbUnit:
 						raise Exception("No starting/ending date of barbarian unit " + str(wbUnit))
@@ -1011,7 +975,7 @@ class WbParser:
 					rfcUnit.setSpawnFrequency(wbUnit['SpawnFrequency'])
 
 		#Players
-		for i in range(gc.getMAX_CIV_PLAYERS()):
+		for i in xrange(gc.getMAX_CIV_PLAYERS()):
 			gc.getPlayer(i).setStartingPlot(cmap.plot(0, 0), True)
 
 		for wbPlayer in self.scenarioValues['Players']:
@@ -1032,7 +996,7 @@ class WbParser:
 						rfcPlayer.addStartingTech(techType)
 
 				if "CivicOptions" in wbPlayer:
-					for i in range(gc.getNumCivicOptionInfos()):
+					for i in xrange(gc.getNumCivicOptionInfos()):
 						civicOptionType = gc.getCivicOptionInfo(i).getType()
 						if civicOptionType in wbPlayer['CivicOptions']:
 							civicOptionTypeNum = gc.getInfoTypeForString(wbPlayer['CivicOptions'][civicOptionType])
@@ -1088,3 +1052,40 @@ class WbParser:
 				self.lastOpenSlot -= 1
 			else:
 				gc.setMinorNationCiv(gc.getMAX_CIV_PLAYERS(), civType, True)
+
+		#Goody huts
+		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in self.scenarioValues['Game']['Options']
+		goodyImprovement = -1
+		for i in xrange(gc.getNumImprovementInfos()):
+			if gc.getImprovementInfo(i).isGoody():
+				goodyImprovement = i
+				break
+
+		if not disableGoodies:
+			for i in xrange(riseFall.getNumProvinces()):
+
+				plots = []
+				for i in xrange(cmap.numPlots()):
+					plot = cmap.plotByIndex(i)
+					if plot.isWater() or plot.isPeak():
+						continue
+					if plot.getProvinceType() == i:
+						unavail = False
+						for j in xrange(gc.getNumCivilizationInfos()):
+							rfcPlayer = riseFall.getRFCPlayer(j)
+							if rfcPlayer.getStartingYear() == game.getStartYear() and plot.getX() == rfcPlayer.getStartingPlotX() and plot.getY() == rfcPlayer.getStartingPlotY():
+								unavail = True
+								break
+						if unavail:
+							continue
+
+						plots.append(plot)
+
+				if len(plots):
+					amountRand = len(plots)/5
+					amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
+					for i in xrange(amount):
+						rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
+
+						plot = plots[rndNum]
+						plot.setImprovementType(goodyImprovement)

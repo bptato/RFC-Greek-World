@@ -14,8 +14,8 @@ class CyRiseFall {
 		CyRFCPlayer* getRFCPlayer(int civType);
 		int getNumProvinces();
 		CyRFCProvince* getRFCProvince(int province);
-		CyRFCProvince* getRFCProvinceByName(std::wstring provinceName);
-		CyRFCProvince* addProvince(std::wstring provinceName, int bottom, int left, int top, int right);
+		int findRFCProvince(std::string provinceType);
+		CyRFCProvince* addProvince(std::string provinceType);
 		void setMapFile(std::wstring name);
 		std::wstring getMapFile();
 	protected:

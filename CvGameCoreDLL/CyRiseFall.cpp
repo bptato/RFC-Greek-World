@@ -25,12 +25,12 @@ CyRFCProvince* CyRiseFall::getRFCProvince(int province) {
 	return new CyRFCProvince(riseFall->getRFCProvince((ProvinceTypes)province));
 }
 
-CyRFCProvince* CyRiseFall::getRFCProvinceByName(std::wstring provinceName) {
-	return new CyRFCProvince(riseFall->getRFCProvince(provinceName.c_str()));
+int CyRiseFall::findRFCProvince(std::string provinceName) {
+	return riseFall->findRFCProvince(provinceName.c_str());
 }
 
-CyRFCProvince* CyRiseFall::addProvince(std::wstring provinceName, int bottom, int left, int top, int right) {
-	return new CyRFCProvince(riseFall->addProvince(provinceName.c_str(), bottom, left, top, right));
+CyRFCProvince* CyRiseFall::addProvince(std::string provinceType) {
+	return new CyRFCProvince(riseFall->addProvince(provinceType.c_str()));
 }
 
 void CyRiseFall::setMapFile(std::wstring name) {

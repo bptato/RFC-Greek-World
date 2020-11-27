@@ -251,6 +251,9 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 			}
 			break;
 	}
+
+	//for mercenaries
+	lastAction = GC.getGameINLINE().getGameTurn();
 	//bluepotato end
 
 	if (getDomainType() == DOMAIN_LAND)
@@ -378,7 +381,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_eFacingDirection = DIRECTION_SOUTH;
 	m_iImmobileTimer = 0;
 	//bluepotato start
-	lastAction = 0;
+	lastAction = 1;
 	maintenanceCost = 0;
 	//bluepotato end
 

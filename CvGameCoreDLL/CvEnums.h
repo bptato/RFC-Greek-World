@@ -2801,7 +2801,7 @@ enum CivilopediaWidgetShowTypes
 
 //bluepotato start: provinces
 enum ProvinceTypes {
-	NO_PROVINCE
+	NO_PROVINCE = -1
 };
 
 #endif	// CVENUMS_h

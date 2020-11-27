@@ -17,24 +17,12 @@ void CyRFCProvince::hireMercenary(int playerType, int mercenaryID) {
 }
 
 
+std::string CyRFCProvince::getType() {
+	return rfcProvince->getType();
+}
+
 std::wstring CyRFCProvince::getName() {
 	return rfcProvince->getName();
-}
-
-int CyRFCProvince::getBottom() {
-	return rfcProvince->getBottom();
-}
-
-int CyRFCProvince::getLeft() {
-	return rfcProvince->getLeft();
-}
-
-int CyRFCProvince::getTop() {
-	return rfcProvince->getTop();
-}
-
-int CyRFCProvince::getRight() {
-	return rfcProvince->getRight();
 }
 
 int CyRFCProvince::getNumScheduledUnits() {

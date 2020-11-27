@@ -471,6 +471,8 @@ class CvGameUtils:
 					return CyTranslator().getText("TXT_KEY_WB_EDIT_CIVILIZATION", ())
 				elif iData2 == 36:
 					return CyTranslator().getText("TXT_KEY_WB_RFGW_MAPS", ())
+				elif iData2 == 37:
+					return CyTranslator().getText("TXT_KEY_WB_PROVINCE_AREAS", ())
 			elif iData1 > 1029 and iData1 < 1040:
 				if iData1 %2:
 					return "-"
@@ -674,11 +676,13 @@ class CvGameUtils:
 				else:
 					sText += "\n" + CyTranslator().getText("TXT_KEY_CIVICS_SCREEN_NO_UPKEEP", ())
 				return sText
+			#bluepotato
 			elif iData1 == 8207:
 				return str(iData2) + ": " + self.getSettlerValueDescription(iData2)
-			#bluepotato
 			elif iData1 == 8208:
 				return CyGameTextMgr().parseCivInfos(iData2, False)
+			elif iData1 == 8209:
+				return gc.getRiseFall().getRFCProvince(iData2).getName()
 ## Ultrapack ##
 		return u""
 

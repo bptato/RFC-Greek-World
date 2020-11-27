@@ -74,7 +74,7 @@ class CvWorldBuilderScreen:
 		self.PlayerMode = ["Ownership", "Units", "Buildings", "City"]
 		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features"]
 		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
-		self.RFGWMode = ["CityName", "SettlerValue", "StartingPlot"]
+		self.RFGWMode = ["CityName", "SettlerValue", "StartingPlot", "ProvinceArea"]
 		self.iBrushWidth = 1
 		self.cityNameCiv = 0 #bluepotato
 		self.iBrushHeight = 1
@@ -121,6 +121,8 @@ class CvWorldBuilderScreen:
 		if not CyInterface().isInAdvancedStart():
 			if self.iPlayerAddMode == "SettlerValue":
 				sText = "<font=3b>%s, X: %d, Y: %d, Settler val: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY, self.m_pCurrentPlot.getSettlerValue(self.cityNameCiv))
+			elif self.iPlayerAddMode == "ProvinceArea" and self.m_pCurrentPlot.getProvinceType() != ProvinceTypes.NO_PROVINCE:
+				sText = "<font=3b>%s, X: %d, Y: %d, Province: %s</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY, gc.getRiseFall().getRFCProvince(self.m_pCurrentPlot.getProvinceType()).getName())
 			else:
 				sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY)
 			screen.setLabel( "WBCoords", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -457,6 +459,9 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "SettlerValue":
 			self.m_pCurrentPlot.setSettlerValue(self.cityNameCiv, self.iSelection)
 			self.settlerValueOverlay()
+		elif self.iPlayerAddMode == "ProvinceArea":
+			self.m_pCurrentPlot.setProvinceType(self.iSelection)
+			self.provinceAreaOverlay()
 		#bluepotato end
 	## Python Effects ##
 		elif self.iPlayerAddMode == "Improvements":
@@ -600,6 +605,12 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "CityName":
 			self.m_pCurrentPlot.setCityName(self.cityNameCiv, "")
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
+		elif self.iPlayerAddMode == "SettlerValue":
+			self.m_pCurrentPlot.setSettlerValue(self.cityNameCiv, 20)
+			self.provinceAreaOverlay()
+		elif self.iPlayerAddMode == "ProvinceArea":
+			self.m_pCurrentPlot.setProvinceType(ProvinceTypes.NO_PROVINCE)
+			self.provinceAreaOverlay()
 		#bluepotato end
 		elif self.iPlayerAddMode == "Improvements":
 			self.m_pCurrentPlot.setImprovementType(-1)
@@ -1047,6 +1058,9 @@ class CvWorldBuilderScreen:
 
 		if self.iPlayerAddMode != "SettlerValue":
 			self.hideSettlerValueOverlay()
+
+		if self.iPlayerAddMode != "ProvinceArea":
+			self.hideProvinceAreaOverlay()
 		#bluepotato end
 
 		if CyInterface().isInAdvancedStart():
@@ -1078,6 +1092,7 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("CityNameButton")
 			screen.deleteWidget("CityNameCivList")
 			screen.deleteWidget("SettlerValueButton")
+			screen.deleteWidget("ProvinceAreaButton")
 			#bluepotato end
 			screen.deleteWidget("EditStartingPlot")
 			screen.deleteWidget("EditPlotData")
@@ -1278,6 +1293,9 @@ class CvWorldBuilderScreen:
 				screen.addCheckBoxGFC("SettlerValueButton", ",Art/Interface/Buttons/Units/Settler.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,5", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_SETTLER_MAP, 1029, 163, ButtonStyles.BUTTON_STYLE_LABEL)
 
 				iX += iAdjust
+				screen.addCheckBoxGFC("ProvinceAreaButton", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_CHANGE_ALL_PLOTS").getPath(), CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 37, ButtonStyles.BUTTON_STYLE_LABEL)
+
+				iX += iAdjust
 				screen.addCheckBoxGFC("EditStartingPlot", ",Art/Interface/Buttons/Units/Warrior.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,13", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 32, ButtonStyles.BUTTON_STYLE_LABEL)
 			#bluepotato end
@@ -1303,6 +1321,7 @@ class CvWorldBuilderScreen:
 		screen.setState("RFGWMode", self.iPlayerAddMode in self.RFGWMode)
 		screen.setState("CityNameButton", self.iPlayerAddMode == "CityName")
 		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue")
+		screen.setState("ProvinceAreaButton", self.iPlayerAddMode == "ProvinceArea")
 		#bluepotato end
 		screen.setState("EditStartingPlot", self.iPlayerAddMode == "StartingPlot")
 		screen.setState("EditPlotData", self.iPlayerAddMode == "PlotData")
@@ -1529,6 +1548,19 @@ class CvWorldBuilderScreen:
 				screen.appendTableRow("WBSelectItem")
 			for i in xrange(len(items)):
 				screen.setTableText("WBSelectItem", 0, i, "<font=3>Value: " + str(items[i]) + "</font>", "Art/Interface/Buttons/SettlerValues/btn_" + str(items[i]) + ".dds", WidgetTypes.WIDGET_PYTHON, 8207, items[i], CvUtil.FONT_LEFT_JUSTIFY)
+		elif self.iPlayerAddMode == "ProvinceArea":
+			iY = 25
+			iHeight = min(gc.getRiseFall().getNumProvinces() * 24 + 2, screen.getYResolution() - iY)
+			screen.addTableControlGFC("WBSelectItem", 1, 0, 25, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
+			screen.setTableColumnHeader("WBSelectItem", 0, "", iWidth)
+			if self.iSelection == -1:
+				self.iSelection = 0
+
+			for i in xrange(gc.getRiseFall().getNumProvinces()):
+				screen.appendTableRow("WBSelectItem")
+
+			for i in xrange(gc.getRiseFall().getNumProvinces()):
+				screen.setTableText("WBSelectItem", 0, i, "<font=3>" + gc.getRiseFall().getRFCProvince(i).getName() + "</font>", "", WidgetTypes.WIDGET_PYTHON, 8209, i, CvUtil.FONT_LEFT_JUSTIFY)
 		self.refreshSelection()
 
 	def refreshSelection(self):
@@ -1576,6 +1608,10 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "SettlerValue":
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + str(self.iSelection) + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, "Art/Interface/Buttons/SettlerValues/btn_" + str(self.iSelection) + ".dds", WidgetTypes.WIDGET_PYTHON, 8207, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
+		elif self.iPlayerAddMode == "ProvinceArea":
+			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + gc.getRiseFall().getRFCProvince(self.iSelection).getName() + "</color></font>"
+			screen.setTableText("WBCurrentItem", 0, 0 , sText, "", WidgetTypes.WIDGET_PYTHON, 8209, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
+			self.provinceAreaOverlay()
 		else:
 			screen.hide("WBCurrentItem")
 
@@ -1990,6 +2026,12 @@ class CvWorldBuilderScreen:
 			self.iSelection = -1
 			self.refreshSideMenu()
 
+		elif inputClass.getFunctionName() == "ProvinceAreaButton":
+			self.provinceAreaOverlay()
+			self.iPlayerAddMode = "ProvinceArea"
+			self.iSelection = -1
+			self.refreshSideMenu()
+
 		elif inputClass.getFunctionName() == "EditCivilizationButton":
 			WBRFCPlayerScreen.rfcPlayerScreen.interfaceScreen(self.cityNameCiv)
 
@@ -2071,8 +2113,6 @@ class CvWorldBuilderScreen:
 
 		#bluepotato start
 		elif inputClass.getFunctionName() == "CityNameCivList":
-			if self.iPlayerAddMode not in ("CityName", "SettlerValue"):
-				self.iPlayerAddMode = "CityName"
 			self.cityNameCiv = screen.getPullDownData("CityNameCivList", screen.getSelectedPullDownID("CityNameCivList"))
 			if self.iPlayerAddMode == "CityName":
 				self.cityNameSigns()
@@ -2100,13 +2140,13 @@ class CvWorldBuilderScreen:
 	#bluepotato start
 	def removeSigns(self):
 		numPlots = CyMap().numPlots()
-		for i in range(numPlots):
+		for i in xrange(numPlots):
 			plot = CyMap().plotByIndex(i)
 			CyEngine().removeSign(plot, CyGame().getActivePlayer())
 
 	def addCityNameSigns(self):
 		numPlots = CyMap().numPlots()
-		for i in range(numPlots):
+		for i in xrange(numPlots):
 			plot = CyMap().plotByIndex(i)
 			cityName = StringUtils.unescape(plot.getCityName(self.cityNameCiv, True)).encode("iso-8859-1")
 			if cityName != "":
@@ -2118,7 +2158,7 @@ class CvWorldBuilderScreen:
 
 	def showSettlerValueOverlay(self):
 		numPlots = CyMap().numPlots()
-		for i in range(numPlots):
+		for i in xrange(numPlots):
 			plot = CyMap().plotByIndex(i)
 			settlerValue = plot.getSettlerValue(self.cityNameCiv)
 			if settlerValue == 700:
@@ -2148,7 +2188,21 @@ class CvWorldBuilderScreen:
 		for i in xrange(1000, 1010):
 			CyEngine().clearAreaBorderPlots(i)
 
+	def hideProvinceAreaOverlay(self):
+		for i in xrange(1010, 1010 + gc.getRiseFall().getNumProvinces()):
+			CyEngine().clearAreaBorderPlots(i)
+
+	def showProvinceAreaOverlay(self):
+		for i in xrange(CyMap().numPlots()):
+			plot = CyMap().plotByIndex(i)
+			if plot.getProvinceType() == self.iSelection:
+				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1010 + self.iSelection, "COLOR_BLUE", 0.7)
+
 	def settlerValueOverlay(self):
 		self.hideSettlerValueOverlay()
 		self.showSettlerValueOverlay()
+
+	def provinceAreaOverlay(self):
+		self.hideProvinceAreaOverlay()
+		self.showProvinceAreaOverlay()
 	#bluepotato end

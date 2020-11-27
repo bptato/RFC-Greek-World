@@ -6,48 +6,46 @@ Author: bluepotato
 #include "CvDLLInterfaceIFaceBase.h"
 
 CvRFCProvince::CvRFCProvince() {
-	reset();
+	reset(NO_PROVINCE);
 }
 
 CvRFCProvince::~CvRFCProvince() {
 	uninit();
 }
 
-void CvRFCProvince::init() {
-	reset();
+void CvRFCProvince::init(ProvinceTypes provinceType) {
+	_provinceType = provinceType;
 }
 
-void CvRFCProvince::reset() {
+void CvRFCProvince::reset(ProvinceTypes provinceType) {
 	uninit();
-	bottom = -1;
-	right = -1;
-	top = -1;
-	left = -1;
-	name.clear();
-	mercenaries.clear();
+	init(provinceType);
+	_mercenaries.clear();
+	_type.clear();
+	_name.clear();
 }
 
 void CvRFCProvince::uninit() {
-	for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+	for(std::vector<CvRFCUnit*>::iterator it = _scheduledUnits.begin(); it != _scheduledUnits.end(); ++it) {
 		SAFE_DELETE(*it);
 	}
-	scheduledUnits.clear();
+	_scheduledUnits.clear();
 }
 
-void CvRFCProvince::setName(const wchar* newName) {
-	CvWString cvwNewName(newName);
-	name = cvwNewName;
+void CvRFCProvince::setType(CvString type) {
+	CvWStringBuffer tmp;
+	_type = type;
+	tmp.assign("TXT_KEY_");
+	tmp.append(type);
+	_name = gDLL->getText(tmp.getCString());
 }
 
-void CvRFCProvince::setBounds(int newBottom, int newLeft, int newTop, int newRight) {
-	bottom = newBottom;
-	left = newLeft;
-	top = newTop;
-	right = newRight;
+void CvRFCProvince::setProvinceType(ProvinceTypes provinceType) {
+	_provinceType = provinceType;
 }
 
 void CvRFCProvince::addMercenary(CvRFCMercenary mercenary) {
-	mercenaries.push_back(mercenary);
+	_mercenaries.push_back(mercenary);
 }
 
 void CvRFCProvince::checkMercenaries() {
@@ -58,7 +56,7 @@ void CvRFCProvince::checkMercenaries() {
 		CvPlayer& unitOwner = GET_PLAYER(unit->getOwner());
 		if(!unit->isAnimal() && (unitOwner.isBarbarian() || unitOwner.isMinorCiv())) {
 			static int minLastActionDifference = GC.getDefineINT("MERCENARY_MIN_LAST_ACTION_DIFFERENCE");
-			if(unit->getLastAction() != 0 && GC.getGame().getGameTurn() - unit->getLastAction() >= minLastActionDifference) {
+			if(GC.getGame().getGameTurn() - unit->getLastAction() >= minLastActionDifference) {
 				static int mercRate = GC.getDefineINT("MERCENARY_CREATION_RATE");
 				int mercOdds = mercRate;
 				if(createdMercs > 0) {
@@ -127,20 +125,20 @@ void CvRFCProvince::checkMercenaries() {
 		}
 	}
 
-	for(std::vector<CvRFCMercenary>::iterator it = mercenaries.begin(); it != mercenaries.end();) {
+	for(std::vector<CvRFCMercenary>::iterator it = _mercenaries.begin(); it != _mercenaries.end();) {
 		static int disbandRate = GC.getDefineINT("MERCENARY_DISBAND_RATE");
 		static int wanderingRate = GC.getDefineINT("MERCENARY_WANDERING_RATE");
 		if(GC.getGame().getSorenRandNum(100, "Mercenary disband roll") < disbandRate) {
 			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < wanderingRate) {
 				int borderProvinces = 0;
 				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-					if(isBorderProvince(GC.getRiseFall().getRFCProvince((ProvinceTypes)i))) {
+					if(GC.getRiseFall().isBorderProvince(getProvinceType(), (ProvinceTypes)i)) {
 						++borderProvinces;
 					}
 				}
 				int rand = 0;
 				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-					if(isBorderProvince(GC.getRiseFall().getRFCProvince((ProvinceTypes)i))) {
+					if(GC.getRiseFall().isBorderProvince(getProvinceType(), (ProvinceTypes)i)) {
 						rand += 100/borderProvinces;
 						if(100/borderProvinces<GC.getGame().getSorenRandNum(rand, "Border province selection roll")) {
 							GC.getRiseFall().getRFCProvince((ProvinceTypes)i)->addMercenary(*it);
@@ -149,7 +147,7 @@ void CvRFCProvince::checkMercenaries() {
 					}
 				}
 			}
-			it = mercenaries.erase(it);
+			it = _mercenaries.erase(it);
 		} else {
 			++it;
 		}
@@ -173,96 +171,64 @@ void CvRFCProvince::hireMercenary(PlayerTypes playerType, int mercenaryID) {
 	}
 	mercUnit->setHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_MERCENARY"), true);
 
-	mercenaries.erase(mercenaries.begin() + mercenaryID);
+	_mercenaries.erase(_mercenaries.begin() + mercenaryID);
 }
 
+
+const char* CvRFCProvince::getType() const {
+	return _type;
+}
+
+ProvinceTypes CvRFCProvince::getProvinceType() const {
+	return _provinceType;
+}
 
 const wchar* CvRFCProvince::getName() const {
-	return name;
-}
-
-bool CvRFCProvince::isInBounds(int x, int y) const {
-	return x >= left && x <= right && y >= bottom && y <= top;
-}
-
-bool CvRFCProvince::isBorderProvince(CvRFCProvince* province) const { //check if another province overlaps or neighbors this province.
-	if(province == this) {
-		return false;
-	}
-
-	for(int x = left-1; x<=right+1; x++) {
-		for(int y = bottom-1; y<=top+1; y++) {
-			if(province->isInBounds(x, y)) {
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-int CvRFCProvince::getBottom() const {
-	return bottom;
-}
-
-int CvRFCProvince::getLeft() const {
-	return left;
-}
-
-int CvRFCProvince::getTop() const {
-	return top;
-}
-
-int CvRFCProvince::getRight() const {
-	return right;
+	return _name;
 }
 
 int CvRFCProvince::getNumScheduledUnits() const {
-	return scheduledUnits.size();
+	return _scheduledUnits.size();
 }
 
 CvRFCUnit* CvRFCProvince::addScheduledUnit() {
 	CvRFCUnit* rfcUnit = new CvRFCUnit();
-	scheduledUnits.push_back(rfcUnit);
+	_scheduledUnits.push_back(rfcUnit);
 	return rfcUnit;
 }
 
 CvRFCUnit* CvRFCProvince::getScheduledUnit(int i) const {
-	return scheduledUnits[i];
+	return _scheduledUnits[i];
 }
 
 std::vector<CvRFCUnit*>& CvRFCProvince::getScheduledUnits() {
-	return scheduledUnits;
+	return _scheduledUnits;
 }
 
 int CvRFCProvince::getNumMercenaries() const {
-	return mercenaries.size();
+	return _mercenaries.size();
 }
 
 CvRFCMercenary& CvRFCProvince::getMercenary(int i) {
-	return mercenaries[i];
+	return _mercenaries[i];
 }
 
 std::vector<CvRFCMercenary>& CvRFCProvince::getMercenaries() {
-	return mercenaries;
+	return _mercenaries;
 }
 
 std::vector<CvUnit*> CvRFCProvince::getUnits() {
 	std::vector<CvUnit*> units;
-	CLinkList<IDInfo> plotUnits;
-	for(int x = left; x<=right; ++x) {
-		for(int y = bottom; y<=top; ++y) {
-			CvPlot* plot = GC.getMap().plot(x, y);
-			if(plot->isUnit()) {
-				plotUnits.clear();
-
-				CLLNode<IDInfo>* unitNode = plot->headUnitNode();
-				while(unitNode != NULL) {
-					CvUnit* loopUnit = ::getUnit(unitNode->m_data);
-					if(loopUnit != NULL) {
-						units.push_back(loopUnit);
-					}
-					unitNode = plot->nextUnitNode(unitNode);
+	for(int i = 0; i < GC.getMap().numPlots(); ++i) {
+		CvPlot* plot = GC.getMap().plotByIndex(i);
+		if(plot->isUnit()) {
+			CLLNode<IDInfo>* unitNode = plot->headUnitNode();
+			while(unitNode != NULL) {
+				CvUnit* loopUnit = ::getUnit(unitNode->m_data);
+				if(loopUnit != NULL) {
+					units.push_back(loopUnit);
 				}
+				unitNode = plot->nextUnitNode(unitNode);
 			}
 		}
 	}
@@ -274,7 +240,7 @@ int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 	int i;
 	int countedCities = 0;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
-		if(isInBounds(city->getX(), city->getY())) {
+		if(GC.getRiseFall().getRFCProvince(city->plot()->getProvinceType()) == this) {
 			++countedCities;
 		}
 	}
@@ -284,7 +250,7 @@ int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 CvCity* CvRFCProvince::getFirstCity(PlayerTypes playerType) {
 	int i;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
-		if(isInBounds(city->getX(), city->getY())) {
+		if(GC.getRiseFall().getRFCProvince(city->plot()->getProvinceType()) == this) {
 			return city;
 		}
 	}
@@ -293,55 +259,52 @@ CvCity* CvRFCProvince::getFirstCity(PlayerTypes playerType) {
 
 
 void CvRFCProvince::write(FDataStreamBase* stream) {
-	stream->WriteString(name);
-	stream->Write(bottom);
-	stream->Write(left);
-	stream->Write(top);
-	stream->Write(right);
+	stream->WriteString(_type);
+	stream->Write(_provinceType);
+	stream->WriteString(_name);
 
 	{
-		uint size = scheduledUnits.size();
+		uint size = _scheduledUnits.size();
 		stream->Write(size);
-		for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end(); ++it) {
+		for(std::vector<CvRFCUnit*>::iterator it = _scheduledUnits.begin(); it != _scheduledUnits.end(); ++it) {
 			(*it)->write(stream);
 		}
 	}
 
 	{
-		uint size = mercenaries.size();
+		uint size = _mercenaries.size();
 		stream->Write(size);
-		for(std::vector<CvRFCMercenary>::iterator it = mercenaries.begin(); it != mercenaries.end(); ++it) {
+		for(std::vector<CvRFCMercenary>::iterator it = _mercenaries.begin(); it != _mercenaries.end(); ++it) {
 			it->write(stream);
 		}
 	}
 }
 
 void CvRFCProvince::read(FDataStreamBase* stream) {
-	stream->ReadString(name);
-	stream->Read(&bottom);
-	stream->Read(&left);
-	stream->Read(&top);
-	stream->Read(&right);
+	reset(NO_PROVINCE);
+	stream->ReadString(_type);
+	stream->Read((int*)&_provinceType);
+	stream->ReadString(_name);
 
 	{
-		scheduledUnits.clear();
+		_scheduledUnits.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i < size; i++) {
 			CvRFCUnit* scheduledUnit = new CvRFCUnit();
 			scheduledUnit->read(stream);
-			scheduledUnits.push_back(scheduledUnit);
+			_scheduledUnits.push_back(scheduledUnit);
 		}
 	}
 
 	{
-		mercenaries.clear();
+		_mercenaries.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i < size; i++) {
 			CvRFCMercenary mercenary;
 			mercenary.read(stream);
-			mercenaries.push_back(mercenary);
+			_mercenaries.push_back(mercenary);
 		}
 	}
 }

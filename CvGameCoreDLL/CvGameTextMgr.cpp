@@ -3092,15 +3092,14 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			}
 		}
 
-		CvRFCProvince* province = GC.getRiseFall().getProvinceForPlot(pPlot->getX(), pPlot->getY());
-		if(province!=NULL) {
+		if(pPlot->getProvinceType() != NO_PROVINCE) {
 			if(GC.getRiseFall().getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isInCoreBounds(pPlot->getX(), pPlot->getY())) {
 				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_POSITIVE_TEXT")));
 			} else {
 				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			}
 			szString.append(NEWLINE);
-			szString.append(gDLL->getText(province->getName()));
+			szString.append(GC.getRiseFall().getRFCProvince(pPlot->getProvinceType())->getName());
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}

@@ -13,11 +13,8 @@ class CyRFCProvince {
 
 		void hireMercenary(int playerType, int mercenaryID);
 
+		std::string getType();
 		std::wstring getName();
-		int getBottom();
-		int getLeft();
-		int getTop();
-		int getRight();
 		int getNumScheduledUnits();
 		CyRFCUnit* addScheduledUnit();
 		CyRFCUnit* getScheduledUnit(int i);

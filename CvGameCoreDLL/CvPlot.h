@@ -485,8 +485,8 @@ public:
 	void setCityName(CivilizationTypes civType, const wchar* newName);
 	short getSettlerValue(CivilizationTypes civType);
 	void setSettlerValue(CivilizationTypes civType, short settlerValue);
-	void setRFCProvince(ProvinceTypes provinceType);
-	ProvinceTypes getRFCProvince() const;
+	void setProvinceType(ProvinceTypes provinceType);
+	ProvinceTypes getProvinceType() const;
 	//Sanguo Mod Performance
 	int getPlayerDangerCache(PlayerTypes ePlayer, int iRange);
 	void setPlayerDangerCache(PlayerTypes ePlayer, int iRange, int iNewValue);
