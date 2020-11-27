@@ -221,7 +221,7 @@ std::vector<CvUnit*> CvRFCProvince::getUnits() {
 	std::vector<CvUnit*> units;
 	for(int i = 0; i < GC.getMap().numPlots(); ++i) {
 		CvPlot* plot = GC.getMap().plotByIndex(i);
-		if(plot->isUnit()) {
+		if(plot->getProvinceType() == getProvinceType() && plot->isUnit()) {
 			CLLNode<IDInfo>* unitNode = plot->headUnitNode();
 			while(unitNode != NULL) {
 				CvUnit* loopUnit = ::getUnit(unitNode->m_data);
