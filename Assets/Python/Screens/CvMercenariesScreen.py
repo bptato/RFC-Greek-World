@@ -111,7 +111,7 @@ class CvMercenariesScreen:
 		
 		mercCount = 0
 		for i in range(riseFall.getNumProvinces()):
-			province = riseFall.getRFCProvince(i)
+			province = riseFall.getProvince(i)
 			if province.getNumCities(self.activePlayer) > 0:
 				for j in range(province.getNumMercenaries()):
 					mercenary = province.getMercenary(j)
@@ -152,7 +152,7 @@ class CvMercenariesScreen:
 	def selectMercenaryInfo(self, provinceId, mercId):
 		screen = self.getScreen()
 		riseFall = gc.getRiseFall()
-		province = riseFall.getRFCProvince(provinceId)
+		province = riseFall.getProvince(provinceId)
 		mercenary = province.getMercenary(mercId)
 		unitInfo = gc.getUnitInfo(mercenary.getUnitType())
 		screen.setText("MercenaryInfoTitle", BACKGROUND_ID, u"<font=3b>" + text(unitInfo.getDescription().encode("iso-5988-1")).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, W_SCREEN/2 + (W_SCREEN/2 - TEXT_MARGIN/2)/2, HEADER_HEIGHT + TEXT_MARGIN/4, Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -179,7 +179,7 @@ class CvMercenariesScreen:
 			mercValues = functionNameSplit[1].split(":")
 			provinceNum = alphaToNumber(mercValues[0])
 			mercNum = alphaToNumber(mercValues[1])
-			province = riseFall.getRFCProvince(provinceNum)
+			province = riseFall.getProvince(provinceNum)
 			
 			if len(functionNameSplit) > 2:
 				btnName = functionNameSplit[2]

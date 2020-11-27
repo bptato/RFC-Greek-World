@@ -381,7 +381,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_eFacingDirection = DIRECTION_SOUTH;
 	m_iImmobileTimer = 0;
 	//bluepotato start
-	lastAction = 1;
+	lastAction = 0;
 	maintenanceCost = 0;
 	//bluepotato end
 

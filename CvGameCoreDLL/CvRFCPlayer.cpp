@@ -417,7 +417,7 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 
 	//Foreign
 	if(team.isOpenBordersTrading()) {
-		for(i = 0; i<MAX_CIV_PLAYERS; i++) {
+		for(i = 0; i < MAX_CIV_PLAYERS; i++) {
 			CvPlayerAI& loopPlayer = GET_PLAYER((PlayerTypes)i);
 			CvTeam& loopTeam = GET_TEAM(loopPlayer.getTeam());
 			if(!loopPlayer.isBarbarian() && !loopPlayer.isMinorCiv() && (PlayerTypes)i!=playerType && loopTeam.isHasMet(player.getTeam()) && !loopPlayer.isMinorCiv() && !loopPlayer.isHuman()) {
@@ -438,16 +438,16 @@ void CvRFCPlayer::checkStability(PlayerTypes playerType) {
 
 				switch(loopPlayer.AI_getAttitude(playerType)) {
 					case ATTITUDE_FRIENDLY:
-						newForeignStability += 8;
+						newForeignStability += 5;
 						break;
 					case ATTITUDE_PLEASED:
-						newForeignStability += 4;
+						newForeignStability += 2;
 						break;
 					case ATTITUDE_ANNOYED:
-						newForeignStability -= 4;
+						newForeignStability -= 2;
 						break;
 					case ATTITUDE_FURIOUS:
-						newForeignStability -= 8;
+						newForeignStability -= 5;
 						break;
 				}
 			}
@@ -694,7 +694,7 @@ bool CvRFCPlayer::isInBorderBounds(int x, int y) {
 		if(provinceType == GC.getMap().plot(x, y)->getProvinceType()) {
 			continue;
 		}
-		if(GC.getRiseFall().isBorderProvince(provinceType, GC.getMap().plot(x, y)->getProvinceType())) {
+		if(GC.getRiseFall().getProvince(provinceType).isBorderProvince(GC.getMap().plot(x, y)->getProvinceType())) {
 			return true;
 		}
 	}

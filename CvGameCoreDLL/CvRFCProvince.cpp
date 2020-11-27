@@ -23,6 +23,7 @@ void CvRFCProvince::reset(ProvinceTypes provinceType) {
 	_mercenaries.clear();
 	_type.clear();
 	_name.clear();
+	_plots.clear();
 }
 
 void CvRFCProvince::uninit() {
@@ -51,6 +52,7 @@ void CvRFCProvince::addMercenary(CvRFCMercenary mercenary) {
 void CvRFCProvince::checkMercenaries() {
 	std::vector<CvUnit*> provinceUnits = getUnits();
 	int createdMercs = 0;
+	GC.logMsg("Province units amount: %d", provinceUnits.size());
 	for(std::vector<CvUnit*>::iterator it = provinceUnits.begin(); it != provinceUnits.end(); ++it) {
 		CvUnit* unit = *it;
 		CvPlayer& unitOwner = GET_PLAYER(unit->getOwner());
@@ -76,6 +78,7 @@ void CvRFCProvince::checkMercenaries() {
 					mercOdds /= 2;
 				}
 
+				GC.logMsg("Mercenary creation odds: %d", mercOdds);
 				if(GC.getGame().getSorenRandNum(100, "Mercenary creation roll") < mercOdds) {
 					UnitTypes unitType = unit->getUnitType();
 					int hireCost = GC.getUnitInfo(unitType).getProductionCost() * (unit->getLevel()+1) + (unit->getLevel()+1) * std::abs(unit->getExperience() - unit->experienceNeeded());
@@ -131,17 +134,17 @@ void CvRFCProvince::checkMercenaries() {
 		if(GC.getGame().getSorenRandNum(100, "Mercenary disband roll") < disbandRate) {
 			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < wanderingRate) {
 				int borderProvinces = 0;
-				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-					if(GC.getRiseFall().isBorderProvince(getProvinceType(), (ProvinceTypes)i)) {
+				for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
+					if(isBorderProvince((ProvinceTypes)i)) {
 						++borderProvinces;
 					}
 				}
 				int rand = 0;
-				for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-					if(GC.getRiseFall().isBorderProvince(getProvinceType(), (ProvinceTypes)i)) {
+				for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
+					if(isBorderProvince((ProvinceTypes)i)) {
 						rand += 100/borderProvinces;
 						if(100/borderProvinces<GC.getGame().getSorenRandNum(rand, "Border province selection roll")) {
-							GC.getRiseFall().getRFCProvince((ProvinceTypes)i)->addMercenary(*it);
+							GC.getRiseFall().getProvince((ProvinceTypes)i).addMercenary(*it);
 							break;
 						}
 					}
@@ -172,6 +175,20 @@ void CvRFCProvince::hireMercenary(PlayerTypes playerType, int mercenaryID) {
 	mercUnit->setHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_MERCENARY"), true);
 
 	_mercenaries.erase(_mercenaries.begin() + mercenaryID);
+}
+
+void CvRFCProvince::addPlot(int plotid) {
+	FAssert(plotid < GC.getMap().numPlots());
+	_plots.push_back(plotid);
+}
+
+void CvRFCProvince::removePlot(int plotid) {
+	for(std::vector<int>::iterator it = _plots.begin(); it != _plots.end(); ++it) {
+		if(*it == plotid) {
+			_plots.erase(it);
+			return;
+		}
+	}
 }
 
 
@@ -219,9 +236,9 @@ std::vector<CvRFCMercenary>& CvRFCProvince::getMercenaries() {
 
 std::vector<CvUnit*> CvRFCProvince::getUnits() {
 	std::vector<CvUnit*> units;
-	for(int i = 0; i < GC.getMap().numPlots(); ++i) {
-		CvPlot* plot = GC.getMap().plotByIndex(i);
-		if(plot->getProvinceType() == getProvinceType() && plot->isUnit()) {
+	for(std::vector<int>::iterator it = _plots.begin(); it != _plots.end(); ++it) {
+		CvPlot* plot = GC.getMapINLINE().plotByIndexINLINE(*it);
+		if(plot->isUnit()) {
 			CLLNode<IDInfo>* unitNode = plot->headUnitNode();
 			while(unitNode != NULL) {
 				CvUnit* loopUnit = ::getUnit(unitNode->m_data);
@@ -236,11 +253,15 @@ std::vector<CvUnit*> CvRFCProvince::getUnits() {
 	return units;
 }
 
+std::vector<int>& CvRFCProvince::getPlots() {
+	return _plots;
+}
+
 int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 	int i;
 	int countedCities = 0;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
-		if(GC.getRiseFall().getRFCProvince(city->plot()->getProvinceType()) == this) {
+		if(city->plot()->getProvinceType() == getProvinceType()) {
 			++countedCities;
 		}
 	}
@@ -250,11 +271,33 @@ int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 CvCity* CvRFCProvince::getFirstCity(PlayerTypes playerType) {
 	int i;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
-		if(GC.getRiseFall().getRFCProvince(city->plot()->getProvinceType()) == this) {
+		if(city->plot()->getProvinceType() == getProvinceType()) {
 			return city;
 		}
 	}
 	return NULL;
+}
+
+bool CvRFCProvince::isBorderProvince(ProvinceTypes province) {
+	for(std::vector<int>::iterator it = getPlots().begin(); it != getPlots().end(); ++it) {
+		if(GC.getMapINLINE().plotByIndexINLINE(*it)->getProvinceType() == getProvinceType()) {
+			int x = GC.getMapINLINE().plotByIndexINLINE(*it)->getX();
+			int y = GC.getMapINLINE().plotByIndexINLINE(*it)->getY();
+			if(GC.getMapINLINE().isPlotINLINE(x, y - 1))
+				if(GC.getMapINLINE().plotINLINE(x, y - 1)->getProvinceType() == province)
+					return true;
+			if(GC.getMapINLINE().isPlotINLINE(x, y + 1))
+				if(GC.getMapINLINE().plotINLINE(x, y + 1)->getProvinceType() == province)
+					return true;
+			if(GC.getMapINLINE().isPlotINLINE(x + 1, y))
+				if(GC.getMapINLINE().plotINLINE(x + 1, y)->getProvinceType() == province)
+					return true;
+			if(GC.getMapINLINE().isPlotINLINE(x - 1, y))
+				if(GC.getMapINLINE().plotINLINE(x - 1, y)->getProvinceType() == province)
+					return true;
+		}
+	}
+	return false;
 }
 
 
@@ -276,6 +319,14 @@ void CvRFCProvince::write(FDataStreamBase* stream) {
 		stream->Write(size);
 		for(std::vector<CvRFCMercenary>::iterator it = _mercenaries.begin(); it != _mercenaries.end(); ++it) {
 			it->write(stream);
+		}
+	}
+
+	{
+		uint size = _plots.size();
+		stream->Write(size);
+		for(std::vector<int>::iterator it = _plots.begin(); it != _plots.end(); ++it) {
+			stream->Write(*it);
 		}
 	}
 }
@@ -305,6 +356,17 @@ void CvRFCProvince::read(FDataStreamBase* stream) {
 			CvRFCMercenary mercenary;
 			mercenary.read(stream);
 			_mercenaries.push_back(mercenary);
+		}
+	}
+
+	{
+		_plots.clear();
+		uint size;
+		stream->Read(&size);
+		for(uint i = 0; i < size; i++) {
+			int plotid;
+			stream->Read(&plotid);
+			_plots.push_back(plotid);
 		}
 	}
 }

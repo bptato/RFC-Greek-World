@@ -3099,7 +3099,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			}
 			szString.append(NEWLINE);
-			szString.append(GC.getRiseFall().getRFCProvince(pPlot->getProvinceType())->getName());
+			szString.append(GC.getRiseFall().getProvince(pPlot->getProvinceType()).getName());
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}

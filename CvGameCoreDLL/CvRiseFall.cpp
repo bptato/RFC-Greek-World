@@ -85,27 +85,45 @@ void CvRiseFall::checkTurn() {
 	}
 
 	for(int i = 0; i < getNumProvinces(); i++) {
-		CvRFCProvince* rfcProvince = getRFCProvince((ProvinceTypes)i);
 		//Historical barbs
-		int numScheduledUnits = rfcProvince->getNumScheduledUnits();
+		int numScheduledUnits = getProvince((ProvinceTypes)i).getNumScheduledUnits();
 		if(numScheduledUnits > 0) {
-			std::vector<CvPlot*> plots;
-			//TODO: cache province plots
-			for(int i = 0; i < GC.getMap().numPlots(); ++i) {
-				CvPlot* loopPlot = GC.getMap().plotByIndex(i);
-				if(loopPlot->getProvinceType() == (ProvinceTypes)i && !loopPlot->isWater()
-						&& !loopPlot->isPeak() && !loopPlot->isCity() &&
-						!loopPlot->isBeingWorked() && !loopPlot->isUnit()) {
-					plots.push_back(loopPlot);
-				}
-			}
-
-			if(plots.size() > 0) {
+			if(getProvince((ProvinceTypes)i).getPlots().size() > 0) {
+				std::vector<CvPlot*> validPlots;
+				bool plotsInit = false;
+				std::vector<CvPlot*> validSeaPlots;
+				bool seaPlotsInit = false;
 				for(int j = 0; j < numScheduledUnits; ++j) {
-					CvRFCUnit* rfcUnit = rfcProvince->getScheduledUnit(j);
+					CvRFCUnit* rfcUnit = getProvince((ProvinceTypes)i).getScheduledUnit(j);
+					DomainTypes domainType = (DomainTypes)GC.getUnitInfo(rfcUnit->getUnitType()).getDomainType();
+					if(domainType == DOMAIN_SEA && !seaPlotsInit) {
+						for(std::vector<int>::iterator it = getProvince((ProvinceTypes)i).getPlots().begin(); it != getProvince((ProvinceTypes)i).getPlots().end(); ++it) {
+							CvPlot* loopPlot = GC.getMapINLINE().plotByIndexINLINE(*it);
+							if(loopPlot->isWater()) {
+								validSeaPlots.push_back(loopPlot);
+							}
+						}
+						seaPlotsInit = true;
+					} else if(domainType != DOMAIN_SEA && !plotsInit) {
+						for(std::vector<int>::iterator it = getProvince((ProvinceTypes)i).getPlots().begin(); it != getProvince((ProvinceTypes)i).getPlots().end(); ++it) {
+							CvPlot* loopPlot = GC.getMapINLINE().plotByIndexINLINE(*it);
+							if(!loopPlot->isWater() && !loopPlot->isPeak()) {
+								validPlots.push_back(loopPlot);
+							}
+						}
+						seaPlotsInit = true;
+					}
 					if(rfcUnit->getLastSpawned() == -1 || rfcUnit->getLastSpawned() + rfcUnit->getSpawnFrequency()/2 < game.getGameTurn()) {
 						if(rfcUnit->getYear() <= game.getGameTurnYear() && rfcUnit->getEndYear() >= game.getGameTurnYear() && game.getSorenRandNum(rfcUnit->getSpawnFrequency()/2, "Unit spawn roll") == 0) {
-							CvPlot* randomPlot = plots[game.getSorenRandNum(plots.size(), "Barb spawning plot roll")];
+							CvPlot* randomPlot;
+							if(domainType != DOMAIN_SEA) {
+								randomPlot = validPlots[game.getSorenRandNum(validPlots.size(), "Barb spawning plot roll")];
+							} else {
+								randomPlot = validSeaPlots[game.getSorenRandNum(validSeaPlots.size(), "Barb spawning plot roll")];
+							}
+
+							FAssert(randomPlot != NULL);
+
 							for(int k = 0; k < rfcUnit->getAmount(); ++k) {
 								//TODO: different rfcUnit owner civs?
 								GET_PLAYER(BARBARIAN_PLAYER).initUnit(rfcUnit->getUnitType(), randomPlot->getX(), randomPlot->getY(), rfcUnit->getUnitAIType(), rfcUnit->getFacingDirection());
@@ -119,7 +137,7 @@ void CvRiseFall::checkTurn() {
 
 		//Mercenaries
 		if(GC.getGame().getGameTurn() % 5 == 3) {
-			rfcProvince->checkMercenaries();
+			getProvince((ProvinceTypes)i).checkMercenaries();
 		}
 	}
 	//Player plot stability
@@ -760,21 +778,13 @@ CvRFCProvince* CvRiseFall::addProvince(CvString type) {
 	return province;
 }
 
-inline CvRFCPlayer& CvRiseFall::getRFCPlayer(CivilizationTypes civType) const {
-	return _rfcPlayers[civType];
-}
-
 ProvinceTypes CvRiseFall::findRFCProvince(const char* provinceType) const {
 	for (int i = 0; i < getNumProvinces(); ++i) {
-		if(strcmp(provinceType, getRFCProvince((ProvinceTypes)i)->getType()) == 0) {
+		if(strcmp(provinceType, getProvince((ProvinceTypes)i).getType()) == 0) {
 			return (ProvinceTypes)i;
 		}
 	}
 	return NO_PROVINCE;
-}
-
-inline CvRFCProvince* CvRiseFall::getRFCProvince(ProvinceTypes provinceType) const {
-	return _rfcProvinces[provinceType];
 }
 
 int CvRiseFall::getNumProvinces() const {
@@ -828,32 +838,6 @@ CvPlot* CvRiseFall::findSpawnPlot(int ix, int iy, DomainTypes domainType) const 
 
 const wchar* CvRiseFall::getMapFile() const {
 	return _mapFile;
-}
-
-bool CvRiseFall::isBorderProvince(ProvinceTypes province1, ProvinceTypes province2) const {
-	for(int x = 0; x < GC.getMap().getGridWidth(); ++x) {
-		for(int y = 0; y < GC.getMap().getGridHeight(); ++y) {
-			if(!GC.getMap().isPlot(x, y)) {
-				continue;
-			}
-			if(GC.getMap().plot(x, y)->getProvinceType() == province1) {
-				CvPlot* north = GC.getMap().plot(x, y - 1);
-				if(GC.getMap().isPlot(x, y - 1))
-					if(GC.getMap().plot(x, y - 1)->getProvinceType() == province2)
-						return true;
-				if(GC.getMap().isPlot(x, y + 1))
-					if(GC.getMap().plot(x, y + 1)->getProvinceType() == province2)
-						return true;
-				if(GC.getMap().isPlot(x + 1, y))
-					if(GC.getMap().plot(x + 1, y)->getProvinceType() == province2)
-						return true;
-				if(GC.getMap().isPlot(x - 1, y))
-					if(GC.getMap().plot(x - 1, y)->getProvinceType() == province2)
-						return true;
-			}
-		}
-	}
-	return false;
 }
 
 

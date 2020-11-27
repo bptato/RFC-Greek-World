@@ -1688,7 +1688,7 @@
 	</Define>
 	<Define>
 		<DefineName>MERCENARY_MIN_LAST_ACTION_DIFFERENCE</DefineName>
-		<iDefineIntVal>15</iDefineIntVal>
+		<iDefineIntVal>14</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>HOLY_CITY_RELOCATION_RATE</DefineName>

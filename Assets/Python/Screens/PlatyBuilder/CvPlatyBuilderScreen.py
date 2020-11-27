@@ -122,7 +122,7 @@ class CvWorldBuilderScreen:
 			if self.iPlayerAddMode == "SettlerValue":
 				sText = "<font=3b>%s, X: %d, Y: %d, Settler val: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY, self.m_pCurrentPlot.getSettlerValue(self.cityNameCiv))
 			elif self.iPlayerAddMode == "ProvinceArea" and self.m_pCurrentPlot.getProvinceType() != ProvinceTypes.NO_PROVINCE:
-				sText = "<font=3b>%s, X: %d, Y: %d, Province: %s</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY, gc.getRiseFall().getRFCProvince(self.m_pCurrentPlot.getProvinceType()).getName())
+				sText = "<font=3b>%s, X: %d, Y: %d, Province: %s</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY, gc.getRiseFall().getProvince(self.m_pCurrentPlot.getProvinceType()).getName())
 			else:
 				sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY)
 			screen.setLabel( "WBCoords", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -1560,7 +1560,7 @@ class CvWorldBuilderScreen:
 				screen.appendTableRow("WBSelectItem")
 
 			for i in xrange(gc.getRiseFall().getNumProvinces()):
-				screen.setTableText("WBSelectItem", 0, i, "<font=3>" + gc.getRiseFall().getRFCProvince(i).getName() + "</font>", "", WidgetTypes.WIDGET_PYTHON, 8209, i, CvUtil.FONT_LEFT_JUSTIFY)
+				screen.setTableText("WBSelectItem", 0, i, "<font=3>" + gc.getRiseFall().getProvince(i).getName() + "</font>", "", WidgetTypes.WIDGET_PYTHON, 8209, i, CvUtil.FONT_LEFT_JUSTIFY)
 		self.refreshSelection()
 
 	def refreshSelection(self):
@@ -1609,7 +1609,7 @@ class CvWorldBuilderScreen:
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + str(self.iSelection) + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, "Art/Interface/Buttons/SettlerValues/btn_" + str(self.iSelection) + ".dds", WidgetTypes.WIDGET_PYTHON, 8207, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 		elif self.iPlayerAddMode == "ProvinceArea":
-			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + gc.getRiseFall().getRFCProvince(self.iSelection).getName() + "</color></font>"
+			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + gc.getRiseFall().getProvince(self.iSelection).getName() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, "", WidgetTypes.WIDGET_PYTHON, 8209, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 			self.provinceAreaOverlay()
 		else:

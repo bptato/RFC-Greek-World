@@ -10118,7 +10118,13 @@ void CvPlot::setSettlerValue(CivilizationTypes civType, short settlerValue) {
 }
 
 void CvPlot::setProvinceType(ProvinceTypes provinceType) {
+	if(getProvinceType() != NO_PROVINCE) {
+		GC.getRiseFall().getProvince(_provinceType).removePlot(GC.getMapINLINE().plotNumINLINE(getX_INLINE(), getY_INLINE()));
+	}
 	_provinceType = provinceType;
+	if(getProvinceType() != NO_PROVINCE) {
+		GC.getRiseFall().getProvince(_provinceType).addPlot(GC.getMapINLINE().plotNumINLINE(getX_INLINE(), getY_INLINE()));
+	}
 }
 
 ProvinceTypes CvPlot::getProvinceType() const {

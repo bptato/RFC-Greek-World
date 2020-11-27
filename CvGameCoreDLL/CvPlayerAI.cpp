@@ -17662,13 +17662,12 @@ void CvPlayerAI::AI_invalidateAttitudeCache()
 //this is mostly code ported from the original mercenaries mod except I optimized it for our system
 bool CvPlayerAI::AI_hireMercenary() {
 	int bestMercID = -1;
-	CvRFCProvince* bestMercProvince = NULL;
+	ProvinceTypes bestMercProvince = NO_PROVINCE;
 	int bestMercHireCost = 0;
-	for(int i = 0; i<GC.getRiseFall().getNumProvinces(); ++i) {
-		CvRFCProvince* province = GC.getRiseFall().getRFCProvince((ProvinceTypes)i);
-		if(province->getNumCities(getID()) > 0) {
-			for(int j = 0; j<province->getNumMercenaries(); ++j) {
-				CvRFCMercenary& mercenary = province->getMercenary(j);
+	for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
+		if(GC.getRiseFall().getProvince((ProvinceTypes)i).getNumCities(getID()) > 0) {
+			for(int j = 0; j < GC.getRiseFall().getProvince((ProvinceTypes)i).getNumMercenaries(); ++j) {
+				CvRFCMercenary& mercenary = GC.getRiseFall().getProvince((ProvinceTypes)i).getMercenary(j);
 
 				//player's money after hiring merc
 				int tmpGold = getGold() - mercenary.getHireCost();
@@ -17681,15 +17680,15 @@ bool CvPlayerAI::AI_hireMercenary() {
 				//choose merc if it has the highest cost and the player can support it for at least 5 turns
 				if(mercenary.getHireCost() > bestMercHireCost && supportTurns >= 5) {
 					bestMercID = j;
-					bestMercProvince = province;
+					bestMercProvince = (ProvinceTypes)i;
 					bestMercHireCost = mercenary.getHireCost();
 				}
 			}
 		}
 	}
 
-	if(bestMercProvince != NULL && bestMercID != -1) {
-		bestMercProvince->hireMercenary(getID(), bestMercID);
+	if(bestMercProvince != NO_PROVINCE && bestMercID != -1) {
+		GC.getRiseFall().getProvince(bestMercProvince).hireMercenary(getID(), bestMercID);
 		GC.logMsg("CvPlayerAI::AI_hireMercenary - AI %d hired a merc", getID());
 		return true;
 	}

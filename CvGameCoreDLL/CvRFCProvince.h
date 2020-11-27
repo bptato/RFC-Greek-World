@@ -16,6 +16,8 @@ class CvRFCProvince {
 		void addMercenary(CvRFCMercenary mercenary);
 		void checkMercenaries();
 		void hireMercenary(PlayerTypes playerType, int mercenaryID);
+		void addPlot(int plotid);
+		void removePlot(int plotid);
 
 		const char* getType() const;
 		ProvinceTypes getProvinceType() const;
@@ -28,8 +30,10 @@ class CvRFCProvince {
 		CvRFCMercenary& getMercenary(int i);
 		std::vector<CvRFCMercenary>& getMercenaries();
 		std::vector<CvUnit*> getUnits();
+		std::vector<int>& getPlots();
 		int getNumCities(PlayerTypes playerType) const;
 		CvCity* getFirstCity(PlayerTypes);
+		bool isBorderProvince(ProvinceTypes province);
 
 		void write(FDataStreamBase* stream);
 		void read(FDataStreamBase* stream);
@@ -40,4 +44,5 @@ class CvRFCProvince {
 		ProvinceTypes _provinceType;
 		std::vector<CvRFCUnit*> _scheduledUnits; //barbs
 		std::vector<CvRFCMercenary> _mercenaries;
+		std::vector<int> _plots;
 };

@@ -158,7 +158,7 @@ class WbParser:
 					wbPlot['BonusType'] = gc.getBonusInfo(plot.getBonusType(-1)).getType()
 
 				if plot.getProvinceType() != ProvinceTypes.NO_PROVINCE:
-					wbPlot['ProvinceType'] = gc.getRiseFall().getRFCProvince(plot.getProvinceType()).getType()
+					wbPlot['ProvinceType'] = gc.getRiseFall().getProvince(plot.getProvinceType()).getType()
 
 
 				if plot.isWOfRiver():
@@ -202,7 +202,7 @@ class WbParser:
 
 		#Provinces
 		for i in xrange(riseFall.getNumProvinces()):
-			province = riseFall.getRFCProvince(i)
+			province = riseFall.getProvince(i)
 			wbProvince = OrderedDict({})
 			wbProvince['Type'] = province.getType()
 			provinces.append(wbProvince)
@@ -476,7 +476,7 @@ class WbParser:
 
 		#Provinces
 		for i in xrange(riseFall.getNumProvinces()):
-			province = riseFall.getRFCProvince(i)
+			province = riseFall.getProvince(i)
 			wbProvince = OrderedDict({})
 			wbProvince['Type'] = province.getType()
 			scheduledUnitsAmount = province.getNumScheduledUnits()
@@ -940,7 +940,7 @@ class WbParser:
 		for wbProvince in self.scenarioValues['Provinces']:
 			#Units
 			if "Units" in wbProvince:
-				rfcProvince = riseFall.getRFCProvince(riseFall.findRFCProvince(wbProvince['Type']))
+				rfcProvince = riseFall.getProvince(riseFall.findRFCProvince(wbProvince['Type']))
 				for wbUnit in wbProvince['Units']:
 					if "Year" not in wbUnit or "EndYear" not in wbUnit:
 						raise Exception("No starting/ending date of barbarian unit " + str(wbUnit))

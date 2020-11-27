@@ -682,7 +682,7 @@ class CvGameUtils:
 			elif iData1 == 8208:
 				return CyGameTextMgr().parseCivInfos(iData2, False)
 			elif iData1 == 8209:
-				return gc.getRiseFall().getRFCProvince(iData2).getName()
+				return gc.getRiseFall().getProvince(iData2).getName()
 ## Ultrapack ##
 		return u""
 
