@@ -93,7 +93,9 @@ void CvRiseFall::checkTurn() {
 			//TODO: cache province plots
 			for(int i = 0; i < GC.getMap().numPlots(); ++i) {
 				CvPlot* loopPlot = GC.getMap().plotByIndex(i);
-				if(!loopPlot->isWater() && !loopPlot->isPeak() && !loopPlot->isCity() && !loopPlot->isBeingWorked() && !loopPlot->isUnit()) {
+				if(loopPlot->getProvinceType() == (ProvinceTypes)i && !loopPlot->isWater()
+						&& !loopPlot->isPeak() && !loopPlot->isCity() &&
+						!loopPlot->isBeingWorked() && !loopPlot->isUnit()) {
 					plots.push_back(loopPlot);
 				}
 			}
