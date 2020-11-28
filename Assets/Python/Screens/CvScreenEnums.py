@@ -58,6 +58,10 @@ WB_GAMEDATA = 80
 #bluepotato
 WB_RFC_PLAYER = 81
 
+### GameFont Display
+GAMEFONT_DISPLAY_SCREEN = 92
+### GameFont Display
+
 MAIN_INTERFACE = 99
 DEBUG_INFO_SCREEN = 100
 

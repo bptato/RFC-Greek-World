@@ -66,6 +66,9 @@ import WBCorporationScreen
 import WBInfoScreen
 import WBTradeScreen
 
+### GameFont Display
+import GameFontDisplay
+### GameFont Display
 #bluepotato start
 import WBRFCPlayerScreen
 #string conversion
@@ -700,6 +703,9 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					WB_RFC_PLAYER : WBRFCPlayerScreen.rfcPlayerScreen,
 					MERCENARIES_SCREEN : CvMainInterface.mercenaryScreen,
 					#bluepotato end
+### GameFont Display
+					GAMEFONT_DISPLAY_SCREEN : GameFontDisplay.GameFontDisplay(),
+### GameFont Display
 
 				#################################################
 				## Sevopedia 2.3 BEGIN

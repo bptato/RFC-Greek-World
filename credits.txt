@@ -13,6 +13,7 @@ platyping's worldbuilder
 Unofficial Patch
 Sanguo Mod Performance
 Sevopedia
+GameFont Display
 
 Libraries included:
 simplejson

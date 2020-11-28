@@ -19,6 +19,10 @@ import WBPlotScreen
 import CvPlatyBuilderScreen
 ## Ultrapack ##
 
+### GameFont Display
+import GameFontDisplay
+### GameFont Display
+
 import Victory #bluepotato
 
 gc = CyGlobalContext()
@@ -236,6 +240,12 @@ class CvEventManager:
 			theKey=int(key)
 
 			CvCameraControls.g_CameraControls.handleInput(theKey)
+
+### GameFont Display
+			if theKey == int(InputTypes.KB_F1) and self.bShift and self.bCtrl:
+				GameFontDisplay.GameFontDisplay().interfaceScreen()
+				return 1
+### GameFont Display
 
 			if (self.bAllowCheats):
 				# Shift - T (Debug - No MP)
