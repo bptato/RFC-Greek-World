@@ -1,5 +1,5 @@
 CURRENT VERSION:
-Version 2.0
+Version 2.0 (in development)
 Additions:
 Added Naqsh-e Rustam
 Added Ashurbanipal's Library
@@ -13,8 +13,9 @@ Israelite UHV
 Athenian UHV
 Spartan UHV
 Scythian UHV
-City name and settler map editors
 Re-added 900 BC scenario
+Added city name, settler map and province area editors to worldbuilder
+Added civilization editor to worldbuilder
 
 General changes:
 Athens now starts with Deification
@@ -43,6 +44,7 @@ Adjusted Phoenician modifiers
 Improved most settler maps
 Macedonia can now raze cities above culture threshold
 Moved Thebes to the eastern bank of the Nile
+Buffed Elamite starting units
 
 Technical changes:
 Moved some hardcoded mercenary values to XML
@@ -52,6 +54,7 @@ Removed some obsolete XML stuff
 Split worldbuilder saves into two parts
 Removed a few unnecessary assertions
 Moved a couple of objects off the stack to avoid some memory-related errors
+Provinces now consist of specific plots instead of rectangle-shaped boundaries
 
 Fixes:
 Fixed some UHVs
