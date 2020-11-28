@@ -5,7 +5,7 @@ Author: bluepotato
 
 class CvRFCProvince {
 	public:
-		CvRFCProvince();
+		CvRFCProvince(ProvinceTypes provinceType);
 		~CvRFCProvince();
 		void init(ProvinceTypes provinceType);
 		void reset(ProvinceTypes provinceType);
@@ -13,27 +13,29 @@ class CvRFCProvince {
 
 		void setType(CvString type);
 		void setProvinceType(ProvinceTypes provinceType);
-		void addMercenary(CvRFCMercenary mercenary);
 		void checkMercenaries();
 		void hireMercenary(PlayerTypes playerType, int mercenaryID);
 		void addPlot(int plotid);
 		void removePlot(int plotid);
 
+		void addMercenary(CvRFCMercenary* mercenary);
+		CvRFCMercenary* addMercenary();
+		CvRFCUnit* addScheduledUnit();
+
 		const char* getType() const;
 		ProvinceTypes getProvinceType() const;
 		const wchar* getName() const;
 		int getNumScheduledUnits() const;
-		CvRFCUnit* addScheduledUnit();
 		CvRFCUnit* getScheduledUnit(int i) const;
 		std::vector<CvRFCUnit*>& getScheduledUnits();
 		int getNumMercenaries() const;
-		CvRFCMercenary& getMercenary(int i);
-		std::vector<CvRFCMercenary>& getMercenaries();
+		CvRFCMercenary* getMercenary(int i);
 		std::vector<CvUnit*> getUnits();
 		std::vector<int>& getPlots();
 		int getNumCities(PlayerTypes playerType) const;
 		CvCity* getFirstCity(PlayerTypes);
 		bool isBorderProvince(ProvinceTypes province);
+		bool canSpawnBarbs();
 
 		void write(FDataStreamBase* stream);
 		void read(FDataStreamBase* stream);
@@ -43,6 +45,6 @@ class CvRFCProvince {
 		CvWString _name;
 		ProvinceTypes _provinceType;
 		std::vector<CvRFCUnit*> _scheduledUnits; //barbs
-		std::vector<CvRFCMercenary> _mercenaries;
+		std::vector<CvRFCMercenary*> _mercenaries;
 		std::vector<int> _plots;
 };

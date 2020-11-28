@@ -6,17 +6,23 @@ Author: bluepotato
 class CvRFCMercenary {
 	public:
 		CvRFCMercenary();
-		CvRFCMercenary(int hireCost, int maintenanceCost, int experience, UnitTypes unitType);
 		~CvRFCMercenary();
+		void init();
+		void uninit();
+		void reset();
+		CvRFCMercenary* clone();
 
-		void addPromotion(PromotionTypes promotion);
+		void setHasPromotion(PromotionTypes promotion, bool val);
+		void setHireCost(int val);
+		void setMaintenanceCost(int val);
+		void setExperience(int val);
+		void setUnitType(UnitTypes val);
 
 		int getHireCost() const;
 		int getMaintenanceCost() const;
 		int getExperience() const;
 		UnitTypes getUnitType() const;
-		int getNumPromotions() const;
-		PromotionTypes getPromotion(int i) const;
+		bool hasPromotion(PromotionTypes promotion) const;
 
 		void write(FDataStreamBase* stream);
 		void read(FDataStreamBase* stream);
@@ -26,5 +32,5 @@ class CvRFCMercenary {
 		int _maintenanceCost;
 		int _experience;
 		UnitTypes _unitType;
-		std::vector<PromotionTypes> _promotions;
+		bool* _promotions;
 };

@@ -9,11 +9,10 @@ class CyRFCMercenary {
 		CyRFCMercenary();
 		CyRFCMercenary(CvRFCMercenary* rfcMercenary);
 
-		void addPromotion(int i);
+		void setHasPromotion(int i, bool val);
 
 		int getUnitType();
-		int getNumPromotions();
-		int getPromotion(int i);
+		bool hasPromotion(int i);
 		int getHireCost();
 		int getExperience();
 		int getMaintenanceCost();

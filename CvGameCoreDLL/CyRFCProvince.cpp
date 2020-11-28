@@ -21,6 +21,10 @@ std::string CyRFCProvince::getType() {
 	return rfcProvince->getType();
 }
 
+int CyRFCProvince::getProvinceType() {
+	return rfcProvince->getProvinceType();
+}
+
 std::wstring CyRFCProvince::getName() {
 	return rfcProvince->getName();
 }
@@ -42,7 +46,7 @@ int CyRFCProvince::getNumMercenaries() {
 }
 
 CyRFCMercenary* CyRFCProvince::getMercenary(int i) {
-	return new CyRFCMercenary(&rfcProvince->getMercenary(i));
+	return new CyRFCMercenary(rfcProvince->getMercenary(i));
 }
 
 int CyRFCProvince::getNumCities(int playerType) {

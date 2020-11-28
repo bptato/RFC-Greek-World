@@ -6,6 +6,7 @@ import CvUtil
 import simplejson as json #for writing json
 from OrderedDict import * #for writing json
 import StringUtils #for writing json
+import os.path
 
 cmap = CyMap()
 gc = CyGlobalContext()
@@ -514,9 +515,8 @@ class WbParser:
 		f.write(unescapedValues.encode("utf8"))
 
 	def createSplitWBSave(self, mapName, scenarioName):
-		mapPath = scenarioName.replace('/', '\\').split('\\')
-		mapPath.pop(len(mapPath)-1)
-		self.saveMapFile('\\'.join(mapPath) + '\\' + mapName)
+		mapPath = os.path.join(os.path.dirname(scenarioName), mapName)
+		self.saveMapFile(mapPath)
 		self.saveScenarioFile(scenarioName, mapName)
 
 	def parseFile(self, name): #Parse a WBSave file.
@@ -560,9 +560,8 @@ class WbParser:
 			if "MapFile" in self.wbValues:
 				self.scenarioValues = self.wbValues
 				riseFall.setMapFile(self.wbValues['MapFile'])
-				mapPath = name.replace('/', '\\').split('\\')
-				mapPath.pop(len(mapPath)-1)
-				self.parseFile('\\'.join(mapPath) + '\\' + self.wbValues['MapFile'])
+				mapPath = os.path.join(os.path.dirname(name), self.wbValues['MapFile'])
+				self.parseFile(mapPath)
 				self.mapValues = self.wbValues
 				self.splitFile = True
 			return

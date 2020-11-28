@@ -110,10 +110,10 @@ class CvMercenariesScreen:
 		screen.setText("AvailableMercenariesTitle", BACKGROUND_ID, u"<font=3b>" + text("TXT_KEY_AVAILABLE_MERCENARIES").upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, (W_SCREEN/2 - TEXT_MARGIN/2)/2, HEADER_HEIGHT + TEXT_MARGIN/4, Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
 		mercCount = 0
-		for i in range(riseFall.getNumProvinces()):
+		for i in xrange(riseFall.getNumProvinces()):
 			province = riseFall.getProvince(i)
 			if province.getNumCities(self.activePlayer) > 0:
-				for j in range(province.getNumMercenaries()):
+				for j in xrange(province.getNumMercenaries()):
 					mercenary = province.getMercenary(j)
 					unitInfo = gc.getUnitInfo(mercenary.getUnitType())
 					unitID = "M_" + numberToAlpha(i) + ":" + numberToAlpha(j) #you can't put numbers in panel IDs. I had to figure this out the hard way...
@@ -123,13 +123,13 @@ class CvMercenariesScreen:
 					screen.attachPanel(unitID, firstRow, "", "", False, False, PanelStyles.PANEL_STYLE_EMPTY)
 					screen.attachPanel(unitID, secondRow, "", "", False, False, PanelStyles.PANEL_STYLE_EMPTY)
 					screen.attachImageButton(firstRow, unitID + "_picBtn", unitInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_32, WidgetTypes.WIDGET_GENERAL, -1, -1, True)
-					screen.attachLabel(firstRow, unitID + "_nameLabel", u"<font=2b>" + text(unitInfo.getDescription().encode("iso-5988-1")) + u"</font> ")
+					screen.attachLabel(firstRow, unitID + "_nameLabel", u"<font=2b>" + text(unitInfo.getDescription().encode("iso-8859-1")) + u"</font> ")
 					
 					screen.attachMultiListControlGFC(firstRow, unitID + "_promotions", "", 1, 20, 20, TableStyles.TABLE_STYLE_EMPTY)
-					for k in range(mercenary.getNumPromotions()):
-						promotionInfo = gc.getPromotionInfo(k)
-						screen.appendMultiListButton(unitID + "_promotions", promotionInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_32, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
-					screen.attachLabel(secondRow, unitID + "_provinceLabel", u"\tProvince: " + text(province.getName().encode("iso-5988-1")))
+					for k in xrange(gc.getNumPromotionInfos()):
+						if mercenary.hasPromotion(k):
+							screen.appendMultiListButton(unitID + "_promotions", gc.getPromotionInfo(k).getButton(), GenericButtonSizes.BUTTON_SIZE_32, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+					screen.attachLabel(secondRow, unitID + "_provinceLabel", u"\tProvince: " + text(province.getName().encode("iso-8859-1")))
 					screen.attachLabel(secondRow, unitID + "_xpLabel", "\t" + text("INTERFACE_PANE_EXPERIENCE") + ": " + str(mercenary.getExperience()))
 					screen.attachLabel(secondRow, unitID + "_costLabel", u"\t<color=#FFD700>" + str(mercenary.getHireCost()) + "</color>" + CvUtil.getIcon("gold"))
 					if mercenary.getHireCost() <= gc.getPlayer(self.activePlayer).getGold():
@@ -137,7 +137,7 @@ class CvMercenariesScreen:
 					mercCount += 1
 		
 		if (6-mercCount) > 0:
-			for i in range(6-mercCount):
+			for i in xrange(6-mercCount):
 				screen.attachPanel("AvailableMercenaries", "padding"+str(i), "", "", True, False, PanelStyles.PANEL_STYLE_EMPTY)
 				screen.attachLabel("padding"+str(i), "", "     ")
 				screen.attachLabel("padding"+str(i), "", "     ")
@@ -155,7 +155,7 @@ class CvMercenariesScreen:
 		province = riseFall.getProvince(provinceId)
 		mercenary = province.getMercenary(mercId)
 		unitInfo = gc.getUnitInfo(mercenary.getUnitType())
-		screen.setText("MercenaryInfoTitle", BACKGROUND_ID, u"<font=3b>" + text(unitInfo.getDescription().encode("iso-5988-1")).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, W_SCREEN/2 + (W_SCREEN/2 - TEXT_MARGIN/2)/2, HEADER_HEIGHT + TEXT_MARGIN/4, Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.setText("MercenaryInfoTitle", BACKGROUND_ID, u"<font=3b>" + text(unitInfo.getDescription().encode("iso-8859-1")).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, W_SCREEN/2 + (W_SCREEN/2 - TEXT_MARGIN/2)/2, HEADER_HEIGHT + TEXT_MARGIN/4, Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		screen.addUnitGraphicGFC("MercenaryInfoUnitGraphic", mercenary.getUnitType(), W_SCREEN/2+TEXT_MARGIN, HEADER_HEIGHT * 3 / 2, W_SCREEN/2-TEXT_MARGIN*3, H_SCREEN/2, WidgetTypes.WIDGET_GENERAL, -1, -1, 10, 10, 1, True)
 
 
@@ -173,7 +173,6 @@ class CvMercenariesScreen:
 	def handleInput(self, inputClass):
 		riseFall = gc.getRiseFall()
 		functionName = inputClass.getFunctionName()
-		print "Called " + functionName
 		if functionName.startswith("M_"):
 			functionNameSplit = functionName.split("_")
 			mercValues = functionNameSplit[1].split(":")

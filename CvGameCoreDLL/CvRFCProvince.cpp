@@ -5,8 +5,8 @@ Author: bluepotato
 #include "CvRFCProvince.h"
 #include "CvDLLInterfaceIFaceBase.h"
 
-CvRFCProvince::CvRFCProvince() {
-	reset(NO_PROVINCE);
+CvRFCProvince::CvRFCProvince(ProvinceTypes provinceType) {
+	init(provinceType);
 }
 
 CvRFCProvince::~CvRFCProvince() {
@@ -19,18 +19,22 @@ void CvRFCProvince::init(ProvinceTypes provinceType) {
 
 void CvRFCProvince::reset(ProvinceTypes provinceType) {
 	uninit();
-	init(provinceType);
+	_scheduledUnits.clear();
 	_mercenaries.clear();
+	init(provinceType);
 	_type.clear();
 	_name.clear();
 	_plots.clear();
 }
 
 void CvRFCProvince::uninit() {
-	for(std::vector<CvRFCUnit*>::iterator it = _scheduledUnits.begin(); it != _scheduledUnits.end(); ++it) {
-		SAFE_DELETE(*it);
+	for(uint i = 0; i < _scheduledUnits.size(); ++i) {
+		SAFE_DELETE(_scheduledUnits[i]);
 	}
-	_scheduledUnits.clear();
+
+	for(uint i = 0; i < _mercenaries.size(); ++i) {
+		SAFE_DELETE(_mercenaries[i]);
+	}
 }
 
 void CvRFCProvince::setType(CvString type) {
@@ -45,14 +49,9 @@ void CvRFCProvince::setProvinceType(ProvinceTypes provinceType) {
 	_provinceType = provinceType;
 }
 
-void CvRFCProvince::addMercenary(CvRFCMercenary mercenary) {
-	_mercenaries.push_back(mercenary);
-}
-
 void CvRFCProvince::checkMercenaries() {
 	std::vector<CvUnit*> provinceUnits = getUnits();
 	int createdMercs = 0;
-	GC.logMsg("Province units amount: %d", provinceUnits.size());
 	for(std::vector<CvUnit*>::iterator it = provinceUnits.begin(); it != provinceUnits.end(); ++it) {
 		CvUnit* unit = *it;
 		CvPlayer& unitOwner = GET_PLAYER(unit->getOwner());
@@ -78,7 +77,6 @@ void CvRFCProvince::checkMercenaries() {
 					mercOdds /= 2;
 				}
 
-				GC.logMsg("Mercenary creation odds: %d", mercOdds);
 				if(GC.getGame().getSorenRandNum(100, "Mercenary creation roll") < mercOdds) {
 					UnitTypes unitType = unit->getUnitType();
 					int hireCost = GC.getUnitInfo(unitType).getProductionCost() * (unit->getLevel()+1) + (unit->getLevel()+1) * std::abs(unit->getExperience() - unit->experienceNeeded());
@@ -103,16 +101,18 @@ void CvRFCProvince::checkMercenaries() {
 					maintenanceCost *= 15;
 					maintenanceCost /= 100;
 
-					CvRFCMercenary mercenary(hireCost, maintenanceCost, unit->getExperience(), unitType);
+					CvRFCMercenary* mercenary = addMercenary();
+					mercenary->setHireCost(hireCost);
+					mercenary->setMaintenanceCost(maintenanceCost);
+					mercenary->setExperience(unit->getExperience());
+					mercenary->setUnitType(unitType);
+
 					for(int i = 0; i<GC.getNumPromotionInfos(); ++i) {
-						if(unit->isHasPromotion((PromotionTypes)i)) {
-							mercenary.addPromotion((PromotionTypes)i);
-						}
+						mercenary->setHasPromotion((PromotionTypes)i, unit->isHasPromotion((PromotionTypes)i));
 					}
-					addMercenary(mercenary);
 					unit->kill(false);
-					if(!createdMercs) {
-						for(int i = 0; i<MAX_CIV_PLAYERS; ++i) {
+					if(createdMercs == 0) {
+						for(int i = 0; i < MAX_CIV_PLAYERS; ++i) {
 							CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 							if(player.isHuman()) {
 								if(getNumCities((PlayerTypes)i)>0) {
@@ -128,10 +128,12 @@ void CvRFCProvince::checkMercenaries() {
 		}
 	}
 
-	for(std::vector<CvRFCMercenary>::iterator it = _mercenaries.begin(); it != _mercenaries.end();) {
+	for(std::vector<CvRFCMercenary*>::iterator it = _mercenaries.begin(); it != _mercenaries.end();) {
+		CvRFCMercenary* mercenary = *it;
 		static int disbandRate = GC.getDefineINT("MERCENARY_DISBAND_RATE");
 		static int wanderingRate = GC.getDefineINT("MERCENARY_WANDERING_RATE");
 		if(GC.getGame().getSorenRandNum(100, "Mercenary disband roll") < disbandRate) {
+			bool savePointer = false;
 			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < wanderingRate) {
 				int borderProvinces = 0;
 				for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
@@ -144,11 +146,15 @@ void CvRFCProvince::checkMercenaries() {
 					if(isBorderProvince((ProvinceTypes)i)) {
 						rand += 100/borderProvinces;
 						if(100/borderProvinces<GC.getGame().getSorenRandNum(rand, "Border province selection roll")) {
-							GC.getRiseFall().getProvince((ProvinceTypes)i).addMercenary(*it);
+							GC.getRiseFall().getProvince((ProvinceTypes)i).addMercenary(mercenary);
+							savePointer = true; //don't destroy the object
 							break;
 						}
 					}
 				}
+			}
+			if(!savePointer) {
+				SAFE_DELETE(mercenary);
 			}
 			it = _mercenaries.erase(it);
 		} else {
@@ -159,21 +165,22 @@ void CvRFCProvince::checkMercenaries() {
 
 void CvRFCProvince::hireMercenary(PlayerTypes playerType, int mercenaryID) {
 	CvPlayer& player = GET_PLAYER(playerType);
-	CvRFCMercenary& mercenary = getMercenary(mercenaryID);
-	FAssert(player.getGold() >= mercenary.getHireCost());
+	CvRFCMercenary* mercenary = getMercenary(mercenaryID);
+	FAssert(player.getGold() >= mercenary->getHireCost());
 
 
 	CvCity* city = getFirstCity(playerType);
 	FAssert(city != NULL);
 
-	player.changeGold(-mercenary.getHireCost());
-	CvUnit* mercUnit = player.initUnit(mercenary.getUnitType(), city->getX(), city->getY(), NO_UNITAI, DIRECTION_SOUTH, mercenary.getMaintenanceCost());
-	mercUnit->setExperience(mercenary.getExperience());
-	for(int i = 0; i<mercenary.getNumPromotions(); ++i) {
-		mercUnit->setHasPromotion(mercenary.getPromotion(i), true);
+	player.changeGold(-mercenary->getHireCost());
+	CvUnit* mercUnit = player.initUnit(mercenary->getUnitType(), city->getX(), city->getY(), NO_UNITAI, DIRECTION_SOUTH, mercenary->getMaintenanceCost());
+	mercUnit->setExperience(mercenary->getExperience());
+	for(int i = 0; i < GC.getNumPromotionInfos(); ++i) {
+		mercUnit->setHasPromotion((PromotionTypes)i, mercenary->hasPromotion((PromotionTypes)i));
 	}
 	mercUnit->setHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_MERCENARY"), true);
 
+	SAFE_DELETE(_mercenaries[mercenaryID]);
 	_mercenaries.erase(_mercenaries.begin() + mercenaryID);
 }
 
@@ -189,6 +196,23 @@ void CvRFCProvince::removePlot(int plotid) {
 			return;
 		}
 	}
+}
+
+
+void CvRFCProvince::addMercenary(CvRFCMercenary* mercenary) {
+	_mercenaries.push_back(mercenary);
+}
+
+CvRFCMercenary* CvRFCProvince::addMercenary() {
+	CvRFCMercenary* mercenary = new CvRFCMercenary;
+	_mercenaries.push_back(mercenary);
+	return mercenary;
+}
+
+CvRFCUnit* CvRFCProvince::addScheduledUnit() {
+	CvRFCUnit* rfcUnit = new CvRFCUnit;
+	_scheduledUnits.push_back(rfcUnit);
+	return rfcUnit;
 }
 
 
@@ -208,12 +232,6 @@ int CvRFCProvince::getNumScheduledUnits() const {
 	return _scheduledUnits.size();
 }
 
-CvRFCUnit* CvRFCProvince::addScheduledUnit() {
-	CvRFCUnit* rfcUnit = new CvRFCUnit();
-	_scheduledUnits.push_back(rfcUnit);
-	return rfcUnit;
-}
-
 CvRFCUnit* CvRFCProvince::getScheduledUnit(int i) const {
 	return _scheduledUnits[i];
 }
@@ -226,12 +244,10 @@ int CvRFCProvince::getNumMercenaries() const {
 	return _mercenaries.size();
 }
 
-CvRFCMercenary& CvRFCProvince::getMercenary(int i) {
+CvRFCMercenary* CvRFCProvince::getMercenary(int i) {
+	FAssert(i >= 0);
+	FAssert(i < getNumMercenaries());
 	return _mercenaries[i];
-}
-
-std::vector<CvRFCMercenary>& CvRFCProvince::getMercenaries() {
-	return _mercenaries;
 }
 
 std::vector<CvUnit*> CvRFCProvince::getUnits() {
@@ -261,7 +277,7 @@ int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 	int i;
 	int countedCities = 0;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
-		if(city->plot()->getProvinceType() == getProvinceType()) {
+		if(city->plot()->getProvinceType() == _provinceType) {
 			++countedCities;
 		}
 	}
@@ -271,7 +287,7 @@ int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 CvCity* CvRFCProvince::getFirstCity(PlayerTypes playerType) {
 	int i;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
-		if(city->plot()->getProvinceType() == getProvinceType()) {
+		if(city->plot()->getProvinceType() == _provinceType) {
 			return city;
 		}
 	}
@@ -279,22 +295,36 @@ CvCity* CvRFCProvince::getFirstCity(PlayerTypes playerType) {
 }
 
 bool CvRFCProvince::isBorderProvince(ProvinceTypes province) {
-	for(std::vector<int>::iterator it = getPlots().begin(); it != getPlots().end(); ++it) {
-		if(GC.getMapINLINE().plotByIndexINLINE(*it)->getProvinceType() == getProvinceType()) {
-			int x = GC.getMapINLINE().plotByIndexINLINE(*it)->getX();
-			int y = GC.getMapINLINE().plotByIndexINLINE(*it)->getY();
-			if(GC.getMapINLINE().isPlotINLINE(x, y - 1))
-				if(GC.getMapINLINE().plotINLINE(x, y - 1)->getProvinceType() == province)
-					return true;
-			if(GC.getMapINLINE().isPlotINLINE(x, y + 1))
-				if(GC.getMapINLINE().plotINLINE(x, y + 1)->getProvinceType() == province)
-					return true;
-			if(GC.getMapINLINE().isPlotINLINE(x + 1, y))
-				if(GC.getMapINLINE().plotINLINE(x + 1, y)->getProvinceType() == province)
-					return true;
-			if(GC.getMapINLINE().isPlotINLINE(x - 1, y))
-				if(GC.getMapINLINE().plotINLINE(x - 1, y)->getProvinceType() == province)
-					return true;
+	//could be checked by the caller but this feels simpler
+	if(province == getProvinceType()) {
+		return false;
+	}
+	for(std::vector<int>::iterator it = _plots.begin(); it != _plots.end(); ++it) {
+		int x = GC.getMapINLINE().plotByIndexINLINE(*it)->getX();
+		int y = GC.getMapINLINE().plotByIndexINLINE(*it)->getY();
+		if(GC.getMapINLINE().isPlotINLINE(x, y - 1))
+			if(GC.getMapINLINE().plotINLINE(x, y - 1)->getProvinceType() == province)
+				return true;
+		if(GC.getMapINLINE().isPlotINLINE(x, y + 1))
+			if(GC.getMapINLINE().plotINLINE(x, y + 1)->getProvinceType() == province)
+				return true;
+		if(GC.getMapINLINE().isPlotINLINE(x + 1, y))
+			if(GC.getMapINLINE().plotINLINE(x + 1, y)->getProvinceType() == province)
+				return true;
+		if(GC.getMapINLINE().isPlotINLINE(x - 1, y))
+			if(GC.getMapINLINE().plotINLINE(x - 1, y)->getProvinceType() == province)
+				return true;
+	}
+	return false;
+}
+
+bool CvRFCProvince::canSpawnBarbs() {
+	for(std::vector<int>::iterator it = _plots.begin(); it != _plots.end(); ++it) {
+		PlayerTypes owner = GC.getMapINLINE().plotByIndexINLINE(*it)->getOwnerINLINE();
+		if(owner != NO_PLAYER) {
+			if(!GET_PLAYER(owner).isBarbarian() && !GET_PLAYER(owner).isMinorCiv()) {
+				return true;
+			}
 		}
 	}
 	return false;
@@ -317,8 +347,8 @@ void CvRFCProvince::write(FDataStreamBase* stream) {
 	{
 		uint size = _mercenaries.size();
 		stream->Write(size);
-		for(std::vector<CvRFCMercenary>::iterator it = _mercenaries.begin(); it != _mercenaries.end(); ++it) {
-			it->write(stream);
+		for(std::vector<CvRFCMercenary*>::iterator it = _mercenaries.begin(); it != _mercenaries.end(); ++it) {
+			(*it)->write(stream);
 		}
 	}
 
@@ -338,29 +368,26 @@ void CvRFCProvince::read(FDataStreamBase* stream) {
 	stream->ReadString(_name);
 
 	{
-		_scheduledUnits.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i < size; i++) {
-			CvRFCUnit* scheduledUnit = new CvRFCUnit();
+			CvRFCUnit* scheduledUnit = new CvRFCUnit;
 			scheduledUnit->read(stream);
 			_scheduledUnits.push_back(scheduledUnit);
 		}
 	}
 
 	{
-		_mercenaries.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i < size; i++) {
-			CvRFCMercenary mercenary;
-			mercenary.read(stream);
+			CvRFCMercenary* mercenary = new CvRFCMercenary;
+			mercenary->read(stream);
 			_mercenaries.push_back(mercenary);
 		}
 	}
 
 	{
-		_plots.clear();
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i < size; i++) {

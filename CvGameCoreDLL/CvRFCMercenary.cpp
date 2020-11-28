@@ -4,29 +4,62 @@ Author: bluepotato
 #include "CvGameCoreDLL.h"
 #include "CvRFCMercenary.h"
 
-CvRFCMercenary::CvRFCMercenary() : //empty constructor, only for reading!
-_hireCost(-1),
-_maintenanceCost(-1),
-_experience(-1),
-_unitType(NO_UNIT)
-{
-}
-
-CvRFCMercenary::CvRFCMercenary(int hireCost, int maintenanceCost, int experience, UnitTypes unitType) :
-_hireCost(hireCost),
-_maintenanceCost(maintenanceCost),
-_experience(experience),
-_unitType(unitType)
-{
+CvRFCMercenary::CvRFCMercenary() {
+	_promotions = new bool[GC.getNumPromotionInfos()];
+	reset();
 }
 
 CvRFCMercenary::~CvRFCMercenary() {
-	_promotions.clear();
+	SAFE_DELETE_ARRAY(_promotions);
+}
+
+void CvRFCMercenary::init() {
+}
+
+void CvRFCMercenary::uninit() {
+}
+
+void CvRFCMercenary::reset() {
+	for(int i = 0; i < GC.getNumPromotionInfos(); ++i) {
+		_promotions[i] = false;
+	}
+	_hireCost = -1;
+	_maintenanceCost = -1;
+	_experience = -1;
+	_unitType = NO_UNIT;
+}
+
+CvRFCMercenary* CvRFCMercenary::clone() {
+	CvRFCMercenary* clone = new CvRFCMercenary;
+	for(int i = 0; i < GC.getNumPromotionInfos(); ++i) {
+		clone->setHasPromotion((PromotionTypes)i, _promotions[i]);
+	}
+	clone->setHireCost(_hireCost);
+	clone->setMaintenanceCost(_maintenanceCost);
+	clone->setExperience(_experience);
+	clone->setUnitType(_unitType);
+	return clone;
 }
 
 
-void CvRFCMercenary::addPromotion(PromotionTypes promotion) {
-	_promotions.push_back(promotion);
+void CvRFCMercenary::setHasPromotion(PromotionTypes promotion, bool val) {
+	_promotions[promotion] = val;
+}
+
+void CvRFCMercenary::setHireCost(int hireCost) {
+	_hireCost = hireCost;
+}
+
+void CvRFCMercenary::setExperience(int experience) {
+	_experience = experience;
+}
+
+void CvRFCMercenary::setUnitType(UnitTypes unitType) {
+	_unitType = unitType;
+}
+
+void CvRFCMercenary::setMaintenanceCost(int maintenanceCost) {
+	_maintenanceCost = maintenanceCost;
 }
 
 
@@ -45,12 +78,8 @@ UnitTypes CvRFCMercenary::getUnitType() const {
 	return _unitType;
 }
 
-int CvRFCMercenary::getNumPromotions() const {
-	return _promotions.size();
-}
-
-PromotionTypes CvRFCMercenary::getPromotion(int i) const {
-	return _promotions[i];
+bool CvRFCMercenary::hasPromotion(PromotionTypes promotion) const {
+	return _promotions[promotion];
 }
 
 int CvRFCMercenary::getMaintenanceCost() const {
@@ -66,14 +95,7 @@ void CvRFCMercenary::write(FDataStreamBase* stream) {
 	stream->Write(_maintenanceCost);
 	stream->Write(_experience);
 	stream->Write(_unitType);
-
-	{
-		uint size = _promotions.size();
-		stream->Write(size);
-		for(std::vector<PromotionTypes>::iterator it = _promotions.begin(); it != _promotions.end(); ++it) {
-			stream->Write(*it);
-		}
-	}
+	stream->Write(GC.getNumPromotionInfos(), _promotions);
 }
 
 void CvRFCMercenary::read(FDataStreamBase* stream) {
@@ -81,15 +103,5 @@ void CvRFCMercenary::read(FDataStreamBase* stream) {
 	stream->Read(&_maintenanceCost);
 	stream->Read(&_experience);
 	stream->Read((int*)&_unitType);
-
-	{
-		_promotions.clear();
-		uint size;
-		stream->Read(&size);
-		for(uint i = 0; i<size; i++) {
-			int promotionType;
-			stream->Read(&promotionType);
-			_promotions.push_back((PromotionTypes)promotionType);
-		}
-	}
+	stream->Read(GC.getNumPromotionInfos(), _promotions);
 }

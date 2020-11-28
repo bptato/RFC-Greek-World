@@ -66,10 +66,10 @@ void CyRiseFallInterface()
 		;
 
 	python::class_<CyRFCMercenary>("CyRFCMercenary")
+		.def("setHasPromotion", &CyRFCMercenary::setHasPromotion, "void (int i, bool val)")
 		.def("getHireCost", &CyRFCMercenary::getHireCost, "int ()")
 		.def("getUnitType", &CyRFCMercenary::getUnitType, "int ()")
-		.def("getNumPromotions", &CyRFCMercenary::getNumPromotions, "int ()")
-		.def("getPromotion", &CyRFCMercenary::getPromotion, "int (int i)")
+		.def("hasPromotion", &CyRFCMercenary::hasPromotion, "bool (int i)")
 		.def("getExperience", &CyRFCMercenary::getExperience, "int ()")
 		.def("getMaintenanceCost", &CyRFCMercenary::getMaintenanceCost, "int ()")
 		;
@@ -141,6 +141,7 @@ void CyRiseFallInterface()
 
 	python::class_<CyRFCProvince>("CyRFCProvince")
 		.def("getType", &CyRFCProvince::getType, "str ()")
+		.def("getProvinceType", &CyRFCProvince::getProvinceType, "int ()")
 		.def("getName", &CyRFCProvince::getName, "str ()")
 		.def("getNumScheduledUnits", &CyRFCProvince::getNumScheduledUnits, "int ()")
 		.def("addScheduledUnit", &CyRFCProvince::addScheduledUnit, python::return_value_policy<python::reference_existing_object>(), "()")

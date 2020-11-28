@@ -2517,22 +2517,10 @@ bool CvSelectionGroup::canMoveThrough(CvPlot* pPlot)
 	{
 		pUnitNode = headUnitNode();
 
-		//bluepotato start
-		int unitsChecked = 0;
-		//bluepotato end
-
 		while (pUnitNode != NULL)
 		{
 			pLoopUnit = ::getUnit(pUnitNode->m_data);
 			pUnitNode = nextUnitNode(pUnitNode);
-
-			//bluepotato start: fix infinite loop. I guess? TODO: not sure if this actually does something
-			unitsChecked++;
-			if(getNumUnits()<unitsChecked) {
-				GC.logMsg("CvSelectionGroup::canMoveThrough - unitsChecked is %i.", unitsChecked);
-				return false;
-			}
-			//bluepotato end
 
 			if (!(pLoopUnit->canMoveThrough(pPlot)))
 			{

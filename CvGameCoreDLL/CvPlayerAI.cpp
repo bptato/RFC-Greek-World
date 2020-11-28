@@ -17667,21 +17667,21 @@ bool CvPlayerAI::AI_hireMercenary() {
 	for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
 		if(GC.getRiseFall().getProvince((ProvinceTypes)i).getNumCities(getID()) > 0) {
 			for(int j = 0; j < GC.getRiseFall().getProvince((ProvinceTypes)i).getNumMercenaries(); ++j) {
-				CvRFCMercenary& mercenary = GC.getRiseFall().getProvince((ProvinceTypes)i).getMercenary(j);
+				CvRFCMercenary* mercenary = GC.getRiseFall().getProvince((ProvinceTypes)i).getMercenary(j);
 
 				//player's money after hiring merc
-				int tmpGold = getGold() - mercenary.getHireCost();
+				int tmpGold = getGold() - mercenary->getHireCost();
 				if(tmpGold <= 0) {
 					continue;
 				}
-				int proposedMercenaryMaintenanceCost = std::max(1, mercenary.getMaintenanceCost() + getExtraUnitCost());
+				int proposedMercenaryMaintenanceCost = std::max(1, mercenary->getMaintenanceCost() + getExtraUnitCost());
 				int supportTurns = tmpGold/proposedMercenaryMaintenanceCost;
 
 				//choose merc if it has the highest cost and the player can support it for at least 5 turns
-				if(mercenary.getHireCost() > bestMercHireCost && supportTurns >= 5) {
+				if(mercenary->getHireCost() > bestMercHireCost && supportTurns >= 5) {
 					bestMercID = j;
 					bestMercProvince = (ProvinceTypes)i;
-					bestMercHireCost = mercenary.getHireCost();
+					bestMercHireCost = mercenary->getHireCost();
 				}
 			}
 		}
@@ -17723,7 +17723,7 @@ void CvPlayerAI::AI_doMercenaries() {
 	int numMorePowerfulEnemies = 0;
 	int numMorePowerfulCivs = 0;
 
-	for(int i = 0; i<MAX_CIV_PLAYERS; ++i) {
+	for(int i = 0; i < MAX_CIV_PLAYERS; ++i) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isAlive()) {
 			if(GET_TEAM(player.getTeam()).isAtWar(getTeam())) {

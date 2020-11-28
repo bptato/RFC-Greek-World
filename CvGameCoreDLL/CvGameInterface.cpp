@@ -1832,6 +1832,9 @@ void CvGame::doControl(ControlTypes eControl)
 		}
 		break;
 
+	case CONTROL_MERCENARIES_MANAGER: //bluepotato
+		break;
+
 	default:
 		FAssertMsg(false, "eControl did not match any valid options");
 		break;

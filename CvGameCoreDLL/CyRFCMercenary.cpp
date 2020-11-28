@@ -9,20 +9,16 @@ CyRFCMercenary::CyRFCMercenary() : rfcMercenary(NULL) {}
 CyRFCMercenary::CyRFCMercenary(CvRFCMercenary* rfcMercenaryConst) : rfcMercenary(rfcMercenaryConst) {
 }
 
-void CyRFCMercenary::addPromotion(int promotion) {
-	rfcMercenary->addPromotion((PromotionTypes)promotion);
+void CyRFCMercenary::setHasPromotion(int promotion, bool val) {
+	rfcMercenary->setHasPromotion((PromotionTypes)promotion, val);
 }
 
 int CyRFCMercenary::getUnitType() {
 	return rfcMercenary->getUnitType();
 }
 
-int CyRFCMercenary::getNumPromotions() {
-	return rfcMercenary->getNumPromotions();
-}
-
-int CyRFCMercenary::getPromotion(int i) {
-	return rfcMercenary->getPromotion(i);
+bool CyRFCMercenary::hasPromotion(int i) {
+	return rfcMercenary->hasPromotion((PromotionTypes)i);
 }
 
 int CyRFCMercenary::getHireCost() {

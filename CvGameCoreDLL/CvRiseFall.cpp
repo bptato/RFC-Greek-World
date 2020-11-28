@@ -70,7 +70,7 @@ void CvRiseFall::onGameStarted() {
 void CvRiseFall::checkTurn() {
 	CvGame& game = GC.getGameINLINE();
 
-	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
 		if(getRFCPlayer((CivilizationTypes)i).isHuman()) {
 			int turn = game.getGameTurn();
 			turn = turn <= 1 ? turn : turn + 1;
@@ -78,17 +78,24 @@ void CvRiseFall::checkTurn() {
 		}
 	}
 
-	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
 		if(!getRFCPlayer((CivilizationTypes)i).isHuman()) {
 			checkTurnForPlayer((CivilizationTypes)i, game.getGameTurn());
 		}
 	}
 
-	for(int i = 0; i < getNumProvinces(); i++) {
+	for(int i = 0; i < getNumProvinces(); ++i) {
+		//Mercenaries
+		if(GC.getGame().getGameTurn() % 5 == 3) {
+			getProvince((ProvinceTypes)i).checkMercenaries();
+		}
+
 		//Historical barbs
+
 		int numScheduledUnits = getProvince((ProvinceTypes)i).getNumScheduledUnits();
 		if(numScheduledUnits > 0) {
-			if(getProvince((ProvinceTypes)i).getPlots().size() > 0) {
+			//skip barb spawning if no plots are owned in province
+			if(getProvince((ProvinceTypes)i).canSpawnBarbs() && getProvince((ProvinceTypes)i).getPlots().size() > 0) {
 				std::vector<CvPlot*> validPlots;
 				bool plotsInit = false;
 				std::vector<CvPlot*> validSeaPlots;
@@ -111,7 +118,7 @@ void CvRiseFall::checkTurn() {
 								validPlots.push_back(loopPlot);
 							}
 						}
-						seaPlotsInit = true;
+						plotsInit = true;
 					}
 					if(rfcUnit->getLastSpawned() == -1 || rfcUnit->getLastSpawned() + rfcUnit->getSpawnFrequency()/2 < game.getGameTurn()) {
 						if(rfcUnit->getYear() <= game.getGameTurnYear() && rfcUnit->getEndYear() >= game.getGameTurnYear() && game.getSorenRandNum(rfcUnit->getSpawnFrequency()/2, "Unit spawn roll") == 0) {
@@ -133,11 +140,6 @@ void CvRiseFall::checkTurn() {
 					}
 				}
 			}
-		}
-
-		//Mercenaries
-		if(GC.getGame().getGameTurn() % 5 == 3) {
-			getProvince((ProvinceTypes)i).checkMercenaries();
 		}
 	}
 	//Player plot stability
@@ -772,7 +774,7 @@ void CvRiseFall::setMapFile(const wchar* mapFile) {
 
 
 CvRFCProvince* CvRiseFall::addProvince(CvString type) {
-	CvRFCProvince* province = new CvRFCProvince;
+	CvRFCProvince* province = new CvRFCProvince((ProvinceTypes)_rfcProvinces.size());
 	province->setType(type);
 	_rfcProvinces.push_back(province);
 	return province;
@@ -852,7 +854,7 @@ void CvRiseFall::read(FDataStreamBase* stream) {
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i < size; i++) {
-			CvRFCProvince* rfcProvince = new CvRFCProvince;
+			CvRFCProvince* rfcProvince = new CvRFCProvince(NO_PROVINCE);
 			rfcProvince->read(stream);
 			_rfcProvinces.push_back(rfcProvince);
 		}
