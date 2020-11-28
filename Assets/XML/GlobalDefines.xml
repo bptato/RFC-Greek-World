@@ -1668,7 +1668,7 @@
 	</Define>
 	<Define>
 		<DefineName>MERCENARY_DISBAND_RATE</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MERCENARY_WANDERING_RATE</DefineName>

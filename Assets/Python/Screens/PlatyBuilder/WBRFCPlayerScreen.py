@@ -63,7 +63,7 @@ class WBRFCPlayerScreen:
 		self.y += 20
 
 		self.addList("WBRFCPlayerWars", gc.getNumCivilizationInfos(), xres / 4 + 30, yres - yres / 4 - 80, self.civDesc,
-			lambda i: i < self.civType,
+			lambda i: i < self.civType or gc.getRiseFall().getRFCPlayer(i).isMinor(),
 			lambda i: CyTranslator().getText(("[COLOR_YELLOW]", "[COLOR_NEGATIVE_TEXT]")[self.rfcPlayer.isStartingWar(i)], ()) + self.getCivName(i),
 			lambda i: gc.getCivilizationInfo(i).getButton(),
 			8208)

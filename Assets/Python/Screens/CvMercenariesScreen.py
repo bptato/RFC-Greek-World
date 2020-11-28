@@ -185,6 +185,7 @@ class CvMercenariesScreen:
 				if btnName == "hireBtn":
 					province.hireMercenary(self.activePlayer, mercNum)
 					self.resetScreen()
+					return
 			self.selectMercenaryInfo(provinceNum, mercNum)
 		return
 
