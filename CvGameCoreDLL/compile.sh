@@ -27,11 +27,9 @@ PARALLEL=true
 CLANGD=false
 
 #You probably won't have to change anything below
-set -e
-
 error() {
 	echo "ERROR: $*" >&2
-	exit 2
+	exit 1
 }
 
 CLEAN=false
@@ -65,6 +63,8 @@ fi
 
 export WINEDEBUG=-all
 PID="$$"
+
+test -f compile_quit && rm compile_quit
 
 if $CLEAN && $CLANGD; then
 	printf '[\n' > ./compile_commands.json.new
@@ -114,11 +114,12 @@ generate_compile_command() {
 }
 
 cl() {
-	if ! owine "$VCTOOLKIT/bin/cl.exe" "$@"; then
+	if ! owine "$VCTOOLKIT/bin/cl.exe" "$@" > /dev/null && ! test -f compile_quit; then
 		echo "Failed to compile $1" >&2
-		#Yes this is quite brutal but I'm not aware of any better methods to do this
-		kill -9 "$PID"
+		echo q > compile_quit
 		exit 1
+	elif ! test -f compile_quit; then
+		echo "$1"
 	fi
 	if $CLEAN && $CLANGD; then
 		generate_compile_command "c++" "$@"
@@ -174,8 +175,8 @@ if test "$TARGET" = "Release"; then
 	if $PARALLEL; then
 		PIDS=""
 		for COMPILEFILE in *.cpp; do
+			ci=$((ci+1))
 			if test "$COMPILEFILE" != "_precompile.cpp"; then
-				ci=$((ci+1))
 				(
 				if should_compile "$COMPILEFILE" $ci; then
 					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
@@ -185,11 +186,20 @@ if test "$TARGET" = "Release"; then
 			fi
 		done
 		for p in $PIDS; do
-			if ! wait $p; then
-				test -z "$(jobs -p)" || kill $(jobs -p)
+			if test -f compile_quit; then
+				for pp in $PIDS; do
+					#this appears to work, kinda.
+					kill -9 $pp 2>/dev/null
+				done
+				rm compile_quit
 				exit 1
 			fi
+			wait $p
 		done
+		if test -f compile_quit; then
+			rm compile_quit
+			exit 1
+		fi
 	else
 		for COMPILEFILE in *.cpp; do
 			if test "$COMPILEFILE" != "_precompile.cpp"; then
