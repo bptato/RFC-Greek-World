@@ -160,7 +160,7 @@ GLOBAL_CFLAGS="/MD /nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRD
 if test "$TARGET" = "Release"; then
 	set -- "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
 elif test "$TARGET" = "Debug"; then
-	set -- "/Zi" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
+	set -- "/Z7" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
 fi
 
 #Generate precompiled header
@@ -171,46 +171,35 @@ if should_compile "_precompile.cpp" $ci "CvGameCoreDLL.pch"; then
 fi
 
 #Compile the files
-if test "$TARGET" = "Release"; then
-	if $PARALLEL; then
-		PIDS=""
-		for COMPILEFILE in *.cpp; do
-			ci=$((ci+1))
-			if test "$COMPILEFILE" != "_precompile.cpp"; then
-				(
-				if should_compile "$COMPILEFILE" $ci; then
-					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
-				fi
-				)&
-				PIDS="$PIDS $!"
+if $PARALLEL; then
+	PIDS=""
+	for COMPILEFILE in *.cpp; do
+		ci=$((ci+1))
+		if test "$COMPILEFILE" != "_precompile.cpp"; then
+			(
+			if should_compile "$COMPILEFILE" $ci; then
+				cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
 			fi
-		done
-		for p in $PIDS; do
-			if test -f compile_quit; then
-				for pp in $PIDS; do
-					#this appears to work, kinda.
-					kill -9 $pp 2>/dev/null
-				done
-				rm compile_quit
-				exit 1
-			fi
-			wait $p
-		done
+			)&
+			PIDS="$PIDS $!"
+		fi
+	done
+	for p in $PIDS; do
 		if test -f compile_quit; then
+			for pp in $PIDS; do
+				#this appears to work, kinda.
+				kill -9 $pp 2>/dev/null
+			done
 			rm compile_quit
 			exit 1
 		fi
-	else
-		for COMPILEFILE in *.cpp; do
-			if test "$COMPILEFILE" != "_precompile.cpp"; then
-				ci=$((ci+1))
-				if should_compile "$COMPILEFILE" $ci; then
-					cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
-				fi
-			fi
-		done
+		wait $p
+	done
+	if test -f compile_quit; then
+		rm compile_quit
+		exit 1
 	fi
-elif test "$TARGET" = "Debug"; then
+else
 	for COMPILEFILE in *.cpp; do
 		if test "$COMPILEFILE" != "_precompile.cpp"; then
 			ci=$((ci+1))
