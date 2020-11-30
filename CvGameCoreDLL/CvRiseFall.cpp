@@ -599,11 +599,8 @@ void CvRiseFall::finishMajorCivSpawn(CivilizationTypes civType, PlayerTypes play
 }
 
 void CvRiseFall::assignStartingTechs(CivilizationTypes civType, PlayerTypes playerType) {
-	CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
-	CvPlayer& player = GET_PLAYER(playerType);
-
-	for(std::vector<TechTypes>::iterator it = rfcPlayer.getStartingTechs().begin(); it != rfcPlayer.getStartingTechs().end(); ++it) {
-		GET_TEAM(player.getTeam()).setHasTech((*it), true, playerType, false, false);
+	for(int i = 0; i < GC.getNumTechInfos(); ++i) {
+		GET_TEAM(GET_PLAYER(playerType).getTeam()).setHasTech((TechTypes)i, getRFCPlayer(civType).isStartingTech((TechTypes)i), playerType, false, false);
 	}
 }
 
@@ -814,7 +811,7 @@ bool CvRiseFall::skipConditionalSpawn(CivilizationTypes civType) const {
 			PlayerTypes romePlayer = getRFCPlayer(CIVILIZATION_ROME).getPlayerType();
 			CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
 			CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
-			if(romePlayer == NO_PLAYER || startingPlot->getOwner() != romePlayer || getRFCPlayer(GET_PLAYER(romePlayer).getCivilizationType()).getTotalStability() >= 40) {
+			if(romePlayer == NO_PLAYER || startingPlot->getOwner() != romePlayer || getRFCPlayer(CIVILIZATION_ROME).getTotalStability() >= 40) {
 				return true;
 			}
 			break;

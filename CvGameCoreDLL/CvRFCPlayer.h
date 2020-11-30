@@ -33,7 +33,7 @@ class CvRFCPlayer {
 		void setHuman(bool human);
 		void setSpawned(bool spawned);
 		void setFlipped(bool flipped);
-		void addStartingTech(TechTypes tech);
+		void setStartingTech(TechTypes tech, bool val);
 		void setStartingWar(CivilizationTypes civType, bool startingWar);
 		void addCoreProvince(const char* province);
 		void setFlipCountdown(int newFlipCountdown);
@@ -84,7 +84,6 @@ class CvRFCPlayer {
 		bool isHuman() const;
 		bool isMinor() const;
 		bool isFlipped() const;
-		std::vector<TechTypes>& getStartingTechs();
 		std::vector<CivilizationTypes>& getStartingWars();
 		bool isInCoreBounds(int x, int y);
 		bool isInBorderBounds(int x, int y);
@@ -135,7 +134,8 @@ class CvRFCPlayer {
 		std::vector<CvRFCUnit*> _scheduledUnits;
 		std::vector<CvRFCCity*> _scheduledCities;
 		int* _startingCivics;
-		int* _startingWars;
+		bool* _startingWars;
+		bool* _startingTechs;
 		int _startingYear;
 		int _startingTurn;
 		int _startingPlotX;
@@ -148,13 +148,12 @@ class CvRFCPlayer {
 		bool _minor;
 		bool _flipped;
 		std::vector<CvString> _coreProvinces;
-		std::vector<TechTypes> _startingTechs;
 		int _tempStability[NUM_STABILITY_CATEGORIES];
 		int _permStability[NUM_STABILITY_CATEGORIES];
 		int _flipCountdown;
 		int _GNP;
 		int _numPlots;
-		std::vector<CivilizationTypes> _relatedLanguages;
+		std::vector<CivilizationTypes> _relatedLanguages; //TODO this should be in XML
 
 		//modifiers
 		int _compactEmpireModifier;

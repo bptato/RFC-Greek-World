@@ -6,7 +6,8 @@ Author: bluepotato
 
 CvRFCPlayer::CvRFCPlayer() {
 	_startingCivics = new int[GC.getNumCivicOptionInfos()];
-	_startingWars = new int[GC.getNumCivilizationInfos()];
+	_startingWars = new bool[GC.getNumCivilizationInfos()];
+	_startingTechs = new bool[GC.getNumTechInfos()];
 	init(NO_CIVILIZATION);
 }
 
@@ -14,6 +15,7 @@ CvRFCPlayer::~CvRFCPlayer() {
 	uninit();
 	SAFE_DELETE_ARRAY(_startingCivics);
 	SAFE_DELETE_ARRAY(_startingWars);
+	SAFE_DELETE_ARRAY(_startingTechs);
 }
 
 void CvRFCPlayer::reset(CivilizationTypes civilizationType) {
@@ -72,10 +74,13 @@ void CvRFCPlayer::init(CivilizationTypes civilizationType) {
 	}
 
 	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
-		_startingWars[i] = 0;
+		_startingWars[i] = false;
 	}
 
-	_startingTechs.clear();
+	for(int i = 0; i < GC.getNumTechInfos(); ++i) {
+		_startingTechs[i] = false;
+	}
+
 	_coreProvinces.clear();
 	_relatedLanguages.clear();
 }
@@ -147,10 +152,9 @@ void CvRFCPlayer::setFlipped(bool flipped) {
 	_flipped = flipped;
 }
 
-void CvRFCPlayer::addStartingTech(TechTypes tech) {
-	if(tech != NO_TECH) {
-		_startingTechs.push_back(tech);
-	}
+void CvRFCPlayer::setStartingTech(TechTypes tech, bool value) {
+	FAssert(tech != NO_TECH);
+	_startingTechs[tech] = value;
 }
 
 void CvRFCPlayer::addCoreProvince(const char* province) {
@@ -654,19 +658,13 @@ bool CvRFCPlayer::isFlipped() const {
 	return _flipped;
 }
 
-std::vector<TechTypes>& CvRFCPlayer::getStartingTechs() {
-	return _startingTechs;
-}
-
 std::vector<CivilizationTypes>& CvRFCPlayer::getRelatedLanguages() {
 	return _relatedLanguages;
 }
 
 bool CvRFCPlayer::isStartingTech(TechTypes tech) const {
-	if(std::find(_startingTechs.begin(), _startingTechs.end(), tech) != _startingTechs.end()) {
-		return true;
-	}
-	return false;
+	FAssert(tech != NO_TECH);
+	return _startingTechs[tech];
 }
 
 bool CvRFCPlayer::isStartingWar(CivilizationTypes civType) const {
@@ -862,6 +860,7 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 	stream->Read((int*)&_playerType);
 	stream->Read(GC.getNumCivicOptionInfos(), _startingCivics);
 	stream->Read(GC.getNumCivilizationInfos(), _startingWars);
+	stream->Read(GC.getNumTechInfos(), _startingTechs);
 	stream->Read(NUM_STABILITY_CATEGORIES, _tempStability);
 	stream->Read(NUM_STABILITY_CATEGORIES, _permStability);
 	stream->Read(&_startingYear);
@@ -899,17 +898,6 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 	stream->Read(&_commerceBonus);
 
 	stream->Read(&_newCityFreePopulation);
-
-	{
-		_startingTechs.clear();
-		uint size;
-		stream->Read(&size);
-		for(uint i = 0; i<size; i++) {
-			int techID;
-			stream->Read(&techID);
-			_startingTechs.push_back((TechTypes)techID);
-		}
-	}
 
 	{
 		_coreProvinces.clear();
@@ -954,6 +942,7 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	stream->Write(_playerType);
 	stream->Write(GC.getNumCivicOptionInfos(), _startingCivics);
 	stream->Write(GC.getNumCivilizationInfos(), _startingWars);
+	stream->Write(GC.getNumTechInfos(), _startingTechs);
 	stream->Write(NUM_STABILITY_CATEGORIES, _tempStability);
 	stream->Write(NUM_STABILITY_CATEGORIES, _permStability);
 	stream->Write(_startingYear);
@@ -991,14 +980,6 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	stream->Write(_commerceBonus);
 
 	stream->Write(_newCityFreePopulation);
-
-	{
-		uint size = _startingTechs.size();
-		stream->Write(size);
-		for(std::vector<TechTypes>::iterator it = _startingTechs.begin(); it != _startingTechs.end(); ++it) {
-			stream->Write(*it);
-		}
-	}
 
 	{
 		uint size = _coreProvinces.size();

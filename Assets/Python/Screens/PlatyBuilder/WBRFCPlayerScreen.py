@@ -59,14 +59,21 @@ class WBRFCPlayerScreen:
 
 		self.x = xres / 4 + 20
 		self.y = 20
-		self.addText("WBRFCPlayerWarsText", CyTranslator().getText("TXT_KEY_WB_STARTING_WARS", ()))
-		self.y += 20
 
-		self.addList("WBRFCPlayerWars", gc.getNumCivilizationInfos(), xres / 4 + 30, yres - yres / 4 - 80, self.civDesc,
-			lambda i: i < self.civType or gc.getRiseFall().getRFCPlayer(i).isMinor(),
+		self.addList("WBRFCPlayerWars", gc.getNumCivilizationInfos(), xres / 4 + 30, yres / 2 - 40, "TXT_KEY_WB_STARTING_WARS",
+			lambda i: (i < self.civType or gc.getRiseFall().getRFCPlayer(i).isMinor()) and i != CivilizationTypes.CIVILIZATION_BARBARIAN,
 			lambda i: CyTranslator().getText(("[COLOR_YELLOW]", "[COLOR_NEGATIVE_TEXT]")[self.rfcPlayer.isStartingWar(i)], ()) + self.getCivName(i),
 			lambda i: gc.getCivilizationInfo(i).getButton(),
 			8208)
+		
+		self.x = 20
+		self.y = yres / 2
+
+		self.addList("WBRFCPlayerTechs", gc.getNumTechInfos(), xres / 2 + 30, yres / 4 - 40, "TXT_KEY_WB_STARTING_TECHS",
+			lambda i: True,
+			lambda i: CyTranslator().getText(("[COLOR_YELLOW]", "[COLOR_POSITIVE_TEXT]")[self.rfcPlayer.isStartingTech(i)], ()) + gc.getTechInfo(i).getDescription(),
+			lambda i: gc.getTechInfo(i).getButton(),
+			7871)
 
 	def getCivName(self, i):
 		return CyTranslator().getText(gc.getCivilizationInfo(i).getShortDescriptionKey().encode("iso-8859-1"), ())
@@ -138,10 +145,10 @@ class WBRFCPlayerScreen:
 		self.screen.addTableControlGFC(name, 2, self.x, self.y, w, h, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 		self.screen.setTableColumnHeader(name, 0, "", w)
 
-		self.screen.setTableText(name, 0, 0, "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + title + "</font></color>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-
 		self.screen.appendTableRow(name)
-		row = 0
+		self.screen.setTableText(name, 0, 0, "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + CyTranslator().getText(title, ()) + "</font></color>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+
+		row = 1
 		for i in xrange(items):
 			if not showItem(i): continue
 			self.screen.appendTableRow(name)
@@ -210,6 +217,11 @@ class WBRFCPlayerScreen:
 		elif funcName == "WBRFCPlayerWars":
 			civ = inputClass.getData2()
 			self.rfcPlayer.setStartingWar(civ, not self.rfcPlayer.isStartingWar(civ))
+
+			self.interfaceScreen(self.civType)
+		elif funcName == "WBRFCPlayerTechs":
+			tech = inputClass.getData2()
+			self.rfcPlayer.setStartingTech(tech, not self.rfcPlayer.isStartingTech(tech))
 
 			self.interfaceScreen(self.civType)
 		return 1

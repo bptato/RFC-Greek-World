@@ -918,4 +918,8 @@
 		<Tag>TXT_KEY_WB_PROVINCE_AREAS</Tag>
 		<English>Province Areas</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STARTING_TECHS</Tag>
+		<English>Starting Techs</English>
+	</TEXT>
 </Civ4GameText>

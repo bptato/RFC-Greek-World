@@ -350,20 +350,15 @@ class WbParser:
 				civInfo = gc.getCivilizationInfo(i)
 				wbPlayer = OrderedDict({})
 				wbPlayer['CivType'] = civInfo.getType()
-				wbPlayer['StartingTechs'] = []
 				wbPlayer['CivicOptions'] = OrderedDict({})
 
-				alive = false
+				alive = False
 				for j in xrange(gc.getMAX_PLAYERS()):
 					player = gc.getPlayer(j)
 					if player.isAlive() and player.getCivilizationType() == i and not player.isBarbarian() and not player.isMinorCiv():
-						wbPlayer['StartingGold'] = player.getGold()
 						if player.getStateReligion() != ReligionTypes.NO_RELIGION:
 							wbPlayer['StartingReligion'] = gc.getReligionInfo(player.getStateReligion()).getType()
 
-						for k in xrange(gc.getNumTechInfos()):
-							if gc.getTeam(player.getTeam()).isHasTech(k):
-								wbPlayer['StartingTechs'].append(gc.getTechInfo(k).getType())
 						alive = True
 						break
 
@@ -373,13 +368,15 @@ class WbParser:
 						wbPlayer['CivicOptions'][gc.getCivicOptionInfo(j).getType()] = gc.getCivicInfo(startingCivic).getType()
 				if not alive:
 
-					wbPlayer['StartingGold'] = rfcPlayer.getStartingGold()
 					if rfcPlayer.getStartingReligion() != ReligionTypes.NO_RELIGION:
 						wbPlayer['StartingReligion'] = gc.getReligionInfo(rfcPlayer.getStartingReligion()).getType()
 
-					for j in xrange(gc.getNumTechInfos()):
-						if rfcPlayer.isStartingTech(j):
-							wbPlayer['StartingTechs'].append(gc.getTechInfo(j).getType())
+				wbPlayer['StartingGold'] = rfcPlayer.getStartingGold()
+
+				wbPlayer['StartingTechs'] = []
+				for j in xrange(gc.getNumTechInfos()):
+					if rfcPlayer.isStartingTech(j):
+						wbPlayer['StartingTechs'].append(gc.getTechInfo(j).getType())
 
 				wbPlayer['StartingWars'] = []
 				for j in xrange(gc.getNumCivilizationInfos()):
@@ -992,7 +989,7 @@ class WbParser:
 				if "StartingTechs" in wbPlayer:
 					for startingTech in wbPlayer['StartingTechs']:
 						techType = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), startingTech)
-						rfcPlayer.addStartingTech(techType)
+						rfcPlayer.setStartingTech(techType, True)
 
 				if "CivicOptions" in wbPlayer:
 					for i in xrange(gc.getNumCivicOptionInfos()):

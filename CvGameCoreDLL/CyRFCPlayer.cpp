@@ -44,8 +44,8 @@ void CyRFCPlayer::setStartingCivic(int civicOptionType, int civicType) {
 	rfcPlayer->setStartingCivic((CivicOptionTypes)civicOptionType, (CivicTypes)civicType);
 }
 
-void CyRFCPlayer::addStartingTech(int techType) {
-	rfcPlayer->addStartingTech((TechTypes)techType);
+void CyRFCPlayer::setStartingTech(int techType, bool value) {
+	rfcPlayer->setStartingTech((TechTypes)techType, value);
 }
 
 void CyRFCPlayer::setStartingWar(int civType, bool startingWar) {
