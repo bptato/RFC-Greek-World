@@ -1,3 +1,2 @@
-fastdep
 *.o
 .depends-all
