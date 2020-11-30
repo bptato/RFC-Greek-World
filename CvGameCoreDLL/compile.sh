@@ -1,7 +1,7 @@
 #!/bin/sh
 #Author: bluepotato
 #This script is released into the public domain.
-#USAGE: ./compile.sh [Release/Debug] [clean]
+#USAGE: ./compile.sh [release/debug/final_release] [clean]
 #nmake doesn't work too great with wine, so this is intended to replace it on
 #Linux. This should be POSIX-compliant. As to why I made this: firstly it's
 #less hacky than nmake.sh, secondly it doesn't spam the console like nmake.sh
@@ -51,7 +51,7 @@ if test $# -lt 1; then
 else #iterate over arguments
 	for arg in "$@"; do
 		larg="$(tolower "$arg")"
-		if test "$larg" = "release" || test "$larg" = "debug"; then
+		if test "$larg" = "release" -o "$larg" = "debug" -o "$larg" = "final_release"; then
 			TARGET="$(toupper "$(printf '%s\n' "$arg" | head -c1)")$(tolower "$(printf '%s\n' "$arg" | tail -c+2)")"
 		elif test "$larg" = "clean"; then
 			CLEAN=true
@@ -84,9 +84,12 @@ if $CLEAN; then
 			echo "CLEAN: nothing to clean"
 		fi
 	else
-		echo "CLEAN: cleaning Release and Debug"
+		echo "CLEAN: cleaning all targets"
 		if test -e Release; then
 			rm -r ./Release/
+		fi
+		if test -e Final_release; then
+			rm -r ./Final_release/
 		fi
 		if test -e Debug; then
 			rm -r ./Debug/
@@ -114,12 +117,10 @@ generate_compile_command() {
 }
 
 cl() {
-	if ! owine "$VCTOOLKIT/bin/cl.exe" "$@" > /dev/null && ! test -f compile_quit; then
+	if ! test -f compile_quit && ! owine "$VCTOOLKIT/bin/cl.exe" "$@" ; then
 		echo "Failed to compile $1" >&2
 		echo q > compile_quit
 		exit 1
-	elif ! test -f compile_quit; then
-		echo "$1"
 	fi
 	if $CLEAN && $CLANGD; then
 		generate_compile_command "c++" "$@"
@@ -159,6 +160,8 @@ done
 GLOBAL_CFLAGS="/MD /nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /c /Fp$PCH"
 if test "$TARGET" = "Release"; then
 	set -- "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
+elif test "$TARGET" = "Final_release"; then
+	set -- "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" "/GL" $GLOBAL_CFLAGS
 elif test "$TARGET" = "Debug"; then
 	set -- "/Z7" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
 fi
@@ -216,6 +219,9 @@ LINKFILES="$(find "$TARGET"/*.obj)"
 GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$TARGET/CvGameCoreDLL.pdb"
 if test "$TARGET" = "Release"; then
 	FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
+	set -- ""
+elif test "$TARGET" = "Final_release"; then
+	FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF /LTCG"
 	set -- ""
 else
 	FLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$TARGET/CvGameCoreDLL.lib"
