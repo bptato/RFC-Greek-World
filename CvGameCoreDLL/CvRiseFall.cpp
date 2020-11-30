@@ -44,7 +44,7 @@ void CvRiseFall::onGameStarted() {
 		if(player.isHuman()) {
 			CvRFCPlayer& rfcPlayer = getRFCPlayer(player.getCivilizationType());
 			rfcPlayer.setHuman(true);
-			CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
+			CvPlot* startingPlot = GC.getMapINLINE().plotINLINE(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
 			player.initUnit(((UnitTypes)0), rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY()); //will be killed as soon as autoplay starts, this is just to reveal the player's starting position like in RFC
 			gDLL->getEngineIFace()->cameraLookAt(startingPlot->getPoint());
 		}
@@ -86,7 +86,7 @@ void CvRiseFall::checkTurn() {
 
 	for(int i = 0; i < getNumProvinces(); ++i) {
 		//Mercenaries
-		if(GC.getGame().getGameTurn() % 5 == 3) {
+		if(GC.getGameINLINE().getGameTurn() % 5 == 3) {
 			getProvince((ProvinceTypes)i).checkMercenaries();
 		}
 
@@ -224,9 +224,9 @@ void CvRiseFall::checkFlip(PlayerTypes playerType, CivilizationTypes civType) {
 
 			if(toFlip.size()>0) {
 				for(std::vector<CvCity*>::iterator it = toFlip.begin(); it != toFlip.end(); ++it) {
-					FAssert((*it)->getOwner() != playerType);
-					if(!GET_TEAM(GET_PLAYER(playerType).getTeam()).isAtWar(GET_PLAYER((*it)->getOwner()).getTeam())) {
-						GET_TEAM(GET_PLAYER(playerType).getTeam()).declareWar(GET_PLAYER((*it)->getOwner()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
+					FAssert((*it)->getOwnerINLINE() != playerType);
+					if(!GET_TEAM(GET_PLAYER(playerType).getTeam()).isAtWar(GET_PLAYER((*it)->getOwnerINLINE()).getTeam())) {
+						GET_TEAM(GET_PLAYER(playerType).getTeam()).declareWar(GET_PLAYER((*it)->getOwnerINLINE()).getTeam(), true, WARPLAN_TOTAL); //we want new civs to completely destroy older ones
 					}
 					flipCity(*it, playerType, true);
 				}
@@ -240,10 +240,10 @@ void CvRiseFall::checkScheduledCities(PlayerTypes playerType, CivilizationTypes 
 	std::vector<CvRFCCity*>& scheduledCities = getRFCPlayer(civType).getScheduledCities();
 	for(std::vector<CvRFCCity*>::iterator it = scheduledCities.begin(); it != scheduledCities.end();) {
 		CvRFCCity* rfcCity = *it;
-		if(GC.getGame().getTurnYear(turn) >= rfcCity->getYear()) {
+		if(GC.getGameINLINE().getTurnYear(turn) >= rfcCity->getYear()) {
 			if(GET_PLAYER(playerType).canFound(rfcCity->getX(), rfcCity->getY())) {
 				GET_PLAYER(playerType).initCity(rfcCity->getX(), rfcCity->getY(), true, true);
-				CvCity* city = GC.getMap().plot(rfcCity->getX(), rfcCity->getY())->getPlotCity();
+				CvCity* city = GC.getMapINLINE().plotINLINE(rfcCity->getX(), rfcCity->getY())->getPlotCity();
 				city->setPopulation(rfcCity->getPopulation());
 				for(int i = 0; i < GC.getNumBuildingInfos(); ++i) {
 					int buildingNum = rfcCity->getNumBuilding((BuildingTypes)i);
@@ -257,7 +257,7 @@ void CvRiseFall::checkScheduledCities(PlayerTypes playerType, CivilizationTypes 
 				}
 				for(int i = 0; i < GC.getNumReligionInfos(); ++i) {
 					if(rfcCity->getHolyCityReligion((ReligionTypes)i)) {
-						GC.getGame().setHolyCity((ReligionTypes)i, city, false);
+						GC.getGameINLINE().setHolyCity((ReligionTypes)i, city, false);
 					}
 				}
 				for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
@@ -286,11 +286,11 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 	std::vector<CvRFCUnit*>& scheduledUnits = getRFCPlayer(civType).getScheduledUnits();
 	for(std::vector<CvRFCUnit*>::iterator it = scheduledUnits.begin(); it != scheduledUnits.end();) {
 		CvRFCUnit* rfcUnit = *it;
-		if(GC.getGame().getTurnYear(turn) >= rfcUnit->getYear()) {
+		if(GC.getGameINLINE().getTurnYear(turn) >= rfcUnit->getYear()) {
 			if(!rfcUnit->isAIOnly() || !getRFCPlayer(civType).isHuman()) {
 				int ix = rfcUnit->getX();
 				int iy = rfcUnit->getY();
-				CvPlot* plot = GC.getMap().plot(ix, iy);
+				CvPlot* plot = GC.getMapINLINE().plotINLINE(ix, iy);
 				if(plot->isCity() && rfcUnit->isDeclareWar()) {
 					if(plot->getPlotCity()->getOwnerINLINE() != civType) {
 						DomainTypes domainType = (DomainTypes)GC.getUnitInfo(rfcUnit->getUnitType()).getDomainType();
@@ -302,7 +302,7 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 				}
 
 				if(rfcUnit->isDeclareWar()) {
-					PlayerTypes plotOwner = plot->getOwner();
+					PlayerTypes plotOwner = plot->getOwnerINLINE();
 					if(plotOwner != NO_PLAYER && plotOwner != playerType) {
 						if(!GET_TEAM(GET_PLAYER(playerType).getTeam()).isAtWar(GET_PLAYER(plotOwner).getTeam())) {
 							GET_TEAM(GET_PLAYER(playerType).getTeam()).declareWar(GET_PLAYER(plotOwner).getTeam(), true, WARPLAN_TOTAL);
@@ -327,7 +327,7 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 
 void CvRiseFall::checkPlayerTurn(PlayerTypes playerType) {
 	CvPlayer& player = GET_PLAYER(playerType);
-	CvGame& game = GC.getGame();
+	CvGame& game = GC.getGameINLINE();
 
 	if(!player.isBarbarian() && !player.isMinorCiv()) {
 		checkMinorWars(playerType, game.getGameTurn());
@@ -352,7 +352,7 @@ void CvRiseFall::checkMinorWars(PlayerTypes playerType, int turn) {
 	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
 		CvPlayer& loopCiv = GET_PLAYER((PlayerTypes)i);
 		if(loopCiv.isAlive() && loopCiv.isMinorCiv() && !loopCiv.isBarbarian()) {
-			if(GC.getGame().getSorenRandNum(100, "Minor civ for checkMinorWars") < 50) {
+			if(GC.getGameINLINE().getSorenRandNum(100, "Minor civ for checkMinorWars") < 50) {
 				minorCivType = (PlayerTypes)i;
 			}
 		}
@@ -366,13 +366,13 @@ void CvRiseFall::checkMinorWars(PlayerTypes playerType, int turn) {
 
 	if(GET_TEAM(player.getTeam()).isAtWar(minorCiv.getTeam())) {
 		int rand = player.isHuman() ? 30 : 20;
-		if(GC.getGame().getSorenRandNum(100, "Peace for checkMinorWars") <= rand) {
+		if(GC.getGameINLINE().getSorenRandNum(100, "Peace for checkMinorWars") <= rand) {
 			if(!unitsInForeignTerritory(playerType, minorCivType)) {
 				GET_TEAM(player.getTeam()).makePeace(minorCiv.getTeam(), false);
 			}
 		}
 	} else if(!player.isHuman()) {
-		if(GC.getGame().getSorenRandNum(100, "War for checkMinorWars") <= 10) {
+		if(GC.getGameINLINE().getSorenRandNum(100, "War for checkMinorWars") <= 10) {
 			GET_TEAM(player.getTeam()).declareWar(minorCiv.getTeam(), false, WARPLAN_TOTAL);
 		}
 	}
@@ -428,11 +428,11 @@ void CvRiseFall::updatePlayerPlots() {
 		ownedPlots[i] = 0;
 	}
 
-	for(int x = 0; x<GC.getMap().getGridWidth(); ++x) {
-		for(int y = 0; y<GC.getMap().getGridHeight(); ++y) {
-			CvPlot* plot = GC.getMap().plot(x, y);
-			if(!plot->isWater() && !plot->isPeak() && plot->getOwner() != NO_PLAYER) {
-				CivilizationTypes civType = GET_PLAYER(plot->getOwner()).getCivilizationType();
+	for(int x = 0; x<GC.getMapINLINE().getGridWidth(); ++x) {
+		for(int y = 0; y<GC.getMapINLINE().getGridHeight(); ++y) {
+			CvPlot* plot = GC.getMapINLINE().plotINLINE(x, y);
+			if(!plot->isWater() && !plot->isPeak() && plot->getOwnerINLINE() != NO_PLAYER) {
+				CivilizationTypes civType = GET_PLAYER(plot->getOwnerINLINE()).getCivilizationType();
 				if(plot->getSettlerValue(civType) < 90) {
 					ownedPlots[civType] += 1;
 				}
@@ -626,8 +626,6 @@ void CvRiseFall::setupStartingWars(CivilizationTypes civType, PlayerTypes player
 				FAssert(loopPlayerType != playerType);
 				CvPlayer& loopPlayer = GET_PLAYER(loopPlayerType);
 				GET_TEAM(player.getTeam()).declareWar(loopPlayer.getTeam(), true, WARPLAN_TOTAL);
-				//I don't think this makes sense?
-				//GET_TEAM(loopPlayer.getTeam()).declareWar(player.getTeam(), true, WARPLAN_TOTAL);
 			}
 		}
 	}
@@ -638,11 +636,11 @@ void CvRiseFall::eraseSurroundings(CivilizationTypes civType, PlayerTypes player
 
 	int startingX = getRFCPlayer(civType).getStartingPlotX();
 	int startingY = getRFCPlayer(civType).getStartingPlotY();
-	CvPlot* startingPlot = GC.getMap().plot(startingX, startingY);
+	CvPlot* startingPlot = GC.getMapINLINE().plotINLINE(startingX, startingY);
 
 	//erase removable features (=forests)
 	FeatureTypes featureType = startingPlot->getFeatureType();
-	if(featureType!=NO_FEATURE) {
+	if(featureType != NO_FEATURE) {
 		for (int i = 0; i < GC.getNumBuildInfos(); ++i) {
 			if(GC.getBuildInfo((BuildTypes)i).isFeatureRemove(featureType)) {
 				startingPlot->setFeatureType(NO_FEATURE);
@@ -650,18 +648,18 @@ void CvRiseFall::eraseSurroundings(CivilizationTypes civType, PlayerTypes player
 		}
 	}
 
-	if(startingPlot->getOwner() != NO_PLAYER) {
-		FAssert(startingPlot->getOwner() != playerType);
-		GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(startingPlot->getOwner()).getTeam(), true, WARPLAN_TOTAL);
+	if(startingPlot->getOwnerINLINE() != NO_PLAYER) {
+		FAssert(startingPlot->getOwnerINLINE() != playerType);
+		GET_TEAM(player.getTeam()).declareWar(GET_PLAYER(startingPlot->getOwnerINLINE()).getTeam(), true, WARPLAN_TOTAL);
 	}
 
 	startingPlot->setImprovementType(NO_IMPROVEMENT);
-	for(int i = startingX-1; i < startingX+2; i++) {
-		for(int j = startingY-1; j<startingY+2; j++) {
-			CvPlot* plot = GC.getMap().plot(i, j);
-			if(plot != NULL) {
+	for(int i = startingX-1; i < startingX+2; ++i) {
+		for(int j = startingY-1; j<startingY+2; ++j) {
+			if(GC.getMapINLINE().isPlotINLINE(i, j)) {
+				CvPlot* plot = GC.getMapINLINE().plotINLINE(i, j);
 				plot->eraseAIDevelopment();
-				for(int k = 0; k<GC.getMAX_PLAYERS(); k++) {
+				for(int k = 0; k < GC.getMAX_PLAYERS(); ++k) {
 					plot->setCulture((PlayerTypes)k, 0, false, false);
 				}
 				plot->setOwner(NO_PLAYER, false, false);
@@ -672,22 +670,22 @@ void CvRiseFall::eraseSurroundings(CivilizationTypes civType, PlayerTypes player
 
 void CvRiseFall::citySecession(CvCity* city) {
 	int minorCivs = 0;
-	for(int i = 0; i < MAX_PLAYERS; i++) {
+	for(int i = 0; i < MAX_PLAYERS; ++i) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isMinorCiv() || player.isBarbarian()) {
-			minorCivs++;
+			++minorCivs;
 		}
 	}
 
 	PlayerTypes minorCiv = NO_PLAYER;
 
 	int acceptThreshold = 0;
-	if(minorCivs>0) {
+	if(minorCivs > 0) {
 		for(int i = 0; i < MAX_PLAYERS; i++) {
 			CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 			if(player.isMinorCiv() || player.isBarbarian()) {
 				acceptThreshold += 100/minorCivs+1;
-				if(GC.getGame().getSorenRandNum(100, "Minor civ roll") < acceptThreshold) {
+				if(GC.getGameINLINE().getSorenRandNum(100, "Minor civ roll") < acceptThreshold) {
 					minorCiv = (PlayerTypes)i;
 					break;
 				}
@@ -705,7 +703,7 @@ void CvRiseFall::citySecession(CvCity* city) {
 void CvRiseFall::flipCity(CvCity* city, PlayerTypes newOwnerType, bool flipAllUnits) {
 	CvPlayer& newOwner = GET_PLAYER(newOwnerType);
 
-	PlayerTypes previousOwnerType = flipAllUnits ? NO_PLAYER : city->getOwner();
+	PlayerTypes previousOwnerType = flipAllUnits ? NO_PLAYER : city->getOwnerINLINE();
 	flipUnitsInArea(newOwner.getCivilizationType(), newOwnerType, city->getX()-1, city->getY()-1, city->getX()+1, city->getY()+1, previousOwnerType);
 	newOwner.acquireCity(city, false, true, true);
 }
@@ -714,16 +712,19 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 	CvUnit* loopUnit;
 	for(int x = left; x<=right; x++) {
 		for(int y = bottom; y<=top; y++) {
-			CLLNode<IDInfo>* unitNode = GC.getMap().plot(x, y)->headUnitNode();
+			if(!GC.getMapINLINE().isPlotINLINE(x, y)) {
+				return;
+			}
+			CLLNode<IDInfo>* unitNode = GC.getMapINLINE().plotINLINE(x, y)->headUnitNode();
 			static std::vector<IDInfo> oldUnits;
 			oldUnits.clear();
 
 			while (unitNode != NULL) {
 				loopUnit = ::getUnit(unitNode->m_data);
 
-				if(loopUnit->getOwner() != newOwnerType && (previousOwnerType==NO_PLAYER || previousOwnerType==loopUnit->getOwner())) {
+				if(loopUnit->getOwnerINLINE() != newOwnerType && (previousOwnerType==NO_PLAYER || previousOwnerType==loopUnit->getOwnerINLINE())) {
 					CvRFCUnit* scheduledUnit = getRFCPlayer(newCivType).addScheduledUnit();
-					scheduledUnit->setYear(GC.getGame().getGameTurnYear());
+					scheduledUnit->setYear(GC.getGameINLINE().getGameTurnYear());
 					scheduledUnit->setX(x);
 					scheduledUnit->setY(y);
 					scheduledUnit->setUnitType(loopUnit->getUnitType());
@@ -732,7 +733,7 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 					scheduledUnit->setAmount(1);
 					oldUnits.push_back(unitNode->m_data);
 				}
-				unitNode = GC.getMap().plot(x, y)->nextUnitNode(unitNode);
+				unitNode = GC.getMapINLINE().plotINLINE(x, y)->nextUnitNode(unitNode);
 			}
 
 			for (uint i = 0; i < oldUnits.size(); i++) {
@@ -793,7 +794,7 @@ int CvRiseFall::getNumProvinces() const {
 bool CvRiseFall::unitsInForeignTerritory(PlayerTypes owner, PlayerTypes foreign) const {
 	int i;
 	for(CvUnit* unit = GET_PLAYER(owner).firstUnit(&i); unit != NULL; unit = GET_PLAYER(owner).nextUnit(&i)) {
-		if(unit->plot()->getOwner() == foreign) {
+		if(unit->plot()->getOwnerINLINE() == foreign) {
 			return true;
 		}
 	}
@@ -810,8 +811,8 @@ bool CvRiseFall::skipConditionalSpawn(CivilizationTypes civType) const {
 		case CIVILIZATION_BYZANTIUM:
 			PlayerTypes romePlayer = getRFCPlayer(CIVILIZATION_ROME).getPlayerType();
 			CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
-			CvPlot* startingPlot = GC.getMap().plot(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
-			if(romePlayer == NO_PLAYER || startingPlot->getOwner() != romePlayer || getRFCPlayer(CIVILIZATION_ROME).getTotalStability() >= 40) {
+			CvPlot* startingPlot = GC.getMapINLINE().plotINLINE(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
+			if(romePlayer == NO_PLAYER || startingPlot->getOwnerINLINE() != romePlayer || getRFCPlayer(CIVILIZATION_ROME).getTotalStability() >= 40) {
 				return true;
 			}
 			break;
@@ -822,8 +823,8 @@ bool CvRiseFall::skipConditionalSpawn(CivilizationTypes civType) const {
 CvPlot* CvRiseFall::findSpawnPlot(int ix, int iy, DomainTypes domainType) const {
 	for(int x = ix - 1; x < ix + 1; ++x) {
 		for(int y = iy - 1; y < iy + 1; ++y) {
-			if(GC.getMap().isPlot(x, y)) {
-				CvPlot* plot = GC.getMap().plot(x, y);
+			if(GC.getMapINLINE().isPlotINLINE(x, y)) {
+				CvPlot* plot = GC.getMapINLINE().plotINLINE(x, y);
 				if(!plot->isCity()) {
 					if((plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA) && !plot->isPeak()) {
 						return plot;

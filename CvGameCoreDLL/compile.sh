@@ -17,6 +17,9 @@ DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
 OWINEPREFIX="$HOME/compile_linux"
 PYTHON="./Python24"
 BOOST="./Boost-1.32.0"
+#a patched version of fastdep. if for some reason you can't/don't want to use
+#the binary version I provided, you can find the sources in the same directory
+FASTDEP="./bin/fastdep-0.16/fastdep"
 #Spawn a bunch of child processes in release mode. true - on, false - off
 PARALLEL=true
 #Generate compile_commands.json for the clangd language server. true - on, false - off
@@ -62,7 +65,6 @@ fi
 
 export WINEDEBUG=-all
 PID="$$"
-WINEPWD="$(winepath -w "$PWD")"
 
 if $CLEAN && $CLANGD; then
 	printf '[\n' > ./compile_commands.json.new
@@ -108,7 +110,7 @@ generate_compile_command() {
 "directory": "%s",
 "command": "%s",
 "file": "%s"
-},\n' "$WINEPWD" "$(printf '"%s" ' "$@" | sed 's/"\/G7" //g' | sed 's/"/\\"/g')" "$WINEPWD/$2" >> compile_commands.json.new
+},\n' "$PWD" "$(printf '"%s" ' "$@" | sed 's/"\/G7" //g' | sed 's/"/\\"/g')" "$PWD/$2" >> compile_commands.json.new
 }
 
 cl() {
@@ -146,13 +148,11 @@ should_compile() {
 PCH="$TARGET/CvGameCoreDLL.pch"
 
 echo "Finding dependencies..."
-owine bin/fastdep.exe --objectextension=pch -q -O "$TARGET" CvGameCoreDLL.cpp > depends
+DEPENDS="$("$FASTDEP" --objectextension=pch -q -O "$TARGET" CvGameCoreDLL.cpp)"
 for file in *.cpp; do
-	owine bin/fastdep.exe --objectextension=obj -q -O "$TARGET" "$file" >> depends
+	DEPENDS="$DEPENDS
+$("$FASTDEP" --objectextension=obj -q -O "$TARGET" "$file")"
 done
-
-DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends | sed ':a;N;$!ba;s/\\\r\n\t //g' | sed ':a;N;$!ba;s/\r//g')" #A hacky way for getting fastdep to cooperate. For some reason .\.\ nukes the entire variable.
-#echo "$DEPENDS" > depends
 
 #Set flags for compilation
 GLOBAL_CFLAGS="/MD /nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /c /Fp$PCH"
