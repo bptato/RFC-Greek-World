@@ -215,7 +215,7 @@ class CvWorldBuilderScreen:
 			y = rfcPlayer.getStartingPlotY()
 			pPlot = CyMap().plot(x, y)
 			if not pPlot.isNone():
-				if i == gc.getPlayer(self.m_iCurrentPlayer).getCivilizationType():
+				if i == self.cityNameCiv:
 					sColor = "COLOR_BLACK"
 				else:
 					sColor = "COLOR_MAGENTA"
@@ -2114,11 +2114,13 @@ class CvWorldBuilderScreen:
 		#bluepotato start
 		elif inputClass.getFunctionName() == "CityNameCivList":
 			self.cityNameCiv = screen.getPullDownData("CityNameCivList", screen.getSelectedPullDownID("CityNameCivList"))
+			self.refreshSideMenu()
 			if self.iPlayerAddMode == "CityName":
 				self.cityNameSigns()
 			elif self.iPlayerAddMode == "SettlerValue":
 				self.settlerValueOverlay()
-			self.refreshSideMenu()
+			elif self.iPlayerAddMode == "StartingPlot":
+				self.refreshStartingPlots()
 		#bluepotato end
 
 		elif inputClass.getFunctionName() == "BrushHeight":
