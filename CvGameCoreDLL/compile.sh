@@ -138,7 +138,7 @@ should_compile() {
 		return 0
 	fi
 
-	set $(echo "$DEPENDS" | sed "${2}q;d")
+	set -- $(echo "$DEPENDS" | sed "${2}q;d")
 	shift
 	test "$(date -r "$compiled" +%s)" -lt "$(date -r "$(ls -rt $(find . -maxdepth 1 | grep -Eio "$(echo "$@" | sed "s/ /\|/g")") | tail -1)" +%s)"
 }
@@ -157,9 +157,9 @@ DEPENDS="$(awk '{gsub(/\.\\/," ")}1' depends | sed ':a;N;$!ba;s/\\\r\n\t //g' | 
 #Set flags for compilation
 GLOBAL_CFLAGS="/MD /nologo /GR /Gy /W3 /EHsc /Gd /Gm- /DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /YuCvGameCoreDLL.h /c /Fp$PCH"
 if test "$TARGET" = "Release"; then
-	set "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
+	set -- "/O2" "/Oy" "/Oi" "/G7" "/DNDEBUG" "/DFINAL_RELEASE" $GLOBAL_CFLAGS
 elif test "$TARGET" = "Debug"; then
-	set "/Zi" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
+	set -- "/Zi" "/Od" "/D_DEBUG" "/RTC1" $GLOBAL_CFLAGS
 fi
 
 #Generate precompiled header
@@ -217,10 +217,10 @@ LINKFILES="$(find "$TARGET"/*.obj)"
 GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$TARGET/CvGameCoreDLL.pdb"
 if test "$TARGET" = "Release"; then
 	FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
-	set ""
+	set -- ""
 else
 	FLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$TARGET/CvGameCoreDLL.lib"
-	set " " "$PSDK/Lib/AMD64/msvcprtd.lib"
+	set -- " " "$PSDK/Lib/AMD64/msvcprtd.lib"
 fi
 
 link $FLAGS "/LIBPATH:$PSDK/Lib" "$BOOST/libs/boost_python-vc71-mt-1_32.lib" "winmm.lib" "user32.lib" "$VCTOOLKIT/lib/msvcprt.lib" "$VCTOOLKIT/lib/msvcrt.lib" "$PYTHON/libs/python24.lib" "$VCTOOLKIT/lib/OLDNAMES.lib" "/out:$DLLOUTPUT""$@"
