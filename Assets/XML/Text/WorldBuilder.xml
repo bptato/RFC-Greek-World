@@ -922,4 +922,8 @@
 		<Tag>TXT_KEY_WB_STARTING_TECHS</Tag>
 		<English>Starting Techs</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_FLIPPED</Tag>
+		<English>Flipped</English>
+	</TEXT>
 </Civ4GameText>

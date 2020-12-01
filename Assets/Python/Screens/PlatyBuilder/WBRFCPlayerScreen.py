@@ -46,6 +46,8 @@ class WBRFCPlayerScreen:
 		self.y += 40
 		self.addBooleanButton("PlayerEnabled", "TXT_KEY_WB_ENABLED", self.rfcPlayer.isEnabled, self.rfcPlayer.setEnabled)
 		self.y += 20
+		self.addBooleanButton("PlayerFlipped", "TXT_KEY_WB_FLIPPED", self.rfcPlayer.isFlipped, self.rfcPlayer.setFlipped)
+		self.y += 20
 		self.addStartingValues()
 
 		self.y = yres - 20 - yres / 4
