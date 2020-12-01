@@ -926,4 +926,24 @@
 		<Tag>TXT_KEY_WB_FLIPPED</Tag>
 		<English>Flipped</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SCHEDULED_UNITS</Tag>
+		<English>Scheduled Units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SCHEDULED_CITIES</Tag>
+		<English>Scheduled Cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NEW</Tag>
+		<English>New</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ADD_UNIT</Tag>
+		<English>Add Unit</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ADD_CITY</Tag>
+		<English>Add City</English>
+	</TEXT>
 </Civ4GameText>

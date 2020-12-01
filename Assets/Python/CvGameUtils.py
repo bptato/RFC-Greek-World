@@ -1,6 +1,8 @@
 import CvUtil
 from CvPythonExtensions import *
 import CvEventInterface
+#bluepotato: TODO remove this
+import WBRFCPlayerScreen
 gc = CyGlobalContext()
 
 class CvGameUtils:
@@ -610,7 +612,9 @@ class CvGameUtils:
 				return CyGameTextMgr().getTechHelp(iData2, False, False, False, False, -1)
 ## Civilization Widget Text##
 			elif iData1 == 7872:
-				iCiv = iData2 % 10000
+				#bluepotato: why?
+				#iCiv = iData2 % 10000
+				iCiv = iData2
 				return CyGameTextMgr().parseCivInfos(iCiv, False)
 ## Promotion Widget Text##
 			elif iData1 == 7873:
@@ -680,9 +684,12 @@ class CvGameUtils:
 			elif iData1 == 8207:
 				return str(iData2) + ": " + self.getSettlerValueDescription(iData2)
 			elif iData1 == 8208:
-				return CyGameTextMgr().parseCivInfos(iData2, False)
+				#eeeeeh
+				return CyGameTextMgr().getUnitHelp(WBRFCPlayerScreen.rfcPlayerScreen.rfcPlayer.getScheduledUnit(iData2).getUnitType(), False, False, False, None)
 			elif iData1 == 8209:
 				return gc.getRiseFall().getProvince(iData2).getName()
+			elif iData1 == 8210:
+				return u""
 ## Ultrapack ##
 		return u""
 
