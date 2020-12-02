@@ -13,10 +13,10 @@
 wine17="$HOME/.wine_versions/linux-x86/1.7.55/bin/wine" #Path to your wine 1.7.55 binary.
 PSDK="C:/Program Files/Microsoft Platform SDK"
 VCTOOLKIT="C:/Program Files/Microsoft Visual C++ Toolkit 2003"
-DLLOUTPUT="../Assets/CvGameCoreDLL.dll"
-OWINEPREFIX="$HOME/compile_linux"
+OUTPUT="../Assets/CvGameCoreDLL.dll"
 PYTHON="./Python24"
 BOOST="./Boost-1.32.0"
+OWINEPREFIX="$HOME/compile_linux"
 #a patched version of fastdep. if for some reason you can't/don't want to use
 #the binary version I provided, you can find the sources in the same directory
 FASTDEP="./bin/fastdep-0.16/fastdep"
@@ -170,18 +170,21 @@ fi
 ci=1
 if should_compile "_precompile.cpp" $ci "CvGameCoreDLL.pch"; then
 	echo "Generating precompiled header..."
-	cl "_precompile.cpp" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/YcCvGameCoreDLL.h" "/Fo$TARGET/_precompile.obj"
+	cl "_precompile.cpp" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/YcCvGameCoreDLL.h" "/Fo$TARGET/_precompile.obj"
 fi
 
 #Compile the files
 if $PARALLEL; then
 	PIDS=""
 	for COMPILEFILE in *.cpp; do
-		ci=$((ci+1))
+		ci=$(($ci+1))
 		if test "$COMPILEFILE" != "_precompile.cpp"; then
 			(
 			if should_compile "$COMPILEFILE" $ci; then
-				cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
+				cl "$COMPILEFILE" "$@" \
+					"/I$VCTOOLKIT/include" "/I$PSDK/Include" \
+					"/I$PSDK/Include/mfc" "/I$BOOST/include" \
+					"/I$PYTHON/include" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
 			fi
 			)&
 			PIDS="$PIDS $!"
@@ -207,7 +210,10 @@ else
 		if test "$COMPILEFILE" != "_precompile.cpp"; then
 			ci=$((ci+1))
 			if should_compile "$COMPILEFILE" $ci; then
-				cl "$COMPILEFILE" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/I$BOOST/include/" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
+				cl "$COMPILEFILE" "$@" \
+					"/I$VCTOOLKIT/include" "/I$PSDK/Include" \
+					"/I$PSDK/Include/mfc" "/I$BOOST/include" \
+					"/I$PYTHON/include" "/Fo$TARGET/${COMPILEFILE%.*}.obj"
 			fi
 		fi
 	done
@@ -228,12 +234,14 @@ else
 	set -- " " "$PSDK/Lib/AMD64/msvcprtd.lib"
 fi
 
-link $FLAGS "/LIBPATH:$PSDK/Lib" "$BOOST/libs/boost_python-vc71-mt-1_32.lib" "winmm.lib" "user32.lib" "$VCTOOLKIT/lib/msvcprt.lib" "$VCTOOLKIT/lib/msvcrt.lib" "$PYTHON/libs/python24.lib" "$VCTOOLKIT/lib/OLDNAMES.lib" "/out:$DLLOUTPUT""$@"
+link $FLAGS "/LIBPATH:$PSDK/Lib/" "/LIBPATH:$BOOST/libs/" "/LIBPATH:$VCTOOLKIT/lib/" \
+	"/LIBPATH:$PYTHON/libs/" "/LIBPATH:$ASSETSDIR/" \
+	"boost_python-vc71-mt-1_32.lib" "python24.lib" "winmm.lib" "user32.lib" \
+	"msvcprt.lib" "msvcrt.lib" "OLDNAMES.lib" \
+	"/out:$OUTPUT""$@"
 
 if $CLEAN && $CLANGD; then
 	cat compile_commands.json.new | head -n$(dec $(cat compile_commands.json.new | wc -l)) > compile_commands.json
 	rm compile_commands.json.new
 	printf '}\n]\n' >> compile_commands.json
 fi
-
-echo "Done!"
