@@ -1,9 +1,10 @@
 #if defined(WIN32)
 #include <direct.h>
+#include "external/getopt.h"
 #else
 #include <unistd.h>
+#include <getopt.h>
 #endif
-#include "getopt.h"
 
 #include <iostream>
 #include <fstream>
@@ -128,7 +129,8 @@ int main(int argc, char **argv)
 		}
 	}
 #if ! defined (WIN32)
-	Cache.addExcludeDir("","/usr/include");
+	//Usually this is fine but it can cause segfaults
+	//Cache.addExcludeDir("","/usr/include");
 #endif
 	if (optind == argc)
 	{
