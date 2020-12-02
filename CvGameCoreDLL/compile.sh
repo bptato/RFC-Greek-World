@@ -117,10 +117,9 @@ generate_compile_command() {
 }
 
 cl() {
-	if ! test -f compile_quit && ! owine "$VCTOOLKIT/bin/cl.exe" "$@" ; then
-		echo "Failed to compile $1" >&2
+	if ! test -f compile_quit && ! owine "$VCTOOLKIT/bin/cl.exe" "$@"; then
 		echo q > compile_quit
-		exit 1
+		error "Failed to compile $1"
 	fi
 	if $CLEAN && $CLANGD; then
 		generate_compile_command "c++" "$@"
@@ -169,8 +168,11 @@ fi
 #Generate precompiled header
 ci=1
 if should_compile "_precompile.cpp" $ci "CvGameCoreDLL.pch"; then
-	echo "Generating precompiled header..."
-	cl "_precompile.cpp" "$@" "/I$VCTOOLKIT/include" "/I$PSDK/Include" "/I$PSDK/Include/mfc" "/I$BOOST/include" "/I$PYTHON/include" "/YcCvGameCoreDLL.h" "/Fo$TARGET/_precompile.obj"
+	cl "_precompile.cpp" "$@" \
+		"/I$VCTOOLKIT/include" "/I$PSDK/Include" \
+		"/I$PSDK/Include/mfc" "/I$BOOST/include" \
+		"/I$PYTHON/include" "/YcCvGameCoreDLL.h" \
+		"/Fo$TARGET/_precompile.obj"
 fi
 
 #Compile the files
