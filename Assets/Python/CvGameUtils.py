@@ -612,9 +612,7 @@ class CvGameUtils:
 				return CyGameTextMgr().getTechHelp(iData2, False, False, False, False, -1)
 ## Civilization Widget Text##
 			elif iData1 == 7872:
-				#bluepotato: why?
-				#iCiv = iData2 % 10000
-				iCiv = iData2
+				iCiv = iData2 % 10000
 				return CyGameTextMgr().parseCivInfos(iCiv, False)
 ## Promotion Widget Text##
 			elif iData1 == 7873:

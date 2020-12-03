@@ -45,13 +45,13 @@ class WBRFCPlayerScreen:
 		self.x = 20
 
 		self.addDropdown("CurrentRFCPlayer", xres/5, self.civType, 0, gc.getNumCivilizationInfos(),
-				lambda i: i + 1,
-				lambda i: ("*", "")[gc.getRiseFall().getRFCPlayer(i).isEnabled()] + self.getCivName(i))
+			lambda i: i + 1,
+			lambda i: ("*", "")[gc.getRiseFall().getRFCPlayer(i).isEnabled()] + self.getCivName(i))
 
 		self.y += 30
 		self.addDropdown("ChangeBy", xres / 5, self.change, 1, 1000001,
-				lambda i: i * (5, 2)[str(i)[0] == "1"],
-				lambda i: "(+/-) " + str(i))
+			lambda i: i * (5, 2)[str(i)[0] == "1"],
+			lambda i: "(+/-) " + str(i))
 
 		self.y += 40
 		self.addBooleanButton("PlayerEnabled", "TXT_KEY_WB_ENABLED", self.rfcPlayer.isEnabled, self.rfcPlayer.setEnabled)
@@ -59,6 +59,16 @@ class WBRFCPlayerScreen:
 		self.addBooleanButton("PlayerFlipped", "TXT_KEY_WB_FLIPPED", self.rfcPlayer.isFlipped, self.rfcPlayer.setFlipped)
 		self.y += 20
 		self.addStartingValues()
+		self.y += 30
+
+		def religionName(i):
+			if i == ReligionTypes.NO_RELIGION:
+				return CyTranslator().getText("TXT_KEY_MISC_NO_STATE_RELIGION", ())
+			else:
+				return gc.getReligionInfo(i).getDescription()
+		self.addDropdown("WBRFCPlayerStartingReligion", xres/5, self.rfcPlayer.getStartingReligion(), -1, gc.getNumReligionInfos(),
+			lambda i: i + 1,
+			lambda i: religionName(i))
 
 		self.y = yres - 40 - yres / 4 + yres / 8
 		self.x = 20
@@ -119,6 +129,38 @@ class WBRFCPlayerScreen:
 		self.addActionButton("AddScheduledUnit", "TXT_KEY_WB_ADD_UNIT", addScheduledUnit)
 		self.y += 40
 		self.addActionButton("AddScheduledCity", "TXT_KEY_WB_ADD_CITY", self.rfcPlayer.addScheduledCity)
+		self.y += 40
+		if self.selectedUnit != -1:
+			self.addDropdown("UnitType", xres/5, self.rfcPlayer.getScheduledUnit(self.selectedUnit).getUnitType(), 0, gc.getNumUnitInfos(),
+				lambda i: i + 1,
+				lambda i: gc.getUnitInfo(i).getDescription())
+			self.y += 40
+			self.addDropdown("UnitAIType", xres/5, self.rfcPlayer.getScheduledUnit(self.selectedUnit).getUnitAIType(), 0, UnitAITypes.NUM_UNITAI_TYPES,
+				lambda i: i + 1,
+				lambda i: gc.getUnitAIInfo(i).getType())
+			self.y += 40
+			self.addDropdown("FacingDirection", xres/5, self.rfcPlayer.getScheduledUnit(self.selectedUnit).getFacingDirection(), 0, DirectionTypes.NUM_DIRECTION_TYPES,
+				lambda i: i + 1,
+				lambda i: ("North", "Northeast", "East", "Southeast", "South", "Southwest", "West", "Northwest")[i]) #TODO expose and use getDirectionTypeString instead
+			self.y += 40
+			self.addBooleanButton("UnitAIOnly", "TXT_KEY_WB_AI_ONLY",
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).isAIOnly,
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).setAIOnly)
+			self.y += 20
+			self.addBooleanButton("UnitDeclareWar", "TXT_KEY_WB_DECLARE_WAR",
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).isDeclareWar,
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).setDeclareWar)
+			self.y += 20
+			self.addChangeButtons("UnitYear", "TXT_KEY_WB_YEAR",
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).getYear,
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).setYear)
+			self.y += 20
+			self.addChangeButtons("UnitAmount", "TXT_KEY_WB_AMOUNT",
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).getAmount,
+				self.rfcPlayer.getScheduledUnit(self.selectedUnit).setAmount)
+			self.y += 20
+		elif self.selectedCity != -1:
+			pass
 
 	def scheduledUnitStr(self, i):
 		if self.rfcPlayer.getScheduledUnit(i).getUnitType() != UnitTypes.NO_UNIT:
@@ -130,29 +172,44 @@ class WBRFCPlayerScreen:
 		return CyTranslator().getText(gc.getCivilizationInfo(i).getShortDescriptionKey().encode("iso-8859-1"), ())
 
 	def addStartingValues(self):
+		self.x = 20
+		self.y += 20
 		self.addChangeButtons("StartingGold", "TXT_KEY_WB_STARTING_GOLD", self.rfcPlayer.getStartingGold, self.rfcPlayer.setStartingGold)
+		self.y += 20
 		self.addChangeButtons("StartingYear", "TXT_KEY_WB_STARTING_YEAR", self.rfcPlayer.getStartingYear, self.rfcPlayer.setStartingYear)
 		self.y += 20
 		self.addModifiers()
 
 	def addModifiers(self):
+		self.y += 20
 		self.addChangeButtons("CompactEmpireModifier", "TXT_KEY_WB_COMPACT_EMPIRE_MODIFIER", self.rfcPlayer.getCompactEmpireModifier, self.rfcPlayer.setCompactEmpireModifier)
+		self.y += 20
 		self.addChangeButtons("UnitUpkeepModifier", "TXT_KEY_WB_UNIT_UPKEEP_MODIFIER", self.rfcPlayer.getUnitUpkeepModifier, self.rfcPlayer.setUnitUpkeepModifier)
+		self.y += 20
 		self.addChangeButtons("ResearchModifier", "TXT_KEY_WB_RESEARCH_MODIFIER", self.rfcPlayer.getResearchModifier, self.rfcPlayer.setResearchModifier)
+		self.y += 20
 		self.addChangeButtons("DistanceMaintenanceModifier", "TXT_KEY_WB_DISTANCE_MAINTENANCE_MODIFIER", self.rfcPlayer.getDistanceMaintenanceModifier, self.rfcPlayer.setDistanceMaintenanceModifier)
+		self.y += 20
 		self.addChangeButtons("NumCitiesMaintenanceModifier", "TXT_KEY_WB_NUM_CITIES_MAINTENANCE_MODIFIER", self.rfcPlayer.getNumCitiesMaintenanceModifier, self.rfcPlayer.setNumCitiesMaintenanceModifier)
+		self.y += 20
 		self.addChangeButtons("UnitProductionModifier", "TXT_KEY_WB_UNIT_PRODUCTION_MODIFIER", self.rfcPlayer.getUnitProductionModifier, self.rfcPlayer.setUnitProductionModifier)
+		self.y += 20
 		self.addChangeButtons("CivicUpkeepModifier", "TXT_KEY_WB_CIVIC_UPKEEP_MODIFIER", self.rfcPlayer.getCivicUpkeepModifier, self.rfcPlayer.setCivicUpkeepModifier)
+		self.y += 20
 		self.addChangeButtons("HealthBonusModifier", "TXT_KEY_WB_HEALTH_BONUS_MODIFIER", self.rfcPlayer.getHealthBonusModifier, self.rfcPlayer.setHealthBonusModifier)
+		self.y += 20
 		self.addChangeButtons("BuildingProductionModifier", "TXT_KEY_WB_BUILDING_PRODUCTION_MODIFIER", self.rfcPlayer.getBuildingProductionModifier, self.rfcPlayer.setBuildingProductionModifier)
+		self.y += 20
 		self.addChangeButtons("WonderProductionModifier", "TXT_KEY_WB_WONDER_PRODUCTION_MODIFIER", self.rfcPlayer.getWonderProductionModifier, self.rfcPlayer.setWonderProductionModifier)
+		self.y += 20
 		self.addChangeButtons("GreatPeopleModifier", "TXT_KEY_WB_GREAT_PEOPLE_MODIFIER", self.rfcPlayer.getGreatPeopleModifier, self.rfcPlayer.setGreatPeopleModifier)
+		self.y += 20
 		self.addChangeButtons("InflationModifier", "TXT_KEY_WB_INFLATION_MODIFIER", self.rfcPlayer.getInflationModifier, self.rfcPlayer.setInflationModifier)
+		self.y += 20
 		self.addChangeButtons("GrowthModifier", "TXT_KEY_WB_GROWTH_MODIFIER", self.rfcPlayer.getGrowthModifier, self.rfcPlayer.setGrowthModifier)
 	
 	def addChangeButtons(self, name, txtkey, getter, setter):
-		self.y += 20
-		self.x = 20
+		ox = self.x
 		self.addPlusButton(name + "Plus")
 		self.x += 25
 		self.addMinusButton(name + "Minus")
@@ -162,6 +219,7 @@ class WBRFCPlayerScreen:
 		self.changeButtons[name] = {};
 		self.changeButtons[name]['get'] = getter
 		self.changeButtons[name]['set'] = setter
+		self.x = ox
 
 	def addDropdown(self, name, size, current, minimum, maximum, pulldownNext, pulldownName):
 		self.screen.addDropDownBoxGFC(name, self.x, self.y, size, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -285,6 +343,12 @@ class WBRFCPlayerScreen:
 			self.interfaceScreen(self.civType)
 		elif funcName in self.buttons:
 			self.buttons[funcName]()
+			self.interfaceScreen(self.civType)
+		elif funcName == "UnitType":
+			self.rfcPlayer.getScheduledUnit(self.selectedUnit).setUnitType(self.getDropdownData("UnitType"))
+			self.interfaceScreen(self.civType)
+		elif funcName == "UnitAIType":
+			self.rfcPlayer.getScheduledUnit(self.selectedUnit).setUnitAIType(self.getDropdownData("UnitAIType"))
 			self.interfaceScreen(self.civType)
 
 		return 1
