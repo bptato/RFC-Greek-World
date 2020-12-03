@@ -120,6 +120,8 @@ class WBRFCPlayerScreen:
 		def addScheduledUnit():
 			unit = self.rfcPlayer.addScheduledUnit()
 			unit.setUnitType(0)
+			unit.setAmount(1)
+			unit.setYear(gc.getGame().getGameTurnYear())
 
 		def addScheduledCity():
 			city = self.rfcPlayer.addScheduledCity()
