@@ -573,15 +573,6 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 	case WIDGET_COMMERCE_MOD_HELP:
 		parseCommerceModHelp(widgetDataStruct, szBuffer);
 		break;
-
-	//bluepotato start
-	case WIDGET_WB_CITY_NAME:
-		szBuffer.assign(gDLL->getText("TXT_KEY_WB_CITY_NAME_HELP"));
-		break;
-	case WIDGET_WB_SETTLER_MAP:
-		szBuffer.assign(gDLL->getText("TXT_KEY_WB_SETTLER_MAP_HELP"));
-		break;
-	//bluepotato end
 	}
 }
 

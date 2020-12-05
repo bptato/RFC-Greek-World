@@ -541,11 +541,6 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_GLOBELAYER_OPTION,
 	WIDGET_GLOBELAYER_TOGGLE,
 
-	//bluepotato start: city name widget
-	WIDGET_WB_CITY_NAME,
-	WIDGET_WB_SETTLER_MAP,
-	//bluepotato end
-
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
 #endif

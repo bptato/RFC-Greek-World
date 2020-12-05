@@ -475,6 +475,10 @@ class CvGameUtils:
 					return CyTranslator().getText("TXT_KEY_WB_RFGW_MAPS", ())
 				elif iData2 == 37:
 					return CyTranslator().getText("TXT_KEY_WB_PROVINCE_AREAS", ())
+				elif iData2 == 38:
+					return CyTranslator().getText("TXT_KEY_WB_CITY_NAME_HELP", ())
+				elif iData2 == 39:
+					return CyTranslator().getText("TXT_KEY_WB_SETTLER_MAP_HELP", ())
 			elif iData1 > 1029 and iData1 < 1040:
 				if iData1 %2:
 					return "-"
