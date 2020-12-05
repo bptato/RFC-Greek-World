@@ -22,9 +22,6 @@ OWINEPREFIX="$HOME/compile_linux"
 FASTDEP="./bin/fastdep-0.16/fastdep"
 #Spawn a bunch of child processes in release mode. true - on, false - off
 PARALLEL=true
-#Generate compile_commands.json for the clangd language server. true - on, false - off
-#TODO: this doesn't work yet
-CLANGD=false
 
 #You probably won't have to change anything below
 error() {
@@ -51,7 +48,7 @@ if test $# -lt 1; then
 else #iterate over arguments
 	for arg in "$@"; do
 		larg="$(tolower "$arg")"
-		if test "$larg" = "release" -o "$larg" = "debug" -o "$larg" = "final_release"; then
+		if test "$larg" = "release" -o "$larg" = "debug" -o "$larg" = "final_release" -o "$larg" = "clangd"; then
 			TARGET="$(toupper "$(printf '%s\n' "$arg" | head -c1)")$(tolower "$(printf '%s\n' "$arg" | tail -c+2)")"
 		elif test "$larg" = "clean"; then
 			CLEAN=true
@@ -66,12 +63,12 @@ PID="$$"
 
 test -f compile_quit && rm compile_quit
 
-if $CLEAN && $CLANGD; then
-	printf '[\n' > ./compile_commands.json.new
-fi
-
 if test "$TARGET"; then
 	echo "TARGET: $TARGET"
+fi
+
+if test "$TARGET" = "Clangd"; then
+	printf '[\n' > ./compile_commands.json.new
 fi
 
 #Clean mode.
@@ -117,12 +114,11 @@ generate_compile_command() {
 }
 
 cl() {
-	if ! test -f compile_quit && ! owine "$VCTOOLKIT/bin/cl.exe" "$@"; then
+	if test "$TARGET" = "Clangd"; then
+		generate_compile_command "$VCTOOLKIT/bin/cl.exe" "$@"
+	elif ! test -f compile_quit && ! owine "$VCTOOLKIT/bin/cl.exe" "$@"; then
 		echo q > compile_quit
 		error "Failed to compile $1"
-	fi
-	if $CLEAN && $CLANGD; then
-		generate_compile_command "c++" "$@"
 	fi
 }
 
@@ -221,29 +217,29 @@ else
 	done
 fi
 
-#Link resulting files
-LINKFILES="$(find "$TARGET"/*.obj)"
-
-GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$TARGET/CvGameCoreDLL.pdb"
-if test "$TARGET" = "Release"; then
-	FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
-	set -- ""
-elif test "$TARGET" = "Final_release"; then
-	FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF /LTCG"
-	set -- ""
-else
-	FLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$TARGET/CvGameCoreDLL.lib"
-	set -- " " "$PSDK/Lib/AMD64/msvcprtd.lib"
-fi
-
-link $FLAGS "/LIBPATH:$PSDK/Lib/" "/LIBPATH:$BOOST/libs/" "/LIBPATH:$VCTOOLKIT/lib/" \
-	"/LIBPATH:$PYTHON/libs/" "/LIBPATH:$ASSETSDIR/" \
-	"boost_python-vc71-mt-1_32.lib" "python24.lib" "winmm.lib" "user32.lib" \
-	"msvcprt.lib" "msvcrt.lib" "OLDNAMES.lib" \
-	"/out:$OUTPUT""$@"
-
-if $CLEAN && $CLANGD; then
+if test "$TARGET" = "Clangd"; then
 	cat compile_commands.json.new | head -n$(dec $(cat compile_commands.json.new | wc -l)) > compile_commands.json
 	rm compile_commands.json.new
 	printf '}\n]\n' >> compile_commands.json
+else
+	#Link resulting files
+	LINKFILES="$(find "$TARGET"/*.obj)"
+
+	GLOBALFLAGS="$LINKFILES /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /DLL /NOLOGO /PDB:$TARGET/CvGameCoreDLL.pdb"
+	if test "$TARGET" = "Release"; then
+		FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF"
+		set -- ""
+	elif test "$TARGET" = "Final_release"; then
+		FLAGS="$GLOBALFLAGS /INCREMENTAL:NO /OPT:REF /OPT:ICF /LTCG"
+		set -- ""
+	else
+		FLAGS="$GLOBALFLAGS /DEBUG /INCREMENTAL /IMPLIB:$TARGET/CvGameCoreDLL.lib"
+		set -- " " "$PSDK/Lib/AMD64/msvcprtd.lib"
+	fi
+
+	link $FLAGS "/LIBPATH:$PSDK/Lib/" "/LIBPATH:$BOOST/libs/" "/LIBPATH:$VCTOOLKIT/lib/" \
+		"/LIBPATH:$PYTHON/libs/" "/LIBPATH:$ASSETSDIR/" \
+		"boost_python-vc71-mt-1_32.lib" "python24.lib" "winmm.lib" "user32.lib" \
+		"msvcprt.lib" "msvcrt.lib" "OLDNAMES.lib" \
+		"/out:$OUTPUT""$@"
 fi

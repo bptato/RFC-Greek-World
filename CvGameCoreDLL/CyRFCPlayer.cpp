@@ -137,6 +137,14 @@ void CyRFCPlayer::setGrowthModifier(int modifier) {
 	rfcPlayer->setGrowthModifier(modifier);
 }
 
+void CyRFCPlayer::removeScheduledUnit(int i) {
+	rfcPlayer->removeScheduledUnit(i);
+}
+
+void CyRFCPlayer::removeScheduledCity(int i) {
+	rfcPlayer->removeScheduledCity(i);
+}
+
 
 int CyRFCPlayer::getPlayerType() {
 	return rfcPlayer->getPlayerType();

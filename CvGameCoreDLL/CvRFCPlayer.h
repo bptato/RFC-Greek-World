@@ -61,6 +61,9 @@ class CvRFCPlayer {
 		void setNewCityFreePopulation(int population);
 		void changeNewCityFreePopulation(int population);
 
+		void removeScheduledUnit(int i);
+		void removeScheduledCity(int i);
+
 		CivilizationTypes getCivilizationType() const;
 		PlayerTypes getPlayerType() const;
 		std::vector<CvRFCUnit*>& getScheduledUnits();

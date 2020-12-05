@@ -564,6 +564,16 @@ void CvRFCPlayer::changeNewCityFreePopulation(int population) {
 	_newCityFreePopulation += population;
 }
 
+void CvRFCPlayer::removeScheduledUnit(int i) {
+	SAFE_DELETE(_scheduledUnits[i]);
+	_scheduledUnits.erase(_scheduledUnits.begin() + i);
+}
+
+void CvRFCPlayer::removeScheduledCity(int i) {
+	SAFE_DELETE(_scheduledCities[i]);
+	_scheduledCities.erase(_scheduledCities.begin() + i);
+}
+
 
 CivilizationTypes CvRFCPlayer::getCivilizationType() const {
 	return _civilizationType;

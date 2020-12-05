@@ -230,6 +230,30 @@
 		<English>5x Gold obtained from pillaging improvements</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_IN1_TITLE</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IN1</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IN2_TITLE</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IN2</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAR_TITLE</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAR</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_ENSLAVE_WIN</Tag>
 		<English>You have enslaved an unit</English>
 	</TEXT>

@@ -687,7 +687,7 @@ class CvGameUtils:
 			elif iData1 == 8209:
 				return gc.getRiseFall().getProvince(iData2).getName()
 			elif iData1 == 8210:
-				return u""
+				return str(iData2)
 ## Ultrapack ##
 		return u""
 

@@ -19,6 +19,9 @@ class WBRFCPlayerScreen:
 		self.booleanButtons = {}
 		self.selectedUnit = -1
 		self.selectedCity = -1
+		self.selectedCultureCiv = 0
+		self.pbscreen = None
+		self.noRefresh = False
 
 	def interfaceScreen(self, civType):
 		self.screen = CyGInterfaceScreen("WBRFCPlayerScreen", CvScreenEnums.WB_RFC_PLAYER)
@@ -105,7 +108,7 @@ class WBRFCPlayerScreen:
 			lambda i: (self.rfcPlayer.getScheduledUnit(i).getUnitType() != UnitTypes.NO_UNIT and gc.getUnitInfo(self.rfcPlayer.getScheduledUnit(i).getUnitType()).getButton() or None),
 			8208)
 
-		self.x += xres / 4
+		self.x += xres / 4 - 10
 		self.addList("WBRFCPlayerCities", self.rfcPlayer.getNumScheduledCities(), xres / 4 - 30, yres / 2 - 10, "TXT_KEY_WB_SCHEDULED_CITIES",
 			lambda i: True,
 			lambda i: (yellowText, positiveText)[self.selectedCity == i]
@@ -122,16 +125,28 @@ class WBRFCPlayerScreen:
 			unit.setUnitType(0)
 			unit.setAmount(1)
 			unit.setYear(gc.getGame().getGameTurnYear())
+			self.selectedCity = -1
+			self.selectedUnit = self.rfcPlayer.getNumScheduledUnits() - 1
 
 		def addScheduledCity():
 			city = self.rfcPlayer.addScheduledCity()
 			city.setX(0)
 			city.setY(0)
+			city.setPopulation(1)
+			city.setYear(gc.getGame().getGameTurnYear())
+			self.selectedUnit = -1
+			self.selectedCity = self.rfcPlayer.getNumScheduledCities() - 1
 
 		self.addActionButton("AddScheduledUnit", "TXT_KEY_WB_ADD_UNIT", addScheduledUnit)
 		self.y += 40
-		self.addActionButton("AddScheduledCity", "TXT_KEY_WB_ADD_CITY", self.rfcPlayer.addScheduledCity)
+		self.addActionButton("AddScheduledCity", "TXT_KEY_WB_ADD_CITY", addScheduledCity)
 		self.y += 40
+
+		if self.rfcPlayer.getNumScheduledUnits() <= self.selectedUnit:
+			self.selectedUnit = -1
+		if self.rfcPlayer.getNumScheduledCities() <= self.selectedCity:
+			self.selectedCity = -1
+
 		if self.selectedUnit != -1:
 			self.addDropdown("UnitType", xres/5, self.rfcPlayer.getScheduledUnit(self.selectedUnit).getUnitType(), 0, gc.getNumUnitInfos(),
 				lambda i: i + 1,
@@ -160,9 +175,95 @@ class WBRFCPlayerScreen:
 			self.addChangeButtons("UnitAmount", "TXT_KEY_WB_AMOUNT",
 				self.rfcPlayer.getScheduledUnit(self.selectedUnit).getAmount,
 				self.rfcPlayer.getScheduledUnit(self.selectedUnit).setAmount)
+			self.y += 30
+			self.addText("UnitXY", "X: " +
+					str(self.rfcPlayer.getScheduledUnit(self.selectedUnit).getX())
+					+ " Y: " +
+					str(self.rfcPlayer.getScheduledUnit(self.selectedUnit).getY()))
 			self.y += 20
+			self.addActionButton("UnitMove", "TXT_KEY_MISSION_MOVE_TO",
+					self.moveSelectedUnit)
+			self.y = yres - 60
+			self.addActionButton("UnitDestroy", "TXT_KEY_WB_DELETE",
+					self.destroySelectedUnit)
 		elif self.selectedCity != -1:
-			pass
+			self.addChangeButtons("CityYear", "TXT_KEY_WB_YEAR",
+				self.rfcPlayer.getScheduledCity(self.selectedCity).getYear,
+				self.rfcPlayer.getScheduledCity(self.selectedCity).setYear)
+			self.y += 20
+			self.addChangeButtons("CityPopulation", "TXT_KEY_WB_POPULATION",
+				self.rfcPlayer.getScheduledCity(self.selectedCity).getPopulation,
+				self.rfcPlayer.getScheduledCity(self.selectedCity).setPopulation)
+			self.y += 20
+			self.addText("CityXY", "X: " +
+					str(self.rfcPlayer.getScheduledCity(self.selectedCity).getX())
+					+ " Y: " +
+					str(self.rfcPlayer.getScheduledCity(self.selectedCity).getY()))
+			self.y += 20
+			self.addActionButton("CityMove", "TXT_KEY_MISSION_MOVE_TO",
+					self.moveSelectedCity)
+
+			self.y += 40
+			self.addChangeButtons("CityCultureMod", self.getCivName(self.selectedCultureCiv).encode("iso-8859-1"),
+				lambda: self.rfcPlayer.getScheduledCity(self.selectedCity).getCulture(self.selectedCultureCiv),
+				lambda i: self.rfcPlayer.getScheduledCity(self.selectedCity).setCulture(self.selectedCultureCiv, i))
+			self.y += 30
+			self.addList("CityCulture", gc.getNumCivilizationInfos(), xres / 4 - 40, yres - self.y - 60, "TXT_KEY_CONCEPT_CULTURE",
+				lambda i: True,
+				lambda i: (yellowText, positiveText)[self.selectedCultureCiv == i]
+					+ self.getCivName(i)
+					+ ": "
+					+ str(self.rfcPlayer.getScheduledCity(self.selectedCity).getCulture(i)),
+				lambda i: gc.getCivilizationInfo(i).getButton(),
+				7872)
+
+			self.y = yres - 50
+			self.addActionButton("CityDestroy", "TXT_KEY_WB_DELETE",
+					self.destroySelectedCity)
+			
+
+			self.y = yres / 2 + 20
+			self.x = xres / 2 + xres / 8 + 10
+			self.addList("CityReligions", gc.getNumReligionInfos(), xres / 8 - 25, yres / 4 - 60, "TXT_KEY_PEDIA_CATEGORY_RELIGION",
+				lambda i: True,
+				lambda i: (yellowText, positiveText)[self.rfcPlayer.getScheduledCity(self.selectedCity).getReligion(i)]
+					+ gc.getReligionInfo(i).getDescription(),
+				lambda i: gc.getReligionInfo(i).getButton(),
+				7869)
+
+			self.x += xres / 8 - 5
+			self.addList("HolyCityReligions", gc.getNumReligionInfos(), xres / 8 - 25, yres / 4 - 60, "TXT_KEY_WB_HOLY_CITY",
+				lambda i: True,
+				lambda i: (yellowText, positiveText)[self.rfcPlayer.getScheduledCity(self.selectedCity).getHolyCityReligion(i)]
+					+ gc.getReligionInfo(i).getDescription(),
+				lambda i: gc.getReligionInfo(i).getButton(),
+				7869)
+
+			self.x += xres / 8 - 5
+			self.addList("CityBuildings", gc.getNumBuildingInfos(), xres / 8 - 5, yres - 50 - self.y, "TXT_KEY_WB_BUILDINGS",
+				lambda i: True,
+				lambda i: (yellowText, positiveText)[self.rfcPlayer.getScheduledCity(self.selectedCity).getNumBuilding(i) > 0]
+					+ gc.getBuildingInfo(i).getDescription(),
+				lambda i: gc.getBuildingInfo(i).getButton(),
+				7870)
+
+	def destroySelectedUnit(self):
+		self.rfcPlayer.removeScheduledUnit(self.selectedUnit)
+		self.selectedUnit -= 1
+
+	def destroySelectedCity(self):
+		self.rfcPlayer.removeScheduledCity(self.selectedCity)
+		self.selectedCity -= 1
+
+	def moveSelectedUnit(self):
+		self.pbscreen.iPlayerAddMode = "MoveRFCUnit"
+		self.screen.hideScreen()
+		self.noRefresh = True
+
+	def moveSelectedCity(self):
+		self.pbscreen.iPlayerAddMode = "MoveRFCCity"
+		self.screen.hideScreen()
+		self.noRefresh = True
 
 	def scheduledUnitStr(self, i):
 		if self.rfcPlayer.getScheduledUnit(i).getUnitType() != UnitTypes.NO_UNIT:
@@ -243,7 +344,7 @@ class WBRFCPlayerScreen:
 		self.screen.setButtonGFC(name, CyTranslator().getText(text, ()), "", self.x, self.y, w, h, WidgetTypes.WIDGET_GENERAL, -1, -1, style)
 	
 	def addActionButton(self, name, textkey, action):
-		self.addTextButton(name, textkey, 100, 30, ButtonStyles.BUTTON_STYLE_STANDARD)
+		self.addTextButton(name, textkey, 120, 30, ButtonStyles.BUTTON_STYLE_STANDARD)
 		self.buttons[name] = action
 
 	def addBooleanButton(self, name, textkey, getter, setter):
@@ -308,49 +409,69 @@ class WBRFCPlayerScreen:
 
 		if funcName == "ChangeBy":
 			self.change = self.getDropdownData("ChangeBy")
+			self.noRefresh = True
 		elif funcName == "CurrentRFCPlayer":
-			self.interfaceScreen(self.getDropdownData("CurrentRFCPlayer"))
+			self.civType = self.getDropdownData("CurrentRFCPlayer")
 		elif funcName.endswith("Plus") and funcName.replace("Plus", "") in self.changeButtons:
 			modifier = self.changeButtons[funcName.replace("Plus", "")]
 			modifier['set'](modifier['get']() + self.change)
-			self.interfaceScreen(self.civType)
 		elif funcName.endswith("Minus") and funcName.replace("Minus", "") in self.changeButtons:
 			modifier = self.changeButtons[funcName.replace("Minus", "")]
 			modifier['set'](modifier['get']() - self.change)
-			self.interfaceScreen(self.civType)
 		elif funcName in self.booleanButtons:
 			button = self.booleanButtons[funcName]
 			button['set'](not button['get']())
-			self.interfaceScreen(self.civType)
 		elif funcName == "WBRFCPlayerCivics":
 			civic = inputClass.getData2()
 			self.rfcPlayer.setStartingCivic(gc.getCivicInfo(civic).getCivicOptionType(), civic)
-			self.interfaceScreen(self.civType)
 		elif funcName == "WBRFCPlayerWars":
 			civ = inputClass.getData2()
 			self.rfcPlayer.setStartingWar(civ, not self.rfcPlayer.isStartingWar(civ))
-			self.interfaceScreen(self.civType)
 		elif funcName == "WBRFCPlayerTechs":
 			tech = inputClass.getData2()
 			self.rfcPlayer.setStartingTech(tech, not self.rfcPlayer.isStartingTech(tech))
-			self.interfaceScreen(self.civType)
 		elif funcName == "WBRFCPlayerUnits":
-			print "Pressed " + str(inputClass.getData2())
 			self.selectedUnit = inputClass.getData2()
 			self.selectedCity = -1
-			self.interfaceScreen(self.civType)
 		elif funcName == "WBRFCPlayerCities":
 			self.selectedCity = inputClass.getData2()
 			self.selectedUnit = -1
-			self.interfaceScreen(self.civType)
 		elif funcName in self.buttons:
 			self.buttons[funcName]()
-			self.interfaceScreen(self.civType)
 		elif funcName == "UnitType":
 			self.rfcPlayer.getScheduledUnit(self.selectedUnit).setUnitType(self.getDropdownData("UnitType"))
-			self.interfaceScreen(self.civType)
 		elif funcName == "UnitAIType":
 			self.rfcPlayer.getScheduledUnit(self.selectedUnit).setUnitAIType(self.getDropdownData("UnitAIType"))
+		elif funcName == "CityReligions":
+			religion = inputClass.getData2()
+			scheduledCity = self.rfcPlayer.getScheduledCity(self.selectedCity)
+			if not religion: #avoid holy cities w/o religion
+				scheduledCity.setHolyCityReligion(religion, True)
+
+			scheduledCity.setReligion(religion,
+				not scheduledCity.getReligion(religion))
+		elif funcName == "HolyCityReligions":
+			religion = inputClass.getData2()
+			scheduledCity = self.rfcPlayer.getScheduledCity(self.selectedCity)
+			if religion: #avoid holy cities w/o religion
+				scheduledCity.setReligion(religion, True)
+
+			scheduledCity.setHolyCityReligion(religion,
+				not scheduledCity.getHolyCityReligion(religion))
+		elif funcName == "CityBuildings":
+			building = inputClass.getData2()
+			scheduledCity = self.rfcPlayer.getScheduledCity(self.selectedCity)
+			if scheduledCity.getNumBuilding(building) > 0:
+				amount = 0
+			else:
+				amount = 1
+			scheduledCity.setNumBuilding(building, amount)
+		elif funcName == "CityCulture":
+			self.selectedCultureCiv = inputClass.getData2()
+
+		if self.noRefresh:
+			self.noRefresh = False
+		else:
 			self.interfaceScreen(self.civType)
 
 		return 1

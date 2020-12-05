@@ -1802,6 +1802,16 @@ class CvWorldBuilderScreen:
 					self.lMoveUnit = []
 			self.iPlayerAddMode = "CityDataI"
 			self.iMoveCity = -1
+		elif self.iPlayerAddMode == "MoveRFCUnit":
+			rfcPlayerScreen = WBRFCPlayerScreen.rfcPlayerScreen
+			rfcPlayerScreen.rfcPlayer.getScheduledUnit(rfcPlayerScreen.selectedUnit).setX(self.m_pCurrentPlot.getX())
+			rfcPlayerScreen.rfcPlayer.getScheduledUnit(rfcPlayerScreen.selectedUnit).setY(self.m_pCurrentPlot.getY())
+			rfcPlayerScreen.interfaceScreen(rfcPlayerScreen.civType)
+		elif self.iPlayerAddMode == "MoveRFCCity":
+			rfcPlayerScreen = WBRFCPlayerScreen.rfcPlayerScreen
+			rfcPlayerScreen.rfcPlayer.getScheduledCity(rfcPlayerScreen.selectedCity).setX(self.m_pCurrentPlot.getX())
+			rfcPlayerScreen.rfcPlayer.getScheduledCity(rfcPlayerScreen.selectedCity).setY(self.m_pCurrentPlot.getY())
+			rfcPlayerScreen.interfaceScreen(rfcPlayerScreen.civType)
 		elif self.iPlayerAddMode == "DuplicateCity" or self.iPlayerAddMode == "DuplicateCityPlus":
 			if self.m_pCurrentPlot.isCity(): return
 			pOldCity = pPlayer.getCity(self.iMoveCity)
@@ -2033,6 +2043,7 @@ class CvWorldBuilderScreen:
 			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "EditCivilizationButton":
+			WBRFCPlayerScreen.rfcPlayerScreen.pbscreen = self
 			WBRFCPlayerScreen.rfcPlayerScreen.interfaceScreen(self.cityNameCiv)
 
 		elif inputClass.getFunctionName() == "RFGWMode":

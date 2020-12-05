@@ -137,6 +137,8 @@ void CyRiseFallInterface()
 		.def("setStartingReligion", &CyRFCPlayer::setStartingReligion, "void (int religion)")
 		.def("getStartingReligion", &CyRFCPlayer::getStartingReligion, "int ()")
 		.def("getPlayerType", &CyRFCPlayer::getPlayerType, "int ()")
+		.def("removeScheduledUnit", &CyRFCPlayer::removeScheduledUnit, "void ()")
+		.def("removeScheduledCity", &CyRFCPlayer::removeScheduledCity, "void ()")
 		;
 
 	python::class_<CyRFCProvince>("CyRFCProvince")

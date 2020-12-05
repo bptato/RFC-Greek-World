@@ -958,4 +958,20 @@
 		<Tag>TXT_KEY_WB_AI_ONLY</Tag>
 		<English>AI Only</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_DELETE</Tag>
+		<English>Delete</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_POPULATION</Tag>
+		<English>Population</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RELIGION</Tag>
+		<English>Religion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_HOLY_CITY</Tag>
+		<English>Holy City</English>
+	</TEXT>
 </Civ4GameText>
