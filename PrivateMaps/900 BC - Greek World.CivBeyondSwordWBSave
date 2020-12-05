@@ -24,6 +24,15 @@ application/json
 	"Players":[
 		{
 			"CivType":"CIVILIZATION_EGYPT",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":100,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -59,15 +68,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":100,
 			"StartingWars":[],
 			"RelatedLanguages":[
 				"CIVILIZATION_NUBIA"
@@ -96,6 +96,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_PHOENICIA",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
+				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
+				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":150,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -132,15 +141,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":150,
 			"StartingWars":[],
 			"RelatedLanguages":[
 				"CIVILIZATION_CARTHAGE"
@@ -169,6 +169,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_BABYLON",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
+				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":150,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -204,15 +213,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":150,
 			"StartingWars":[
 				"CIVILIZATION_INDEPENDENT",
 				"CIVILIZATION_INDEPENDENT2"
@@ -242,6 +242,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_ASSYRIA",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_ISOLATIONISM",
+				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -279,15 +288,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_ISOLATIONISM",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
 				"CIVILIZATION_PHOENICIA",
@@ -320,6 +320,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_ISRAEL",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
+				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_ORGANIZED_RELIGION",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":150,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -357,15 +366,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_ORGANIZED_RELIGION",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":150,
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
 				"CIVILIZATION_BABYLON",
@@ -395,6 +395,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_ATHENS",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_OLIGARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
+				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -432,15 +441,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_OLIGARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_INDEPENDENT",
 				"CIVILIZATION_INDEPENDENT2"
@@ -475,6 +475,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_SPARTA",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -512,15 +521,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_INDEPENDENT",
 				"CIVILIZATION_INDEPENDENT2"
@@ -555,6 +555,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_SCYTHIA",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
+				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
+				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
+				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
+				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
+				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
+			},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -593,15 +602,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_TRIBAL_FEDERATION",
-				"CIVICOPTION_LEGAL":"CIVIC_TRIBAL_CUSTOM",
-				"CIVICOPTION_LABOR":"CIVIC_TRIBALISM",
-				"CIVICOPTION_ECONOMY":"CIVIC_REDISTRIBUTION",
-				"CIVICOPTION_RELIGION":"CIVIC_ANIMISM",
-				"CIVICOPTION_EXPANSION":"CIVIC_TRIBAL_WARFARE"
-			},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_ASSYRIA"
 			],
@@ -631,6 +631,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_CARTHAGE",
+			"CivicOptions":{},
+			"StartingGold":250,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_POLYTHEISM",
@@ -656,8 +658,6 @@ application/json
 				"TECH_BOATS",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{},
-			"StartingGold":250,
 			"StartingWars":[],
 			"RelatedLanguages":[
 				"CIVILIZATION_PHOENICIA"
@@ -686,6 +686,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_CELT",
+			"CivicOptions":{},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_POLYTHEISM",
@@ -707,8 +709,6 @@ application/json
 				"TECH_FORTIFICATION",
 				"TECH_SPOKES"
 			],
-			"CivicOptions":{},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_ATHENS",
 				"CIVILIZATION_SPARTA"
@@ -738,6 +738,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_ETRURIA",
+			"CivicOptions":{},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_FISHING",
@@ -760,8 +762,6 @@ application/json
 				"TECH_FORTIFICATION",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_CELT"
 			],
@@ -789,6 +789,12 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_NUBIA",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
+			},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_POLYTHEISM",
@@ -812,12 +818,6 @@ application/json
 				"TECH_COPPER_WORKING",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION"
-			},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
 				"CIVILIZATION_ASSYRIA",
@@ -850,6 +850,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_PERSIA",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
+				"CIVICOPTION_RELIGION":"CIVIC_ORGANIZED_RELIGION",
+				"CIVICOPTION_EXPANSION":"CIVIC_CLIENT_KINGDOMS"
+			},
+			"StartingGold":250,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_POLYTHEISM",
@@ -880,15 +889,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_ORGANIZED_RELIGION",
-				"CIVICOPTION_EXPANSION":"CIVIC_CLIENT_KINGDOMS"
-			},
-			"StartingGold":250,
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
 				"CIVILIZATION_SUMERIA",
@@ -931,6 +931,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_ROME",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
+				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
+				"CIVICOPTION_EXPANSION":"CIVIC_CLIENT_KINGDOMS"
+			},
+			"StartingGold":300,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_POLYTHEISM",
@@ -963,15 +972,6 @@ application/json
 				"TECH_SPOKES",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_DEIFICATION",
-				"CIVICOPTION_EXPANSION":"CIVIC_CLIENT_KINGDOMS"
-			},
-			"StartingGold":300,
 			"StartingWars":[
 				"CIVILIZATION_ATHENS",
 				"CIVILIZATION_SPARTA",
@@ -1012,6 +1012,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_MACEDONIA",
+			"CivicOptions":{},
+			"StartingGold":250,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -1039,8 +1041,6 @@ application/json
 				"TECH_BOATS",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{},
-			"StartingGold":250,
 			"StartingWars":[
 				"CIVILIZATION_PHOENICIA",
 				"CIVILIZATION_HITTITE",
@@ -1085,6 +1085,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_INDIA",
+			"CivicOptions":{},
+			"StartingGold":250,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -1127,8 +1129,6 @@ application/json
 				"TECH_BOATS",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{},
-			"StartingGold":250,
 			"StartingWars":[
 				"CIVILIZATION_INDUS_VALLEY",
 				"CIVILIZATION_PERSIA"
@@ -1158,6 +1158,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_BACTRIA",
+			"CivicOptions":{},
+			"StartingGold":300,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -1198,8 +1200,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{},
-			"StartingGold":300,
 			"StartingWars":[
 				"CIVILIZATION_INDUS_VALLEY",
 				"CIVILIZATION_PERSIA",
@@ -1235,6 +1235,12 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_NUMIDIA",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY"
+			},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -1267,12 +1273,6 @@ application/json
 				"TECH_BOATS",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_MONARCHY",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY"
-			},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_CARTHAGE"
 			],
@@ -1301,6 +1301,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_GERMANIA",
+			"CivicOptions":{},
+			"StartingGold":200,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -1339,8 +1341,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{},
-			"StartingGold":200,
 			"StartingWars":[
 				"CIVILIZATION_ATHENS",
 				"CIVILIZATION_SPARTA",
@@ -1374,6 +1374,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_SASSANID",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_ABSOLUTISM",
+				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
+				"CIVICOPTION_RELIGION":"CIVIC_THEOCRACY",
+				"CIVICOPTION_EXPANSION":"CIVIC_OCCUPATION"
+			},
+			"StartingGold":350,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_POLYTHEISM",
@@ -1415,15 +1424,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_ABSOLUTISM",
-				"CIVICOPTION_LEGAL":"CIVIC_VASSALAGE",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_THEOCRACY",
-				"CIVICOPTION_EXPANSION":"CIVIC_OCCUPATION"
-			},
-			"StartingGold":350,
 			"StartingWars":[
 				"CIVILIZATION_SUMERIA",
 				"CIVILIZATION_INDUS_VALLEY",
@@ -1460,6 +1460,15 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_BYZANTIUM",
+			"CivicOptions":{
+				"CIVICOPTION_GOVERNMENT":"CIVIC_ABSOLUTISM",
+				"CIVICOPTION_LEGAL":"CIVIC_RELIGIOUS_LAW",
+				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
+				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
+				"CIVICOPTION_RELIGION":"CIVIC_THEOCRACY",
+				"CIVICOPTION_EXPANSION":"CIVIC_OCCUPATION"
+			},
+			"StartingGold":350,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -1508,15 +1517,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{
-				"CIVICOPTION_GOVERNMENT":"CIVIC_ABSOLUTISM",
-				"CIVICOPTION_LEGAL":"CIVIC_RELIGIOUS_LAW",
-				"CIVICOPTION_LABOR":"CIVIC_SLAVERY",
-				"CIVICOPTION_ECONOMY":"CIVIC_TRADE_ECONOMY",
-				"CIVICOPTION_RELIGION":"CIVIC_THEOCRACY",
-				"CIVICOPTION_EXPANSION":"CIVIC_OCCUPATION"
-			},
-			"StartingGold":350,
 			"StartingWars":[
 				"CIVILIZATION_ASSYRIA",
 				"CIVILIZATION_PERSIA",
@@ -1557,6 +1557,8 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_HUNS",
+			"CivicOptions":{},
+			"StartingGold":150,
 			"StartingTechs":[
 				"TECH_MYSTICISM",
 				"TECH_MYTHOLOGY",
@@ -1596,8 +1598,6 @@ application/json
 				"TECH_CUNEIFORM",
 				"TECH_ARROWS"
 			],
-			"CivicOptions":{},
-			"StartingGold":150,
 			"StartingWars":[
 				"CIVILIZATION_EGYPT",
 				"CIVILIZATION_SUMERIA",
@@ -1649,9 +1649,9 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_INDEPENDENT",
-			"StartingTechs":[],
 			"CivicOptions":{},
 			"StartingGold":0,
+			"StartingTechs":[],
 			"StartingWars":[],
 			"RelatedLanguages":[],
 			"StartingX":0,
@@ -1676,9 +1676,9 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_INDEPENDENT2",
-			"StartingTechs":[],
 			"CivicOptions":{},
 			"StartingGold":0,
+			"StartingTechs":[],
 			"StartingWars":[],
 			"RelatedLanguages":[],
 			"StartingX":0,
@@ -1703,9 +1703,9 @@ application/json
 		},
 		{
 			"CivType":"CIVILIZATION_BARBARIAN",
-			"StartingTechs":[],
 			"CivicOptions":{},
 			"StartingGold":0,
+			"StartingTechs":[],
 			"StartingWars":[],
 			"RelatedLanguages":[],
 			"StartingX":0,
@@ -4388,8 +4388,8 @@ application/json
 			}
 		},
 		{
-			"x":46,
-			"y":3,
+			"x":43,
+			"y":6,
 			"Units":[
 				{
 					"Amount":2,
