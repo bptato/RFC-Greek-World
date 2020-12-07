@@ -16,6 +16,7 @@ Scythian UHV
 Re-added 900 BC scenario
 Added city name, settler map and province area editors to worldbuilder
 Added civilization editor to worldbuilder
+Added province editor to worldbuilder
 
 General changes:
 Athens now starts with Deification
