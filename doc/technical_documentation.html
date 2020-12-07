@@ -1,0 +1,203 @@
+<h1 id="technical-documentation-of-the-rfgw-engine">Technical documentation of the RFGW engine</h1>
+<p>Table of contents:</p>
+<ul class="incremental">
+<li><a href="#overview">Overview</a>
+<ul class="incremental">
+<li><a href="#about-this-mod">About this mod</a></li>
+<li><a href="#about-this-documentation">About this documentation</a></li>
+</ul></li>
+<li><a href="#code-description">Code Description</a>
+<ul class="incremental">
+<li><a href="#python">Python</a>
+<ul class="incremental">
+<li><a href="#rfgwb">RFGWB</a></li>
+<li><a href="#victory">Victory</a></li>
+<li><a href="#miscellaneous-python">Miscellaneous</a></li>
+</ul></li>
+<li><a href="#xml">XML</a>
+<ul class="incremental">
+<li><a href="#globaldefines">GlobalDefines</a></li>
+<li><a href="#civ4civilizationinfos">CIV4CivilizationInfos</a></li>
+<li><a href="#miscellaneous-xml">Miscellaneous</a></li>
+</ul></li>
+<li><a href="#dll">DLL</a>
+<ul class="incremental">
+<li><a href="#cvenums">CvEnums</a></li>
+<li><a href="#cvrisefall">CvRiseFall</a></li>
+<li><a href="#cvrfcplayer">CvRFCPlayer</a></li>
+<li><a href="#cvrfcprovince">CvRFCProvince</a></li>
+<li><a href="#cvrfcunit">CvRFCUnit</a></li>
+<li><a href="#cvrfccity">CvRFCCity</a></li>
+<li><a href="#cvrfcmercenary">CvRFCMercenary</a></li>
+<li><a href="#cvgame">CvGame</a></li>
+<li><a href="#cvplayer">CvPlayer</a></li>
+<li><a href="#cvunit">CvUnit</a></li>
+<li><a href="#cveventreporter">CvEventReporter</a></li>
+<li><a href="#cvcity">CvCity</a></li>
+<li><a href="#cvplayerai">CvPlayerAI</a></li>
+<li><a href="#cvplot">CvPlot</a></li>
+<li><a href="#miscellaneous-dll">Miscellaneous</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>While the RFGW engine is in a way far simpler than the original Rhye’s and Fall engine (or its derivatives), it’s also completely different in almost every aspect. RFC has tons of resources on how to modify it, but RFGW 2.0 has been until now almost completely undocumented. Therefore I’m creating this documentation to help future me and potentially others understand how this thing can be modified.<br />
+Note that this isn’t a tutorial or manual, just a short documentation of the code (similar to that of SoI, albeit a bit more detailed).</p>
+<h2 id="about-this-mod">About this mod</h2>
+<p>After working with the old RFGW code for a while, it slowly became clear to me that trying to fix it was a futile effort. It had way too many arcane mechanisms that didn’t even work correctly, and inherited quite a few of bugs and poorly maintainable features from RFC. Therefore I decided to rewrite the entire RFC engine from the ground up, which made my plans like merging PlatyBuilder, decoupling civ slots from civ types, merging common scenario data, improving the painful process of editing city names and settler maps, etc. far easier to achieve.</p>
+<p>My intentions when designing RFGW 2.0 were:</p>
+<ol class="incremental" type="1">
+<li>To make as few assumptions as possible (i.e. very few hardcoded values), making it easier to reuse.</li>
+<li>To do as little work as possible (and by extension be faster than RFC), by calculating and storing most values and objects at the beginning of the game and doing most logic in the DLL.</li>
+<li>To interfere with the game’s code as little as possible, making it relatively easier to merge with other mods.</li>
+</ol>
+<h2 id="about-this-documentation">About this documentation</h2>
+<p>The Description texts detail <em>how</em> things work, the What to change texts detail <em>what</em> one should change when creating a new mod based on RFGW. Former is mainly useful for merging, maintenance and regular development, the latter for modmods.</p>
+<h3 id="python">Python</h3>
+<h4 id="rfgwb">RFGWB</h4>
+<p>Location: <code>Assets/Python/pyWB/RFGWB.py</code></p>
+<p>Description:<br />
+<code>RFGWB.py</code> replaces the BtS scenario parser. It can load regular Civ4 scenarios (albeit only the terrain), and RFGW scenarios. It can also save RFGW scenarios by creating an internal JSON representation of the current game and dumping it into different files.</p>
+<p>RFGW scenarios are regular JSON files, with the string <code>application/json</code> on the first line. They consist of two files: the map file, which may be shared between scenarios (see <code>GreekWorld</code> in RFGW), and the scenario file (see <code>4400 BC[...].CivBeyondSwordSave</code>).</p>
+<p>Map files store general data about the map (size etc.), terrain data, and province data.</p>
+<p>Scenario files store everything else that shouldn’t be shared between scenarios: game-options, civilization-specific data (modifiers, starting year, starting techs, starting wars, core provinces), unit data (when and where units should be spawned), city data (when and where cities should be spawned), and barbarian unit data (units tied to specific provinces instead of plots).</p>
+<p><code>RFGWB.py</code> works by first loading the scenario selected in the main menu. Then it is determined whether the loaded file is a RFGWB scenario file or a regular scenario file; if it’s the latter, the legacy wbSave parser is used. Otherwise, the scenario and map files are loaded using simplejson. In the end, all values are stored in Python dictionaries.</p>
+<p>Then, the <code>buildMap</code> function calls all required DLL functions to build a map based on the dictionary’s values. This mostly consists of RFGW-specific functions, but also includes a few regular BtS ones. Note that no players, units, cities, etc. are spawned yet, those are handled later by the DLL.</p>
+<h4 id="victory">Victory</h4>
+<p>Location: <code>Assets/Python/Victory.py</code></p>
+<p>What to change:<br />
+Whatever you would change in RFC (<code>checkPlayerTurn</code>, etc.), global variables in initGlobals, and civilization types on the top of the file.</p>
+<p>Description:<br />
+In RFC, calling gc.getPlayer(iEgypt) (where iEgypt is 0 due to Egypt being the first player) is guaranteed to result in a player representing Egypt; in RFGW, this is <strong>not</strong> the case.</p>
+<p>If Egypt is destroyed, another civilization may occupy its slot; in this example, you may be unpleasantly surprised when gc.getPlayer(iEgypt) returns the Assyrian player. Therefore it is important to always identify civilizations by their type, using <code>gc.getPlayer(iPlayer).getCivilizationType()</code> or the equivalent helper function <code>player2civ</code>. Conversely, the player type of a civilization type may be retrieved with <code>civ2player</code>; this will return <code>PlayerTypes.NO_PLAYER</code> (-1) if the player is not alive.</p>
+<p>Other differences are that years are calculated dynamically as in SoI; however, that is only done once every game (or reload) in the initGlobals function, where province pointers are also retrieved and stored.</p>
+<h4 id="miscellaneous-python">Miscellaneous Python</h4>
+<p>Location: <code>Assets/Python/</code></p>
+<p>Description:<br />
+There are a few miscellaneous Python modifications and additions that don’t warrant their own section:</p>
+<ul class="incremental">
+<li><code>CvEventManager.py</code>: free Hunnic and Germanic units, <code>Victory.py</code> event triggers</li>
+<li><code>CvGameUtils.py</code>: getSettlerValueDescription function</li>
+<li><code>simplejson.py</code>: JSON parser</li>
+<li><code>OrderedDict.py</code>: Backport of OrderedDict, to allow saving JSON attributes in a consistent order</li>
+<li><code>EntryPoints/CvWBInterface.py</code>: adjusted to cooperate with <code>RFGWB.py</code>; also calls <code>setupEnabled</code> to notify the DLL when civilization descriptions should be faked</li>
+<li><code>EntryPoints/CvScreensInterface.py</code>: some functions that need to be exposed to the DLL</li>
+<li><code>EntryPoints/CvRandomEventInterface.py</code>: some random events were removed/modified</li>
+<li><code>StringUtils.py</code>: functions related to strings</li>
+<li><code>Screens/CvDawnOfMan.py</code>: a slightly different Dawn of Man slider implementation</li>
+<li><code>Screens/CvMercenariesScreen.py</code>: mercenaries</li>
+<li><code>Screens/CvMainInterface.py</code>: mercenaries</li>
+<li>PlatyBuilder: some parts of it were modified, but its files remain in the same place</li>
+</ul>
+<h3 id="xml">XML</h3>
+<h4 id="globaldefines">GlobalDefines</h4>
+<p>Location: <code>Assets/XML/GlobalDefines.xml</code></p>
+<p>What to change:<br />
+Everything from <code>MERCENARY_DISBAND_RATE</code> is RFGW-specific and may be changed.</p>
+<p>Description:</p>
+<ul class="incremental">
+<li><code>MERCENARY_DISBAND_RATE</code>: chance for mercenaries to be disbanded</li>
+<li><code>MERCENARY_WANDERING_RATE</code>: chance for mercenaries to move to another province instead of being disbanded</li>
+<li><code>MERCENARY_CREATION_RATE</code>: chance for creation of new mercenaries from barbarians</li>
+<li><code>MERCENARY_BASE_HIRE_COST</code>: minimum cost of hiring a mercenary</li>
+<li><code>MERCENARY_HIRE_COST_MODIFIER</code>: a modifier for calculating the cost of hiring a mercenary</li>
+<li><code>MERCENARY_MIN_LAST_ACTION_DIFFERENCE</code>: how many turns a barbarian has to spend idle in order to have a chance of become a mercenary</li>
+<li><code>HOLY_CITY_RELOCATION_RATE</code>: the chance of a holy city being relocated every time a religion is spread by a missionary</li>
+</ul>
+<h4 id="civ4civilizationinfos">CIV4CivilizationInfos</h4>
+<p>Location: <code>Assets/XML/Civilizations/CIV4CivilizationInfos.xml</code></p>
+<p>What to change:<br />
+It is important that civilizations here are added in the same order as in <code>CvEnums.h</code>. They should always be in a chronological order, so that they are displayed correctly in the main menu.</p>
+<h4 id="miscellaneous-xml">Miscellaneous XML</h4>
+<p>Location: <code>Assets/XML</code></p>
+<p>Description:<br />
+There’s not much to say here, of course there’s a bunch of RFGW XML and some modifications to XML Schemas. The easiest way to find those is to search for bluepotato in <code>CvGameCoreDLL/CvInfos.cpp</code>.</p>
+<h3 id="dll">DLL</h3>
+<h4 id="cvenums">CvEnums</h4>
+<p>Location: <code>CvGameCoreDLL/CvEnums.h</code></p>
+<p>What to change:<br />
+The absolute minimum one has to change when adding new civs is adding the civ to the <code>CivilizationTypes</code> enum. This should also be done in <code>CyEnumsInterface.cpp</code>, so that it’s exposed to Python (and can be added to <code>Victory.py</code>).</p>
+<h4 id="cvrisefall">CvRiseFall</h4>
+<p>Location: <code>CvGameCoreDLL/CvRiseFall.cpp</code></p>
+<p>What to change:<br />
+Here the only hardcoded thing one would definitely want to change in a new mod is the <code>skipConditionalSpawn</code> function.</p>
+<p>Description:<br />
+The main function here is <code>checkTurn</code>, called every turn, which manages player stability (see also: CvRFCPlayer), city and unit spawning, provinces, etc. Understanding how the implementation works is only necessary if something breaks in it, since all these functions are abstracted away and manageable in scenario files.</p>
+<h4 id="cvrfcplayer">CvRFCPlayer</h4>
+<p>Location: <code>CvGameCoreDLL/CvRFCPlayer.cpp</code></p>
+<p>What to change:<br />
+Civic compatibility is hardcoded in the <code>checkStability</code> function, which one would definitely want to change in a new mod.</p>
+<p>Description:<br />
+All playable civilization types on a map receive a CvRFCPlayer object. They store the civilization’s human/minor civilization status, modifiers, unit and city spawns, stability, starting turn, etc. These are all exposed to Python so that the scenario parser can send them to the DLL.</p>
+<p>Additionally, <code>checkStability</code> calculates the player’s stability. It is called by CvRiseFall every third turn.</p>
+<h4 id="cvrfcprovince">CvRFCProvince</h4>
+<p>Location: <code>CvGameCoreDLL/CvRFCProvince.cpp</code></p>
+<p>Description:<br />
+Provinces are loaded at the beginning of the game, and stay the same for the entire game.</p>
+<p>Provinces may contain CvRFCUnits and CvRFCMercenaries. The former is currently used for spawning barbarians, the latter for storing mercenaries available for hire in the province.</p>
+<h4 id="cvrfcunit">CvRFCUnit</h4>
+<p>Location: <code>CvGameCoreDLL/CvRFCUnit.cpp</code></p>
+<p>Description:<br />
+Internal representation of units spawned throughout the game.</p>
+<h4 id="cvrfccity">CvRFCCity</h4>
+<p>Location: <code>CvGameCoreDLL/CvRFCCity.cpp</code></p>
+<p>Description:<br />
+Internal representation of cities spawned throughout the game.</p>
+<h4 id="cvrfcmercenary">CvRFCMercenary</h4>
+<p>Location: <code>CvGameCoreDLL/CvRFCMercenary.cpp</code></p>
+<p>What to change:<br />
+The Sumerian unique power is hardcoded here. Search for <code>CIVILIZATION_SUMERIA</code> to find it.</p>
+<p>Description:<br />
+Internal representation of mercenaries available for hire.</p>
+<h4 id="cvgame">CvGame</h4>
+<p>Location: <code>CvGameCoreDLL/CvGame.cpp</code></p>
+<p>Description:<br />
+Numerous changes have been made here for RFC-style autoplay to work.</p>
+<h4 id="cvplayer">CvPlayer</h4>
+<p>Location: <code>CvGameCoreDLL/CvPlayer.cpp</code></p>
+<p>What to change:<br />
+Some unique powers are hardcoded here. Search for <code>CIVILIZATION_</code> to find them.</p>
+<p>Description:<br />
+Besides the addition of UPs, trading with independents is disabled here. Dynamic names, civilization modifiers and inflation are also implemented here.</p>
+<h4 id="cvunit">CvUnit</h4>
+<p>Location: <code>CvGameCoreDLL/CvUnit.cpp</code></p>
+<p>What to change:<br />
+Some unique powers are hardcoded here. Search for <code>CIVILIZATION_</code> to find them.</p>
+<p>Description:<br />
+Modifications here are mostly for UPs, plus the change allowing players without cities to enter neutral territory.</p>
+<h4 id="cveventreporter">CvEventReporter</h4>
+<p>Location: <code>CvGameCoreDLL/CvEventReporter.cpp</code></p>
+<p>What to change:<br />
+The Persian unique power is hardcoded here. Search for <code>CIVILIZATION_PERSIA</code> to find it.</p>
+<p>Description:<br />
+Besides UPs, <code>CvRiseFall::onGameStarted</code> is also called from here.</p>
+<h4 id="cvcity">CvCity</h4>
+<p>Location: <code>CvGameCoreDLL/CvCity.cpp</code></p>
+<p>What to change:<br />
+Some unique powers are hardcoded here. Search for <code>CIVILIZATION_</code> to find them.</p>
+<p>Description:<br />
+Besides UPs, some modifiers are also implemented here.</p>
+<h4 id="cvplayerai">CvPlayerAI</h4>
+<p>Location: <code>CvGameCoreDLL/CvPlayerAI.cpp</code></p>
+<p>What to change:<br />
+The Hittite unique power is hardcoded here. Search for <code>CIVILIZATION_HITTITE</code> to find it.</p>
+<p>Description:<br />
+Besides UPs, mercenary logic and some modifiers are also implemented here.</p>
+<h4 id="cvplot">CvPlot</h4>
+<p>Location: <code>CvGameCoreDLL/CvPlot.cpp</code></p>
+<p>What to change:<br />
+Some unique powers are hardcoded here. Search for <code>CIVILIZATION_</code> to find them.</p>
+<p>Description: Besides UPs, province types and city names of plots are stored here.</p>
+<h4 id="miscellaneous-dll">Miscellaneous DLL</h4>
+<p>Location: <code>CvGameCoreDLL/</code></p>
+<p>Description:<br />
+Again there are some things that don’t warrant their own section:</p>
+<ul class="incremental">
+<li><code>CvGameTextMgr.cpp</code>: modifications to show correct game text</li>
+<li><code>CvInfos.cpp</code>: XML stuff + a hack for displaying civilizations in the correct order</li>
+<li><code>CvReplayInfo.cpp</code>, <code>CvReplayMessage.cpp</code>: hacks for displaying replay colors correctly</li>
+<li><code>CvGlobals.cpp</code>: Utility functions and functions for loading CvRiseFall</li>
+<li><code>CvInitCore.cpp</code>: Loads CvRiseFall</li>
+<li><code>CvDLLButtonPopup.cpp</code>: UI stuff</li>
+<li><code>Cy\*.cpp</code>: boilerplate functions for communication with Python</li>
+</ul>
