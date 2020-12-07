@@ -12,3 +12,4 @@ CvGameCoreDLL.lib
 depends
 Makefile.settings
 tags
+compile_settings.sh

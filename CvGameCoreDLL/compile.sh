@@ -2,28 +2,11 @@
 #Author: bluepotato
 #This script is released into the public domain.
 #USAGE: ./compile.sh [release/debug/final_release] [clean]
-#nmake doesn't work too great with wine, so this is intended to replace it on
-#Linux. This should be POSIX-compliant. As to why I made this: firstly it's
-#less hacky than nmake.sh, secondly it doesn't spam the console like nmake.sh
-#does, and thirdly it's usually faster, or at least isn't slower. It also
-#supports multiprocessing for Release builds, which makes it way faster on my
-#system - you may want to disable it if yours has a low amount of cores/threads.
+#A substitute for nmake for *nix systems.
+#See also: compile_settings.sh, which is sourced by this script
 
-#You might want to change some of these variables here:
-wine17="$HOME/.wine_versions/linux-x86/1.7.55/bin/wine" #Path to your wine 1.7.55 binary.
-PSDK="C:/Program Files/Microsoft Platform SDK"
-VCTOOLKIT="C:/Program Files/Microsoft Visual C++ Toolkit 2003"
-OUTPUT="../Assets/CvGameCoreDLL.dll"
-PYTHON="./Python24"
-BOOST="./Boost-1.32.0"
-OWINEPREFIX="$HOME/compile_linux"
-#a patched version of fastdep. if for some reason you can't/don't want to use
-#the binary version I provided, you can find the sources in the same directory
-FASTDEP="./bin/fastdep-0.16/fastdep"
-#Spawn a bunch of child processes in release mode. true - on, false - off
-PARALLEL=true
+. ./compile_settings.sh
 
-#You probably won't have to change anything below
 error() {
 	echo "ERROR: $*" >&2
 	exit 1
@@ -59,7 +42,6 @@ else #iterate over arguments
 fi
 
 export WINEDEBUG=-all
-PID="$$"
 
 test -f compile_quit && rm compile_quit
 
@@ -195,13 +177,13 @@ if $PARALLEL; then
 				kill -9 $pp >/dev/null 2>&1
 			done
 			rm compile_quit
-			exit 1
+			error "Failed to compile all files."
 		fi
 		wait $p
 	done
 	if test -f compile_quit; then
 		rm compile_quit
-		exit 1
+		error "Failed to compile all files."
 	fi
 else
 	for COMPILEFILE in *.cpp; do
