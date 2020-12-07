@@ -1,9 +1,9 @@
 #!/bin/sh
 #Author: bluepotato
 #This script is released into the public domain.
-#USAGE: ./compile.sh [release/debug/final_release] [clean]
 #A substitute for nmake for *nix systems.
-#See also: compile_settings.sh, which is sourced by this script
+#USAGE: ./compile.sh [release/debug/final_release] [clean]
+#See also: compile_settings.sh, which is sourced by this script.
 
 . ./compile_settings.sh
 
