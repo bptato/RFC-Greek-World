@@ -2456,7 +2456,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 				//bluepotato start: compact empire modifiers (from Rhye)
 				//iValue *= 100 + (((bAdvancedStart ? 80 : 50) * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital);
-				int compactEmpireModifier = GC.getRiseFall().getRFCPlayer(getCivilizationType()).getCompactEmpireModifier();
+				int compactEmpireModifier = RFC.getRFCPlayer(getCivilizationType()).getCompactEmpireModifier();
 				iValue *= 100 + (compactEmpireModifier * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital;
 				iValue /= 100;
 				//bluepotato end
@@ -13775,7 +13775,7 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 {
 
 	//bluepotato start (from Leoreth)
-	if (GC.getGame().getGameTurn() < GC.getRiseFall().getRFCPlayer(getCivilizationType()).getStartingTurn() + 10) {
+	if (GC.getGame().getGameTurn() < RFC.getRFCPlayer(getCivilizationType()).getStartingTurn() + 10) {
 		return false;
 	}
 
@@ -17664,10 +17664,10 @@ bool CvPlayerAI::AI_hireMercenary() {
 	int bestMercID = -1;
 	ProvinceTypes bestMercProvince = NO_PROVINCE;
 	int bestMercHireCost = 0;
-	for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
-		if(GC.getRiseFall().getProvince((ProvinceTypes)i).getNumCities(getID()) > 0) {
-			for(int j = 0; j < GC.getRiseFall().getProvince((ProvinceTypes)i).getNumMercenaries(); ++j) {
-				CvRFCMercenary* mercenary = GC.getRiseFall().getProvince((ProvinceTypes)i).getMercenary(j);
+	for(int i = 0; i < RFC.getNumProvinces(); ++i) {
+		if(RFC.getProvince((ProvinceTypes)i).getNumCities(getID()) > 0) {
+			for(int j = 0; j < RFC.getProvince((ProvinceTypes)i).getNumMercenaries(); ++j) {
+				CvRFCMercenary* mercenary = RFC.getProvince((ProvinceTypes)i).getMercenary(j);
 
 				//player's money after hiring merc
 				int tmpGold = getGold() - mercenary->getHireCost();
@@ -17688,7 +17688,7 @@ bool CvPlayerAI::AI_hireMercenary() {
 	}
 
 	if(bestMercProvince != NO_PROVINCE && bestMercID != -1) {
-		GC.getRiseFall().getProvince(bestMercProvince).hireMercenary(getID(), bestMercID);
+		RFC.getProvince(bestMercProvince).hireMercenary(getID(), bestMercID);
 		GC.logMsg("CvPlayerAI::AI_hireMercenary - AI %d hired a merc", getID());
 		return true;
 	}

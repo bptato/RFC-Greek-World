@@ -136,17 +136,17 @@ void CvRFCProvince::checkMercenaries() {
 			bool savePointer = false;
 			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < wanderingRate) {
 				int borderProvinces = 0;
-				for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
+				for(int i = 0; i < RFC.getNumProvinces(); ++i) {
 					if(isBorderProvince((ProvinceTypes)i)) {
 						++borderProvinces;
 					}
 				}
 				int rand = 0;
-				for(int i = 0; i < GC.getRiseFall().getNumProvinces(); ++i) {
+				for(int i = 0; i < RFC.getNumProvinces(); ++i) {
 					if(isBorderProvince((ProvinceTypes)i)) {
 						rand += 100/borderProvinces;
 						if(100/borderProvinces<GC.getGame().getSorenRandNum(rand, "Border province selection roll")) {
-							GC.getRiseFall().getProvince((ProvinceTypes)i).addMercenary(mercenary);
+							RFC.getProvince((ProvinceTypes)i).addMercenary(mercenary);
 							savePointer = true; //don't destroy the object
 							break;
 						}

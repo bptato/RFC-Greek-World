@@ -5769,7 +5769,7 @@ void CvGame::doTurn()
 
 	stopProfilingDLL();
 
-	GC.getRiseFall().checkTurn(); //bluepotato
+	RFC.checkTurn(); //bluepotato
 
 	gDLL->getEngineIFace()->AutoSave();
 }

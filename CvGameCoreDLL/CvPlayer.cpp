@@ -1748,7 +1748,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		//bluepotato start: stability
 		if(GET_PLAYER(eOldOwner).isAlive() && !GET_PLAYER(eOldOwner).isMinorCiv() && !GET_PLAYER(eOldOwner).isBarbarian()) {
-			CvRFCPlayer& oldOwnerRFCPlayer = GC.getRiseFall().getRFCPlayer(GET_PLAYER(eOldOwner).getCivilizationType());
+			CvRFCPlayer& oldOwnerRFCPlayer = RFC.getRFCPlayer(GET_PLAYER(eOldOwner).getCivilizationType());
 			oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 8);
 			if(capitalCaptured) {
 				oldOwnerRFCPlayer.setPermStability(3, oldOwnerRFCPlayer.getPermStability(3) - 20);
@@ -2684,7 +2684,7 @@ void CvPlayer::doTurn()
 	FAssertMsg(isAlive(), "isAlive is expected to be true");
 	FAssertMsg(!hasBusyUnit() || GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS)  || GC.getGameINLINE().isSimultaneousTeamTurns(), "End of turn with busy units in a sequential-turn game");
 
-	GC.getRiseFall().checkPlayerTurn(getID()); //bluepotato
+	RFC.checkPlayerTurn(getID()); //bluepotato
 	CvEventReporter::getInstance().beginPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
 
 	doUpdateCacheOnTurn();
@@ -4792,7 +4792,7 @@ void CvPlayer::raze(CvCity* pCity)
 	//bluepotato start
 	CvPlayer& player = GET_PLAYER(getID());
 	if(!player.isBarbarian() && !player.isMinorCiv()) {
-		GC.getRiseFall().getRFCPlayer(player.getCivilizationType()).setPermStability(3, GC.getRiseFall().getRFCPlayer(player.getCivilizationType()).getPermStability(3)-2);
+		RFC.getRFCPlayer(player.getCivilizationType()).setPermStability(3, RFC.getRFCPlayer(player.getCivilizationType()).getPermStability(3)-2);
 	}
 	processDynamicNames();
 	//bluepotato end
@@ -5387,7 +5387,7 @@ void CvPlayer::found(int iX, int iY)
 		}
 	}
 
-	pCity->changePopulation(GC.getRiseFall().getRFCPlayer(getCivilizationType()).getNewCityFreePopulation()); //bluepotato
+	pCity->changePopulation(RFC.getRFCPlayer(getCivilizationType()).getNewCityFreePopulation()); //bluepotato
 
 	if (isHuman() && getAdvancedStartPoints() < 0)
 	{
@@ -5942,7 +5942,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 		}
 	}*/
 
-	iProductionNeeded *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getUnitProductionModifier();
+	iProductionNeeded *= RFC.getRFCPlayer(getCivilizationType()).getUnitProductionModifier();
 	iProductionNeeded /= 100;
 
 	//era modifiers (TODO: this should be in XML)
@@ -5994,9 +5994,9 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 	//bluepotato start: building production modifiers
 
 	if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType()))) {
-		iProductionNeeded *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getWonderProductionModifier();
+		iProductionNeeded *= RFC.getRFCPlayer(getCivilizationType()).getWonderProductionModifier();
 	} else {
-		iProductionNeeded *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getBuildingProductionModifier();
+		iProductionNeeded *= RFC.getRFCPlayer(getCivilizationType()).getBuildingProductionModifier();
 	}
 	iProductionNeeded /= 100;
 	//bluepotato end
@@ -6530,7 +6530,7 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 	iSupport = iMilitaryCost + iBaseUnitCost + iExtraCost;
 
 	//iSupport *= GC.getHandicapInfo(getHandicapType()).getUnitCostPercent();
-	iSupport *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getUnitUpkeepModifier();
+	iSupport *= RFC.getRFCPlayer(getCivilizationType()).getUnitUpkeepModifier();
 	iSupport /= 100;
 
 	if (!isHuman() && !isBarbarian())
@@ -6670,9 +6670,9 @@ int CvPlayer::calculateInflationRate() const
 
 	//bluepotato start: inflation modifiers
 	if(!isBarbarian() && !isMinorCiv()) {
-		iRatePercent += std::max(-50, iRatePercent*(0 - GC.getRiseFall().getRFCPlayer(getCivilizationType()).getStartingTurn())/GC.getGame().getMaxTurns());
+		iRatePercent += std::max(-50, iRatePercent*(0 - RFC.getRFCPlayer(getCivilizationType()).getStartingTurn())/GC.getGame().getMaxTurns());
 	}
-	iRatePercent *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getInflationModifier();
+	iRatePercent *= RFC.getRFCPlayer(getCivilizationType()).getInflationModifier();
 	iRatePercent /= 100;
 	//bluepotato end
 
@@ -7866,7 +7866,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 	iThreshold /= 100;
 
 	//bluepotato start: great person modifiers
-	iThreshold *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getGreatPeopleModifier();
+	iThreshold *= RFC.getRFCPlayer(getCivilizationType()).getGreatPeopleModifier();
 	iThreshold /= 100;
 	//bluepotato end
 
@@ -9945,7 +9945,7 @@ void CvPlayer::setAlive(bool bNewValue)
 			}
 
 			//bluepotato: remove association with rfcplayer
-			GC.getRiseFall().getRFCPlayer(getCivilizationType()).setPlayerType(NO_PLAYER);
+			RFC.getRFCPlayer(getCivilizationType()).setPlayerType(NO_PLAYER);
 
 			if (GC.getGameINLINE().getElapsedGameTurns() > 0)
 			{
@@ -11903,7 +11903,7 @@ int CvPlayer::getSingleCivicUpkeep(CivicTypes eCivic, bool bIgnoreAnarchy) const
 	iUpkeep /= 100;
 
 	//iUpkeep *= GC.getHandicapInfo(getHandicapType()).getCivicUpkeepPercent();
-	iUpkeep *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getCivicUpkeepModifier(); //bluepotato
+	iUpkeep *= RFC.getRFCPlayer(getCivilizationType()).getCivicUpkeepModifier(); //bluepotato
 	iUpkeep /= 100;
 
 	if (!isHuman() && !isBarbarian())
@@ -20939,7 +20939,7 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 	}
 
 	//bluepotato start: city growth modifiers
-	iThreshold *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getGrowthModifier();
+	iThreshold *= RFC.getRFCPlayer(getCivilizationType()).getGrowthModifier();
 	iThreshold /= 100;
 	//bluepotato end
 

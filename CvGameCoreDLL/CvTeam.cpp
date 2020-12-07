@@ -2508,7 +2508,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if (player.isAlive()) {
 			if (player.getTeam() == getID()) {
-				iCost *= GC.getRiseFall().getRFCPlayer(player.getCivilizationType()).getResearchModifier();
+				iCost *= RFC.getRFCPlayer(player.getCivilizationType()).getResearchModifier();
 				iCost /= 100;
 			}
 		}

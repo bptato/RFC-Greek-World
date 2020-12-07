@@ -2270,7 +2270,7 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 	}
 
 	//bluepotato start
-	if(GC.getRiseFall().getRFCPlayer(getCivilizationType()).getStartingTurn() == GC.getGame().getGameTurn()) {
+	if(RFC.getRFCPlayer(getCivilizationType()).getStartingTurn() == GC.getGame().getGameTurn()) {
 		return true;
 	}
 	//bluepotato end

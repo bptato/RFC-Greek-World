@@ -752,15 +752,15 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			if(!editBoxData.empty()) {
 				CvString tmp;
 				tmp.Convert(editBoxData);
-				CvString originalType = GC.getRiseFall().getProvince(provinceType).getType();
+				CvString originalType = RFC.getProvince(provinceType).getType();
 				for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
-					for(int j = 0; j < GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces(); ++j) {
-						if(strcmp(GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).getCoreProvince(j).c_str(), originalType.c_str()) == 0) {
-							GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).changeCoreProvince(j, tmp);
+					for(int j = 0; j < RFC.getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces(); ++j) {
+						if(strcmp(RFC.getRFCPlayer((CivilizationTypes)i).getCoreProvince(j).c_str(), originalType.c_str()) == 0) {
+							RFC.getRFCPlayer((CivilizationTypes)i).changeCoreProvince(j, tmp);
 						}
 					}
 				}
-				GC.getRiseFall().getProvince(provinceType).setType(tmp);
+				RFC.getProvince(provinceType).setType(tmp);
 			}
 		}
 		break;
@@ -2208,7 +2208,7 @@ bool CvDLLButtonPopup::launchProvinceTypePopup(CvPopup* popup, CvPopupInfo &info
 	gDLL->getInterfaceIFace()->popupSetHeaderString(popup, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"));
 	ProvinceTypes provinceType = (ProvinceTypes)info.getData1();
 
-	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, GC.getRiseFall().getProvince(provinceType).getType(), WIDGET_GENERAL, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"), 0, POPUP_LAYOUT_STRETCH, 0, 20);
+	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, RFC.getProvince(provinceType).getType(), WIDGET_GENERAL, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"), 0, POPUP_LAYOUT_STRETCH, 0, 20);
 	gDLL->getInterfaceIFace()->popupLaunch(popup, true, POPUPSTATE_IMMEDIATE);
 	return true;
 }

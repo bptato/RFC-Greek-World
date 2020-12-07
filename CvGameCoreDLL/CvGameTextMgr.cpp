@@ -3093,13 +3093,13 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}
 
 		if(pPlot->getProvinceType() != NO_PROVINCE) {
-			if(GC.getRiseFall().getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isInCoreBounds(pPlot->getX(), pPlot->getY())) {
+			if(RFC.getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isInCoreBounds(pPlot->getX(), pPlot->getY())) {
 				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_POSITIVE_TEXT")));
 			} else {
 				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			}
 			szString.append(NEWLINE);
-			szString.append(GC.getRiseFall().getProvince(pPlot->getProvinceType()).getName());
+			szString.append(RFC.getProvince(pPlot->getProvinceType()).getName());
 			szString.append(CvWString::format( ENDCOLR));
 		}
 	}
@@ -3739,7 +3739,7 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			szTempString.Format(NEWLINE SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), szText.GetCString());
 		}
 		szInfoText.append(szTempString);
-		int startingYear = GC.getRiseFall().getRFCPlayer(eCivilization).getStartingYear();
+		int startingYear = RFC.getRFCPlayer(eCivilization).getStartingYear();
 		if(startingYear < 0) {
 			szText = gDLL->getText("TXT_KEY_TIME_BC", -startingYear);
 		} else {
@@ -8587,7 +8587,7 @@ void CvGameTextMgr::setBadHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 
 		//iHealth = -(GC.getHandicapInfo(city.getHandicapType()).getHealthBonus());
-		iHealth = -GC.getRiseFall().getRFCPlayer(city.getCivilizationType()).getHealthBonusModifier(); //bluepotato
+		iHealth = -RFC.getRFCPlayer(city.getCivilizationType()).getHealthBonusModifier(); //bluepotato
 		if (iHealth > 0)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HEALTH_FROM_HANDICAP", iHealth));
@@ -8692,7 +8692,7 @@ void CvGameTextMgr::setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 
 		//iHealth = GC.getHandicapInfo(city.getHandicapType()).getHealthBonus();
-		iHealth = GC.getRiseFall().getRFCPlayer(city.getCivilizationType()).getHealthBonusModifier(); //bluepotato
+		iHealth = RFC.getRFCPlayer(city.getCivilizationType()).getHealthBonusModifier(); //bluepotato
 		if (iHealth > 0)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_GOOD_HEALTH_FROM_HANDICAP", iHealth));
@@ -14445,7 +14445,7 @@ void CvGameTextMgr::getInterfaceCenterText(CvWString& strText)
 			strText = gDLL->getText("TXT_KEY_MISC_WINS_VICTORY", GET_TEAM(GC.getGameINLINE().getWinner()).getName().GetCString(), GC.getVictoryInfo(GC.getGameINLINE().getVictory()).getTextKeyWide());
 		}
 		else if (!(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).isAlive())
-			&& GC.getRiseFall().getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isSpawned()) //bluepotato: do not show defeated thing before spawn
+			&& RFC.getRFCPlayer(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).isSpawned()) //bluepotato: do not show defeated thing before spawn
 		{
 			strText = gDLL->getText("TXT_KEY_MISC_DEFEAT");
 		}

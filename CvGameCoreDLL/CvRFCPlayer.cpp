@@ -692,7 +692,7 @@ bool CvRFCPlayer::isStartingWar(CivilizationTypes civType) const {
 
 bool CvRFCPlayer::isInCoreBounds(int x, int y) {
 	for(uint i = 0; i < _coreProvinces.size(); i++) {
-		ProvinceTypes coreProvince = GC.getRiseFall().findRFCProvince(_coreProvinces[i]);
+		ProvinceTypes coreProvince = RFC.findRFCProvince(_coreProvinces[i]);
 		FAssert(coreProvince != NO_PROVINCE);
 		if(GC.getMap().plot(x, y)->getProvinceType() == coreProvince) {
 			return true;
@@ -706,11 +706,11 @@ bool CvRFCPlayer::isInBorderBounds(int x, int y) {
 		return false;
 	}
 	for(uint i = 0; i < _coreProvinces.size(); ++i) {
-		ProvinceTypes provinceType = GC.getRiseFall().findRFCProvince(_coreProvinces[i]);
+		ProvinceTypes provinceType = RFC.findRFCProvince(_coreProvinces[i]);
 		if(provinceType == GC.getMap().plot(x, y)->getProvinceType()) {
 			continue;
 		}
-		if(GC.getRiseFall().getProvince(provinceType).isBorderProvince(GC.getMap().plot(x, y)->getProvinceType())) {
+		if(RFC.getProvince(provinceType).isBorderProvince(GC.getMap().plot(x, y)->getProvinceType())) {
 			return true;
 		}
 	}
@@ -833,7 +833,7 @@ bool CvRFCPlayer::isRelatedLanguage(CivilizationTypes civType) {
 		}
 	}
 
-	for(std::vector<CivilizationTypes>::iterator it = GC.getRiseFall().getRFCPlayer(civType).getRelatedLanguages().begin(); it != GC.getRiseFall().getRFCPlayer(civType).getRelatedLanguages().end(); ++it) {
+	for(std::vector<CivilizationTypes>::iterator it = RFC.getRFCPlayer(civType).getRelatedLanguages().begin(); it != RFC.getRFCPlayer(civType).getRelatedLanguages().end(); ++it) {
 		if(*it == getCivilizationType()) {
 			return true;
 		}

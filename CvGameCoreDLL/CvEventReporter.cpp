@@ -81,7 +81,7 @@ void CvEventReporter::unInit()
 
 void CvEventReporter::gameStart()
 {
-	GC.getRiseFall().onGameStarted(); //bluepotato
+	RFC.onGameStarted(); //bluepotato
 	m_kPythonEventMgr.reportGameStart();
 }
 
@@ -182,7 +182,7 @@ void CvEventReporter::cityAcquiredAndKept(PlayerTypes iPlayer, CvCity* pCity)
 	//bluepotato start
 	CvPlayer& player = GET_PLAYER(iPlayer);
 	if(!player.isBarbarian() && !player.isMinorCiv()) {
-		CvRFCPlayer& rfcPlayer = GC.getRiseFall().getRFCPlayer(player.getCivilizationType());
+		CvRFCPlayer& rfcPlayer = RFC.getRFCPlayer(player.getCivilizationType());
 		//Persian UP
 		if(player.getCivilizationType()==CIVILIZATION_PERSIA) {
 			rfcPlayer.setPermStability(3, rfcPlayer.getPermStability(3)+2);

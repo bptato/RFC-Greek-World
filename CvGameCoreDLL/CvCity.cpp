@@ -4519,7 +4519,7 @@ int CvCity::goodHealth() const
 	}
 
 	//iHealth = GC.getHandicapInfo(getHandicapType()).getHealthBonus();
-	iHealth = GC.getRiseFall().getRFCPlayer(getCivilizationType()).getHealthBonusModifier(); //bluepotato
+	iHealth = RFC.getRFCPlayer(getCivilizationType()).getHealthBonusModifier(); //bluepotato
 	if (iHealth > 0)
 	{
 		iTotalHealth += iHealth;
@@ -4579,7 +4579,7 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	}
 
 	//iHealth = GC.getHandicapInfo(getHandicapType()).getHealthBonus();
-	iHealth = GC.getRiseFall().getRFCPlayer(getCivilizationType()).getHealthBonusModifier(); //bluepotato
+	iHealth = RFC.getRFCPlayer(getCivilizationType()).getHealthBonusModifier(); //bluepotato
 	if (iHealth < 0)
 	{
 		iTotalHealth += iHealth;
@@ -5541,7 +5541,7 @@ int CvCity::calculateDistanceMaintenanceTimes100() const
 		iTempMaintenance /= 100;
 
 		//iTempMaintenance *= GC.getHandicapInfo(getHandicapType()).getDistanceMaintenancePercent();
-		iTempMaintenance *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getDistanceMaintenanceModifier(); //bluepotato
+		iTempMaintenance *= RFC.getRFCPlayer(getCivilizationType()).getDistanceMaintenanceModifier(); //bluepotato
 		iTempMaintenance /= 100;
 
 		iTempMaintenance /= GC.getMapINLINE().maxPlotDistance();
@@ -5578,7 +5578,7 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 	iNumCitiesPercent /= 100;
 
 	//iNumCitiesPercent *= GC.getHandicapInfo(getHandicapType()).getNumCitiesMaintenancePercent();
-	iNumCitiesPercent *= GC.getRiseFall().getRFCPlayer(getCivilizationType()).getNumCitiesMaintenanceModifier(); //bluepotato
+	iNumCitiesPercent *= RFC.getRFCPlayer(getCivilizationType()).getNumCitiesMaintenanceModifier(); //bluepotato
 	iNumCitiesPercent /= 100;
 
 	int iNumVassalCities = 0;
@@ -11053,7 +11053,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			}
 
 			//Great Bath
-			GC.getRiseFall().getRFCPlayer(getCivilizationType()).changeNewCityFreePopulation(GC.getBuildingInfo(eConstructBuilding).getNewCityFreePopulation());
+			RFC.getRFCPlayer(getCivilizationType()).changeNewCityFreePopulation(GC.getBuildingInfo(eConstructBuilding).getNewCityFreePopulation());
 			//bluepotato end
 
 			CvEventReporter::getInstance().buildingBuilt(this, eConstructBuilding);

@@ -10093,7 +10093,7 @@ const wchar* CvPlot::getCityName(CivilizationTypes civType, bool precise, bool r
 	const wchar* fallback = L"";
 	for(int i = 0; i<GC.getNumCivilizationInfos(); ++i) {
 		if(!_cityNames[i].empty() && !precise) {
-			if(GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).isRelatedLanguage(civType)) {
+			if(RFC.getRFCPlayer((CivilizationTypes)i).isRelatedLanguage(civType)) {
 				return _cityNames[i];
 			}
 			if(!relatedOnly) {
@@ -10119,11 +10119,11 @@ void CvPlot::setSettlerValue(CivilizationTypes civType, short settlerValue) {
 
 void CvPlot::setProvinceType(ProvinceTypes provinceType) {
 	if(getProvinceType() != NO_PROVINCE) {
-		GC.getRiseFall().getProvince(_provinceType).removePlot(GC.getMapINLINE().plotNumINLINE(getX_INLINE(), getY_INLINE()));
+		RFC.getProvince(_provinceType).removePlot(GC.getMapINLINE().plotNumINLINE(getX_INLINE(), getY_INLINE()));
 	}
 	_provinceType = provinceType;
 	if(getProvinceType() != NO_PROVINCE) {
-		GC.getRiseFall().getProvince(_provinceType).addPlot(GC.getMapINLINE().plotNumINLINE(getX_INLINE(), getY_INLINE()));
+		RFC.getProvince(_provinceType).addPlot(GC.getMapINLINE().plotNumINLINE(getX_INLINE(), getY_INLINE()));
 	}
 }
 
