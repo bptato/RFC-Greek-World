@@ -26,7 +26,7 @@ class CvRiseFall {
 
 		void checkPlayerTurn(PlayerTypes playerType);
 		void checkLeader(CivilizationTypes civType, PlayerTypes playerType);
-		void checkMinorWars(PlayerTypes playerID, int turn);
+		void checkMinorWars(PlayerTypes playerID);
 		void updatePlayerPlots();
 		void checkStabilityEffect(CivilizationTypes civType, PlayerTypes playerType);
 
@@ -48,6 +48,7 @@ class CvRiseFall {
 		void completeCollapse(PlayerTypes playerType);
 
 		void setMapFile(const wchar* newName);
+		void removeProvince(ProvinceTypes provinceType);
 
 		CvRFCProvince* addProvince(CvString type);
 

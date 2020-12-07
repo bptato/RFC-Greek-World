@@ -3,6 +3,7 @@ from CvPythonExtensions import *
 import CvEventInterface
 #bluepotato: TODO remove this
 import WBRFCPlayerScreen
+import WBRFCProvinceScreen
 gc = CyGlobalContext()
 
 class CvGameUtils:
@@ -479,6 +480,8 @@ class CvGameUtils:
 					return CyTranslator().getText("TXT_KEY_WB_CITY_NAME_HELP", ())
 				elif iData2 == 39:
 					return CyTranslator().getText("TXT_KEY_WB_SETTLER_MAP_HELP", ())
+				elif iData2 == 40:
+					return CyTranslator().getText("TXT_KEY_WB_EDIT_PROVINCES", ())
 			elif iData1 > 1029 and iData1 < 1040:
 				if iData1 %2:
 					return "-"
@@ -692,6 +695,9 @@ class CvGameUtils:
 				return gc.getRiseFall().getProvince(iData2).getName()
 			elif iData1 == 8210:
 				return str(iData2)
+			elif iData1 == 8211:
+				#eeeeeh
+				return CyGameTextMgr().getUnitHelp(WBRFCProvinceScreen.rfcProvinceScreen.rfcProvince.getScheduledUnit(iData2).getUnitType(), False, False, False, None)
 ## Ultrapack ##
 		return u""
 

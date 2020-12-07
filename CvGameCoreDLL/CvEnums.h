@@ -586,6 +586,7 @@ enum ButtonPopupTypes			// Exposed to Python
 	BUTTONPOPUP_FOUND_RELIGION,
 	//bluepotato start
 	BUTTONPOPUP_CITY_NAME,
+	BUTTONPOPUP_PROVINCE_TYPE,
 	//bluepotato end
 
 #ifdef _USRDLL

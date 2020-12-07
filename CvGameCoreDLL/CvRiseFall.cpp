@@ -27,7 +27,7 @@ CvRiseFall::~CvRiseFall() {
 }
 
 void CvRiseFall::reset() {
-	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
 		_rfcPlayers[i].reset((CivilizationTypes)i);
 	}
 	for(std::vector<CvRFCProvince*>::iterator it = _rfcProvinces.begin(); it != _rfcProvinces.end(); ++it) {
@@ -39,7 +39,7 @@ void CvRiseFall::reset() {
 void CvRiseFall::onGameStarted() {
 	CvGame& game = GC.getGameINLINE();
 
-	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
+	for(int i = 0; i < MAX_CIV_PLAYERS; ++i) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isHuman()) {
 			CvRFCPlayer& rfcPlayer = getRFCPlayer(player.getCivilizationType());
@@ -327,11 +327,12 @@ void CvRiseFall::checkScheduledUnits(PlayerTypes playerType, CivilizationTypes c
 
 void CvRiseFall::checkPlayerTurn(PlayerTypes playerType) {
 	CvPlayer& player = GET_PLAYER(playerType);
-	CvGame& game = GC.getGameINLINE();
 
 	if(!player.isBarbarian() && !player.isMinorCiv()) {
-		checkMinorWars(playerType, game.getGameTurn());
-		if(game.getGameTurn() % 3 == 2) {
+		if(GC.getGameINLINE().getGameTurn() % 2 != 0) {
+			checkMinorWars(playerType);
+		}
+		if(GC.getGameINLINE().getGameTurn() % 3 == 2) {
 			getRFCPlayer(player.getCivilizationType()).checkStability(playerType);
 			if(!player.isHuman()) {
 				checkLeader(player.getCivilizationType(), playerType);
@@ -340,16 +341,12 @@ void CvRiseFall::checkPlayerTurn(PlayerTypes playerType) {
 	}
 }
 
-void CvRiseFall::checkMinorWars(PlayerTypes playerType, int turn) {
-	if(turn % 2 == 0) {
-		return;
-	}
-
+void CvRiseFall::checkMinorWars(PlayerTypes playerType) {
 	CvPlayer& player = GET_PLAYER(playerType);
 
 	PlayerTypes minorCivType = NO_PLAYER;
 
-	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
+	for(int i = 0; i < MAX_CIV_PLAYERS; ++i) {
 		CvPlayer& loopCiv = GET_PLAYER((PlayerTypes)i);
 		if(loopCiv.isAlive() && loopCiv.isMinorCiv() && !loopCiv.isBarbarian()) {
 			if(GC.getGameINLINE().getSorenRandNum(100, "Minor civ for checkMinorWars") < 50) {
@@ -379,23 +376,25 @@ void CvRiseFall::checkMinorWars(PlayerTypes playerType, int turn) {
 }
 
 void CvRiseFall::checkLeader(CivilizationTypes civType, PlayerTypes playerType) {
-	LeaderHeadTypes leader = (LeaderHeadTypes)0;
+	LeaderHeadTypes leader = NO_LEADER;
 	CvCivilizationInfo& civInfo = GC.getCivilizationInfo(civType);
-
 	int reign = 0;
-	bool reignSet = false;
-	for(int i = 0; i < GC.getNumLeaderHeadInfos(); i++) {
-		if(civInfo.isLeaders(i)) {
-			CvLeaderHeadInfo& leaderInfo = GC.getLeaderHeadInfo((LeaderHeadTypes)i);
-			if(leaderInfo.getLeaderReign() <= GC.getGameINLINE().getGameTurnYear() && (!reignSet || reign < leaderInfo.getLeaderReign())) {
-				reignSet = true;
-				reign = leaderInfo.getLeaderReign();
-				leader = (LeaderHeadTypes)i;
-			}
+
+	for(int i = 0; i < GC.getNumLeaderHeadInfos(); ++i) {
+		if(!civInfo.isLeaders(i)) {
+			continue;
+		}
+		CvLeaderHeadInfo& leaderInfo = GC.getLeaderHeadInfo((LeaderHeadTypes)i);
+		if(leaderInfo.getLeaderReign() <= GC.getGameINLINE().getGameTurnYear()
+				&& (leader == NO_LEADER || reign < leaderInfo.getLeaderReign())) {
+			reign = leaderInfo.getLeaderReign();
+			leader = (LeaderHeadTypes)i;
 		}
 	}
 
-	if(GC.getInitCore().getLeader(playerType)!=leader) {
+	FAssert(leader != NO_LEADER);
+
+	if(GC.getInitCore().getLeader(playerType) != leader) {
 		GC.getInitCore().setLeader(playerType, leader);
 	}
 }
@@ -403,7 +402,7 @@ void CvRiseFall::checkLeader(CivilizationTypes civType, PlayerTypes playerType) 
 void CvRiseFall::spawnHumanCivilization(CivilizationTypes civType) {
 	CvGame& game = GC.getGameINLINE();
 
-	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
+	for(int i = 0; i < MAX_CIV_PLAYERS; ++i) {
 		CvPlayerAI& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isHuman() && player.getCivilizationType() == civType) {
 			game.setAIAutoPlay(0);
@@ -681,7 +680,7 @@ void CvRiseFall::citySecession(CvCity* city) {
 
 	int acceptThreshold = 0;
 	if(minorCivs > 0) {
-		for(int i = 0; i < MAX_PLAYERS; i++) {
+		for(int i = 0; i < MAX_PLAYERS; ++i) {
 			CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 			if(player.isMinorCiv() || player.isBarbarian()) {
 				acceptThreshold += 100/minorCivs+1;
@@ -736,7 +735,7 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 				unitNode = GC.getMapINLINE().plotINLINE(x, y)->nextUnitNode(unitNode);
 			}
 
-			for (uint i = 0; i < oldUnits.size(); i++) {
+			for (uint i = 0; i < oldUnits.size(); ++i) {
 				loopUnit = ::getUnit(oldUnits[i]);
 				if (loopUnit != NULL) {
 					loopUnit->kill(false);
@@ -768,6 +767,30 @@ void CvRiseFall::completeCollapse(PlayerTypes playerType) {
 void CvRiseFall::setMapFile(const wchar* mapFile) {
 	CvWString cwvMapFile(mapFile);
 	_mapFile = cwvMapFile;
+}
+
+void CvRiseFall::removeProvince(ProvinceTypes provinceType) {
+	for(int i = 0; i < GC.getMapINLINE().numPlotsINLINE(); ++i) {
+		if(GC.getMapINLINE().plotByIndexINLINE(i)->getProvinceType() == provinceType) {
+			GC.getMapINLINE().plotByIndexINLINE(i)->setProvinceType(NO_PROVINCE);
+		} else if(GC.getMapINLINE().plotByIndexINLINE(i)->getProvinceType() > provinceType) {
+			//reduce province type numbers by one
+			GC.getMapINLINE().plotByIndexINLINE(i)->setProvinceType((ProvinceTypes)
+				(GC.getMapINLINE().plotByIndexINLINE(i)->getProvinceType() - 1));
+		}
+	}
+
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
+		for(int j = 0; j < getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces(); ++j) {
+			if(strcmp(getRFCPlayer((CivilizationTypes)i).getCoreProvince(j).c_str(),
+					getProvince(provinceType).getType()) == 0) {
+				getRFCPlayer((CivilizationTypes)i).removeCoreProvince(j);
+			}
+		}
+	}
+
+	SAFE_DELETE(_rfcProvinces[provinceType]);
+	_rfcProvinces.erase(_rfcProvinces.begin() + provinceType);
 }
 
 
@@ -844,14 +867,14 @@ const wchar* CvRiseFall::getMapFile() const {
 //read & write
 void CvRiseFall::read(FDataStreamBase* stream) {
 	reset();
-	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
 		_rfcPlayers[i].read(stream);
 	}
 
 	{
 		uint size;
 		stream->Read(&size);
-		for(uint i = 0; i < size; i++) {
+		for(uint i = 0; i < size; ++i) {
 			CvRFCProvince* rfcProvince = new CvRFCProvince(NO_PROVINCE);
 			rfcProvince->read(stream);
 			_rfcProvinces.push_back(rfcProvince);
@@ -862,7 +885,7 @@ void CvRiseFall::read(FDataStreamBase* stream) {
 
 
 void CvRiseFall::write(FDataStreamBase* stream) {
-	for(int i = 0; i < GC.getNumCivilizationInfos(); i++) {
+	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
 		_rfcPlayers[i].write(stream);
 	}
 

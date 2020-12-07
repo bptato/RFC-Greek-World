@@ -71,6 +71,7 @@ import GameFontDisplay
 ### GameFont Display
 #bluepotato start
 import WBRFCPlayerScreen
+import WBRFCProvinceScreen
 #string conversion
 import StringUtils
 def unicodeToXML(argsList):
@@ -89,7 +90,6 @@ def addSign(argsList):
 	s = argsList[3]
 	CyEngine().removeSign(CyMap().plot(x, y), i) #does nothing if plot has no sign, otherwise just adding a new one won't work
 	CyEngine().addSign(CyMap().plot(x, y), i, s.encode("iso-8859-1"))
-
 #bluepotato end
 
 def toggleSetNoScreens():
@@ -701,6 +701,7 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					WB_TRADE : WBTradeScreen.WBTradeScreen(),
 					#bluepotato start
 					WB_RFC_PLAYER : WBRFCPlayerScreen.rfcPlayerScreen,
+					WB_RFC_PROVINCE : WBRFCProvinceScreen.rfcProvinceScreen,
 					MERCENARIES_SCREEN : CvMainInterface.mercenaryScreen,
 					#bluepotato end
 ### GameFont Display

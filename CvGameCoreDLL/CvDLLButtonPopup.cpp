@@ -745,6 +745,25 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			}
 		}
 		break;
+	case BUTTONPOPUP_PROVINCE_TYPE:
+		{
+			ProvinceTypes provinceType = (ProvinceTypes)info.getData1();
+			CvWString editBoxData = pPopupReturn->getEditBoxString(0);
+			if(!editBoxData.empty()) {
+				CvString tmp;
+				tmp.Convert(editBoxData);
+				CvString originalType = GC.getRiseFall().getProvince(provinceType).getType();
+				for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
+					for(int j = 0; j < GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces(); ++j) {
+						if(strcmp(GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).getCoreProvince(j).c_str(), originalType.c_str()) == 0) {
+							GC.getRiseFall().getRFCPlayer((CivilizationTypes)i).changeCoreProvince(j, tmp);
+						}
+					}
+				}
+				GC.getRiseFall().getProvince(provinceType).setType(tmp);
+			}
+		}
+		break;
 	//bluepotato end
 
 	default:
@@ -963,6 +982,9 @@ bool CvDLLButtonPopup::launchButtonPopup(CvPopup* pPopup, CvPopupInfo &info)
 	//bluepotato start
 	case BUTTONPOPUP_CITY_NAME:
 		bLaunched = launchCityNamePopup(pPopup, info);
+		break;
+	case BUTTONPOPUP_PROVINCE_TYPE:
+		bLaunched = launchProvinceTypePopup(pPopup, info);
 		break;
 	//bluepotato end
 	default:
@@ -2178,6 +2200,15 @@ bool CvDLLButtonPopup::launchCityNamePopup(CvPopup* popup, CvPopupInfo &info) {
 	argsList.add(plot->getCityName(civType, true));
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "unescape", argsList.makeFunctionArgs(), &result);
 	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, result.c_str(), WIDGET_GENERAL, gDLL->getText("TXT_KEY_POPUP_CITY_NAME"), 0, POPUP_LAYOUT_STRETCH, 0, 20);
+	gDLL->getInterfaceIFace()->popupLaunch(popup, true, POPUPSTATE_IMMEDIATE);
+	return true;
+}
+
+bool CvDLLButtonPopup::launchProvinceTypePopup(CvPopup* popup, CvPopupInfo &info) {
+	gDLL->getInterfaceIFace()->popupSetHeaderString(popup, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"));
+	ProvinceTypes provinceType = (ProvinceTypes)info.getData1();
+
+	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, GC.getRiseFall().getProvince(provinceType).getType(), WIDGET_GENERAL, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"), 0, POPUP_LAYOUT_STRETCH, 0, 20);
 	gDLL->getInterfaceIFace()->popupLaunch(popup, true, POPUPSTATE_IMMEDIATE);
 	return true;
 }

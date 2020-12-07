@@ -12,6 +12,7 @@ class CyRFCProvince {
 		CyRFCProvince(CvRFCProvince* rfcProvinceConst);
 
 		void hireMercenary(int playerType, int mercenaryID);
+		void removeScheduledUnit(int i);
 
 		std::string getType();
 		int getProvinceType();
@@ -22,6 +23,7 @@ class CyRFCProvince {
 		int getNumMercenaries();
 		CyRFCMercenary* getMercenary(int i);
 		int getNumCities(int playerType);
+		int getNumPlots();
 	protected:
 		CvRFCProvince* rfcProvince;
 };

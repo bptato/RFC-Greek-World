@@ -29,6 +29,7 @@ import Popup
 #bluepotato start
 import StringUtils
 import WBRFCPlayerScreen
+import WBRFCProvinceScreen
 #bluepotato end
 
 gc = CyGlobalContext()
@@ -1037,6 +1038,8 @@ class CvWorldBuilderScreen:
 
 			iX += iAdjust
 			screen.setImageButton("EditCivilizationButton", ",Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/FinalFrontier1_Atlas.dds,2,15", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 35)
+			iX += iAdjust
+			screen.setImageButton("EditProvinceButton", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_CHANGE_ALL_PLOTS").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 40)
 			#bluepotato end
 
 			self.setCurrentModeCheckbox()
@@ -2045,6 +2048,9 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "EditCivilizationButton":
 			WBRFCPlayerScreen.rfcPlayerScreen.pbscreen = self
 			WBRFCPlayerScreen.rfcPlayerScreen.interfaceScreen(self.cityNameCiv)
+
+		elif inputClass.getFunctionName() == "EditProvinceButton":
+			WBRFCProvinceScreen.rfcProvinceScreen.interfaceScreen()
 
 		elif inputClass.getFunctionName() == "RFGWMode":
 			self.cityNameSigns()

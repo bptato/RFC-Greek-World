@@ -39,6 +39,7 @@ class CyRFCPlayer {
 		void setGrowthModifier(int modifier);
 		void removeScheduledUnit(int i);
 		void removeScheduledCity(int i);
+		void removeCoreProvince(int i);
 
 		int getPlayerType();
 		int getStability(int category);

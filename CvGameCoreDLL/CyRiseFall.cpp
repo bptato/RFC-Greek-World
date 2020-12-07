@@ -33,6 +33,10 @@ CyRFCProvince* CyRiseFall::addProvince(std::string provinceType) {
 	return new CyRFCProvince(riseFall->addProvince(provinceType.c_str()));
 }
 
+void CyRiseFall::removeProvince(int province) {
+	riseFall->removeProvince((ProvinceTypes)province);
+}
+
 void CyRiseFall::setMapFile(std::wstring name) {
 	riseFall->setMapFile(name.c_str());
 }

@@ -16,6 +16,10 @@ void CyRFCProvince::hireMercenary(int playerType, int mercenaryID) {
 	rfcProvince->hireMercenary((PlayerTypes)playerType, mercenaryID);
 }
 
+void CyRFCProvince::removeScheduledUnit(int i) {
+	rfcProvince->removeScheduledUnit(i);
+}
+
 
 std::string CyRFCProvince::getType() {
 	return rfcProvince->getType();
@@ -51,4 +55,8 @@ CyRFCMercenary* CyRFCProvince::getMercenary(int i) {
 
 int CyRFCProvince::getNumCities(int playerType) {
 	return rfcProvince->getNumCities((PlayerTypes)playerType);
+}
+
+int CyRFCProvince::getNumPlots() {
+	return rfcProvince->getNumPlots();
 }

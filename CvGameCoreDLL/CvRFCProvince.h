@@ -17,6 +17,7 @@ class CvRFCProvince {
 		void hireMercenary(PlayerTypes playerType, int mercenaryID);
 		void addPlot(int plotid);
 		void removePlot(int plotid);
+		void removeScheduledUnit(int i);
 
 		void addMercenary(CvRFCMercenary* mercenary);
 		CvRFCMercenary* addMercenary();
@@ -33,6 +34,7 @@ class CvRFCProvince {
 		std::vector<CvUnit*> getUnits();
 		std::vector<int>& getPlots();
 		int getNumCities(PlayerTypes playerType) const;
+		int getNumPlots() const;
 		CvCity* getFirstCity(PlayerTypes);
 		bool isBorderProvince(ProvinceTypes province);
 		bool canSpawnBarbs();

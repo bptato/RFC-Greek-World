@@ -63,6 +63,8 @@ class CvRFCPlayer {
 
 		void removeScheduledUnit(int i);
 		void removeScheduledCity(int i);
+		void removeCoreProvince(int i);
+		void changeCoreProvince(int i, const char* province);
 
 		CivilizationTypes getCivilizationType() const;
 		PlayerTypes getPlayerType() const;

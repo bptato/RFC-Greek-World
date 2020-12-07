@@ -574,6 +574,14 @@ void CvRFCPlayer::removeScheduledCity(int i) {
 	_scheduledCities.erase(_scheduledCities.begin() + i);
 }
 
+void CvRFCPlayer::removeCoreProvince(int i) {
+	_coreProvinces.erase(_coreProvinces.begin() + i);
+}
+
+void CvRFCPlayer::changeCoreProvince(int i, const char* province) {
+	_coreProvinces[i] = province;
+}
+
 
 CivilizationTypes CvRFCPlayer::getCivilizationType() const {
 	return _civilizationType;

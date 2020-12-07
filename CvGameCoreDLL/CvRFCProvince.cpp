@@ -198,6 +198,11 @@ void CvRFCProvince::removePlot(int plotid) {
 	}
 }
 
+void CvRFCProvince::removeScheduledUnit(int i) {
+	SAFE_DELETE(_scheduledUnits[i]);
+	_scheduledUnits.erase(_scheduledUnits.begin() + i);
+}
+
 
 void CvRFCProvince::addMercenary(CvRFCMercenary* mercenary) {
 	_mercenaries.push_back(mercenary);
@@ -282,6 +287,10 @@ int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
 		}
 	}
 	return countedCities;
+}
+
+int CvRFCProvince::getNumPlots() const {
+	return _plots.size();
 }
 
 CvCity* CvRFCProvince::getFirstCity(PlayerTypes playerType) {

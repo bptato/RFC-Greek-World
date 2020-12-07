@@ -192,7 +192,7 @@ if $PARALLEL; then
 		if test -f compile_quit; then
 			for pp in $PIDS; do
 				#this appears to work, kinda.
-				kill -9 $pp 2>/dev/null
+				kill -9 $pp >/dev/null 2>&1
 			done
 			rm compile_quit
 			exit 1

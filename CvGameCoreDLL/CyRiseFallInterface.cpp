@@ -19,6 +19,7 @@ void CyRiseFallInterface()
 		.def("addProvince", &CyRiseFall::addProvince, python::return_value_policy<python::reference_existing_object>(), "(str name)")
 		.def("setMapFile", &CyRiseFall::setMapFile, "void (str name)")
 		.def("getMapFile", &CyRiseFall::getMapFile, "str ()")
+		.def("removeProvince", &CyRiseFall::removeProvince, "void (int province)")
 		;
 
 	python::class_<CyRFCCity>("CyRFCCity")
@@ -137,8 +138,9 @@ void CyRiseFallInterface()
 		.def("setStartingReligion", &CyRFCPlayer::setStartingReligion, "void (int religion)")
 		.def("getStartingReligion", &CyRFCPlayer::getStartingReligion, "int ()")
 		.def("getPlayerType", &CyRFCPlayer::getPlayerType, "int ()")
-		.def("removeScheduledUnit", &CyRFCPlayer::removeScheduledUnit, "void ()")
-		.def("removeScheduledCity", &CyRFCPlayer::removeScheduledCity, "void ()")
+		.def("removeScheduledUnit", &CyRFCPlayer::removeScheduledUnit, "void (int i)")
+		.def("removeScheduledCity", &CyRFCPlayer::removeScheduledCity, "void (int i )")
+		.def("removeCoreProvince", &CyRFCPlayer::removeCoreProvince, "void (int i)")
 		;
 
 	python::class_<CyRFCProvince>("CyRFCProvince")
@@ -151,6 +153,8 @@ void CyRiseFallInterface()
 		.def("getNumMercenaries", &CyRFCProvince::getNumMercenaries, "int ()")
 		.def("getMercenary", &CyRFCProvince::getMercenary, python::return_value_policy<python::reference_existing_object>(), "(int i)")
 		.def("getNumCities", &CyRFCProvince::getNumCities, "int (int playerType)")
+		.def("getNumPlots", &CyRFCProvince::getNumPlots, "int ()")
 		.def("hireMercenary", &CyRFCProvince::hireMercenary, "void (int playerType, int mercenaryID)")
+		.def("removeScheduledUnit", &CyRFCProvince::removeScheduledUnit, "void (int i)")
 		;
 }

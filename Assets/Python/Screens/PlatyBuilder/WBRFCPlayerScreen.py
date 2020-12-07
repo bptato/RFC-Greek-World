@@ -1,3 +1,4 @@
+#Author: bluepotato
 from CvPythonExtensions import *
 import CvUtil
 import ScreenInput

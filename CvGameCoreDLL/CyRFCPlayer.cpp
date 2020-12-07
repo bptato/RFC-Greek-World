@@ -145,6 +145,10 @@ void CyRFCPlayer::removeScheduledCity(int i) {
 	rfcPlayer->removeScheduledCity(i);
 }
 
+void CyRFCPlayer::removeCoreProvince(int i) {
+	rfcPlayer->removeCoreProvince(i);
+}
+
 
 int CyRFCPlayer::getPlayerType() {
 	return rfcPlayer->getPlayerType();

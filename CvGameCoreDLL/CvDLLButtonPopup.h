@@ -68,6 +68,7 @@ private:
 	bool launchFoundReligionPopup(CvPopup* pPopup, CvPopupInfo &info);
 	//bluepotato start
 	bool launchCityNamePopup(CvPopup* popup, CvPopupInfo &info);
+	bool launchProvinceTypePopup(CvPopup* popup, CvPopupInfo &info);
 	//bluepotato end
 };
 

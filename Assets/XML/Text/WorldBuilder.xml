@@ -974,4 +974,32 @@
 		<Tag>TXT_KEY_WB_HOLY_CITY</Tag>
 		<English>Holy City</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_EDIT_PROVINCES</Tag>
+		<English>Edit Provinces</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SPAWN_FREQUENCY</Tag>
+		<English>Spawn Frequency</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CHANGE</Tag>
+		<English>Change</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_PLOTS</Tag>
+		<English>Plots: %d1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_TYPE</Tag>
+		<English>Type: %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CHANGE_PROVINCE_TYPE</Tag>
+		<English>Change Province Type</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CORE_PROVINCE_OF</Tag>
+		<English>Core Province of</English>
+	</TEXT>
 </Civ4GameText>
