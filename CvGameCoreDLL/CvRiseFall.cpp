@@ -716,7 +716,6 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 			}
 			CLLNode<IDInfo>* unitNode = GC.getMapINLINE().plotINLINE(x, y)->headUnitNode();
 			static std::vector<IDInfo> oldUnits;
-			oldUnits.clear();
 
 			while (unitNode != NULL) {
 				loopUnit = ::getUnit(unitNode->m_data);
@@ -769,20 +768,18 @@ void CvRiseFall::setMapFile(const wchar* mapFile) {
 	_mapFile = cwvMapFile;
 }
 
-//TODO this code is horrible and will break things
 void CvRiseFall::removeProvince(ProvinceTypes provinceType) {
 	for(int i = 0; i < GC.getMapINLINE().numPlotsINLINE(); ++i) {
 		if(GC.getMapINLINE().plotByIndexINLINE(i)->getProvinceType() == provinceType) {
 			GC.getMapINLINE().plotByIndexINLINE(i)->setProvinceType(NO_PROVINCE);
 		} else if(GC.getMapINLINE().plotByIndexINLINE(i)->getProvinceType() > provinceType) {
-			//reduce province type numbers by one
 			GC.getMapINLINE().plotByIndexINLINE(i)->setProvinceType((ProvinceTypes)
 				(GC.getMapINLINE().plotByIndexINLINE(i)->getProvinceType() - 1));
 		}
 	}
 
 	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
-		for(int j = 0; j < getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces(); ++j) {
+		for(int j = getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces() - 1; j >= 0; --j) {
 			ProvinceTypes coreProvince = getRFCPlayer((CivilizationTypes)i).getCoreProvince(j);
 			if(coreProvince == provinceType) {
 				getRFCPlayer((CivilizationTypes)i).removeCoreProvince(j);

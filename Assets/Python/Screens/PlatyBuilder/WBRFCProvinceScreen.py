@@ -128,7 +128,7 @@ class WBRFCProvinceScreen:
 				rfcPlayer.removeCoreProvince(i)
 				return
 
-		rfcPlayer.addCoreProvince(self.rfcProvince.getType())
+		rfcPlayer.addCoreProvince(self.provinceType)
 
 	def getCivName(self, i):
 		return CyTranslator().getText(gc.getCivilizationInfo(i).getShortDescriptionKey().encode("iso-8859-1"), ())
