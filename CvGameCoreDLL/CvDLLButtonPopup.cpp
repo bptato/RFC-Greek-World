@@ -752,14 +752,6 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			if(!editBoxData.empty()) {
 				CvString tmp;
 				tmp.Convert(editBoxData);
-				CvString originalType = RFC.getProvince(provinceType).getType();
-				for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
-					for(int j = 0; j < RFC.getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces(); ++j) {
-						if(strcmp(RFC.getRFCPlayer((CivilizationTypes)i).getCoreProvince(j).c_str(), originalType.c_str()) == 0) {
-							RFC.getRFCPlayer((CivilizationTypes)i).changeCoreProvince(j, tmp);
-						}
-					}
-				}
 				RFC.getProvince(provinceType).setType(tmp);
 			}
 		}

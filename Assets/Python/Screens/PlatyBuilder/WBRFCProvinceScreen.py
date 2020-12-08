@@ -117,14 +117,14 @@ class WBRFCProvinceScreen:
 	def isCoreOf(self, civType):
 		rfcPlayer = CyRiseFall().getRFCPlayer(civType)
 		for i in xrange(rfcPlayer.getNumCoreProvinces()):
-			if self.rfcProvince.getType() == rfcPlayer.getCoreProvince(i):
+			if self.provinceType == rfcPlayer.getCoreProvince(i):
 				return True
 		return False
 
 	def toggleCore(self, civType):
 		rfcPlayer = CyRiseFall().getRFCPlayer(civType)
 		for i in xrange(rfcPlayer.getNumCoreProvinces()):
-			if self.rfcProvince.getType() == rfcPlayer.getCoreProvince(i):
+			if self.provinceType == rfcPlayer.getCoreProvince(i):
 				rfcPlayer.removeCoreProvince(i)
 				return
 

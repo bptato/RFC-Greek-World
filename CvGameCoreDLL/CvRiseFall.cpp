@@ -782,9 +782,11 @@ void CvRiseFall::removeProvince(ProvinceTypes provinceType) {
 
 	for(int i = 0; i < GC.getNumCivilizationInfos(); ++i) {
 		for(int j = 0; j < getRFCPlayer((CivilizationTypes)i).getNumCoreProvinces(); ++j) {
-			if(strcmp(getRFCPlayer((CivilizationTypes)i).getCoreProvince(j).c_str(),
-					getProvince(provinceType).getType()) == 0) {
+			ProvinceTypes coreProvince = getRFCPlayer((CivilizationTypes)i).getCoreProvince(j);
+			if(coreProvince == provinceType) {
 				getRFCPlayer((CivilizationTypes)i).removeCoreProvince(j);
+			} else if(coreProvince > provinceType) {
+				getRFCPlayer((CivilizationTypes)i).changeCoreProvince(j, (ProvinceTypes)(coreProvince - 1));
 			}
 		}
 	}
@@ -801,7 +803,7 @@ CvRFCProvince* CvRiseFall::addProvince(CvString type) {
 	return province;
 }
 
-ProvinceTypes CvRiseFall::findRFCProvince(const char* provinceType) const {
+ProvinceTypes CvRiseFall::findProvince(const char* provinceType) const {
 	for (int i = 0; i < getNumProvinces(); ++i) {
 		if(strcmp(provinceType, getProvince((ProvinceTypes)i).getType()) == 0) {
 			return (ProvinceTypes)i;

@@ -19,7 +19,7 @@ class CyRFCPlayer {
 		void setStartingPlot(int x, int y);
 		void setStartingGold(int gold);
 		void setStartingReligion(int religion);
-		void addCoreProvince(std::string provinceName);
+		void addCoreProvince(int provinceType);
 		void setEnabled(bool newEnabled);
 		void setMinorCiv(bool minor);
 		void setFlipped(bool flipped);
@@ -65,7 +65,7 @@ class CyRFCPlayer {
 		CyRFCCity* addScheduledCity();
 		CyRFCCity* getScheduledCity(int i);
 		int getNumCoreProvinces();
-		std::string getCoreProvince(int i);
+		ProvinceTypes getCoreProvince(int i);
 
 		int getCompactEmpireModifier();
 		int getUnitUpkeepModifier();

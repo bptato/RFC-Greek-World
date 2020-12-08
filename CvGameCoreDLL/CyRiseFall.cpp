@@ -25,8 +25,8 @@ CyRFCProvince* CyRiseFall::getProvince(int province) {
 	return new CyRFCProvince(&riseFall->getProvince((ProvinceTypes)province));
 }
 
-int CyRiseFall::findRFCProvince(std::string provinceName) {
-	return riseFall->findRFCProvince(provinceName.c_str());
+int CyRiseFall::findProvince(std::string provinceName) {
+	return riseFall->findProvince(provinceName.c_str());
 }
 
 CyRFCProvince* CyRiseFall::addProvince(std::string provinceType) {

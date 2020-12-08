@@ -69,8 +69,8 @@ void CyRFCPlayer::setStartingReligion(int religion) {
 	rfcPlayer->setStartingReligion((ReligionTypes)religion);
 }
 
-void CyRFCPlayer::addCoreProvince(std::string provinceName) {
-	rfcPlayer->addCoreProvince(provinceName.c_str());
+void CyRFCPlayer::addCoreProvince(int provinceName) {
+	rfcPlayer->addCoreProvince((ProvinceTypes)provinceName);
 }
 
 void CyRFCPlayer::setEnabled(bool newEnabled) {
@@ -206,7 +206,7 @@ int CyRFCPlayer::getNumCoreProvinces() {
 	return rfcPlayer->getNumCoreProvinces();
 }
 
-std::string CyRFCPlayer::getCoreProvince(int i) {
+ProvinceTypes CyRFCPlayer::getCoreProvince(int i) {
 	return rfcPlayer->getCoreProvince(i);
 }
 

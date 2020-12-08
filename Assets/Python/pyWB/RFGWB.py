@@ -433,7 +433,7 @@ class WbParser:
 				wbPlayer['CoreProvinces'] = []
 				for j in xrange(rfcPlayer.getNumCoreProvinces()):
 					coreProvince = rfcPlayer.getCoreProvince(j)
-					wbPlayer['CoreProvinces'].append(rfcPlayer.getCoreProvince(j))
+					wbPlayer['CoreProvinces'].append(gc.getRiseFall().getProvince(rfcPlayer.getCoreProvince(j)).getType())
 
 				wbPlayer['StartingYear'] = rfcPlayer.getStartingYear()
 
@@ -765,7 +765,7 @@ class WbParser:
 
 			#Provinces
 			if "ProvinceType" in wbPlot:
-				plot.setProvinceType(gc.getRiseFall().findRFCProvince(wbPlot['ProvinceType']))
+				plot.setProvinceType(gc.getRiseFall().findProvince(wbPlot['ProvinceType']))
 
 			#Rivers
 			directions = [CardinalDirectionTypes.NO_CARDINALDIRECTION, CardinalDirectionTypes.NO_CARDINALDIRECTION]
@@ -925,7 +925,7 @@ class WbParser:
 		for wbProvince in self.scenarioValues['Provinces']:
 			#Units
 			if "Units" in wbProvince:
-				rfcProvince = riseFall.getProvince(riseFall.findRFCProvince(wbProvince['Type']))
+				rfcProvince = riseFall.getProvince(riseFall.findProvince(wbProvince['Type']))
 				for wbUnit in wbProvince['Units']:
 					if "Year" not in wbUnit or "EndYear" not in wbUnit:
 						raise Exception("No starting/ending date of barbarian unit " + str(wbUnit))
@@ -970,7 +970,7 @@ class WbParser:
 			if not "MinorNationStatus" in wbPlayer or wbPlayer['MinorNationStatus'] == 0: #major civ
 				if "CoreProvinces" in wbPlayer:
 					for wbCoreProvince in wbPlayer['CoreProvinces']:
-						rfcPlayer.addCoreProvince(wbCoreProvince)
+						rfcPlayer.addCoreProvince(gc.getRiseFall().findProvince(wbCoreProvince))
 
 				if "StartingX" in wbPlayer and "StartingY" in wbPlayer:
 					rfcPlayer.setStartingPlot(wbPlayer['StartingX'], wbPlayer['StartingY'])

@@ -157,8 +157,8 @@ void CvRFCPlayer::setStartingTech(TechTypes tech, bool value) {
 	_startingTechs[tech] = value;
 }
 
-void CvRFCPlayer::addCoreProvince(const char* province) {
-	_coreProvinces.push_back(province);
+void CvRFCPlayer::addCoreProvince(ProvinceTypes provinceType) {
+	_coreProvinces.push_back(provinceType);
 }
 
 void CvRFCPlayer::setFlipCountdown(int flipCountdown) {
@@ -578,8 +578,8 @@ void CvRFCPlayer::removeCoreProvince(int i) {
 	_coreProvinces.erase(_coreProvinces.begin() + i);
 }
 
-void CvRFCPlayer::changeCoreProvince(int i, const char* province) {
-	_coreProvinces[i] = province;
+void CvRFCPlayer::changeCoreProvince(int i, ProvinceTypes provinceType) {
+	_coreProvinces[i] = provinceType;
 }
 
 
@@ -691,10 +691,8 @@ bool CvRFCPlayer::isStartingWar(CivilizationTypes civType) const {
 }
 
 bool CvRFCPlayer::isInCoreBounds(int x, int y) {
-	for(uint i = 0; i < _coreProvinces.size(); i++) {
-		ProvinceTypes coreProvince = RFC.findRFCProvince(_coreProvinces[i]);
-		FAssert(coreProvince != NO_PROVINCE);
-		if(GC.getMap().plot(x, y)->getProvinceType() == coreProvince) {
+	for(uint i = 0; i < _coreProvinces.size(); ++i) {
+		if(GC.getMap().plot(x, y)->getProvinceType() == _coreProvinces[i]) {
 			return true;
 		}
 	}
@@ -706,11 +704,10 @@ bool CvRFCPlayer::isInBorderBounds(int x, int y) {
 		return false;
 	}
 	for(uint i = 0; i < _coreProvinces.size(); ++i) {
-		ProvinceTypes provinceType = RFC.findRFCProvince(_coreProvinces[i]);
-		if(provinceType == GC.getMap().plot(x, y)->getProvinceType()) {
+		if(_coreProvinces[i] == GC.getMap().plot(x, y)->getProvinceType()) {
 			continue;
 		}
-		if(RFC.getProvince(provinceType).isBorderProvince(GC.getMap().plot(x, y)->getProvinceType())) {
+		if(RFC.getProvince(_coreProvinces[i]).isBorderProvince(GC.getMap().plot(x, y)->getProvinceType())) {
 			return true;
 		}
 	}
@@ -750,7 +747,7 @@ int CvRFCPlayer::getNumCoreProvinces() const {
 	return _coreProvinces.size();
 }
 
-std::string CvRFCPlayer::getCoreProvince(int i) const {
+ProvinceTypes CvRFCPlayer::getCoreProvince(int i) const {
 	return _coreProvinces[i];
 }
 
@@ -922,8 +919,8 @@ void CvRFCPlayer::read(FDataStreamBase* stream) {
 		uint size;
 		stream->Read(&size);
 		for(uint i = 0; i<size; i++) {
-			CvString coreProvince;
-			stream->ReadString(coreProvince);
+			ProvinceTypes coreProvince;
+			stream->Read((int*)&coreProvince);
 			_coreProvinces.push_back(coreProvince);
 		}
 	}
@@ -1002,8 +999,8 @@ void CvRFCPlayer::write(FDataStreamBase* stream) {
 	{
 		uint size = _coreProvinces.size();
 		stream->Write(size);
-		for(std::vector<CvString>::iterator it = _coreProvinces.begin(); it != _coreProvinces.end(); ++it) {
-			stream->WriteString(*it);
+		for(std::vector<ProvinceTypes>::iterator it = _coreProvinces.begin(); it != _coreProvinces.end(); ++it) {
+			stream->Write(*it);
 		}
 	}
 
