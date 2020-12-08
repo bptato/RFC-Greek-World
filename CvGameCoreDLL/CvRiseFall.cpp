@@ -769,6 +769,7 @@ void CvRiseFall::setMapFile(const wchar* mapFile) {
 	_mapFile = cwvMapFile;
 }
 
+//TODO this code is horrible and will break things
 void CvRiseFall::removeProvince(ProvinceTypes provinceType) {
 	for(int i = 0; i < GC.getMapINLINE().numPlotsINLINE(); ++i) {
 		if(GC.getMapINLINE().plotByIndexINLINE(i)->getProvinceType() == provinceType) {
