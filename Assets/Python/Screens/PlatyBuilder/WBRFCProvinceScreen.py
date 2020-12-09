@@ -22,6 +22,8 @@ class WBRFCProvinceScreen:
 
 	def interfaceScreen(self):
 		self.screen = CyGInterfaceScreen("WBRFCProvinceScreen", CvScreenEnums.WB_RFC_PROVINCE)
+		if self.provinceType >= CyRiseFall().getNumProvinces():
+			self.provinceType = CyRiseFall().getNumProvinces() - 1
 		self.rfcProvince = CyRiseFall().getProvince(self.provinceType)
 
 		yellowText = CyTranslator().getText("[COLOR_YELLOW]", ())
@@ -63,6 +65,9 @@ class WBRFCProvinceScreen:
 		self.y = yres - 60
 		self.addActionButton("ProvinceDelete", "TXT_KEY_WB_DELETE",
 			self.deleteProvince)
+		self.y -= 40
+		self.addActionButton("ProvinceAdd", "TXT_KEY_WB_NEW",
+			self.addProvince)
 
 		self.x = xres / 2 + 20
 		self.y = 20
@@ -132,6 +137,11 @@ class WBRFCProvinceScreen:
 
 	def getCivName(self, i):
 		return CyTranslator().getText(gc.getCivilizationInfo(i).getShortDescriptionKey().encode("iso-8859-1"), ())
+
+	def addProvince(self):
+		gc.getRiseFall().addProvince("PROVINCE_UNKNOWN")
+		self.provinceType = gc.getRiseFall().getNumProvinces() - 1
+		self.changeProvinceType()
 
 	def deleteProvince(self):
 		gc.getRiseFall().removeProvince(self.provinceType)

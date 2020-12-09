@@ -1002,4 +1002,8 @@
 		<Tag>TXT_KEY_WB_CORE_PROVINCE_OF</Tag>
 		<English>Core Province of</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NEW</Tag>
+		<English>New</English>
+	</TEXT>
 </Civ4GameText>
