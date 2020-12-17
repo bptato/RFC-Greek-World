@@ -6,9 +6,6 @@
 #include "CyUnit.h"
 #include "CyGlobalContext.h"
 #include "CyCity.h"
-//bluepotato start
-#include "CyRiseFall.h"
-//bluepotato end
 
 void CyCityPythonInterface1(python::class_<CyCity>& x);
 void CyPlotPythonInterface1(python::class_<CyPlot>& x);
@@ -38,6 +35,11 @@ void CyGameCoreUtilsPythonInterface();
 void CyMessageControlInterface();
 //bluepotato start
 void CyRiseFallInterface();
+void CyRFCPlayerInterface();
+void CyRFCCityInterface();
+void CyRFCUnitInterface();
+void CyRFCProvinceInterface();
+void CyRFCMercenaryInterface();
 //bluepotato end
 
 //
@@ -64,6 +66,11 @@ DllExport void DLLPublishToPython()
 	CyMessageControlInterface();
 	//bluepotato start
 	CyRiseFallInterface();
+	CyRFCPlayerInterface();
+	CyRFCCityInterface();
+	CyRFCUnitInterface();
+	CyRFCProvinceInterface();
+	CyRFCMercenaryInterface();
 	//bluepotato end
 
 	//

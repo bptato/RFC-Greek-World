@@ -80,6 +80,9 @@ class CvRFCPlayer {
 		bool isEnabled() const;
 		int getStartingPlotX() const;
 		int getStartingPlotY() const;
+		inline CvPlot* getStartingPlot() const {
+			return GC.getMapINLINE().plotINLINE(_startingPlotX, _startingPlotY);
+		};
 		CivicTypes getStartingCivic(CivicOptionTypes civicOptionType) const;
 		int getStartingYear() const;
 		int getStartingTurn() const;

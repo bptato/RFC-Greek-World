@@ -834,9 +834,9 @@ bool CvRiseFall::skipConditionalSpawn(CivilizationTypes civType) const {
 			break;
 		case CIVILIZATION_BYZANTIUM:
 			PlayerTypes romePlayer = getRFCPlayer(CIVILIZATION_ROME).getPlayerType();
-			CvRFCPlayer& rfcPlayer = getRFCPlayer(civType);
-			CvPlot* startingPlot = GC.getMapINLINE().plotINLINE(rfcPlayer.getStartingPlotX(), rfcPlayer.getStartingPlotY());
-			if(romePlayer == NO_PLAYER || startingPlot->getOwnerINLINE() != romePlayer || getRFCPlayer(CIVILIZATION_ROME).getTotalStability() >= 40) {
+			if(romePlayer == NO_PLAYER || getRFCPlayer(civType).getStartingPlot()->getOwnerINLINE() != romePlayer) {
+				return true;
+			} else if(getRFCPlayer(CIVILIZATION_ROME).getTotalStability() >= 40) {
 				return true;
 			}
 			break;
