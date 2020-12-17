@@ -716,6 +716,7 @@ void CvRiseFall::flipUnitsInArea(CivilizationTypes newCivType, PlayerTypes newOw
 			}
 			CLLNode<IDInfo>* unitNode = GC.getMapINLINE().plotINLINE(x, y)->headUnitNode();
 			static std::vector<IDInfo> oldUnits;
+			oldUnits.clear();
 
 			while (unitNode != NULL) {
 				loopUnit = ::getUnit(unitNode->m_data);
@@ -844,15 +845,11 @@ bool CvRiseFall::skipConditionalSpawn(CivilizationTypes civType) const {
 }
 
 CvPlot* CvRiseFall::findSpawnPlot(int ix, int iy, DomainTypes domainType) const {
-	for(int x = ix - 1; x < ix + 1; ++x) {
-		for(int y = iy - 1; y < iy + 1; ++y) {
-			if(GC.getMapINLINE().isPlotINLINE(x, y)) {
-				CvPlot* plot = GC.getMapINLINE().plotINLINE(x, y);
-				if(!plot->isCity()) {
-					if((plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA) && !plot->isPeak()) {
-						return plot;
-					}
-				}
+	for(int i = NO_DIRECTION; i < NUM_DIRECTION_TYPES; ++i) {
+		CvPlot* plot = ::plotDirection(ix, iy, (DirectionTypes)i);
+		if(plot != NULL) {
+			if((plot->isWater() && domainType == DOMAIN_SEA || !plot->isWater() && domainType != DOMAIN_SEA) && !plot->isPeak()) {
+				return plot;
 			}
 		}
 	}
