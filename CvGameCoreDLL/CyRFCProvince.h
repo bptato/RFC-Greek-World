@@ -24,6 +24,7 @@ class CyRFCProvince {
 		CyRFCMercenary* getMercenary(int i);
 		int getNumCities(int playerType);
 		int getNumPlots();
+		bool isInBorderBounds(int x, int y);
 	protected:
 		CvRFCProvince* rfcProvince;
 };

@@ -60,3 +60,7 @@ int CyRFCProvince::getNumCities(int playerType) {
 int CyRFCProvince::getNumPlots() {
 	return rfcProvince->getNumPlots();
 }
+
+bool CyRFCProvince::isInBorderBounds(int x, int y) {
+	return rfcProvince->isInBorderBounds(x, y);
+}

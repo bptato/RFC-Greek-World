@@ -20,5 +20,6 @@ void CyRFCProvinceInterface() {
 		.def("getNumPlots", &CyRFCProvince::getNumPlots, "int ()")
 		.def("hireMercenary", &CyRFCProvince::hireMercenary, "void (int playerType, int mercenaryID)")
 		.def("removeScheduledUnit", &CyRFCProvince::removeScheduledUnit, "void (int i)")
+		.def("isInBorderBounds", &CyRFCProvince::isInBorderBounds, "bool (int x, int y)")
 		;
 }

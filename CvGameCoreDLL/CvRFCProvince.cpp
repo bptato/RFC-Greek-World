@@ -339,6 +339,10 @@ bool CvRFCProvince::canSpawnBarbs() {
 	return false;
 }
 
+bool CvRFCProvince::isInBorderBounds(int x, int y) {
+	return GC.getMapINLINE().plotINLINE(x, y)->getProvinceType() == _provinceType;
+}
+
 
 void CvRFCProvince::write(FDataStreamBase* stream) {
 	stream->WriteString(_type);

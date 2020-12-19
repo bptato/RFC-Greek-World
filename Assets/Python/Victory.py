@@ -164,6 +164,10 @@ class Victory:
 		global provEuboea
 		global provCyclades
 		global provAnatolia
+		global provCrimea
+		global provSarmatia
+		global provCaucasus
+		global provScythia
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getProvince(riseFall.findProvince("PROVINCE_PALESTINE"))
@@ -186,6 +190,10 @@ class Victory:
 		provEuboea = riseFall.getProvince(riseFall.findProvince("PROVINCE_EUBOEA"))
 		provCyclades = riseFall.getProvince(riseFall.findProvince("PROVINCE_CYCLADES"))
 		provAnatolia = riseFall.getProvince(riseFall.findProvince("PROVINCE_ANATOLIA"))
+		provCrimea = riseFall.getProvince(riseFall.findProvince("PROVINCE_CRIMEA"))
+		provSarmatia = riseFall.getProvince(riseFall.findProvince("PROVINCE_SARMATIA"))
+		provCaucasus = riseFall.getProvince(riseFall.findProvince("PROVINCE_CAUCASUS"))
+		provScythia = riseFall.getProvince(riseFall.findProvince("PROVINCE_SCYTHIA"))
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -236,11 +244,11 @@ class Victory:
 
 	def getAthensHarborBuilt(self):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		return scriptDict['AthensharborBuilt']
+		return scriptDict['athensHarborBuilt']
 
 	def setAthensHarborBuilt(self, i):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		scriptDict['AthensharborBuilt'] = i
+		scriptDict['athensHarborBuilt'] = i
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def getHittiteKilledUnits(self):
@@ -250,15 +258,6 @@ class Victory:
 	def setHittiteKilledUnits(self, i):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['hittiteKilledUnits'] = i
-		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-
-	def get2OutOf3(self, iCiv):
-		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		return scriptDict['l2OutOf3'][iCiv]
-
-	def set2OutOf3(self, iCiv, bNewValue):
-		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		scriptDict['l2OutOf3'][iCiv] = bNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def getSumerianTechs(self, i):
@@ -288,13 +287,13 @@ class Victory:
 		scriptDict['lWondersBuilt'][iCiv] = iNewValue
 		gc.getGame().setScriptData( pickle.dumps(scriptDict) )
 
-	def getReligionFounded(self, iCiv):
+	def getReligionFounded(self, religion):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		return scriptDict['lReligionFounded'][iCiv]
+		return scriptDict['lReligionFounded'][religion]
 
-	def setReligionFounded(self, iCiv, iNewValue ):
+	def setReligionFounded(self, religion, iNewValue):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		scriptDict['lReligionFounded'][iCiv] = iNewValue
+		scriptDict['lReligionFounded'][religion] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def onLoadGame(self):
@@ -305,18 +304,17 @@ class Victory:
 
 		#init script data
 		scriptDict = {
-					'lGoals': [[-1 for i in range(iNumCivs)] for j in range(iNumCivs)], #bluepotato: [[-1,-1,-1]]*con.iNumCivs would copy the same array over and over. see https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python
+					'lGoals': [[-1 for i in range(iNumCivs)] for j in range(iNumCivs)],
 					'iEnslavedUnits': 0,
 					'lSumerianTechs': [-1, -1, -1],
 					'lAthensTechs': [-1, -1, -1],
-					'lWondersBuilt': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+					'lWondersBuilt': [0] * iNumCivs,
 					'babyloniaKilledCivs': 0,
 					'scythianKilledCivs': 0,
 					'hittiteKilledUnits': 0,
 					'mycenaeTombsBuilt': 0,
-					'AthensharborBuilt': 0,
-					'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1],
-					'l2OutOf3': [False] * iNumCivs,
+					'athensHarborBuilt': 0,
+					'lReligionFounded': [-1] * gc.getNumReligionInfos()
 		}
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
@@ -671,25 +669,27 @@ class Victory:
 		
 		
 		elif civType == iScythia:
-			if (iGameTurn == i100BC):
+			if iGameTurn == i100BC:
 				bForeignPresence = False
-				for x in range(38, 59):
-					for y in range(38, 59):
- 						pCurrent = gc.getMap().plot(x,y)
+				for i in xrange(CyMap().numPlots()):
+					pCurrent = CyMap().plotByIndex(i)
+					if provCrimea.isInBorderBounds(pCurrent.getX(), pCurrent.getY()) or \
+						provSarmatia.isInBorderBounds(pCurrent.getX(), pCurrent.getY()) or \
+						provCaucasus.isInBorderBounds(pCurrent.getX(), pCurrent.getY()) or \
+						provScythia.isInBorderBounds(pCurrent.getX(), pCurrent.getY()):
 						if not pCurrent.isWater():
 							for iLoop in range(iNumPlayers): #no minor civs
-								if (iLoop != iScythia):
-									if (pCurrent.getCulture(iLoop) > 0):
+								if iLoop != iPlayer:
+									if pCurrent.getCulture(iLoop) > 0:
 										bForeignPresence = True
-#print (iLoop, "presence in Scythia")
+										break
 
-				#print ("bForeignPresence ", bForeignPresence)
-				if (bForeignPresence == False):
+				if not bForeignPresence:
 					self.setGoal(iScythia, 2, 1)
 				else:
 					self.setGoal(iScythia, 2, 0)
 
-			if (iGameTurn == i500BC):
+			if iGameTurn == i500BC:
 					if pPlayer.countOwnedBonuses(bonus('Horse')) + pPlayer.getBonusImport(bonus('Horse')) >= 4:
 						self.setGoal(iScythia, 0, 1)
 					else:

@@ -38,6 +38,7 @@ class CvRFCProvince {
 		CvCity* getFirstCity(PlayerTypes);
 		bool isBorderProvince(ProvinceTypes province);
 		bool canSpawnBarbs();
+		bool isInBorderBounds(int x, int y);
 
 		void write(FDataStreamBase* stream);
 		void read(FDataStreamBase* stream);
