@@ -989,7 +989,7 @@ application/json
 				"PROVINCE_ITALY",
 				"PROVINCE_SICILY",
 				"PROVINCE_VENETIA",
-				"PROVINCE_BRUTTIUM",
+				"",
 				"PROVINCE_MESSAPIA",
 				"PROVINCE_SARDINIA",
 				"PROVINCE_CORSICA"
@@ -1916,9 +1916,6 @@ application/json
 		},
 		{
 			"Type":"PROVINCE_MESSAPIA"
-		},
-		{
-			"Type":"PROVINCE_BRUTTIUM"
 		},
 		{
 			"Type":"PROVINCE_SICILY"

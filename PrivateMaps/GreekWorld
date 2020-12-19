@@ -107,9 +107,6 @@ application/json
 			"Type":"PROVINCE_MESSAPIA"
 		},
 		{
-			"Type":"PROVINCE_BRUTTIUM"
-		},
-		{
 			"Type":"PROVINCE_SICILY"
 		},
 		{
@@ -15659,7 +15656,6 @@ application/json
 			"y":25,
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
-			"ProvinceType":"PROVINCE_BRUTTIUM",
 			"CityNames":{
 				"CIVILIZATION_SPARTA":"Messana"
 			}
@@ -15671,7 +15667,7 @@ application/json
 			"TerrainType":"TERRAIN_PLAINS",
 			"FeatureType":"FEATURE_FOREST",
 			"FeatureVariety":0,
-			"ProvinceType":"PROVINCE_BRUTTIUM",
+			"ProvinceType":"PROVINCE_ITALY",
 			"CityNames":{
 				"CIVILIZATION_ETRURIA":"Popianu",
 				"CIVILIZATION_ROME":"Croton",
@@ -15689,7 +15685,6 @@ application/json
 			"y":25,
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
-			"ProvinceType":"PROVINCE_BRUTTIUM",
 			"CityNames":{
 				"CIVILIZATION_ETRURIA":"Popianu",
 				"CIVILIZATION_ROME":"Croton",
@@ -16521,8 +16516,7 @@ application/json
 			"x":20,
 			"y":26,
 			"PlotType":3,
-			"TerrainType":"TERRAIN_COAST",
-			"ProvinceType":"PROVINCE_BRUTTIUM"
+			"TerrainType":"TERRAIN_COAST"
 		},
 		{
 			"x":21,
@@ -16530,7 +16524,7 @@ application/json
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
 			"BonusType":"BONUS_STONE",
-			"ProvinceType":"PROVINCE_BRUTTIUM",
+			"ProvinceType":"PROVINCE_ITALY",
 			"CityNames":{
 				"CIVILIZATION_SPARTA":"Rhegium",
 				"CIVILIZATION_ETRURIA":"Pumpai",
@@ -16548,7 +16542,7 @@ application/json
 			"y":26,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"ProvinceType":"PROVINCE_BRUTTIUM",
+			"ProvinceType":"PROVINCE_ITALY",
 			"SettlerValues":{
 				"CIVILIZATION_SPARTA":400,
 				"CIVILIZATION_ROME":400,
@@ -17544,15 +17538,14 @@ application/json
 			"x":20,
 			"y":27,
 			"PlotType":3,
-			"TerrainType":"TERRAIN_COAST",
-			"ProvinceType":"PROVINCE_BRUTTIUM"
+			"TerrainType":"TERRAIN_COAST"
 		},
 		{
 			"x":21,
 			"y":27,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"ProvinceType":"PROVINCE_BRUTTIUM",
+			"ProvinceType":"PROVINCE_ITALY",
 			"CityNames":{
 				"CIVILIZATION_SPARTA":"Hipponium",
 				"CIVILIZATION_ETRURIA":"Pumpai",
@@ -18501,7 +18494,7 @@ application/json
 			"y":28,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
-			"ProvinceType":"PROVINCE_MESSAPIA",
+			"ProvinceType":"PROVINCE_ITALY",
 			"CityNames":{
 				"CIVILIZATION_SPARTA":"Croton",
 				"CIVILIZATION_CARTHAGE":"Cannae",
@@ -25314,7 +25307,7 @@ application/json
 			"TerrainType":"TERRAIN_GRASS",
 			"FeatureType":"FEATURE_FOREST",
 			"FeatureVariety":1,
-			"ProvinceType":"PROVINCE_VENETIA",
+			"ProvinceType":"PROVINCE_ITALY",
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
@@ -25335,7 +25328,7 @@ application/json
 			"y":36,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"ProvinceType":"PROVINCE_VENETIA",
+			"ProvinceType":"PROVINCE_ITALY",
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
