@@ -1026,7 +1026,8 @@ bool CyGame::isPitbossHost() const				// remove once CvApp is exposed
 
 int CyGame::getCurrentLanguage() const				// remove once CvApp is exposed
 {
-	return gDLL->getCurrentLanguage();
+	return 0; //bluepotato
+	//return gDLL->getCurrentLanguage();
 }
 
 void CyGame::setCurrentLanguage(int iNewLanguage)			// remove once CvApp is exposed

@@ -113,7 +113,8 @@ void CvGameTextMgr::Reset()
 // Returns the current language
 int CvGameTextMgr::getCurrentLanguage()
 {
-	return gDLL->getCurrentLanguage();
+	return 0; //bluepotato
+	//return gDLL->getCurrentLanguage();
 }
 
 void CvGameTextMgr::setYearStr(CvWString& szString, int iGameTurn, bool bSave, CalendarTypes eCalendar, int iStartYear, GameSpeedTypes eSpeed)
