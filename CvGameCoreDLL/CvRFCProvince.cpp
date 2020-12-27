@@ -137,18 +137,22 @@ void CvRFCProvince::checkMercenaries() {
 			if(GC.getGame().getSorenRandNum(100, "Mercenary wandering roll") < wanderingRate) {
 				int borderProvinces = 0;
 				for(int i = 0; i < RFC.getNumProvinces(); ++i) {
-					if(isBorderProvince((ProvinceTypes)i)) {
-						++borderProvinces;
+					if(_provinceType != (ProvinceTypes)i) {
+						if(isBorderProvince((ProvinceTypes)i)) {
+							++borderProvinces;
+						}
 					}
 				}
 				int rand = 0;
 				for(int i = 0; i < RFC.getNumProvinces(); ++i) {
-					if(isBorderProvince((ProvinceTypes)i)) {
-						rand += 100/borderProvinces;
-						if(100/borderProvinces<GC.getGame().getSorenRandNum(rand, "Border province selection roll")) {
-							RFC.getProvince((ProvinceTypes)i).addMercenary(mercenary);
-							savePointer = true; //don't destroy the object
-							break;
+					if(_provinceType != (ProvinceTypes)i) {
+						if(isBorderProvince((ProvinceTypes)i)) {
+							rand += 100/borderProvinces;
+							if(100/borderProvinces<GC.getGame().getSorenRandNum(rand, "Border province selection roll")) {
+								RFC.getProvince((ProvinceTypes)i).addMercenary(mercenary);
+								savePointer = true; //don't destroy the object
+								break;
+							}
 						}
 					}
 				}
@@ -304,25 +308,19 @@ CvCity* CvRFCProvince::getFirstCity(PlayerTypes playerType) {
 }
 
 bool CvRFCProvince::isBorderProvince(ProvinceTypes province) {
-	//could be checked by the caller but this feels simpler
-	if(province == getProvinceType()) {
-		return false;
-	}
+	FAssert(province != getProvinceType());
 	for(std::vector<int>::iterator it = _plots.begin(); it != _plots.end(); ++it) {
-		int x = GC.getMapINLINE().plotByIndexINLINE(*it)->getX();
-		int y = GC.getMapINLINE().plotByIndexINLINE(*it)->getY();
-		if(GC.getMapINLINE().isPlotINLINE(x, y - 1))
-			if(GC.getMapINLINE().plotINLINE(x, y - 1)->getProvinceType() == province)
-				return true;
-		if(GC.getMapINLINE().isPlotINLINE(x, y + 1))
-			if(GC.getMapINLINE().plotINLINE(x, y + 1)->getProvinceType() == province)
-				return true;
-		if(GC.getMapINLINE().isPlotINLINE(x + 1, y))
-			if(GC.getMapINLINE().plotINLINE(x + 1, y)->getProvinceType() == province)
-				return true;
-		if(GC.getMapINLINE().isPlotINLINE(x - 1, y))
-			if(GC.getMapINLINE().plotINLINE(x - 1, y)->getProvinceType() == province)
-				return true;
+		for(int i = 0; i < NUM_CARDINALDIRECTION_TYPES; ++i) {
+			CvPlot* plot = ::plotCardinalDirection(
+						GC.getMapINLINE().plotByIndexINLINE(*it)->getX_INLINE(),
+						GC.getMapINLINE().plotByIndexINLINE(*it)->getY_INLINE(),
+						(CardinalDirectionTypes)i);
+			if(plot != NULL) {
+				if(plot->getProvinceType() == province) {
+					return true;
+				}
+			}
+		}
 	}
 	return false;
 }

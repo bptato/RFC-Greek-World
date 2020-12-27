@@ -700,14 +700,15 @@ bool CvRFCPlayer::isInCoreBounds(int x, int y) {
 }
 
 bool CvRFCPlayer::isInBorderBounds(int x, int y) {
-	if(GC.getMap().plot(x, y)->getProvinceType() == NO_PROVINCE) {
+	if(GC.getMapINLINE().plotINLINE(x, y)->getProvinceType() == NO_PROVINCE) {
 		return false;
 	}
 	for(uint i = 0; i < _coreProvinces.size(); ++i) {
-		if(_coreProvinces[i] == GC.getMap().plot(x, y)->getProvinceType()) {
+		if(_coreProvinces[i] == GC.getMapINLINE().plotINLINE(x, y)->getProvinceType()) {
 			continue;
 		}
-		if(RFC.getProvince(_coreProvinces[i]).isBorderProvince(GC.getMap().plot(x, y)->getProvinceType())) {
+		if(RFC.getProvince(_coreProvinces[i]).isBorderProvince(
+					GC.getMapINLINE().plotINLINE(x, y)->getProvinceType())) {
 			return true;
 		}
 	}
