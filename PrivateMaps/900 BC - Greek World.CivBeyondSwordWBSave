@@ -2445,70 +2445,6 @@ application/json
 			}
 		},
 		{
-			"x":15,
-			"y":20,
-			"RouteType":"ROUTE_ROAD",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_ARCHER",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_CITY_DEFENSE",
-					"Year":-896
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_SETTLER",
-					"Year":-812
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_ARCHER",
-					"Year":-812
-				},
-				{
-					"Amount":2,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_SPEARMAN",
-					"Year":-812
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_WAR_ELEPHANT",
-					"Year":-812
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_CARTHAGE_NUMIDIAN_CAVALRY",
-					"Year":-812
-				},
-				{
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_BAALITE_PRIEST",
-					"Year":-812
-				},
-				{
-					"Amount":3,
-					"UnitOwner":"CIVILIZATION_CARTHAGE",
-					"UnitType":"UNIT_WORKER",
-					"Year":-812
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_PHOENICIA",
-				"Year":-896,
-				"Buildings":{
-					"BUILDING_PHOENICIAN_TRADING_PORT":1
-				},
-				"Religions":{
-					"RELIGION_BAALISM":true
-				}
-			}
-		},
-		{
 			"x":41,
 			"y":20,
 			"RouteType":"ROUTE_ROAD",
@@ -2566,30 +2502,6 @@ application/json
 			"x":46,
 			"y":20,
 			"ImprovementType":"IMPROVEMENT_FARM"
-		},
-		{
-			"x":9,
-			"y":21,
-			"RouteType":"ROUTE_ROAD",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_ARCHER",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_CITY_DEFENSE",
-					"Year":-896
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_PHOENICIA",
-				"Year":-896,
-				"Buildings":{
-					"BUILDING_PHOENICIAN_TRADING_PORT":1
-				},
-				"Religions":{
-					"RELIGION_BAALISM":true
-				}
-			}
 		},
 		{
 			"x":33,
@@ -2739,6 +2651,24 @@ application/json
 					"UnitOwner":"CIVILIZATION_PHOENICIA",
 					"UnitType":"UNIT_ARCHER",
 					"Year":-850
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_PHOENICIANS_BIREME",
+					"Year":-681,
+					"UnitAIType":"UNITAI_SETTLER_SEA",
+					"AIOnly":true
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-681,
+					"AIOnly":true
+				},
+				{
+					"UnitOwner":"CIVILIZATION_PHOENICIA",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-681
 				}
 			]
 		},
@@ -2872,30 +2802,6 @@ application/json
 			"y":22,
 			"ImprovementType":"IMPROVEMENT_PASTURE",
 			"RouteType":"ROUTE_ROAD"
-		},
-		{
-			"x":4,
-			"y":24,
-			"RouteType":"ROUTE_ROAD",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_PHOENICIA",
-					"UnitType":"UNIT_ARCHER",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_CITY_DEFENSE",
-					"Year":-896
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_PHOENICIA",
-				"Year":-896,
-				"Buildings":{
-					"BUILDING_PHOENICIAN_TRADING_PORT":1
-				},
-				"Religions":{
-					"RELIGION_BAALISM":true
-				}
-			}
 		},
 		{
 			"x":29,
@@ -3510,6 +3416,52 @@ application/json
 					"FacingDirection":4,
 					"UnitAIType":"UNITAI_SETTLE",
 					"Year":-896
+				}
+			]
+		},
+		{
+			"x":15,
+			"y":20,
+			"Units":[
+				{
+					"Amount":2,
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_SETTLER",
+					"Year":-812
+				},
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_ARCHER",
+					"Year":-812
+				},
+				{
+					"Amount":2,
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_SPEARMAN",
+					"Year":-812
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_WAR_ELEPHANT",
+					"Year":-812
+				},
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_CARTHAGE_NUMIDIAN_CAVALRY",
+					"Year":-812
+				},
+				{
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_BAALITE_PRIEST",
+					"Year":-812
+				},
+				{
+					"Amount":3,
+					"UnitOwner":"CIVILIZATION_CARTHAGE",
+					"UnitType":"UNIT_WORKER",
+					"Year":-812
 				}
 			]
 		},
