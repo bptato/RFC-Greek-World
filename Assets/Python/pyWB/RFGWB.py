@@ -410,22 +410,22 @@ class WbParser:
 					wbCity['CityOwner'] = civInfo.getType()
 					wbCity['Year'] = scheduledCity.getYear()
 					wbCity['CityPopulation'] = scheduledCity.getPopulation()
-					for i in xrange(gc.getNumBuildingInfos()):
-						if scheduledCity.getNumBuilding(i) > 0:
+					for k in xrange(gc.getNumBuildingInfos()):
+						if scheduledCity.getNumBuilding(k) > 0:
 							if "Buildings" not in wbCity:
 								wbCity['Buildings'] = {}
-							wbCity['Buildings'][gc.getBuildingInfo(i).getType()] = scheduledCity.getNumBuilding(i)
+							wbCity['Buildings'][gc.getBuildingInfo(k).getType()] = scheduledCity.getNumBuilding(i)
 
-					for i in xrange(gc.getNumReligionInfos()):
-						if scheduledCity.getHolyCityReligion(i):
+					for k in xrange(gc.getNumReligionInfos()):
+						if scheduledCity.getHolyCityReligion(k):
 							if "HolyCityReligions" not in wbCity:
 								wbCity['HolyCityReligions'] = {}
-							wbCity['HolyCityReligions'][gc.getReligionInfo(i).getType()] = True
-					for i in xrange(gc.getNumCivilizationInfos()):
-						if scheduledCity.getCulture(i) > 0:
+							wbCity['HolyCityReligions'][gc.getReligionInfo(k).getType()] = True
+					for k in xrange(gc.getNumCivilizationInfos()):
+						if scheduledCity.getCulture(k) > 0:
 							if "Culture" not in wbCity:
 								wbCity['Culture'] = {}
-							wbCity['Culture'][gc.getCivilizationInfo(i).getType()] = scheduledCity.getCulture(i)
+							wbCity['Culture'][gc.getCivilizationInfo(i).getType()] = scheduledCity.getCulture(k)
 
 					wbPlot['City'] = wbCity
 
@@ -970,7 +970,8 @@ class WbParser:
 			if not "MinorNationStatus" in wbPlayer or wbPlayer['MinorNationStatus'] == 0: #major civ
 				if "CoreProvinces" in wbPlayer:
 					for wbCoreProvince in wbPlayer['CoreProvinces']:
-						rfcPlayer.addCoreProvince(gc.getRiseFall().findProvince(wbCoreProvince))
+						if wbCoreProvince != "":
+							rfcPlayer.addCoreProvince(gc.getRiseFall().findProvince(wbCoreProvince))
 
 				if "StartingX" in wbPlayer and "StartingY" in wbPlayer:
 					rfcPlayer.setStartingPlot(wbPlayer['StartingX'], wbPlayer['StartingY'])
