@@ -10731,6 +10731,7 @@ application/json
 			"y":19,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"BonusType":"BONUS_DYE",
 			"ProvinceType":"PROVINCE_AFRICA",
 			"CityNames":{
 				"CIVILIZATION_PHOENICIA":"Hadrumetum",
@@ -12029,6 +12030,7 @@ application/json
 			"y":21,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"BonusType":"BONUS_DYE",
 			"ProvinceType":"PROVINCE_MAURETANIA"
 		},
 		{
@@ -12107,7 +12109,6 @@ application/json
 			"y":21,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
-			"BonusType":"BONUS_DYE",
 			"ProvinceType":"PROVINCE_MAURETANIA",
 			"CityNames":{
 				"CIVILIZATION_PHOENICIA":"Iol",
@@ -15543,6 +15544,7 @@ application/json
 			"y":25,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"BonusType":"BONUS_DYE",
 			"ProvinceType":"PROVINCE_SOUTHERN_IBERIA",
 			"CityNames":{
 				"CIVILIZATION_PHOENICIA":"Ibossim",
@@ -17585,6 +17587,7 @@ application/json
 			"y":27,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"BonusType":"BONUS_DYE",
 			"ProvinceType":"PROVINCE_MESSAPIA",
 			"CityNames":{
 				"CIVILIZATION_ROME":"Brundisium",
@@ -22998,6 +23001,7 @@ application/json
 			"y":33,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
+			"BonusType":"BONUS_DYE",
 			"ProvinceType":"PROVINCE_SOUTHERN_IBERIA",
 			"CityNames":{
 				"CIVILIZATION_SPARTA":"Masillia",
