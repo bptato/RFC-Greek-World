@@ -114,7 +114,7 @@ void CvRiseFall::checkTurn() {
 					} else if(domainType != DOMAIN_SEA && !plotsInit) {
 						for(std::vector<int>::iterator it = getProvince((ProvinceTypes)i).getPlots().begin(); it != getProvince((ProvinceTypes)i).getPlots().end(); ++it) {
 							CvPlot* loopPlot = GC.getMapINLINE().plotByIndexINLINE(*it);
-							if(!loopPlot->isWater() && !loopPlot->isPeak()) {
+							if(!loopPlot->isCity() && !loopPlot->isWater() && !loopPlot->isPeak()) {
 								validPlots.push_back(loopPlot);
 							}
 						}
