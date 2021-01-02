@@ -32,16 +32,6 @@
 			<Button>,Art/Interface/Buttons/Promotions/Charge.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,5</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>
-			<Type>UNITCOMBAT_ARMOR</Type>
-			<Description>TXT_KEY_UNITCOMBAT_ARMOR</Description>
-			<Button>,Art/Interface/Buttons/Promotions/Ambush.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,1</Button>
-		</UnitCombatInfo>
-		<UnitCombatInfo>
-			<Type>UNITCOMBAT_HELICOPTER</Type>
-			<Description>TXT_KEY_UNITCOMBAT_HELICOPTER</Description>
-			<Button>,Art/Interface/Buttons/Promotions/Helicopter_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,7</Button>
-		</UnitCombatInfo>
-		<UnitCombatInfo>
 			<Type>UNITCOMBAT_NAVAL</Type>
 			<Description>TXT_KEY_UNITCOMBAT_NAVAL</Description>
 			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,7</Button>

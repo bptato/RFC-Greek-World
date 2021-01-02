@@ -211,43 +211,71 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		}
 	}
 
-	//bluepotato start: free promotion UPs (mostly kept in the original form)
-	switch (getCivilizationType()) {
+	//bluepotato start: free promotion UPs
+	static UnitCombatTypes naval = (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_NAVAL");
+	static UnitCombatTypes archer = (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_ARCHER");
+	static UnitCombatTypes mounted = (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_MOUNTED");
+	static UnitCombatTypes melee = (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_MELEE");
+	static UnitCombatTypes siege = (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_SIEGE");
+	switch(getCivilizationType()) {
 		case CIVILIZATION_ISRAEL:
-			if (getUnitCombatType() >= 1 && getUnitCombatType() <= 6) { //all military land units
-				setHasPromotion(((PromotionTypes)26), true); //citygarrison1
+			if(getUnitCombatType() == archer ||
+					getUnitCombatType() == mounted ||
+					getUnitCombatType() == melee) {
+				static PromotionTypes city_garrison1 = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_CITY_GARRISON1");
+				setHasPromotion(city_garrison1, true);
 			}
 			break;
 		case CIVILIZATION_SCYTHIA:
-			if (getUnitCombatType() >= 1 && getUnitCombatType() <= 6) { //all military land units
-				setHasPromotion(((PromotionTypes)12), true); //march
+			if(getUnitCombatType() == archer ||
+					getUnitCombatType() == mounted ||
+					getUnitCombatType() == melee ||
+					getUnitCombatType() == siege) {
+				static PromotionTypes march = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_MARCH");
+				setHasPromotion(march, true);
 			}
 			break;
 		case CIVILIZATION_MYCENAE:
-			if (getUnitCombatType() == 8) { //naval
-					setHasPromotion(((PromotionTypes)41), true); //navigation1
-					setHasPromotion(((PromotionTypes)42), true); //navigation2
-				}
+			if(getUnitCombatType() == naval) {
+				static PromotionTypes navigation1 = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_NAVIGATION1");
+				static PromotionTypes navigation2 = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_NAVIGATION2");
+				setHasPromotion(navigation1, true);
+				setHasPromotion(navigation2, true);
+			}
 			break;
 		case CIVILIZATION_CARTHAGE:
-			if (getUnitCombatType() == 8) { //naval
-				setHasPromotion(((PromotionTypes)29), true); //drill1
-				setHasPromotion(((PromotionTypes)30), true); //drill2
+			if(getUnitCombatType() == naval) {
+				static PromotionTypes drill1 = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_DRILL1");
+				static PromotionTypes drill2 = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_DRILL2");
+				setHasPromotion(drill1, true);
+				setHasPromotion(drill2, true);
 			}
 			break;
 		case CIVILIZATION_NUBIA:
-			if (getUnitCombatType() >= 1 && getUnitCombatType() <= 6) { //all military land units
-				setHasPromotion(((PromotionTypes)14), true); //commando   (was 6/14 armored - ambush)
+			if(getUnitCombatType() == archer ||
+					getUnitCombatType() == mounted ||
+					getUnitCombatType() == melee ||
+					getUnitCombatType() == siege) {
+				static PromotionTypes commando = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_COMMANDO");
+				setHasPromotion(commando, true);
 			}
 			break;
 		case CIVILIZATION_GERMANIA:
-			if (getUnitCombatType() >= 1 && getUnitCombatType() <= 6) { //all military land units
-				setHasPromotion(((PromotionTypes)23), true); //City Raider I
+			if(getUnitCombatType() == archer ||
+					getUnitCombatType() == mounted ||
+					getUnitCombatType() == melee ||
+					getUnitCombatType() == siege) {
+				static PromotionTypes city_raider1 = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_CITY_RAIDER1");
+				setHasPromotion(city_raider1, true);
 			}
 			break;
 		case CIVILIZATION_CELT:
-			if (getUnitCombatType() >= 1 && getUnitCombatType() <= 6) { //all military land units
-				setHasPromotion(((PromotionTypes)39), true); //sentry
+			if(getUnitCombatType() == archer ||
+					getUnitCombatType() == mounted ||
+					getUnitCombatType() == melee ||
+					getUnitCombatType() == siege) {
+				static PromotionTypes sentry = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_SENTRY");
+				setHasPromotion(sentry, true);
 			}
 			break;
 	}
