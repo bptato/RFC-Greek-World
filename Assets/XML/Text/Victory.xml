@@ -159,7 +159,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SUM3</Tag>
-		<English>Control a city in Sumer, Babylonia, Subartu and Khuzestan in 2180 BC</English>
+		<English>Control a city in Sumer, Akkad, Subartu and Khuzestan in 2180 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IVC1_TITLE</Tag>
@@ -183,7 +183,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IVC3</Tag>
-		<English>Never lose a single city to barbarians before 1000 BC</English>
+		<English>Never lose a single city to barbarians before 1200 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ELA1_TITLE</Tag>
@@ -448,5 +448,125 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SCY3</Tag>
 		<English>No foreign culture in Crimea, Sarmatia, Caucasus and Scythia in 100 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1_TITLE</Tag>
+		<English>The wealth of Carthage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1</Tag>
+		<English>Dominate the Tyrian purple dye trade by controling at least 3 dye by 400 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2_TITLE</Tag>
+		<English>Hannibal crosses the Alps </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2</Tag>
+		<English>Be victors in the Punic War by capturing Rome</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR3_TITLE</Tag>
+		<English>Carthagianian Mediterranean Preeminence</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR3</Tag>
+		<English>Have the highest score in 0 AD</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_UHV_CEL1_TITLE</Tag>
+		<English>Celtic Migration</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL1</Tag>
+		<English>Have 2 cities in Celtic Gaul, and 1 city in Britannia, and Northern Iberia, Venetia and Raetia in 300 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL2_TITLE</Tag>
+		<English>Sack of Rome</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL2</Tag>
+		<English>Be the first civilization to capture or sack Rome</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL3_TITLE</Tag>
+		<English>Celtic Culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL3</Tag>
+		<English>Have 1000 culture in 0 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN11_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN11</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN12_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN12</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN13_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN13</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN21_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN21</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN22_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN22</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN23_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IN23</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAR1_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAR1</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAR2_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAR2</Tag>
+		<English>None</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAR3_TITLE</Tag>
+		<English>-</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAR3</Tag>
+		<English>None</English>
 	</TEXT>
 </Civ4GameText>
