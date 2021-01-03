@@ -11,37 +11,37 @@ gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
 #following ids refer to civ types, not slots!
-iEgypt = int(CivilizationTypes.CIVILIZATION_EGYPT)
-iSumeria = int(CivilizationTypes.CIVILIZATION_SUMERIA)
-iIndusValley = int(CivilizationTypes.CIVILIZATION_INDUS_VALLEY)
-iElam = int(CivilizationTypes.CIVILIZATION_ELAM)
-iMinoa = int(CivilizationTypes.CIVILIZATION_MINOA)
-iPhoenicia = int(CivilizationTypes.CIVILIZATION_PHOENICIA)
-iBabylonia = int(CivilizationTypes.CIVILIZATION_BABYLON)
-iHittites = int(CivilizationTypes.CIVILIZATION_HITTITE)
-iMycenae = int(CivilizationTypes.CIVILIZATION_MYCENAE)
-iAssyria = int(CivilizationTypes.CIVILIZATION_ASSYRIA)
-iIsrael = int(CivilizationTypes.CIVILIZATION_ISRAEL)
-iAthens = int(CivilizationTypes.CIVILIZATION_ATHENS)
-iSparta = int(CivilizationTypes.CIVILIZATION_SPARTA)
-iScythia = int(CivilizationTypes.CIVILIZATION_SCYTHIA)
-iCarthage = int(CivilizationTypes.CIVILIZATION_CARTHAGE)
-iCeltia = int(CivilizationTypes.CIVILIZATION_CELT)
-iEtruria = int(CivilizationTypes.CIVILIZATION_ETRURIA)
-iNubia = int(CivilizationTypes.CIVILIZATION_NUBIA)
-iPersia = int(CivilizationTypes.CIVILIZATION_PERSIA)
-iRome = int(CivilizationTypes.CIVILIZATION_ROME)
-iMacedonia = int(CivilizationTypes.CIVILIZATION_MACEDONIA)
-iIndia = int(CivilizationTypes.CIVILIZATION_INDIA)
-iBactria = int(CivilizationTypes.CIVILIZATION_BACTRIA)
-iNumidia = int(CivilizationTypes.CIVILIZATION_NUMIDIA)
-iGermania = int(CivilizationTypes.CIVILIZATION_GERMANIA)
-iSassanid = int(CivilizationTypes.CIVILIZATION_SASSANID)
-iByzantium = int(CivilizationTypes.CIVILIZATION_BYZANTIUM)
-iHuns = int(CivilizationTypes.CIVILIZATION_HUNS)
-iIndependent = int(CivilizationTypes.CIVILIZATION_INDEPENDENT)
-iIndependent2 = int(CivilizationTypes.CIVILIZATION_INDEPENDENT2)
-iBarbarian = int(CivilizationTypes.CIVILIZATION_BARBARIAN)
+iEgypt = CivilizationTypes.CIVILIZATION_EGYPT
+iSumeria = CivilizationTypes.CIVILIZATION_SUMERIA
+iIndusValley = CivilizationTypes.CIVILIZATION_INDUS_VALLEY
+iElam = CivilizationTypes.CIVILIZATION_ELAM
+iMinoa = CivilizationTypes.CIVILIZATION_MINOA
+iPhoenicia = CivilizationTypes.CIVILIZATION_PHOENICIA
+iBabylonia = CivilizationTypes.CIVILIZATION_BABYLON
+iHittites = CivilizationTypes.CIVILIZATION_HITTITE
+iMycenae = CivilizationTypes.CIVILIZATION_MYCENAE
+iAssyria = CivilizationTypes.CIVILIZATION_ASSYRIA
+iIsrael = CivilizationTypes.CIVILIZATION_ISRAEL
+iAthens = CivilizationTypes.CIVILIZATION_ATHENS
+iSparta = CivilizationTypes.CIVILIZATION_SPARTA
+iScythia = CivilizationTypes.CIVILIZATION_SCYTHIA
+iCarthage = CivilizationTypes.CIVILIZATION_CARTHAGE
+iCeltia = CivilizationTypes.CIVILIZATION_CELT
+iEtruria = CivilizationTypes.CIVILIZATION_ETRURIA
+iNubia = CivilizationTypes.CIVILIZATION_NUBIA
+iPersia = CivilizationTypes.CIVILIZATION_PERSIA
+iRome = CivilizationTypes.CIVILIZATION_ROME
+iMacedonia = CivilizationTypes.CIVILIZATION_MACEDONIA
+iIndia = CivilizationTypes.CIVILIZATION_INDIA
+iBactria = CivilizationTypes.CIVILIZATION_BACTRIA
+iNumidia = CivilizationTypes.CIVILIZATION_NUMIDIA
+iGermania = CivilizationTypes.CIVILIZATION_GERMANIA
+iSassanid = CivilizationTypes.CIVILIZATION_SASSANID
+iByzantium = CivilizationTypes.CIVILIZATION_BYZANTIUM
+iHuns = CivilizationTypes.CIVILIZATION_HUNS
+iIndependent = CivilizationTypes.CIVILIZATION_INDEPENDENT
+iIndependent2 = CivilizationTypes.CIVILIZATION_INDEPENDENT2
+iBarbarian = CivilizationTypes.CIVILIZATION_BARBARIAN
 
 iNumPlayers = gc.getMAX_CIV_PLAYERS() - 2 #-2: independent slots
 
@@ -55,10 +55,7 @@ def unit(unitName):
 	return CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), "UNIT_" + unitName.upper())
 
 def civ2player(civType):
-	for i in range(gc.getMAX_CIV_PLAYERS()):
-		if gc.getPlayer(i).getCivilizationType() == civType:
-			return i
-	return None
+	return gc.getRiseFall().getRFCPlayer(civType).getPlayerType()
 
 def player2civ(playerType):
 	return gc.getPlayer(playerType).getCivilizationType()
@@ -79,7 +76,7 @@ def religion(religionName):
 	return CvUtil.findInfoTypeNum(gc.getReligionInfo, gc.getNumReligionInfos(), "RELIGION_" + religionName.upper())
 
 def bonus(bonusName):
-    return CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), "BONUS_" + bonusName.upper())
+	return CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), "BONUS_" + bonusName.upper())
 
 class Victory:
 	def initGlobals(self):
@@ -115,6 +112,7 @@ class Victory:
 		global i250BC
 		global i100BC
 		global i63BC
+		global i0AD
 
 		i4000BC = getTurnForYear(-4000)
 		i3000BC = getTurnForYear(-3000)
@@ -127,8 +125,8 @@ class Victory:
 		i1500BC = getTurnForYear(-1500)
 		i1400BC = getTurnForYear(-1400)
 		i1300BC = getTurnForYear(-1300)
-		i1200BC = getTurnForYear(-1200)
 		i1250BC = getTurnForYear(-1250)
+		i1200BC = getTurnForYear(-1200)
 		i1100BC = getTurnForYear(-1100)
 		i1070BC = getTurnForYear(-1070)
 		i1000BC = getTurnForYear(-1000)
@@ -145,6 +143,7 @@ class Victory:
 		i250BC = getTurnForYear(-250)
 		i100BC = getTurnForYear(-100)
 		i63BC = getTurnForYear(-63)
+		i0AD = getTurnForYear(0)
 
 
 		global provPalestine
@@ -159,6 +158,7 @@ class Victory:
 		global provAfrica
 		global provCyprus
 		global provSouthernIberia
+		global provPersia
 		global provPeloponnese
 		global provAttica
 		global provMacedonia
@@ -166,28 +166,52 @@ class Victory:
 		global provEuboea
 		global provCyclades
 		global provAnatolia
+		global provCrimea
+		global provSarmatia
+		global provCaucasus
+		global provScythia
+		global provSicily
+		global provItaly
+		global provMessapia
+		global provCelticGaul
+		global provNorthernIberia
+		global provBritannia
+		global provRaetia
+		global provVenetia
 
 		riseFall = CyRiseFall()
-		provPalestine = riseFall.getRFCProvince("Palestine")
-		provPhoenicia = riseFall.getRFCProvince("Phoenicia")
-		provUpperEgypt = riseFall.getRFCProvince("Upper Egypt")
-		provLowerEgypt = riseFall.getRFCProvince("Lower Egypt")
-		provNubia = riseFall.getRFCProvince("Nubia")
-		provSumer = riseFall.getRFCProvince("Sumer")
-		provAkkad = riseFall.getRFCProvince("Akkad")
-		provSubartu = riseFall.getRFCProvince("Subartu")
-		provKhuzestan = riseFall.getRFCProvince("Khuzestan")
-		provAfrica = riseFall.getRFCProvince("Africa")
-		provCyprus = riseFall.getRFCProvince("Cyprus")
-		provSouthernIberia = riseFall.getRFCProvince("Southern Iberia")
-		provPersia = riseFall.getRFCProvince("Persia")
-		provPeloponnese = riseFall.getRFCProvince("Peloponnese")
-		provAttica = riseFall.getRFCProvince("Attica")
-		provMacedonia = riseFall.getRFCProvince("Macedonia")
-		provCentralGreece = riseFall.getRFCProvince("Central Greece")
-		provEuboea = riseFall.getRFCProvince("Euboea")
-		provCyclades = riseFall.getRFCProvince("Cyclades")
-		provAnatolia = riseFall.getRFCProvince("Anatolia")
+		provPalestine = riseFall.getProvince(riseFall.findProvince("PROVINCE_PALESTINE"))
+		provPhoenicia = riseFall.getProvince(riseFall.findProvince("PROVINCE_PHOENICIA"))
+		provUpperEgypt = riseFall.getProvince(riseFall.findProvince("PROVINCE_UPPER_EGYPT"))
+		provLowerEgypt = riseFall.getProvince(riseFall.findProvince("PROVINCE_LOWER_EGYPT"))
+		provNubia = riseFall.getProvince(riseFall.findProvince("PROVINCE_NUBIA"))
+		provSumer = riseFall.getProvince(riseFall.findProvince("PROVINCE_SUMER"))
+		provAkkad = riseFall.getProvince(riseFall.findProvince("PROVINCE_AKKAD"))
+		provSubartu = riseFall.getProvince(riseFall.findProvince("PROVINCE_SUBARTU"))
+		provKhuzestan = riseFall.getProvince(riseFall.findProvince("PROVINCE_KHUZESTAN"))
+		provAfrica = riseFall.getProvince(riseFall.findProvince("PROVINCE_AFRICA"))
+		provCyprus = riseFall.getProvince(riseFall.findProvince("PROVINCE_CYPRUS"))
+		provSouthernIberia = riseFall.getProvince(riseFall.findProvince("PROVINCE_SOUTHERN_IBERIA"))
+		provPersia = riseFall.getProvince(riseFall.findProvince("PROVINCE_PERSIA"))
+		provPeloponnese = riseFall.getProvince(riseFall.findProvince("PROVINCE_PELOPONNESE"))
+		provAttica = riseFall.getProvince(riseFall.findProvince("PROVINCE_ATTICA"))
+		provMacedonia = riseFall.getProvince(riseFall.findProvince("PROVINCE_MACEDONIA"))
+		provCentralGreece = riseFall.getProvince(riseFall.findProvince("PROVINCE_CENTRAL_GREECE"))
+		provEuboea = riseFall.getProvince(riseFall.findProvince("PROVINCE_EUBOEA"))
+		provCyclades = riseFall.getProvince(riseFall.findProvince("PROVINCE_CYCLADES"))
+		provAnatolia = riseFall.getProvince(riseFall.findProvince("PROVINCE_ANATOLIA"))
+		provCrimea = riseFall.getProvince(riseFall.findProvince("PROVINCE_CRIMEA"))
+		provSarmatia = riseFall.getProvince(riseFall.findProvince("PROVINCE_SARMATIA"))
+		provCaucasus = riseFall.getProvince(riseFall.findProvince("PROVINCE_CAUCASUS"))
+		provScythia = riseFall.getProvince(riseFall.findProvince("PROVINCE_SCYTHIA"))
+		provSicily = riseFall.getProvince(riseFall.findProvince("PROVINCE_SICILY"))
+		provItaly = riseFall.getProvince(riseFall.findProvince("PROVINCE_ITALY"))
+		provMessapia = riseFall.getProvince(riseFall.findProvince("PROVINCE_MESSAPIA"))
+		provCelticGaul = riseFall.getProvince(riseFall.findProvince("PROVINCE_CELTIC_GAUL"))
+		provNorthernIberia = riseFall.getProvince(riseFall.findProvince("PROVINCE_NORTHERN_IBERIA"))
+		provBritannia = riseFall.getProvince(riseFall.findProvince("PROVINCE_BRITANNIA"))
+		provRaetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_RAETIA"))
+		provVenetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_VENETIA"))
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -238,11 +262,11 @@ class Victory:
 
 	def getAthensHarborBuilt(self):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		return scriptDict['AthensharborBuilt']
+		return scriptDict['athensHarborBuilt']
 
 	def setAthensHarborBuilt(self, i):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		scriptDict['AthensharborBuilt'] = i
+		scriptDict['athensHarborBuilt'] = i
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def getHittiteKilledUnits(self):
@@ -252,15 +276,6 @@ class Victory:
 	def setHittiteKilledUnits(self, i):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
 		scriptDict['hittiteKilledUnits'] = i
-		gc.getGame().setScriptData(pickle.dumps(scriptDict))
-
-	def get2OutOf3(self, iCiv):
-		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		return scriptDict['l2OutOf3'][iCiv]
-
-	def set2OutOf3(self, iCiv, bNewValue):
-		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		scriptDict['l2OutOf3'][iCiv] = bNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def getSumerianTechs(self, i):
@@ -290,13 +305,13 @@ class Victory:
 		scriptDict['lWondersBuilt'][iCiv] = iNewValue
 		gc.getGame().setScriptData( pickle.dumps(scriptDict) )
 
-	def getReligionFounded(self, iCiv):
+	def getReligionFounded(self, religion):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		return scriptDict['lReligionFounded'][iCiv]
+		return scriptDict['lReligionFounded'][religion]
 
-	def setReligionFounded(self, iCiv, iNewValue ):
+	def setReligionFounded(self, religion, iNewValue):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
-		scriptDict['lReligionFounded'][iCiv] = iNewValue
+		scriptDict['lReligionFounded'][religion] = iNewValue
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
 
 	def onLoadGame(self):
@@ -307,20 +322,22 @@ class Victory:
 
 		#init script data
 		scriptDict = {
-					'lGoals': [[-1 for i in range(iNumCivs)] for j in range(iNumCivs)], #bluepotato: [[-1,-1,-1]]*con.iNumCivs would copy the same array over and over. see https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python
+					'lGoals': [[-1 for i in range(iNumCivs)] for j in range(iNumCivs)],
 					'iEnslavedUnits': 0,
 					'lSumerianTechs': [-1, -1, -1],
 					'lAthensTechs': [-1, -1, -1],
-					'lWondersBuilt': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+					'lWondersBuilt': [0] * iNumCivs,
 					'babyloniaKilledCivs': 0,
 					'scythianKilledCivs': 0,
 					'hittiteKilledUnits': 0,
 					'mycenaeTombsBuilt': 0,
-					'AthensharborBuilt': 0,
-					'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1],
-					'l2OutOf3': [False] * iNumCivs,
+					'athensHarborBuilt': 0,
+					'lReligionFounded': [-1] * gc.getNumReligionInfos()
 		}
 		gc.getGame().setScriptData(pickle.dumps(scriptDict))
+
+	def allowEvent(self): #Do not check events until game is loaded
+		return gc.getGame().isVictoryValid(7) and len(gc.getGame().getScriptData()) > 0
 
 	def ownedCityPlots(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
@@ -349,7 +366,7 @@ class Victory:
 		return (None, not bPaint, bContinue)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		pPlayer = gc.getPlayer(iPlayer)
@@ -435,16 +452,16 @@ class Victory:
 				else:
 					self.setGoal(iIndusValley, 0, 0)
 
-			if (iGameTurn == i1000BC):
+			if (iGameTurn == i1200BC):
 				if (self.getGoal(iIndusValley, 2) == -1): #see onCityAcquired()
 					self.setGoal(iIndusValley, 2, 1)
 
 		elif civType == iElam and iGameTurn <= i1000BC:
 			if iGameTurn < i1900BC:
-				cIndusValley = civ2player(iIndusValley)
-				if civ2player(cIndusValley) != None and pPlayer.canContact(cIndusValley) and pPlayer.canTradeNetworkWith(cIndusValley):
+				pIndusValley = civ2player(iIndusValley)
+				if pIndusValley != PlayerTypes.NO_PLAYER and pPlayer.canContact(pIndusValley) and pPlayer.canTradeNetworkWith(pIndusValley):
 					self.setGoal(iElam, 1, 1)
-			elif iGameTurn == i1900BC and self.getGoal(iElam, 1) == -1:
+			elif iGameTurn == i1800BC and self.getGoal(iElam, 1) == -1:
 				self.setGoal(iElam, 1, 0)
 			elif iGameTurn < i1500BC and self.getGoal(iElam, 2) == -1:
 				if provPersia.getNumCities(iPlayer) >= 5:
@@ -565,12 +582,15 @@ class Victory:
 			if self.getGoal(iMycenae, 1) == -1 and iGameTurn > i1100BC:
 				self.setGoal(iMycenae, 1, 0)
 			if iGameTurn == i1000BC:
-				barbCities = provLydia.getNumCities(civ2player(iBarbarian)) \
-				+ provLydia.getNumCities(civ2player(iIndependent)) \
-				+ provLydia.getNumCities(civ2player(iIndependent2)) \
-				+ provAnatolia.getNumCities(civ2player(iBarbarian)) \
-				+ provAnatolia.getNumCities(civ2player(iIndependent)) \
-				+ provAnatolia.getNumCities(civ2player(iIndependent2))
+				pBarbarian = civ2player(iBarbarian)
+				pIndependent = civ2player(iIndependent)
+				pIndependent2 = civ2player(iIndependent2)
+				barbCities = provLydia.getNumCities(pBarbarian) \
+				+ provLydia.getNumCities(pIndependent) \
+				+ provLydia.getNumCities(pIndependent2) \
+				+ provAnatolia.getNumCities(pBarbarian) \
+				+ provAnatolia.getNumCities(pIndependent) \
+				+ provAnatolia.getNumCities(pIndependent2)
 
 				if barbCities > 0:
 					self.setGoal(iMycenae, 2, 0)
@@ -667,25 +687,27 @@ class Victory:
 		
 		
 		elif civType == iScythia:
-			if (iGameTurn == i100BC):
+			if iGameTurn == i100BC:
 				bForeignPresence = False
-				for x in range(38, 59):
-					for y in range(38, 59):
- 						pCurrent = gc.getMap().plot(x,y)
+				for i in xrange(CyMap().numPlots()):
+					pCurrent = CyMap().plotByIndex(i)
+					if provCrimea.isInBorderBounds(pCurrent.getX(), pCurrent.getY()) or \
+						provSarmatia.isInBorderBounds(pCurrent.getX(), pCurrent.getY()) or \
+						provCaucasus.isInBorderBounds(pCurrent.getX(), pCurrent.getY()) or \
+						provScythia.isInBorderBounds(pCurrent.getX(), pCurrent.getY()):
 						if not pCurrent.isWater():
 							for iLoop in range(iNumPlayers): #no minor civs
-								if (iLoop != iScythia):
-									if (pCurrent.getCulture(iLoop) > 0):
+								if iLoop != iPlayer:
+									if pCurrent.getCulture(iLoop) > 0:
 										bForeignPresence = True
-#print (iLoop, "presence in Scythia")
+										break
 
-				#print ("bForeignPresence ", bForeignPresence)
-				if (bForeignPresence == False):
+				if not bForeignPresence:
 					self.setGoal(iScythia, 2, 1)
 				else:
 					self.setGoal(iScythia, 2, 0)
 
-			if (iGameTurn == i500BC):
+			if iGameTurn == i500BC:
 					if pPlayer.countOwnedBonuses(bonus('Horse')) + pPlayer.getBonusImport(bonus('Horse')) >= 4:
 						self.setGoal(iScythia, 0, 1)
 					else:
@@ -700,14 +722,46 @@ class Victory:
 				else:
 					self.setGoal(iScythia, 1, 1)
 
+		elif civType == iCarthage:
+			if (iGameTurn == i0AD):
+					if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+						self.setGoal(iCarthage, 2, 1)
+					else:
+						self.setGoal(iCarthage, 2, 0)
+						
+			if iGameTurn < i400BC:
+					if pPlayer.countOwnedBonuses(bonus('Dye')) + pPlayer.getBonusImport(bonus('Dye')) >= 3:
+						self.setGoal(iCarthage, 0, 1)
+			elif iGameTurn == i400BC:
+					if pPlayer.countOwnedBonuses(bonus('Dye')) + pPlayer.getBonusImport(bonus('Dye')) < 3:
+						self.setGoal(iCarthage, 0, 0)
+
+		if (civType == iCeltia):
+			if (iGameTurn == i0AD):
+					if (pPlayer.countTotalCulture() >= 1000):
+						self.setGoal(iCeltia, 2, 1)
+					else:
+						self.setGoal(iCeltia, 2, 0)
+
+			if (iGameTurn == i300BC):
+					bCelticGaul = provCelticGaul.getNumCities(iPlayer) >= 2
+					bBritannia = provBritannia.getNumCities(iPlayer) >= 1
+					bNorthernIberia = provNorthernIberia.getNumCities(iPlayer) >= 1
+					bRaetia = provRaetia.getNumCities(iPlayer) >= 1
+					bVenetia = provVenetia.getNumCities(iPlayer) >= 1
+					if (bCelticGaul and bBritannia and bNorthernIberia and bRaetia and bVenetia):
+						self.setGoal(iCeltia, 0, 1)
+					elif iGameTurn >= i671BC:
+						self.setGoal(iCeltia, 0, 0)
+
 	def onCityBuilt(self, city):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
 
 	def onReligionFounded(self, iReligion, iFounder):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -725,7 +779,7 @@ class Victory:
 			self.setGoal(iIsrael, 2, 1)
 
 	def onCityAcquired(self, owner, attacker, city, bConquest):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -753,17 +807,29 @@ class Victory:
 		if (ownerType == iIndusValley):
 			if (bConquest):
 				if (self.getGoal(iIndusValley, 2) == -1):
-					if (iGameTurn <= i1000BC):
+					if (iGameTurn <= i1200BC):
 						if (attackerType == iBarbarian):
 							self.setGoal(iIndusValley, 2, 0)
 
 		if attackerType == iBabylonia:
 			if gc.getPlayer(owner).getNumCities() == 0:
 				self.setBabyloniaKilledCivs(self.getBabyloniaKilledCivs()+1)
+				
+		if self.getGoal(iCarthage, 1) == -1 and cityX == 19 and cityY == 30: #Rome captured by Carthage
+			if attackerType == iCarthage:
+				self.setGoal(iCarthage, 1, 1)
+			else:
+				self.setGoal(iCarthage, 1, 0)
+				
+		if self.getGoal(iCeltia, 1) == -1 and cityX == 19 and cityY == 30: #Rome captured by Celts
+			if attackerType == iCeltia:
+				self.setGoal(iCeltia, 1, 1)
+			else:
+				self.setGoal(iCeltia, 1, 0)
 
 
 	def onCityRazed(self, city, conqueror, owner):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		if self.getGoal(iScythia, 1) == -1: # Check if last city
@@ -776,9 +842,21 @@ class Victory:
 				self.setGoal(iElam, 0, 1)
 			else:
 				self.setGoal(iElam, 0, 0)
+				
+		if self.getGoal(iCarthage, 1) == -1 and city.getX() == 19 and city.getY() == 30: #Rome captured by Carthage
+			if gc.getPlayer(conqueror).getCivilizationType() == iCarthage:
+				self.setGoal(iCarthage, 1, 1)
+			else:
+				self.setGoal(iCarthage, 1, 0)
+				
+		if self.getGoal(iCeltia, 1) == -1 and city.getX() == 19 and city.getY() == 30: #Rome captured by Celts
+			if gc.getPlayer(conqueror).getCivilizationType() == iCeltia:
+				self.setGoal(iCeltia, 1, 1)
+			else:
+				self.setGoal(iCeltia, 1, 0)
 
 	def onTechAcquired(self, iTech, iPlayer):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -848,7 +926,7 @@ class Victory:
 								break
 
 	def onBuildingBuilt(self, iPlayer, iBuilding):
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		iGameTurn = gc.getGame().getGameTurn()
@@ -877,8 +955,7 @@ class Victory:
 						self.setGoal(iAthens, 2, 1)
 
 	def onCombatResult(self, argsList):
-
-		if (not gc.getGame().isVictoryValid(7)): #7 == historical
+		if not self.allowEvent():
 			return
 
 		pWinningUnit,pLosingUnit = argsList
