@@ -255,4 +255,4 @@ Again there are some things that don't warrant their own section:
 - `CvGlobals.cpp`: Utility functions and functions for loading CvRiseFall
 - `CvInitCore.cpp`: Loads CvRiseFall
 - `CvDLLButtonPopup.cpp`: UI stuff
-- `Cy\*.cpp`: boilerplate functions for communication with Python
+- `Cy*.cpp`: boilerplate functions for communication with Python
