@@ -2200,7 +2200,7 @@ bool CvDLLButtonPopup::launchProvinceTypePopup(CvPopup* popup, CvPopupInfo &info
 	gDLL->getInterfaceIFace()->popupSetHeaderString(popup, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"));
 	ProvinceTypes provinceType = (ProvinceTypes)info.getData1();
 
-	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, RFC.getProvince(provinceType).getType(), WIDGET_GENERAL, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"), 0, POPUP_LAYOUT_STRETCH, 0, 20);
+	gDLL->getInterfaceIFace()->popupCreateEditBox(popup, RFC.getProvince(provinceType).getType(), WIDGET_GENERAL, gDLL->getText("TXT_KEY_WB_CHANGE_PROVINCE_TYPE"), 0, POPUP_LAYOUT_STRETCH, 0, 100);
 	gDLL->getInterfaceIFace()->popupLaunch(popup, true, POPUPSTATE_IMMEDIATE);
 	return true;
 }

@@ -46,6 +46,8 @@ Improved most settler maps
 Macedonia can now raze cities above culture threshold
 Moved Thebes to the eastern bank of the Nile
 Buffed Elamite starting units
+Moved and added some Dye resources
+Changed some province areas, added provinces
 
 Technical changes:
 Moved some hardcoded mercenary values to XML

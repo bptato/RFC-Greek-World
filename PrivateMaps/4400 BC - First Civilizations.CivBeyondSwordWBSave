@@ -2379,6 +2379,24 @@ application/json
 		},
 		{
 			"Type":"PROVINCE_IONIAN_ISLANDS"
+		},
+		{
+			"Type":"PROVINCE_MEDITERRANEAN_SEA"
+		},
+		{
+			"Type":"PROVINCE_RED_SEA"
+		},
+		{
+			"Type":"PROVINCE_INDIAN_OCEAN"
+		},
+		{
+			"Type":"PROVINCE_CASPIAN_SEA"
+		},
+		{
+			"Type":"PROVINCE_BLACK_SEA"
+		},
+		{
+			"Type":"PROVINCE_ATLANTIC_OCEAN"
 		}
 	],
 	"Plots":[
@@ -2410,6 +2428,24 @@ application/json
 			]
 		},
 		{
+			"x":42,
+			"y":18,
+			"RouteType":"ROUTE_ROAD",
+			"Units":[
+				{
+					"UnitOwner":"CIVILIZATION_INDEPENDENT",
+					"UnitType":"UNIT_TOWN_GUARD",
+					"FacingDirection":5,
+					"UnitAIType":"UNITAI_ATTACK",
+					"Year":-4400
+				}
+			],
+			"City":{
+				"CityOwner":"CIVILIZATION_INDEPENDENT",
+				"Year":-4400
+			}
+		},
+		{
 			"x":46,
 			"y":19,
 			"Units":[
@@ -2435,24 +2471,6 @@ application/json
 					"Year":-4400
 				}
 			]
-		},
-		{
-			"x":43,
-			"y":20,
-			"RouteType":"ROUTE_ROAD",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_TOWN_GUARD",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_ATTACK",
-					"Year":-4400
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-4400
-			}
 		},
 		{
 			"x":40,
