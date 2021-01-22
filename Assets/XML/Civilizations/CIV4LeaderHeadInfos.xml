@@ -12929,8 +12929,8 @@
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_DIODOTUS</Type>
-			<Description>Didotus</Description>
-			<Civilopedia>Didotus of Bactria</Civilopedia>
+			<Description>TXT_KEY_LEADER_DIODOTUS</Description>
+			<Civilopedia>TXT_KEY_LEADER_DIODOTUS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_DIODOTUS</ArtDefineTag>
 			<LeaderReign>-4400</LeaderReign>
 			<iWonderConstructRand>20</iWonderConstructRand>
