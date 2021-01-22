@@ -1,5 +1,5 @@
 CURRENT VERSION:
-Version 2.0 (in development)
+Version 2.0
 Additions:
 Added Naqsh-e Rustam
 Added Ashurbanipal's Library
@@ -13,6 +13,8 @@ Israelite UHV
 Athenian UHV
 Spartan UHV
 Scythian UHV
+Carthaginian UHV
+Celtic UHV
 Re-added 900 BC scenario
 Added city name, settler map and province area editors to worldbuilder
 Added civilization editor to worldbuilder
