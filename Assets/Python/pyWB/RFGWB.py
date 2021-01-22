@@ -248,7 +248,7 @@ class WbParser:
 					gameValues['Victories'].append(gc.getVictoryInfo(i).getType())
 
 		#Goody huts
-		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in self.scenarioValues['Game']['Options']
+		disableGoodies = "GAMEOPTION_NO_GOODY_HUTS" in gameValues['Options']
 		goodyImprovement = -1
 		for i in xrange(gc.getNumImprovementInfos()):
 			if gc.getImprovementInfo(i).isGoody():
