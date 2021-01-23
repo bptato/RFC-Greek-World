@@ -178,6 +178,7 @@ class Victory:
 		global provBritannia
 		global provRaetia
 		global provVenetia
+		global provLydia
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getProvince(riseFall.findProvince("PROVINCE_PALESTINE"))
@@ -212,6 +213,7 @@ class Victory:
 		provBritannia = riseFall.getProvince(riseFall.findProvince("PROVINCE_BRITANNIA"))
 		provRaetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_RAETIA"))
 		provVenetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_VENETIA"))
+		provLydia = riseFall.getProvince(riseFall.findProvince("PROVINCE_LYDIA"))
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
