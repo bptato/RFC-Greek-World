@@ -6782,7 +6782,7 @@ bool CvGame::testVictory(VictoryTypes eVictory, TeamTypes eTeam, bool* pbEndScor
 
 				for (int iK = 0; iK < MAX_CIV_TEAMS; iK++)
 				{
-					if (GET_TEAM((TeamTypes)iK).isAlive())
+					if (GET_TEAM((TeamTypes)iK).isAlive() && !GET_TEAM((TeamTypes)iK).isMinorCiv())
 					{
 						if (iK != eTeam)
 						{
