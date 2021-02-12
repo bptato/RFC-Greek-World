@@ -1051,14 +1051,14 @@ class WbParser:
 			for i in xrange(riseFall.getNumProvinces()):
 
 				plots = []
-				for i in xrange(cmap.numPlots()):
-					plot = cmap.plotByIndex(i)
+				for j in xrange(cmap.numPlots()):
+					plot = cmap.plotByIndex(j)
 					if plot.isWater() or plot.isPeak():
 						continue
 					if plot.getProvinceType() == i:
 						unavail = False
-						for j in xrange(gc.getNumCivilizationInfos()):
-							rfcPlayer = riseFall.getRFCPlayer(j)
+						for k in xrange(gc.getNumCivilizationInfos()):
+							rfcPlayer = riseFall.getRFCPlayer(k)
 							if rfcPlayer.getStartingYear() == game.getStartYear() and plot.getX() == rfcPlayer.getStartingPlotX() and plot.getY() == rfcPlayer.getStartingPlotY():
 								unavail = True
 								break
@@ -1068,9 +1068,9 @@ class WbParser:
 						plots.append(plot)
 
 				if len(plots):
-					amountRand = len(plots)/5
+					amountRand = len(plots)*100 / (1000 + abs(len(plots)) * 8)
 					amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
-					for i in xrange(amount):
+					for j in xrange(amount):
 						rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
 
 						plot = plots[rndNum]
