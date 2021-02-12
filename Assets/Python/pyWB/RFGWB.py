@@ -1061,11 +1061,12 @@ class WbParser:
 						plots.append(plot)
 
 				if len(plots):
-					amountRand = len(plots)*100 / (1000 + abs(len(plots)) * 9)
+					amountRand = len(plots)*100 / (1000 + abs(len(plots)) * 11)
 					amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
 					for j in xrange(amount):
 
 						invalid = True
+						plot = None
 						while invalid and len(plots) > 0:
 							invalid = False
 							rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
@@ -1077,5 +1078,8 @@ class WbParser:
 										invalid = True
 										del plots[rndNum]
 										break
-								if invalid: break
-						plot.setImprovementType(goodyImprovement)
+								if invalid:
+									plot = None
+									break
+						if plot != None:
+							plot.setImprovementType(goodyImprovement)
