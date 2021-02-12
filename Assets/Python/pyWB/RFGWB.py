@@ -975,6 +975,7 @@ class WbParser:
 
 				if "StartingX" in wbPlayer and "StartingY" in wbPlayer:
 					rfcPlayer.setStartingPlot(wbPlayer['StartingX'], wbPlayer['StartingY'])
+					cmap.plot(wbPlayer['StartingX'], wbPlayer['StartingY']).setStartingPlot(True)
 
 				if "StartingTechs" in wbPlayer:
 					for startingTech in wbPlayer['StartingTechs']:
@@ -1047,7 +1048,8 @@ class WbParser:
 				goodyImprovement = i
 				break
 
-		if not disableGoodies:
+		if not disableGoodies and goodyImprovement != -1:
+			uniqueRange = gc.getImprovementInfo(goodyImprovement).getGoodyUniqueRange();
 			for i in xrange(riseFall.getNumProvinces()):
 
 				plots = []
@@ -1056,22 +1058,24 @@ class WbParser:
 					if plot.isWater() or plot.isPeak():
 						continue
 					if plot.getProvinceType() == i:
-						unavail = False
-						for k in xrange(gc.getNumCivilizationInfos()):
-							rfcPlayer = riseFall.getRFCPlayer(k)
-							if rfcPlayer.getStartingYear() == game.getStartYear() and plot.getX() == rfcPlayer.getStartingPlotX() and plot.getY() == rfcPlayer.getStartingPlotY():
-								unavail = True
-								break
-						if unavail:
-							continue
-
 						plots.append(plot)
 
 				if len(plots):
-					amountRand = len(plots)*100 / (1000 + abs(len(plots)) * 8)
+					amountRand = len(plots)*100 / (1000 + abs(len(plots)) * 9)
 					amount = game.getSorenRandNum(amountRand, "Goody hut amount roll")
 					for j in xrange(amount):
-						rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
 
-						plot = plots[rndNum]
+						invalid = True
+						while invalid and len(plots) > 0:
+							invalid = False
+							rndNum = gc.getGame().getSorenRandNum(len(plots), 'Goody hut location roll')
+							plot = plots[rndNum]
+							for x in xrange(-uniqueRange, uniqueRange + 1):
+								for y in xrange(-uniqueRange, uniqueRange + 1):
+									loopPlot = cmap.plot(plot.getX() + x, plot.getY() + y)
+									if loopPlot.getImprovementType() == goodyImprovement or loopPlot.isStartingPlot():
+										invalid = True
+										del plots[rndNum]
+										break
+								if invalid: break
 						plot.setImprovementType(goodyImprovement)
