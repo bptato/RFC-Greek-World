@@ -1,4 +1,15 @@
 CURRENT VERSION:
+Version 2.0.2
+Fixes:
+Fixed independents being able to win score victory
+Fixed incorrect civilization name keys
+Fixed goody hut spawning algorithm
+
+PREVIOUS VERSIONS:
+Version 2.0.1
+Fixes:
+Fixed Lydia bug
+
 Version 2.0
 Additions:
 Added Naqsh-e Rustam
@@ -76,7 +87,6 @@ Fixed some civs starting at incorrect turns
 Fixed a bug where civilizations could declare war on themselves
 Fixed a few UHV bugs
 
-PREVIOUS VERSIONS:
 Version 2.0 beta
 Additions:
 Added historical leaderhead swapping
