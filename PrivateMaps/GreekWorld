@@ -15852,6 +15852,7 @@ application/json
 			"y":24,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
+			"ProvinceType":"PROVINCE_PERSIA",
 			"CityNames":{
 				"CIVILIZATION_BACTRIA":"Alexandria Rhambatia"
 			},
