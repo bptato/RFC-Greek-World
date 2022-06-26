@@ -498,6 +498,30 @@
 		<English>Have 1000 culture in 0 AD</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ETR1_TITLE</Tag>
+		<English>Etruscan Decadence</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETR1</Tag>
+		<English>Have 1000 gold in 300 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETR2_TITLE</Tag>
+		<English>Lords of Italia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETR2</Tag>
+		<English>Control or make vassal states of Rome by 270 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETR3_TITLE</Tag>
+		<English>Estruscan Culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETR3</Tag>
+		<English>Have more than 500 Culture in 250 BC</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_IN11_TITLE</Tag>
 		<English>-</English>
 	</TEXT>
