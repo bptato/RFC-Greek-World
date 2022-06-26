@@ -109,6 +109,7 @@ class Victory:
 		global i400BC
 		global i350BC
 		global i300BC
+		global i270BC
 		global i250BC
 		global i100BC
 		global i63BC
@@ -140,6 +141,7 @@ class Victory:
 		i400BC = getTurnForYear(-400)
 		i350BC = getTurnForYear(-350)
 		i300BC = getTurnForYear(-300)
+		i270BC = getTurnForYear(-270)
 		i250BC = getTurnForYear(-250)
 		i100BC = getTurnForYear(-100)
 		i63BC = getTurnForYear(-63)
@@ -179,6 +181,7 @@ class Victory:
 		global provRaetia
 		global provVenetia
 		global provLydia
+		global provCorsica
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getProvince(riseFall.findProvince("PROVINCE_PALESTINE"))
@@ -214,6 +217,7 @@ class Victory:
 		provRaetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_RAETIA"))
 		provVenetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_VENETIA"))
 		provLydia = riseFall.getProvince(riseFall.findProvince("PROVINCE_LYDIA"))
+		provCorsica = riseFall.getProvince(riseFall.findProvince("PROVINCE_CORSICA"))
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -754,6 +758,28 @@ class Victory:
 					self.setGoal(iCeltia, 0, 1)
 				elif iGameTurn >= i671BC:
 					self.setGoal(iCeltia, 0, 0)
+					
+		elif (civType == iEtruria):
+			if (iGameTurn == i300BC):
+				if (pPlayer.getGold() >= 1000):
+					self.setGoal(iEtruria, 0, 1)
+				else:
+					self.setGoal(iEtruria, 0, 0)
+					
+			if (iGameTurn == i671BC):
+				bItaly = provItaly.getNumCities(iPlayer) >= 4
+				bCorsica = provCorsica.getNumCities(iPlayer) >= 1
+				bVenetia = provVenetia.getNumCities(iPlayer) >= 1
+				if (bItaly and bCorsica and bVenetia):
+					self.setGoal(iEtruria, 1, 1)
+				elif iGameTurn >= i671BC:
+					self.setGoal(iEtruria, 1, 0)
+			
+			if (iGameTurn == i250BC):
+				if (pPlayer.countTotalCulture() >= 500):
+					self.setGoal(iEtruria, 2, 1)
+				else:
+					self.setGoal(iEtruria, 2, 0)
 
 	def onCityBuilt(self, city):
 		if not self.allowEvent():
