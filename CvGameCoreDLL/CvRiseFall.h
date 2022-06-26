@@ -19,10 +19,10 @@ class CvRiseFall {
 
 		void onGameStarted();
 		void checkTurn();
-		void checkFlip(PlayerTypes playerType, CivilizationTypes civType);
+		void checkFlip(CivilizationTypes civType, PlayerTypes playerType);
 		void checkTurnForPlayer(CivilizationTypes civType, int turn);
-		void checkScheduledCities(PlayerTypes playerType, CivilizationTypes civType, int turn);
-		void checkScheduledUnits(PlayerTypes playerType, CivilizationTypes civType, int turn, bool spawnedNow);
+		void checkScheduledCities(CivilizationTypes civType, PlayerTypes playerType, int turn);
+		void checkScheduledUnits(CivilizationTypes civType, PlayerTypes playerType, int turn, bool spawnedNow);
 
 		void checkPlayerTurn(PlayerTypes playerType);
 		void checkLeader(CivilizationTypes civType, PlayerTypes playerType);

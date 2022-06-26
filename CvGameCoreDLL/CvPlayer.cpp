@@ -22039,7 +22039,7 @@ void CvPlayer::processDynamicNames(bool force) {
 		}
 	}
 
-	m_szCivDescKey = o.str();
+	//m_szCivDescKey = o.str();
 	CvWString delimiter = (CvWString)":";
 	CvWString text = extraParam.empty() ? gDLL->getText(o.str()) : gDLL->getText(o.str(), extraParam.GetCString());
 

@@ -1,5 +1,16 @@
 CURRENT VERSION:
-Version 2.0 (in development)
+Version 2.0.2
+Fixes:
+Fixed independents being able to win score victory
+Fixed incorrect civilization name keys
+Fixed goody hut spawning algorithm
+
+PREVIOUS VERSIONS:
+Version 2.0.1
+Fixes:
+Fixed Lydia bug
+
+Version 2.0
 Additions:
 Added Naqsh-e Rustam
 Added Ashurbanipal's Library
@@ -13,6 +24,8 @@ Israelite UHV
 Athenian UHV
 Spartan UHV
 Scythian UHV
+Carthaginian UHV
+Celtic UHV
 Re-added 900 BC scenario
 Added city name, settler map and province area editors to worldbuilder
 Added civilization editor to worldbuilder
@@ -46,6 +59,8 @@ Improved most settler maps
 Macedonia can now raze cities above culture threshold
 Moved Thebes to the eastern bank of the Nile
 Buffed Elamite starting units
+Moved and added some Dye resources
+Changed some province areas, added provinces
 
 Technical changes:
 Moved some hardcoded mercenary values to XML
@@ -72,7 +87,6 @@ Fixed some civs starting at incorrect turns
 Fixed a bug where civilizations could declare war on themselves
 Fixed a few UHV bugs
 
-PREVIOUS VERSIONS:
 Version 2.0 beta
 Additions:
 Added historical leaderhead swapping

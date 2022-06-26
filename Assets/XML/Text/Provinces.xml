@@ -103,8 +103,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROVINCE_LYDIA</Tag>
-		<English>Maeonia</English>
-		<German>Mäonien</German>
+		<English>Lydia</English>
+		<German>Lydien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROVINCE_SCYTHIA</Tag>
@@ -292,5 +292,29 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROVINCE_IONIAN_ISLANDS</Tag>
 		<English>Ionian Islands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROVINCE_MEDITERRANEAN_SEA</Tag>
+		<English>Mediterranean Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROVINCE_RED_SEA</Tag>
+		<English>Red Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROVINCE_INDIAN_OCEAN</Tag>
+		<English>Indian Ocean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROVINCE_CASPIAN_SEA</Tag>
+		<English>Caspian Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROVINCE_BLACK_SEA</Tag>
+		<English>Black Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROVINCE_ATLANTIC_OCEAN</Tag>
+		<English>Atlantic Ocean</English>
 	</TEXT>
 </Civ4GameText>

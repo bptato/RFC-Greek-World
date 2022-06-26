@@ -1,0 +1,2 @@
+#!/bin/sh
+git archive -o RFC-Greek-World.zip --prefix=RFC-Greek-World/ HEAD

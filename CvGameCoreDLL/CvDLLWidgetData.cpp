@@ -3563,7 +3563,7 @@ void CvDLLWidgetData::parseFlagHelp(CvWidgetDataStruct &widgetDataStruct, CvWStr
 	szBuffer.append(NEWLINE);
 	szBuffer.append(NEWLINE);
 	szBuffer.append(NEWLINE);
-	szTempBuffer.Format(L"%S", "Rhye's and Fall of the Greek World 2.0 BETA");
+	szTempBuffer.Format(L"%S", "Rhye's and Fall of the Greek World 2.0.2");
 	szBuffer.append(szTempBuffer);
 }
 

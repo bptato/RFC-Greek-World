@@ -6782,7 +6782,7 @@ bool CvGame::testVictory(VictoryTypes eVictory, TeamTypes eTeam, bool* pbEndScor
 
 				for (int iK = 0; iK < MAX_CIV_TEAMS; iK++)
 				{
-					if (GET_TEAM((TeamTypes)iK).isAlive())
+					if (GET_TEAM((TeamTypes)iK).isAlive() && !GET_TEAM((TeamTypes)iK).isMinorCiv())
 					{
 						if (iK != eTeam)
 						{
@@ -9201,8 +9201,11 @@ bool CvGame::pythonIsBonusIgnoreLatitudes() const
 
 //bluepotato start: holy city relocations
 void CvGame::relocateHolyCity(ReligionTypes religion, CvCity* fallbackCity) {
-	CvCity* finalCity = NULL;
+	CvCity* finalCity = GC.getGame().getHolyCity(religion);
 	int finalCulture = 0;
+	if (finalCity != NULL) {
+		finalCulture = finalCity->getCulture(finalCity->getOwner());
+	}
 	for(int i = 0; i < MAX_CIV_PLAYERS; i++) {
 		CvPlayer& player = GET_PLAYER((PlayerTypes)i);
 		if(player.isAlive() && player.getStateReligion() == religion) {

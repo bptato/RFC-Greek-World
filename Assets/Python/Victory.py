@@ -178,6 +178,7 @@ class Victory:
 		global provBritannia
 		global provRaetia
 		global provVenetia
+		global provLydia
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getProvince(riseFall.findProvince("PROVINCE_PALESTINE"))
@@ -212,6 +213,7 @@ class Victory:
 		provBritannia = riseFall.getProvince(riseFall.findProvince("PROVINCE_BRITANNIA"))
 		provRaetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_RAETIA"))
 		provVenetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_VENETIA"))
+		provLydia = riseFall.getProvince(riseFall.findProvince("PROVINCE_LYDIA"))
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -674,16 +676,16 @@ class Victory:
 					self.setGoal(iSparta, 1, 0)
 
 			if (iGameTurn == i350BC):
-					if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
-						self.setGoal(iSparta, 2, 1)
-					else:
-						self.setGoal(iSparta, 2, 0)
+				if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+					self.setGoal(iSparta, 2, 1)
+				else:
+					self.setGoal(iSparta, 2, 0)
 
 			if (iGameTurn == i450BC):
-					if (pPlayer.getNumUnits() >= 30):
-						self.setGoal(iSparta, 0, 1)
-					else:
-						self.setGoal(iSparta, 0, 0)
+				if (pPlayer.getNumUnits() >= 30):
+					self.setGoal(iSparta, 0, 1)
+				else:
+					self.setGoal(iSparta, 0, 0)
 		
 		
 		elif civType == iScythia:
@@ -708,10 +710,10 @@ class Victory:
 					self.setGoal(iScythia, 2, 0)
 
 			if iGameTurn == i500BC:
-					if pPlayer.countOwnedBonuses(bonus('Horse')) + pPlayer.getBonusImport(bonus('Horse')) >= 4:
-						self.setGoal(iScythia, 0, 1)
-					else:
-						self.setGoal(iScythia, 0, 0)
+				if pPlayer.countOwnedBonuses(bonus('Horse')) + pPlayer.getBonusImport(bonus('Horse')) >= 4:
+					self.setGoal(iScythia, 0, 1)
+				else:
+					self.setGoal(iScythia, 0, 0)
 											
 			if iGameTurn < i300BC:
 				if self.getScythianKilledCivs() >= 3:
@@ -724,35 +726,34 @@ class Victory:
 
 		elif civType == iCarthage:
 			if (iGameTurn == i0AD):
-					if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
-						self.setGoal(iCarthage, 2, 1)
-					else:
-						self.setGoal(iCarthage, 2, 0)
-						
+				if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+					self.setGoal(iCarthage, 2, 1)
+				else:
+					self.setGoal(iCarthage, 2, 0)
 			if iGameTurn < i400BC:
-					if pPlayer.countOwnedBonuses(bonus('Dye')) + pPlayer.getBonusImport(bonus('Dye')) >= 3:
-						self.setGoal(iCarthage, 0, 1)
+				if pPlayer.countOwnedBonuses(bonus('Dye')) + pPlayer.getBonusImport(bonus('Dye')) >= 3:
+					self.setGoal(iCarthage, 0, 1)
 			elif iGameTurn == i400BC:
-					if pPlayer.countOwnedBonuses(bonus('Dye')) + pPlayer.getBonusImport(bonus('Dye')) < 3:
-						self.setGoal(iCarthage, 0, 0)
+				if pPlayer.countOwnedBonuses(bonus('Dye')) + pPlayer.getBonusImport(bonus('Dye')) < 3:
+					self.setGoal(iCarthage, 0, 0)
 
-		if (civType == iCeltia):
+		elif (civType == iCeltia):
 			if (iGameTurn == i0AD):
-					if (pPlayer.countTotalCulture() >= 1000):
-						self.setGoal(iCeltia, 2, 1)
-					else:
-						self.setGoal(iCeltia, 2, 0)
+				if (pPlayer.countTotalCulture() >= 1000):
+					self.setGoal(iCeltia, 2, 1)
+				else:
+					self.setGoal(iCeltia, 2, 0)
 
 			if (iGameTurn == i300BC):
-					bCelticGaul = provCelticGaul.getNumCities(iPlayer) >= 2
-					bBritannia = provBritannia.getNumCities(iPlayer) >= 1
-					bNorthernIberia = provNorthernIberia.getNumCities(iPlayer) >= 1
-					bRaetia = provRaetia.getNumCities(iPlayer) >= 1
-					bVenetia = provVenetia.getNumCities(iPlayer) >= 1
-					if (bCelticGaul and bBritannia and bNorthernIberia and bRaetia and bVenetia):
-						self.setGoal(iCeltia, 0, 1)
-					elif iGameTurn >= i671BC:
-						self.setGoal(iCeltia, 0, 0)
+				bCelticGaul = provCelticGaul.getNumCities(iPlayer) >= 2
+				bBritannia = provBritannia.getNumCities(iPlayer) >= 1
+				bNorthernIberia = provNorthernIberia.getNumCities(iPlayer) >= 1
+				bRaetia = provRaetia.getNumCities(iPlayer) >= 1
+				bVenetia = provVenetia.getNumCities(iPlayer) >= 1
+				if (bCelticGaul and bBritannia and bNorthernIberia and bRaetia and bVenetia):
+					self.setGoal(iCeltia, 0, 1)
+				elif iGameTurn >= i671BC:
+					self.setGoal(iCeltia, 0, 0)
 
 	def onCityBuilt(self, city):
 		if not self.allowEvent():
