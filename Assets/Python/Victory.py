@@ -104,16 +104,21 @@ class Victory:
 		global i671BC
 		global i600BC
 		global i587BC
+		global i542BC
 		global i500BC
 		global i450BC
 		global i400BC
 		global i350BC
+		global i330BC
 		global i300BC
+		global i275BC
 		global i270BC
 		global i250BC
 		global i100BC
 		global i63BC
 		global i0AD
+		global i350AD
+		global i400AD
 
 		i4000BC = getTurnForYear(-4000)
 		i3000BC = getTurnForYear(-3000)
@@ -136,16 +141,21 @@ class Victory:
 		i671BC = getTurnForYear(-671)
 		i600BC = getTurnForYear(-600)
 		i587BC = getTurnForYear(-587)
+		i542BC = getTurnForYear(-542)
 		i500BC = getTurnForYear(-500)
 		i450BC = getTurnForYear(-450)
 		i400BC = getTurnForYear(-400)
 		i350BC = getTurnForYear(-350)
+		i330BC = getTurnForYear(-330)
 		i300BC = getTurnForYear(-300)
+		i275BC = getTurnForYear(-275)
 		i270BC = getTurnForYear(-270)
 		i250BC = getTurnForYear(-250)
 		i100BC = getTurnForYear(-100)
 		i63BC = getTurnForYear(-63)
 		i0AD = getTurnForYear(0)
+		i350AD = getTurnForYear(350)
+		i400AD = getTurnForYear(400)
 
 
 		global provPalestine
@@ -182,6 +192,7 @@ class Victory:
 		global provVenetia
 		global provLydia
 		global provCorsica
+		global provMedia
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getProvince(riseFall.findProvince("PROVINCE_PALESTINE"))
@@ -218,6 +229,7 @@ class Victory:
 		provVenetia = riseFall.getProvince(riseFall.findProvince("PROVINCE_VENETIA"))
 		provLydia = riseFall.getProvince(riseFall.findProvince("PROVINCE_LYDIA"))
 		provCorsica = riseFall.getProvince(riseFall.findProvince("PROVINCE_CORSICA"))
+		provMedia = riseFall.getProvince(riseFall.findProvince("PROVINCE_MEDIA"))
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -761,18 +773,18 @@ class Victory:
 					
 		elif (civType == iEtruria):
 			if (iGameTurn == i300BC):
-				if (pPlayer.getGold() >= 1000):
+				if (pPlayer.getGold() >= 2000):
 					self.setGoal(iEtruria, 0, 1)
 				else:
 					self.setGoal(iEtruria, 0, 0)
 					
-			if (iGameTurn == i671BC):
+			if (iGameTurn == i270BC):
 				bItaly = provItaly.getNumCities(iPlayer) >= 4
 				bCorsica = provCorsica.getNumCities(iPlayer) >= 1
 				bVenetia = provVenetia.getNumCities(iPlayer) >= 1
 				if (bItaly and bCorsica and bVenetia):
 					self.setGoal(iEtruria, 1, 1)
-				elif iGameTurn >= i671BC:
+				elif iGameTurn >= i270BC:
 					self.setGoal(iEtruria, 1, 0)
 			
 			if (iGameTurn == i250BC):
@@ -780,6 +792,62 @@ class Victory:
 					self.setGoal(iEtruria, 2, 1)
 				else:
 					self.setGoal(iEtruria, 2, 0)
+					
+		elif civType == iNubia:
+			if iGameTurn == i542BC:
+				if pPlayer.countOwnedBonuses(bonus('Gold')) + pPlayer.getBonusImport(bonus('Gold')) >= 3:
+					self.setGoal(iNubia, 0, 1)
+				else:
+					self.setGoal(iNubia, 0, 0)
+					
+#			if (self.getGoal(iNubia, 1) == -1):
+#					bAllGSpecialists = True
+#					for iGSpecialist in [7, 8, 9, 10, 11, 12, 13]:
+#							if ( iNubia.getFreeSpecialistCount(iGSpecialist) <= 0 ):
+#									print (iGSpecialist, "nicht vorhanden")
+#									bAllGSpecialists = False
+#									break
+												
+#					if (bAllGSpecialists):
+#							self.setGoal(iNubia, 1, 1)
+#					elif iGameTurn > i350AD:
+#						self.setGoal(iNubia, 1, 0)
+
+			if (iGameTurn == i400AD):
+				if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+					self.setGoal(iNubia, 2, 1)
+				else:
+					self.setGoal(iNubia, 2, 0)
+
+		elif (civType == iPersia):
+			if (iGameTurn == i330BC):
+				bLydia = provLydia.getNumCities(iPlayer) >= 2
+				bAnatolia = provAnatolia.getNumCities(iPlayer) >= 2
+				bMedia = provMedia.getNumCities(iPlayer) >= 2
+				bAkkad = provAkkad.getNumCities(iPlayer) >= 1
+				if (bLydia and bAnatolia and bMedia and bAkkad):
+					self.setGoal(iPersia, 0, 1)
+				elif iGameTurn >= i330BC:
+					self.setGoal(iPersia, 0, 0)
+
+#			if (self.getGoal(iPersia, 1) == -1):
+#					iGreatEngineer = gc.getInfoTypeForString("SPECIALIST_GREAT_ENGINEER")
+#					i2GSCities = 0
+#					for cCity in pPlayer(iPersia).getCityList():
+#							if ( cCity.GetCy().getFreeSpecialistCount(iGreatEngineer) >= 1):
+#									print(cCity.getName(), "enough Great Engineers")
+#									i2GSCities += 1
+#					if i2GSCities >= 2:
+#							self.setGoal(iPersia, 1, 1)
+#					elif iGameTurn > i275BC:
+#						self.setGoal(iPersia, 1, 0)
+
+
+			if (iGameTurn == i250BC):
+				if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+					self.setGoal(iPersia, 2, 1)
+				else:
+					self.setGoal(iPersia, 2, 0)
 
 	def onCityBuilt(self, city):
 		if not self.allowEvent():
