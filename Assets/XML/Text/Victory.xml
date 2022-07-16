@@ -503,7 +503,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETR1</Tag>
-		<English>Have 1000 gold in 300 BC</English>
+		<English>Have 2000 gold in 300 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETR2_TITLE</Tag>
@@ -511,7 +511,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETR2</Tag>
-		<English>Control or make vassal states of Rome by 270 BC</English>
+		<English>Control 4 cities in Italia, and 1 in Venetia and Corsica in 270 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETR3_TITLE</Tag>
@@ -520,6 +520,54 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETR3</Tag>
 		<English>Have more than 500 Culture in 250 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB1_TITLE</Tag>
+		<English>The Napatan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB1</Tag>
+		<English>Control 3 gold resources in 542 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB2_TITLE</Tag>
+		<English>The greatness of Meroe</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB2</Tag>
+		<English>Make sure that at least one of every great person type is settled in Meroe by 350 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB3_TITLE</Tag>
+		<English>Nubian resilience</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB3</Tag>
+		<English>Be 1st in score in 400 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
+		<English>The conquests of Cyrus the Great</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1</Tag>
+		<English>Control 2 cities in Lydia, Anatolia, and Media, and 1 city in Akkad in 330 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_TITLE</Tag>
+		<English>Persian Infrastructure</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2</Tag>
+		<English>Have 2 cities with great engineers in 275 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
+		<English>The largest empire the world had ever seen</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3</Tag>
+		<English>Be 1st in score in 250 BC</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IN11_TITLE</Tag>
