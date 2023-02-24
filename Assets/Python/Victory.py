@@ -799,22 +799,36 @@ class Victory:
 					self.setGoal(iNubia, 0, 1)
 				else:
 					self.setGoal(iNubia, 0, 0)
-					
-#			if (self.getGoal(iNubia, 1) == -1):
-#					bAllGSpecialists = True
-#					for iGSpecialist in [7, 8, 9, 10, 11, 12, 13]:
-#							if ( iNubia.getFreeSpecialistCount(iGSpecialist) <= 0 ):
-#									print (iGSpecialist, "nicht vorhanden")
-#									bAllGSpecialists = False
-#									break
-												
-#					if (bAllGSpecialists):
-#							self.setGoal(iNubia, 1, 1)
-#					elif iGameTurn > i350AD:
-#						self.setGoal(iNubia, 1, 0)
 
-			if (iGameTurn == i400AD):
-				if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+			#TODO Nubia's UHV isn't well defined, as Meroe
+			# can be on several plots, even at the same time :(
+			if self.getGoal(iNubia, 1) == -1:
+				# Find Meroe.
+				meroeCity = None
+				for i in range(pPlayer.getNumCities()):
+					city = pPlayer.getCity(i)
+					if city.plot().getCityName(iNubia, True) == "Meroe":
+						if meroeCity == None or city.getPopulation() > meroeCity.getPopulation():
+							meroeCity = city
+				hasAllGreatPeople = False
+				if meroeCity != None:
+					hasAllGreatPeople = True
+					for i in range(gc.getNumSpecialistInfos()):
+						specialist = gc.getSpecialistInfo(i)
+						unitClass = specialist.getGreatPeopleUnitClass()
+						if unitClass != -1:
+							unit = gc.getUnitInfo(unitClass)
+							for j in range(gc.getNumSpecialistInfos()):
+								if unit.getGreatPeoples(j) and meroeCity.getFreeSpecialistCount(j) == 0:
+									hasAllGreatPeople = False
+									break
+				if hasAllGreatPeople:
+					self.setGoal(iNubia, 1, 1)
+				elif iGameTurn > i350AD:
+					self.setGoal(iNubia, 1, 0)
+
+			if iGameTurn == i400AD:
+				if gc.getGame().getTeamRank(pPlayer.getTeam()) == 0:
 					self.setGoal(iNubia, 2, 1)
 				else:
 					self.setGoal(iNubia, 2, 0)
