@@ -195,7 +195,7 @@
 		<ReligionInfo>
 			<Type>RELIGION_BAALISM</Type>
 			<Description>TXT_KEY_RELIGION_BAALISM</Description>
-			<Adjective>TXT_KEY_RELIGION_BAALITE</Adjective>
+			<Adjective>TXT_KEY_RELIGION_BAALISM_ADJECTIVE</Adjective>
 			<Civilopedia></Civilopedia>
 			<TechPrereq>TECH_NAVIGATION</TechPrereq>
 			<FreeUnitClass/>
