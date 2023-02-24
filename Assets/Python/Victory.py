@@ -833,32 +833,30 @@ class Victory:
 				else:
 					self.setGoal(iNubia, 2, 0)
 
-		elif (civType == iPersia):
-			if (iGameTurn == i330BC):
+		elif civType == iPersia:
+			if iGameTurn == i330BC:
 				bLydia = provLydia.getNumCities(iPlayer) >= 2
 				bAnatolia = provAnatolia.getNumCities(iPlayer) >= 2
 				bMedia = provMedia.getNumCities(iPlayer) >= 2
 				bAkkad = provAkkad.getNumCities(iPlayer) >= 1
-				if (bLydia and bAnatolia and bMedia and bAkkad):
+				if bLydia and bAnatolia and bMedia and bAkkad:
 					self.setGoal(iPersia, 0, 1)
 				elif iGameTurn >= i330BC:
 					self.setGoal(iPersia, 0, 0)
 
-#			if (self.getGoal(iPersia, 1) == -1):
-#					iGreatEngineer = gc.getInfoTypeForString("SPECIALIST_GREAT_ENGINEER")
-#					i2GSCities = 0
-#					for cCity in pPlayer(iPersia).getCityList():
-#							if ( cCity.GetCy().getFreeSpecialistCount(iGreatEngineer) >= 1):
-#									print(cCity.getName(), "enough Great Engineers")
-#									i2GSCities += 1
-#					if i2GSCities >= 2:
-#							self.setGoal(iPersia, 1, 1)
-#					elif iGameTurn > i275BC:
-#						self.setGoal(iPersia, 1, 0)
+			if self.getGoal(iPersia, 1) == -1:
+					iGreatEngineer = gc.getInfoTypeForString("SPECIALIST_GREAT_ENGINEER")
+					i2GSCities = 0
+					for cCity in PyPlayer(iPlayer).getCityList():
+						if cCity.GetCy().getFreeSpecialistCount(iGreatEngineer) >= 1:
+							i2GSCities += 1
+					if i2GSCities >= 2:
+						self.setGoal(iPersia, 1, 1)
+					elif iGameTurn > i275BC:
+						self.setGoal(iPersia, 1, 0)
 
-
-			if (iGameTurn == i250BC):
-				if (gc.getGame().getTeamRank(pPlayer.getTeam()) == 0):
+			if iGameTurn == i250BC:
+				if gc.getGame().getTeamRank(pPlayer.getTeam()) == 0:
 					self.setGoal(iPersia, 2, 1)
 				else:
 					self.setGoal(iPersia, 2, 0)
