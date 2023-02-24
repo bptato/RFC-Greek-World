@@ -298,7 +298,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_SUPPILULIUMA_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_SUPPILULIUMA_I_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -625,7 +625,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -639,7 +639,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -752,6 +752,20 @@
 					<DiplomacyPowers/>
 					<DiplomacyText>
 						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_GILGAMESH_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_AGAMEMNON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_AGAMEMNON_1</Text>
 					</DiplomacyText>
 				</Response>
 			</Responses>
@@ -887,7 +901,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -901,7 +915,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1014,6 +1028,20 @@
 					<DiplomacyPowers/>
 					<DiplomacyText>
 						<Text>AI_DIPLO_NO_PEACE_LEADER_GILGAMESH_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_AGAMEMNON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_AGAMEMNON_1</Text>
 					</DiplomacyText>
 				</Response>
 			</Responses>
@@ -1217,7 +1245,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1244,7 +1272,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1465,6 +1493,33 @@
 				</Response>
 				<Response>
 					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_AGAMEMNON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AGAMEMNON_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
 					<Leaders/>
 					<Attitudes>
 						<Attitude>
@@ -1631,7 +1686,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1816,6 +1871,29 @@
 					<DiplomacyPowers/>
 					<DiplomacyText>
 						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_GILGAMESH_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_AGAMEMNON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FURIOUS</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_AGAMEMNON_1</Text>
 					</DiplomacyText>
 				</Response>
 			</Responses>
@@ -2747,7 +2825,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2766,7 +2844,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2923,6 +3001,25 @@
 				</Response>
 				<Response>
 					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_AGAMEMNON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers>
+						<DiplomacyPower>
+							<DiplomacyPowerType>DIPLOMACYPOWER_WEAKER</DiplomacyPowerType>
+							<bDiplomacyPowerType>1</bDiplomacyPowerType>
+						</DiplomacyPower>
+					</DiplomacyPowers>
+					<DiplomacyText>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AGAMEMNON_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
 					<Leaders/>
 					<Attitudes/>
 					<DiplomacyPowers>
@@ -3033,7 +3130,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3052,7 +3149,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3209,6 +3306,25 @@
 				</Response>
 				<Response>
 					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_AGAMEMNON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers>
+						<DiplomacyPower>
+							<DiplomacyPowerType>DIPLOMACYPOWER_EQUAL</DiplomacyPowerType>
+							<bDiplomacyPowerType>1</bDiplomacyPowerType>
+						</DiplomacyPower>
+					</DiplomacyPowers>
+					<DiplomacyText>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AGAMEMNON_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
 					<Leaders/>
 					<Attitudes/>
 					<DiplomacyPowers>
@@ -3282,7 +3398,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3301,7 +3417,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3435,6 +3551,25 @@
 					</DiplomacyPowers>
 					<DiplomacyText>
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_GILGAMESH_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_AGAMEMNON</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers>
+						<DiplomacyPower>
+							<DiplomacyPowerType>DIPLOMACYPOWER_STRONGER</DiplomacyPowerType>
+							<bDiplomacyPowerType>1</bDiplomacyPowerType>
+						</DiplomacyPower>
+					</DiplomacyPowers>
+					<DiplomacyText>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_AGAMEMNON_1</Text>
 					</DiplomacyText>
 				</Response>
 			</Responses>

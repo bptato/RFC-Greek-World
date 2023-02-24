@@ -71,7 +71,7 @@
 		<English>Welcome [CT_NAME] I the great and powerful [OUR_NAME] greet you.  Shall we live in peace or shall the warlike peoples of the [OUR_CIV_SHORT] pillage the [CT_EMPIRE]!</English>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_AGAMEMNON_1</Tag>
 		<English>I greet you warmly, [CT_NAME] of [CT_CIV_SHORT]. I myself am [OUR_NAME] of [OUR_CIV_SHORT]. The gods only protect the strong, [CT_NAME]. So, how strong is [CT_CIV_SHORT] exactly?</English>
 		<French>Salutations ! Je suis [OUR_NAME], je r&#232;gne sur l'[OUR_EMPIRE]. Je souhaite que nos deux grands peuples puissent vivre en paix.</French>
 		<German>Seid gegr&#252;&#223;t! Ich bin [OUR_NAME], Staatsoberhaupt des [OUR_EMPIRE:3]es. Ich hoffe, unsere gro&#223;artigen V&#246;lker werden in Frieden zusammenleben.</German>
@@ -83,7 +83,7 @@
 		<English>Greetings [CT_NAME]. I am [OUR_NAME], King of the [OUR_EMPIRE]. Won't you stay for a while and enjoy our Bull Leaping contest?</English>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_AGAMEMNON_1</Tag>
 		<English>Leave.</English>
 		<French>Vos bavardages incessants ne nous amusent pas, [CT_NAME] !</French>
 		<German>Euer bedeutungsloses Geschwafel am&#252;siert uns ganz und gar nicht, [CT_NAME]!</German>
@@ -91,7 +91,7 @@
 		<Spanish>&#161;No nos hace gracia vuestra ch&#225;chara absurda, [CT_NAME]!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_NO_PEACE_LEADER_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_AGAMEMNON_1</Tag>
 		<English>A great victory will be won, [CT_NAME]... but that victory will not be yours!</English>
 		<French>La guerre est tr&#232;s d&#233;plaisante, mais parfois n&#233;cessaire. Il appara&#238;t que nous sommes dans cette situation, aussi devons-nous rejeter votre requ&#234;te. Cette entrevue est termin&#233;e.</French>
 		<German>Kriege sind eine h&#246;chst unangenehme Sache, manchmal aber auch unumg&#228;nglich. Und wie ich h&#246;re, ist das in diesem Fall so, deshalb muss ich Euer Anliegen zur&#252;ckweisen. Diese Unterhaltung ist beendet!</German>
@@ -99,7 +99,7 @@
 		<Spanish>La guerra es harto desagradable, pero a veces resulta necesaria. Nos informan de que &#233;sta es una de esas veces, as&#237; que debemos rechazar vuestras s&#250;plicas. La audiencia ha terminado.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AGAMEMNON_1</Tag>
 		<English>[CT_NAME], friend of the [OUR_CIV_ADJ] peoples! I see you have sailed across many seas to see me. What is it that you need?</English>
 		<French>Je vous souhaite la bienvenue ! Venez, allons d&#233;truire nos ennemis du haut de nos chars et laissons cinquante mille cadavres sur le champ de bataille pour le festin des corbeaux !</French>
 		<German>Willkommen! Lasst uns unsere Streitwagen anspannen und unsere Feinde vernichten! M&#246;gen die Gefallenen auf dem Schlachtfeld ein Festmahl f&#252;r die Geier sein!</German>
@@ -107,7 +107,7 @@
 		<Spanish>&#161;Os saludamos, camarada! Venga, montemos en los carros, destruyamos a nuestros enemigos y dejemos cincuenta mil cad&#225;veres pudri&#233;ndose en el campo de batalla como pasto para los cuervos.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_AGAMEMNON_1</Tag>
 		<English>Personally, I believe you have serious problems, [CT_NAME]. And that is coming from a man who had an entire family with serious problems.</English>
 		<French>Bonjour, [CT_NAME]. A quoi devons-nous cette interruption inattendue ?</French>
 		<German>Guten Tag, [CT_NAME]. Was beschert mir diese unerwartete St&#246;rung?</German>
@@ -115,7 +115,7 @@
 		<Spanish>Buenos d&#237;as teng&#225;is, [CT_NAME]. &#191;A qu&#233; debemos esta interrupci&#243;n tan inesperada?</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AGAMEMNON_1</Tag>
 		<English>Please?</English>
 		<French>Les [CT_CIV_ADJ] sont dans le besoin, [CT_NAME]. J'esp&#232;re que vous ne les d&#233;cevrez pas.</French>
 		<German>Das [CT_CIV_ADJ:3] Volk befindet sich in einer &#252;blen Notlage, [CT_NAME]! Entt&#228;uscht uns nicht!</German>
@@ -123,7 +123,7 @@
 		<Spanish>El pueblo [CT_CIV_ADJ:1] tiene una gran necesidad, [CT_NAME]. No nos decepcion&#233;is.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AGAMEMNON_1</Tag>
 		<English>A good friend should do as all good friends do - share. And more specifically, cave in to the demands of their friends.</English>
 		<French>Nous avons des besoins, [CT_NAME]. Veuillez les satisfaire.</French>
 		<German>Auch wir haben Bed&#252;rfnisse, [CT_NAME]! Und es ist an Euch, sie zu befriedigen!</German>
@@ -131,7 +131,7 @@
 		<Spanish>Tenemos necesidades, [CT_NAME]. Satisfacedlas, por favor.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_AGAMEMNON</Tag>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_AGAMEMNON_1</Tag>
 		<English>The gods favor the strong, [CT_NAME]. But I will favor you, [CT_NAME], regardless of the gods, [CT_NAME], if the weak [CT_CIV_SHORT] gives a small amount of tribute.</English>
 		<French>Donnez aux [CT_CIV_SHORT] ce qui leur revient, [CT_NAME] ! Nous ne vous le demanderons pas deux fois.</French>
 		<German>Gebt [CT_CIV_SHORT], was ihm zusteht, [CT_NAME]! Wir werden Euch kein zweites Mal darum bitten!</German>
