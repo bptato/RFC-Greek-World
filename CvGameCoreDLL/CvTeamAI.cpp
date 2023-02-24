@@ -2544,6 +2544,10 @@ void CvTeamAI::AI_updateWorstEnemy()
 {
 	PROFILE_FUNC();
 
+	//bluepotato: skip worst enemy check for minor civs
+	if (isMinorCiv())
+		return;
+
 	TeamTypes eBestTeam = NO_TEAM;
 	int iBestValue = MAX_INT;
 
@@ -2551,6 +2555,11 @@ void CvTeamAI::AI_updateWorstEnemy()
 	{
 		TeamTypes eLoopTeam = (TeamTypes) iI;
 		CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
+
+		//bluepotato: do not allow minor civs as worst enemies
+		if (kLoopTeam.isMinorCiv())
+			continue;
+
 		if (kLoopTeam.isAlive())
 		{
 			if (iI != getID() && !kLoopTeam.isVassal(getID()))
