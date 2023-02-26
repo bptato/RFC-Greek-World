@@ -937,8 +937,8 @@ application/json
 			"RelatedLanguages":[
 				"CIVILIZATION_EGYPT"
 			],
-			"StartingX":31,
-			"StartingY":5,
+			"StartingX":30,
+			"StartingY":4,
 			"CoreProvinces":[
 				"PROVINCE_NUBIA"
 			],

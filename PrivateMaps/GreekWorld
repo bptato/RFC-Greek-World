@@ -453,6 +453,9 @@ application/json
 			"ProvinceType":"PROVINCE_NUBIA",
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
+			"CityNames":{
+				"CIVILIZATION_NUBIA":"Soba"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":70,
 				"CIVILIZATION_NUBIA":200
@@ -915,6 +918,9 @@ application/json
 			"ProvinceType":"PROVINCE_NUBIA",
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
+			"CityNames":{
+				"CIVILIZATION_NUBIA":"Soba"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":70,
 				"CIVILIZATION_NUBIA":200
@@ -926,6 +932,9 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
 			"ProvinceType":"PROVINCE_NUBIA",
+			"CityNames":{
+				"CIVILIZATION_NUBIA":"Soba"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":70,
 				"CIVILIZATION_NUBIA":200
@@ -1383,6 +1392,9 @@ application/json
 			"ProvinceType":"PROVINCE_NUBIA",
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
+			"CityNames":{
+				"CIVILIZATION_NUBIA":"Wad Ban Naqa"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":70,
 				"CIVILIZATION_NUBIA":200
@@ -1394,6 +1406,9 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_GRASS",
 			"ProvinceType":"PROVINCE_NUBIA",
+			"CityNames":{
+				"CIVILIZATION_NUBIA":"Wad Ban Naqa"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":70,
 				"CIVILIZATION_NUBIA":200
@@ -1405,6 +1420,9 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
 			"ProvinceType":"PROVINCE_NUBIA",
+			"CityNames":{
+				"CIVILIZATION_NUBIA":"Meroe"
+			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":70,
 				"CIVILIZATION_NUBIA":200
@@ -1855,7 +1873,8 @@ application/json
 			"FeatureVariety":0,
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tayu-djayet"
+				"CIVILIZATION_EGYPT":"Tayu-djayet",
+				"CIVILIZATION_NUBIA":"Napata"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -1884,8 +1903,7 @@ application/json
 			"BonusType":"BONUS_IRON",
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Djerty",
-				"CIVILIZATION_NUBIA":"Meroe"
+				"CIVILIZATION_EGYPT":"Djerty"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2352,7 +2370,8 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Nubt"
+				"CIVILIZATION_EGYPT":"Nubt",
+				"CIVILIZATION_NUBIA":"Dongola"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2373,7 +2392,8 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Aswan"
+				"CIVILIZATION_EGYPT":"Aswan",
+				"CIVILIZATION_NUBIA":"Napata"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2390,7 +2410,8 @@ application/json
 			"FeatureVariety":0,
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tayu-djayet"
+				"CIVILIZATION_EGYPT":"Tayu-djayet",
+				"CIVILIZATION_NUBIA":"Nuri"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2404,8 +2425,7 @@ application/json
 			"TerrainType":"TERRAIN_DESERT",
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Iuny",
-				"CIVILIZATION_NUBIA":"Meroe"
+				"CIVILIZATION_EGYPT":"Iuny"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2417,14 +2437,11 @@ application/json
 			"y":4,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"ProvinceType":"PROVINCE_NUBIA",
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Iuny",
-				"CIVILIZATION_NUBIA":"Meroe"
+				"CIVILIZATION_EGYPT":"Iuny"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2439,9 +2456,6 @@ application/json
 			"ProvinceType":"PROVINCE_NUBIA",
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
-			"CityNames":{
-				"CIVILIZATION_NUBIA":"Meroe"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
 				"CIVILIZATION_NUBIA":400
@@ -2872,7 +2886,8 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Zawty"
+				"CIVILIZATION_EGYPT":"Zawty",
+				"CIVILIZATION_NUBIA":"Dongola"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2892,7 +2907,8 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Nubt"
+				"CIVILIZATION_EGYPT":"Nubt",
+				"CIVILIZATION_NUBIA":"Kawa"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2932,7 +2948,7 @@ application/json
 			"RiverWEDirection":3,
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Napata",
-				"CIVILIZATION_NUBIA":"Napata",
+				"CIVILIZATION_NUBIA":"Nuri",
 				"CIVILIZATION_ROME":"Diospolis Magna",
 				"CIVILIZATION_BYZANTIUM":"Diospolis Magna"
 			},
@@ -2954,7 +2970,7 @@ application/json
 			"RiverNSDirection":0,
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Gesa",
-				"CIVILIZATION_NUBIA":"Meroe",
+				"CIVILIZATION_NUBIA":"Kurgus",
 				"CIVILIZATION_ROME":"Diospolis Magna",
 				"CIVILIZATION_BYZANTIUM":"Diospolis Magna"
 			},
@@ -2969,15 +2985,12 @@ application/json
 			"y":5,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"BonusType":"BONUS_SALT",
 			"ProvinceType":"PROVINCE_NUBIA",
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Denderah",
-				"CIVILIZATION_NUBIA":"Meroe"
+				"CIVILIZATION_EGYPT":"Denderah"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -2991,8 +3004,7 @@ application/json
 			"TerrainType":"TERRAIN_DESERT",
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Denderah",
-				"CIVILIZATION_NUBIA":"Meroe"
+				"CIVILIZATION_EGYPT":"Denderah"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_NUBIA":400
@@ -3017,10 +3029,7 @@ application/json
 			"y":5,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_DESERT",
-			"ProvinceType":"PROVINCE_RED_SEA_COAST",
-			"CityNames":{
-				"CIVILIZATION_NUBIA":"Adulis"
-			}
+			"ProvinceType":"PROVINCE_RED_SEA_COAST"
 		},
 		{
 			"x":38,
@@ -3028,9 +3037,6 @@ application/json
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
 			"ProvinceType":"PROVINCE_RED_SEA_COAST",
-			"CityNames":{
-				"CIVILIZATION_NUBIA":"Adulis"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":0
 			}
@@ -3423,7 +3429,8 @@ application/json
 			"isWOfRiver":true,
 			"RiverNSDirection":0,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Khnum"
+				"CIVILIZATION_EGYPT":"Khnum",
+				"CIVILIZATION_NUBIA":"Soleb"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -3441,7 +3448,8 @@ application/json
 			"FeatureVariety":0,
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tjebu"
+				"CIVILIZATION_EGYPT":"Tjebu",
+				"CIVILIZATION_NUBIA":"Kerma"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -3489,14 +3497,11 @@ application/json
 			"y":6,
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
-			"FeatureType":"FEATURE_FLOOD_PLAINS",
-			"FeatureVariety":0,
 			"ProvinceType":"PROVINCE_NUBIA",
 			"isNOfRiver":true,
 			"RiverWEDirection":3,
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Tjenu",
-				"CIVILIZATION_NUBIA":"Napata",
 				"CIVILIZATION_ROME":"Diospolis Magna",
 				"CIVILIZATION_BYZANTIUM":"Diospolis Magna"
 			},
@@ -3513,8 +3518,7 @@ application/json
 			"TerrainType":"TERRAIN_DESERT",
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Tjenu",
-				"CIVILIZATION_NUBIA":"Napata"
+				"CIVILIZATION_EGYPT":"Tjenu"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_NUBIA":400,
@@ -3527,9 +3531,6 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
 			"ProvinceType":"PROVINCE_NUBIA",
-			"CityNames":{
-				"CIVILIZATION_NUBIA":"Napata"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_NUBIA":400
 			}
@@ -3995,7 +3996,8 @@ application/json
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
-				"CIVILIZATION_EGYPT":"Khnum"
+				"CIVILIZATION_EGYPT":"Khnum",
+				"CIVILIZATION_NUBIA":"Semna"
 			},
 			"SettlerValues":{
 				"CIVILIZATION_EGYPT":300,
@@ -4050,7 +4052,6 @@ application/json
 			"ProvinceType":"PROVINCE_NUBIA",
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Apu",
-				"CIVILIZATION_NUBIA":"Napata",
 				"CIVILIZATION_ROME":"Diospolis Magna",
 				"CIVILIZATION_BYZANTIUM":"Diospolis Magna"
 			},
@@ -4066,9 +4067,6 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_DESERT",
 			"ProvinceType":"PROVINCE_NUBIA",
-			"CityNames":{
-				"CIVILIZATION_NUBIA":"Napata"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4081,9 +4079,6 @@ application/json
 			"FeatureType":"FEATURE_FLOOD_PLAINS",
 			"FeatureVariety":0,
 			"ProvinceType":"PROVINCE_NUBIA",
-			"CityNames":{
-				"CIVILIZATION_NUBIA":"Napata"
-			},
 			"SettlerValues":{
 				"CIVILIZATION_BYZANTIUM":90
 			}
@@ -4121,10 +4116,7 @@ application/json
 			"y":7,
 			"PlotType":3,
 			"TerrainType":"TERRAIN_COAST",
-			"ProvinceType":"PROVINCE_RED_SEA",
-			"CityNames":{
-				"CIVILIZATION_NUBIA":"Adulis"
-			}
+			"ProvinceType":"PROVINCE_RED_SEA"
 		},
 		{
 			"x":39,
