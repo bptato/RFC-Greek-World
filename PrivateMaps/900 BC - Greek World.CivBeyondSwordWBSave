@@ -2109,6 +2109,24 @@ application/json
 		},
 		{
 			"Type":"PROVINCE_IONIAN_ISLANDS"
+		},
+		{
+			"Type":"PROVINCE_MEDITERRANEAN_SEA"
+		},
+		{
+			"Type":"PROVINCE_RED_SEA"
+		},
+		{
+			"Type":"PROVINCE_INDIAN_OCEAN"
+		},
+		{
+			"Type":"PROVINCE_CASPIAN_SEA"
+		},
+		{
+			"Type":"PROVINCE_BLACK_SEA"
+		},
+		{
+			"Type":"PROVINCE_ATLANTIC_OCEAN"
 		}
 	],
 	"Plots":[
@@ -3301,23 +3319,8 @@ application/json
 		{
 			"x":35,
 			"y":31,
-			"RouteType":"ROUTE_ROAD",
-			"Units":[
-				{
-					"UnitOwner":"CIVILIZATION_INDEPENDENT",
-					"UnitType":"UNIT_SPEARMAN",
-					"FacingDirection":4,
-					"UnitAIType":"UNITAI_COUNTER",
-					"Year":-896
-				}
-			],
-			"City":{
-				"CityOwner":"CIVILIZATION_INDEPENDENT",
-				"Year":-896,
-				"Religions":{
-					"RELIGION_HELLENISM":true
-				}
-			}
+			"ImprovementType":"IMPROVEMENT_CITY_RUINS",
+			"RouteType":"ROUTE_ROAD"
 		},
 		{
 			"x":57,
