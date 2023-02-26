@@ -12161,9 +12161,9 @@
 			<BuildingClass>BUILDINGCLASS_FLAVIAN_AMPHITHEATRE</BuildingClass>
 			<Type>BUILDING_FLAVIAN_AMPHITHEATRE</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
-			<Description>Flavian Amphitheatre</Description>
+			<Description>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HEROIC_EPIC_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FLAVIAN_AMPHITHEATRE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_FLAVIAN_AMPHITHEATRE</MovieDefineTag>

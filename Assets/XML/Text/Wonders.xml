@@ -71,4 +71,28 @@
 		<Tag>TXT_KEY_BUILDING_ASHURBANIPAL_LIBRARY_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Ashurbanipal's Library[COLOR_REVERT] doubles its city's research output, and increases the likelyhood a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] will be generated.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
+		<English>Flavian Amphitheatre</English>
+		<French>
+			<Text>Ampith&#233;&#226;tre Flavien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Flavian Amphitheatre</German>
+		<Italian>Flavian Amphitheatre</Italian>
+		<Spanish>Flavian Amphitheatre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_PEDIA</Tag>
+		<English>[TAB]The Colosseum or Coliseum, situated in Rome and originally known as the Flavian Amphitheatre (Latin: Amphitheatrum Flavium), is the largest amphitheatre built in the Roman Empire. Originally capable of seating 50,000 spectators, it was used for gladiatorial combat. Construction of the Flavian Amphitheatre began under the rule of Emperor Vespasian in 72 AD. It was completed by his son, Titus, in 80 AD, with later improvements by Domitian.</English>
+		<French>[TAB]Le Colis&#233;e de Rome, appel&#233; &#224; l'origine "amphith&#233;&#226;tre Flavien" (en latin : Amphitheatrum Flavium), est le plus grand amphith&#233;&#226;tre construit dans l'Empire romain. Il pouvait contenir &#224; l'origine 50 000 spectateurs et servait &#224; organiser des combats de gladiateurs. La construction de l'amphith&#233;&#226;tre Flavien fut lanc&#233;e sous Vespasien, en 72 apr. J.-C. L'ouvrage fut achev&#233; par son fils, Titus, en 80 apr. J.-C., puis am&#233;lior&#233; par Domitien.</French>
+		<German>[TAB]Das Kolosseum (Lateinisch: Amphitheatrum Novum oder Amphitheatrum Flavium) ist das gr&#246;&#223;te der im antiken Rom erbauten Amphitheater. Es fasste urspr&#252;nglich 50.000 Zuschauer und diente vor allem als Schauplatz f&#252;r Gladiatorenk&#228;mpfe. Der Bau des Amphitheatrum Flavium wurde im Jahr 72 n. Chr. von Kaiser Vespasian in Auftrag gegeben und im Jahr 80 n. Chr. von seinem Sohn Titus vollendet. Dessen Bruder Domitian lie&#223; sp&#228;ter noch einige Erweiterungen und Verbesserungen an dem Geb&#228;ude vornehmen.</German>
+		<Italian>[TAB]Il Colosseo, situato a Roma e originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium), &#232; il pi&#249; grande anfiteatro costruito nell'impero romano. In origine era in grado di ospitare 50.000 spettatori e veniva utilizzato per i giochi gladiat&#242;ri. La costruzione dell'Anfiteatro Flavio inizi&#242; sotto l'imperatore Vespasiano nel 72 d.C e venne completata sotto il regno del figlio, Tito, nell'80 d.C., con ulteriori modifiche apportate durante il regno di Domiziano.</Italian>
+		<Spanish>[TAB]El Coliseo de Roma, que en su origen fue conocido como Anfiteatro Flavio (del lat&#237;n, &amp;quot;Amphitheatrum Flavium&amp;quot;), es el anfiteatro m&#225;s grande construido por el Imperio Romano. Era capaz de alojar a 50.000 espectadores durante los combates de gladiadores. La construcci&#243;n del Anfiteatro Flavio se inici&#243; durante el mandato del emperador Vespasiano en el 72 d. C. Fue inaugurado por su hijo Tito en el 80 d. C., aunque en realidad fue Domiciano quien lo complet&#243;, dos a&#241;os m&#225;s tarde.</Spanish>
+	</TEXT>
 </Civ4GameText>
