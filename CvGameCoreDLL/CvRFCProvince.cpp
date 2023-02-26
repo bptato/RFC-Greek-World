@@ -283,6 +283,9 @@ std::vector<int>& CvRFCProvince::getPlots() {
 }
 
 int CvRFCProvince::getNumCities(PlayerTypes playerType) const {
+	if (playerType == NO_PLAYER) {
+		return 0;
+	}
 	int i;
 	int countedCities = 0;
 	for(CvCity* city = GET_PLAYER(playerType).firstCity(&i); city != NULL; city = GET_PLAYER(playerType).nextCity(&i)) {
