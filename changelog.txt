@@ -1,11 +1,28 @@
 CURRENT VERSION:
+Version 2.1
+Additions:
+Etruscan UHV
+Persian UHV
+Nubian UHV
+
+General changes:
+Holy cities are no longer moved to cities owned by civilizations without the appropriate state religion
+Improved Nubian city name map
+Some changes to Nubian terrain
+Removed Troy from the 900 BC scenario
+
+Fixes:
+Various minor text display fixes
+Removed useless Ambush promotion
+Fixed a C++ bug in the Mycenaean UHV
+
+PREVIOUS VERSIONS:
 Version 2.0.2
 Fixes:
 Fixed independents being able to win score victory
 Fixed incorrect civilization name keys
 Fixed goody hut spawning algorithm
 
-PREVIOUS VERSIONS:
 Version 2.0.1
 Fixes:
 Fixed Lydia bug
