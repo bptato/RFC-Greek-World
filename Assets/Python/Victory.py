@@ -54,6 +54,9 @@ def building(buildingName):
 def unit(unitName):
 	return CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), "UNIT_" + unitName.upper())
 
+def specialist(specialistName):
+	return CvUtil.findInfoTypeNum(gc.getSpecialistInfo, gc.getNumSpecialistInfos(), "SPECIALIST_" + specialistName.upper())
+
 def civ2player(civType):
 	return gc.getRiseFall().getRFCPlayer(civType).getPlayerType()
 
@@ -812,16 +815,20 @@ class Victory:
 							meroeCity = city
 				hasAllGreatPeople = False
 				if meroeCity != None:
+					greatSpecialistTypeNames = [
+						"great_priest",
+						"great_artist",
+						"great_scientist",
+						"great_merchant",
+						"great_engineer",
+						"great_general",
+						"great_spy"
+					]
 					hasAllGreatPeople = True
-					for i in range(gc.getNumSpecialistInfos()):
-						specialist = gc.getSpecialistInfo(i)
-						unitClass = specialist.getGreatPeopleUnitClass()
-						if unitClass != -1:
-							unit = gc.getUnitInfo(unitClass)
-							for j in range(gc.getNumSpecialistInfos()):
-								if unit.getGreatPeoples(j) and meroeCity.getFreeSpecialistCount(j) == 0:
-									hasAllGreatPeople = False
-									break
+					for x in greatSpecialistTypeNames:
+						if meroeCity.getFreeSpecialistCount(specialist(x)) == 0:
+							hasAllGreatPeople = False
+							break
 				if hasAllGreatPeople:
 					self.setGoal(iNubia, 1, 1)
 				elif iGameTurn > i350AD:
