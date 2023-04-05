@@ -570,6 +570,54 @@
 		<English>Be 1st in score in 250 BC</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1_TITLE</Tag>
+		<English>Delenda est Carthago - Cato's proclamation that "Carthage must destroyed!"</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1</Tag>
+		<English>Be the first civilization to capture or sack Carthage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
+		<English>The Triumph of Rome</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2</Tag>
+		<English>Control 5 salt and 2 silver in 180 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>
+		<English>The Eternal City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM3</Tag>
+		<English>Be 1st in score in 500 AD</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_UHV_MAC1_TITLE</Tag>
+		<English>Empire of Alexander</English>
+	</TEXT>
+		<TEXT>
+		<Tag>TXT_KEY_UHV_MAC1</Tag>
+		<English>Control Thrace, Lydia, Phoenicia and Subartu by 300 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAC2_TITLE</Tag>
+		<English>Greek cultural hegemony</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAC2</Tag>
+		<English>Spread Hellenism to 30% of the World by 200 BC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAC3_TITLE</Tag>
+		<English>Greek World</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAC3</Tag>
+		<English>Be 1st in score in 10 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_IN11_TITLE</Tag>
 		<English>-</English>
 	</TEXT>
