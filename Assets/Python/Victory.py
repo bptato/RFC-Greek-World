@@ -114,11 +114,15 @@ class Victory:
 		global i275BC
 		global i270BC
 		global i250BC
+		global i200BC
 		global i100BC
 		global i63BC
 		global i0AD
+		global i10AD
+		global i180AD
 		global i350AD
 		global i400AD
+		global i500AD
 
 		i4000BC = getTurnForYear(-4000)
 		i3000BC = getTurnForYear(-3000)
@@ -151,11 +155,15 @@ class Victory:
 		i275BC = getTurnForYear(-275)
 		i270BC = getTurnForYear(-270)
 		i250BC = getTurnForYear(-250)
+		i200BC = getTurnForYear(-200)
 		i100BC = getTurnForYear(-100)
 		i63BC = getTurnForYear(-63)
 		i0AD = getTurnForYear(0)
+		i10AD = getTurnForYear(10)
+		i180AD = getTurnForYear(180)
 		i350AD = getTurnForYear(350)
 		i400AD = getTurnForYear(400)
+		i500AD = getTurnForYear(500)
 
 
 		global provPalestine
@@ -193,6 +201,7 @@ class Victory:
 		global provLydia
 		global provCorsica
 		global provMedia
+		global provThracia
 
 		riseFall = CyRiseFall()
 		provPalestine = riseFall.getProvince(riseFall.findProvince("PROVINCE_PALESTINE"))
@@ -230,6 +239,7 @@ class Victory:
 		provLydia = riseFall.getProvince(riseFall.findProvince("PROVINCE_LYDIA"))
 		provCorsica = riseFall.getProvince(riseFall.findProvince("PROVINCE_CORSICA"))
 		provMedia = riseFall.getProvince(riseFall.findProvince("PROVINCE_MEDIA"))
+		provThracia = riseFall.getProvince(riseFall.findProvince("PROVINCE_THRACIA"))
 
 	def getGoal(self, i, j):
 		scriptDict = pickle.loads(gc.getGame().getScriptData())
@@ -832,6 +842,12 @@ class Victory:
 					self.setGoal(iNubia, 2, 1)
 				else:
 					self.setGoal(iNubia, 2, 0)
+					
+			if iGameTurn == i500AD:
+				if gc.getGame().getTeamRank(pPlayer.getTeam()) == 0:
+					self.setGoal(iRome, 2, 1)
+				else:
+					self.setGoal(iRome, 2, 0)
 
 		elif civType == iPersia:
 			if iGameTurn == i330BC:
@@ -860,6 +876,40 @@ class Victory:
 					self.setGoal(iPersia, 2, 1)
 				else:
 					self.setGoal(iPersia, 2, 0)
+					
+		elif civType == iRome:
+			if iGameTurn == i180AD:
+				if pPlayer.countOwnedBonuses(bonus('Salt')) + pPlayer.getBonusImport(bonus('Salt')) >= 1 and pPlayer.countOwnedBonuses(bonus('Silver')) + pPlayer.getBonusImport(bonus('Silver')) >= 1:
+					self.setGoal(iRome, 1, 1)
+				else:
+					self.setGoal(iRome, 1, 0)
+
+		elif civType == iMacedonia:
+			if self.getGoal(iMacedonia, 0) == -1:
+				goalCompleted = controlsProvince(iPlayer, provSubartu) and \
+						controlsProvince(iPlayer, provLydia) and \
+						controlsProvince(iPlayer, provPhoenicia) and \
+						controlsProvince(iPlayer, provThracia)
+				if goalCompleted:
+					self.setGoal(iMacedonia, 0, 1)
+				elif iGameTurn > i300BC:
+					self.setGoal(iMacedonia, 0, 0)
+					
+			if (self.getGoal(iMacedonia, 1) == -1):
+					if (iGameTurn <= i200BC):
+						Hellenism = gc.getInfoTypeForString("RELIGION_HELLENISM")
+						religionPercent = gc.getGame().calculateReligionPercent(Hellenism)
+						if (religionPercent >= 30.0):
+							self.setGoal(iMacedonia, 1, 1)
+					else:
+							self.setGoal(iMacedonia, 1, 0)
+
+			if iGameTurn == i10AD:
+				if gc.getGame().getTeamRank(pPlayer.getTeam()) == 0:
+					self.setGoal(iMacedonia, 2, 1)
+				else:
+					self.setGoal(iMacedonia, 2, 0)
+
 
 	def onCityBuilt(self, city):
 		if not self.allowEvent():
@@ -933,6 +983,12 @@ class Victory:
 				self.setGoal(iCeltia, 1, 1)
 			else:
 				self.setGoal(iCeltia, 1, 0)
+				
+		if self.getGoal(iRome, 1) == -1 and cityX == 15 and cityY == 20: #Carthage captured by Rome
+			if attackerType == iRome:
+				self.setGoal(iRome, 0, 1)
+			else:
+				self.setGoal(iRome, 0, 0)
 
 
 	def onCityRazed(self, city, conqueror, owner):
