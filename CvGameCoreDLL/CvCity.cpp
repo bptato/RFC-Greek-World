@@ -7508,7 +7508,7 @@ int CvCity::getCultureThreshold() const
 {
 	//bluepotato start: Sassanid UP
 	if(getCivilizationType() == CIVILIZATION_SASSANID) {
-		return getCultureThreshold(getCultureLevel())*3/4;
+		return std::max(1, getCultureThreshold(getCultureLevel())*3/4);
 	}
 	return getCultureThreshold(getCultureLevel());
 	//bluepotato end
