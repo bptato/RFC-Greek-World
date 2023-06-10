@@ -1559,11 +1559,17 @@ class CvWorldBuilderScreen:
 			if self.iSelection == -1:
 				self.iSelection = 0
 
+			x = []
 			for i in xrange(gc.getRiseFall().getNumProvinces()):
 				screen.appendTableRow("WBSelectItem")
+				x.append((gc.getRiseFall().getProvince(i).getName(), i))
+			x.sort(key=lambda it: it[0])
 
-			for i in xrange(gc.getRiseFall().getNumProvinces()):
-				screen.setTableText("WBSelectItem", 0, i, "<font=3>" + gc.getRiseFall().getProvince(i).getName() + "</font>", "", WidgetTypes.WIDGET_PYTHON, 8209, i, CvUtil.FONT_LEFT_JUSTIFY)
+			for i, it in enumerate(x):
+				screen.setTableText("WBSelectItem",
+					0, i, "<font=3>" + it[0] + "</font>",
+					"", WidgetTypes.WIDGET_PYTHON, 8209,
+					it[1], CvUtil.FONT_LEFT_JUSTIFY)
 		self.refreshSelection()
 
 	def refreshSelection(self):
