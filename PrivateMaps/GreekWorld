@@ -9738,6 +9738,7 @@ application/json
 			"PlotType":2,
 			"TerrainType":"TERRAIN_PLAINS",
 			"BonusType":"BONUS_IVORY",
+			"ProvinceType":"PROVINCE_AFRICA",
 			"CityNames":{
 				"CIVILIZATION_EGYPT":"Libu",
 				"CIVILIZATION_ROME":"Paraetonium",
@@ -14797,6 +14798,7 @@ application/json
 			"y":23,
 			"PlotType":1,
 			"TerrainType":"TERRAIN_PLAINS",
+			"ProvinceType":"PROVINCE_KHUZESTAN",
 			"isNOfRiver":true,
 			"RiverWEDirection":1,
 			"CityNames":{
